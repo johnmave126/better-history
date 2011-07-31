@@ -1,0 +1,14 @@
+{
+  "name": "Better History",
+  "version": "0.2",
+  "description": "A better look at your browsing history",
+  "icons": {
+    "16": "icon16.png",
+    "48": "icon48.png",
+    "128": "icon128.png"
+  },
+  "chrome_url_overrides": {
+    "history": "history.html"
+  },
+  "permissions": ["chrome://favicon/", "history"]
+}
