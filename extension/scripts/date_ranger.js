@@ -8,8 +8,9 @@ DateRanger = {
     start.setMinutes(0);
     start.setSeconds(0);
 
-    return {start: start, end: end};
+    return this.package(start, end);
   },
+
   yesterday: function() {
     var start = new Date(),
         end = new Date();
@@ -23,8 +24,9 @@ DateRanger = {
     end.setMinutes(59);
     end.setSeconds(59);
 
-    return {start: start, end: end};
+    return this.package(start, end);
   },
+
   today: function() {
     var start = new Date(),
         end = new Date();
@@ -33,6 +35,10 @@ DateRanger = {
     start.setMinutes(0);
     start.setSeconds(0);
 
+    return this.package(start, end);
+  },
+
+  package: function(start, end) {
     return {start: start, end: end};
   }
 }
