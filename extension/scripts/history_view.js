@@ -1,11 +1,3 @@
-//chk if an object is an array or not.
-function isArray(obj) {
-  if (obj.constructor.toString().indexOf('Array') == -1)
-    return false;
-  else
-    return true;
-}
-
 function HistoryView() {
   function transitionViews(filter, callback) {
     $('.views').fadeOut("fast", function() {
@@ -21,8 +13,12 @@ function HistoryView() {
   }
 
   function stickHeaders(container) {
-    $(container).find('section').stickySectionHeaders({stickyClass:'date_interval', padding:48});
-    $(container).find('section > div').stickySectionHeaders({stickyClass:'time_interval', padding:48});
+    $(container).find('section').stickySectionHeaders({
+      stickyClass:'date_interval', padding:48
+    });
+    $(container).find('section > div').stickySectionHeaders({
+      stickyClass:'time_interval', padding:48
+    });
     $(window).scrollTop(40);
   }
 
@@ -30,7 +26,6 @@ function HistoryView() {
     load: function(filter, options) {
       var self = this;
       transitionViews(filter, function() {
-        console.log(options);
         HistoryItem.search(options, function(results) {
           self.render(groupResults(results), selector(filter));
         });

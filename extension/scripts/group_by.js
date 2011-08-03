@@ -1,10 +1,3 @@
-// Array Remove - By John Resig (MIT Licensed)
-Array.prototype.remove = function(from, to) {
-  var rest = this.slice((to || from) + 1 || this.length);
-  this.length = from < 0 ? this.length + from : from;
-  return this.push.apply(this, rest);
-};
-
 var groupResults;
 (function() {
   var interval = 15;
@@ -31,10 +24,10 @@ var groupResults;
   }
 
   function prepareKeys(formatted, dateKey, timeKey) {
-    if(formatted[dateKey] == undefined) {
+    if(formatted[dateKey] === undefined) {
       formatted[dateKey] = [];
     }
-    if(formatted[dateKey][timeKey] == undefined) {
+    if(formatted[dateKey][timeKey] === undefined) {
       formatted[dateKey][timeKey] = [];
     }
 
@@ -53,7 +46,7 @@ var groupResults;
 
   groupResults = function(historyItems) {
     var formatted = {};
-    console.log(historyItems);
+
     $.each(historyItems, function(index, historyItem) {
       var date = new Date(historyItem.lastVisitTime),
           dateKey = date.toLocaleDateString(),
@@ -61,7 +54,7 @@ var groupResults;
 
         formatted = prepareKeys(formatted, dateKey, timeKey);
 
-        if(formatted[dateKey][timeKey].length == 0) {
+        if(formatted[dateKey][timeKey].length === 0) {
           formatted[dateKey][timeKey].push(historyItem);
         } else {
           if(compareHistoryItems(historyItem, previous)) {
@@ -80,7 +73,6 @@ var groupResults;
 
         previous = historyItem;
     });
-    console.log(formatted);
     return formatted;
   }
 })();
