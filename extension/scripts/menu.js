@@ -5,7 +5,7 @@ function Menu(selector) {
 
   function dateOptions(filter) {
     var dates = dateRange(filter);
-    return {startTime: dates.start.getTime(), endTime: dates.end.getTime()};
+    return {text:'', maxResults: 100, startTime: dates.start.getTime(), endTime: dates.end.getTime()};
   }
 
   function searchFilter(element) {

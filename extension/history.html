@@ -70,12 +70,24 @@
         </dl>
       </a>
     </script>
+    <script id="combineVisitsTemplate" type="text/x-jquery-tmpl">
+      <a href="${url}" class="page">
+        <dl class="description" style="background-image: url(chrome://favicon/${url})">
+          <dt class="title">${domain}</dt>
+          <dd class="url">${amount} Visits <span class="expand button">Expand</span></dd>
+        </dl>
+      </a>
+    </script>
+    <script id="expandedVisitsTemplate" type="text/x-jquery-tmpl">
+      <div class="expanded"></div>
+    </script>
     <script type="text/javascript" src="scripts/frameworks/jquery-1.6.2.min.js"></script>
     <script type="text/javascript" src="scripts/frameworks/jquery.stickysectionheaders.js"></script>
     <script type="text/javascript" src="scripts/frameworks/jquery.tmpl.min.js"></script>
     <script type="text/javascript" src="scripts/date_ranger.js"></script>
     <script type="text/javascript" src="scripts/chrome_history.js"></script>
     <script type="text/javascript" src="scripts/history_view.js"></script>
+    <script type="text/javascript" src="scripts/history_item.js"></script>
     <script type="text/javascript" src="scripts/group_by.js"></script>
     <script type="text/javascript" src="scripts/menu.js"></script>
     <script type="text/javascript">

@@ -8,14 +8,29 @@ a {
 }
 dl { margin:0; }
 dt, dd { margin:0; }
-
+.hide { display:none; }
 .heading {
   background:#FFF;
   position:fixed;
   width:100%;
   z-index:10;
 }
-
+.groupedVisits {
+  margin:5px 0 10px;
+}
+.backpage {
+  border-top:1px solid #DDD;
+  border-left:1px solid #EEE;
+  border-radius:2px;
+  position:relative;
+  top:2px;
+  left:2px;
+  height:50px;
+  z-index:1;
+}
+.primary {
+  padding:0 10px;
+}
 /* Headings
 ================================= */
 h1 {
@@ -152,11 +167,15 @@ section {
 .page:hover .url {
   color:#555;
 }
+.page:hover .expand { display:inline-block; }
 .title {
   font-size:105%;
   padding-bottom:3px;
 }
-.url { color: #999; }
+.url {
+  color: #999;
+  padding:2px 0 2px;
+}
 .title, .url {
   overflow:hidden;
   white-space: nowrap;
@@ -165,4 +184,21 @@ section {
   background-repeat:no-repeat;
   background-position:5px 0;
   padding-left:30px;
+}
+.button {
+  background:#DDD;
+  box-shadow:1px 1px 1px #BBB;
+  border-radius:2px;
+  padding:0px 5px;
+  text-shadow:1px 1px #FFF;
+  color:#555;
+}
+.button:hover {
+  background:#CCC;
+}
+.expanded {
+  border-top:1px solid #CCC;
+  border-bottom:1px solid #CCC;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#EEE), to(#FFF));
+  display:none;
 }
