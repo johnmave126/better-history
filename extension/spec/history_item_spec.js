@@ -4,7 +4,7 @@ describe('HistoryItem', function() {
   var visit, historyItem;
 
   beforeEach(function() {
-    visit = {title: 'test', lastVisitTime: new Date(), url: 'http://google.com/page'};
+    visit = {title: 'test', lastVisitTime: new Date(), url: 'http://google.com/page/'};
     historyItem = new HistoryItem(visit);
   });
 
@@ -27,8 +27,8 @@ describe('HistoryItem', function() {
     });
 
     it('returns null when the url does not have a domain', function() {
-      historyItem.url = 'localhost/~roykolak';
-      expect(historyItem.domain()).toEqual('localhost/');
+      historyItem.url = 'http://localhost/~roykolak';
+      expect(historyItem.domain()).toEqual('http://localhost/');
     });
   });
 

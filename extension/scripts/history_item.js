@@ -8,7 +8,7 @@ HistoryItem = function(item) {
     defaultTitle: defaultTitle,
 
     domain: function() {
-      var match = this.url.match(/.*\//);
+      var match = this.url.match(/\w+:\/\/(.*?)\//);
       return (match === null ? null : match[0]);
     }
   };
