@@ -39,6 +39,24 @@ describe('DateRanger', function() {
     });
   });
 
+  describe('.dayBefore', function() {
+    beforeEach(function() {
+      start.setDate(start.getDate() - 2)
+      start.setHours(0)
+      start.setMinutes(0)
+      start.setSeconds(0)
+      end.setDate(end.getDate() - 2)
+      end.setHours(23)
+      end.setMinutes(59)
+      end.setSeconds(59)
+    });
+
+    it('returns date ranges for the day before yesterday', function() {
+      var dayBefore = DateRanger.dayBefore();
+      expect(dayBefore.start.toUTCString()).toEqual(start.toUTCString());
+      expect(dayBefore.end.toUTCString()).toEqual(end.toUTCString());
+    });
+  });
   describe('.week', function() {
     beforeEach(function() {
       start.setDate(start.getDate() - 7)

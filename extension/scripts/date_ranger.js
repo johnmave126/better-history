@@ -27,6 +27,22 @@ DateRanger = {
     return this.wrap(start, end);
   },
 
+  dayBefore: function() {
+    var start = new Date(),
+        end = new Date();
+
+    start.setDate(start.getDate() - 2);
+    start.setHours(0);
+    start.setMinutes(0);
+    start.setSeconds(0);
+    end.setDate(end.getDate() - 2);
+    end.setHours(23);
+    end.setMinutes(59);
+    end.setSeconds(59);
+
+    return this.wrap(start, end);
+  },
+
   today: function() {
     var start = new Date(),
         end = new Date();

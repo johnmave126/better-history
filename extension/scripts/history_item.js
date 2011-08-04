@@ -19,7 +19,9 @@ HistoryItem.search = function(options, callback) {
     var items = [];
 
     $.each(results, function(i, result) {
-      items.push(new HistoryItem(result));
+      if(result.lastVisitTime > options.startTime && result.lastVisitTime < options.endTime) {
+        items.push(new HistoryItem(result));
+      }
     });
 
     callback(items);
