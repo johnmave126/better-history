@@ -34,7 +34,7 @@ var groupResults;
     return formatted;
   }
 
-  function compareHistoryItems(current, past) {
+  function compareVisits(current, past) {
     if(current.domain() === null || past.domain() === null) {
       return false;
     } else if(current.domain() == past.domain()) {
@@ -44,34 +44,34 @@ var groupResults;
     }
   }
 
-  groupResults = function(historyItems) {
+  groupResults = function(visits) {
     var formatted = {};
 
-    $.each(historyItems, function(index, historyItem) {
-      var date = new Date(historyItem.lastVisitTime),
+    $.each(visits, function(index, visit) {
+      var date = new Date(visit.get('lastVisitTime')),
           dateKey = date.toLocaleDateString(),
           timeKey = standardTimeByInterval(date);
 
         formatted = prepareKeys(formatted, dateKey, timeKey);
 
         if(formatted[dateKey][timeKey].length === 0) {
-          formatted[dateKey][timeKey].push(historyItem);
+          formatted[dateKey][timeKey].push(visit);
         } else {
-          if(compareHistoryItems(historyItem, previous)) {
+          if(compareVisits(visit, previous)) {
             var array = formatted[dateKey][timeKey];
             if(formatted[dateKey][timeKey][array.length - 1].length != null) {
-              formatted[dateKey][timeKey][array.length - 1].push(historyItem);
+              formatted[dateKey][timeKey][array.length - 1].push(visit);
             } else {
               formatted[dateKey][timeKey].remove(-1);
-              formatted[dateKey][timeKey].push([previous, historyItem]);
+              formatted[dateKey][timeKey].push([previous, visit]);
             }
 
           } else {
-            formatted[dateKey][timeKey].push(historyItem);
+            formatted[dateKey][timeKey].push(visit);
           }
         }
 
-        previous = historyItem;
+        previous = visit;
     });
     return formatted;
   }
