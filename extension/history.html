@@ -7,59 +7,8 @@
     <div class="main">
       <div class="navbar">
         <h1><em>Better</em> History</h1>
-        <ul class="nav mainnav">
-          <li class="item">
-            <input id="search_input" type="search" placeholder="Search history">
-          </li>
-          <li class="item">
-            <a href="#today">Today</a>
-          </li>
-          <li class="item">
-            <a href="#yesterday">Yesterday</a>
-          </li>
-          <li class="item">
-            <a href="#dayBefore">Day before</a>
-          </li>
-          <li class="item">
-            <a href="#week">Past 7 days</a>
-          </li>
-        </ul>
       </div>
-      <div class="mainview">
-        <div class="views">
-          <div id="today" class="view">
-            <div class="heading">
-              <h2>Today</h2>
-            </div>
-            <div class="content"></div>
-          </div>
-          <div id="yesterday" class="view">
-            <div class="heading">
-              <h2>Yesterday</h2>
-            </div>
-            <div class="content"></div>
-          </div>
-          <div id="dayBefore" class="view">
-            <div class="heading">
-              <h2>Day before yesterday</h2>
-            </div>
-            <div class="content"></div>
-          </div>
-          <div id="week" class="view">
-            <div class="heading">
-              <h2>Past 7 days</h2>
-            </div>
-            <div class="content"></div>
-          </div>
-          <div id="search" class="view">
-            <div class="heading">
-              <h2>Search results</h2>
-              <p class="note">Chrome's history search isn't the best. Hang tight friend, this will be a future focus</p>
-            </div>
-            <div class="content"></div>
-          </div>
-        </div>
-      </div>
+      <div class="mainview"> </div>
     </div>
     <script id="dateTemplate" type="text/x-jquery-tmpl">
       <section>
@@ -87,6 +36,15 @@
         </dl>
       </a>
     </script>
+    <script id="filterViewTemplate" type="text/x-jquery-tmpl">
+      <div class="view">
+        <div class="heading">
+          <h2>${title}</h2>
+          <p>${description}</p>
+        </div>
+        <div class="content"></div>
+      </div>
+    </script>
     <script id="expandedVisitsTemplate" type="text/x-jquery-tmpl">
       <div class="expanded"></div>
     </script>
@@ -95,17 +53,26 @@
     <script type="text/javascript" src="scripts/frameworks/jquery.tmpl.min.js"></script>
     <script type="text/javascript" src="scripts/frameworks/underscore-min.js"></script>
     <script type="text/javascript" src="scripts/frameworks/backbone.js"></script>
-    <script type="text/javascript" src="scripts/app_view.js"></script>
-    <script type="text/javascript" src="scripts/history_view.js"></script>
-    <script type="text/javascript" src="scripts/grouped_visits_view.js"></script>
-    <script type="text/javascript" src="scripts/visit_view.js"></script>
-    <script type="text/javascript" src="scripts/visit.js"></script>
+
     <script type="text/javascript" src="scripts/helpers.js"></script>
-    <script type="text/javascript" src="scripts/date_ranger.js"></script>
-    <script type="text/javascript" src="scripts/group_by.js"></script>
+
+    <script type="text/javascript" src="scripts/lib/date_ranger.js"></script>
+    <script type="text/javascript" src="scripts/lib/group_by.js"></script>
+
+    <script type="text/javascript" src="scripts/views/app_view.js"></script>
+    <script type="text/javascript" src="scripts/views/filters_view.js"></script>
+    <script type="text/javascript" src="scripts/views/grouped_visits_view.js"></script>
+    <script type="text/javascript" src="scripts/views/filter_view.js"></script>
+    <script type="text/javascript" src="scripts/views/visit_view.js"></script>
+
+    <script type="text/javascript" src="scripts/models/visit.js"></script>
+    <script type="text/javascript" src="scripts/models/filter.js"></script>
+
+    <script type="text/javascript" src="scripts/collections/filters.js"></script>
     <script type="text/javascript">
       $(function() {
-          App = new AppView({el: $('.main')});
+        appView = new AppView({el: $('.main')});
+        appView.render();
       });
     </script>
   </body>

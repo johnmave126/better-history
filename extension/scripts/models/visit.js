@@ -14,7 +14,11 @@ Visit.search = function(options, callback) {
     var items = [];
 
     $.each(results, function(i, result) {
-      if(result.lastVisitTime > options.startTime && result.lastVisitTime < options.endTime) {
+      if(options.startTime != null && options.endTime != null) {
+        if(result.lastVisitTime > options.startTime && result.lastVisitTime < options.endTime) {
+          items.push(new Visit(result));
+        }
+      } else {
         items.push(new Visit(result));
       }
     });
