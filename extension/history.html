@@ -8,10 +8,14 @@
     <div class="main">
       <div class="navbar">
         <h1><em>Better</em> History</h1>
-        <input class="search" type="search" placeholder="Search history">
       </div>
       <div class="mainview"> </div>
     </div>
+    <script id="searchFilterItemTemplate" type="text/x-jquery-tmpl">
+      <li class="item">
+        <input class="search" type="search" placeholder="Search history">
+      </li>
+    </script>
     <script id="filterItemTemplate" type="text/x-jquery-tmpl">
       <li class="item">
         <a href="#filter/${hash}" data-cid="${cid}">${name}</a>
@@ -73,7 +77,6 @@
     <script type="text/javascript" src="scripts/views/grouped_visits_view.js"></script>
     <script type="text/javascript" src="scripts/views/filter_view.js"></script>
     <script type="text/javascript" src="scripts/views/visit_view.js"></script>
-    <script type="text/javascript" src="scripts/views/trash_view.js"></script>
 
     <script type="text/javascript" src="scripts/models/visit.js"></script>
     <script type="text/javascript" src="scripts/models/filter.js"></script>
@@ -83,6 +86,11 @@
       var router = new Router();
 
       var filters = new Filters([
+        new Filter({
+          name: 'Search',
+          hash: 'search',
+          title: 'Search'
+        }),
         new Filter({
           name: 'Today',
           hash: 'today',

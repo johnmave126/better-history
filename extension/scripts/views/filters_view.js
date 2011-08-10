@@ -3,7 +3,8 @@ FiltersView = Backbone.View.extend({
   className: 'nav mainnav',
 
   events: {
-    'click a': 'filterClicked'
+    'click a': 'filterClicked',
+    'keyup .search': 'searchTyped'
   },
 
   initialize: function() {
@@ -23,13 +24,21 @@ FiltersView = Backbone.View.extend({
   },
 
   appendFilter: function(filter) {
-    var properties = filter.toJSON();
-    properties.cid = filter.cid;
-    $('#filterItemTemplate').tmpl(properties).appendTo(this.el);
+    if(filter.get('hash') == 'search') {
+      $('#searchFilterItemTemplate').tmpl().appendTo(this.el);
+    } else {
+      var properties = filter.toJSON();
+      properties.cid = filter.cid;
+      $('#filterItemTemplate').tmpl(properties).appendTo(this.el);
+    }
   },
 
   filterClicked: function(ev) {
     this.select(ev.currentTarget);
+  },
+
+  searchTyped: function(ev) {
+    router.search($(ev.currentTarget).val());
   },
 
   select: function(element) {

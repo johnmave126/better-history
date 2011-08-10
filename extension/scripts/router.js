@@ -1,7 +1,8 @@
 Router = Backbone.Router.extend({
   routes: {
     '': 'filter',
-    'filter/:type': 'filter'
+    'filter/:type': 'filter',
+    'search/:query': 'search'
   },
 
   filter: function(type) {
@@ -12,6 +13,17 @@ Router = Backbone.Router.extend({
     });
     filterView.render();
     router.navigate("filter/" + type);
+  },
+
+  search: function(query) {
+    var filter = filters.getByHash('search');
+    filter.set({text: query, title: 'Search "' + query + '"'});
+    var filterView = new FilterView({
+      model: filter,
+      el: $('.mainview')
+    });
+    filterView.render();
+    router.navigate("search/" + query);
   },
 
   checkType: function(type) {
