@@ -3,7 +3,15 @@ FiltersView = Backbone.View.extend({
   className: 'nav mainnav',
 
   events: {
-    'click a': 'select'
+    'click a': 'filterClicked'
+  },
+
+  initialize: function() {
+    var self = this;
+    router.bind('route:filter', function(type) {
+      var filter = filters.getByHash(this.checkType(type));
+      self.select($('a[data-cid=' + filter.cid + ']'));
+    });
   },
 
   render: function() {
@@ -15,21 +23,18 @@ FiltersView = Backbone.View.extend({
   },
 
   appendFilter: function(filter) {
-    $(this.el).append('<li class="item"> <a href="#' + filter.get('hash') + '" data-cid="' + filter.cid + '">' + filter.get('name') + '</a></li>');
+    var properties = filter.toJSON();
+    properties.cid = filter.cid;
+    $('#filterItemTemplate').tmpl(properties).appendTo(this.el);
   },
 
-  select: function(ev) {
-    element = ev.currentTarget;
+  filterClicked: function(ev) {
+    this.select(ev.currentTarget);
+  },
+
+  select: function(element) {
     $('.item', this.el).removeClass('selected');
     $(element).parent().addClass('selected');
-    this.loadFilterView(element);
-  },
-
-  loadFilterView: function(element) {
-    var filterView = new FilterView({
-      model: this.collection.getByCid($(element).attr('data-cid')),
-      el: $('.mainview')
-    });
-    filterView.render();
   }
+
 });

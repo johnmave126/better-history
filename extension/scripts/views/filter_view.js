@@ -1,13 +1,15 @@
 FilterView = Backbone.View.extend({
   initialize: function() {
-    $(this.el).html('');
+    $(this.el).html('').hide();
   },
 
   render: function(results) {
-    var html = $('#filterViewTemplate').tmpl(this.model.toJSON());
-
     var self = this;
-    Visit.search(this.model.options(), function(results) {
+    $('#filterViewTemplate').tmpl(this.model.toJSON()).appendTo(this.el);
+    $(this.el).fadeIn();
+    var history = $(document.createElement('div'));
+
+    Visit.search(self.model.options(), function(results) {
       results = groupResults(results);
       for(date in results) {
         var dateSection = $('#dateTemplate').tmpl({date:date});
@@ -23,12 +25,14 @@ FilterView = Backbone.View.extend({
                 $(timeSection).append(visitView.render().el);
               }
             });
-            $('.content', html).append(dateSection);
+            $(history).append(dateSection);
           }
         }
       }
-      $(html).appendTo(self.el).show("fast", function() {
-        self.stickHeaders(self.el);
+      $('.content', self.el).hide("fast", function() {
+        $('.content', self.el).html(history).show("fast", function() {
+          self.stickHeaders(self.el);
+        });
       });
     });
   },

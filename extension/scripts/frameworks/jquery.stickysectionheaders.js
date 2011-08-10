@@ -45,7 +45,6 @@
                         header.before(placeholder);
                         header.css('position', 'fixed');
                         header.css('width', originalWidth + 'px');
-                        console.log(originalWidth);
                     }
                     header.css('top', settings.padding + 'px');
                 }

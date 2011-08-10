@@ -1,15 +1,22 @@
 <html>
   <head>
-    <link rel="stylesheet" type="text/css" href="styles/main.css"/>
+:   <link rel="stylesheet" type="text/css" href="styles/main.css"/>
+    <link rel="stylesheet" type="text/css" href="styles/spinner.css"/>
     <title>Better History</title>
   </head>
   <body>
     <div class="main">
       <div class="navbar">
         <h1><em>Better</em> History</h1>
+        <input class="search" type="search" placeholder="Search history">
       </div>
       <div class="mainview"> </div>
     </div>
+    <script id="filterItemTemplate" type="text/x-jquery-tmpl">
+      <li class="item">
+        <a href="#filter/${hash}" data-cid="${cid}">${name}</a>
+      </li>
+    </script>
     <script id="dateTemplate" type="text/x-jquery-tmpl">
       <section>
         <h3 class="date_interval">${date}</h3>
@@ -49,12 +56,14 @@
       <div class="expanded"></div>
     </script>
     <script type="text/javascript" src="scripts/frameworks/jquery-1.6.2.min.js"></script>
+    <script type="text/javascript" src="scripts/frameworks/jquery-ui-1.8.15.custom.min.js"></script>
     <script type="text/javascript" src="scripts/frameworks/jquery.stickysectionheaders.js"></script>
     <script type="text/javascript" src="scripts/frameworks/jquery.tmpl.min.js"></script>
     <script type="text/javascript" src="scripts/frameworks/underscore-min.js"></script>
     <script type="text/javascript" src="scripts/frameworks/backbone.js"></script>
 
     <script type="text/javascript" src="scripts/helpers.js"></script>
+    <script type="text/javascript" src="scripts/router.js"></script>
 
     <script type="text/javascript" src="scripts/lib/date_ranger.js"></script>
     <script type="text/javascript" src="scripts/lib/group_by.js"></script>
@@ -64,15 +73,50 @@
     <script type="text/javascript" src="scripts/views/grouped_visits_view.js"></script>
     <script type="text/javascript" src="scripts/views/filter_view.js"></script>
     <script type="text/javascript" src="scripts/views/visit_view.js"></script>
+    <script type="text/javascript" src="scripts/views/trash_view.js"></script>
 
     <script type="text/javascript" src="scripts/models/visit.js"></script>
     <script type="text/javascript" src="scripts/models/filter.js"></script>
 
     <script type="text/javascript" src="scripts/collections/filters.js"></script>
     <script type="text/javascript">
+      var router = new Router();
+
+      var filters = new Filters([
+        new Filter({
+          name: 'Today',
+          hash: 'today',
+          title: 'Today',
+          startTime: DateRanger.today().start.getTime(),
+          endTime: DateRanger.today().end.getTime()
+        }),
+        new Filter({
+          name: 'Yesterday',
+          hash: 'yesterday',
+          title: 'Yesterday',
+          startTime: DateRanger.yesterday().start.getTime(),
+          endTime: DateRanger.yesterday().end.getTime()
+        }),
+        new Filter({
+          name: 'Day before',
+          hash: 'dayBefore',
+          title: 'Day before yesterday',
+          startTime: DateRanger.dayBefore().start.getTime(),
+          endTime: DateRanger.dayBefore().end.getTime()
+        }),
+        new Filter({
+          name: 'Past 7 days',
+          hash: 'week',
+          title: 'Past 7 days',
+          startTime: DateRanger.week().start.getTime(),
+          endTime: DateRanger.week().end.getTime()
+        })
+      ]);
+
       $(function() {
         appView = new AppView({el: $('.main')});
         appView.render();
+        Backbone.history.start();
       });
     </script>
   </body>
