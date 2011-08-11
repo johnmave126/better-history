@@ -40,6 +40,5 @@ describe('groupResults', function() {
     var results = groupResults([visit1, visit4]);
     var grouped = results['Sunday, June 05, 2011']['3:00 AM'];
     expect(grouped[0]).toEqual([visit1, visit4]);
-    console.log(results);
   });
 });

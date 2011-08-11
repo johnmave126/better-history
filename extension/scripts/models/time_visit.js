@@ -1,0 +1,3 @@
+TimeVisit = Backbone.Model.extend({
+
+});

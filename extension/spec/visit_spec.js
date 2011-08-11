@@ -34,6 +34,26 @@ describe('Visit', function() {
     });
   });
 
+  describe('#compare', function() {
+    it('returns true when the domains are the same', function() {
+      var aVisit = new Visit({
+        title: 'a visit',
+        lastVisitTime: new Date(),
+        url: properties.url + 'something/else'
+      });
+      expect(visit.compare(aVisit)).toEqual(true);
+    });
+
+    it('returns false when the domains are different', function() {
+      var aVisit = new Visit({
+        title: 'a visit',
+        lastVisitTime: new Date(),
+        url: 'http://something.com/else'
+      });
+      expect(visit.compare(aVisit)).toEqual(false);
+    });
+  });
+
   describe('.search', function() {
     var options, callback, results;
 

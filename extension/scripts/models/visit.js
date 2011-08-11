@@ -12,6 +12,16 @@ Visit = Backbone.Model.extend({
   domain: function() {
     var match = this.get('url').match(/\w+:\/\/(.*?)\//);
     return (match === null ? null : match[0]);
+  },
+
+  compare: function(aVisit) {
+    if(this.domain() === null || aVisit.domain() === null) {
+      return false;
+    } else if(this.domain() == aVisit.domain()) {
+      return true;
+    } else {
+      return false;
+    }
   }
 });
 

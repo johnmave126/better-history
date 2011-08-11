@@ -1,0 +1,2 @@
+Visits = Backbone.Collection.extend({
+});

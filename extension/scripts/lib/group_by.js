@@ -23,56 +23,45 @@ var groupResults;
     return hours(date.getHours()) + ':' + minute(date.getMinutes()) + ' ' + period(date.getHours());
   }
 
-  function prepareKeys(formatted, dateKey, timeKey) {
-    if(formatted[dateKey] === undefined) {
-      formatted[dateKey] = [];
-    }
-    if(formatted[dateKey][timeKey] === undefined) {
-      formatted[dateKey][timeKey] = [];
-    }
-
-    return formatted;
-  }
-
-  function compareVisits(current, past) {
-    if(current.domain() === null || past.domain() === null) {
-      return false;
-    } else if(current.domain() == past.domain()) {
-      return true;
-    } else {
-      return false;
-    }
-  }
-
   groupResults = function(visits) {
-    var formatted = {};
-
+    var dateVisits = new DateVisits();
     $.each(visits, function(index, visit) {
-      var date = new Date(visit.get('lastVisitTime')),
-          dateKey = date.toLocaleDateString(),
-          timeKey = standardTimeByInterval(date);
+      var lastVisitTime = new Date(visit.get('lastVisitTime'));
 
-        formatted = prepareKeys(formatted, dateKey, timeKey);
+      var date = lastVisitTime.toLocaleDateString(),
+          time = standardTimeByInterval(lastVisitTime);
 
-        if(formatted[dateKey][timeKey].length === 0) {
-          formatted[dateKey][timeKey].push(visit);
-        } else {
-          if(compareVisits(visit, previous)) {
-            var array = formatted[dateKey][timeKey];
-            if(formatted[dateKey][timeKey][array.length - 1].length != null) {
-              formatted[dateKey][timeKey][array.length - 1].push(visit);
-            } else {
-              formatted[dateKey][timeKey].remove(-1);
-              formatted[dateKey][timeKey].push([previous, visit]);
-            }
+      if(dateVisits.pluck('date').indexOf(date) === -1) {
+        dateVisits.add([{date: date, timeVisits:new TimeVisits()}]);
+      }
 
+      var dateVisit = dateVisits.at(dateVisits.pluck('date').indexOf(date));
+      var timeVisits = dateVisit.get('timeVisits');
+
+      if(timeVisits.pluck('time').indexOf(time) === -1) {
+        dateVisit.get('timeVisits').add([{time: time, visits:[]}]);
+      }
+
+      var timeVisit = timeVisits.at(timeVisits.pluck('time').indexOf(time));
+      var visits = timeVisit.get('visits');
+
+      if(visits.length === 0) {
+        visits.push(visit);
+      } else {
+        if(visit.compare(previous)) {
+          if(visits[visits.length - 1].length === undefined) {
+            visits.remove(-1);
+            visits.push(new GroupedVisits([previous, visit]));
           } else {
-            formatted[dateKey][timeKey].push(visit);
+            visits[visits.length - 1].add(visit);
           }
+        } else {
+          visits.push(visit);
         }
+      }
 
-        previous = visit;
+      previous = visit;
     });
-    return formatted;
+    return dateVisits;
   }
 })();
