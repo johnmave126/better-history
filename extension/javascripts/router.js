@@ -23,7 +23,6 @@ Router = Backbone.Router.extend({
       el: $('.mainview')
     });
     filterView.render();
-    router.navigate("search/" + query);
   },
 
   checkType: function(type) {

@@ -31,6 +31,11 @@ dt, dd { margin:0; }
 .primary {
   padding:0 10px;
 }
+.loading {
+  top:70px;
+  left:40px;
+  position:relative;
+}
 /* Headings
 ================================= */
 h1 {
@@ -55,6 +60,10 @@ h2 {
   padding-top: 13px;
   text-shadow: white 0 1px 2px;
 }
+.date {
+  position:relative;
+  width:100%;
+}
 .date_interval {
   padding-left:80px;
   box-shadow: 0 2px 2px -1px rgba(0,0,0,.3);
@@ -64,6 +73,7 @@ h2 {
   margin:0;
   width:100%;
   background:#FFF;
+  display:block;
 }
 .time_interval {
   margin:0;
