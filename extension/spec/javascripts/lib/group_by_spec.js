@@ -24,21 +24,21 @@ describe('groupResults', function() {
     });
   });
 
+
   it('groups history items by 15 minute increments', function() {
-    var results = groupResults([visit1, visit2]);
-    var grouped = results['Sunday, June 05, 2011']['3:00 AM'];
-    expect(grouped).toEqual([visit1, visit2]);
+    var dateVisits = groupResults([visit1, visit2]);
+    expect(dateVisits.at(0).get('timeVisits').at(0).get('visits')).toEqual([visit1, visit2]);
   });
 
   it('separates history items that are more than 15 minutes apart', function() {
-    var results = groupResults([visit1, visit3]);
-    expect(results['Sunday, June 05, 2011']).toBeTruthy();
-    expect(results['Monday, June 06, 2011']).toBeTruthy();
+    var dateVisits = groupResults([visit1, visit3]);
+    expect(dateVisits.at(0)).toBeDefined();
+    expect(dateVisits.at(1)).toBeDefined();
   });
 
   it('groups neighboring history items from the same domain', function() {
-    var results = groupResults([visit1, visit4]);
-    var grouped = results['Sunday, June 05, 2011']['3:00 AM'];
-    expect(grouped[0]).toEqual([visit1, visit4]);
+    var dateVisits = groupResults([visit1, visit4]);
+    var visits = dateVisits.at(0).get('timeVisits').at(0).get('visits');
+    expect(visits[0].models).toEqual([visit1, visit4]);
   });
 });
