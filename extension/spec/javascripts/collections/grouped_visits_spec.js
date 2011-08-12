@@ -3,23 +3,23 @@ describe('GroupedVisits', function() {
     var groupedVisits, visits;
 
     beforeEach(function() {
-      visits = [
-        new Visit({
+      pageVisits = [
+        new PageVisit({
           url: 'http://google.com/page'
         }),
-        new Visit({
+        new PageVisit({
           url: 'http://google.com/asdf/asdf'
         })
       ];
-      groupedVisits = new GroupedVisits(visits);
+      groupedVisits = new GroupedVisits(pageVisits);
     });
 
     it('returns the domain', function() {
-      expect(groupedVisits.summary().domain).toEqual(visits[1].domain());
+      expect(groupedVisits.summary().domain).toEqual(pageVisits[1].domain());
     });
 
     it('returns the number of page visits', function() {
-      expect(groupedVisits.summary().amount).toEqual(visits.length);
+      expect(groupedVisits.summary().amount).toEqual(pageVisits.length);
     });
 
     it('returns the url for the first page visit', function() {

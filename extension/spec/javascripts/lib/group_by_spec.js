@@ -1,23 +1,23 @@
 describe('groupResults', function() {
-  var visit1, visit2, visit3, visit4;
+  var pageVisit1, pageVisit2, pageVisit3, pageVisit4;
 
   beforeEach(function() {
-    visit1 = new Visit({
+    pageVisit1 = new PageVisit({
       title: 'test',
       url: 'http://www.google.com/a_page',
       lastVisitTime: new Date(2011, 5, 5, 3, 6, 4)
     });
-    visit2 = new Visit({
+    pageVisit2 = new PageVisit({
       title: 'another test',
       url: 'yahoo.com',
       lastVisitTime: new Date(2011, 5, 5, 3, 6, 5)
     });
-    visit3 = new Visit({
+    pageVisit3 = new PageVisit({
       title: 'test again',
       url: 'aol.com',
       lastVisitTime: new Date(2011, 5, 6, 5, 6, 5)
     });
-    visit4 = new Visit({
+    pageVisit4 = new PageVisit({
       title: 'test again',
       url: 'http://www.google.com/another_page',
       lastVisitTime: new Date(2011, 5, 5, 3, 6, 5)
@@ -26,19 +26,19 @@ describe('groupResults', function() {
 
 
   it('groups history items by 15 minute increments', function() {
-    var dateVisits = groupResults([visit1, visit2]);
-    expect(dateVisits.at(0).get('timeVisits').at(0).get('visits')).toEqual([visit1, visit2]);
+    var dateVisits = groupResults([pageVisit1, pageVisit2]);
+    expect(dateVisits.at(0).get('timeVisits').at(0).get('pageVisits')).toEqual([pageVisit1, pageVisit2]);
   });
 
   it('separates history items that are more than 15 minutes apart', function() {
-    var dateVisits = groupResults([visit1, visit3]);
+    var dateVisits = groupResults([pageVisit1, pageVisit3]);
     expect(dateVisits.at(0)).toBeDefined();
     expect(dateVisits.at(1)).toBeDefined();
   });
 
   it('groups neighboring history items from the same domain', function() {
-    var dateVisits = groupResults([visit1, visit4]);
-    var visits = dateVisits.at(0).get('timeVisits').at(0).get('visits');
-    expect(visits[0].models).toEqual([visit1, visit4]);
+    var dateVisits = groupResults([pageVisit1, pageVisit4]);
+    var pageVisits = dateVisits.at(0).get('timeVisits').at(0).get('pageVisits');
+    expect(pageVisits[0].models).toEqual([pageVisit1, pageVisit4]);
   });
 });

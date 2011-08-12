@@ -7,7 +7,7 @@ FilterView = Backbone.View.extend({
     var self = this;
     $('#filterViewTemplate').tmpl(this.model.toJSON()).appendTo($(this.el));
     $(this.el).fadeIn("fast", function() {
-      Visit.search(self.model.options(), function(results) {
+      PageVisit.search(self.model.options(), function(results) {
         dateVisits = groupResults(results);
         $('.content', self.el).html('').hide();
         $.each(dateVisits.models, function(i, dateVisit) {

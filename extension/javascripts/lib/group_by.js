@@ -23,10 +23,10 @@ var groupResults;
     return hours(date.getHours()) + ':' + minute(date.getMinutes()) + ' ' + period(date.getHours());
   }
 
-  groupResults = function(visits) {
+  groupResults = function(pageVisits) {
     var dateVisits = new DateVisits();
-    $.each(visits, function(index, visit) {
-      var lastVisitTime = new Date(visit.get('lastVisitTime'));
+    $.each(pageVisits, function(index, pageVisit) {
+      var lastVisitTime = new Date(pageVisit.get('lastVisitTime'));
 
       var date = lastVisitTime.toLocaleDateString(),
           time = standardTimeByInterval(lastVisitTime);
@@ -39,28 +39,28 @@ var groupResults;
       var timeVisits = dateVisit.get('timeVisits');
 
       if(timeVisits.pluck('time').indexOf(time) === -1) {
-        dateVisit.get('timeVisits').add([{time: time, visits:[]}]);
+        dateVisit.get('timeVisits').add([{time: time, pageVisits:[]}]);
       }
 
       var timeVisit = timeVisits.at(timeVisits.pluck('time').indexOf(time));
-      var visits = timeVisit.get('visits');
+      var pageVisits = timeVisit.get('pageVisits');
 
-      if(visits.length === 0) {
-        visits.push(visit);
+      if(pageVisits.length === 0) {
+        pageVisits.push(pageVisit);
       } else {
-        if(visit.compare(previous)) {
-          if(visits[visits.length - 1].length === undefined) {
-            visits.remove(-1);
-            visits.push(new GroupedVisits([previous, visit]));
+        if(pageVisit.compare(previous)) {
+          if(pageVisits[pageVisits.length - 1].length === undefined) {
+            pageVisits.remove(-1);
+            pageVisits.push(new GroupedVisits([previous, pageVisit]));
           } else {
-            visits[visits.length - 1].add(visit);
+            pageVisits[pageVisits.length - 1].add(pageVisit);
           }
         } else {
-          visits.push(visit);
+          pageVisits.push(pageVisit);
         }
       }
 
-      previous = visit;
+      previous = pageVisit;
     });
     return dateVisits;
   }

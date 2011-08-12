@@ -1,5 +1,5 @@
 GroupedVisits = Backbone.Collection.extend({
-  model: Visit,
+  model: PageVisit,
 
   summary: function() {
     return {

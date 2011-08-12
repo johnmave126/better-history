@@ -1,4 +1,4 @@
-Visit = Backbone.Model.extend({
+PageVisit = Backbone.Model.extend({
   defaults: {
     title: '(No Title)'
   },
@@ -14,10 +14,10 @@ Visit = Backbone.Model.extend({
     return (match === null ? null : match[0]);
   },
 
-  compare: function(aVisit) {
-    if(this.domain() === null || aVisit.domain() === null) {
+  compare: function(aPageVisit) {
+    if(this.domain() === null || aPageVisit.domain() === null) {
       return false;
-    } else if(this.domain() == aVisit.domain()) {
+    } else if(this.domain() == aPageVisit.domain()) {
       return true;
     } else {
       return false;
@@ -25,17 +25,17 @@ Visit = Backbone.Model.extend({
   }
 });
 
-Visit.search = function(options, callback) {
+PageVisit.search = function(options, callback) {
   chrome.history.search(options, function(results) {
     var items = [];
 
     $.each(results, function(i, result) {
       if(options.startTime != null && options.endTime != null) {
         if(result.lastVisitTime > options.startTime && result.lastVisitTime < options.endTime) {
-          items.push(new Visit(result));
+          items.push(new PageVisit(result));
         }
       } else {
-        items.push(new Visit(result));
+        items.push(new PageVisit(result));
       }
     });
 
