@@ -3,7 +3,7 @@ FilterView = Backbone.View.extend({
     $(this.el).html('').hide();
   },
 
-  render: function(results) {
+  render: function(type) {
     var self = this;
     $('#filterViewTemplate').tmpl(this.model.toJSON()).appendTo($(this.el));
     $(this.el).fadeIn("fast", function() {
@@ -12,7 +12,8 @@ FilterView = Backbone.View.extend({
         $('.content', self.el).html('').hide();
         $.each(dateVisits.models, function(i, dateVisit) {
           var dateVisitView = new DateVisitView({model: dateVisit});
-          $('.content', self.el).append(dateVisitView.render().el).show('slide', {direction:'left'}, 200);
+          $('.content', self.el).append(dateVisitView.render().el);
+          self.presentContent(type);
         });
         self.stickHeaders($('.content', self.el));
       });
@@ -27,5 +28,13 @@ FilterView = Backbone.View.extend({
       stickyClass:'time_interval', padding:48
     });
     $(window).scrollTop(40);
+  },
+
+  presentContent: function(type) {
+    if(type === 'search') {
+      $('.content', self.el).show();
+    } else {
+      $('.content', self.el).show('slide', {direction:'left'}, 200);
+    }
   }
 });

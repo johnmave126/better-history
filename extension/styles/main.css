@@ -153,6 +153,7 @@ h2 {
 }
 .content {
   padding-top:47px;
+  overflow:hidden;
 }
 section {
   border-bottom:1px solid #DDD;

@@ -11,7 +11,7 @@ Router = Backbone.Router.extend({
       model: filters.getByHash(type),
       el: $('.mainview')
     });
-    filterView.render();
+    filterView.render(type);
     router.navigate("filter/" + type);
   },
 
@@ -22,7 +22,7 @@ Router = Backbone.Router.extend({
       model: filter,
       el: $('.mainview')
     });
-    filterView.render();
+    filterView.render('search');
   },
 
   checkType: function(type) {

@@ -38,6 +38,7 @@ FiltersView = Backbone.View.extend({
   },
 
   searchTyped: function(ev) {
+    this.select(null);
     router.search($(ev.currentTarget).val());
   },
 
