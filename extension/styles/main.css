@@ -153,6 +153,7 @@ h2 {
 }
 .content {
   padding-top:47px;
+  min-height:300px;
   overflow:hidden;
 }
 section {
