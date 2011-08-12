@@ -12,7 +12,7 @@ FilterView = Backbone.View.extend({
         $('.content', self.el).html('').hide();
         $.each(dateVisits.models, function(i, dateVisit) {
           var dateVisitView = new DateVisitView({model: dateVisit});
-          $('.content', self.el).append(dateVisitView.render().el).fadeIn("fast");
+          $('.content', self.el).append(dateVisitView.render().el).show('slide', {direction:'left'}, 200);
         });
         self.stickHeaders($('.content', self.el));
       });
