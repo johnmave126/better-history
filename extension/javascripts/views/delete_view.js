@@ -19,6 +19,7 @@ DeleteView = Backbone.View.extend({
           $(ui.draggable).next().find('.page_visit').each(function() {
             self.getPageVisit(this).destroy();
           });
+          $(ui.draggable).next().slideUp();
         } else {
           self.getPageVisit(ui.draggable).destroy();
         }
