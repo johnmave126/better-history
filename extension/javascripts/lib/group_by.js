@@ -25,7 +25,7 @@ var groupResults;
 
   groupResults = function(pageVisits) {
     var dateVisits = new DateVisits();
-    $.each(pageVisits, function(index, pageVisit) {
+    $.each(pageVisits.models, function(index, pageVisit) {
       var lastVisitTime = new Date(pageVisit.get('lastVisitTime'));
 
       var date = lastVisitTime.toLocaleDateString(),

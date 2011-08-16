@@ -22,23 +22,27 @@ PageVisit = Backbone.Model.extend({
     } else {
       return false;
     }
+  },
+
+  destroy: function() {
+    chrome.history.deleteUrl({url: this.get('url')});
   }
 });
 
 PageVisit.search = function(options, callback) {
   chrome.history.search(options, function(results) {
-    var items = [];
+    pageVisits = new PageVisits(); // global
 
     $.each(results, function(i, result) {
       if(options.startTime != null && options.endTime != null) {
         if(result.lastVisitTime > options.startTime && result.lastVisitTime < options.endTime) {
-          items.push(new PageVisit(result));
+          pageVisits.add(result);
         }
       } else {
-        items.push(new PageVisit(result));
+        pageVisits.add(result);
       }
     });
 
-    callback(items);
+    callback(pageVisits);
   });
 };

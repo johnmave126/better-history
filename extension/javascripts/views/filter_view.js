@@ -15,7 +15,9 @@ FilterView = Backbone.View.extend({
           $('.content', self.el).append(dateVisitView.render().el);
           self.presentContent(type);
         });
+
         self.stickHeaders($('.content', self.el));
+        self.dragify('.page_visit, .grouped_visits');
       });
     });
   },
@@ -28,6 +30,16 @@ FilterView = Backbone.View.extend({
       stickyClass:'time_interval', padding:48
     });
     $(window).scrollTop(40);
+  },
+
+  dragify: function(selector) {
+    $(selector).draggable({
+      revert: 'invalid',
+      revertDuration: 200,
+      helper: 'clone',
+      appendTo: 'body',
+      zIndex: 1000
+    });
   },
 
   presentContent: function(type) {

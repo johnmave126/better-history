@@ -19,10 +19,10 @@ GroupedVisitsView = Backbone.View.extend({
     var element = ev.target;
     if($(element).hasClass('active')) {
       $(element).text('Expand');
-      $(element).parents('.page').next().slideUp('fast');
+      $(element).parents('.grouped_visit').next().slideUp('fast');
     } else {
       $(element).text('Collapse');
-      $(element).parents('.page').next().slideDown('fast');
+      $(element).parents('.grouped_visit').next().slideDown('fast');
     }
     $(element).toggleClass('active');
   }

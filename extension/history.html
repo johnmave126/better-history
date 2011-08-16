@@ -27,7 +27,7 @@
       <h3 class="time_interval">${time}</h3>
     </script>
     <script id="pageVisitTemplate" type="text/x-jquery-tmpl">
-      <a href="${url}" class="page">
+      <a href="${url}" class="page_visit" data-cid="${cid}">
         <dl class="description" style="background-image: url(chrome://favicon/${url})">
           <dt class="title">${title}</dt>
           <dd class="url">${url}</dd>
@@ -35,7 +35,7 @@
       </a>
     </script>
     <script id="groupedVisitsTemplate" type="text/x-jquery-tmpl">
-      <a href="${domain}" class="page">
+      <a href="${domain}" class="grouped_visit page_visit">
         <dl class="description" style="background-image: url(chrome://favicon/${url})">
           <dt class="title">${domain}</dt>
           <dd class="url">${amount} Visits <span class="expand button">Expand</span></dd>
@@ -56,6 +56,10 @@
     <script id="expandedVisitsTemplate" type="text/x-jquery-tmpl">
       <div class="expanded"></div>
     </script>
+    <script id="deleteZoneTemplate" type="text/x-jquery-tmpl">
+      <p class="instructions">Drop visits here to delete</p>
+      <p class="action">Drop to delete</p>
+    </script>
     <script type="text/javascript" src="javascripts/frameworks/jquery-1.6.2.min.js"></script>
     <script type="text/javascript" src="javascripts/frameworks/jquery-ui-1.8.15.custom.min.js"></script>
     <script type="text/javascript" src="javascripts/frameworks/jquery.stickysectionheaders.js"></script>
@@ -71,6 +75,7 @@
 
     <script type="text/javascript" src="javascripts/views/app_view.js"></script>
     <script type="text/javascript" src="javascripts/views/filters_view.js"></script>
+    <script type="text/javascript" src="javascripts/views/delete_view.js"></script>
     <script type="text/javascript" src="javascripts/views/grouped_visits_view.js"></script>
     <script type="text/javascript" src="javascripts/views/filter_view.js"></script>
     <script type="text/javascript" src="javascripts/views/visit_view.js"></script>
@@ -86,6 +91,7 @@
     <script type="text/javascript" src="javascripts/collections/date_visits.js"></script>
     <script type="text/javascript" src="javascripts/collections/grouped_visits.js"></script>
     <script type="text/javascript" src="javascripts/collections/time_visits.js"></script>
+    <script type="text/javascript" src="javascripts/collections/page_visits.js"></script>
     <script type="text/javascript">
       var router = new Router();
 

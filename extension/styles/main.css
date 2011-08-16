@@ -18,7 +18,7 @@ dt, dd { margin:0; }
 .groupedVisits {
   margin:5px 0 10px;
 }
-.backpage {
+.bac.page_visit {
   border-top:1px solid #DDD;
   border-left:1px solid #EEE;
   border-radius:2px;
@@ -165,26 +165,28 @@ section {
 
 /* Pages
 ================================== */
-.page {
+.page_visit {
   text-decoration:none;
   display:block;
   padding: 5px 0;
-  margin:5px 0;
+  margin:3px;
+  cursor: move;
 }
-.page:hover {
+.page_visit:hover {
   background: #eaeef3;
+  box-shadow:0 0 5px #999;
   border-radius: 3px;
 }
-.no_hover .page:hover {
+.no_hover .page_visit:hover {
   background:#FFF;
 }
-.page:hover .title, .page:hover .url {
+.page_visit:hover .title, .page_visit:hover .url {
   text-shadow:1px 1px #FFF;
 }
-.page:hover .url {
+.page_visit:hover .url {
   color:#555;
 }
-.page:hover .expand { display:inline-block; }
+.page_visit:hover .expand { display:inline-block; }
 .title {
   font-size:105%;
   padding-bottom:3px;
@@ -214,8 +216,30 @@ section {
   background:#CCC;
 }
 .expanded {
-  border-top:1px solid #CCC;
-  border-bottom:1px solid #CCC;
-  background-image: -webkit-gradient(linear, left top, left bottom, from(#EEE), to(#FFF));
+  border-bottom:2px solid #CCC;
+  padding-left:10px;
   display:none;
 }
+
+/* Delete Zone
+================================ */
+.delete_zone {
+  border:4px #CCC dashed;
+  border-radius:15px;
+  margin:20px;
+  padding:10px;
+  text-align:right;
+  width:90px;
+  float:right;
+  height:56px;
+}
+.delete_zone .action { display:none; }
+.delete_zone p {
+  color:#999;
+}
+.delete_zone.over {
+  box-shadow:inset 1px 1px 20px #AAA;
+}
+.delete_zone.over p { color:#666; }
+.delete_zone.over .instructions { display:none; }
+.delete_zone.over .action { display:block; }

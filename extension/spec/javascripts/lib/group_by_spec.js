@@ -26,18 +26,18 @@ describe('groupResults', function() {
 
 
   it('groups history items by 15 minute increments', function() {
-    var dateVisits = groupResults([pageVisit1, pageVisit2]);
+    var dateVisits = groupResults(new PageVisits([pageVisit1, pageVisit2]));
     expect(dateVisits.at(0).get('timeVisits').at(0).get('pageVisits')).toEqual([pageVisit1, pageVisit2]);
   });
 
   it('separates history items that are more than 15 minutes apart', function() {
-    var dateVisits = groupResults([pageVisit1, pageVisit3]);
+    var dateVisits = groupResults(new PageVisits([pageVisit1, pageVisit3]));
     expect(dateVisits.at(0)).toBeDefined();
     expect(dateVisits.at(1)).toBeDefined();
   });
 
   it('groups neighboring history items from the same domain', function() {
-    var dateVisits = groupResults([pageVisit1, pageVisit4]);
+    var dateVisits = groupResults(new PageVisits([pageVisit1, pageVisit4]));
     var pageVisits = dateVisits.at(0).get('timeVisits').at(0).get('pageVisits');
     expect(pageVisits[0].models).toEqual([pageVisit1, pageVisit4]);
   });
