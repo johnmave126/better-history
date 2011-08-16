@@ -1,4 +1,4 @@
-VisitView = Backbone.View.extend({
+PageVisitView = Backbone.View.extend({
   render: function() {
     var properties = this.model.toJSON();
     properties.cid = this.model.cid;

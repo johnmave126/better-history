@@ -17,8 +17,8 @@ TimeVisitView = Backbone.View.extend({
           var groupedVisitsView = new GroupedVisitsView({collection: pageVisit});
           $(self.el).append(groupedVisitsView.render().el);
         } else {
-          var visitView = new VisitView({model: pageVisit});
-          $(self.el).append(visitView.render().el);
+          var pageVisitView = new PageVisitView({model: pageVisit});
+          $(self.el).append(pageVisitView.render().el);
         }
       });
     }
