@@ -31,8 +31,8 @@ dt, dd { margin:0; }
 .primary {
   padding:0 10px;
 }
-.loading {
-  top:70px;
+.spinner {
+  top:50px;
   left:40px;
   position:relative;
 }
