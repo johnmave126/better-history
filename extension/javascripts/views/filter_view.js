@@ -25,7 +25,7 @@ FilterView = Backbone.View.extend({
   },
 
   stickHeaders: function(container) {
-    $(container).find('.date').stickySectionHeaders({
+    $(container).find('.date_visit_view').stickySectionHeaders({
       stickyClass:'date_interval', padding:48
     });
     $(container).find('.time').stickySectionHeaders({

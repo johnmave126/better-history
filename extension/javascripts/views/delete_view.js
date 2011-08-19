@@ -6,7 +6,7 @@ DeleteView = Backbone.View.extend({
 
   render: function() {
     var self = this;
-    $('#deleteZoneTemplate').tmpl().appendTo(this.el);
+    $('#deleteViewTemplate').tmpl().appendTo(this.el);
     $(this.el).droppable({
       tolerance: 'pointer',
       over: function() { self.over(); },

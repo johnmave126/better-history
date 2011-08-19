@@ -60,21 +60,6 @@ h2 {
   padding-top: 13px;
   text-shadow: white 0 1px 2px;
 }
-.date {
-  position:relative;
-  width:100%;
-}
-.date_interval {
-  padding-left:80px;
-  box-shadow: 0 2px 2px -1px rgba(0,0,0,.3);
-  position:static;
-  width:auto;
-  padding:10px 0 10px 80px;
-  margin:0;
-  width:100%;
-  background:#FFF;
-  display:block;
-}
 .time_interval {
   margin:0;
   padding:10px 10px 10px 5px;
@@ -222,7 +207,25 @@ section {
   display:none;
 }
 
-/* Delete Zone
+/* Date Visit View
+================================= */
+.date_visit_view {
+  position:relative;
+  width:100%;
+}
+.date_interval {
+  padding-left:80px;
+  box-shadow: 0 2px 2px -1px rgba(0,0,0,.3);
+  position:static;
+  width:auto;
+  padding:10px 0 10px 80px;
+  margin:0;
+  width:100%;
+  background:#FFF;
+  display:block;
+}
+
+/* Delete View
 ================================ */
 .delete_view {
   border:4px #CCC dashed;
@@ -230,7 +233,7 @@ section {
   margin:20px;
   padding:10px;
   text-align:right;
-  width:90px;
+  width:70px;
   float:right;
   height:56px;
 }
