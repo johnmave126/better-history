@@ -224,7 +224,7 @@ section {
 
 /* Delete Zone
 ================================ */
-.delete_zone {
+.delete_view {
   border:4px #CCC dashed;
   border-radius:15px;
   margin:20px;
@@ -234,13 +234,13 @@ section {
   float:right;
   height:56px;
 }
-.delete_zone .action { display:none; }
-.delete_zone p {
+.delete_view .action { display:none; }
+.delete_view p {
   color:#999;
 }
-.delete_zone.over {
+.delete_view.over {
   box-shadow:inset 1px 1px 20px #AAA;
 }
-.delete_zone.over p { color:#666; }
-.delete_zone.over .instructions { display:none; }
-.delete_zone.over .action { display:block; }
+.delete_view.over p { color:#666; }
+.delete_view.over .instructions { display:none; }
+.delete_view.over .action { display:block; }
