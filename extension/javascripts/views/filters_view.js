@@ -4,7 +4,7 @@ FiltersView = Backbone.View.extend({
 
   events: {
     'click a': 'filterClicked',
-    'keyup .search': 'searchTyped'
+    'keyup.search': 'searchTyped'
   },
 
   initialize: function() {
@@ -38,8 +38,10 @@ FiltersView = Backbone.View.extend({
   },
 
   searchTyped: function(ev) {
-    this.select(null);
-    router.search($(ev.currentTarget).val());
+    if(ev.keyCode === 13) {
+      this.select(null);
+      router.search($('.search').val());
+    }
   },
 
   select: function(element) {
