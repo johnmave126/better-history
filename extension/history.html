@@ -2,12 +2,14 @@
 <html lang="en">
   <head>
     <link rel="stylesheet" type="text/css" href="styles/main.css"/>
+    <link rel="stylesheet" type="text/css" href="styles/button.css"/>
     <title>Better History</title>
   </head>
   <body>
     <div class="main">
       <div class="navbar">
         <h1><em>Better</em> History</h1>
+        <img src="images/logo_grayscale.png" class="logo"/>
       </div>
       <div class="mainview"> </div>
     </div>
@@ -39,7 +41,7 @@
       <a href="${domain}" class="grouped_visit page_visit">
         <dl class="description" style="background-image: url(chrome://favicon/${url})">
           <dt class="title">${domain}</dt>
-          <dd class="url">${amount} Visits <span class="expand button">Expand</span></dd>
+          <dd class="url">${amount} Visits <span class="expand button small_button">Expand</span></dd>
         </dl>
       </a>
     </script>

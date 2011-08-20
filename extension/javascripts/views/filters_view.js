@@ -3,8 +3,9 @@ FiltersView = Backbone.View.extend({
   className: 'nav mainnav',
 
   events: {
-    'click a': 'filterClicked',
-    'keyup.search': 'searchTyped'
+    'click .clear_history': 'clearHistoryClicked',
+    'click .item a': 'filterClicked',
+    'keyup .search': 'searchTyped'
   },
 
   initialize: function() {
@@ -20,6 +21,7 @@ FiltersView = Backbone.View.extend({
     $.each(this.collection.models, function(i, filter) {
       self.appendFilter(filter);
     });
+    $('<a href="#" class="clear_history button">Clear all history...</a>').appendTo(this.el);
     return this;
   },
 
@@ -31,6 +33,11 @@ FiltersView = Backbone.View.extend({
       properties.cid = filter.cid;
       $('#filterItemTemplate').tmpl(properties).appendTo(this.el);
     }
+  },
+
+  clearHistoryClicked: function(ev) {
+    ev.preventDefault();
+    chrome.tabs.create({url:'chrome://settings/clearBrowserData'});
   },
 
   filterClicked: function(ev) {
@@ -48,5 +55,4 @@ FiltersView = Backbone.View.extend({
     $('.item', this.el).removeClass('selected');
     $(element).parent().addClass('selected');
   }
-
 });
