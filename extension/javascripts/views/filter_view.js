@@ -40,6 +40,7 @@ FilterView = Backbone.View.extend({
       revertDuration: 200,
       helper: 'clone',
       appendTo: 'body',
+      handle: '.handle',
       zIndex: 1000
     });
   },

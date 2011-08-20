@@ -50,12 +50,7 @@ input[type='submit'][disabled]:hover {
 .small_button {
   font-size:11px;
   padding:2px 12px 1px;
-  background:#DDD;
-  border-radius:2px;
   padding:0px 5px;
-  text-shadow:1px 1px #FFF;
-  color:#555;
 }
 .small_button:hover {
-  background:#CCC;
 }

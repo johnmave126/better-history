@@ -21,7 +21,7 @@ FiltersView = Backbone.View.extend({
     $.each(this.collection.models, function(i, filter) {
       self.appendFilter(filter);
     });
-    $('<a href="#" class="clear_history button">Clear all history...</a>').appendTo(this.el);
+    $('<li><a href="#" class="clear_history button">Clear all history...</a></li>').appendTo(this.el);
     return this;
   },
 

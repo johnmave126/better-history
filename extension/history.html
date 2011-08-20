@@ -31,18 +31,40 @@
     </script>
     <script id="pageVisitTemplate" type="text/x-jquery-tmpl">
       <a href="${url}" class="page_visit" data-cid="${cid}">
-        <dl class="description" style="background-image: url(chrome://favicon/${url})">
-          <dt class="title">${title}</dt>
-          <dd class="url">${url}</dd>
-        </dl>
+        <div class="handle">
+          <span class="line"></span>
+          <span class="line"></span>
+          <span class="line"></span>
+          <span class="line"></span>
+          <span class="line"></span>
+          <span class="line"></span>
+          <span class="line"></span>
+        </div>
+        <div class="link">
+          <dl class="description" style="background-image: url(chrome://favicon/${url})">
+            <dt class="title">${title}</dt>
+            <dd class="url">${url}</dd>
+          </dl>
+        </div>
       </a>
     </script>
     <script id="groupedVisitsTemplate" type="text/x-jquery-tmpl">
       <a href="${domain}" class="grouped_visit page_visit">
-        <dl class="description" style="background-image: url(chrome://favicon/${url})">
-          <dt class="title">${domain}</dt>
-          <dd class="url">${amount} Visits <span class="expand button small_button">Expand</span></dd>
-        </dl>
+        <div class="handle">
+          <span class="line"></span>
+          <span class="line"></span>
+          <span class="line"></span>
+          <span class="line"></span>
+          <span class="line"></span>
+          <span class="line"></span>
+          <span class="line"></span>
+        </div>
+        <div class="link">
+          <dl class="description" style="background-image: url(chrome://favicon/${url})">
+            <dt class="title">${domain}</dt>
+            <dd class="url">${amount} Visits <span class="expand button small_button">Expand</span></dd>
+          </dl>
+        </div>
       </a>
     </script>
     <script id="filterViewTemplate" type="text/x-jquery-tmpl">
