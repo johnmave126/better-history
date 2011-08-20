@@ -171,9 +171,10 @@ section {
   margin:8px 3px 0 24px;
 }
 .page_visit .link {
-  padding: 5px 0 5px 5px;
+  padding: 5px 10px 5px 5px;
 }
-.page_visit:hover .link {
+.page_visit:hover .link,
+.ui-draggable-dragging .link {
   background: #eaeef3;
   box-shadow:0 0 5px #999;
   border-radius: 3px;
