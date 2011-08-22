@@ -10,16 +10,21 @@ FilterView = Backbone.View.extend({
 
     $(this.el).fadeIn("fast", function() {
       PageVisit.search(self.model.options(), function(results) {
-        dateVisits = groupResults(results);
         $('.content', self.el).html('').hide();
-        $.each(dateVisits.models, function(i, dateVisit) {
-          var dateVisitView = new DateVisitView({model: dateVisit});
-          $('.content', self.el).append(dateVisitView.render().el);
+        if(results.length === 0) {
+          $('#noVisitsTemplate').tmpl().appendTo($('.content', self.el));
           self.presentContent(type);
-        });
+        } else {
+          dateVisits = groupResults(results);
+          $.each(dateVisits.models, function(i, dateVisit) {
+            var dateVisitView = new DateVisitView({model: dateVisit});
+            $('.content', self.el).append(dateVisitView.render().el);
+          });
 
-        self.stickHeaders($('.content', self.el));
-        self.dragify('.page_visit, .grouped_visits');
+          self.presentContent(type);
+          self.stickHeaders($('.content', self.el));
+          self.dragify('.page_visit, .grouped_visits');
+        }
       });
     });
   },

@@ -41,6 +41,11 @@ dt, dd { margin:0; }
   float:right;
   margin:30px 24px 12px;
 }
+.no_visits {
+  color:#AAA;
+  padding:24px;
+  font-size:20px;
+}
 /* Headings
 ================================= */
 h1 {
@@ -94,6 +99,7 @@ h2 {
   position:absolute;
   bottom:-20px;
   left:10px;
+  z-index:-1;
 }
 .nav {
   -webkit-user-select: none;
