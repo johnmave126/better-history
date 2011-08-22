@@ -238,17 +238,19 @@ section {
   width:100%;
 }
 .date_interval {
-
   z-index:10;
-  padding-left:80px;
   box-shadow: 0 2px 2px -1px rgba(0,0,0,.3);
   position:static;
   width:auto;
-  padding:10px 0 10px 80px;
+  padding:10px 0 8px 80px;
   margin:0 0 0 24px;
   width:100%;
   background:#FFF;
   display:block;
+}
+.time_interval,
+.date_interval {
+  line-height:22px;
 }
 
 /* Delete View
