@@ -111,7 +111,7 @@ describe('DeleteView', function() {
     });
 
     it('returns the pageVisit for the passed element\'s data-cid attribute', function() {
-      var pageVisit = deleteView.getPageVisitByElement($('<div data-cid="c34"></div>'));
+      var pageVisit = deleteView.getPageVisitByElement($('<div data-cid="c92"></div>'));
       expect(pageVisit).toEqual(pageVisits.at(1));
     });
   });
