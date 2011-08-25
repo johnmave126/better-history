@@ -33,8 +33,8 @@ dt, dd { margin:0; }
   padding:0 10px;
 }
 .spinner {
-  top:50px;
-  left:40px;
+  top:80px;
+  left:80px;
   position:relative;
 }
 .clear_history {
@@ -73,7 +73,7 @@ h2 {
 .time_interval {
   z-index:10;
   margin:0 0 0 24px;
-  padding:10px 10px 10px 5px;
+  padding:10px;
   color:#444;
   position:relative;
 }
@@ -125,6 +125,9 @@ h2 {
   border-bottom: 1px solid #8faad9;
   border-top: 1px solid #8faad9;
 }
+.nav .item:hover {
+  background:#d8e1ee;
+}
 .nav .item.selected {
   -webkit-box-shadow: 0px 1px 0px #f7f7f7;
   background: -webkit-linear-gradient(left, #bbcee9, #bbcee9 97%, #aabedc);
@@ -157,7 +160,7 @@ h2 {
   padding: 0;
 }
 .content {
-  padding-top:47px;
+  padding:47px 0 100px;
   min-height:300px;
   overflow:hidden;
 }
@@ -245,7 +248,7 @@ section {
 }
 .date_interval {
   z-index:10;
-  box-shadow: 0 2px 2px -1px rgba(0,0,0,.3);
+  box-shadow: 4px 2px 9px -1px rgba(0,0,0,.4);
   position:static;
   width:auto;
   padding:10px 0 8px 80px;
