@@ -10,21 +10,24 @@ FilterView = Backbone.View.extend({
 
     $(this.el).fadeIn("fast", function() {
       PageVisit.search(self.model.options(), function(results) {
-        $('.content', self.el).html('').hide();
-        if(results.length === 0) {
-          $('#noVisitsTemplate').tmpl().appendTo($('.content', self.el));
-          self.presentContent(type);
-        } else {
-          dateVisits = groupResults(results);
-          $.each(dateVisits.models, function(i, dateVisit) {
-            var dateVisitView = new DateVisitView({model: dateVisit});
-            $('.content', self.el).append(dateVisitView.render().el);
-          });
+        $('.content', self.el).fadeOut(300, function() {
+          $('.content', self.el).html('');
+          if(results.length === 0) {
+            $('#noVisitsTemplate').tmpl().appendTo($('.content', self.el));
+            self.presentContent(type, function() {});
+          } else {
+            dateVisits = groupResults(results);
+            $.each(dateVisits.models, function(i, dateVisit) {
+              var dateVisitView = new DateVisitView({model: dateVisit});
+              $('.content', self.el).append(dateVisitView.render().el);
+            });
 
-          self.presentContent(type);
-          self.stickHeaders($('.content', self.el));
-          self.dragify('.page_visit, .grouped_visits');
-        }
+            self.presentContent(type, function() {
+              self.stickHeaders($('.content', self.el));
+              self.dragify('.page_visit, .grouped_visits');
+            });
+          }
+        });
       });
     });
   },
@@ -50,11 +53,13 @@ FilterView = Backbone.View.extend({
     });
   },
 
-  presentContent: function(type) {
+  presentContent: function(type, callback) {
     if(type === 'search') {
-      $('.content', self.el).show();
+      $('.content', self.el).show(function() { callback(); });
     } else {
-      $('.content', self.el).show('slide', {direction:'left'}, 200);
+      $('.content', self.el).show('slide', {direction:'left'}, 500, function() {
+        callback();
+      });
     }
   }
 });

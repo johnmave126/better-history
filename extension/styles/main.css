@@ -128,6 +128,10 @@ h2 {
 .nav .item:hover {
   background:#d8e1ee;
 }
+.nav .search_item:hover {
+  background:none;
+  cursor: default;
+}
 .nav .item.selected {
   -webkit-box-shadow: 0px 1px 0px #f7f7f7;
   background: -webkit-linear-gradient(left, #bbcee9, #bbcee9 97%, #aabedc);
@@ -164,6 +168,13 @@ h2 {
   min-height:300px;
   overflow:hidden;
 }
+.fade {
+  background: -webkit-linear-gradient(left, #FFF, rgba(255, 255, 255, 0));
+  position:absolute;
+  width:25px;
+  height:100%;
+  z-index:10;
+}
 section {
   border-bottom:1px solid #DDD;
   overflow:hidden;
@@ -177,7 +188,7 @@ section {
   z-index:0;
   text-decoration:none;
   display:block;
-  margin:8px 3px 0 24px;
+  margin:8px 3px 0 40px;
 }
 .page_visit .link {
   padding: 5px 10px 5px 5px;
@@ -284,3 +295,4 @@ section {
 .delete_view.over p { color:#666; }
 .delete_view.over .instructions { display:none; }
 .delete_view.over .action { display:block; }
+
