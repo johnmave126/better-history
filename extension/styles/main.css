@@ -199,6 +199,9 @@ section {
   box-shadow:0 0 5px #999;
   border-radius: 3px;
 }
+.ui-draggable-dragging .button {
+  display:none;
+}
 .handle .line {
   box-shadow:0 0 5px #BBB;
   border-left:1px solid #BBB;

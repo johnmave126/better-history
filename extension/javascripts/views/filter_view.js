@@ -39,7 +39,7 @@ FilterView = Backbone.View.extend({
     $(container).find('.time').stickySectionHeaders({
       stickyClass:'time_interval', padding:48
     });
-    $(window).scrollTop(40);
+    $('html, body').animate({scrollTop: 45}, 300);
   },
 
   dragify: function(selector) {
@@ -57,7 +57,7 @@ FilterView = Backbone.View.extend({
     if(type === 'search') {
       $('.content', self.el).show(function() { callback(); });
     } else {
-      $('.content', self.el).show('slide', {direction:'left'}, 500, function() {
+      $('.content', self.el).show('slide', {direction:'left'}, 350, function() {
         callback();
       });
     }
