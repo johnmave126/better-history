@@ -10,7 +10,7 @@ FilterView = Backbone.View.extend({
 
     $(this.el).fadeIn("fast", function() {
       PageVisit.search(self.model.options(), function(results) {
-        $('.content', self.el).fadeOut(300, function() {
+        $('.content', self.el).fadeOut(200, function() {
           $('.content', self.el).html('');
           if(results.length === 0) {
             $('#noVisitsTemplate').tmpl().appendTo($('.content', self.el));
