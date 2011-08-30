@@ -1,6 +1,8 @@
 FiltersView = Backbone.View.extend({
   tagName: 'ul',
-  className: 'nav mainnav',
+  className: 'filters_view',
+
+  selectedClass: 'selected',
 
   events: {
     'click .clear_history': 'clearHistoryClicked',
@@ -10,10 +12,10 @@ FiltersView = Backbone.View.extend({
 
   initialize: function() {
     var self = this;
-    router.bind('route:filter', function(type) {
-      var filter = filters.getByHash(this.checkType(type));
-      self.select($('a[data-cid=' + filter.cid + ']'));
-    });
+    //router.bind('route:filter', function(type) {
+      //var filter = filters.getByHash(this.checkType(type));
+      //self.select($('a[data-cid=' + filter.cid + ']'));
+    //});
   },
 
   render: function() {
@@ -52,7 +54,7 @@ FiltersView = Backbone.View.extend({
   },
 
   select: function(element) {
-    $('.item', this.el).removeClass('selected');
-    $(element).parent().addClass('selected');
+    $('.item', this.el).removeClass(this.selectedClass);
+    $(element).parent().addClass(this.selectedClass);
   }
 });
