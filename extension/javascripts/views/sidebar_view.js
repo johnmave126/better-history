@@ -1,6 +1,6 @@
-FiltersView = Backbone.View.extend({
+SidebarView = Backbone.View.extend({
   tagName: 'ul',
-  className: 'filters_view',
+  className: 'sidebar_view',
 
   selectedClass: 'selected',
 

@@ -1,9 +1,9 @@
-describe('FiltersView', function() {
-  var filtersView;
+describe('SidebarView', function() {
+  var sidebarView;
 
   beforeEach(function() {
-    loadFixtures('filters_view.html');
-    filtersView = new FiltersView({collection:
+    loadFixtures('sidebar_view.html');
+    sidebarView = new SidebarView({collection:
       new Filters([
         new Filter({
           name: 'Search',
@@ -37,18 +37,18 @@ describe('FiltersView', function() {
 
   describe('#initialize', function() {
     it('defines a tag name', function() {
-      expect(filtersView.tagName).toEqual('ul');
+      expect(sidebarView.tagName).toEqual('ul');
     });
 
     it('defines a class name', function() {
-      expect(filtersView.className).toEqual('filters_view');
+      expect(sidebarView.className).toEqual('sidebar_view');
     });
   });
 
   describe('#render', function() {
     it('clones all the filter templates', function() {
-      filtersView.render();
-      expect($(filtersView.el).html()).not.toBeEmpty();
+      sidebarView.render();
+      expect($(sidebarView.el).html()).not.toBeEmpty();
     });
   });
 
@@ -59,12 +59,12 @@ describe('FiltersView', function() {
     });
 
     it('creates a tab to clear browser history', function() {
-      filtersView.clearHistoryClicked(event);
+      sidebarView.clearHistoryClicked(event);
       expect(chrome.tabs.create).toHaveBeenCalledWith({url: 'chrome://settings/clearBrowserData'});
     });
 
     it('prevents the default link behavior', function() {
-      filtersView.clearHistoryClicked(event);
+      sidebarView.clearHistoryClicked(event);
       expect(event.preventDefault).toHaveBeenCalled();
     });
   });
@@ -72,9 +72,9 @@ describe('FiltersView', function() {
   describe('#filterClicked', function() {
     it('calls select with the clicked element', function() {
       var event = {currentTarget: 'element'};
-      spyOn(filtersView, 'select');
-      filtersView.filterClicked(event);
-      expect(filtersView.select).toHaveBeenCalledWith(event.currentTarget);
+      spyOn(sidebarView, 'select');
+      sidebarView.filterClicked(event);
+      expect(sidebarView.select).toHaveBeenCalledWith(event.currentTarget);
     });
   });
 
@@ -82,36 +82,36 @@ describe('FiltersView', function() {
     var element;
 
     beforeEach(function() {
-      filtersView.render();
-      element = $(filtersView.el).find('.item a')[0];
-      filtersView.select(element);
+      sidebarView.render();
+      element = $(sidebarView.el).find('.item a')[0];
+      sidebarView.select(element);
     });
 
     it('adds the selected class to the parent of the passed element', function() {
-      filtersView.select(element);
-      expect($(element).parent()).toHaveClass(filtersView.selectedClass);
+      sidebarView.select(element);
+      expect($(element).parent()).toHaveClass(sidebarView.selectedClass);
     });
   });
 
   describe('#searchTyped', function() {
     beforeEach(function() {
-      filtersView.render();
+      sidebarView.render();
       router = {search: jasmine.createSpy('search')};
     });
 
     it('calls to select when the enter key is pressed', function() {
-      spyOn(filtersView, 'select');
-      filtersView.searchTyped({keyCode: 13});
-      expect(filtersView.select).toHaveBeenCalledWith(null);
+      spyOn(sidebarView, 'select');
+      sidebarView.searchTyped({keyCode: 13});
+      expect(sidebarView.select).toHaveBeenCalledWith(null);
     });
 
     it('calls to the router with the search term', function() {
-      filtersView.searchTyped({keyCode:13});
+      sidebarView.searchTyped({keyCode:13});
       expect(router.search).toHaveBeenCalled();
     });
 
     it('does nothing when the enter key was not pressed', function() {
-      filtersView.searchTyped({keyCode:12});
+      sidebarView.searchTyped({keyCode:12});
       expect(router.search).not.toHaveBeenCalled();
     });
   });
