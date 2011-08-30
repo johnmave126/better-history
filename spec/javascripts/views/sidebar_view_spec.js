@@ -6,11 +6,6 @@ describe('SidebarView', function() {
     sidebarView = new SidebarView({collection:
       new Filters([
         new Filter({
-          name: 'Search',
-          hash: 'search',
-          title: 'Search'
-        }),
-        new Filter({
           name: 'Today',
           hash: 'today',
           title: 'Today',
@@ -37,7 +32,7 @@ describe('SidebarView', function() {
 
   describe('#initialize', function() {
     it('defines a tag name', function() {
-      expect(sidebarView.tagName).toEqual('ul');
+      expect(sidebarView.tagName).toEqual('div');
     });
 
     it('defines a class name', function() {
@@ -46,9 +41,31 @@ describe('SidebarView', function() {
   });
 
   describe('#render', function() {
-    it('clones all the filter templates', function() {
+    it('contains the search field', function() {
       sidebarView.render();
-      expect($(sidebarView.el).html()).not.toBeEmpty();
+      expect($(sidebarView.el)).toContain('input.search');
+    });
+
+    it('contains the clear history link', function() {
+      sidebarView.render();
+      expect($(sidebarView.el)).toContain('a.clear_history');
+    });
+
+    it('contains links to each filter', function() {
+      sidebarView.render();
+      expect($('.filter a', sidebarView.el).length).toEqual(3);
+    });
+  });
+
+  describe('#events', function() {
+    beforeEach(function() {
+      sidebarView.render();
+    });
+
+    it('attachs a click on the clear history link', function() {
+      spyOn(sidebarView, 'clearHistoryClicked');
+      $('.clear_history', sidebarView.el).trigger('click');
+      expect(sidebarView.clearHistoryClicked).toHaveBeenCalled();
     });
   });
 
@@ -83,7 +100,7 @@ describe('SidebarView', function() {
 
     beforeEach(function() {
       sidebarView.render();
-      element = $(sidebarView.el).find('.item a')[0];
+      element = $(sidebarView.el).find('.filter a')[0];
       sidebarView.select(element);
     });
 

@@ -18,4 +18,13 @@ describe('Filter', function() {
       expect(options.endTime).toBeDefined();
     });
   });
+
+  describe('#toJSONWithCID', function() {
+    it('returns the properties plus the cid', function() {
+      jsonFilter = filter.toJSONWithCID();
+      expect(jsonFilter.startTime).toBeDefined();
+      expect(jsonFilter.endTime).toBeDefined();
+      expect(jsonFilter.cid).toBeDefined();
+    });
+  });
 });

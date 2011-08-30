@@ -1,12 +1,12 @@
 SidebarView = Backbone.View.extend({
-  tagName: 'ul',
+  tagName: 'div',
   className: 'sidebar_view',
 
   selectedClass: 'selected',
 
   events: {
     'click .clear_history': 'clearHistoryClicked',
-    'click .item a': 'filterClicked',
+    'click .filter a': 'filterClicked',
     'keyup .search': 'searchTyped'
   },
 
@@ -20,21 +20,11 @@ SidebarView = Backbone.View.extend({
 
   render: function() {
     var self = this;
+    $('#sidebarTemplate').tmpl().appendTo(self.el);
     $.each(this.collection.models, function(i, filter) {
-      self.appendFilter(filter);
+      $('#filterItemTemplate').tmpl(filter.toJSONWithCID()).appendTo($('.filters', self.el));
     });
-    $('<li><a href="#" class="clear_history button">Clear all history...</a></li>').appendTo(this.el);
     return this;
-  },
-
-  appendFilter: function(filter) {
-    if(filter.get('hash') == 'search') {
-      $('#searchFilterItemTemplate').tmpl().appendTo(this.el);
-    } else {
-      var properties = filter.toJSON();
-      properties.cid = filter.cid;
-      $('#filterItemTemplate').tmpl(properties).appendTo(this.el);
-    }
   },
 
   clearHistoryClicked: function(ev) {

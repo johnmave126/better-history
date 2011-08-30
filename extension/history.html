@@ -13,82 +13,9 @@
       </div>
       <div class="mainview"> </div>
     </div>
-    <script id="searchFilterItemTemplate" type="text/x-jquery-tmpl">
-      <li class="item search_item">
-        <input class="search" type="search" placeholder="Search history">
-      </li>
-    </script>
-    <script id="filterItemTemplate" type="text/x-jquery-tmpl">
-      <li class="item">
-        <a href="#filter/${hash}" data-cid="${cid}">${name}</a>
-      </li>
-    </script>
-    <script id="noVisitsTemplate" type="text/x-jquery-tmpl">
-      <p class="no_visits">Sorry, no visits found.</p>
-    </script>
-    <script id="dateVisitViewTemplate" type="text/x-jquery-tmpl">
-      <h3 class="date_interval">${date}</h3>
-    </script>
-    <script id="timeTemplate" type="text/x-jquery-tmpl">
-      <h3 class="time_interval">${time}</h3>
-    </script>
-    <script id="pageVisitTemplate" type="text/x-jquery-tmpl">
-      <a href="${url}" class="page_visit" data-cid="${cid}">
-        <div class="handle">
-          <span class="line"></span>
-          <span class="line"></span>
-          <span class="line"></span>
-          <span class="line"></span>
-          <span class="line"></span>
-          <span class="line"></span>
-          <span class="line"></span>
-        </div>
-        <div class="link">
-          <dl class="description" style="background-image: url(chrome://favicon/${url})">
-            <dt class="title">${title}</dt>
-            <dd class="url">${url}</dd>
-          </dl>
-        </div>
-      </a>
-    </script>
-    <script id="groupedVisitsTemplate" type="text/x-jquery-tmpl">
-      <a href="${domain}" class="grouped_visit page_visit">
-        <div class="handle">
-          <span class="line"></span>
-          <span class="line"></span>
-          <span class="line"></span>
-          <span class="line"></span>
-          <span class="line"></span>
-          <span class="line"></span>
-          <span class="line"></span>
-        </div>
-        <div class="link">
-          <dl class="description" style="background-image: url(chrome://favicon/${url})">
-            <dt class="title">${domain}</dt>
-            <dd class="url">${amount} Visits <span class="expand button small_button">Expand</span></dd>
-          </dl>
-        </div>
-      </a>
-    </script>
-    <script id="filterViewTemplate" type="text/x-jquery-tmpl">
-      <div class="view">
-        <div class="heading">
-          <h2>${title}</h2>
-          <p>${description}</p>
-        </div>
-        <div class="fade"></div>
-        <div class="content">
-          <div class="spinner"></div>
-        </div>
-      </div>
-    </script>
-    <script id="expandedVisitsTemplate" type="text/x-jquery-tmpl">
-      <div class="expanded"></div>
-    </script>
-    <script id="deleteViewTemplate" type="text/x-jquery-tmpl">
-      <p class="instructions">Drop visits to delete</p>
-      <p class="action">Delete</p>
-    </script>
+    <!-- Templates Start -->
+
+    <!-- Templates End -->
     <script type="text/javascript" src="javascripts/frameworks/jquery-1.6.2.min.js"></script>
     <script type="text/javascript" src="javascripts/frameworks/jquery-ui-1.8.15.custom.min.js"></script>
     <script type="text/javascript" src="javascripts/frameworks/jquery.stickysectionheaders.js"></script>

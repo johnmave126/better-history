@@ -1,7 +1,7 @@
 Filter = Backbone.Model.extend({
   defaults: {
     text: '',
-    maxResults: 10000,
+    maxResults: 10000
   },
 
   options: function() {
@@ -11,5 +11,11 @@ Filter = Backbone.Model.extend({
       startTime: this.get('startTime'),
       endTime: this.get('endTime')
     };
+  },
+
+  toJSONWithCID: function() {
+    var properties = this.toJSON();
+    properties.cid = this.cid;
+    return properties;
   }
 });
