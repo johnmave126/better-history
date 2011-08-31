@@ -1,55 +1,93 @@
 DateRanger = {
-  week: function() {
-    var start = new Date(),
-        end = new Date();
+  beginningOfDay: function() {
+    date = new Date();
+    date.setHours(0);
+    date.setMinutes(0);
+    date.setSeconds(0);
+    return date;
+  },
+
+  endOfDay: function() {
+    date = new Date();
+    date.setHours(23);
+    date.setMinutes(59);
+    date.setSeconds(59);
+    return date;
+  },
+
+  sevenDaysAgo: function() {
+    var start = this.beginningOfDay(),
+        end = this.endOfDay();
 
     start.setDate(start.getDate() - 7);
-    start.setHours(0);
-    start.setMinutes(0);
-    start.setSeconds(0);
+    end.setDate(end.getDate() - 7);
 
     return this.wrap(start, end);
   },
 
-  yesterday: function() {
-    var start = new Date(),
-        end = new Date();
+  sixDaysAgo: function() {
+    var start = this.beginningOfDay(),
+        end = this.endOfDay();
 
-    start.setDate(start.getDate() - 1);
-    start.setHours(0);
-    start.setMinutes(0);
-    start.setSeconds(0);
-    end.setDate(end.getDate() - 1);
-    end.setHours(23);
-    end.setMinutes(59);
-    end.setSeconds(59);
+    start.setDate(start.getDate() - 6);
+    end.setDate(end.getDate() - 6);
+
+    return this.wrap(start, end);
+  },
+
+  fiveDaysAgo: function() {
+    var start = this.beginningOfDay(),
+        end = this.endOfDay();
+
+    start.setDate(start.getDate() - 5);
+    end.setDate(end.getDate() - 5);
+
+    return this.wrap(start, end);
+  },
+
+  fourDaysAgo: function() {
+    var start = this.beginningOfDay(),
+        end = this.endOfDay();
+
+    start.setDate(start.getDate() - 4);
+    end.setDate(end.getDate() - 4);
+
+    return this.wrap(start, end);
+  },
+
+  threeDaysAgo: function() {
+    var start = this.beginningOfDay(),
+        end = this.endOfDay();
+
+    start.setDate(start.getDate() - 3);
+    end.setDate(end.getDate() - 3);
 
     return this.wrap(start, end);
   },
 
   dayBefore: function() {
-    var start = new Date(),
-        end = new Date();
+    var start = this.beginningOfDay(),
+        end = this.endOfDay();
 
     start.setDate(start.getDate() - 2);
-    start.setHours(0);
-    start.setMinutes(0);
-    start.setSeconds(0);
     end.setDate(end.getDate() - 2);
-    end.setHours(23);
-    end.setMinutes(59);
-    end.setSeconds(59);
+
+    return this.wrap(start, end);
+  },
+
+  yesterday: function() {
+    var start = this.beginningOfDay(),
+        end = this.endOfDay();
+
+    start.setDate(start.getDate() - 1);
+    end.setDate(end.getDate() - 1);
 
     return this.wrap(start, end);
   },
 
   today: function() {
-    var start = new Date(),
-        end = new Date();
-
-    start.setHours(0);
-    start.setMinutes(0);
-    start.setSeconds(0);
+    var start = this.beginningOfDay(),
+        end = this.endOfDay();
 
     return this.wrap(start, end);
   },
@@ -57,4 +95,4 @@ DateRanger = {
   wrap: function(start, end) {
     return {start: start, end: end};
   }
-}
+};
