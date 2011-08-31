@@ -11,18 +11,16 @@ Router = Backbone.Router.extend({
       model: filters.getByHash(type),
       el: $('.mainview')
     });
-    filterView.render(type);
+    filterView.render();
     router.navigate("filter/" + type);
   },
 
   search: function(query) {
-    var filter = filters.getByHash('search');
-    filter.set({text: query, title: 'Search "' + query + '"'});
     var filterView = new FilterView({
-      model: filter,
+      model: new Filter({text: query, title: 'Search "' + query + '"'}),
       el: $('.mainview')
     });
-    filterView.render('search');
+    filterView.render();
     router.navigate("search/" + query);
   },
 

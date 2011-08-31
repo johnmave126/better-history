@@ -3,7 +3,7 @@ FilterView = Backbone.View.extend({
     $(this.el).html('').hide();
   },
 
-  render: function(type) {
+  render: function() {
     var self = this;
     $('#filterTemplate').tmpl(this.model.toJSON()).appendTo($(this.el));
     $('.spinner').spin();
@@ -14,18 +14,14 @@ FilterView = Backbone.View.extend({
           $('.content', self.el).html('');
           if(results.length === 0) {
             $('#noVisitsTemplate').tmpl().appendTo($('.content', self.el));
-            self.presentContent(type, function() {});
+            self.presentContent();
           } else {
             dateVisits = groupResults(results);
             $.each(dateVisits.models, function(i, dateVisit) {
               var dateVisitView = new DateVisitView({model: dateVisit});
               $('.content', self.el).append(dateVisitView.render().el);
             });
-
-            self.presentContent(type, function() {
-              self.stickHeaders($('.content', self.el));
-              self.dragify('.page_visit, .grouped_visits');
-            });
+            self.presentContent();
           }
         });
       });
@@ -53,13 +49,11 @@ FilterView = Backbone.View.extend({
     });
   },
 
-  presentContent: function(type, callback) {
-    if(type === 'search') {
-      $('.content', self.el).show(function() { callback(); });
-    } else {
-      $('.content', self.el).show('slide', {direction:'left'}, 350, function() {
-        callback();
-      });
-    }
+  presentContent: function() {
+    var self = this;
+    $('.content', self.el).show('slide', {direction:'left'}, 350, function() {
+      self.stickHeaders($('.content', self.el));
+      self.dragify('.page_visit, .grouped_visits');
+    });
   }
 });
