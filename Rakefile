@@ -8,18 +8,23 @@ begin
   end
 
   task :seed do
-    File.open('extension/history.html') do |file|
-
-    end
-
-    Dir["spec/javascripts/fixtures/*.html"].each do |file_name|
-      content = '';
-      File.open(file_name, 'r') do |file|
-        file.each do |line|
-          content += line
-        end
+    content = ''
+    File.open('extension/history.html', 'r') do |file|
+      file.each do |line|
+        content += line
       end
     end
+
+    fixtures = '';
+    Dir["spec/javascripts/fixtures/*.html"].each do |file_name|
+      File.open(file_name, 'r') do |file|
+        file.each do |line|
+          fixtures += "    #{line}"
+        end
+        fixtures += "\n"
+      end
+    end
+    File.open('extension/history.html', 'w') {|f| f.write(content.gsub(/<!-- Templates Start -->(.*)<!-- Templates End -->/m, "<!-- Templates Start -->\n\n\n#{fixtures}\n    <!-- Templates End -->"))}
   end
 rescue LoadError
   task :jasmine do
