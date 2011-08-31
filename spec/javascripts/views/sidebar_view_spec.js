@@ -3,31 +3,32 @@ describe('SidebarView', function() {
 
   beforeEach(function() {
     loadFixtures('sidebar.html');
-    sidebarView = new SidebarView({collection:
-      new Filters([
-        new Filter({
-          name: 'Today',
-          hash: 'today',
-          title: 'Today',
-          startTime: DateRanger.today().start.getTime(),
-          endTime: DateRanger.today().end.getTime()
-        }),
-        new Filter({
-          name: 'Yesterday',
-          hash: 'yesterday',
-          title: 'Yesterday',
-          startTime: DateRanger.yesterday().start.getTime(),
-          endTime: DateRanger.yesterday().end.getTime()
-        }),
-        new Filter({
-          name: 'Day before',
-          hash: 'dayBefore',
-          title: 'Day before yesterday',
-          startTime: DateRanger.dayBefore().start.getTime(),
-          endTime: DateRanger.dayBefore().end.getTime()
-        })
-      ])
-    });
+    router = {bind: jasmine.createSpy('bind')};
+
+    filters = new Filters([
+      new Filter({
+        name: 'Today',
+        hash: 'today',
+        title: 'Today',
+        startTime: DateRanger.today().start.getTime(),
+        endTime: DateRanger.today().end.getTime()
+      }),
+      new Filter({
+        name: 'Yesterday',
+        hash: 'yesterday',
+        title: 'Yesterday',
+        startTime: DateRanger.yesterday().start.getTime(),
+        endTime: DateRanger.yesterday().end.getTime()
+      }),
+      new Filter({
+        name: 'Day before',
+        hash: 'dayBefore',
+        title: 'Day before yesterday',
+        startTime: DateRanger.dayBefore().start.getTime(),
+        endTime: DateRanger.dayBefore().end.getTime()
+      })
+    ]);
+    sidebarView = new SidebarView({collection: filters});
   });
 
   describe('#initialize', function() {
@@ -37,6 +38,10 @@ describe('SidebarView', function() {
 
     it('defines a class name', function() {
       expect(sidebarView.className).toEqual('sidebar_view');
+    });
+
+    it('listens on the router', function() {
+      expect(router.bind).toHaveBeenCalledWith('route:filter', jasmine.any(Function));
     });
   });
 
@@ -57,15 +62,15 @@ describe('SidebarView', function() {
     });
   });
 
-  describe('#events', function() {
+  describe('#loadFromType', function() {
     beforeEach(function() {
       sidebarView.render();
     });
 
-    it('attachs a click on the clear history link', function() {
-      spyOn(sidebarView, 'clearHistoryClicked');
-      $('.clear_history', sidebarView.el).trigger('click');
-      expect(sidebarView.clearHistoryClicked).toHaveBeenCalled();
+    it('calls selectFilter with the filter element based on the passed type', function() {
+      spyOn(sidebarView, 'selectFilter');
+      sidebarView.loadFromType('today');
+      expect(sidebarView.selectFilter).toHaveBeenCalledWith($('a[data-cid=' + filters.at(0).cid + ']'));
     });
   });
 
@@ -87,31 +92,31 @@ describe('SidebarView', function() {
   });
 
   describe('#filterClicked', function() {
-    it('calls select with the clicked element', function() {
+    it('calls selectFilter with the clicked element', function() {
       var event = {currentTarget: 'element'};
-      spyOn(sidebarView, 'select');
+      spyOn(sidebarView, 'selectFilter');
       sidebarView.filterClicked(event);
-      expect(sidebarView.select).toHaveBeenCalledWith(event.currentTarget);
+      expect(sidebarView.selectFilter).toHaveBeenCalledWith(event.currentTarget);
     });
   });
 
-  describe('#select', function() {
+  describe('#selectFilter', function() {
     var filter1, filter2;
 
     beforeEach(function() {
       sidebarView.render();
       filter1 = $(sidebarView.el).find('.filter a')[0];
       filter2 = $(sidebarView.el).find('.filter a')[1];
-      sidebarView.select(filter1);
+      sidebarView.selectFilter(filter1);
     });
 
     it('adds the selected class to the parent of the passed element', function() {
-      sidebarView.select(filter2);
+      sidebarView.selectFilter(filter2);
       expect($(filter2).parent()).toHaveClass(sidebarView.selectedClass);
     });
 
     it('removes the selected class from filters not selected', function() {
-      sidebarView.select(filter2);
+      sidebarView.selectFilter(filter2);
       expect($(filter1).parent()).not.toHaveClass(sidebarView.selectedClass);
     });
   });
@@ -122,10 +127,10 @@ describe('SidebarView', function() {
       router = {search: jasmine.createSpy('search')};
     });
 
-    it('calls to select when the enter key is pressed', function() {
-      spyOn(sidebarView, 'select');
+    it('calls to selectFilter when the enter key is pressed', function() {
+      spyOn(sidebarView, 'selectFilter');
       sidebarView.searchTyped({keyCode: 13});
-      expect(sidebarView.select).toHaveBeenCalledWith(null);
+      expect(sidebarView.selectFilter).toHaveBeenCalledWith(null);
     });
 
     it('calls to the router with the search term', function() {

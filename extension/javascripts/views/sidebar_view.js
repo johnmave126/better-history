@@ -12,10 +12,14 @@ SidebarView = Backbone.View.extend({
 
   initialize: function() {
     var self = this;
-    //router.bind('route:filter', function(type) {
-      //var filter = filters.getByHash(this.checkType(type));
-      //self.select($('a[data-cid=' + filter.cid + ']'));
-    //});
+    router.bind('route:filter', function(type) {
+      self.loadFromType(this.checkType(type));
+    });
+  },
+
+  loadFromType: function(type) {
+    var filter = filters.getByHash(type);
+    this.selectFilter($('a[data-cid=' + filter.cid + ']'));
   },
 
   render: function() {
@@ -33,17 +37,17 @@ SidebarView = Backbone.View.extend({
   },
 
   filterClicked: function(ev) {
-    this.select(ev.currentTarget);
+    this.selectFilter(ev.currentTarget);
   },
 
   searchTyped: function(ev) {
     if(ev.keyCode === 13) {
-      this.select(null);
+      this.selectFilter(null);
       router.search($('.search').val());
     }
   },
 
-  select: function(element) {
+  selectFilter: function(element) {
     $('.filter', this.el).removeClass(this.selectedClass);
     $(element).parent().addClass(this.selectedClass);
   }
