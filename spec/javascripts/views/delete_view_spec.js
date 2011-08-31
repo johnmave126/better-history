@@ -2,7 +2,7 @@ describe('DeleteView', function() {
   var deleteView;
 
   beforeEach(function() {
-    loadFixtures('delete_view.html');
+    loadFixtures('delete.html');
     deleteView = new DeleteView();
   });
 

@@ -2,7 +2,7 @@ describe('SidebarView', function() {
   var sidebarView;
 
   beforeEach(function() {
-    loadFixtures('sidebar_view.html');
+    loadFixtures('sidebar.html');
     sidebarView = new SidebarView({collection:
       new Filters([
         new Filter({
@@ -96,17 +96,23 @@ describe('SidebarView', function() {
   });
 
   describe('#select', function() {
-    var element;
+    var filter1, filter2;
 
     beforeEach(function() {
       sidebarView.render();
-      element = $(sidebarView.el).find('.filter a')[0];
-      sidebarView.select(element);
+      filter1 = $(sidebarView.el).find('.filter a')[0];
+      filter2 = $(sidebarView.el).find('.filter a')[1];
+      sidebarView.select(filter1);
     });
 
     it('adds the selected class to the parent of the passed element', function() {
-      sidebarView.select(element);
-      expect($(element).parent()).toHaveClass(sidebarView.selectedClass);
+      sidebarView.select(filter2);
+      expect($(filter2).parent()).toHaveClass(sidebarView.selectedClass);
+    });
+
+    it('removes the selected class from filters not selected', function() {
+      sidebarView.select(filter2);
+      expect($(filter1).parent()).not.toHaveClass(sidebarView.selectedClass);
     });
   });
 

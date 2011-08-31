@@ -2,7 +2,7 @@ describe('DateVisitView', function() {
   var dateVisitView;
 
   beforeEach(function() {
-    loadFixtures('date_visit_view.html');
+    loadFixtures('date_visit.html');
     var dateVisit = new DateVisit({date: new Date(), timeVisits: new TimeVisits()});
     dateVisitView = new DateVisitView({model: dateVisit});
   });

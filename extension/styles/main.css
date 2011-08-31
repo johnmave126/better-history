@@ -54,7 +54,7 @@ h1 {
   font-weight: normal;
   font-size: 20px;
   margin: 0;
-  padding: 13px 24px 13px 0;
+  padding: 13px 24px 21px 0;
   font-size:200%;
   text-align: end;
   text-shadow: white 0 1px 2px;
@@ -257,20 +257,19 @@ section {
 /* Sidebar View
 ================================ */
 .sidebar_view {
-  -webkit-user-select: none;
   list-style-type: none;
-  margin: 0;
-  padding: 0;
   clear:both;
-}
-.filters { padding:0; }
-.search,
-.filter a {
   text-align:right;
+}
+.search { margin-right: 24px; }
+.filters {
+  padding:0;
+  margin:5px 0;
+}
+.filter a {
   padding:7px 24px;
   font-size:14px;
-}
-.filter a {
+  padding-right:24px;
   border-bottom: 1px solid transparent;
   border-top: 1px solid transparent;
   color: #426dc9;

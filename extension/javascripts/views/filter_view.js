@@ -5,7 +5,7 @@ FilterView = Backbone.View.extend({
 
   render: function(type) {
     var self = this;
-    $('#filterViewTemplate').tmpl(this.model.toJSON()).appendTo($(this.el));
+    $('#filterTemplate').tmpl(this.model.toJSON()).appendTo($(this.el));
     $('.spinner').spin();
 
     $(this.el).fadeIn("fast", function() {

@@ -44,7 +44,7 @@ SidebarView = Backbone.View.extend({
   },
 
   select: function(element) {
-    $('.item', this.el).removeClass(this.selectedClass);
+    $('.filter', this.el).removeClass(this.selectedClass);
     $(element).parent().addClass(this.selectedClass);
   }
 });

@@ -3,7 +3,7 @@ DateVisitView = Backbone.View.extend({
   className: 'date_visit_view',
 
   render: function() {
-    $('#dateVisitViewTemplate').tmpl(this.model.toJSON()).appendTo(this.el);
+    $('#dateVisitTemplate').tmpl(this.model.toJSON()).appendTo(this.el);
     this.renderTimes();
     return this;
   },
