@@ -38,10 +38,6 @@ dt, dd { margin:0; }
   left:80px;
   position:relative;
 }
-.clear_history {
-  float:right;
-  margin:30px 24px 12px;
-}
 .no_visits {
   color:#AAA;
   padding:24px;
@@ -115,8 +111,11 @@ section {
 }
 .navbar {
   -webkit-border-end: 1px solid #c6c9ce;
-  background: -webkit-linear-gradient(rgba(234, 238, 243, 0.2), #eaeef3),
+  background-image: url(/images/logo_grayscale.png),
+              -webkit-linear-gradient(rgba(234, 238, 243, 0.2), #eaeef3),
               -webkit-linear-gradient(left, #eaeef3, #eaeef3 97%, #d3d7db);
+  background-repeat:no-repeat, repeat, repeat;
+  background-position:50px bottom, top left, top left;
   position: fixed;
   bottom: 0;
   left: 0;
@@ -220,7 +219,7 @@ section {
   box-shadow: 4px 2px 9px -1px rgba(0,0,0,.4);
   position:static;
   width:auto;
-  padding:10px 0 8px 80px;
+  padding:10px 0 8px 95px;
   margin:0 0 0 24px;
   width:100%;
   background:#FFF;
@@ -300,3 +299,6 @@ section {
 .opacity_5 { opacity:0.7; }
 .opacity_6 { opacity:0.6; }
 .opacity_7 { opacity:0.5; }
+.clear_history {
+  margin:15px 24px 12px;
+}

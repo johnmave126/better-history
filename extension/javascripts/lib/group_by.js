@@ -28,7 +28,7 @@ var groupResults;
     $.each(pageVisits.models, function(index, pageVisit) {
       var lastVisitTime = new Date(pageVisit.get('lastVisitTime'));
 
-      var date = lastVisitTime.toLocaleDateString(),
+      var date = lastVisitTime.toLocaleDateString().match(/([^,]*),(.*)/)[2],
           time = standardTimeByInterval(lastVisitTime);
 
       if(dateVisits.pluck('date').indexOf(date) === -1) {

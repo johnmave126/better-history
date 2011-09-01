@@ -42,7 +42,7 @@ var filters;
     new Filter({
       name: fourDaysAgo.day,
       hash: 'fourDaysAgo',
-      title: 'Last' + fourDaysAgo.day,
+      title: 'Last ' + fourDaysAgo.day,
       startTime: fourDaysAgo.start.getTime(),
       endTime: fourDaysAgo.end.getTime()
     }),
