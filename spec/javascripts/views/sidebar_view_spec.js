@@ -19,13 +19,6 @@ describe('SidebarView', function() {
         title: 'Yesterday',
         startTime: DateRanger.yesterday().start.getTime(),
         endTime: DateRanger.yesterday().end.getTime()
-      }),
-      new Filter({
-        name: 'Day before',
-        hash: 'dayBefore',
-        title: 'Day before yesterday',
-        startTime: DateRanger.dayBefore().start.getTime(),
-        endTime: DateRanger.dayBefore().end.getTime()
       })
     ]);
     sidebarView = new SidebarView({collection: filters});
@@ -58,7 +51,7 @@ describe('SidebarView', function() {
 
     it('contains links to each filter', function() {
       sidebarView.render();
-      expect($('.filter a', sidebarView.el).length).toEqual(3);
+      expect($('.filter a', sidebarView.el).length).toEqual(2);
     });
   });
 

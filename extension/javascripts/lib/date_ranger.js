@@ -1,4 +1,9 @@
 DateRanger = {
+  numberToDay: function(number) {
+    var days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+    return days[number];
+  },
+
   beginningOfDay: function() {
     date = new Date();
     date.setHours(0);
@@ -65,7 +70,7 @@ DateRanger = {
     return this.wrap(start, end);
   },
 
-  dayBefore: function() {
+  twoDaysAgo: function() {
     var start = this.beginningOfDay(),
         end = this.endOfDay();
 
@@ -93,6 +98,6 @@ DateRanger = {
   },
 
   wrap: function(start, end) {
-    return {start: start, end: end};
+    return {start: start, end: end, day: this.numberToDay(start.getDay())};
   }
 };

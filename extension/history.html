@@ -119,9 +119,6 @@
     <script type="text/javascript" src="javascripts/helpers.js"></script>
     <script type="text/javascript" src="javascripts/router.js"></script>
 
-    <script type="text/javascript" src="javascripts/lib/date_ranger.js"></script>
-    <script type="text/javascript" src="javascripts/lib/group_by.js"></script>
-
     <script type="text/javascript" src="javascripts/views/app_view.js"></script>
     <script type="text/javascript" src="javascripts/views/sidebar_view.js"></script>
     <script type="text/javascript" src="javascripts/views/delete_view.js"></script>
@@ -141,71 +138,13 @@
     <script type="text/javascript" src="javascripts/collections/grouped_visits.js"></script>
     <script type="text/javascript" src="javascripts/collections/time_visits.js"></script>
     <script type="text/javascript" src="javascripts/collections/page_visits.js"></script>
+
+    <script type="text/javascript" src="javascripts/lib/date_ranger.js"></script>
+    <script type="text/javascript" src="javascripts/lib/group_by.js"></script>
+    <script type="text/javascript" src="javascripts/lib/filters_seed.js"></script>
     <script type="text/javascript">
       var router = new Router();
 
-      var filters = new Filters([
-        new Filter({
-          name: 'Today',
-          hash: 'today',
-          title: 'Today',
-          startTime: DateRanger.today().start.getTime(),
-          endTime: DateRanger.today().end.getTime()
-        }),
-        new Filter({
-          name: 'Yesterday',
-          hash: 'yesterday',
-          title: 'Yesterday',
-          startTime: DateRanger.yesterday().start.getTime(),
-          endTime: DateRanger.yesterday().end.getTime()
-        }),
-        new Filter({
-          name: 'Day before',
-          hash: 'dayBefore',
-          title: 'Day before yesterday',
-          startTime: DateRanger.dayBefore().start.getTime(),
-          endTime: DateRanger.dayBefore().end.getTime()
-        }),
-        new Filter({
-          name: 'Three days ago',
-          hash: 'threeDaysAgo',
-          title: 'Three days ago',
-          startTime: DateRanger.threeDaysAgo().start.getTime(),
-          endTime: DateRanger.threeDaysAgo().end.getTime()
-        }),
-        new Filter({
-          name: 'Four days ago',
-          hash: 'fourDaysAgo',
-          title: 'Four days ago',
-          startTime: DateRanger.fourDaysAgo().start.getTime(),
-          endTime: DateRanger.fourDaysAgo().end.getTime()
-        }),
-        new Filter({
-          name: 'Five days ago',
-          hash: 'fiveDaysAgo',
-          title: 'Five days ago',
-          startTime: DateRanger.fiveDaysAgo().start.getTime(),
-          endTime: DateRanger.fiveDaysAgo().end.getTime()
-        }),
-        new Filter({
-          name: 'Six days ago',
-          hash: 'sixDaysAgo',
-          title: 'Six days ago',
-          startTime: DateRanger.sixDaysAgo().start.getTime(),
-          endTime: DateRanger.sixDaysAgo().end.getTime()
-        }),
-        new Filter({
-          name: 'Seven days ago',
-          hash: 'sevenDaysAgo',
-          title: 'Seven days ago',
-          startTime: DateRanger.sevenDaysAgo().start.getTime(),
-          endTime: DateRanger.sevenDaysAgo().end.getTime()
-        })
-
-
-
-
-      ]);
 
       $(function() {
         appView = new AppView({el: $('.main')});

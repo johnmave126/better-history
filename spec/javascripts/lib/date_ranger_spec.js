@@ -1,4 +1,34 @@
 describe('DateRanger', function() {
+  describe('.numberToDay', function() {
+    it('returns Sunday when passed 0', function() {
+      expect(DateRanger.numberToDay(0)).toEqual('Sunday');
+    });
+
+    it('returns Monday when passed 1', function() {
+      expect(DateRanger.numberToDay(1)).toEqual('Monday');
+    });
+
+    it('returns Tuesday when passed 2', function() {
+      expect(DateRanger.numberToDay(2)).toEqual('Tuesday');
+    });
+
+    it('returns Wednesday when passed 3', function() {
+      expect(DateRanger.numberToDay(3)).toEqual('Wednesday');
+    });
+
+    it('returns Thursday when passed 4', function() {
+      expect(DateRanger.numberToDay(4)).toEqual('Thursday');
+    });
+
+    it('returns Friday when passed 5', function() {
+      expect(DateRanger.numberToDay(5)).toEqual('Friday');
+    });
+
+    it('returns Saturday when passed 6', function() {
+      expect(DateRanger.numberToDay(6)).toEqual('Saturday');
+    });
+  });
+
   describe('.beginningOfDay', function() {
     it('sets the hours to 0', function() {
       var start = DateRanger.beginningOfDay();
@@ -51,9 +81,9 @@ describe('DateRanger', function() {
     });
   });
 
-  describe('.dayBefore', function() {
-    it('returns date ranges for the day before yesterday', function() {
-      var range = DateRanger.dayBefore();
+  describe('.twoDaysAgo', function() {
+    it('returns date ranges for 2 days ago', function() {
+      var range = DateRanger.twoDaysAgo();
       var date = new Date().getDate() - 2;
       expect(range.start.getDate()).toEqual(date);
       expect(range.end.getDate()).toEqual(date);
