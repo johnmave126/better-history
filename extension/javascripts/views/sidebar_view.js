@@ -26,7 +26,9 @@ SidebarView = Backbone.View.extend({
     var self = this;
     $('#sidebarTemplate').tmpl().appendTo(self.el);
     $.each(this.collection.models, function(i, filter) {
-      $('#filterItemTemplate').tmpl(filter.toJSONWithCID()).appendTo($('.filters', self.el));
+      var properties = filter.toJSONWithCID();
+      properties.opacity = i;
+      $('#filterItemTemplate').tmpl(properties).appendTo($('.filters', self.el));
     });
     return this;
   },
