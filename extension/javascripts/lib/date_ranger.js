@@ -98,6 +98,11 @@ DateRanger = {
   },
 
   wrap: function(start, end) {
-    return {start: start, end: end, day: this.numberToDay(start.getDay())};
+    return {
+      start: start,
+      end: end,
+      day: this.numberToDay(start.getDay()),
+      date: start.toLocaleDateString().match(/([^,]*),(.*)/)[2]
+    };
   }
 };

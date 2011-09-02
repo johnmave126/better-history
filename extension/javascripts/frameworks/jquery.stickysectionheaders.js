@@ -44,6 +44,8 @@
                         header.before(placeholder);
                         header.css('position', 'fixed');
                         header.css('width', originalWidth + 'px');
+                        header.addClass('stuck');
+
                     }
                     header.css('top', settings.padding + 'px');
                 }

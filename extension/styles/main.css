@@ -201,26 +201,19 @@ section {
   display:none;
 }
 
+/* Filter Visit View
+================================= */
+.date {
+  font-size:15px;
+  margin-left:10px;
+}
+
+
 /* Date Visit View
 ================================= */
 .date_visit_view {
   position:relative;
   width:100%;
-}
-.date_interval {
-  z-index:10;
-  box-shadow: 4px 2px 9px -1px rgba(0,0,0,.4);
-  position:static;
-  width:auto;
-  padding:10px 0 8px 130px;
-  margin:0 0 0 24px;
-  width:100%;
-  background:#FFF;
-  display:block;
-}
-.time_interval,
-.date_interval {
-  line-height:22px;
 }
 
 /* Delete View
@@ -304,10 +297,21 @@ section {
   border-top:1px solid #DDD;
   z-index:10;
   margin:0 0 0 24px;
-  padding:9px 10px 5px;
+  padding:10px;
   color:#444;
   position:relative;
   cursor:pointer;
+}
+.stuck {
+  border:none;
+  z-index:10;
+  box-shadow: 4px 2px 9px -1px rgba(0,0,0,.4);
+  position:static;
+  width:auto;
+  margin:0 0 0 24px;
+  width:100%;
+  background:#FFF;
+  display:block;
 }
 .summary {
   font-weight:normal;

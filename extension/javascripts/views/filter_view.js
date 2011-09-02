@@ -18,8 +18,12 @@ FilterView = Backbone.View.extend({
           } else {
             dateVisits = groupResults(results);
             $.each(dateVisits.models, function(i, dateVisit) {
-              var dateVisitView = new DateVisitView({model: dateVisit});
-              $('.content', self.el).append(dateVisitView.render().el);
+              $.each(dateVisit.get('timeVisits').models, function(i, timeVisit) {
+                var timeVisitView = new TimeVisitView({model: timeVisit});
+                $('.content', self.el).append(timeVisitView.render().el);
+              });
+              //var dateVisitView = new DateVisitView({model: dateVisit});
+              //$('.content', self.el).append(dateVisitView.render().el);
             });
             self.presentContent();
           }
@@ -35,7 +39,6 @@ FilterView = Backbone.View.extend({
     $(container).find('.time_visit_view').stickySectionHeaders({
       stickyClass:'time_interval', padding:48
     });
-    $('html, body').animate({scrollTop: 45}, 300);
   },
 
   dragify: function(selector) {

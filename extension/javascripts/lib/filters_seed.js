@@ -15,6 +15,7 @@ var filters;
       name: 'Today',
       hash: 'today',
       title: 'Today',
+      date: today.date,
       startTime: today.start.getTime(),
       endTime: today.end.getTime()
     }),
@@ -22,6 +23,7 @@ var filters;
       name: 'Yesterday',
       hash: 'yesterday',
       title: 'Yesterday',
+      date: yesterday.date,
       startTime: yesterday.start.getTime(),
       endTime: yesterday.end.getTime()
     }),
@@ -29,6 +31,7 @@ var filters;
       name: twoDaysAgo.day,
       hash: 'twoDaysAgo',
       title: 'Last ' + twoDaysAgo.day,
+      date: twoDaysAgo.date,
       startTime: twoDaysAgo.start.getTime(),
       endTime: twoDaysAgo.end.getTime()
     }),
@@ -36,6 +39,7 @@ var filters;
       name: threeDaysAgo.day,
       hash: 'threeDaysAgo',
       title: 'Last ' + threeDaysAgo.day,
+      date: threeDaysAgo.date,
       startTime: threeDaysAgo.start.getTime(),
       endTime: threeDaysAgo.end.getTime()
     }),
@@ -43,6 +47,7 @@ var filters;
       name: fourDaysAgo.day,
       hash: 'fourDaysAgo',
       title: 'Last ' + fourDaysAgo.day,
+      date: fourDaysAgo.date,
       startTime: fourDaysAgo.start.getTime(),
       endTime: fourDaysAgo.end.getTime()
     }),
@@ -50,6 +55,7 @@ var filters;
       name: fiveDaysAgo.day,
       hash: 'fiveDaysAgo',
       title: 'Last ' + fiveDaysAgo.day,
+      date: fiveDaysAgo.date,
       startTime: fiveDaysAgo.start.getTime(),
       endTime: fiveDaysAgo.end.getTime()
     }),
@@ -57,6 +63,7 @@ var filters;
       name: sixDaysAgo.day,
       hash: 'sixDaysAgo',
       title: 'Last ' + sixDaysAgo.day,
+      date: sixDaysAgo.date,
       startTime: sixDaysAgo.start.getTime(),
       endTime: sixDaysAgo.end.getTime()
     })
