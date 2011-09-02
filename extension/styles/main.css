@@ -67,13 +67,6 @@ h2 {
   padding-top: 13px;
   text-shadow: white 0 1px 2px;
 }
-.time_interval {
-  z-index:10;
-  margin:0 0 0 24px;
-  padding:10px;
-  color:#444;
-  position:relative;
-}
 
 
 /* Containers
@@ -145,7 +138,7 @@ section {
   margin:8px 3px 0 40px;
 }
 .page_visit .link {
-  padding: 5px 10px 5px 5px;
+  padding: 3px 10px 3px 5px;
 }
 .page_visit:hover .link,
 .ui-draggable-dragging .link {
@@ -171,7 +164,7 @@ section {
   left:-12px;
   top:-1px;
   width:14px;
-  height:50px;
+  height:46px;
   cursor:move;
 }
 .no_hover .page_visit:hover {
@@ -219,7 +212,7 @@ section {
   box-shadow: 4px 2px 9px -1px rgba(0,0,0,.4);
   position:static;
   width:auto;
-  padding:10px 0 8px 95px;
+  padding:10px 0 8px 130px;
   margin:0 0 0 24px;
   width:100%;
   background:#FFF;
@@ -302,3 +295,24 @@ section {
 .clear_history {
   margin:15px 24px 12px;
 }
+
+/* Time Visit View
+================================== */
+.time_visit_view {
+}
+.time_interval {
+  border-top:1px solid #DDD;
+  z-index:10;
+  margin:0 0 0 24px;
+  padding:9px 10px 5px;
+  color:#444;
+  position:relative;
+  cursor:pointer;
+}
+.summary {
+  font-weight:normal;
+  color:#999;
+  margin-left:5px;
+  font-size:13px;
+}
+.visits { margin-bottom:10px; }

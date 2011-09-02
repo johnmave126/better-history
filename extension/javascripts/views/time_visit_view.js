@@ -7,7 +7,7 @@ TimeVisitView = Backbone.View.extend({
   },
 
   render: function() {
-    $('#timeVisitTemplate').tmpl(this.model.toJSON()).appendTo(this.el);
+    $('#timeVisitTemplate').tmpl(this.model.presenter()).appendTo(this.el);
     this.renderVisits();
     return this;
   },
