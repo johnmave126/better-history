@@ -32,7 +32,7 @@ FilterView = Backbone.View.extend({
     $(container).find('.date_visit_view').stickySectionHeaders({
       stickyClass:'date_interval', padding:48
     });
-    $(container).find('.time').stickySectionHeaders({
+    $(container).find('.time_visit_view').stickySectionHeaders({
       stickyClass:'time_interval', padding:48
     });
     $('html, body').animate({scrollTop: 45}, 300);

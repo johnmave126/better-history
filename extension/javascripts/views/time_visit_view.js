@@ -1,6 +1,10 @@
 TimeVisitView = Backbone.View.extend({
   tagName: 'div',
-  className: 'time',
+  className: 'time_visit_view',
+
+  events: {
+    'click .time_interval': 'toggleVisits'
+  },
 
   render: function() {
     $('#timeVisitTemplate').tmpl(this.model.toJSON()).appendTo(this.el);
@@ -15,12 +19,16 @@ TimeVisitView = Backbone.View.extend({
       $.each(pageVisits, function(i, pageVisit) {
         if(pageVisit.length !== undefined) {
           var groupedVisitsView = new GroupedVisitsView({collection: pageVisit});
-          $(self.el).append(groupedVisitsView.render().el);
+          $('.visits', self.el).append(groupedVisitsView.render().el);
         } else {
           var pageVisitView = new PageVisitView({model: pageVisit});
-          $(self.el).append(pageVisitView.render().el);
+          $('.visits', self.el).append(pageVisitView.render().el);
         }
       });
     }
+  },
+
+  toggleVisits: function(ev) {
+    $(ev.currentTarget).next().slideToggle("fast");
   }
 });
