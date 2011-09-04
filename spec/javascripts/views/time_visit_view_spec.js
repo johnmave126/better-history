@@ -2,8 +2,12 @@ describe('TimeVisitView', function() {
   var timeVisitView, timeVisit;
 
   beforeEach(function() {
-    loadFixtures('time_visit.html', 'page_visit.html');
-    timeVisit = new TimeVisit({time: '10:00PM', pageVisits: [new PageVisit({url: 'google.com'})]});
+    loadFixtures('time_visit.html', 'page_visit.html', 'grouped_visits.html');
+
+    var pageVisit = new PageVisit({url: 'google.com'}),
+        groupedVisits = new GroupedVisits([new PageVisit({url: 'yahoo.com'})]);
+
+    timeVisit = new TimeVisit({time: '10:00PM', pageVisits: [pageVisit, groupedVisits]});
     timeVisitView = new TimeVisitView({model: timeVisit});
   });
 
@@ -33,26 +37,10 @@ describe('TimeVisitView', function() {
       timeVisitView.render();
       expect($('.summary', timeVisitView.el)).toHaveText(presenter.summary);
     });
-  });
 
-  describe('#toggleVisits', function() {
-    var ev;
-
-    beforeEach(function() {
+    it('inserts the visits', function() {
       timeVisitView.render();
-      console.log($('.time_interval', timeVisitView.el));
-      ev = {currentTarget: $('.time_interval', timeVisitView.el)};
-    });
-
-    it("hides visits when visible", function() {
-      timeVisitView.toggleVisits(ev);
-      expect($('.visits', timeVisitView.el)).toBeHidden();
-    });
-
-    it("shows visits when hidden", function() {
-      timeVisitView.toggleVisits(ev);
-      timeVisitView.toggleVisits(ev);
-      expect($('.visits', timeVisitView.el)).toBeVisible();
+      expect($('.visits > *', timeVisitView.el).length).toEqual(2);
     });
   });
 });

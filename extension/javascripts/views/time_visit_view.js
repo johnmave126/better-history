@@ -2,10 +2,6 @@ TimeVisitView = Backbone.View.extend({
   tagName: 'div',
   className: 'time_visit_view',
 
-  events: {
-    'click .time_interval': 'toggleVisits'
-  },
-
   render: function() {
     $('#timeVisitTemplate').tmpl(this.model.presenter()).appendTo(this.el);
     this.renderVisits();
@@ -13,22 +9,28 @@ TimeVisitView = Backbone.View.extend({
   },
 
   renderVisits: function() {
-    var self = this;
     var pageVisits = this.model.get('pageVisits');
+
     if(pageVisits.length > 0) {
+      var self = this;
       $.each(pageVisits, function(i, pageVisit) {
-        if(pageVisit.length !== undefined) {
-          var groupedVisitsView = new GroupedVisitsView({collection: pageVisit});
-          $('.visits', self.el).append(groupedVisitsView.render().el);
-        } else {
-          var pageVisitView = new PageVisitView({model: pageVisit});
-          $('.visits', self.el).append(pageVisitView.render().el);
-        }
+        var method = (pageVisit.length !== undefined ? 'renderGroupedVisits' : 'renderPageVisit');
+        self[method](pageVisit);
       });
     }
   },
 
-  toggleVisits: function(ev) {
-    $(ev.currentTarget).next().slideToggle("fast");
+  renderGroupedVisits: function(groupedVisits) {
+    var groupedVisitsView = new GroupedVisitsView({collection: groupedVisits});
+    this.appendVisits(groupedVisitsView.render().el);
+  },
+
+  renderPageVisit: function(pageVisit) {
+    var pageVisitView = new PageVisitView({model: pageVisit});
+    this.appendVisits(pageVisitView.render().el);
+  },
+
+  appendVisits: function(visits) {
+    $('.visits', this.el).append(visits);
   }
 });
