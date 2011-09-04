@@ -151,7 +151,7 @@ section {
   display:none;
 }
 .ui-draggable-dragging .time {
-  display:inline;
+  display:none;
 }
 .handle .line {
   box-shadow:0 0 5px #BBB;
@@ -168,7 +168,7 @@ section {
   left:-12px;
   top:-1px;
   width:14px;
-  height:46px;
+  height:100%;
   cursor:move;
 }
 .no_hover .page_visit:hover {
