@@ -1,5 +1,7 @@
 AppView = Backbone.View.extend({
   render: function() {
+    $('#appTemplate').tmpl().appendTo(this.el);
+
     var sidebarView = new SidebarView({collection: filters}),
         deleteView = new DeleteView();
 

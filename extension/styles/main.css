@@ -140,6 +140,7 @@ section {
 .page_visit .link {
   padding: 3px 10px 3px 5px;
 }
+.page_visit .time { display:none; }
 .page_visit:hover .link,
 .ui-draggable-dragging .link {
   background: #eaeef3;
@@ -148,6 +149,9 @@ section {
 }
 .ui-draggable-dragging .button {
   display:none;
+}
+.ui-draggable-dragging .time {
+  display:inline;
 }
 .handle .line {
   box-shadow:0 0 5px #BBB;
@@ -173,16 +177,18 @@ section {
 .page_visit:hover .title, .page_visit:hover .url {
   text-shadow:1px 1px #FFF;
 }
-.page_visit:hover .url {
+.page_visit:hover .url,
+.page_visit:hover .time {
   color:#555;
 }
 .title {
   font-size:105%;
   padding-bottom:3px;
 }
-.url {
+.page_visit .url,
+.page_visit .time {
   color: #999;
-  padding:2px 0 2px;
+  padding:3px 0;
 }
 .title, .url {
   overflow:hidden;
@@ -236,6 +242,10 @@ section {
 .delete_view.over p { color:#666; }
 .delete_view.over .instructions { display:none; }
 .delete_view.over .action { display:block; }
+
+/* Search View
+=============================== */
+.search_view .time { display:inline; }
 
 /* Sidebar View
 ================================ */
@@ -304,7 +314,6 @@ section {
   border:none;
   z-index:10;
   box-shadow: 4px 2px 9px -1px rgba(0,0,0,.4);
-  position:static;
   width:auto;
   margin:0 0 0 24px;
   width:100%;

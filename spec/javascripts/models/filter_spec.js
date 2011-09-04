@@ -19,12 +19,11 @@ describe('Filter', function() {
     });
   });
 
-  describe('#toJSONWithCID', function() {
-    it('returns the properties plus the cid', function() {
-      jsonFilter = filter.toJSONWithCID();
-      expect(jsonFilter.startTime).toBeDefined();
-      expect(jsonFilter.endTime).toBeDefined();
-      expect(jsonFilter.cid).toBeDefined();
+  describe('#presenter', function() {
+    it('returns the properties used in the view', function() {
+      var properties = filter.toJSON();
+      properties.cid = filter.cid;
+      expect(filter.presenter()).toEqual(properties);
     });
   });
 });

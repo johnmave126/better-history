@@ -13,7 +13,7 @@ Filter = Backbone.Model.extend({
     };
   },
 
-  toJSONWithCID: function() {
+  presenter: function() {
     var properties = this.toJSON();
     properties.cid = this.cid;
     return properties;

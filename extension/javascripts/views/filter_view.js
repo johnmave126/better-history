@@ -1,41 +1,40 @@
 FilterView = Backbone.View.extend({
-  initialize: function() {
-    $(this.el).html('').hide();
-  },
+  className: 'filter_view',
 
   render: function() {
-    var self = this;
-    $('#filterTemplate').tmpl(this.model.toJSON()).appendTo($(this.el));
-    $('.spinner').spin();
+    $('#filterTemplate').tmpl(this.model.toJSON()).appendTo(this.el);
 
-    $(this.el).fadeIn("fast", function() {
-      PageVisit.search(self.model.options(), function(results) {
-        $('.content', self.el).fadeOut(200, function() {
-          $('.content', self.el).html('');
-          if(results.length === 0) {
-            $('#noVisitsTemplate').tmpl().appendTo($('.content', self.el));
-            self.presentContent();
-          } else {
-            dateVisits = groupResults(results);
-            $.each(dateVisits.models, function(i, dateVisit) {
-              $.each(dateVisit.get('timeVisits').models, function(i, timeVisit) {
-                var timeVisitView = new TimeVisitView({model: timeVisit});
-                $('.content', self.el).append(timeVisitView.render().el);
-              });
-              //var dateVisitView = new DateVisitView({model: dateVisit});
-              //$('.content', self.el).append(dateVisitView.render().el);
-            });
-            self.presentContent();
-          }
-        });
+    var self = this;
+    PageVisit.search(self.model.options(), function(results) {
+      $('.content', self.el).fadeOut(200, function() {
+        $(this).html('');
+        if(results.length === 0) {
+          self.renderNoResults();
+        } else {
+          self.renderPageVisits(results);
+        }
+        self.presentContent();
+      });
+    });
+    return this;
+  },
+
+  renderNoResults: function () {
+    $('#noVisitsTemplate').tmpl().appendTo($('.content', this.el));
+  },
+
+  renderPageVisits: function(results) {
+    var self = this;
+    dateVisits = groupResults(results);
+    $.each(dateVisits.models, function(i, dateVisit) {
+      $.each(dateVisit.get('timeVisits').models, function(i, timeVisit) {
+        var timeVisitView = new TimeVisitView({model: timeVisit});
+        $('.content', self.el).append(timeVisitView.render().el);
       });
     });
   },
 
   stickHeaders: function(container) {
-    $(container).find('.date_visit_view').stickySectionHeaders({
-      stickyClass:'date_interval', padding:48
-    });
     $(container).find('.time_visit_view').stickySectionHeaders({
       stickyClass:'time_interval', padding:48
     });

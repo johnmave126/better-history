@@ -6,7 +6,7 @@ describe('PageVisit', function() {
   beforeEach(function() {
     properties = {
       title: 'test',
-      lastvisitTime: new Date(),
+      lastVisitTime: new Date(),
       url: 'http://google.com/page/'
     };
     pageVisit = new PageVisit(properties);
@@ -27,6 +27,7 @@ describe('PageVisit', function() {
     it('returns all the properties used in the view', function() {
       var presentedProperties = properties;
       presentedProperties.cid = pageVisit.cid;
+      presentedProperties.time = new Date(pageVisit.get('lastVisitTime')).toLocaleDateString();
       expect(pageVisit.presenter()).toEqual(presentedProperties);
     });
   });

@@ -6,14 +6,17 @@
     <title>Better History</title>
   </head>
   <body>
-    <div class="main">
-      <div class="navbar">
-        <h1><em>Better</em> History</h1>
-      </div>
-      <div class="mainview"> </div>
+    <div class="page">
     </div>
     <!-- Templates Start -->
 
+
+    <script id="appTemplate" type="text/x-jquery-tmpl">
+      <div class="navbar">
+        <h1><em>Better</em> History</h1>
+      </div>
+      <div class="mainview"></div>
+    </script>
 
     <!-- Date Visit Template -->
     <script id="dateVisitTemplate" type="text/x-jquery-tmpl">
@@ -82,6 +85,39 @@
           <dl class="description" style="background-image: url(chrome://favicon/${url})">
             <dt class="title">${title}</dt>
             <dd class="url">${url}</dd>
+            <dd class="time">${time}</dd>
+          </dl>
+        </div>
+      </a>
+    </script>
+
+    <!-- Search Template -->
+    <script id="searchTemplate" type="text/x-jquery-tmpl">
+      <div class="heading stuck">
+        <h2>Searching "<span class="text">${text}</span>"<span class="date">All history</span></h2>
+      </div>
+      <div class="fade"></div>
+      <div class="content">
+        <div class="spinner"></div>
+      </div>
+    </script>
+
+    <!-- Searched Page Visit Template -->
+    <script id="searchedPageVisitTemplate" type="text/x-jquery-tmpl">
+      <a href="${url}" class="page_visit" data-cid="${cid}">
+        <div class="handle">
+          <span class="line"></span>
+          <span class="line"></span>
+          <span class="line"></span>
+          <span class="line"></span>
+          <span class="line"></span>
+          <span class="line"></span>
+          <span class="line"></span>
+        </div>
+        <div class="link">
+          <dl class="description" style="background-image: url(chrome://favicon/${url})">
+            <dt class="title">${title}</dt>
+            <dd class="url">${url}</dd>
           </dl>
         </div>
       </a>
@@ -127,7 +163,7 @@
     <script type="text/javascript" src="javascripts/views/grouped_visits_view.js"></script>
     <script type="text/javascript" src="javascripts/views/filter_view.js"></script>
     <script type="text/javascript" src="javascripts/views/page_visit_view.js"></script>
-    <script type="text/javascript" src="javascripts/views/date_visit_view.js"></script>
+    <script type="text/javascript" src="javascripts/views/search_view.js"></script>
     <script type="text/javascript" src="javascripts/views/time_visit_view.js"></script>
 
     <script type="text/javascript" src="javascripts/models/page_visit.js"></script>
@@ -147,9 +183,8 @@
     <script type="text/javascript">
       var router = new Router();
 
-
       $(function() {
-        appView = new AppView({el: $('.main')});
+        appView = new AppView({el: $('.page')})
         appView.render();
         Backbone.history.start();
       });

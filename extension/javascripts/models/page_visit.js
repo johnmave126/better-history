@@ -12,6 +12,7 @@ PageVisit = Backbone.Model.extend({
   presenter: function() {
     var properties = this.toJSON();
     properties.cid = this.cid;
+    properties.time = new Date(this.get('lastVisitTime')).toLocaleDateString();
     return properties;
   },
 
@@ -36,6 +37,7 @@ PageVisit = Backbone.Model.extend({
 });
 
 PageVisit.search = function(options, callback) {
+  console.log(options)
   chrome.history.search(options, function(results) {
     pageVisits = new PageVisits(); // global
 
