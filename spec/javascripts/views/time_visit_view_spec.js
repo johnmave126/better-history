@@ -1,9 +1,9 @@
 describe('TimeVisitView', function() {
-  var timeVisitView;
+  var timeVisitView, timeVisit;
 
   beforeEach(function() {
     loadFixtures('time_visit.html', 'page_visit.html');
-    var timeVisit = new TimeVisit({pageVisits: [new PageVisit({url: 'google.com'})]});
+    timeVisit = new TimeVisit({time: '10:00PM', pageVisits: [new PageVisit({url: 'google.com'})]});
     timeVisitView = new TimeVisitView({model: timeVisit});
   });
 
@@ -14,6 +14,24 @@ describe('TimeVisitView', function() {
 
     it('defines a class name', function() {
       expect(timeVisitView.className).toEqual('time_visit_view');
+    });
+  });
+
+  describe('#render', function() {
+    var presenter;
+
+    beforeEach(function() {
+      presenter = timeVisit.presenter();
+    });
+
+    it('inserts the time', function() {
+      timeVisitView.render();
+      expect($('.time', timeVisitView.el)).toHaveText(presenter.time);
+    });
+
+    it('inserts the visit summary', function() {
+      timeVisitView.render();
+      expect($('.summary', timeVisitView.el)).toHaveText(presenter.summary);
     });
   });
 
