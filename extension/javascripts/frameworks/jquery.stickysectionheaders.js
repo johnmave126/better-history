@@ -34,6 +34,7 @@
                         placeholder.remove();
                         placeholder = undefined;
                         header.css(originalCss);
+                        header.removeClass('stuck');
                     }
                 }
                 else if (pageOffset > containerTop && pageOffset < (containerBottom - headerHeight)) {
