@@ -23,6 +23,14 @@ describe('PageVisit', function() {
     });
   });
 
+  describe('#presenter', function() {
+    it('returns all the properties used in the view', function() {
+      var presentedProperties = properties;
+      presentedProperties.cid = pageVisit.cid;
+      expect(pageVisit.presenter()).toEqual(presentedProperties);
+    });
+  });
+
   describe('#domain', function() {
     it('returns the domain when a domain exists in the url', function() {
       expect(pageVisit.domain()).toEqual('http://google.com/');

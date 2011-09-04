@@ -1,8 +1,8 @@
 PageVisitView = Backbone.View.extend({
+  className: 'page_visit_view',
+
   render: function() {
-    var properties = this.model.toJSON();
-    properties.cid = this.model.cid;
-    $('#pageVisitTemplate').tmpl(properties).appendTo(this.el);
+    $('#pageVisitTemplate').tmpl(this.model.presenter()).appendTo(this.el);
     return this;
   }
 });
