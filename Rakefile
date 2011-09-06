@@ -9,7 +9,7 @@ begin
 
   task :seed do
     content = ''
-    File.open('extension/history.html', 'r') do |file|
+    File.open('extension/index.html', 'r') do |file|
       file.each do |line|
         content += line
       end
@@ -24,7 +24,7 @@ begin
         fixtures += "\n"
       end
     end
-    File.open('extension/history.html', 'w') {|f| f.write(content.gsub(/<!-- Templates Start -->(.*)<!-- Templates End -->/m, "<!-- Templates Start -->\n\n\n#{fixtures}\n    <!-- Templates End -->"))}
+    File.open('extension/index.html', 'w') {|f| f.write(content.gsub(/<!-- Templates Start -->(.*)<!-- Templates End -->/m, "<!-- Templates Start -->\n\n\n#{fixtures}\n    <!-- Templates End -->"))}
   end
 rescue LoadError
   task :jasmine do
