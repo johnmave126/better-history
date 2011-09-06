@@ -309,7 +309,8 @@ section {
   color:#444;
   position:relative;
 }
-.stuck {
+.stuck,
+.search .heading {
   border:none;
   z-index:10;
   box-shadow: 4px 2px 9px -1px rgba(0,0,0,.4);

@@ -1,10 +1,11 @@
 FilterView = Backbone.View.extend({
   initialize: function() {
-    $(this.el).addClass(this.model.get('hash')).html('').hide();
+    $(this.el).html('').hide();
   },
 
   render: function(type) {
     $('#filterTemplate').tmpl(this.model.toJSON()).appendTo(this.el);
+    $('.view', this.el).addClass(this.model.get('hash'));
 
     var self = this;
     $(this.el).fadeIn('fast', function() {
