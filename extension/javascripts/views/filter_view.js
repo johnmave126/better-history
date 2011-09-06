@@ -1,47 +1,59 @@
 FilterView = Backbone.View.extend({
-  className: 'filter_view',
+  initialize: function() {
+    $(this.el).addClass(this.model.get('hash')).html('').hide();
+  },
 
-  render: function() {
+  render: function(type) {
     $('#filterTemplate').tmpl(this.model.toJSON()).appendTo(this.el);
 
     var self = this;
-    PageVisit.search(self.model.options(), function(results) {
-      $('.content', self.el).fadeOut(200, function() {
-        $(this).html('');
-        if(results.length === 0) {
-          self.renderNoResults();
-        } else {
-          self.renderPageVisits(results);
-        }
-        self.presentContent();
+    $(this.el).fadeIn('fast', function() {
+      PageVisit.search(self.model.options(), function(results) {
+        self.renderAppropriate(results);
       });
     });
+
     return this;
+  },
+
+  renderAppropriate: function(results) {
+    $(this).html('');
+    if(results.length === 0) {
+      this.renderNoResults();
+    } else {
+      if(this.model.get('hash') === 'search') {
+        this.renderPageVisits(results);
+      } else {
+        this.renderTimeVisits(results);
+      }
+    }
+    this.update();
   },
 
   renderNoResults: function () {
     $('#noVisitsTemplate').tmpl().appendTo($('.content', this.el));
   },
 
-  renderPageVisits: function(results) {
-    var self = this;
-    dateVisits = groupResults(results);
-    $.each(dateVisits.models, function(i, dateVisit) {
+  renderTimeVisits: function(pageVisits) {
+    var timeVisitView;
+    $.each(groupPageVisits(pageVisits).models, function(i, dateVisit) {
       $.each(dateVisit.get('timeVisits').models, function(i, timeVisit) {
-        var timeVisitView = new TimeVisitView({model: timeVisit});
-        $('.content', self.el).append(timeVisitView.render().el);
+        timeVisitView = new TimeVisitView({model: timeVisit});
+        $('.content').append(timeVisitView.render().el);
       });
     });
   },
 
-  stickHeaders: function(container) {
-    $(container).find('.time_visit_view').stickySectionHeaders({
-      stickyClass:'time_interval', padding:48
+  renderPageVisits: function(pageVisits) {
+    var pageVisitView;
+    $.each(pageVisits.models, function(i, pageVisit) {
+      pageVisitView = new PageVisitView({model: pageVisit});
+      $('.content').append(pageVisitView.render().el);
     });
   },
 
-  dragify: function(selector) {
-    $(selector).draggable({
+  update: function() {
+    $('.page_visit, .grouped_visit').draggable({
       revert: 'invalid',
       revertDuration: 200,
       helper: 'clone',
@@ -49,13 +61,10 @@ FilterView = Backbone.View.extend({
       handle: '.handle',
       zIndex: 1000
     });
-  },
 
-  presentContent: function() {
-    var self = this;
-    $('.content', self.el).show('slide', {direction:'left'}, 350, function() {
-      self.stickHeaders($('.content', self.el));
-      self.dragify('.page_visit, .grouped_visits');
+    $('.time_visit_view').stickySectionHeaders({
+      stickyClass:'time_interval',
+      padding:48
     });
   }
 });

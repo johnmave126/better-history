@@ -35,7 +35,7 @@ dt, dd { margin:0; }
 }
 .spinner {
   top:80px;
-  left:80px;
+  left:-513px;
   position:relative;
 }
 .no_visits {
@@ -245,7 +245,7 @@ section {
 
 /* Search View
 =============================== */
-.search_view .time { display:inline; }
+.search .time { display:inline; }
 
 /* Sidebar View
 ================================ */
@@ -308,7 +308,6 @@ section {
   padding:10px;
   color:#444;
   position:relative;
-  cursor:pointer;
 }
 .stuck {
   border:none;

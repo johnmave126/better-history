@@ -3,6 +3,7 @@ SearchView = Backbone.View.extend({
 
   render: function() {
     $('#searchTemplate').tmpl(this.model.presenter()).appendTo(this.el);
+    $('.spinner').spin();
 
     var self = this;
     PageVisit.search(self.model.options(), function(pageVisits) {
@@ -13,7 +14,7 @@ SearchView = Backbone.View.extend({
         } else {
           self.renderPageVisits(pageVisits);
         }
-        self.presentContent();
+        router.presentContent(self.el);
       });
     });
     return this;
@@ -28,24 +29,6 @@ SearchView = Backbone.View.extend({
     $.each(pageVisits.models, function(i, pageVisit) {
       var pageVisitView = new PageVisitView({model: pageVisit});
       $('.content', self.el).append(pageVisitView.render().el);
-    });
-  },
-
-  dragify: function(selector) {
-    $(selector).draggable({
-      revert: 'invalid',
-      revertDuration: 200,
-      helper: 'clone',
-      appendTo: 'body',
-      handle: '.handle',
-      zIndex: 1000
-    });
-  },
-
-  presentContent: function() {
-    var self = this;
-    $('.content', this.el).show('slide', {direction:'left'}, 350, function() {
-      self.dragify('.page_visit');
     });
   }
 });

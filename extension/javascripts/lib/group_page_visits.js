@@ -1,4 +1,4 @@
-var groupResults;
+var groupPageVisits;
 (function() {
   var interval = 15;
 
@@ -23,7 +23,7 @@ var groupResults;
     return hours(date.getHours()) + ':' + minute(date.getMinutes()) + ' ' + period(date.getHours());
   }
 
-  groupResults = function(pageVisits) {
+  groupPageVisits = function(pageVisits) {
     var dateVisits = new DateVisits();
     $.each(pageVisits.models, function(index, pageVisit) {
       var lastVisitTime = new Date(pageVisit.get('lastVisitTime'));
