@@ -33,11 +33,6 @@ dt, dd { margin:0; }
 .primary {
   padding:0 10px;
 }
-.spinner {
-  top:80px;
-  left:-513px;
-  position:relative;
-}
 .no_visits {
   color:#AAA;
   padding:24px;
