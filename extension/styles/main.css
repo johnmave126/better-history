@@ -301,7 +301,8 @@ section {
   z-index:10;
   margin:0 0 0 24px;
   padding:10px;
-  color:#444;
+  color:#555;
+  font-weight:normal;
   position:relative;
 }
 .stuck,
