@@ -18,8 +18,9 @@ Router = Backbone.Router.extend({
     var filter = new Filter({
       text: query,
       hash: 'search',
-      date: 'All history (last visited)',
-      title: 'Search "' + query + '"'
+      date: 'All history',
+      title: 'Search "' + query + '"',
+      startTime: 0
     });
 
     var filterView = new FilterView({model: filter, el: $('.mainview')});

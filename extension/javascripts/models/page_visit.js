@@ -37,18 +37,28 @@ PageVisit = Backbone.Model.extend({
 });
 
 PageVisit.search = function(options, callback) {
-  console.log(options)
+  var regExp = new RegExp(options.text, "i");
+
+  var textMatch = function(result) {
+    if(result.url.match(regExp) || result.title.match(regExp)) {
+      return true;
+    } else {
+      return false;
+    }
+  };
+
   chrome.history.search(options, function(results) {
     pageVisits = new PageVisits(); // global
-
     $.each(results, function(i, result) {
-      if(options.startTime != null && options.endTime != null) {
-        if(result.lastVisitTime > options.startTime && result.lastVisitTime < options.endTime) {
-          pageVisits.add(result);
+        if(options.startTime != null && options.endTime != null) {
+          if(result.lastVisitTime > options.startTime && result.lastVisitTime < options.endTime) {
+            pageVisits.add(result);
+          }
+        } else {
+          if(textMatch(result)) {
+            pageVisits.add(result);
+          }
         }
-      } else {
-        pageVisits.add(result);
-      }
     });
 
     callback(pageVisits);
