@@ -206,6 +206,11 @@ section {
   font-size:15px;
   margin-left:10px;
 }
+.spinner {
+  top:80px;
+  left:-513px;
+  position:relative;
+}
 
 
 /* Date Visit View

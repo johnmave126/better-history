@@ -9,6 +9,7 @@ FilterView = Backbone.View.extend({
 
     var self = this;
     $(this.el).fadeIn('fast', function() {
+    $('.spinner').spin();
       PageVisit.search(self.model.options(), function(results) {
         self.renderAppropriate(results);
       });
@@ -18,7 +19,7 @@ FilterView = Backbone.View.extend({
   },
 
   renderAppropriate: function(results) {
-    $(this).html('');
+    $('.content', this.el).html('');
     if(results.length === 0) {
       this.renderNoResults();
     } else {
