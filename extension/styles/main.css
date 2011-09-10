@@ -81,11 +81,6 @@ h2 {
   box-sizing: border-box;
   padding: 0;
 }
-.content {
-  padding:47px 0 100px;
-  min-height:300px;
-  overflow:hidden;
-}
 .fade {
   background: -webkit-linear-gradient(left, #FFF, rgba(255, 255, 255, 0));
   position:absolute;
@@ -202,15 +197,22 @@ section {
 
 /* Filter Visit View
 ================================= */
+.content {
+  padding:47px 0 100px;
+  position:relative;
+  min-height:300px;
+  overflow:hidden;
+}
 .date {
   font-size:15px;
   margin-left:10px;
 }
 .spinner {
-  top:80px;
-  left:-513px;
-  position:relative;
+  top:90px;
+  left:60px;
+  position:absolute;
 }
+label { color:#53637D; }
 .group_by {
   position: absolute;
   top: 20px;
@@ -218,13 +220,6 @@ section {
 }
 .search .group_by { display:none; }
 
-
-/* Date Visit View
-================================= */
-.date_visit_view {
-  position:relative;
-  width:100%;
-}
 
 /* Delete View
 ================================ */

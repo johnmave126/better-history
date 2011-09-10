@@ -19,7 +19,7 @@ FilterView = Backbone.View.extend({
 
     var self = this;
     $(this.el).fadeIn('fast', function() {
-    $('.spinner').spin();
+      $('.spinner').spin();
       PageVisit.search(self.model.options(), function(results) {
         self.renderAppropriate(results);
       });

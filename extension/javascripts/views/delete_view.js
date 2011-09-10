@@ -25,10 +25,34 @@ DeleteView = Backbone.View.extend({
   },
 
   drop: function(element) {
+    this.removeVisitFromData(element);
+    this.removeVisitFromDom(element);
+
+    $(this.el).removeClass(this.overClass);
+  },
+
+  removeVisitFromData: function(element) {
     var method = (this.isGroupedVisit(element) ? 'removeGroupedVisit' : 'removePageVisit');
     this[method](element);
-    $(element).slideUp("fast");
-    $(this.el).removeClass(this.overClass);
+  },
+
+  removeVisitFromDom: function(element) {
+    if(this.updateTimeVisitCount(element) === 0) {
+      $(element).parents('.time_visit_view').slideUp('fast');
+    } else {
+      $(element).slideUp("fast", function() {
+        $(this).parent().remove();
+      });
+    }
+  },
+
+  updateTimeVisitCount: function(element) {
+    var timeSummary = $(element).parents('.time_visit_view').find('.summary'),
+        visits = parseInt($(timeSummary).text(), 10) - 1;
+
+    $(timeSummary).text(visits + ' visits');
+
+    return visits;
   },
 
   isGroupedVisit: function(element) {
