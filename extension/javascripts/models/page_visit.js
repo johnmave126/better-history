@@ -39,7 +39,7 @@ PageVisit = Backbone.Model.extend({
 PageVisit.search = function(options, callback) {
   var regExp = new RegExp(options.text, "i");
 
-  var textMatch = function(result) {
+  var verifyTextMatch = function(result) {
     if(result.url.match(regExp) || result.title.match(regExp)) {
       return true;
     } else {
@@ -47,18 +47,26 @@ PageVisit.search = function(options, callback) {
     }
   };
 
+  var verifyDateRange = function(result) {
+    return result.lastVisitTime > options.startTime && result.lastVisitTime < options.endTime;
+  };
+
+  var isSearchQuery = function() {
+    return !(options.startTime && options.endTime);
+  };
+
   chrome.history.search(options, function(results) {
     pageVisits = new PageVisits(); // global
     $.each(results, function(i, result) {
-        if(options.startTime != null && options.endTime != null) {
-          if(result.lastVisitTime > options.startTime && result.lastVisitTime < options.endTime) {
-            pageVisits.add(result);
-          }
-        } else {
-          if(textMatch(result)) {
-            pageVisits.add(result);
-          }
+      if (isSearchQuery()){
+        if(verifyTextMatch(result)) {
+          pageVisits.add(result);
         }
+      } else {
+        if(verifyDateRange(result)) {
+          pageVisits.add(result);
+        }
+      }
     });
 
     callback(pageVisits);
