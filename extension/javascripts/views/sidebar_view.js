@@ -43,9 +43,10 @@ SidebarView = Backbone.View.extend({
   },
 
   searchTyped: function(ev) {
-    if(ev.keyCode === 13) {
+    var term = $('.search').val();
+    if(ev.keyCode === 13 && term !== '') {
       this.selectFilter(null);
-      router.search($('.search').val());
+      router.search(term);
     }
   },
 
