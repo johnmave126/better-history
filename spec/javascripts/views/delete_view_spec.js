@@ -63,7 +63,7 @@ describe('DeleteView', function() {
     it('slides up the droppable element', function() {
       spyOn($.fn, 'slideUp');
       deleteView.drop($('<div></div>'));
-      expect($.fn.slideUp).toHaveBeenCalledWith("fast");
+      expect($.fn.slideUp).toHaveBeenCalledWith("fast", jasmine.any(Function));
     });
 
     it('removes a pageVisit when that was what was dropped', function() {
@@ -111,7 +111,7 @@ describe('DeleteView', function() {
     });
 
     it('returns the pageVisit for the passed element\'s data-cid attribute', function() {
-      var pageVisit = deleteView.getPageVisitByElement($('<div data-cid="c97"></div>'));
+      var pageVisit = deleteView.getPageVisitByElement($('<div data-cid="' + pageVisits.at(1).cid + '"></div>'));
       expect(pageVisit).toEqual(pageVisits.at(1));
     });
   });
