@@ -212,13 +212,6 @@ section {
   left:60px;
   position:absolute;
 }
-label { color:#53637D; }
-.group_by {
-  position: absolute;
-  top: 20px;
-  left: 358px;
-}
-.search .group_by { display:none; }
 
 
 /* Delete View

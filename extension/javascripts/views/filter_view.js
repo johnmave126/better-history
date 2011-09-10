@@ -3,16 +3,6 @@ FilterView = Backbone.View.extend({
     $(this.el).html('').hide();
   },
 
-  events: {
-    'change .grouping': 'refresh'
-  },
-
-  refresh:function(ev) {
-    groupInterval = $(ev.currentTarget).val();
-    $(this.el).html('').hide();
-    this.render();
-  },
-
   render: function(type) {
     $('#filterTemplate').tmpl(this.model.toJSON()).appendTo(this.el);
     $('.view', this.el).addClass(this.model.get('hash'));
