@@ -48,8 +48,8 @@ FilterView = Backbone.View.extend({
 
   renderPageVisits: function(pageVisits) {
     var pageVisitView;
-    $.each(pageVisits.models, function(i, pageVisit) {
-      pageVisitView = new PageVisitView({model: pageVisit});
+    $.each(pageVisits.models, function(i) {
+      pageVisitView = new PageVisitView({model: this});
       $('.content').append(pageVisitView.render().el);
     });
   },

@@ -1,7 +1,7 @@
 Filter = Backbone.Model.extend({
   defaults: {
     text: '',
-    maxResults: 2000
+    maxResults: 1000
   },
 
   options: function() {
