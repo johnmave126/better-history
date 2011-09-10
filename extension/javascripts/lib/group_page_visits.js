@@ -1,7 +1,6 @@
 var groupPageVisits;
+var groupInterval = 15;
 (function() {
-  var interval = 15;
-
   function hours(militaryHours) {
     if(militaryHours === 0) {
       return 12;
@@ -15,7 +14,7 @@ var groupPageVisits;
   }
 
   function minute(minutes) {
-    minutes = Math.floor(minutes / interval) * interval;
+    minutes = Math.floor(minutes / groupInterval) * groupInterval;
     return (minutes === 0 ? '00' : minutes);
   }
 

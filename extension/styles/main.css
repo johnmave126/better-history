@@ -211,6 +211,12 @@ section {
   left:-513px;
   position:relative;
 }
+.group_by {
+  position: absolute;
+  top: 20px;
+  left: 358px;
+}
+.search .group_by { display:none; }
 
 
 /* Date Visit View
