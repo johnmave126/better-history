@@ -19,7 +19,7 @@ Router = Backbone.Router.extend({
       text: query,
       hash: 'search',
       date: 'All history',
-      title: 'Search "' + query + '"',
+      title: 'Searching "' + query + '"',
       startTime: 0
     });
 
