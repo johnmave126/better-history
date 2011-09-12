@@ -128,5 +128,18 @@ describe('PageVisit', function() {
         expect(results.toJSON()).toEqual(expectedPageVisits.toJSON());
       });
     });
+
+    it('matches results by checking if the search term exists in the lastVisitTime', function() {
+      results = [
+        {title: 'google', url: 'google.com', lastVisitTime: new Date("April 12, 2010")},
+        {title: 'hit', url: 'google.com/hit', lastVisitTime: new Date("December 5, 2010")},
+        {title: 'sample', url: 'google.com/sample', lastVisitTime: new Date("October 13, 2010")}
+      ];
+
+      var expectedPageVisits = new PageVisits([results[2]]);
+      PageVisit.search({text: 'October'}, function(results) {
+        expect(results.toJSON()).toEqual(expectedPageVisits.toJSON());
+      });
+    });
   });
 });

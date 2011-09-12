@@ -40,7 +40,9 @@ PageVisit.search = function(options, callback) {
   var regExp = new RegExp(options.text, "i");
 
   var verifyTextMatch = function(result) {
-    if(result.url.match(regExp) || result.title.match(regExp)) {
+    if(new Date(result.lastVisitTime).toLocaleDateString().match(regExp) ||
+       result.url.match(regExp) ||
+       result.title.match(regExp)) {
       return true;
     } else {
       return false;
