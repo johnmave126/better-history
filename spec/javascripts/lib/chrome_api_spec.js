@@ -1,0 +1,85 @@
+describe('chromeAPI', function() {
+  describe('#history.search', function() {
+    var options, callback, results;
+
+    beforeEach(function() {
+      options = {
+        test: 'option'
+      };
+      results = [{title: 'title', url: 'google.com'}];
+      callback = jasmine.createSpy('callback');
+      chrome.history = {
+        search: jasmine.createSpy('search').andCallFake(function(options, callback) {
+          callback(results);
+        })
+      };
+    });
+
+    it('calls to chrome history API with the options and callback', function() {
+      chromeAPI.history.search(options, callback);
+      expect(chrome.history.search).toHaveBeenCalledWith(options, jasmine.any(Function));
+    });
+
+    it('calls the callback with the results', function() {
+      chromeAPI.history.search(options, callback);
+      expect(callback).toHaveBeenCalled();
+    });
+
+    it('matches results by checking if the search term exists in the title, url, or last visit time', function() {
+      var visit1 = {title: 'September news', url: 'google.com', lastVisitTime: new Date('December 2, 2010')},
+          visit2 = {title: 'Normal news', url: 'google.com/september', lastVisitTime: new Date('July 2, 2010')},
+          visit3 = {title: 'other', url: 'yahoo.com', lastVisitTime: new Date('September 12, 2010')};
+
+      results = [
+        {title: 'hit this', url: 'google.com'},
+        visit1,
+        {title: 'lame', url: 'google.com/hit'},
+        visit2,
+        {title: 'no match', url: 'google.com'},
+        visit3
+      ];
+
+      chromeAPI.history.search({text:'september'}, function(results) {
+        expect(results).toEqual([visit1, visit3, visit2]);
+      });
+    });
+
+    it('orders the matched results by lastVisitTime', function() {
+      var visit1 = {title: 'news', url: 'google.com', lastVisitTime: new Date('September 12, 2010 4:00')},
+          visit2 = {title: 'news', url: 'google.com', lastVisitTime: new Date('July 2, 2011')},
+          visit3 = {title: 'news', url: 'yahoo.com', lastVisitTime: new Date('September 12, 2010 12:00')};
+          visit4 = {title: 'news', url: 'yahoo.com', lastVisitTime: new Date('September 12, 2010 2:00')};
+
+      results = [
+        {title: 'hit this', url: 'google.com'},
+        visit1,
+        {title: 'lame', url: 'google.com/hit'},
+        visit2,
+        {title: 'no match', url: 'google.com'},
+        visit3,
+        visit4
+      ];
+
+      chromeAPI.history.search({text:'news'}, function(results) {
+        expect(results).toEqual([visit2, visit3, visit1, visit4]);
+      });
+    });
+
+    it('matches results by checking if the date falls between the searched ranges', function() {
+      var visit1 = {title: 'google', url: 'google.com', lastVisitTime: new Date("October 12, 2010")},
+          visit2 = {title: 'sample', url: 'google.com/sample', lastVisitTime: new Date("October 13, 2010")};
+      results = [
+        visit1,
+        {title: 'hit', url: 'google.com/hit', lastVisitTime: new Date("December 5, 2010")},
+        visit2
+      ];
+
+      chromeAPI.history.search({
+        startTime: new Date("October 1, 2010"),
+        endTime: new Date("October 14, 2010")
+      }, function(results) {
+        expect(results).toEqual([visit2, visit1]);
+      });
+    });
+  });
+});

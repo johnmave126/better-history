@@ -74,72 +74,16 @@ describe('PageVisit', function() {
   });
 
   describe('.search', function() {
-    var options, callback, results;
+    var options;
 
     beforeEach(function() {
-      options = {
-        test: 'option'
-      };
-      results = [{title: 'title', url: 'google.com'}];
-      callback = jasmine.createSpy('callback');
-      chrome.history = {
-        search: jasmine.createSpy('search').andCallFake(function(options, callback) {
-          callback(results);
-        })
-      };
+      spyOn(chromeAPI.history, 'search');
+      options = 'the options';
     });
 
-    it('calls to chrome history API with the options and callback', function() {
-      PageVisit.search(options, callback);
-      expect(chrome.history.search).toHaveBeenCalledWith(options, jasmine.any(Function));
-    });
-
-    it('calls the callback with the results', function() {
-      PageVisit.search(options, callback);
-      expect(callback).toHaveBeenCalled();
-    });
-
-    it('matches results by checking if the search term exists in the title and url', function() {
-      results = [
-        {title: 'hit this', url: 'google.com'},
-        {title: 'lame', url: 'google.com/hit'},
-        {title: 'no match', url: 'google.com'}
-      ];
-
-      var expectedPageVisits = new PageVisits([results[0], results[1]]);
-
-      PageVisit.search({text:'hit'}, function(results) {
-        expect(results.toJSON()).toEqual(expectedPageVisits.toJSON());
-      });
-    });
-
-    it('matches results by checking if the date falls between the searched ranges', function() {
-      results = [
-        {title: 'google', url: 'google.com', lastVisitTime: new Date("October 12, 2010")},
-        {title: 'hit', url: 'google.com/hit', lastVisitTime: new Date("December 5, 2010")},
-        {title: 'sample', url: 'google.com/sample', lastVisitTime: new Date("October 13, 2010")}
-      ];
-
-      var expectedPageVisits = new PageVisits([results[0], results[2]]);
-      PageVisit.search({
-        startTime: new Date("October 1, 2010"),
-        endTime: new Date("October 14, 2010")
-      }, function(results) {
-        expect(results.toJSON()).toEqual(expectedPageVisits.toJSON());
-      });
-    });
-
-    it('matches results by checking if the search term exists in the lastVisitTime', function() {
-      results = [
-        {title: 'google', url: 'google.com', lastVisitTime: new Date("April 12, 2010")},
-        {title: 'hit', url: 'google.com/hit', lastVisitTime: new Date("December 5, 2010")},
-        {title: 'sample', url: 'google.com/sample', lastVisitTime: new Date("October 13, 2010")}
-      ];
-
-      var expectedPageVisits = new PageVisits([results[2]]);
-      PageVisit.search({text: 'October'}, function(results) {
-        expect(results.toJSON()).toEqual(expectedPageVisits.toJSON());
-      });
+    it('calls to the custom chrome API search method', function() {
+      PageVisit.search(options, function(){});
+      expect(chromeAPI.history.search).toHaveBeenCalledWith(options, jasmine.any(Function));
     });
   });
 });

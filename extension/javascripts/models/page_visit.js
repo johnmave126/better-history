@@ -37,40 +37,11 @@ PageVisit = Backbone.Model.extend({
 });
 
 PageVisit.search = function(options, callback) {
-  var regExp = new RegExp(options.text, "i");
-
-  var verifyTextMatch = function(result) {
-    if(new Date(result.lastVisitTime).toLocaleDateString().match(regExp) ||
-       result.url.match(regExp) ||
-       result.title.match(regExp)) {
-      return true;
-    } else {
-      return false;
-    }
-  };
-
-  var verifyDateRange = function(result) {
-    return result.lastVisitTime > options.startTime && result.lastVisitTime < options.endTime;
-  };
-
-  var isSearchQuery = function() {
-    return !(options.startTime && options.endTime);
-  };
-
-  chrome.history.search(options, function(results) {
-    pageVisits = new PageVisits(); // global
-    $.each(results, function(i, result) {
-      if (isSearchQuery()){
-        if(verifyTextMatch(result)) {
-          pageVisits.add(result);
-        }
-      } else {
-        if(verifyDateRange(result)) {
-          pageVisits.add(result);
-        }
-      }
+  pageVisits = new PageVisits(); // global
+  chromeAPI.history.search(options, function(results) {
+    $.each(results, function(i) {
+      pageVisits.add(results[i]);
     });
-
     callback(pageVisits);
   });
 };
