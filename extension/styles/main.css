@@ -310,6 +310,7 @@ section {
   color:#555;
   font-weight:normal;
   position:relative;
+  cursor:pointer;
 }
 .stuck,
 .search .heading {

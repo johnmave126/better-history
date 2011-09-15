@@ -2,6 +2,10 @@ TimeVisitView = Backbone.View.extend({
   tagName: 'div',
   className: 'time_visit_view',
 
+  events: {
+    'click .time_interval': 'toggleVisits'
+  },
+
   render: function() {
     $('#timeVisitTemplate').tmpl(this.model.presenter()).appendTo(this.el);
     this.renderVisits();
@@ -32,5 +36,9 @@ TimeVisitView = Backbone.View.extend({
 
   appendVisits: function(visits) {
     $('.visits', this.el).append(visits);
+  },
+
+  toggleVisits: function(ev) {
+    $(ev.currentTarget).next().slideToggle('fast');
   }
 });
