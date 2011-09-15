@@ -4,7 +4,7 @@ FilterView = Backbone.View.extend({
   },
 
   render: function(type) {
-    $('#filterTemplate').tmpl(this.model.toJSON()).appendTo(this.el);
+    $('#filterTemplate').tmpl(this.model.presenter()).appendTo(this.el);
     $('.view', this.el).addClass(this.model.get('hash'));
 
     var self = this;

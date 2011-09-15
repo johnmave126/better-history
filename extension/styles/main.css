@@ -164,10 +164,10 @@ section {
 .no_hover .page_visit:hover {
   background:#FFF;
 }
-.page_visit:hover .title, .page_visit:hover .url {
+.page_visit:hover .title, .page_visit:hover .location {
   text-shadow:1px 1px #FFF;
 }
-.page_visit:hover .url,
+.page_visit:hover .location,
 .page_visit:hover .time {
   color:#555;
 }
@@ -175,12 +175,12 @@ section {
   font-size:105%;
   padding-bottom:3px;
 }
-.page_visit .url,
+.page_visit .location,
 .page_visit .time {
   color: #999;
   padding:3px 0;
 }
-.title, .url {
+.title, .location {
   overflow:hidden;
   white-space: nowrap;
 }
@@ -188,6 +188,13 @@ section {
   background-repeat:no-repeat;
   background-position:5px 0;
   padding-left:30px;
+}
+.match {
+  background:#f2f37b;
+  border-radius:2px;
+  display:inline-block;
+  padding:1 2px;
+  margin:0 1px;
 }
 .expanded {
   padding:0 0 5px 0;

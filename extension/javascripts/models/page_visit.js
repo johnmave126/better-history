@@ -12,7 +12,6 @@ PageVisit = Backbone.Model.extend({
   presenter: function() {
     var properties = this.toJSON();
     properties.cid = this.cid;
-    properties.time = new Date(this.get('lastVisitTime')).toLocaleDateString();
     return properties;
   },
 

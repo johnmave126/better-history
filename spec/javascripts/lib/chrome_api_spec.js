@@ -4,9 +4,9 @@ describe('chromeAPI', function() {
 
     beforeEach(function() {
       options = {
-        test: 'option'
+        text: 'option'
       };
-      results = [{title: 'title', url: 'google.com'}];
+      results = [{title: 'title', url: 'google.com', lastVisitTime: new Date()}];
       callback = jasmine.createSpy('callback');
       chrome.history = {
         search: jasmine.createSpy('search').andCallFake(function(options, callback) {
@@ -25,21 +25,68 @@ describe('chromeAPI', function() {
       expect(callback).toHaveBeenCalled();
     });
 
+    describe('Additional properties', function() {
+      it('sets a property called location to be equal to the url', function() {
+        results = [{title:'testing', url: 'gooogle.com', lastVisitTime: new Date('October 12, 2010')}];
+
+        chromeAPI.history.search({
+          startTime: new Date("October 1, 2010"),
+          endTime: new Date("October 14, 2010")
+        }, function(results) {
+          expect(results[0].location).toEqual(results[0].url);
+        });
+      });
+
+      it('sets a property called time to be a formatted lastVisitTime', function() {
+        results = [{title:'testing', url: 'gooogle.com', lastVisitTime: new Date('October 12, 2010')}];
+
+        chromeAPI.history.search({
+          startTime: new Date("October 1, 2010"),
+          endTime: new Date("October 14, 2010")
+        }, function(results) {
+          expect(results[0].time).toEqual(results[0].lastVisitTime.toLocaleDateString());
+        });
+      });
+    });
+
+    describe('Wrapping search terms', function() {
+      it('wraps search terms in the title', function() {
+        results = [{title: 'September month news', url: 'google.com', lastVisitTime: new Date('December 2, 2010')}];
+        chromeAPI.history.search({text:'september news'}, function(results) {
+          expect(results[0].title).toEqual('<span class="match">September</span> month <span class="match">news</span>');
+        });
+      });
+
+      it('wraps search terms in the location', function() {
+        results = [{title: 'Normal news', url: 'google.com/september', lastVisitTime: new Date('July 2, 2010')}];
+        chromeAPI.history.search({text:'september'}, function(results) {
+          expect(results[0].location).toEqual('google.com/<span class="match">september</span>');
+        });
+      });
+
+      it('wraps search terms in the time', function() {
+        results = [{title: 'other', url: 'yahoo.com', lastVisitTime: new Date('September 12, 2010')}];
+        chromeAPI.history.search({text:'september'}, function(results) {
+          expect(results[0].time).toEqual('Sunday, <span class="match">September</span> 12, 2010');
+        });
+      });
+    });
+
     it('matches results by checking if the search term exists in the title, url, or last visit time', function() {
-      var visit1 = {title: 'September news', url: 'google.com', lastVisitTime: new Date('December 2, 2010')},
-          visit2 = {title: 'Normal news', url: 'google.com/september', lastVisitTime: new Date('July 2, 2010')},
-          visit3 = {title: 'other', url: 'yahoo.com', lastVisitTime: new Date('September 12, 2010')};
+      var visit1 = {title: 'September something', url: 'google.com', lastVisitTime: new Date('December 2, 2010')},
+          visit2 = {title: 'Normal something', url: 'google.com/september', lastVisitTime: new Date('July 2, 2010')},
+          visit3 = {title: 'something', url: 'yahoo.com', lastVisitTime: new Date('September 12, 2010')};
 
       results = [
-        {title: 'hit this', url: 'google.com'},
+        {title: 'hit september', url: 'google.com'},
         visit1,
         {title: 'lame', url: 'google.com/hit'},
         visit2,
-        {title: 'no match', url: 'google.com'},
+        {title: 'no match', url: 'google.com/something'},
         visit3
       ];
 
-      chromeAPI.history.search({text:'september'}, function(results) {
+      chromeAPI.history.search({text:'september something'}, function(results) {
         expect(results).toEqual([visit1, visit3, visit2]);
       });
     });

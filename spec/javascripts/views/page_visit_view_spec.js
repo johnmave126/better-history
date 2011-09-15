@@ -5,7 +5,9 @@ describe('PageVisitView', function() {
     loadFixtures('page_visit.html');
     pageVisit = new PageVisit({
       url: 'google.com',
-      lastVisitTime: new Date()
+      title: 'google',
+      location: 'google.com',
+      time: 'Sunday'
     });
     pageVisitView = new PageVisitView({model: pageVisit});
   });
@@ -30,10 +32,15 @@ describe('PageVisitView', function() {
 
     it('inserts the url', function() {
       pageVisitView.render();
-      expect($('.url', pageVisitView.el)).toHaveText(presenter.url);
+      expect($('.page_visit', pageVisitView.el)).toHaveAttr('href', presenter.url);
     });
 
-    it('inserts the visited time', function() {
+    it('inserts the location', function() {
+      pageVisitView.render();
+      expect($('.location', pageVisitView.el)).toHaveText(presenter.location);
+    });
+
+    it('inserts the time', function() {
       pageVisitView.render();
       expect($('.time', pageVisitView.el)).toHaveText(presenter.time);
     });

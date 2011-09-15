@@ -16,6 +16,23 @@ Filter = Backbone.Model.extend({
   presenter: function() {
     var properties = this.toJSON();
     properties.cid = this.cid;
+    if(this.get('hash') === 'search') {
+      properties.title = this.buildTitle(this.get('text'));
+    }
     return properties;
+  },
+
+  buildTitle: function(query) {
+    var terms = query.split(' '),
+        joined = 'Searching ';
+
+    $.each(terms, function(i) {
+      joined += '"' + this + '"';
+      if(i !== terms.length - 1) {
+        joined += ' and ';
+      }
+    });
+
+    return joined;
   }
 });
