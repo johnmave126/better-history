@@ -142,5 +142,15 @@ describe('DateRanger', function() {
         expect(range.end.getDate()).toEqual(date);
       });
     });
+
+    describe('.twoMonthsAgo', function() {
+      it('returns date ranges for 60 days ago', function() {
+        var range = DateRanger.twoMonthsAgo(),
+            date = pastDate(60);
+
+        expect(range.start.getDate()).toEqual(date);
+        expect(range.end.getDate()).toEqual(date);
+      });
+    });
   });
 });

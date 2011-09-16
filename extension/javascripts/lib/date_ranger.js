@@ -20,6 +20,15 @@ DateRanger = {
     return date;
   },
 
+  twoMonthsAgo: function() {
+    var start = this.beginningOfDay(),
+        end = this.endOfDay();
+
+    start.setDate(start.getDate() - 60);
+    end.setDate(end.getDate() - 60);
+
+    return this.wrap(start, end);
+  },
   sevenDaysAgo: function() {
     var start = this.beginningOfDay(),
         end = this.endOfDay();

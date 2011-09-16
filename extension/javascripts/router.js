@@ -18,9 +18,11 @@ Router = Backbone.Router.extend({
     var filter = new Filter({
       text: query,
       hash: 'search',
-      date: 'All history',
-      startTime: 0
+      date: 'Last few months',
+      endTime: new Date().getTime(),
+      startTime: DateRanger.twoMonthsAgo().start.getTime()
     });
+
 
     var filterView = new FilterView({model: filter, el: $('.mainview')});
     filterView.render();

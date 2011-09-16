@@ -3,6 +3,7 @@ var chromeAPI = {
     search: function(options, callback) {
       if(options.text) {
         var terms = options.text.split(' ');
+        options.text = '';
       }
 
       function verifyTextMatch(result) {
@@ -23,7 +24,7 @@ var chromeAPI = {
       }
 
       function isSearchQuery() {
-        return !(options.startTime && options.endTime);
+        return (terms ? terms.length !== 0 : false);
       }
 
       function wrapMatchInProperty(regExp, property, match) {
@@ -47,9 +48,20 @@ var chromeAPI = {
         result.time = new Date(result.lastVisitTime).toLocaleDateString();
       }
 
-      var prunedResults = [];
-      chrome.history.search(options, function(results) {
+      function sortByTime(a, b) {
+        if (a.lastVisitTime > b.lastVisitTime) { return -1; }
+        if (a.lastVisitTime < b.lastVisitTime) { return 1; }
+        return 0;
+      }
+
+      function pruneResults(results) {
+        var prunedResults = [];
+
         $.each(results, function(i, result) {
+          if(prunedResults.length >= 100) {
+            return true;
+          }
+
           if (isSearchQuery()){
             setAdditionalProperties(result);
             if(verifyTextMatch(result)) {
@@ -64,11 +76,13 @@ var chromeAPI = {
           }
         });
 
-        callback(prunedResults.sort(function(a, b) {
-          if (a.lastVisitTime > b.lastVisitTime) { return -1; }
-          if (a.lastVisitTime < b.lastVisitTime) { return 1; }
-          return 0;
-        }));
+        prunedResults.sort(sortByTime);
+
+        return prunedResults;
+      }
+
+      chrome.history.search(options, function(results) {
+        callback(pruneResults(results));
       });
     }
   }
