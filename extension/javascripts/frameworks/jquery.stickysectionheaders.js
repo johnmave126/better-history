@@ -29,29 +29,31 @@
                 var pageOffset = $(window).scrollTop() + settings.padding;
                 var containerBottom = containerHeight + containerTop;
 
-                if (pageOffset < containerTop && placeholder != undefined) {
-                    if (placeholder != undefined) {
-                        placeholder.remove();
-                        placeholder = undefined;
-                        header.css(originalCss);
-                        header.removeClass('stuck');
-                    }
-                }
-                else if (pageOffset > containerTop && pageOffset < (containerBottom - headerHeight)) {
-                    if (placeholder == undefined) {
-                        placeholder = $('<div/>')
-                        .css('height', header.outerHeight() + 'px')
-                        .css('width', header.width() + 'px');
-                        header.before(placeholder);
-                        header.css('position', 'fixed');
-                        header.css('width', originalWidth + 'px');
-                        header.addClass('stuck');
+                if(!header.hasClass('collapsed')) {
+                  if (pageOffset < containerTop && placeholder != undefined) {
+                      if (placeholder != undefined) {
+                          placeholder.remove();
+                          placeholder = undefined;
+                          header.css(originalCss);
+                          header.removeClass('stuck');
+                      }
+                  }
+                  else if (pageOffset > containerTop && pageOffset < (containerBottom - headerHeight)) {
+                      if (placeholder == undefined) {
+                          placeholder = $('<div/>')
+                          .css('height', header.outerHeight() + 'px')
+                          .css('width', header.width() + 'px');
+                          header.before(placeholder);
+                          header.css('position', 'fixed');
+                          header.css('width', originalWidth + 'px');
+                          header.addClass('stuck');
 
-                    }
-                    header.css('top', settings.padding + 'px');
-                }
-                else if (pageOffset > (containerBottom - headerHeight)) {
-                    header.css('top', (containerBottom - headerHeight) - pageOffset + settings.padding + 'px');
+                      }
+                      header.css('top', settings.padding + 'px');
+                  }
+                  else if (pageOffset > (containerBottom - headerHeight)) {
+                      header.css('top', (containerBottom - headerHeight) - pageOffset + settings.padding + 'px');
+                  }
                 }
             });
         });
