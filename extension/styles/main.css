@@ -312,6 +312,15 @@ section {
   position:relative;
   cursor:pointer;
 }
+.time_interval:hover .time { color:#333; }
+.time_interval:hover .arrow {
+  border-top-color:#999;
+  border-left-color:transparent;
+}
+.time_interval.collapsed:hover .arrow {
+  border-left-color:#999;
+  border-top-color:transparent;
+}
 .stuck,
 .search .heading {
   border:none;
@@ -330,3 +339,22 @@ section {
   font-size:13px;
 }
 .visits { margin-bottom:10px; }
+.arrow {
+  float:left;
+}
+.arrow_down {
+  margin:6px 5px 0 0;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-top: 5px solid #CCC;
+}
+.arrow_right {
+  margin:4px 7px 0 3px;
+  border-top: 5px solid transparent;
+  border-bottom: 5px solid transparent;
+  border-left: 5px solid #CCC;
+  display:none;
+}
+.time_interval.collapsed .arrow_down { display:none; }
+.time_interval.collapsed .arrow_right { display:inline-block; }
+

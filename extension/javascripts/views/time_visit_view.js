@@ -39,6 +39,8 @@ TimeVisitView = Backbone.View.extend({
   },
 
   toggleVisits: function(ev) {
-    $(ev.currentTarget).toggleClass('collapsed').next().slideToggle('fast');
+    if(!$(ev.currentTarget).hasClass('stuck')) {
+      $(ev.currentTarget).toggleClass('collapsed').next().slideToggle('fast');
+    }
   }
 });
