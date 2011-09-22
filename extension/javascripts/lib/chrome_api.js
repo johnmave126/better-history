@@ -58,15 +58,15 @@ var chromeAPI = {
         var prunedResults = [];
 
         $.each(results, function(i, result) {
-          if(prunedResults.length >= 100) {
-            return true;
-          }
-
           if (isSearchQuery()){
-            setAdditionalProperties(result);
-            if(verifyTextMatch(result)) {
-              wrapTextMatch(result);
-              prunedResults.push(result);
+            if(prunedResults.length >= 100) {
+              return true;
+            } else {
+              setAdditionalProperties(result);
+              if(verifyTextMatch(result)) {
+                wrapTextMatch(result);
+                prunedResults.push(result);
+              }
             }
           } else {
             if(verifyDateRange(result)) {
