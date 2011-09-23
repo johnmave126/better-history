@@ -25,6 +25,31 @@ describe('chromeAPI', function() {
       expect(callback).toHaveBeenCalled();
     });
 
+    it('returns a max of 100 results when searching', function() {
+      for(var a = 0; a < 150; a++) {
+        results.push({title: 'title', url: 'google.com', lastVisitTime: new Date()});
+      }
+      chromeAPI.history.search({text: 'title'}, function(results) {
+        expect(results.length).toEqual(100);
+      });
+    });
+
+    it('returns as many results as found when filtering by date', function() {
+      for(var a = 0; a < 150; a++) {
+        results.push({
+          title: 'title',
+          url: 'google.com',
+          lastVisitTime: new Date('December 5, 2011 12:00')
+        });
+      }
+      chromeAPI.history.search({
+        startTime: new Date('December 5, 2011 0:00'),
+        endTime: new Date('December 5, 2011 23:59')
+      }, function(results) {
+        expect(results.length).toEqual(150);
+      });
+    });
+
     describe('Additional properties', function() {
       it('sets a property called location to be equal to the url', function() {
         results = [{title:'testing', url: 'gooogle.com', lastVisitTime: new Date('October 12, 2010')}];
