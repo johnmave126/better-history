@@ -38,7 +38,7 @@ var groupInterval = 15;
       var timeVisits = dateVisit.get('timeVisits');
 
       if(timeVisits.pluck('time').indexOf(time) === -1) {
-        dateVisit.get('timeVisits').add([{time: time, pageVisits:[]}]);
+        dateVisit.get('timeVisits').add([{date: date, time: time, pageVisits:[]}]);
       }
 
       var timeVisit = timeVisits.at(timeVisits.pluck('time').indexOf(time));

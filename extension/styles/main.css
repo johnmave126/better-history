@@ -196,7 +196,7 @@ section {
   padding:1 2px;
   margin:0 1px;
 }
-.expanded {
+.visits .expanded {
   padding:0 0 5px 0;
   margin:0 0 5px 24px;
   display:none;
@@ -317,10 +317,12 @@ section {
   border-top-color:#999;
   border-left-color:transparent;
 }
-.time_interval.collapsed:hover .arrow {
+.time_visit_view. .visits { display:none; }
+.time_visit_view .collapsed .time_interval:hover .arrow {
   border-left-color:#999;
   border-top-color:transparent;
 }
+.time_visit_view .collapsed .visits { display:none; }
 .stuck,
 .search .heading {
   border:none;
@@ -355,6 +357,6 @@ section {
   border-left: 5px solid #CCC;
   display:none;
 }
-.time_interval.collapsed .arrow_down { display:none; }
-.time_interval.collapsed .arrow_right { display:inline-block; }
+.time_visit_view .collapsed .arrow_down { display:none; }
+.time_visit_view .collapsed .arrow_right { display:inline-block; }
 

@@ -1,3 +1,4 @@
+delete(localStorage['December 5, 2010 10:00PM.state']);
 describe('TimeVisitView', function() {
   var timeVisitView, timeVisit;
 
@@ -7,7 +8,11 @@ describe('TimeVisitView', function() {
     var pageVisit = new PageVisit({url: 'google.com'}),
         groupedVisits = new GroupedVisits([new PageVisit({url: 'yahoo.com'})]);
 
-    timeVisit = new TimeVisit({time: '10:00PM', pageVisits: [pageVisit, groupedVisits]});
+    timeVisit = new TimeVisit({
+      date: 'December 5, 2010',
+      time: '10:00PM',
+      pageVisits: [pageVisit, groupedVisits]
+    });
     timeVisitView = new TimeVisitView({model: timeVisit});
   });
 
@@ -41,6 +46,28 @@ describe('TimeVisitView', function() {
     it('inserts the visits', function() {
       timeVisitView.render();
       expect($('.visits > *', timeVisitView.el).length).toEqual(2);
+    });
+
+    it('inserts the state', function() {
+      timeVisitView.render();
+      expect($('.state', timeVisitView.el)).toHaveClass('expanded');
+    });
+  });
+
+  describe('#toggleState', function() {
+    beforeEach(function() {
+      timeVisitView.render();
+    });
+
+    it('toggles the state classes', function() {
+      timeVisitView.toggleState();
+      expect($('.state', timeVisitView.el)).toHaveClass('collapsed');
+    });
+
+    it('sets the model state', function() {
+      spyOn(timeVisit, 'setState');
+      timeVisitView.toggleState();
+      expect(timeVisit.setState).toHaveBeenCalledWith('expanded');
     });
   });
 });

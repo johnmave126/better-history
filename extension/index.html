@@ -59,7 +59,7 @@
         <div class="link">
           <dl class="description" style="background-image: url(chrome://favicon/${url})">
             <dt class="title">${domain}</dt>
-            <dd class="url">${amount} Visits <span class="expand button small_button">Expand</span></dd>
+            <dd class="location">${amount} Visits <span class="expand button small_button">Expand</span></dd>
           </dl>
         </div>
       </a>
@@ -136,13 +136,15 @@
 
     <!-- Time Visit Template -->
     <script id="timeVisitTemplate" type="text/x-jquery-tmpl">
-      <h3 class="time_interval">
-        <span class="arrow arrow_down"></span>
-        <span class="arrow arrow_right"></span>
-        <span class="time">${time}</span>
-        <span class="summary">${summary}</span>
-      </h3>
-      <div class="visits"></div>
+      <div class="state ${state}">
+        <h3 class="time_interval">
+          <span class="arrow arrow_down"></span>
+          <span class="arrow arrow_right"></span>
+          <span class="time">${time}</span>
+          <span class="summary">${summary}</span>
+        </h3>
+        <div class="visits"></div>
+      </div>
     </script>
 
 

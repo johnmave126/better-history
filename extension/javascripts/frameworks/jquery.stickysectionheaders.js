@@ -29,7 +29,7 @@
                 var pageOffset = $(window).scrollTop() + settings.padding;
                 var containerBottom = containerHeight + containerTop;
 
-                if(!header.hasClass('collapsed')) {
+                if(header.parent('.state').hasClass('expanded')) {
                   if (pageOffset < containerTop && placeholder != undefined) {
                       if (placeholder != undefined) {
                           placeholder.remove();

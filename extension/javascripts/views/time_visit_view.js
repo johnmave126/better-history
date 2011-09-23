@@ -3,7 +3,7 @@ TimeVisitView = Backbone.View.extend({
   className: 'time_visit_view',
 
   events: {
-    'click .time_interval': 'toggleVisits'
+    'click .time_interval': 'toggleStateClicked'
   },
 
   render: function() {
@@ -38,9 +38,20 @@ TimeVisitView = Backbone.View.extend({
     $('.visits', this.el).append(visits);
   },
 
-  toggleVisits: function(ev) {
+  toggleStateClicked: function(ev) {
     if(!$(ev.currentTarget).hasClass('stuck')) {
-      $(ev.currentTarget).toggleClass('collapsed').next().slideToggle('fast');
+      var self = this;
+      $(this.el).find('.visits').slideToggle('fast', function() {
+        self.toggleState();
+      });
     }
+  },
+
+  toggleState: function() {
+    var element = $(this.el).children('.state');
+    $(element).toggleClass('expanded').toggleClass('collapsed');
+
+    var newState = ($(element).hasClass('expanded') ? 'expanded' : 'collapsed');
+    this.model.setState(newState);
   }
 });
