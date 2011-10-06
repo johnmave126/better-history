@@ -26,19 +26,14 @@ describe('groupPageVisits', function() {
 
 
   it('groups history items by 15 minute increments', function() {
-    var dateVisits = groupPageVisits(new PageVisits([pageVisit1, pageVisit2]));
-    expect(dateVisits.at(0).get('timeVisits').at(0).get('pageVisits')).toEqual([pageVisit1, pageVisit2]);
+    var pageVisits = new PageVisits([pageVisit1, pageVisit2]);
+    var dateVisits = groupPageVisits(pageVisits);
+    expect(dateVisits.at(0).get('timeVisits').at(0).get('pageVisits').length).toEqual(2);
   });
 
   it('separates history items that are more than 15 minutes apart', function() {
     var dateVisits = groupPageVisits(new PageVisits([pageVisit1, pageVisit3]));
     expect(dateVisits.at(0)).toBeDefined();
     expect(dateVisits.at(1)).toBeDefined();
-  });
-
-  it('groups neighboring history items from the same domain', function() {
-    var dateVisits = groupPageVisits(new PageVisits([pageVisit1, pageVisit4]));
-    var pageVisits = dateVisits.at(0).get('timeVisits').at(0).get('pageVisits');
-    expect(pageVisits[0].models).toEqual([pageVisit1, pageVisit4]);
   });
 });

@@ -22,12 +22,6 @@
       <h3 class="date_interval">${date}</h3>
     </script>
 
-    <!-- Delete Template -->
-    <script id="deleteTemplate" type="text/x-jquery-tmpl">
-      <p class="instructions">Drop visits to delete</p>
-      <p class="action">Drop to delete</p>
-    </script>
-
     <!-- Filter Template -->
     <script id="filterTemplate" type="text/x-jquery-tmpl">
       <div class="view">
@@ -47,20 +41,12 @@
     <!-- Grouped Visits Template -->
     <script id="groupedVisitsTemplate" type="text/x-jquery-tmpl">
       <a href="${domain}" class="grouped_visit page_visit">
-        <div class="handle">
-          <span class="line"></span>
-          <span class="line"></span>
-          <span class="line"></span>
-          <span class="line"></span>
-          <span class="line"></span>
-          <span class="line"></span>
-          <span class="line"></span>
-        </div>
         <div class="link">
           <dl class="description" style="background-image: url(chrome://favicon/${url})">
             <dt class="title">${domain}</dt>
             <dd class="location">${amount} Visits <span class="expand button small_button">Expand</span></dd>
           </dl>
+          <span class="delete button">Delete</span>
         </div>
       </a>
     </script>
@@ -71,21 +57,13 @@
     <!-- Page Visit Template -->
     <script id="pageVisitTemplate" type="text/x-jquery-tmpl">
       <a href="${url}" class="page_visit" data-cid="${cid}">
-        <div class="handle">
-          <span class="line"></span>
-          <span class="line"></span>
-          <span class="line"></span>
-          <span class="line"></span>
-          <span class="line"></span>
-          <span class="line"></span>
-          <span class="line"></span>
-        </div>
         <div class="link">
           <dl class="description" style="background-image: url(chrome://favicon/${url})">
             <dt class="title">{{html title}}</dt>
             <dd class="location">{{html location}}</dd>
             <dd class="time">{{html time}}</dd>
           </dl>
+          <span class="delete button">Delete</span>
         </div>
       </a>
     </script>
@@ -150,7 +128,6 @@
 
     <!-- Templates End -->
     <script type="text/javascript" src="javascripts/frameworks/jquery-1.6.2.min.js"></script>
-    <script type="text/javascript" src="javascripts/frameworks/jquery-ui-1.8.15.custom.min.js"></script>
     <script type="text/javascript" src="javascripts/frameworks/jquery.stickysectionheaders.js"></script>
     <script type="text/javascript" src="javascripts/frameworks/jquery.tmpl.min.js"></script>
     <script type="text/javascript" src="javascripts/frameworks/spin.min.js"></script>
@@ -162,7 +139,6 @@
 
     <script type="text/javascript" src="javascripts/views/app_view.js"></script>
     <script type="text/javascript" src="javascripts/views/sidebar_view.js"></script>
-    <script type="text/javascript" src="javascripts/views/delete_view.js"></script>
     <script type="text/javascript" src="javascripts/views/grouped_visits_view.js"></script>
     <script type="text/javascript" src="javascripts/views/filter_view.js"></script>
     <script type="text/javascript" src="javascripts/views/page_visit_view.js"></script>
@@ -184,6 +160,7 @@
     <script type="text/javascript" src="javascripts/lib/group_page_visits.js"></script>
     <script type="text/javascript" src="javascripts/lib/filters_seed.js"></script>
     <script type="text/javascript" src="javascripts/lib/chrome_api.js"></script>
+    <script type="text/javascript" src="javascripts/lib/backbone_patching.js"></script>
     <script type="text/javascript">
       var router = new Router();
 

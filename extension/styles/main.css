@@ -131,17 +131,10 @@ section {
   padding: 3px 10px 3px 5px;
 }
 .page_visit .time { display:none; }
-.page_visit:hover .link,
-.ui-draggable-dragging .link {
+.page_visit:hover .link {
   background: #eaeef3;
   box-shadow:0 0 5px #999;
   border-radius: 3px;
-}
-.ui-draggable-dragging .button {
-  display:none;
-}
-.ui-draggable-dragging .time {
-  display:none;
 }
 .handle .line {
   box-shadow:0 0 5px #BBB;
@@ -150,16 +143,6 @@ section {
   display:block;
   float:left;
   height:100%;
-}
-.page_visit:hover .handle {
-  display:block;
-  position:absolute;
-  background:#DDD;
-  left:-12px;
-  top:-1px;
-  width:14px;
-  height:100%;
-  cursor:move;
 }
 .no_hover .page_visit:hover {
   background:#FFF;
@@ -170,6 +153,16 @@ section {
 .page_visit:hover .location,
 .page_visit:hover .time {
   color:#555;
+}
+.page_visit:hover .delete { display:block; }
+.page_visit .delete {
+  position:absolute;
+  width:18px;
+  bottom:5px;
+  left:5px;
+  display:none;
+  padding:0;
+  text-indent:-5000px;
 }
 .title {
   font-size:105%;
@@ -220,29 +213,6 @@ section {
   position:absolute;
 }
 
-
-/* Delete View
-================================ */
-.delete_view {
-  border:4px #CCC dashed;
-  border-radius:15px;
-  margin:60px 24px 20px;
-  padding:10px;
-  text-align:right;
-  width:70px;
-  float:right;
-  height:56px;
-}
-.delete_view .action { display:none; }
-.delete_view p {
-  color:#999;
-}
-.delete_view.over {
-  box-shadow:inset 1px 1px 20px #AAA;
-}
-.delete_view.over p { color:#666; }
-.delete_view.over .instructions { display:none; }
-.delete_view.over .action { display:block; }
 
 /* Search View
 =============================== */

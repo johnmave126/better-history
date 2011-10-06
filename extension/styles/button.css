@@ -11,7 +11,6 @@ input[type='submit'] {
   color: #444;
   font-size: inherit;
   margin-bottom: 0px;
-  min-width: 4em;
   padding: 3px 12px 3px 12px;
   text-decoration:none;
   display:inline-block;

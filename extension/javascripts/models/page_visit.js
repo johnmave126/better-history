@@ -28,10 +28,6 @@ PageVisit = Backbone.Model.extend({
     } else {
       return false;
     }
-  },
-
-  destroy: function() {
-    chrome.history.deleteUrl({url: this.get('url')});
   }
 });
 

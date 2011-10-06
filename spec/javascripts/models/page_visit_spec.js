@@ -62,16 +62,6 @@ describe('PageVisit', function() {
     });
   });
 
-  describe('#destroy', function() {
-    beforeEach(function() {
-      chrome.history = { deleteUrl: jasmine.createSpy('deleteUrl') };
-    });
-    it('calls to the chrome history api with the url', function() {
-      pageVisit.destroy();
-      expect(chrome.history.deleteUrl).toHaveBeenCalledWith({url: pageVisit.get('url')});
-    });
-  });
-
   describe('.search', function() {
     var options;
 

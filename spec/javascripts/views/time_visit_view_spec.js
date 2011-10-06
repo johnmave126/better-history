@@ -3,17 +3,16 @@ describe('TimeVisitView', function() {
   var timeVisitView, timeVisit;
 
   beforeEach(function() {
-    loadFixtures('time_visit.html', 'page_visit.html', 'grouped_visits.html');
+    loadFixtures('time_visit.html', 'page_visit.html');
 
-    var pageVisit = new PageVisit({url: 'google.com'}),
-        groupedVisits = new GroupedVisits([new PageVisit({url: 'yahoo.com'})]);
+    var pageVisits = new PageVisits([{url: 'google.com'}, {url: 'yahoo.com'}]);
 
     timeVisit = new TimeVisit({
       date: 'December 5, 2010',
       time: '10:00PM',
-      pageVisits: [pageVisit, groupedVisits]
+      pageVisits: pageVisits
     });
-    timeVisitView = new TimeVisitView({model: timeVisit});
+    timeVisitView = new TimeVisitView({model: timeVisit, collection: pageVisits});
   });
 
   describe('#initialize', function() {

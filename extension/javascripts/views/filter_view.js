@@ -40,7 +40,10 @@ FilterView = Backbone.View.extend({
     var timeVisitView;
     $.each(groupPageVisits(pageVisits).models, function(i, dateVisit) {
       $.each(dateVisit.get('timeVisits').models, function(i, timeVisit) {
-        timeVisitView = new TimeVisitView({model: timeVisit});
+        timeVisitView = new TimeVisitView({
+          model: timeVisit,
+          collection: timeVisit.get('pageVisits')
+        });
         $('.content').append(timeVisitView.render().el);
       });
     });
@@ -55,15 +58,6 @@ FilterView = Backbone.View.extend({
   },
 
   update: function() {
-    $('.page_visit, .grouped_visit').draggable({
-      revert: 'invalid',
-      revertDuration: 200,
-      helper: 'clone',
-      appendTo: 'body',
-      handle: '.handle',
-      zIndex: 1000
-    });
-
     $('.time_visit_view').stickySectionHeaders({
       stickyClass:'time_interval',
       padding:48

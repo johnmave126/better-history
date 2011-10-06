@@ -2,16 +2,10 @@ AppView = Backbone.View.extend({
   render: function() {
     $('#appTemplate').tmpl().appendTo(this.el);
 
-    var sidebarView = new SidebarView({collection: filters}),
-        deleteView = new DeleteView();
+    var sidebarView = new SidebarView({collection: filters});
 
-    var content = this.prepareViews(sidebarView, deleteView);
-    $('.navbar', this.el).append(content).fadeIn(200);
+    $('.navbar', this.el).append(sidebarView.render().el).fadeIn(200);
 
     return this;
-  },
-
-  prepareViews: function(sidebarView, deleteView) {
-    return [sidebarView.render().el, deleteView.render().el];
   }
 });

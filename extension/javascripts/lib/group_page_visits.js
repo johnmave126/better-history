@@ -38,28 +38,28 @@ var groupInterval = 15;
       var timeVisits = dateVisit.get('timeVisits');
 
       if(timeVisits.pluck('time').indexOf(time) === -1) {
-        dateVisit.get('timeVisits').add([{date: date, time: time, pageVisits:[]}]);
+        dateVisit.get('timeVisits').add([{date: date, time: time, pageVisits:new PageVisits()}]);
       }
 
       var timeVisit = timeVisits.at(timeVisits.pluck('time').indexOf(time));
       var pageVisits = timeVisit.get('pageVisits');
+      pageVisits.add([pageVisit]);
+      //if(pageVisits.length === 0) {
+        //pageVisits.push(pageVisit);
+      //} else {
+        //if(pageVisit.compare(previous)) {
+          //if(pageVisits[pageVisits.length - 1].length === undefined) {
+            //pageVisits.remove(-1);
+            //pageVisits.push(new GroupedVisits([previous, pageVisit]));
+          //} else {
+            //pageVisits[pageVisits.length - 1].add(pageVisit);
+          //}
+        //} else {
+          //pageVisits.push(pageVisit);
+        //}
+      //}
 
-      if(pageVisits.length === 0) {
-        pageVisits.push(pageVisit);
-      } else {
-        if(pageVisit.compare(previous)) {
-          if(pageVisits[pageVisits.length - 1].length === undefined) {
-            pageVisits.remove(-1);
-            pageVisits.push(new GroupedVisits([previous, pageVisit]));
-          } else {
-            pageVisits[pageVisits.length - 1].add(pageVisit);
-          }
-        } else {
-          pageVisits.push(pageVisit);
-        }
-      }
-
-      previous = pageVisit;
+      //previous = pageVisit;
     });
     return dateVisits;
   }

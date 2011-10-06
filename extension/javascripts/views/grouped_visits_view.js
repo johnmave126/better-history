@@ -1,6 +1,7 @@
 GroupedVisitsView = Backbone.View.extend({
   events: {
-    'click .expand': 'toggle'
+    'click .expand': 'toggle',
+    'click .delete': 'deleteClicked'
   },
 
   render: function() {
@@ -25,5 +26,32 @@ GroupedVisitsView = Backbone.View.extend({
       $(element).parents('.grouped_visit').next().slideDown('fast');
     }
     $(element).toggleClass('active');
+  },
+
+  deleteClicked: function(ev) {
+    ev.preventDefault();
+    $.each(this.collection.models, function(i, pageVisit) {
+      pageVisit.destroy();
+    });
+    this.removeVisitFromDom();
+  },
+
+  removeVisitFromDom: function() {
+    if(this.updateTimeVisitCount() === 0) {
+      $(this.el).parents('.time_visit_view').slideUp('fast');
+    } else {
+      $(this.el).slideUp("fast", function() {
+        $(this).remove();
+      });
+    }
+  },
+
+  updateTimeVisitCount: function() {
+    var timeSummary = $(this.el).parents('.time_visit_view').find('.summary'),
+        visits = parseInt($(timeSummary).text(), 10) - 1;
+
+    $(timeSummary).text(visits + ' visits');
+
+    return visits;
   }
 });
