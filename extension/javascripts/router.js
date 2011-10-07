@@ -31,6 +31,6 @@ Router = Backbone.Router.extend({
   },
 
   checkType: function(type) {
-    return (type === undefined ? 'today' : type);
+    return (type === undefined ? 'day_0' : type);
   }
 });

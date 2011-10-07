@@ -2,12 +2,17 @@ TimeVisitView = Backbone.View.extend({
   tagName: 'div',
   className: 'time_visit_view',
 
+  expanded: 'expanded',
+  collapsed: 'collapsed',
+
   events: {
     'click .time_interval': 'toggleStateClicked'
   },
 
   initialize: function() {
     this.collection.bind('destroy', this.updateCount, this);
+    this.model.bind('collapse', this.collapse, this);
+    this.model.bind('expand', this.expand, this);
   },
 
   updateCount: function() {
@@ -47,9 +52,28 @@ TimeVisitView = Backbone.View.extend({
 
   toggleState: function() {
     var element = $(this.el).children('.state');
-    $(element).toggleClass('expanded').toggleClass('collapsed');
+    $(element).toggleClass(this.expanded).toggleClass(this.collapsed);
 
-    var newState = ($(element).hasClass('expanded') ? 'expanded' : 'collapsed');
+    var newState = ($(element).hasClass(this.expanded) ? this.expanded : this.collapsed);
     this.model.setState(newState);
+  },
+
+  collapse: function() {
+    var self = this;
+    $(this.el).find('.visits').slideUp('fast', function() {
+      var element = $(self.el).children('.state');
+      $(element).removeClass(self.expanded).addClass(self.collapsed);
+      self.model.setState(self.collapsed);
+
+    });
+  },
+
+  expand: function() {
+    var self = this;
+    $(this.el).find('.visits').slideDown('fast', function() {
+      var element = $(self.el).children('.state');
+      $(element).addClass(self.expanded).removeClass(self.collapsed);
+      self.model.setState(self.expaned);
+    });
   }
 });

@@ -2,7 +2,16 @@
 <script id="filterTemplate" type="text/x-jquery-tmpl">
   <div class="view">
     <div class="heading">
-      <h2>${title}<span class="date">${date}</span></h2>
+      <h2> ${title}</h2>
+      <span class="date">${date}</span><span class="visit_count"></span>
+      <ul class="controls">
+        <li class="control">
+          <a href="#" class="button collapse_groupings">Collapse</a>
+        </li>
+        <li class="control">
+          <a href="#" class="button expand_groupings">Expand</a>
+        </li>
+      </ul>
     </div>
     <div class="fade"></div>
     <div class="content">

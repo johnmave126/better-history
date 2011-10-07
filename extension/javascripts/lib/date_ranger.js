@@ -4,6 +4,11 @@ DateRanger = {
     return days[number];
   },
 
+  numberToMonth: function(number) {
+    var months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+    return months[number];
+  },
+
   beginningOfDay: function() {
     date = new Date();
     date.setHours(0);
@@ -20,88 +25,12 @@ DateRanger = {
     return date;
   },
 
-  twoMonthsAgo: function() {
+  borders: function(days) {
     var start = this.beginningOfDay(),
         end = this.endOfDay();
 
-    start.setDate(start.getDate() - 60);
-    end.setDate(end.getDate() - 60);
-
-    return this.wrap(start, end);
-  },
-  sevenDaysAgo: function() {
-    var start = this.beginningOfDay(),
-        end = this.endOfDay();
-
-    start.setDate(start.getDate() - 7);
-    end.setDate(end.getDate() - 7);
-
-    return this.wrap(start, end);
-  },
-
-  sixDaysAgo: function() {
-    var start = this.beginningOfDay(),
-        end = this.endOfDay();
-
-    start.setDate(start.getDate() - 6);
-    end.setDate(end.getDate() - 6);
-
-    return this.wrap(start, end);
-  },
-
-  fiveDaysAgo: function() {
-    var start = this.beginningOfDay(),
-        end = this.endOfDay();
-
-    start.setDate(start.getDate() - 5);
-    end.setDate(end.getDate() - 5);
-
-    return this.wrap(start, end);
-  },
-
-  fourDaysAgo: function() {
-    var start = this.beginningOfDay(),
-        end = this.endOfDay();
-
-    start.setDate(start.getDate() - 4);
-    end.setDate(end.getDate() - 4);
-
-    return this.wrap(start, end);
-  },
-
-  threeDaysAgo: function() {
-    var start = this.beginningOfDay(),
-        end = this.endOfDay();
-
-    start.setDate(start.getDate() - 3);
-    end.setDate(end.getDate() - 3);
-
-    return this.wrap(start, end);
-  },
-
-  twoDaysAgo: function() {
-    var start = this.beginningOfDay(),
-        end = this.endOfDay();
-
-    start.setDate(start.getDate() - 2);
-    end.setDate(end.getDate() - 2);
-
-    return this.wrap(start, end);
-  },
-
-  yesterday: function() {
-    var start = this.beginningOfDay(),
-        end = this.endOfDay();
-
-    start.setDate(start.getDate() - 1);
-    end.setDate(end.getDate() - 1);
-
-    return this.wrap(start, end);
-  },
-
-  today: function() {
-    var start = this.beginningOfDay(),
-        end = this.endOfDay();
+    start.setDate(start.getDate() - days);
+    end.setDate(end.getDate() - days);
 
     return this.wrap(start, end);
   },

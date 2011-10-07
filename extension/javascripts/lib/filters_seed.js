@@ -1,71 +1,23 @@
 var filters;
 
 (function() {
-  var today = DateRanger.today(),
-      yesterday = DateRanger.yesterday(),
-      twoDaysAgo = DateRanger.twoDaysAgo(),
-      threeDaysAgo = DateRanger.threeDaysAgo(),
-      fourDaysAgo = DateRanger.fourDaysAgo(),
-      fiveDaysAgo = DateRanger.fiveDaysAgo(),
-      sixDaysAgo = DateRanger.sixDaysAgo(),
-      sevenDaysAgo = DateRanger.sevenDaysAgo();
+  var today = DateRanger.borders(0),
+      yesterday = DateRanger.borders(1),
+      twoDaysAgo = DateRanger.borders(2),
+      threeDaysAgo = DateRanger.borders(3),
+      fourDaysAgo = DateRanger.borders(4),
+      fiveDaysAgo = DateRanger.borders(5),
+      sixDaysAgo = DateRanger.borders(6),
+      sevenDaysAgo = DateRanger.borders(7);
 
-  filters = new Filters([
-    new Filter({
-      name: 'Today',
-      hash: 'today',
-      title: 'Today',
-      date: today.date,
-      startTime: today.start.getTime(),
-      endTime: today.end.getTime()
-    }),
-    new Filter({
-      name: 'Yesterday',
-      hash: 'yesterday',
-      title: 'Yesterday',
-      date: yesterday.date,
-      startTime: yesterday.start.getTime(),
-      endTime: yesterday.end.getTime()
-    }),
-    new Filter({
-      name: twoDaysAgo.day,
-      hash: 'twoDaysAgo',
-      title: 'Last ' + twoDaysAgo.day,
-      date: twoDaysAgo.date,
-      startTime: twoDaysAgo.start.getTime(),
-      endTime: twoDaysAgo.end.getTime()
-    }),
-    new Filter({
-      name: threeDaysAgo.day,
-      hash: 'threeDaysAgo',
-      title: 'Last ' + threeDaysAgo.day,
-      date: threeDaysAgo.date,
-      startTime: threeDaysAgo.start.getTime(),
-      endTime: threeDaysAgo.end.getTime()
-    }),
-    new Filter({
-      name: fourDaysAgo.day,
-      hash: 'fourDaysAgo',
-      title: 'Last ' + fourDaysAgo.day,
-      date: fourDaysAgo.date,
-      startTime: fourDaysAgo.start.getTime(),
-      endTime: fourDaysAgo.end.getTime()
-    }),
-    new Filter({
-      name: fiveDaysAgo.day,
-      hash: 'fiveDaysAgo',
-      title: 'Last ' + fiveDaysAgo.day,
-      date: fiveDaysAgo.date,
-      startTime: fiveDaysAgo.start.getTime(),
-      endTime: fiveDaysAgo.end.getTime()
-    }),
-    new Filter({
-      name: sixDaysAgo.day,
-      hash: 'sixDaysAgo',
-      title: 'Last ' + sixDaysAgo.day,
-      date: sixDaysAgo.date,
-      startTime: sixDaysAgo.start.getTime(),
-      endTime: sixDaysAgo.end.getTime()
-    })
-  ]);
+  filters = new Filters();
+  $.each([0,1,2,3,4,5,6,7,8,9,10,11,12,13], function(i) {
+    var borders = DateRanger.borders(i);
+
+    filters.add({
+      daysSinceToday: i,
+      startTime: borders.start.getTime(),
+      endTime: borders.end.getTime()
+    });
+  });
 })();

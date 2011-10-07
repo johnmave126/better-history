@@ -16,6 +16,7 @@ dt, dd { margin:0; }
   width:100%;
   z-index:11;
   margin:0 0 0 24px;
+  border-bottom: 1px solid #eeeeee;
 }
 .groupedVisits {
   margin:5px 0 10px;
@@ -53,7 +54,6 @@ h1 {
 h2 {
   -webkit-padding-end: 24px;
   -webkit-user-select: none;
-  border-bottom: 1px solid #eeeeee;
   color: #53637d;
   font-size: 200%;
   font-weight: normal;
@@ -61,6 +61,7 @@ h2 {
   padding-bottom: 4px;
   padding-top: 13px;
   text-shadow: white 0 1px 2px;
+  display:inline-block;
 }
 
 
@@ -203,14 +204,35 @@ section {
   min-height:300px;
   overflow:hidden;
 }
-.date {
+.date, .visit_count {
   font-size:15px;
   margin-left:10px;
+  color:#53637D;
 }
 .spinner {
   top:90px;
   left:60px;
   position:absolute;
+}
+.visit_count {
+  margin-left:15px;
+  display:none;
+}
+.toggle_time_divisions {
+  position:absolute;
+  top:10px;
+  right:20pc;
+}
+.controls {
+  display:inline-block;
+  margin:0;
+  padding:0;
+  position:absolute;
+  right:260px;
+  top:10px;
+}
+.controls .control {
+  display:inline;
 }
 
 
@@ -257,13 +279,7 @@ section {
   color:#000;
   opacity:1;
 }
-.opacity_1 { opacity:1; }
-.opacity_2 { opacity:1; }
-.opacity_3 { opacity:0.9; }
-.opacity_4 { opacity:0.8; }
-.opacity_5 { opacity:0.7; }
-.opacity_6 { opacity:0.6; }
-.opacity_7 { opacity:0.5; }
+.filter a.empty { color:#777; }
 .clear_history {
   margin:15px 24px 12px;
 }
@@ -304,6 +320,7 @@ section {
   background:#FFF;
   display:block;
 }
+.stuck .arrow { visibility:hidden; }
 .summary {
   font-weight:normal;
   color:#999;

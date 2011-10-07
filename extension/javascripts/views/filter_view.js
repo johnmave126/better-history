@@ -1,6 +1,26 @@
 FilterView = Backbone.View.extend({
+
+  events: {
+    'click .collapse_groupings': 'collapseGroupings',
+    'click .expand_groupings': 'expandGroupings'
+  },
+
   initialize: function() {
     $(this.el).html('').hide();
+  },
+
+  collapseGroupings: function(ev) {
+    ev.preventDefault();
+    $.each(this.collection.models, function(i, timeVisit) {
+      timeVisit.trigger('collapse');
+    });
+  },
+
+  expandGroupings: function(ev) {
+    ev.preventDefault();
+    $.each(this.collection.models, function(i, timeVisit) {
+      timeVisit.trigger('expand');
+    });
   },
 
   render: function(type) {
@@ -16,6 +36,20 @@ FilterView = Backbone.View.extend({
     });
 
     return this;
+  },
+
+  setVisitCount: function(amount) {
+    this.visitCount = amount;
+    this.updateVisitCount(amount);
+  },
+
+  updateVisitCount: function(amount) {
+    $('.visit_count', this.el).text(amount + ' visits').fadeIn();
+  },
+
+  visitRemoved: function() {
+    this.visitCount--;
+    this.updateVisitCount(this.visitCount);
   },
 
   renderAppropriate: function(results) {
@@ -34,19 +68,25 @@ FilterView = Backbone.View.extend({
 
   renderNoResults: function () {
     $('#noVisitsTemplate').tmpl().appendTo($('.content', this.el));
+    this.setVisitCount(0);
   },
 
   renderTimeVisits: function(pageVisits) {
-    var timeVisitView;
+    var timeVisitView, visitCount = 0;
+    var self = this;
     $.each(groupPageVisits(pageVisits).models, function(i, dateVisit) {
-      $.each(dateVisit.get('timeVisits').models, function(i, timeVisit) {
+      self.collection = dateVisit.get('timeVisits');
+      $.each(self.collection.models, function(i, timeVisit) {
+        timeVisit.get('pageVisits').bind('destroy', self.visitRemoved, self);
         timeVisitView = new TimeVisitView({
           model: timeVisit,
           collection: timeVisit.get('pageVisits')
         });
+        visitCount += timeVisit.get('pageVisits').length;
         $('.content').append(timeVisitView.render().el);
       });
     });
+    this.setVisitCount(visitCount);
   },
 
   renderPageVisits: function(pageVisits) {

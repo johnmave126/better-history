@@ -3,25 +3,21 @@ describe('Filters', function() {
 
   beforeEach(function() {
     todayFilter = new Filter({
-      name: 'Today',
-      hash: 'today',
-      title: 'Today',
-      startTime: DateRanger.today().start.getTime(),
-      endTime: DateRanger.today().end.getTime()
+      daysSinceToday: 0,
+      startTime: DateRanger.borders(0).start.getTime(),
+      endTime: DateRanger.borders(0).end.getTime()
     });
     yesterday = new Filter({
-      name: 'Yesterday',
-      hash: 'yesterday',
-      title: 'Yesterday',
-      startTime: DateRanger.yesterday().start.getTime(),
-      endTime: DateRanger.yesterday().end.getTime()
+      daysSinceToday: 1,
+      startTime: DateRanger.borders(1).start.getTime(),
+      endTime: DateRanger.borders(1).end.getTime()
     });
     filters = new Filters([todayFilter, yesterdayFilter]);
   });
 
   describe('#getByHash', function() {
     it('returns the model with the passed hash when found', function() {
-      expect(filters.getByHash('today')).toEqual(todayFilter);
+      expect(filters.getByHash('day_0')).toEqual(todayFilter);
     });
 
     it('returns undefined when no model has the passed hash', function() {

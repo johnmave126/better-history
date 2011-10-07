@@ -7,18 +7,14 @@ describe('SidebarView', function() {
 
     filters = new Filters([
       new Filter({
-        name: 'Today',
-        hash: 'today',
-        title: 'Today',
-        startTime: DateRanger.today().start.getTime(),
-        endTime: DateRanger.today().end.getTime()
+        daysSinceToday: 0,
+        startTime: DateRanger.borders(0).start.getTime(),
+        endTime: DateRanger.borders(0).end.getTime()
       }),
       new Filter({
-        name: 'Yesterday',
-        hash: 'yesterday',
-        title: 'Yesterday',
-        startTime: DateRanger.yesterday().start.getTime(),
-        endTime: DateRanger.yesterday().end.getTime()
+        daysSinceToday: 1,
+        startTime: DateRanger.borders(1).start.getTime(),
+        endTime: DateRanger.borders(1).end.getTime()
       })
     ]);
     sidebarView = new SidebarView({collection: filters});
@@ -62,7 +58,7 @@ describe('SidebarView', function() {
 
     it('calls selectFilter with the filter element based on the passed type', function() {
       spyOn(sidebarView, 'selectFilter');
-      sidebarView.loadFromType('today');
+      sidebarView.loadFromType('day_0');
       expect(sidebarView.selectFilter).toHaveBeenCalledWith($('a[data-cid=' + filters.at(0).cid + ']'));
     });
   });
