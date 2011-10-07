@@ -61,6 +61,6 @@ var groupInterval = 15;
 
       //previous = pageVisit;
     });
-    return dateVisits;
+    return dateVisits.models[0].get('timeVisits');
   }
 })();

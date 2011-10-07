@@ -1,4 +1,5 @@
 FilterView = Backbone.View.extend({
+  className: 'filter_view',
 
   events: {
     'click .collapse_groupings': 'collapseGroupings',
@@ -11,91 +12,62 @@ FilterView = Backbone.View.extend({
 
   collapseGroupings: function(ev) {
     ev.preventDefault();
-    $.each(this.collection.models, function(i, timeVisit) {
-      timeVisit.trigger('collapse');
-    });
+    if(this.collection) {
+      $.each(this.collection.models, function(i, timeVisit) {
+        timeVisit.trigger('collapse');
+      });
+    }
   },
 
   expandGroupings: function(ev) {
     ev.preventDefault();
-    $.each(this.collection.models, function(i, timeVisit) {
-      timeVisit.trigger('expand');
-    });
+    if(this.collection) {
+      $.each(this.collection.models, function(i, timeVisit) {
+        timeVisit.trigger('expand');
+      });
+    }
   },
 
   render: function(type) {
     $('#filterTemplate').tmpl(this.model.presenter()).appendTo(this.el);
     $('.view', this.el).addClass(this.model.get('hash'));
+    $('.content', this.el).html('');
 
     var self = this;
     $(this.el).fadeIn('fast', function() {
       $('.spinner').spin();
       PageVisit.search(self.model.options(), function(results) {
-        self.renderAppropriate(results);
+        if(results.length === 0) {
+          self.renderNoResults();
+        } else {
+          self.renderTimeVisits(results);
+        }
+        self.update();
       });
     });
 
     return this;
   },
 
-  setVisitCount: function(amount) {
-    this.visitCount = amount;
-    this.updateVisitCount(amount);
-  },
-
-  updateVisitCount: function(amount) {
-    $('.visit_count', this.el).text(amount + ' visits').fadeIn();
-  },
-
-  visitRemoved: function() {
-    this.visitCount--;
-    this.updateVisitCount(this.visitCount);
-  },
-
-  renderAppropriate: function(results) {
-    $('.content', this.el).html('');
-    if(results.length === 0) {
-      this.renderNoResults();
-    } else {
-      if(this.model.get('hash') === 'search') {
-        this.renderPageVisits(results);
-      } else {
-        this.renderTimeVisits(results);
-      }
-    }
-    this.update();
-  },
-
   renderNoResults: function () {
     $('#noVisitsTemplate').tmpl().appendTo($('.content', this.el));
-    this.setVisitCount(0);
   },
 
   renderTimeVisits: function(pageVisits) {
-    var timeVisitView, visitCount = 0;
+    var timeVisitView, total = 0;
+    this.collection = groupPageVisits(pageVisits);
+
     var self = this;
-    $.each(groupPageVisits(pageVisits).models, function(i, dateVisit) {
-      self.collection = dateVisit.get('timeVisits');
-      $.each(self.collection.models, function(i, timeVisit) {
-        timeVisit.get('pageVisits').bind('destroy', self.visitRemoved, self);
-        timeVisitView = new TimeVisitView({
-          model: timeVisit,
-          collection: timeVisit.get('pageVisits')
-        });
-        visitCount += timeVisit.get('pageVisits').length;
-        $('.content').append(timeVisitView.render().el);
+    $.each(this.collection.models, function(i, timeVisit) {
+      timeVisitView = new TimeVisitView({
+        model: timeVisit,
+        collection: timeVisit.get('pageVisits')
       });
+      total += timeVisit.get('pageVisits').length;
+      $('.content').append(timeVisitView.render().el);
     });
-    this.setVisitCount(visitCount);
   },
 
-  renderPageVisits: function(pageVisits) {
-    var pageVisitView;
-    $.each(pageVisits.models, function(i) {
-      pageVisitView = new PageVisitView({model: this});
-      $('.content').append(pageVisitView.render().el);
-    });
-  },
 
   update: function() {
     $('.time_visit_view').stickySectionHeaders({
