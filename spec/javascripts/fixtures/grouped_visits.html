@@ -1,12 +1,12 @@
 <!-- Grouped Visits Template -->
 <script id="groupedVisitsTemplate" type="text/x-jquery-tmpl">
-  <a href="${domain}" class="grouped_visit page_visit">
+  <a href="${domain}">
     <div class="link">
       <dl class="description" style="background-image: url(chrome://favicon/${url})">
         <dt class="title">${domain}</dt>
-        <dd class="location">${amount} Visits <span class="expand button small_button">Expand</span></dd>
+        <dd class="location"><span class="expand button small_button">Expand</span></dd>
       </dl>
-      <span class="delete button">Delete</span>
+      <span class="delete_icon delete_group" title="Delete visit group"><span class="delete"></span></span>
     </div>
   </a>
 </script>

@@ -1,7 +1,21 @@
 GroupedVisitsView = Backbone.View.extend({
+  className: 'visit grouped_visits',
+
   events: {
     'click .expand': 'toggle',
-    'click .delete': 'deleteClicked'
+    'click .delete_clicked': 'deleteClicked'
+  },
+
+  initialize: function() {
+    var self = this;
+    $.each(this.collection.models, function(i, pageVisit) {
+      pageVisit.bind('destroy', self.checkAmount, self);
+    });
+    this.collection.bind('all', self.collbind, self);
+  },
+
+  collbind: function() {
+    console.log('collbind');
   },
 
   render: function() {
@@ -20,10 +34,10 @@ GroupedVisitsView = Backbone.View.extend({
     var element = ev.target;
     if($(element).hasClass('active')) {
       $(element).text('Expand');
-      $(element).parents('.grouped_visit').next().slideUp('fast');
+      $(element).parents('a').next().slideUp('fast');
     } else {
       $(element).text('Collapse');
-      $(element).parents('.grouped_visit').next().slideDown('fast');
+      $(element).parents('a').next().slideDown('fast');
     }
     $(element).toggleClass('active');
   },
@@ -33,25 +47,17 @@ GroupedVisitsView = Backbone.View.extend({
     $.each(this.collection.models, function(i, pageVisit) {
       pageVisit.destroy();
     });
-    this.removeVisitFromDom();
+    this.remove();
   },
 
-  removeVisitFromDom: function() {
-    if(this.updateTimeVisitCount() === 0) {
-      $(this.el).parents('.time_visit_view').slideUp('fast');
-    } else {
-      $(this.el).slideUp("fast", function() {
-        $(this).remove();
-      });
-    }
-  },
-
-  updateTimeVisitCount: function() {
-    var timeSummary = $(this.el).parents('.time_visit_view').find('.summary'),
-        visits = parseInt($(timeSummary).text(), 10) - 1;
-
-    $(timeSummary).text(visits + ' visits');
-
-    return visits;
+  checkAmount: function() {
+    console.log(this.collection.length);
+    //if(this) {
+      //$(this.el).parents('.time_visit_view').slideUp('fast');
+    //} else {
+      //$(this.el).slideUp("fast", function() {
+        //$(this).remove();
+      //});
+    //}
   }
 });

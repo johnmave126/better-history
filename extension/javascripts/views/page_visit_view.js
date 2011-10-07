@@ -1,8 +1,8 @@
 PageVisitView = Backbone.View.extend({
-  className: 'page_visit_view',
+  className: 'visit page_visit',
 
   events: {
-    'click .delete': 'deleteClicked'
+    'click .delete_visit': 'deleteClicked'
   },
 
   render: function() {

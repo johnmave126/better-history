@@ -1,4 +1,4 @@
-var groupPageVisits;
+var GroupBy;
 var groupInterval = 15;
 (function() {
   function hours(militaryHours) {
@@ -22,45 +22,55 @@ var groupInterval = 15;
     return hours(date.getHours()) + ':' + minute(date.getMinutes()) + ' ' + period(date.getHours());
   }
 
-  groupPageVisits = function(pageVisits) {
-    var dateVisits = new DateVisits();
-    $.each(pageVisits.models, function(index, pageVisit) {
-      var lastVisitTime = new Date(pageVisit.get('lastVisitTime'));
+  GroupBy = {
+    time: function(pageVisits) {
+      var dateVisits = new DateVisits();
+      $.each(pageVisits.models, function(index, pageVisit) {
+        var lastVisitTime = new Date(pageVisit.get('lastVisitTime'));
 
-      var date = lastVisitTime.toLocaleDateString().match(/([^,]*),(.*)/)[2],
-          time = standardTimeByInterval(lastVisitTime);
+        var date = lastVisitTime.toLocaleDateString().match(/([^,]*),(.*)/)[2],
+            time = standardTimeByInterval(lastVisitTime);
 
-      if(dateVisits.pluck('date').indexOf(date) === -1) {
-        dateVisits.add([{date: date, timeVisits:new TimeVisits()}]);
-      }
+        if(dateVisits.pluck('date').indexOf(date) === -1) {
+          dateVisits.add([{date: date, timeVisits:new TimeVisits()}]);
+        }
 
-      var dateVisit = dateVisits.at(dateVisits.pluck('date').indexOf(date));
-      var timeVisits = dateVisit.get('timeVisits');
+        var dateVisit = dateVisits.at(dateVisits.pluck('date').indexOf(date));
+        var timeVisits = dateVisit.get('timeVisits');
 
-      if(timeVisits.pluck('time').indexOf(time) === -1) {
-        dateVisit.get('timeVisits').add([{date: date, time: time, pageVisits:new PageVisits()}]);
-      }
+        if(timeVisits.pluck('time').indexOf(time) === -1) {
+          dateVisit.get('timeVisits').add([{date: date, time: time, pageVisits:new PageVisits()}]);
+        }
 
-      var timeVisit = timeVisits.at(timeVisits.pluck('time').indexOf(time));
-      var pageVisits = timeVisit.get('pageVisits');
-      pageVisits.add([pageVisit]);
-      //if(pageVisits.length === 0) {
-        //pageVisits.push(pageVisit);
-      //} else {
-        //if(pageVisit.compare(previous)) {
-          //if(pageVisits[pageVisits.length - 1].length === undefined) {
-            //pageVisits.remove(-1);
-            //pageVisits.push(new GroupedVisits([previous, pageVisit]));
-          //} else {
-            //pageVisits[pageVisits.length - 1].add(pageVisit);
-          //}
-        //} else {
-          //pageVisits.push(pageVisit);
-        //}
-      //}
+        var timeVisit = timeVisits.at(timeVisits.pluck('time').indexOf(time));
+        var pageVisits = timeVisit.get('pageVisits');
+        pageVisits.add([pageVisit]);
+      });
+      return dateVisits.models[0].get('timeVisits');
+    },
 
-      //previous = pageVisit;
-    });
-    return dateVisits.models[0].get('timeVisits');
-  }
+    domain: function(pageVisits) {
+      groupedVisits = [];
+      $.each(pageVisits.models, function(i, pageVisit) {
+        if(groupedVisits.length === 0) {
+          groupedVisits.push(pageVisit);
+        } else {
+          if(pageVisit.compare(previous)) {
+            if(groupedVisits[groupedVisits.length - 1].length === undefined) {
+              groupedVisits.remove(-1);
+              groupedVisits.push(new GroupedVisits([previous, pageVisit]));
+            } else {
+              groupedVisits[groupedVisits.length - 1].add(pageVisit);
+            }
+          } else {
+            groupedVisits.push(pageVisit);
+          }
+        }
+
+        previous = pageVisit;
+      });
+      console.log(groupedVisits);
+      return groupedVisits;
+    }
+  };
 })();

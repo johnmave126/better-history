@@ -1,0 +1,66 @@
+.delete_icon .delete:before {
+  width:16px;
+  height:16px;
+  /* css3 */
+  -webkit-border-radius:16px;
+  -moz-border-radius:16px;
+  border-radius:16px;
+}
+
+.delete_icon .delete:after {
+  left:3px;
+  width:10px;
+  height:2px;
+  margin-top:-1px;
+  background:#fff;
+  /* css3 */
+  -webkit-transform:rotate(45deg);
+  -moz-transform:rotate(45deg);
+  -o-transform:rotate(45deg);
+  transform:rotate(45deg);
+}
+
+span.delete_icon:before {
+  z-index:10;
+  left:7px;
+  width:2px;
+  height:10px;
+  margin-top:-5px;
+  background:#FFF;
+  /* css3 */
+  -webkit-transform:rotate(45deg);
+  -moz-transform:rotate(45deg);
+  -o-transform:rotate(45deg);
+  transform:rotate(45deg);
+}
+.delete_icon {
+  position:relative;
+  z-index:1;
+  overflow:hidden;
+  list-style:none;
+  padding:0;
+  margin:0 0 0.25em;
+}
+.delete:before,
+.delete:after,
+.delete_icon:before,
+.delete_icon:after {
+  content:"";
+  position:absolute;
+  top:50%;
+  left:0;
+}
+
+.delete:before,
+.delete:after {
+  margin:-8px 0 0;
+  background:#999;
+}
+.delete {
+  position:absolute;
+  display:block;
+  border:0;
+  padding-left:28px;
+}
+.delete_icon:hover .delete,
+.delete_icon:hover .delete:before { background:#555; }

@@ -4,6 +4,7 @@
     <link rel="stylesheet" type="text/css" href="styles/main.css"/>
     <link rel="stylesheet" type="text/css" href="styles/button.css"/>
     <link rel="stylesheet" type="text/css" href="styles/select.css"/>
+    <link rel="stylesheet" type="text/css" href="styles/icon.css"/>
     <title>Better History</title>
   </head>
   <body>
@@ -50,13 +51,13 @@
 
     <!-- Grouped Visits Template -->
     <script id="groupedVisitsTemplate" type="text/x-jquery-tmpl">
-      <a href="${domain}" class="grouped_visit page_visit">
+      <a href="${domain}">
         <div class="link">
           <dl class="description" style="background-image: url(chrome://favicon/${url})">
             <dt class="title">${domain}</dt>
-            <dd class="location">${amount} Visits <span class="expand button small_button">Expand</span></dd>
+            <dd class="location"><span class="expand button small_button">Expand</span></dd>
           </dl>
-          <span class="delete button">Delete</span>
+          <span class="delete_icon delete_group" title="Delete visit group"><span class="delete"></span></span>
         </div>
       </a>
     </script>
@@ -66,14 +67,14 @@
 
     <!-- Page Visit Template -->
     <script id="pageVisitTemplate" type="text/x-jquery-tmpl">
-      <a href="${url}" class="page_visit" data-cid="${cid}">
+      <a href="${url}" data-cid="${cid}">
         <div class="link">
           <dl class="description" style="background-image: url(chrome://favicon/${url})">
             <dt class="title">{{html title}}</dt>
             <dd class="location">{{html location}}</dd>
             <dd class="time">{{html time}}</dd>
           </dl>
-          <span class="delete button">Delete</span>
+          <span class="delete_icon delete_visit" title="Delete visit"><span class="delete"></span></span>
         </div>
       </a>
     </script>
@@ -119,7 +120,7 @@
     </script>
     <script id="filterItemTemplate" type="text/x-jquery-tmpl">
       <li class="filter">
-      <a href="#filter/${hash}" data-cid="${cid}" class="${size}">${title}</a>
+      <a href="#filter/${hash}" data-cid="${cid}" class="${quantity}">${title}</a>
       </li>
     </script>
 
@@ -130,7 +131,7 @@
           <span class="arrow arrow_down"></span>
           <span class="arrow arrow_right"></span>
           <span class="time">${time}</span>
-          <span class="summary">${summary}</span>
+          <span class="summary"><span class="amount">${amount}</span> visits</span>
         </h3>
         <div class="visits"></div>
       </div>

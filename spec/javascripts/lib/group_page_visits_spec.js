@@ -1,4 +1,4 @@
-describe('groupPageVisits', function() {
+describe('GroupBy', function() {
   var pageVisit1, pageVisit2, pageVisit3, pageVisit4;
 
   beforeEach(function() {
@@ -24,16 +24,22 @@ describe('groupPageVisits', function() {
     });
   });
 
+  describe('.time', function() {
+    it('groups history items by 15 minute increments', function() {
+      var timeVisits = GroupBy.time(new PageVisits([pageVisit1, pageVisit2]));
+      expect(timeVisits.length).toEqual(1);
+    });
 
-  it('groups history items by 15 minute increments', function() {
-    var pageVisits = new PageVisits([pageVisit1, pageVisit2]);
-    var dateVisits = groupPageVisits(pageVisits);
-    expect(dateVisits.at(0).get('timeVisits').at(0).get('pageVisits').length).toEqual(2);
+    it('separates history items that are more than 15 minutes apart', function() {
+      var timeVisits = GroupBy.time(new PageVisits([pageVisit1, pageVisit3]));
+      expect(timeVisits.length).toEqual(2);
+    });
   });
 
-  it('separates history items that are more than 15 minutes apart', function() {
-    var dateVisits = groupPageVisits(new PageVisits([pageVisit1, pageVisit3]));
-    expect(dateVisits.at(0)).toBeDefined();
-    expect(dateVisits.at(1)).toBeDefined();
+  describe('.domain', function() {
+    it('groups neighboring history items from the same domain', function() {
+        var pageVisits = GroupBy.domain(new PageVisits([pageVisit1, pageVisit4]));
+        expect(pageVisits.length).toEqual(1);
+    });
   });
 });

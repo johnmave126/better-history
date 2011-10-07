@@ -26,8 +26,12 @@ SidebarView = Backbone.View.extend({
     var self = this;
     $('#sidebarTemplate').tmpl().appendTo(self.el);
     $.each(this.collection.models, function(i, filter) {
-      var properties = filter.presenter();
-      $('#filterItemTemplate').tmpl(properties).appendTo($('.filters', self.el));
+      PageVisit.search(filter.options(), function(pageVisits) {
+        var properties = filter.presenter();
+
+        if(pageVisits.length === 0) properties.quantity = 'empty';
+        $('#filterItemTemplate').tmpl(properties).appendTo($('.filters', self.el));
+      });
     });
     return this;
   },

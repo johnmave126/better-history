@@ -1,13 +1,13 @@
 <!-- Page Visit Template -->
 <script id="pageVisitTemplate" type="text/x-jquery-tmpl">
-  <a href="${url}" class="page_visit" data-cid="${cid}">
+  <a href="${url}" data-cid="${cid}">
     <div class="link">
       <dl class="description" style="background-image: url(chrome://favicon/${url})">
         <dt class="title">{{html title}}</dt>
         <dd class="location">{{html location}}</dd>
         <dd class="time">{{html time}}</dd>
       </dl>
-      <span class="delete button">Delete</span>
+      <span class="delete_icon delete_visit" title="Delete visit"><span class="delete"></span></span>
     </div>
   </a>
 </script>

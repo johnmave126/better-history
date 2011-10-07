@@ -32,7 +32,7 @@ PageVisit = Backbone.Model.extend({
 });
 
 PageVisit.search = function(options, callback) {
-  pageVisits = new PageVisits(); // global
+  var pageVisits = new PageVisits([]);
   chromeAPI.history.search(options, function(results) {
     $.each(results, function(i) {
       pageVisits.add(results[i]);

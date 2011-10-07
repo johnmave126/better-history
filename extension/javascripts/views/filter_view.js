@@ -55,7 +55,7 @@ FilterView = Backbone.View.extend({
 
   renderTimeVisits: function(pageVisits) {
     var timeVisitView, total = 0;
-    this.collection = groupPageVisits(pageVisits);
+    this.collection = GroupBy.time(pageVisits);
 
     var self = this;
     $.each(this.collection.models, function(i, timeVisit) {
