@@ -118,13 +118,15 @@ section {
 
 /* Page and Group Visit
 ================================= */
-.grouped_visits:hover > a > .link,
+.grouped_visits > a:hover > .link,
 .page_visit:hover .link {
   background: #eaeef3;
   box-shadow:0 0 5px #999;
   border-radius: 3px;
 }
 
+.page_visit:hover .delete_icon,
+.grouped_visits > a:hover .delete_icon { display:inline; }
 /* Visit
 ================================= */
 .visit a {
@@ -134,14 +136,13 @@ section {
   display:block;
   margin:8px 3px 0 40px;
 }
-.visit:hover .delete_icon { display:inline; }
 .visit .delete_icon {
   display:none;
   top:-9px;
-  left:2px;
+  left:0px;
 }
 .visit .link {
-  padding: 3px 10px 3px 5px;
+  padding: 3px 10px 3px 3px;
 }
 .visit .time { display:none; }
 .no_hover .visit:hover {
@@ -168,8 +169,8 @@ section {
 }
 .visit .description {
   background-repeat:no-repeat;
-  background-position:5px 0;
-  padding-left:30px;
+  background-position:0 0;
+  padding-left:25px;
 }
 .visit .match {
   background:#f2f37b;
