@@ -84,7 +84,7 @@ TimeVisitView = Backbone.View.extend({
     $(this.el).find('.visits').slideDown('fast', function() {
       var element = $(self.el).children('.state');
       $(element).addClass(self.expanded).removeClass(self.collapsed);
-      self.model.setState(self.expaned);
+      self.model.setState(self.expanded);
     });
   }
 });
