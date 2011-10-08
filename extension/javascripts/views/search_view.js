@@ -1,6 +1,4 @@
 SearchView = Backbone.View.extend({
-  className: 'search_view',
-
   initialize: function() {
     $(this.el).html('').hide();
   },

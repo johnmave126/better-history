@@ -17,6 +17,7 @@ FilterView = Backbone.View.extend({
         timeVisit.trigger('collapse');
       });
     }
+    $(document).scrollTop(0);
   },
 
   expandGroupings: function(ev) {
@@ -31,12 +32,12 @@ FilterView = Backbone.View.extend({
   render: function(type) {
     $('#filterTemplate').tmpl(this.model.presenter()).appendTo(this.el);
     $('.view', this.el).addClass(this.model.get('hash'));
-    $('.content', this.el).html('');
 
     var self = this;
     $(this.el).fadeIn('fast', function() {
-      $('.spinner').spin();
+      //$('.spinner').spin();
       PageVisit.search(self.model.options(), function(results) {
+        $('.content', self.el).html('').hide();
         if(results.length === 0) {
           self.renderNoResults();
         } else {
@@ -70,9 +71,11 @@ FilterView = Backbone.View.extend({
 
 
   update: function() {
-    $('.time_visit_view').stickySectionHeaders({
-      stickyClass:'time_interval',
-      padding:48
+    $('.content', this.el).fadeIn('fast', function() {
+      $('.time_visit_view').stickySectionHeaders({
+        stickyClass:'time_interval',
+        padding:48
+      });
     });
   }
 });

@@ -13,13 +13,8 @@ SidebarView = Backbone.View.extend({
   initialize: function() {
     var self = this;
     router.bind('route:filter', function(type) {
-      self.loadFromType(this.checkType(type));
+      self.selectedFilter = filters.getByHash(this.checkType(type));
     });
-  },
-
-  loadFromType: function(type) {
-    var filter = filters.getByHash(type);
-    this.selectFilter($('a[data-cid=' + filter.cid + ']'));
   },
 
   render: function() {
@@ -31,6 +26,7 @@ SidebarView = Backbone.View.extend({
 
         if(pageVisits.length === 0) properties.quantity = 'empty';
         $('#filterItemTemplate').tmpl(properties).appendTo($('.filters', self.el));
+        self.selectFilter();
       });
     });
     return this;
@@ -42,7 +38,8 @@ SidebarView = Backbone.View.extend({
   },
 
   filterClicked: function(ev) {
-    this.selectFilter(ev.currentTarget);
+    this.selectedFilter = filters.getByCid($(ev.currentTarget).attr('data-cid'));
+    this.selectFilter();
   },
 
   searchTyped: function(ev) {
@@ -53,7 +50,8 @@ SidebarView = Backbone.View.extend({
     }
   },
 
-  selectFilter: function(element) {
+  selectFilter: function() {
+    var element = $('a[data-cid=' + this.selectedFilter.cid + ']');
     $('.filter', this.el).removeClass(this.selectedClass);
     $(element).parent().addClass(this.selectedClass);
   }

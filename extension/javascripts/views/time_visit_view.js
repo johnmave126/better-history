@@ -42,6 +42,7 @@ TimeVisitView = Backbone.View.extend({
   updateCount: function() {
     if(this.collection.length >= 1) {
       $('.amount', this.el).text(this.collection.length);
+      $('.summary', this.el).css({color: '#000'}).animate({color:'#999'}, 'slow');
     } else {
       this.remove();
     }
@@ -73,6 +74,8 @@ TimeVisitView = Backbone.View.extend({
   collapse: function() {
     var self = this;
     $(this.el).find('.visits').slideUp('fast', function() {
+      $('.time_interval', self.el).attr('style', '').removeClass('stuck');
+      $('.placeholder', self.el).remove();
       var element = $(self.el).children('.state');
       $(element).removeClass(self.expanded).addClass(self.collapsed);
       self.model.setState(self.collapsed);

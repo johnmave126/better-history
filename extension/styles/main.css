@@ -39,8 +39,6 @@ h1 {
   text-shadow: white 0 1px 2px;
 }
 h2 {
-  -webkit-padding-end: 24px;
-  -webkit-user-select: none;
   color: #53637d;
   font-size: 200%;
   font-weight: normal;
@@ -124,9 +122,19 @@ section {
   box-shadow:0 0 5px #999;
   border-radius: 3px;
 }
-
+.grouped_visits > a:hover .title,
+.page_visit:hover .title,
+.page_visit:hover .location {
+  text-shadow:1px 1px #FFF;
+}
+.page_visit:hover .location,
+.page_visit:hover .time {
+  color:#555;
+}
 .page_visit:hover .delete_icon,
 .grouped_visits > a:hover .delete_icon { display:inline; }
+
+
 /* Visit
 ================================= */
 .visit a {
@@ -148,14 +156,6 @@ section {
 .no_hover .visit:hover {
   background:#FFF;
 }
-.visit_view:hover .title,
-.visit:hover .location {
-  text-shadow:1px 1px #FFF;
-}
-.visit:hover .location,
-.visit:hover .time {
-  color:#555;
-}
 .visit .title {
   font-size:105%;
   padding-bottom:3px;
@@ -163,7 +163,7 @@ section {
 .visit .location,
 .visit .time {
   color: #999;
-  padding:3px 0;
+  padding:1px 0;
   overflow:hidden;
   white-space: nowrap;
 }

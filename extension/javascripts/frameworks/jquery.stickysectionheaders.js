@@ -42,6 +42,7 @@
                       if (placeholder == undefined) {
                           placeholder = $('<div/>')
                           .css('height', header.outerHeight() + 'px')
+                          .addClass('placeholder')
                           .css('width', header.width() + 'px');
                           header.before(placeholder);
                           header.css('position', 'fixed');
