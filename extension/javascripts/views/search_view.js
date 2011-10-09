@@ -1,6 +1,6 @@
 SearchView = Backbone.View.extend({
   initialize: function() {
-    $(this.el).html('').hide();
+    $(this.el).addClass('search').html('').hide();
   },
 
   render: function(type) {

@@ -7,7 +7,7 @@ FilterView = Backbone.View.extend({
   },
 
   initialize: function() {
-    $(this.el).html('').hide();
+    $(this.el).removeClass('search').html('').hide();
   },
 
   collapseGroupings: function(ev) {
