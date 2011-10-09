@@ -26,7 +26,7 @@ describe('TimeVisit', function() {
 
   describe('#collapsedKey', function() {
     it('returns the collapsed key', function() {
-      expect(timeVisit.stateKey()).toEqual(timeVisit.key() + '.state');
+      expect(timeVisit.stateKey()).toEqual('timeVisits.' + timeVisit.key() + '.state');
     });
   });
 

@@ -65,7 +65,7 @@ FilterView = Backbone.View.extend({
         collection: timeVisit.get('pageVisits')
       });
       total += timeVisit.get('pageVisits').length;
-      $('.content').append(timeVisitView.render().el);
+      $('.content', self.el).append(timeVisitView.render().el);
     });
   },
 

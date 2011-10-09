@@ -21,6 +21,6 @@ TimeVisit = Backbone.Model.extend({
   },
 
   stateKey: function() {
-    return this.key() + '.state';
+    return 'timeVisits.' + this.key() + '.state';
   }
 });
