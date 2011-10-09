@@ -17,7 +17,7 @@ describe('Filters', function() {
 
   describe('#getByHash', function() {
     it('returns the model with the passed hash when found', function() {
-      expect(filters.getByHash('day_0')).toEqual(todayFilter);
+      expect(filters.getByHash('0_days_ago')).toEqual(todayFilter);
     });
 
     it('returns undefined when no model has the passed hash', function() {

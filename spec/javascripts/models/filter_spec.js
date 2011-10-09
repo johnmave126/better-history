@@ -11,7 +11,7 @@ describe('Filter', function() {
 
   describe('#initialize', function() {
     it('sets the hash', function() {
-      expect(filter.get('hash')).toEqual('day_' + 0);
+      expect(filter.get('hash')).toEqual(0 + '_days_ago');
     });
 
     it('sets a special title if the date is today', function() {

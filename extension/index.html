@@ -17,15 +17,6 @@
         <h1><em>Better</em> History</h1>
       </div>
       <div class="mainview"></div>
-      <div class="overlay">
-        <div class="modal">
-          <h1 class="title">{{html title}}</h1>
-          <div class="content">{{html content}}</div>
-          <div class="action">
-            <a href="#" class="button close">Ok!</a>
-          </div>
-        </div>
-      </div>
     </script>
 
     <!-- Date Visit Template -->
@@ -146,6 +137,31 @@
       </div>
     </script>
 
+    <script id="versionTemplate" type="text/x-jquery-tmpl">
+      <a href="#" class="open_version open">What's new</a>
+      <div class="overlay ${visibility}">
+        <div class="modal">
+          <h1 class="title"><em>Better</em> History reaches 1.0!</h1>
+          <div class="content">
+            <p>It's been a fast paced couple of months, but <strong><em>Better</em> History</strong> 1.0 is all ready for you. Thanks for using this extension, enjoy friends.</p>
+            <h4>What's new</h4>
+            <ul>
+              <li>More day filters in the left sidebar</li>
+              <li>Smoother animations</li>
+              <li>Expand/collapse all time intervals for day filters</li>
+              <li>Remembers what times are expanded/collapsed</li>
+              <li>Easier deleting of visits (No more dragging!)</li>
+              <li>Smarter behavior for days w/ no visits</li>
+            </ul>
+            <h4>Comments? Suggestions? Bugs? <a href="http://twitter.com/roykolak">@roykolak</a></h4>
+          </div>
+          <div class="action">
+            <a href="#" class="button close">Ok!</a>
+          </div>
+        </div>
+      </div>
+    </script>
+
 
     <!-- Templates End -->
     <script type="text/javascript" src="javascripts/frameworks/jquery-1.6.2.min.js"></script>
@@ -166,11 +182,13 @@
     <script type="text/javascript" src="javascripts/views/page_visit_view.js"></script>
     <script type="text/javascript" src="javascripts/views/search_view.js"></script>
     <script type="text/javascript" src="javascripts/views/time_visit_view.js"></script>
+    <script type="text/javascript" src="javascripts/views/version_view.js"></script>
 
     <script type="text/javascript" src="javascripts/models/page_visit.js"></script>
     <script type="text/javascript" src="javascripts/models/date_visit.js"></script>
     <script type="text/javascript" src="javascripts/models/time_visit.js"></script>
     <script type="text/javascript" src="javascripts/models/filter.js"></script>
+    <script type="text/javascript" src="javascripts/models/version.js"></script>
 
     <script type="text/javascript" src="javascripts/collections/filters.js"></script>
     <script type="text/javascript" src="javascripts/collections/date_visits.js"></script>

@@ -6,7 +6,7 @@ Filter = Backbone.Model.extend({
 
   initialize: function() {
     if(this.get('hash') === undefined) {
-      this.set({hash: 'day_' + this.get('daysSinceToday')});
+      this.set({hash: this.get('daysSinceToday') + '_days_ago'});
     }
 
     var title;

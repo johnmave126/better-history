@@ -1,26 +1,31 @@
 TimeVisit = Backbone.Model.extend({
   initialize: function() {
-    this.set({state: localStorage[this.stateKey()] || 'expanded'});
+    var collapsed = stringToBool(localStorage[this.collapsedKey()]);
+    this.set({collapsed: collapsed});
   },
 
   presenter: function() {
     return {
       amount: this.get('pageVisits').length,
       time: this.get('time'),
-      state: this.get('state')
+      state: (this.get('collapsed') ? 'collapsed' : '')
     };
   },
 
   key: function() {
-    return this.get('date') + ' ' + this.get('time');
+    return 'timeVisits.' + this.get('date') + ' ' + this.get('time');
   },
 
-  setState: function(state) {
-    localStorage[this.stateKey()] = state;
-    this.set({state: state});
+  setCollapsed: function(state) {
+    if(state) {
+      localStorage[this.collapsedKey()] = boolToString(state);
+    } else {
+      delete(localStorage[this.collapsedKey()]);
+    }
+    this.set({collapsed: state});
   },
 
-  stateKey: function() {
-    return 'timeVisits.' + this.key() + '.state';
+  collapsedKey: function() {
+    return this.key() + '.collapsed';
   }
 });
