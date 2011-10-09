@@ -14,7 +14,7 @@ describe('PageVisitView', function() {
 
   describe('#initialize', function() {
     it('defines a class name', function() {
-      expect(pageVisitView.className).toEqual('page_visit_view');
+      expect(pageVisitView.className).toBeDefined();
     });
   });
 
@@ -32,7 +32,7 @@ describe('PageVisitView', function() {
 
     it('inserts the url', function() {
       pageVisitView.render();
-      expect($('.page_visit', pageVisitView.el)).toHaveAttr('href', presenter.url);
+      expect($('a', pageVisitView.el)).toHaveAttr('href', presenter.url);
     });
 
     it('inserts the location', function() {

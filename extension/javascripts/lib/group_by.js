@@ -69,7 +69,6 @@ var groupInterval = 15;
 
         previous = pageVisit;
       });
-      console.log(groupedVisits);
       return groupedVisits;
     }
   };

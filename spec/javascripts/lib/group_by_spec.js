@@ -15,7 +15,7 @@ describe('GroupBy', function() {
     pageVisit3 = new PageVisit({
       title: 'test again',
       url: 'aol.com',
-      lastVisitTime: new Date(2011, 5, 6, 5, 6, 5)
+      lastVisitTime: new Date(2011, 5, 5, 5, 6, 5)
     });
     pageVisit4 = new PageVisit({
       title: 'test again',

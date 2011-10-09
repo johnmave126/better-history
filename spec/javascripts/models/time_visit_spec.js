@@ -12,7 +12,7 @@ describe('TimeVisit', function() {
     it('returns all the properties used in the view', function() {
       expect(timeVisit.presenter()).toEqual({
         time: '10:15PM',
-        summary: '1 visits',
+        amount: 1,
         state: 'expanded'
       });
     });

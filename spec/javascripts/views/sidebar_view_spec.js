@@ -3,7 +3,14 @@ describe('SidebarView', function() {
 
   beforeEach(function() {
     loadFixtures('sidebar.html');
-    router = {bind: jasmine.createSpy('bind')};
+    router = {
+      bind: jasmine.createSpy('bind'),
+      search: jasmine.createSpy('search')
+    };
+    PageVisit = {search: jasmine.createSpy('search').andCallFake(function(options, callback) {
+        callback([]);
+      })
+    };
 
     filters = new Filters([
       new Filter({
@@ -51,18 +58,6 @@ describe('SidebarView', function() {
     });
   });
 
-  describe('#loadFromType', function() {
-    beforeEach(function() {
-      sidebarView.render();
-    });
-
-    it('calls selectFilter with the filter element based on the passed type', function() {
-      spyOn(sidebarView, 'selectFilter');
-      sidebarView.loadFromType('day_0');
-      expect(sidebarView.selectFilter).toHaveBeenCalledWith($('a[data-cid=' + filters.at(0).cid + ']'));
-    });
-  });
-
   describe('#clearHistoryClicked', function() {
     beforeEach(function() {
       chrome = {tabs: {create: jasmine.createSpy('create')}};
@@ -81,11 +76,21 @@ describe('SidebarView', function() {
   });
 
   describe('#filterClicked', function() {
-    it('calls selectFilter with the clicked element', function() {
-      var event = {currentTarget: 'element'};
+    var event;
+
+    beforeEach(function() {
+      event = {currentTarget: 'element'};
       spyOn(sidebarView, 'selectFilter');
+      spyOn(filters, 'getByCid').andReturn(true);
+    });
+    it('calls selectFilter', function() {
       sidebarView.filterClicked(event);
-      expect(sidebarView.selectFilter).toHaveBeenCalledWith(event.currentTarget);
+      expect(sidebarView.selectFilter).toHaveBeenCalled();
+    });
+
+    it('sets selectedFilter', function() {
+      sidebarView.filterClicked(event);
+      expect(sidebarView.selectedFilter).toBeDefined();
     });
   });
 
@@ -96,30 +101,30 @@ describe('SidebarView', function() {
       sidebarView.render();
       filter1 = $(sidebarView.el).find('.filter a')[0];
       filter2 = $(sidebarView.el).find('.filter a')[1];
-      sidebarView.selectFilter(filter1);
     });
 
-    it('adds the selected class to the parent of the passed element', function() {
-      sidebarView.selectFilter(filter2);
+    it('adds the selected class to the selected filter', function() {
+      sidebarView.selectedFilter = filters.at(1);
+      sidebarView.selectFilter();
       expect($(filter2).parent()).toHaveClass(sidebarView.selectedClass);
     });
 
     it('removes the selected class from filters not selected', function() {
-      sidebarView.selectFilter(filter2);
-      expect($(filter1).parent()).not.toHaveClass(sidebarView.selectedClass);
+      sidebarView.selectedFilter = filters.at(0);
+      sidebarView.selectFilter();
+      expect($(filter2).parent()).not.toHaveClass(sidebarView.selectedClass);
     });
   });
 
   describe('#searchTyped', function() {
     beforeEach(function() {
       sidebarView.render();
-      router = {search: jasmine.createSpy('search')};
     });
 
     it('calls to selectFilter when the enter key is pressed', function() {
       spyOn(sidebarView, 'selectFilter');
       sidebarView.searchTyped({keyCode: 13});
-      expect(sidebarView.selectFilter).toHaveBeenCalledWith(null);
+      expect(sidebarView.selectFilter).toHaveBeenCalled();
     });
 
     it('calls to the router with the search term', function() {

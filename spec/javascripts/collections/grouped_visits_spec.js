@@ -18,10 +18,6 @@ describe('GroupedVisits', function() {
       expect(groupedVisits.summary().domain).toEqual(pageVisits[1].domain());
     });
 
-    it('returns the number of page visits', function() {
-      expect(groupedVisits.summary().amount).toEqual(pageVisits.length);
-    });
-
     it('returns the url for the first page visit', function() {
       expect(groupedVisits.summary().url).toEqual(groupedVisits.at(0).get('url'));
     });

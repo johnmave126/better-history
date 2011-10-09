@@ -37,9 +37,9 @@ describe('TimeVisitView', function() {
       expect($('.time_interval .time', timeVisitView.el)).toHaveText(presenter.time);
     });
 
-    it('inserts the visit summary', function() {
+    it('inserts the amount of visits', function() {
       timeVisitView.render();
-      expect($('.summary', timeVisitView.el)).toHaveText(presenter.summary);
+      expect($('.amount', timeVisitView.el)).toHaveText(presenter.amount);
     });
 
     it('inserts the visits', function() {
