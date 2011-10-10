@@ -345,7 +345,8 @@ section {
   z-index:10;
   text-decoration:none;
   background: -webkit-linear-gradient(#EEE, #CCC);
-  padding:4px 5px;
+  padding:4px;
+  font-size:12px;
 }
 .version .open_version:hover { background:#EEE; }
 .overlay {

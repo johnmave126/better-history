@@ -14,13 +14,30 @@ PageVisitView = Backbone.View.extend({
     ev.preventDefault();
     var self = this;
     this.model.destroy({
-      success: function() { self.remove(); }
+      success: function() {
+        var method = (self.isGroupedAndEmpty() ? 'removeGroup' : 'remove');
+        self[method]();
+      }
     });
   },
 
   remove: function() {
-    $(this.el).slideUp("fast", function() {
+    $(this.el).slideUp('fast', function() {
       $(this).remove();
     });
+  },
+
+  removeGroup: function() {
+    $(this.getGroup()).slideUp('fast', function() {
+      $(this).remove();
+    });
+  },
+
+  isGroupedAndEmpty: function() {
+    return ($(this.el).parents('.expanded').children().length === 1 ? true : false);
+  },
+
+  getGroup: function() {
+    return $(this.el).parents('.grouped_visits');
   }
 });

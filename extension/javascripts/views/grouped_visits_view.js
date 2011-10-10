@@ -3,19 +3,7 @@ GroupedVisitsView = Backbone.View.extend({
 
   events: {
     'click .expand': 'toggle',
-    'click .delete_clicked': 'deleteClicked'
-  },
-
-  initialize: function() {
-    var self = this;
-    $.each(this.collection.models, function(i, pageVisit) {
-      pageVisit.bind('destroy', self.checkAmount, self);
-    });
-    this.collection.bind('all', self.collbind, self);
-  },
-
-  collbind: function() {
-    console.log('collbind');
+    'click .delete_group': 'deleteClicked'
   },
 
   render: function() {
@@ -50,14 +38,9 @@ GroupedVisitsView = Backbone.View.extend({
     this.remove();
   },
 
-  checkAmount: function() {
-    console.log(this.collection.length);
-    //if(this) {
-      //$(this.el).parents('.time_visit_view').slideUp('fast');
-    //} else {
-      //$(this.el).slideUp("fast", function() {
-        //$(this).remove();
-      //});
-    //}
+  remove: function() {
+    $(this.el).slideUp('fast', function() {
+      $(this).remove();
+    });
   }
 });
