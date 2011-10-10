@@ -6,10 +6,6 @@ FilterView = Backbone.View.extend({
     'click .expand_groupings': 'expandGroupings'
   },
 
-  initialize: function() {
-    $(this.el).removeClass('search').html('').hide();
-  },
-
   collapseGroupings: function(ev) {
     ev.preventDefault();
     if(this.collection) {
@@ -27,11 +23,12 @@ FilterView = Backbone.View.extend({
         timeVisit.trigger('expand');
       });
     }
+    $(document).scrollTop(0);
   },
 
   render: function(type) {
+    $(this.el).hide();
     $('#filterTemplate').tmpl(this.model.presenter()).appendTo(this.el);
-    $('.view', this.el).addClass(this.model.get('hash'));
 
     var self = this;
     $(this.el).fadeIn('fast', function() {

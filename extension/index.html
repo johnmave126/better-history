@@ -28,7 +28,7 @@
     <script id="filterTemplate" type="text/x-jquery-tmpl">
       <div class="view">
         <div class="heading">
-          <h2> ${title}</h2>
+          <h2>{{html title}}</h2>
           <span class="date">${date}</span>
           <ul class="controls">
             <li class="control">
@@ -120,7 +120,7 @@
     </script>
     <script id="filterItemTemplate" type="text/x-jquery-tmpl">
       <li class="filter">
-      <a href="#filter/${hash}" data-cid="${cid}" class="${quantity}">${title}</a>
+      <a href="#filter/${hash}" data-cid="${cid}" class="${quantity}">{{html title}}</a>
       </li>
     </script>
 

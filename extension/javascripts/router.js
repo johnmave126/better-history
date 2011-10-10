@@ -8,11 +8,8 @@ Router = Backbone.Router.extend({
   filter: function(type) {
     type = this.checkType(type);
 
-    var filterView = new FilterView({
-      model: filters.getByHash(type),
-      el: $('.mainview')
-    });
-    filterView.render();
+    var filterView = new FilterView({model: filters.getByHash(type)});
+    this.insert(filterView.render().el);
 
     router.navigate("filter/" + type);
   },
@@ -26,10 +23,14 @@ Router = Backbone.Router.extend({
     });
 
 
-    var searchView = new SearchView({model: filter, el: $('.mainview')});
-    searchView.render();
+    var searchView = new SearchView({model: filter});
+    this.insert(searchView.render().el);
 
     router.navigate("search/" + query);
+  },
+
+  insert: function(content) {
+    $('.mainview').html(content);
   },
 
   checkType: function(type) {

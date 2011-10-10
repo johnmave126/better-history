@@ -10,6 +10,7 @@ li { list-style-type:none; }
 dl { margin:0; }
 dt, dd { margin:0; }
 .hide { display:none; }
+.ordinal { vertical-align:super; }
 .heading {
   background:#FFF;
   position:fixed;
@@ -179,7 +180,7 @@ section {
   margin:0 1px;
 }
 
-/* Filter Visit View
+/* Filter View
 ================================= */
 .content {
   padding:47px 0 100px;
@@ -217,11 +218,12 @@ section {
 .controls .control {
   display:inline;
 }
+.view .ordinal { font-size:16px; }
 
 
 /* Search View
 =============================== */
-.search .time { display:inline; }
+.search_view .time { display:inline; }
 
 /* Sidebar View
 ================================ */
@@ -246,6 +248,7 @@ section {
   text-shadow: white 0 1px 1px;
   text-decoration:none;
 }
+.filter .ordinal { font-size:11px; }
 .filter:focus a,
 .filter.selected a {
   border-bottom: 1px solid #8faad9;

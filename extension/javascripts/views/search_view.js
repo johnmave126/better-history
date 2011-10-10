@@ -1,11 +1,9 @@
 SearchView = Backbone.View.extend({
-  initialize: function() {
-    $(this.el).addClass('search').html('').hide();
-  },
+  className: 'search_view',
 
   render: function(type) {
+    $(this.el).hide();
     $('#searchTemplate').tmpl(this.model.presenter()).appendTo(this.el);
-    $('.view', this.el).addClass(this.model.get('hash'));
 
     var self = this;
     $(this.el).fadeIn('fast', function() {

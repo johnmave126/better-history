@@ -14,16 +14,22 @@ Filter = Backbone.Model.extend({
       title = 'Today';
     } else if(this.get('daysSinceToday') === 1) {
       title = 'Yesterday';
-    } else if(this.get('daysSinceToday') >= 2 && this.get('daysSinceToday') <= 6) {
-      title = DateRanger.numberToDay(this.date().getDay());
     } else {
-      title = 'Last ' + DateRanger.numberToDay(this.date().getDay());
+      title = DateRanger.numberToDay(this.date().getDay()) + ', ' + this.date().getDate() + '<span class="ordinal" >' + this.ordinal() + '</span>';
     }
     this.set({title: title});
   },
 
   date: function() {
     return new Date(this.get('startTime'));
+  },
+
+  ordinal: function() {
+    var date = this.date().getDate();
+    if(date === 1 || date === 21 || date === 31) return 'st';
+    else if(date === 2 || date === 22) return 'nd';
+    else if(date === 3 || date === 23) return 'rd';
+    else return 'th';
   },
 
   options: function() {
