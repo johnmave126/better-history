@@ -24,8 +24,9 @@ VersionView = Backbone.View.extend({
 
   open: function() {
     var self = this;
-    $('.overlay').addClass('show');
-    $('.overlay .modal', self.el).fadeIn('fast');
+    $('.overlay').fadeIn('fast', function() {
+      $('.overlay .modal', self.el).fadeIn('fast');
+    });
   },
 
   close: function() {

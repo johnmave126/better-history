@@ -12,7 +12,7 @@ AppView = Backbone.View.extend({
   },
 
   renderVersion: function() {
-    var version = new Version({version: '1.0'});
+    var version = new Version({version: '1.0.0'});
     var versionView = new VersionView({model: version});
     $(this.el).append(versionView.render().el);
   }
