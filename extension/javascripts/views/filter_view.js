@@ -13,7 +13,6 @@ FilterView = Backbone.View.extend({
         timeVisit.trigger('collapse');
       });
     }
-    $(document).scrollTop(0);
   },
 
   expandGroupings: function(ev) {

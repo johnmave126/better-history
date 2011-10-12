@@ -225,6 +225,7 @@ section {
 /* Search View
 =============================== */
 .search_view .time { display:block; }
+.search_view .visit > a { margin-left:30px; }
 
 /* Sidebar View
 ================================ */
