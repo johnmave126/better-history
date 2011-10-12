@@ -167,6 +167,7 @@ section {
   overflow:hidden;
   white-space: nowrap;
 }
+.visit .time { margin-top:2px; }
 .visit .description {
   background-repeat:no-repeat;
   background-position:0 0;
@@ -223,7 +224,7 @@ section {
 
 /* Search View
 =============================== */
-.search_view .time { display:inline; }
+.search_view .time { display:block; }
 
 /* Sidebar View
 ================================ */
@@ -366,18 +367,20 @@ section {
 }
 .overlay.show { display:block; }
 .overlay ul {
-  padding:0 0 20px 17px;
+  padding:0 0 0 17px;
+  margin-top:5px;
 }
 .overlay li {
   list-style-type:disc;
   margin:5px 0;
 }
+.overlay h4 { margin:30px 0 10px; }
 .overlay .modal {
   -webkit-box-shadow: 0px 5px 80px #505050;
   background: white;
   border: 1px solid rgb(188, 193, 208);
   border-radius: 2px;
-  width: 425px;
+  width: 455px;
   padding: 0;
   position: relative;
   font-size:14px;
@@ -399,10 +402,10 @@ section {
   padding: 10px 15px 5px 15px;
   background-image: url(/images/logo_grayscale.png);
   background-repeat:no-repeat;
-  background-position:270px -30px;
+  background-position:294px -30px;
 }
 .overlay .modal p {
-  width:250px;
+  width:275px;
   line-height:18px;
 }
 .overlay .modal .action {
