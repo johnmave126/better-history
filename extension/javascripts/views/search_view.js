@@ -29,9 +29,10 @@ SearchView = Backbone.View.extend({
     var pageVisitView;
     this.collection = pageVisits;
 
+    var self = this;
     $.each(this.collection.models, function(i) {
       pageVisitView = new PageVisitView({model: this});
-      $('.content').append(pageVisitView.render().el);
+      $('.content', self. el).append(pageVisitView.render().el);
     });
   }
 });
