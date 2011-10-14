@@ -16,18 +16,18 @@
                 width: header.css('width')
             };
 
-            var placeholder = undefined;
-            var originalWidth = header.outerWidth();
+            var originalWidth = header.outerWidth(),
+                placeholder, headerOrigin, headerHeight, containerHeight, containerTop, containerSize, pageOffset, containerBottom;
 
-            $(window).scroll(function () {
-                var containerTop = container.offset().top;
-                var headerOrigin = header.offset().top;
-                var headerHeight = header.outerHeight();
-                var containerHeight = container.outerHeight();
-                var containerTop = container.offset().top;
-                var containerSize = container.outerHeight();
-                var pageOffset = $(window).scrollTop() + settings.padding;
-                var containerBottom = containerHeight + containerTop;
+            $(window).scroll(function (ev) {
+                containerTop = container.offset().top;
+                headerOrigin = header.offset().top;
+                headerHeight = header.outerHeight();
+                containerHeight = container.outerHeight();
+                containerTop = container.offset().top;
+                containerSize = container.outerHeight();
+                pageOffset = $(window).scrollTop() + settings.padding;
+                containerBottom = containerHeight + containerTop;
 
                 if(!header.parent('.state').hasClass('collapsed')) {
                   if (pageOffset < containerTop && placeholder != undefined) {
@@ -38,18 +38,18 @@
                           header.removeClass('stuck');
                       }
                   }
-                  else if (pageOffset > containerTop && pageOffset < (containerBottom - headerHeight)) {
+                  else if (pageOffset > containerTop && pageOffset < (containerBottom - headerHeight) && $(window).scrollTop() > 0) {
                       if (placeholder == undefined) {
                           placeholder = $('<div/>')
                           .css('height', header.outerHeight() + 'px')
                           .addClass('placeholder')
                           .css('width', header.width() + 'px');
                           header.before(placeholder);
-                          header.css('position', 'fixed');
                           header.css('width', originalWidth + 'px');
                           header.addClass('stuck');
 
                       }
+                          header.css('position', 'fixed');
                       header.css('top', settings.padding + 'px');
                   }
                   else if (pageOffset > (containerBottom - headerHeight)) {

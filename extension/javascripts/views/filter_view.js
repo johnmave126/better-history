@@ -8,6 +8,7 @@ FilterView = Backbone.View.extend({
 
   collapseGroupings: function(ev) {
     ev.preventDefault();
+    $(document).scrollTop(0);
     if(this.collection) {
       $.each(this.collection.models, function(i, timeVisit) {
         timeVisit.trigger('collapse');
