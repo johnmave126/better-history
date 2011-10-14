@@ -28,39 +28,6 @@ describe('Filter', function() {
 
       expect(filter.get('title')).toEqual('Yesterday');
     });
-
-    it('sets a special title if the date is 2 days past', function() {
-      var borders = DateRanger.borders(2);
-      filter = new Filter({
-        daysSinceToday: 2,
-        startTime: borders.start.getTime(),
-        endTime: borders.end.getTime()
-      });
-
-      expect(filter.get('title')).toEqual(DateRanger.numberToDay(filter.date().getDay()));
-    });
-
-    it('sets a special title if the date is 6 days past', function() {
-      var borders = DateRanger.borders(6);
-      filter = new Filter({
-        daysSinceToday: 6,
-        startTime: borders.start.getTime(),
-        endTime: borders.end.getTime()
-      });
-
-      expect(filter.get('title')).toEqual(DateRanger.numberToDay(filter.date().getDay()));
-    });
-
-    it('sets a special title if the date is 7 days past', function() {
-      var borders = DateRanger.borders(7);
-      filter = new Filter({
-        daysSinceToday: 7,
-        startTime: borders.start.getTime(),
-        endTime: borders.end.getTime()
-      });
-
-      expect(filter.get('title')).toEqual('Last ' + DateRanger.numberToDay(filter.date().getDay()));
-    });
   });
 
   describe('#date', function() {
