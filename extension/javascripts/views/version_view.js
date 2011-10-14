@@ -1,5 +1,5 @@
 VersionView = Backbone.View.extend({
-  className: 'version',
+  className: 'version_view',
 
   events: {
     'click .close': 'closeClicked',

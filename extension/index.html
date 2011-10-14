@@ -5,6 +5,14 @@
     <link rel="stylesheet" type="text/css" href="styles/button.css"/>
     <link rel="stylesheet" type="text/css" href="styles/select.css"/>
     <link rel="stylesheet" type="text/css" href="styles/icon.css"/>
+    <link rel="stylesheet" type="text/css" href="styles/app.css"/>
+    <link rel="stylesheet" type="text/css" href="styles/filter.css"/>
+    <link rel="stylesheet" type="text/css" href="styles/grouped_visits.css"/>
+    <link rel="stylesheet" type="text/css" href="styles/page_visit.css"/>
+    <link rel="stylesheet" type="text/css" href="styles/search.css"/>
+    <link rel="stylesheet" type="text/css" href="styles/sidebar.css"/>
+    <link rel="stylesheet" type="text/css" href="styles/time_visit.css"/>
+    <link rel="stylesheet" type="text/css" href="styles/version.css"/>
     <title>Better History</title>
   </head>
   <body>
@@ -26,23 +34,21 @@
 
     <!-- Filter Template -->
     <script id="filterTemplate" type="text/x-jquery-tmpl">
-      <div class="view">
-        <div class="heading">
-          <h2>{{html title}}</h2>
-          <span class="date">${date}</span>
-          <ul class="controls">
-            <li class="control">
-              <a href="#" class="button collapse_groupings">Collapse</a>
-            </li>
-            <li class="control">
-              <a href="#" class="button expand_groupings">Expand</a>
-            </li>
-          </ul>
-        </div>
-        <div class="fade"></div>
-        <div class="content">
-          <div class="spinner"></div>
-        </div>
+      <div class="heading">
+        <h2>{{html title}}</h2>
+        <span class="date">${date}</span>
+        <ul class="controls">
+          <li class="control">
+            <a href="#" class="button collapse_groupings">Collapse</a>
+          </li>
+          <li class="control">
+            <a href="#" class="button expand_groupings">Expand</a>
+          </li>
+        </ul>
+      </div>
+      <div class="fade"></div>
+      <div class="content">
+        <div class="spinner"></div>
       </div>
     </script>
     <script id="noVisitsTemplate" type="text/x-jquery-tmpl">

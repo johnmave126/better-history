@@ -1,0 +1,54 @@
+.page_visit_view a {
+  position:relative;
+  z-index:0;
+  text-decoration:none;
+  display:block;
+  margin:5px 3px 0 47px;
+}
+.page_visit_view .delete_icon {
+  display:none;
+  top:-7px;
+  left:0px;
+}
+.page_visit_view .link {
+  padding: 5px;
+}
+.page_visit_view .time { display:none; }
+.page_visit_view .title {
+  font-size:105%;
+  padding-bottom:3px;
+}
+.page_visit_view .location,
+.page_visit_view .time {
+  color: #999;
+  padding:1px 0;
+  overflow:hidden;
+  white-space: nowrap;
+}
+.page_visit_view .time { margin-top:2px; }
+.page_visit_view .description {
+  background-repeat:no-repeat;
+  background-position:0 0;
+  padding-left:25px;
+}
+.page_visit_view .match {
+  background:#f2f37b;
+  border-radius:2px;
+  display:inline-block;
+  padding:1 2px;
+  margin:0 1px;
+}
+
+.page_visit_view:hover > a > .link {
+  background: #eaeef3;
+  border-radius: 3px;
+}
+.page_visit_view:hover > a > .link > .description > .title,
+.page_visit_view:hover > a > .link > .description > .location {
+  text-shadow:1px 1px #FFF;
+}
+.page_visit_view:hover > a > .link > .description > .location,
+.page_visit_view:hover > a > .link > .description > .time {
+  color:#555;
+}
+.page_visit_view:hover > a > .link > .delete_icon { display:inline; }

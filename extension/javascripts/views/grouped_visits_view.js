@@ -1,5 +1,5 @@
 GroupedVisitsView = Backbone.View.extend({
-  className: 'visit grouped_visits',
+  className: 'page_visit_view grouped_visits_view',
 
   events: {
     'click .expand': 'toggle',

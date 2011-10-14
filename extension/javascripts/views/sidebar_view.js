@@ -1,5 +1,4 @@
 SidebarView = Backbone.View.extend({
-  tagName: 'div',
   className: 'sidebar_view',
 
   selectedClass: 'selected',

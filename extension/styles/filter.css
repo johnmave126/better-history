@@ -1,0 +1,37 @@
+.content {
+  padding:47px 0 100px;
+  position:relative;
+  min-height:300px;
+  overflow:hidden;
+}
+.date, .visit_count {
+  font-size:15px;
+  margin-left:10px;
+  color:#53637D;
+}
+.spinner {
+  top:90px;
+  left:60px;
+  position:absolute;
+}
+.visit_count {
+  margin-left:15px;
+  display:none;
+}
+.toggle_time_divisions {
+  position:absolute;
+  top:10px;
+  right:20pc;
+}
+.controls {
+  display:inline-block;
+  margin:0;
+  padding:0;
+  position:absolute;
+  right:260px;
+  top:10px;
+}
+.controls .control {
+  display:inline;
+}
+.view .ordinal { font-size:16px; }

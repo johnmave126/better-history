@@ -1,0 +1,44 @@
+
+.sidebar_view {
+  list-style-type: none;
+  clear:both;
+  text-align:right;
+}
+.sidebar_view .search { margin-right: 24px; }
+.sidebar_view .filters {
+  padding:0;
+  margin:5px 0;
+}
+.sidebar_view .filter a {
+  padding:7px 24px;
+  font-size:14px;
+  padding-right:24px;
+  border-bottom: 1px solid transparent;
+  border-top: 1px solid transparent;
+  color: #426dc9;
+  display: block;
+  text-shadow: white 0 1px 1px;
+  text-decoration:none;
+}
+.sidebar_view .filter .ordinal { font-size:11px; }
+.sidebar_view .filter:focus a,
+.sidebar_view .filter.selected a {
+  border-bottom: 1px solid #8faad9;
+  border-top: 1px solid #8faad9;
+}
+.sidebar_view .filter:hover a {
+  background:#d8e1ee;
+  opacity:1;
+}
+.sidebar_view .filter.selected a,
+.sidebar_view .filter.selected a.empty{
+  -webkit-box-shadow: 0px 1px 0px #f7f7f7;
+  background: -webkit-linear-gradient(left, #bbcee9, #bbcee9 97%, #aabedc);
+  text-shadow: #bbcee9 0 1px 1px;
+  color:#000;
+  opacity:1;
+}
+.sidebar_view .filter a.empty { color:#777; }
+.clear_history {
+  margin:15px 24px 12px;
+}
