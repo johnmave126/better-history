@@ -32,9 +32,7 @@ GroupedVisitsView = Backbone.View.extend({
 
   deleteClicked: function(ev) {
     ev.preventDefault();
-    $.each(this.collection.models, function(i, pageVisit) {
-      pageVisit.destroy();
-    });
+    this.collection.destroyAll();
     this.remove();
   },
 
