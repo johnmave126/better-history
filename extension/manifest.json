@@ -10,5 +10,5 @@
   "chrome_url_overrides": {
     "history": "index.html"
   },
-  "permissions": ["chrome://favicon/", "history"]
+  "permissions": ["chrome://favicon/", "history", "tabs"]
 }
