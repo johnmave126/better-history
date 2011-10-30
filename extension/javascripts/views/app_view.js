@@ -1,6 +1,6 @@
 AppView = Backbone.View.extend({
   render: function() {
-    $('#appTemplate').tmpl().appendTo(this.el);
+    ich.appTemplate().appendTo(this.el);
     this.renderSidebar();
     this.renderVersion();
     return this;
@@ -12,8 +12,7 @@ AppView = Backbone.View.extend({
   },
 
   renderVersion: function() {
-    var version = new Version({version: '1.0.0'});
-    var versionView = new VersionView({model: version});
+    var versionView = new VersionView({model: this.model});
     $(this.el).append(versionView.render().el);
   }
 });

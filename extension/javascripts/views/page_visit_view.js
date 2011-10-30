@@ -6,7 +6,7 @@ PageVisitView = Backbone.View.extend({
   },
 
   render: function() {
-    $('#pageVisitTemplate').tmpl(this.model.presenter()).appendTo(this.el);
+    ich.pageVisitTemplate(this.model.presenter()).appendTo(this.el);
     return this;
   },
 

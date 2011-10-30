@@ -1,11 +1,10 @@
-<!-- Sidebar Template --!>
-<script id="sidebarTemplate" type="text/x-jquery-tmpl">
+<script id="sidebarTemplate" type="text/html">
   <input class="search" type="search" placeholder="Search history">
   <ul class="filters"></ul>
   <a href="#" class="clear_history button">Clear history...</a>
 </script>
-<script id="filterItemTemplate" type="text/x-jquery-tmpl">
+<script id="filterItemTemplate" type="text/html">
   <li class="filter">
-  <a href="#filter/${hash}" data-cid="${cid}" class="${quantity}">{{html title}}</a>
+  <a href="#filter/{{hash}}" data-cid="{{cid}}" class="{{quantity}}">{{{title}}}</a>
   </li>
 </script>

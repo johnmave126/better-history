@@ -16,27 +16,25 @@
     <title>Better History</title>
   </head>
   <body>
-    <div class="page"> </div>
+    <div class="app"> </div>
     <!-- Templates Start -->
 
 
-    <script id="appTemplate" type="text/x-jquery-tmpl">
+    <script id="appTemplate" type="text/html">
       <div class="navbar">
         <h1><em>Better</em> History</h1>
       </div>
       <div class="mainview"></div>
     </script>
 
-    <!-- Date Visit Template -->
-    <script id="dateVisitTemplate" type="text/x-jquery-tmpl">
-      <h3 class="date_interval">${date}</h3>
+    <script id="dateVisitTemplate" type="text/html">
+      <h3 class="date_interval">{{date}}</h3>
     </script>
 
-    <!-- Filter Template -->
-    <script id="filterTemplate" type="text/x-jquery-tmpl">
+    <script id="filterTemplate" type="text/html">
       <div class="heading">
-        <h2>{{html title}}</h2>
-        <span class="date">${date}</span>
+        <h2>{{{title}}}</h2>
+        <span class="date">{{date}}</span>
         <ul class="controls">
           <li class="control">
             <a href="#" class="button collapse_groupings">Collapse</a>
@@ -51,44 +49,41 @@
         <div class="spinner"></div>
       </div>
     </script>
-    <script id="noVisitsTemplate" type="text/x-jquery-tmpl">
+    <script id="noVisitsTemplate" type="text/html">
       <p class="no_visits">Sorry friend, no visits found.</p>
     </script>
 
-    <!-- Grouped Visits Template -->
-    <script id="groupedVisitsTemplate" type="text/x-jquery-tmpl">
-      <a href="${domain}">
+    <script id="groupedVisitsTemplate" type="text/html">
+      <a href="{{domain}}">
         <div class="link">
-          <dl class="description" style="background-image: url(chrome://favicon/${url})">
-            <dt class="title">${domain}</dt>
+          <dl class="description" style="background-image: url(chrome://favicon/{{url}})">
+            <dt class="title">{{domain}}</dt>
             <dd class="location"><span class="expand button small_button">Expand</span></dd>
           </dl>
           <span class="delete_icon delete_group" title="Delete visit group"><span class="delete"></span></span>
         </div>
       </a>
     </script>
-    <script id="expandedVisitsTemplate" type="text/x-jquery-tmpl">
+    <script id="expandedVisitsTemplate" type="text/html">
       <div class="expanded"></div>
     </script>
 
-    <!-- Page Visit Template -->
-    <script id="pageVisitTemplate" type="text/x-jquery-tmpl">
-      <a href="${url}" data-cid="${cid}">
+    <script id="pageVisitTemplate" type="text/html">
+      <a href="{{url}}" data-cid="{{cid}}">
         <div class="link">
-          <dl class="description" style="background-image: url(chrome://favicon/${url})">
-            <dt class="title">{{html title}}</dt>
-            <dd class="location">{{html location}}</dd>
-            <dd class="time">{{html time}}</dd>
+          <dl class="description" style="background-image: url(chrome://favicon/{{url}})">
+            <dt class="title">{{title}}</dt>
+            <dd class="location">{{location}}</dd>
+            <dd class="time">{{time}}</dd>
           </dl>
           <span class="delete_icon delete_visit" title="Delete visit"><span class="delete"></span></span>
         </div>
       </a>
     </script>
 
-    <!-- Search Template -->
-    <script id="searchTemplate" type="text/x-jquery-tmpl">
+    <script id="searchTemplate" type="text/html">
       <div class="heading stuck">
-        <h2>Searching "<span class="text">${text}</span>"</h2>
+        <h2>Searching "<span class="text">{{text}}</span>"</h2>
         <span class="date">Last few months</span>
       </div>
       <div class="fade"></div>
@@ -97,9 +92,8 @@
       </div>
     </script>
 
-    <!-- Searched Page Visit Template -->
-    <script id="searchedPageVisitTemplate" type="text/x-jquery-tmpl">
-      <a href="${url}" class="page_visit" data-cid="${cid}">
+    <script id="searchedPageVisitTemplate" type="text/html">
+      <a href="{{url}}" class="page_visit" data-cid="{{cid}}">
         <div class="handle">
           <span class="line"></span>
           <span class="line"></span>
@@ -110,42 +104,40 @@
           <span class="line"></span>
         </div>
         <div class="link">
-          <dl class="description" style="background-image: url(chrome://favicon/${url})">
-            <dt class="title">${title}</dt>
-            <dd class="url">${url}</dd>
+          <dl class="description" style="background-image: url(chrome://favicon/{{url}})">
+            <dt class="title">{{title}}</dt>
+            <dd class="url">{{url}}</dd>
           </dl>
         </div>
       </a>
     </script>
 
-    <!-- Sidebar Template --!>
-    <script id="sidebarTemplate" type="text/x-jquery-tmpl">
+    <script id="sidebarTemplate" type="text/html">
       <input class="search" type="search" placeholder="Search history">
       <ul class="filters"></ul>
       <a href="#" class="clear_history button">Clear history...</a>
     </script>
-    <script id="filterItemTemplate" type="text/x-jquery-tmpl">
+    <script id="filterItemTemplate" type="text/html">
       <li class="filter">
-      <a href="#filter/${hash}" data-cid="${cid}" class="${quantity}">{{html title}}</a>
+      <a href="#filter/{{hash}}" data-cid="{{cid}}" class="{{quantity}}">{{{title}}}</a>
       </li>
     </script>
 
-    <!-- Time Visit Template -->
-    <script id="timeVisitTemplate" type="text/x-jquery-tmpl">
-      <div class="state ${state}">
+    <script id="timeVisitTemplate" type="text/html">
+      <div class="state {{state}}">
         <h3 class="time_interval">
           <span class="arrow arrow_down"></span>
           <span class="arrow arrow_right"></span>
-          <span class="time">${time}</span>
-          <span class="summary"><span class="amount">${amount}</span> visits</span>
+          <span class="time">{{time}}</span>
+          <span class="summary"><span class="amount">{{amount}}</span> visits</span>
         </h3>
         <div class="visits"></div>
       </div>
     </script>
 
-    <script id="versionTemplate" type="text/x-jquery-tmpl">
+    <script id="versionTemplate" type="text/html">
       <a href="#" class="open_version open">What's new</a>
-      <div class="overlay ${visibility}">
+      <div class="overlay {{visibility}}">
         <div class="modal">
           <h1 class="title"><em>Better</em> History reaches 1.0!</h1>
           <div class="content">
@@ -185,7 +177,7 @@
     <script type="text/javascript" src="javascripts/frameworks/jquery-1.6.2.min.js"></script>
     <script type="text/javascript" src="javascripts/frameworks/jquery-ui-1.8.16.custom.min.js"></script>
     <script type="text/javascript" src="javascripts/frameworks/jquery.stickysectionheaders.js"></script>
-    <script type="text/javascript" src="javascripts/frameworks/jquery.tmpl.min.js"></script>
+    <script type="text/javascript" src="javascripts/frameworks/ICanHaz.min.js"></script>
     <script type="text/javascript" src="javascripts/frameworks/spin.min.js"></script>
     <script type="text/javascript" src="javascripts/frameworks/underscore-min.js"></script>
     <script type="text/javascript" src="javascripts/frameworks/backbone.js"></script>
@@ -223,7 +215,10 @@
       var router = new Router();
 
       $(function() {
-        appView = new AppView({el: $('.page')})
+        appView = new AppView({
+          el: $('.app'),
+          model: new Version({version: '1.0.0'})
+        })
         appView.render();
         Backbone.history.start();
       });

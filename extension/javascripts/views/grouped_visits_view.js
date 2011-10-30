@@ -7,8 +7,8 @@ GroupedVisitsView = Backbone.View.extend({
   },
 
   render: function() {
-    $('#groupedVisitsTemplate').tmpl(this.collection.summary()).appendTo(this.el);
-    var expandedVisits = $('#expandedVisitsTemplate').tmpl({});
+    ich.groupedVisitsTemplate(this.collection.summary()).appendTo(this.el);
+    var expandedVisits = ich.expandedVisitsTemplate({});
     $.each(this.collection.models, function(i, visit) {
       var pageVisitView = new PageVisitView({model: visit});
       $(expandedVisits).append(pageVisitView.render().el);

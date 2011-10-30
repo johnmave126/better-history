@@ -28,7 +28,7 @@ FilterView = Backbone.View.extend({
 
   render: function(type) {
     $(this.el).hide();
-    $('#filterTemplate').tmpl(this.model.presenter()).appendTo(this.el);
+    ich.filterTemplate(this.model.presenter()).appendTo(this.el);
 
     var self = this;
     $(this.el).fadeIn('fast', function() {
@@ -48,7 +48,7 @@ FilterView = Backbone.View.extend({
   },
 
   renderNoResults: function () {
-    $('#noVisitsTemplate').tmpl().appendTo($('.content', this.el));
+    ich.noVisitsTemplate().appendTo($('.content', this.el));
   },
 
   renderTimeVisits: function(pageVisits) {
