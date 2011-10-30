@@ -38,6 +38,6 @@ PageVisitView = Backbone.View.extend({
   },
 
   getGroup: function() {
-    return $(this.el).parents('.grouped_visits');
+    return $(this.el).parents('.grouped_visits_view');
   }
 });
