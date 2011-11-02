@@ -27,7 +27,7 @@
   border-top: 1px solid #8faad9;
 }
 .sidebar_view .filter:hover a {
-  background:#d8e1ee;
+  background:rgba(216, 225, 238, 0.7);
   opacity:1;
 }
 .sidebar_view .filter.selected a,

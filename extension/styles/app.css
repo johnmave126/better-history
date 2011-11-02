@@ -11,11 +11,12 @@
 }
 .navbar {
   -webkit-border-end: 1px solid #c6c9ce;
-  background-image: url(/images/logo_grayscale.png),
-              -webkit-linear-gradient(rgba(234, 238, 243, 0.2), #eaeef3),
-              -webkit-linear-gradient(left, #eaeef3, #eaeef3 97%, #d3d7db);
-  background-repeat:no-repeat, repeat, repeat;
-  background-position:50px bottom, top left, top left;
+  background-image:
+              -webkit-linear-gradient(rgba(234, 238, 243, 0.1), rgba(243, 238, 243, 0.8)),
+              -webkit-linear-gradient(left, rgba(234, 238, 243, 0.5), rgba(234, 238, 243, 0.5) 97%, rgba(211, 215, 219, 0.9)),
+              url(/images/white_texture.png);
+  background-repeat:repeat, repeat, repeat;
+  background-position:top left, top left, top left;
   position: fixed;
   bottom: 0;
   left: 0;
