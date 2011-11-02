@@ -1,5 +1,4 @@
 var GroupBy;
-var groupInterval = 15;
 (function() {
   function hours(militaryHours) {
     if(militaryHours === 0) {
@@ -13,23 +12,23 @@ var groupInterval = 15;
     return (hours < 12 ? 'AM' : 'PM');
   }
 
-  function minute(minutes) {
-    minutes = Math.floor(minutes / groupInterval) * groupInterval;
+  function minute(minutes, interval) {
+    minutes = Math.floor(minutes / interval) * interval;
     return (minutes === 0 ? '00' : minutes);
   }
 
-  function standardTimeByInterval(date) {
-    return hours(date.getHours()) + ':' + minute(date.getMinutes()) + ' ' + period(date.getHours());
+  function standardTimeByInterval(date, interval) {
+    return hours(date.getHours()) + ':' + minute(date.getMinutes(), interval) + ' ' + period(date.getHours());
   }
 
   GroupBy = {
-    time: function(pageVisits) {
+    time: function(timeInterval, pageVisits) {
       var dateVisits = new DateVisits();
       $.each(pageVisits.models, function(index, pageVisit) {
         var lastVisitTime = new Date(pageVisit.get('lastVisitTime'));
 
         var date = lastVisitTime.toLocaleDateString().match(/([^,]*),(.*)/)[2],
-            time = standardTimeByInterval(lastVisitTime);
+            time = standardTimeByInterval(lastVisitTime, timeInterval);
 
         if(dateVisits.pluck('date').indexOf(date) === -1) {
           dateVisits.add([{date: date, timeVisits:new TimeVisits()}]);

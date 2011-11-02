@@ -25,13 +25,13 @@ describe('GroupBy', function() {
   });
 
   describe('.time', function() {
-    it('groups history items by 15 minute increments', function() {
-      var timeVisits = GroupBy.time(new PageVisits([pageVisit1, pageVisit2]));
+    it('groups history items by 15 minute increments when passed 15', function() {
+      var timeVisits = GroupBy.time(15, new PageVisits([pageVisit1, pageVisit2]));
       expect(timeVisits.length).toEqual(1);
     });
 
-    it('separates history items that are more than 15 minutes apart', function() {
-      var timeVisits = GroupBy.time(new PageVisits([pageVisit1, pageVisit3]));
+    it('separates history items that are more than 15 minutes apart when passed 15', function() {
+      var timeVisits = GroupBy.time(15, new PageVisits([pageVisit1, pageVisit3]));
       expect(timeVisits.length).toEqual(2);
     });
   });
