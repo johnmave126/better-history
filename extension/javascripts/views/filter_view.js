@@ -8,8 +8,12 @@ FilterView = Backbone.View.extend({
   },
 
   updateTimeGrouping: function(ev) {
-    $('.content').html('');
-    this.renderTimeVisits($('.time_grouping').val());
+    var self = this;
+    $('.content', this.el).fadeOut('fast', function() {
+      $(this).html('');
+      self.renderTimeVisits($('.time_grouping', self.el).val());
+      self.update();
+    });
   },
 
   collapseGroupings: function(ev) {

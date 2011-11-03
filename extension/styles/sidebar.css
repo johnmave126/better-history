@@ -4,7 +4,10 @@
   clear:both;
   text-align:right;
 }
-.sidebar_view .search { margin-right: 24px; }
+.sidebar_view .search {
+  margin-right: 24px;
+  width:154px;
+}
 .sidebar_view .filters {
   padding:0;
   margin:5px 0;

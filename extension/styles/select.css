@@ -16,6 +16,7 @@ select {
   overflow: hidden;
   padding-top: 3px;
   padding-bottom: 3px;
+  padding-left:10px;
   text-overflow: ellipsis;
   white-space: nowrap;
 }
