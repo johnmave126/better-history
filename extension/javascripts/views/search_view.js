@@ -3,7 +3,7 @@ SearchView = Backbone.View.extend({
 
   render: function(type) {
     $(this.el).hide();
-    $('#searchTemplate').tmpl(this.model.presenter()).appendTo(this.el);
+    ich.searchTemplate(this.model.presenter()).appendTo(this.el);
 
     var self = this;
     $(this.el).fadeIn('fast', function() {
@@ -22,7 +22,7 @@ SearchView = Backbone.View.extend({
   },
 
   renderNoResults: function () {
-    $('#noVisitsTemplate').tmpl().appendTo($('.content', this.el));
+    ich.noVisitsTemplate().appendTo($('.content', this.el));
   },
 
   renderPageVisits: function(pageVisits) {

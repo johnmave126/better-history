@@ -4,7 +4,7 @@ describe('TimeVisitView', function() {
   var timeVisitView, timeVisit;
 
   beforeEach(function() {
-    loadFixtures('time_visit.html', 'page_visit.html');
+    insertFixtures('time_visit.html');
 
     var pageVisits = new PageVisits([{url: 'google.com'}, {url: 'yahoo.com'}]);
 
@@ -30,6 +30,7 @@ describe('TimeVisitView', function() {
     var presenter;
 
     beforeEach(function() {
+      insertFixtures('page_visit.html');
       presenter = timeVisit.presenter();
     });
 

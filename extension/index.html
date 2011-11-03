@@ -37,6 +37,14 @@
         <span class="date">{{date}}</span>
         <ul class="controls">
           <li class="control">
+            <select class="time_grouping">
+              <option value="60">60 minutes</options>
+              <option value="30">30 minutes</options>
+              <option value="15">15 minutes</options>
+              <option value="0">No grouping</options>
+            </select>
+          </li>
+          <li class="control">
             <a href="#" class="button collapse_groupings">Collapse</a>
           </li>
           <li class="control">
@@ -72,9 +80,9 @@
       <a href="{{url}}" data-cid="{{cid}}">
         <div class="link">
           <dl class="description" style="background-image: url(chrome://favicon/{{url}})">
-            <dt class="title">{{title}}</dt>
-            <dd class="location">{{location}}</dd>
-            <dd class="time">{{time}}</dd>
+            <dt class="title">{{{title}}}</dt>
+            <dd class="location">{{{location}}}</dd>
+            <dd class="time">{{{time}}}</dd>
           </dl>
           <span class="delete_icon delete_visit" title="Delete visit"><span class="delete"></span></span>
         </div>

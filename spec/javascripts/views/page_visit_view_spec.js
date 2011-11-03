@@ -2,7 +2,7 @@ describe('PageVisitView', function() {
   var pageVisitView, pageVisit;
 
   beforeEach(function() {
-    loadFixtures('page_visit.html');
+    insertFixtures('page_visit.html');
     pageVisit = new PageVisit({
       url: 'google.com',
       title: 'google',

@@ -3,7 +3,13 @@ FilterView = Backbone.View.extend({
 
   events: {
     'click .collapse_groupings': 'collapseGroupings',
-    'click .expand_groupings': 'expandGroupings'
+    'click .expand_groupings': 'expandGroupings',
+    'change .time_grouping': 'updateTimeGrouping'
+  },
+
+  updateTimeGrouping: function(ev) {
+    $('.content').html('');
+    this.renderTimeVisits($('.time_grouping').val());
   },
 
   collapseGroupings: function(ev) {
@@ -38,7 +44,7 @@ FilterView = Backbone.View.extend({
         if(results.length === 0) {
           self.renderNoResults();
         } else {
-          self.renderTimeVisits(results);
+          self.renderTimeVisits(15, results);
         }
         self.update();
       });
@@ -51,9 +57,12 @@ FilterView = Backbone.View.extend({
     ich.noVisitsTemplate().appendTo($('.content', this.el));
   },
 
-  renderTimeVisits: function(pageVisits) {
+  renderTimeVisits: function(timeInterval, pageVisits) {
+    if(this.cachedPageVisits === undefined) {
+      this.cachedPageVisits = pageVisits;
+    }
     var timeVisitView, total = 0;
-    this.collection = GroupBy.time(pageVisits);
+    this.collection = GroupBy.time(timeInterval, this.cachedPageVisits);
 
     var self = this;
     $.each(this.collection.models, function(i, timeVisit) {

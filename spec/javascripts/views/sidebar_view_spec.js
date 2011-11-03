@@ -2,7 +2,7 @@ describe('SidebarView', function() {
   var sidebarView;
 
   beforeEach(function() {
-    loadFixtures('sidebar.html');
+    insertFixtures('sidebar.html');
     router = {
       bind: jasmine.createSpy('bind'),
       search: jasmine.createSpy('search')
