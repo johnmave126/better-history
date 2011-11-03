@@ -2,7 +2,7 @@ Router = Backbone.Router.extend({
   routes: {
     '': 'filter',
     'filter/:type': 'filter',
-    'search/:query': 'search'
+    'search/*query': 'search'
   },
 
   filter: function(type) {
