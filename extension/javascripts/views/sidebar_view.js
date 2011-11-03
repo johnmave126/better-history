@@ -44,15 +44,16 @@ SidebarView = Backbone.View.extend({
   searchTyped: function(ev) {
     var term = $('.search').val();
     if(ev.keyCode === 13 && term !== '') {
+      delete(this.selectedFilter);
       this.selectFilter();
       router.search(term);
     }
   },
 
   selectFilter: function() {
+    $('.filter', this.el).removeClass(this.selectedClass);
     if(this.selectedFilter) {
       var element = $('a[data-cid=' + this.selectedFilter.cid + ']', this.el);
-      $('.filter', this.el).removeClass(this.selectedClass);
       $(element).parent().addClass(this.selectedClass);
     }
   }
