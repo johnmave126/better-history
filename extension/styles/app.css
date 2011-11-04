@@ -1,9 +1,8 @@
 .mainview {
   -webkit-box-align: stretch;
-  -webkit-padding-start: 216px;
   margin: 0;
   position: absolute;
-  left: 0;
+  left: 216px;
   right: 0;
   top: 0;
   bottom: 0;
@@ -25,7 +24,8 @@
   width: 216px;
   z-index: 2;
   display:none;
-  overflow:hidden;
+  overflow:auto;
+  height:100%;
 }
 .navbar .logo {
   opacity:0.1;
