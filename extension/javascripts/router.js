@@ -11,7 +11,7 @@ Router = Backbone.Router.extend({
     var filterView = new FilterView({model: filter});
     $('.mainview', appView.el).html(filterView.render().el);
 
-    filter.fetch({searchOptions: filter.options()});
+    filter.fetch();
     router.navigate("filter/" + type);
   },
 
@@ -20,13 +20,14 @@ Router = Backbone.Router.extend({
       text: query,
       hash: 'search',
       endTime: new Date().getTime(),
-      startTime: DateRanger.borders(60).start.getTime()
+      startTime: DateRanger.borders(60).start.getTime(),
+      timeGrouping: 0
     });
 
     var searchView = new SearchView({model: filter});
     $('.mainview', appView.el).html(searchView.render().el);
 
-    filter.fetch({searchOptions: filter.options()});
+    filter.fetch();
     router.navigate("search/" + query);
   }
 });

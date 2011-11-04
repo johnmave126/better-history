@@ -43,3 +43,6 @@
 }
 .time_visit_view .collapsed .arrow_down { display:none; }
 .time_visit_view .collapsed .arrow_right { display:inline-block; }
+.time_visit_view .page_visit_view a {
+  margin-left:47px;
+}

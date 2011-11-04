@@ -18,27 +18,38 @@ FilterView = Backbone.View.extend({
   },
 
   renderTimeVisits: function() {
-    var timeVisits = this.model.get('timeVisits').models,
+    var visits = this.model.get('visits').models,
         self = this;
 
-    $.each(timeVisits, function() {
-      var timeVisitView = new TimeVisitView({model: this, collection: this.get('visits')});
-      $('.content', self.el).append(timeVisitView.render().el);
-    });
-    $('.content', this.el).fadeIn('fast', function() {
-      $('.time_visit_view').stickyElements({stickyClass:'time_interval', padding:48});
-    });
+    $('.content', this.el).fadeOut('fast', function() {
+      $(this).html('');
+      if(self.model.get('timeGrouping') === 0) {
+        $.each(visits, function() {
+          $('.content', self.el)
+            .append(new PageVisitView({model: this}).render().el);
+        });
+      } else {
+        $.each(visits, function() {
+          $('.content', self.el)
+            .append(new TimeVisitView({
+              model: this, collection: this.get('visits')
+            }).render().el);
+        });
+      }
+      if(visits.length === 0) ich.noVisits().appendTo(this);
 
-    if(timeVisits.length === 0) {
-      ich.noVisits().appendTo($('.content', this.el));
-    }
+      $(this).fadeIn('fast', function() {
+        $('.time_visit_view').stickyElements({stickyClass:'time_interval', padding:48});
+      });
+    });
   },
 
   changeTimeGrouping: function(ev) {
     ev.preventDefault();
-    timeGrouping = $(ev.currentTarget).val();
-    this.model.fetch({searchOptions: this.model.options()});
+    this.model.set({timeGrouping: parseInt($(ev.currentTarget).val(), 10)}, {silent: true});
+    this.model.fetch();
   },
+
 
   collapseGroupings: function(ev) {
     ev.preventDefault();

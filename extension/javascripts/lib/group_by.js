@@ -1,4 +1,4 @@
-var GroupBy, timeGrouping = 15;
+var GroupBy;
 (function() {
   function hours(militaryHours) {
     if(militaryHours === 0) {

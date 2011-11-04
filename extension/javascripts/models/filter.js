@@ -1,7 +1,8 @@
 Filter = Backbone.Model.extend({
   defaults: {
     text: '',
-    maxResults: 0
+    maxResults: 0,
+    timeGrouping: 15
   },
 
   initialize: function() {
@@ -65,14 +66,14 @@ Filter = Backbone.Model.extend({
   },
 
   parse:function(data) {
-    if(this.get('text').length > 0) {
+    if(this.get('timeGrouping') === 0) {
       this.set({visits: new PageVisits(data)});
     } else {
       var timeVisits = new TimeVisits();
       $.each(data, function(i, timeVisit) {
         timeVisits.add({time:timeVisit.time, visits: new PageVisits(timeVisit.visits)});
       });
-      this.set({timeVisits: timeVisits});
+      this.set({visits: timeVisits});
     }
   }
 });

@@ -3,9 +3,9 @@ Backbone.sync = function(method, model, options) {
     chrome.history.deleteUrl({url: model.get('url')});
     options.success(model);
   } else if(method === 'read') {
-    chromeAPI.history.search(options.searchOptions, function(visits) {
-      if(options.searchOptions.text.length === 0) {
-        visits = GroupBy.time(timeGrouping, visits);
+    chromeAPI.history.search(model.options(), function(visits) {
+      if(model.get('timeGrouping') !== 0) {
+        visits = GroupBy.time(model.get('timeGrouping'), visits);
       }
       options.success(visits);
     });
