@@ -1,15 +1,21 @@
 Router = Backbone.Router.extend({
   routes: {
     '': 'filter',
+    'settings': 'settings',
     'filter/:type': 'filter',
     'search/*query': 'search'
+  },
+
+  settings: function() {
+    $('.mainview', appView.el)
+      .html(new SettingsView().render().el);
   },
 
   filter: function(type) {
     var filter = filters.getByHash(type);
 
-    var filterView = new FilterView({model: filter});
-    $('.mainview', appView.el).html(filterView.render().el);
+    $('.mainview', appView.el)
+      .html(new FilterView({model: filter}).render().el);
 
     filter.fetch();
     router.navigate("filter/" + type);
@@ -24,8 +30,8 @@ Router = Backbone.Router.extend({
       timeGrouping: 0
     });
 
-    var searchView = new SearchView({model: filter});
-    $('.mainview', appView.el).html(searchView.render().el);
+    $('.mainview', appView.el)
+      .html(new SearchView({model: filter}).render().el);
 
     filter.fetch();
     router.navigate("search/" + query);

@@ -4,7 +4,7 @@ SidebarView = Backbone.View.extend({
   selectedClass: 'selected',
 
   events: {
-    'click .clear_history': 'clearHistoryClicked',
+    'click .settings': 'settingsClicked',
     'click .filter a': 'filterClicked',
     'keyup .search': 'searchTyped'
   },
@@ -25,9 +25,11 @@ SidebarView = Backbone.View.extend({
     return this;
   },
 
-  clearHistoryClicked: function(ev) {
+  settingsClicked: function(ev) {
     ev.preventDefault();
-    chrome.tabs.create({url:'chrome://settings/clearBrowserData'});
+    delete(this.selectedFilter);
+    this.selectFilter();
+    router.navigate('settings', true);
   },
 
   filterClicked: function(ev) {

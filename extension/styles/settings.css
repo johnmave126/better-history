@@ -1,0 +1,48 @@
+.settings {
+  width: 100%;
+  padding-left:24px;
+}
+
+/* right table column containing settable options */
+.settings > .setting > .title + div {
+  padding: 20px 0;
+}
+
+/* Setting the padding on the header so the alignment doesn't depend on the
+ * contents of the right table column.  */
+.settings > .setting > .title {
+  padding-top: 17px;
+  font-weight:normal;
+}
+
+.settings > .setting > * {
+  display: table-cell;
+  vertical-align: baseline;
+}
+
+.settings .setting {
+  width:50%;
+  border-bottom: 1px solid #eeeeee;
+}
+
+.settings .title {
+  font-size: 105%;
+  font-weight: bold;
+  margin: 20px 0 10px 0;
+}
+
+.settings .setting > .title {
+  margin: 0;
+  width: 130px;
+  -webkit-padding-end: 10px;
+}
+.settings .note {
+  padding-top:5px;
+}
+.settings label {
+  display:block;
+  padding-top:10px;
+}
+.settings .controls label:first-child {
+  padding-top:0;
+}

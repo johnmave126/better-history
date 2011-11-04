@@ -12,7 +12,8 @@
   padding:0;
   margin:5px 0;
 }
-.sidebar_view .filter a {
+.sidebar_view .filter a,
+.sidebar_view .settings {
   padding:7px 24px;
   font-size:14px;
   padding-right:24px;
@@ -42,6 +43,7 @@
   opacity:1;
 }
 .sidebar_view .filter a.empty { color:#777; }
-.clear_history {
-  margin:15px 24px 12px;
+.sidebar_view .settings {
+  width:auto;
+  margin-top:20px;
 }
