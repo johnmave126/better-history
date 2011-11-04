@@ -12,7 +12,7 @@ Router = Backbone.Router.extend({
   },
 
   filter: function(type) {
-    var filter = filters.getByHash(type);
+    var filter = filters.getByHash(this.checkType(type));
 
     $('.mainview', appView.el)
       .html(new FilterView({model: filter}).render().el);
@@ -35,5 +35,10 @@ Router = Backbone.Router.extend({
 
     filter.fetch();
     router.navigate("search/" + query);
+  },
+
+  checkType: function(type) {
+    console.log(type)
+    return type === undefined || type === 'undefined' ? '0_days_ago' : type;
   }
 });

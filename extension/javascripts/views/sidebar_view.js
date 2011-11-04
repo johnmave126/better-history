@@ -12,7 +12,8 @@ SidebarView = Backbone.View.extend({
   initialize: function() {
     var self = this;
     router.bind('route:filter', function(type) {
-      self.selectedFilter = filters.getByHash(type);
+      self.selectedFilter = filters.getByHash(router.checkType(type));
+      self.selectFilter();
     });
   },
 
