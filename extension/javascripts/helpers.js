@@ -27,5 +27,5 @@ String.prototype.toCamel = function(){
 
 function pageTitle(title) {
   element = $('<div/>');
-  document.title = 'BH - ' + $(element).html(title).text();
+  document.title = 'Bh - ' + $(element).html(title).text();
 }
