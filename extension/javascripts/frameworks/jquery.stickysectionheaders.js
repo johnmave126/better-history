@@ -1,5 +1,5 @@
 (function ($) {
-    $.fn.stickySectionHeaders = function (options) {
+    $.fn.stickyElements = function (options) {
 
         var settings = $.extend({
             stickyClass: 'header',

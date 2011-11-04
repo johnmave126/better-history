@@ -1,4 +1,4 @@
-var GroupBy;
+var GroupBy, timeGrouping = 15;
 (function() {
   function hours(militaryHours) {
     if(militaryHours === 0) {
@@ -21,54 +21,60 @@ var GroupBy;
     return hours(date.getHours()) + ':' + minute(date.getMinutes(), interval) + ' ' + period(date.getHours());
   }
 
-  GroupBy = {
-    time: function(timeInterval, pageVisits) {
-      var dateVisits = new DateVisits();
-      $.each(pageVisits.models, function(index, pageVisit) {
-        var lastVisitTime = new Date(pageVisit.get('lastVisitTime'));
+  function domain(visit) {
+    var match = visit.get('url').match(/\w+:\/\/(.*?)\//);
+    return (match === null ? null : match[0]);
+  }
 
-        var date = lastVisitTime.toLocaleDateString().match(/([^,]*),(.*)/)[2],
+  function compareVisits(visit1, visit2) {
+    if(domain(visit1) === null || domain(visit2) === null) {
+      return false;
+    } else if(domain(visit1) == domain(visit2)) {
+      return true;
+    } else {
+      return false;
+    }
+  }
+  GroupBy = {
+    time: function(timeInterval, visits) {
+      var arrangedVisits = [];
+      $.each(visits, function(i, visit) {
+        var lastVisitTime = new Date(visit.lastVisitTime),
             time = standardTimeByInterval(lastVisitTime, timeInterval);
 
-        if(dateVisits.pluck('date').indexOf(date) === -1) {
-          dateVisits.add([{date: date, timeVisits:new TimeVisits()}]);
+        var times = _.pluck(arrangedVisits, 'time'),
+            index = times.indexOf(time);
+
+        if(index === -1) {
+          arrangedVisits.push({time: time, visits:[]});
+          index = arrangedVisits.length - 1;
         }
 
-        var dateVisit = dateVisits.at(dateVisits.pluck('date').indexOf(date));
-        var timeVisits = dateVisit.get('timeVisits');
-
-        if(timeVisits.pluck('time').indexOf(time) === -1) {
-          dateVisit.get('timeVisits').add([{date: date, time: time, pageVisits:new PageVisits()}]);
-        }
-
-        var timeVisit = timeVisits.at(timeVisits.pluck('time').indexOf(time));
-        var pageVisits = timeVisit.get('pageVisits');
-        pageVisits.add([pageVisit]);
+        arrangedVisits[index].visits.push(visit);
       });
-      return dateVisits.models[0].get('timeVisits');
+      return arrangedVisits;
     },
-
-    domain: function(pageVisits) {
-      groupedVisits = [];
-      $.each(pageVisits.models, function(i, pageVisit) {
-        if(groupedVisits.length === 0) {
-          groupedVisits.push(pageVisit);
-        } else {
-          if(pageVisit.compare(previous)) {
-            if(groupedVisits[groupedVisits.length - 1].length === undefined) {
-              groupedVisits.remove(-1);
-              groupedVisits.push(new GroupedVisits([previous, pageVisit]));
+    domain: function(visits) {
+        groupedVisits = [];
+        $.each(visits.models, function(i, visit) {
+            if (groupedVisits.length === 0) {
+                groupedVisits.push(visit);
             } else {
-              groupedVisits[groupedVisits.length - 1].add(pageVisit);
+                if (compareVisits(visit, previous)) {
+                    if (groupedVisits[groupedVisits.length - 1].length === undefined) {
+                        groupedVisits.remove(-1);
+                        groupedVisits.push(new GroupedVisits([previous, visit]));
+                    } else {
+                        groupedVisits[groupedVisits.length - 1].add(visit);
+                    }
+                } else {
+                    groupedVisits.push(visit);
+                }
             }
-          } else {
-            groupedVisits.push(pageVisit);
-          }
-        }
 
-        previous = pageVisit;
-      });
-      return groupedVisits;
+            previous = visit;
+        });
+        return groupedVisits;
     }
   };
 })();

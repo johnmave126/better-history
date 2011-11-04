@@ -18,25 +18,5 @@ PageVisit = Backbone.Model.extend({
   domain: function() {
     var match = this.get('url').match(/\w+:\/\/(.*?)\//);
     return (match === null ? null : match[0]);
-  },
-
-  compare: function(aPageVisit) {
-    if(this.domain() === null || aPageVisit.domain() === null) {
-      return false;
-    } else if(this.domain() == aPageVisit.domain()) {
-      return true;
-    } else {
-      return false;
-    }
   }
 });
-
-PageVisit.search = function(options, callback) {
-  var pageVisits = new PageVisits([]);
-  chromeAPI.history.search(options, function(results) {
-    $.each(results, function(i) {
-      pageVisits.add(results[i]);
-    });
-    callback(pageVisits);
-  });
-};

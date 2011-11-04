@@ -12,21 +12,15 @@ SidebarView = Backbone.View.extend({
   initialize: function() {
     var self = this;
     router.bind('route:filter', function(type) {
-      self.selectedFilter = filters.getByHash(this.checkType(type));
+      self.selectedFilter = filters.getByHash(type);
     });
   },
 
   render: function() {
     var self = this;
-    ich.sidebarTemplate().appendTo(self.el);
+    ich.sidebar().appendTo(self.el);
     $.each(this.collection.models, function(i, filter) {
-      PageVisit.search(filter.options(), function(pageVisits) {
-        var properties = filter.presenter();
-
-        if(pageVisits.length === 0) properties.quantity = 'empty';
-        ich.filterItemTemplate(properties).appendTo($('.filters', self.el));
-        self.selectFilter();
-      });
+      ich.filterItem(filter.presenter()).appendTo($('.filters', self.el));
     });
     return this;
   },

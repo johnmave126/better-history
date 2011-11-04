@@ -1,7 +1,9 @@
 var chromeAPI = {
   history: {
     search: function(options, callback) {
+      var originalText = false;
       if(options.text) {
+        originalText = options.text;
         var terms = options.text.split(' ');
         options.text = '';
       }
@@ -82,6 +84,7 @@ var chromeAPI = {
       }
 
       chrome.history.search(options, function(results) {
+        if(originalText) options.text = originalText;
         callback(pruneResults(results));
       });
     }

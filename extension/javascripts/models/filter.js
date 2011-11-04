@@ -10,7 +10,9 @@ Filter = Backbone.Model.extend({
     }
 
     var title;
-    if(this.get('daysSinceToday') === 0) {
+    if(this.get('hash') === 'search') {
+      title = this.buildTitle(this.get('text'));
+    } else if(this.get('daysSinceToday') === 0) {
       title = 'Today';
     } else if(this.get('daysSinceToday') === 1) {
       title = 'Yesterday';
@@ -45,9 +47,6 @@ Filter = Backbone.Model.extend({
     var properties = this.toJSON();
     properties.cid = this.cid;
     properties.date = this.date().toLocaleDateString().match(/([^,]*),(.*)/)[2];
-    if(this.get('hash') === 'search') {
-      properties.title = this.buildTitle(this.get('text'));
-    }
     return properties;
   },
 
@@ -63,5 +62,17 @@ Filter = Backbone.Model.extend({
     });
 
     return joined;
+  },
+
+  parse:function(data) {
+    if(this.get('text').length > 0) {
+      this.set({visits: new PageVisits(data)});
+    } else {
+      var timeVisits = new TimeVisits();
+      $.each(data, function(i, timeVisit) {
+        timeVisits.add({time:timeVisit.time, visits: new PageVisits(timeVisit.visits)});
+      });
+      this.set({timeVisits: timeVisits});
+    }
   }
 });

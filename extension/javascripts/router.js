@@ -6,11 +6,12 @@ Router = Backbone.Router.extend({
   },
 
   filter: function(type) {
-    type = this.checkType(type);
+    var filter = filters.getByHash(type);
 
-    var filterView = new FilterView({model: filters.getByHash(type)});
-    this.insert(filterView.render().el);
+    var filterView = new FilterView({model: filter});
+    $('.mainview', appView.el).html(filterView.render().el);
 
+    filter.fetch({searchOptions: filter.options()});
     router.navigate("filter/" + type);
   },
 
@@ -22,18 +23,10 @@ Router = Backbone.Router.extend({
       startTime: DateRanger.borders(60).start.getTime()
     });
 
-
     var searchView = new SearchView({model: filter});
-    this.insert(searchView.render().el);
+    $('.mainview', appView.el).html(searchView.render().el);
 
+    filter.fetch({searchOptions: filter.options()});
     router.navigate("search/" + query);
-  },
-
-  insert: function(content) {
-    $('.mainview').html(content);
-  },
-
-  checkType: function(type) {
-    return (type === undefined ? '0_days_ago' : type);
   }
 });

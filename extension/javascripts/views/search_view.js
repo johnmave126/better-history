@@ -1,38 +1,24 @@
 SearchView = Backbone.View.extend({
   className: 'search_view',
 
+  initialize: function() {
+    pageTitle(this.model.get('title'));
+    this.model.bind('change', this.renderPageVisits, this);
+  },
+
   render: function(type) {
-    $(this.el).hide();
-    ich.searchTemplate(this.model.presenter()).appendTo(this.el);
-
-    var self = this;
-    $(this.el).fadeIn('fast', function() {
-      $('.spinner').spin();
-      PageVisit.search(self.model.options(), function(results) {
-        $('.spinner').hide();
-        if(results.length === 0) {
-          self.renderNoResults();
-        } else {
-          self.renderPageVisits(results);
-        }
-      });
-    });
-
+    ich.search(this.model.presenter()).appendTo(this.el);
     return this;
   },
 
-  renderNoResults: function () {
-    ich.noVisitsTemplate().appendTo($('.content', this.el));
-  },
+  renderPageVisits: function() {
+    var visits = this.model.get('visits').models,
+        self = this;
 
-  renderPageVisits: function(pageVisits) {
-    var pageVisitView;
-    this.collection = pageVisits;
-
-    var self = this;
-    $.each(this.collection.models, function(i) {
-      pageVisitView = new PageVisitView({model: this});
-      $('.content', self. el).append(pageVisitView.render().el);
+    $.each(visits, function() {
+      $('.content', self.el).append(new PageVisitView({model: this}).render().el);
     });
+
+    if(visits.length === 0) ich.noVisits().appendTo($('.content', this.el));
   }
 });

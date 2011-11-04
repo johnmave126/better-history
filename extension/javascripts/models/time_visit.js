@@ -6,7 +6,7 @@ TimeVisit = Backbone.Model.extend({
 
   presenter: function() {
     return {
-      amount: this.get('pageVisits').length,
+      amount: this.get('visits').length,
       time: this.get('time'),
       state: (this.get('collapsed') ? 'collapsed' : '')
     };
