@@ -23,6 +23,7 @@ SidebarView = Backbone.View.extend({
     $.each(this.collection.models, function(i, filter) {
       ich.filterItem(filter.presenter()).appendTo($('.filters', self.el));
     });
+    setTimeout(function() { $('.search', self.el).focus(); }, 0);
     $('.search', this.el).focus();
     return this;
   },
