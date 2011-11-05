@@ -64,3 +64,73 @@ span.delete_icon:before {
 }
 .delete_icon:hover .delete,
 .delete_icon:hover .delete:before { background:#555; }
+
+
+.settings_icon {
+    position:relative;
+    z-index:1;
+    overflow:hidden;
+    list-style:none;
+    padding:0;
+    margin:0 0 0.25em;
+    display:inline-block;
+}
+.settings_icon .settings {
+  width:auto;
+}
+.settings_icon:before,
+.settings_icon:after,
+.settings_icon .settings:before,
+.settings_icon .settings:after {
+    content:"";
+    position:absolute;
+    top:50%;
+    left:0;
+}
+.settings_icon .settings:before,
+.settings_icon .settings:after {
+    margin:-8px 0 0;
+    background:#666;
+}
+.settings_icon:after {
+    left:13px;
+    width:3px;
+    height:5px;
+    margin-top:-8px;
+    background:#fff;
+    /* css3 */
+    -webkit-transform:rotate(45deg);
+    -moz-transform:rotate(45deg);
+    -o-transform:rotate(45deg);
+    transform:rotate(45deg);
+}
+
+.settings_icon .settings:before {
+    left:6px;
+    width:4px;
+    height:15px;
+    margin-top:-7px;
+    background:#666;
+    /* css3 */
+    -webkit-transform:rotate(45deg);
+s
+    -moz-transform:rotate(45deg);
+    -o-transform:rotate(45deg);
+    transform:rotate(45deg);
+}
+
+.settings_icon .settings:after {
+    left:8px;
+    width:9px;
+    height:9px;
+    background:#666;
+    -webkit-border-radius:8px;
+    -moz-border-radius:8px;
+    border-radius:8px;
+}
+.settings_icon .settings:hover:before,
+.settings_icon .settings:hover:after,
+.settings_icon .settings:focus:after,
+.settings_icon .settings:active:after {
+    background:#222;
+}

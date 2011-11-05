@@ -43,7 +43,7 @@
   opacity:1;
 }
 .sidebar_view .filter a.empty { color:#777; }
-.sidebar_view .settings {
-  width:auto;
+.sidebar_view .settings_icon {
   margin-top:20px;
 }
+
