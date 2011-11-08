@@ -13,7 +13,9 @@ Settings = Backbone.Model.extend({
       localStorage.settings = JSON.stringify(this);
       options.success(this);
     } else if(method === 'read') {
-      options.success(JSON.parse(localStorage.settings));
+      var parsedSettings = {};
+      if(localStorage.settings) parsedSettings = JSON.parse(localStorage.settings);
+      options.success(parsedSettings);
     }
   },
 
