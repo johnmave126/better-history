@@ -29,7 +29,7 @@ FilterView = Backbone.View.extend({
           }).render().el);
       });
 
-      if(history.length === 0) ich.noVisits().appendTo(this);
+      if(self.collection.length === 0) $(this).append(ich.noVisits());
 
       $(this).fadeIn('fast', function() {
         $('.time_visit_view').stickyElements({
