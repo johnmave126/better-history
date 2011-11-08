@@ -45,4 +45,19 @@
 .sidebar_view .settings_link {
   margin-top:30px;
 }
-
+.sidebar_view .selected .settings_icon:after {
+  background: -webkit-linear-gradient(left, #bbcee9, #bbcee9 97%, #aabedc);
+}
+.sidebar_view .selectable:hover .settings_icon:after {
+  background:rgba(216, 225, 238, 1);
+}
+.sidebar_view .selectable:hover .settings:before,
+.sidebar_view .selectable:hover .settings:after,
+.sidebar_view .selectable:focus .settings:after,
+.sidebar_view .selectable:active .settings:after,
+.sidebar_view .selected .settings:before,
+.sidebar_view .selected .settings:after,
+.sidebar_view .selected .settings:after,
+.sidebar_view .selected .settings:after {
+    background:#444;
+}
