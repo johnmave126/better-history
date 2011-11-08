@@ -14,6 +14,10 @@ SidebarView = Backbone.View.extend({
     router.bind('route:filter', function(type) {
       self.filterRouted(type);
     });
+
+    router.bind('route:settings', function() {
+      self.settingsRouted();
+    });
   },
 
   render: function() {
@@ -29,13 +33,17 @@ SidebarView = Backbone.View.extend({
     return this;
   },
 
-  settingsClicked: function(ev) {
-    this.selectElement($(ev.currentTarget, this.el));
+  settingsRouted: function(ev) {
+    this.selectElement($('.settings_link', this.el));
   },
 
   filterRouted: function(type) {
     var filter = filters.getByHash(router.checkType(type));
     this.selectElement($('a[data-cid=' + filter.cid + ']', this.el));
+  },
+
+  settingsClicked: function(ev) {
+    this.selectElement($(ev.currentTarget, this.el));
   },
 
   filterClicked: function(ev) {
