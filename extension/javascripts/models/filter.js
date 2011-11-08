@@ -22,6 +22,15 @@ Filter = Backbone.Model.extend({
     this.set({title: title});
   },
 
+  fetchCount: function() {
+    var self = this;
+    this.sync('read', this, {
+      success: function(data) {
+        self.trigger('count', {count: data.length});
+      }
+    });
+  },
+
   sync: function(method, model, options) {
     if(method === 'read') {
       chromeAPI.history.search(this.options(), function(history) {
