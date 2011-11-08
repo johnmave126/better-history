@@ -36,13 +36,14 @@ var GroupBy;
       var arrangedVisits = [];
       $.each(visits, function(i, visit) {
         var lastVisitTime = new Date(visit.lastVisitTime),
+            date = lastVisitTime.toLocaleDateString().match(/([^,]*),(.*)/)[2],
             time = standardTimeByInterval(lastVisitTime);
 
         var times = _.pluck(arrangedVisits, 'time'),
             index = times.indexOf(time);
 
         if(index === -1) {
-          arrangedVisits.push({time: time, pageVisits:[]});
+          arrangedVisits.push({date: date, time: time, pageVisits:[]});
           index = arrangedVisits.length - 1;
         }
 

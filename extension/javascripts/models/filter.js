@@ -86,6 +86,7 @@ Filter = Backbone.Model.extend({
       $.each(data, function() {
         history.add({
           time:this.time,
+          date:this.date,
           pageVisits: new PageVisits(this.pageVisits)
         });
       });
