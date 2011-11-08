@@ -8,13 +8,15 @@ SearchView = Backbone.View.extend({
 
   render: function(type) {
     ich.search(this.model.presenter()).appendTo(this.el);
+    $('.spinner', this.el).spin();
     return this;
   },
 
   renderPageVisits: function() {
     this.collection = this.model.get('history');
-    var self = this;
+    $('.content', this.el).html('');
 
+    var self = this;
     $.each(this.collection.models, function() {
       $('.content', self.el).append(new PageVisitView({model: this}).render().el);
     });

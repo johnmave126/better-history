@@ -19,8 +19,8 @@ FilterView = Backbone.View.extend({
 
   renderHistory: function() {
     this.collection = this.model.get('history');
-    var self = this;
 
+    var self = this;
     $('.content', this.el).fadeOut('fast', function() {
       $.each(self.collection.models, function() {
         $('.content', self.el).append(new TimeVisitView({
