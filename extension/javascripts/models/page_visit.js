@@ -9,6 +9,13 @@ PageVisit = Backbone.Model.extend({
     }
   },
 
+  sync: function(method, model, options) {
+    if(method === 'delete') {
+      chrome.history.deleteUrl({url: this.get('url')});
+      options.success(this);
+    }
+  },
+
   presenter: function() {
     var properties = this.toJSON();
     properties.cid = this.cid;

@@ -8,7 +8,7 @@ Router = Backbone.Router.extend({
 
   settings: function() {
     $('.mainview', appView.el)
-      .html(new SettingsView().render().el);
+      .html(new SettingsView({model: settings}).render().el);
   },
 
   filter: function(type) {
@@ -26,8 +26,7 @@ Router = Backbone.Router.extend({
       text: query,
       hash: 'search',
       endTime: new Date().getTime(),
-      startTime: DateRanger.borders(60).start.getTime(),
-      timeGrouping: 0
+      startTime: DateRanger.borders(60).start.getTime()
     });
 
     $('.mainview', appView.el)
@@ -38,7 +37,6 @@ Router = Backbone.Router.extend({
   },
 
   checkType: function(type) {
-    console.log(type)
     return type === undefined || type === 'undefined' ? '0_days_ago' : type;
   }
 });

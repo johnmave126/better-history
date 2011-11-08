@@ -42,37 +42,27 @@ describe('PageVisit', function() {
     });
   });
 
-  describe('#compare', function() {
-    it('returns true when the domains are the same', function() {
-      var aPageVisit = new PageVisit({
-        title: 'a pageVisit',
-        lastvisitTime: new Date(),
-        url: properties.url + 'something/else'
-      });
-      expect(pageVisit.compare(aPageVisit)).toEqual(true);
-    });
-
-    it('returns false when the domains are different', function() {
-      var aPageVisit = new PageVisit({
-        title: 'a pageVisit',
-        lastvisitTime: new Date(),
-        url: 'http://something.com/else'
-      });
-      expect(pageVisit.compare(aPageVisit)).toEqual(false);
-    });
-  });
-
-  describe('.search', function() {
-    var options;
+  describe('#sync', function() {
+    var callback;
 
     beforeEach(function() {
-      spyOn(chromeAPI.history, 'search');
-      options = 'the options';
+      chrome.history = {deleteUrl: jasmine.createSpy('deleteUrl')};
+      callback = jasmine.createSpy('callback');
     });
 
-    it('calls to the custom chrome API search method', function() {
-      PageVisit.search(options, function(){});
-      expect(chromeAPI.history.search).toHaveBeenCalledWith(options, jasmine.any(Function));
+    it('does not call the chrome api when the method is not delete', function() {
+      pageVisit.sync('write', pageVisit, {});
+      expect(chrome.history.deleteUrl).not.toHaveBeenCalled();
+    });
+
+    it('calls the chrome api with the url to delete when the method is delete', function() {
+      pageVisit.sync('delete', pageVisit, {success: callback});
+      expect(chrome.history.deleteUrl).toHaveBeenCalledWith({url: pageVisit.get('url')});
+    });
+
+    it('calls the success callback with the model', function() {
+      pageVisit.sync('delete', pageVisit, {success: callback});
+      expect(callback).toHaveBeenCalledWith(pageVisit);
     });
   });
 });

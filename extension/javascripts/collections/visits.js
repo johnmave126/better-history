@@ -1,2 +1,0 @@
-Visits = Backbone.Collection.extend({
-});

@@ -1,3 +1,0 @@
-DateVisit = Backbone.Model.extend({
-
-});

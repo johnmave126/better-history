@@ -15,6 +15,10 @@ describe('Filters', function() {
     filters = new Filters([todayFilter, yesterdayFilter]);
   });
 
+  it('represents Filter models', function() {
+    expect(new filters.model() instanceof Filter).toBeTruthy();
+  });
+
   describe('#getByHash', function() {
     it('returns the model with the passed hash when found', function() {
       expect(filters.getByHash('0_days_ago')).toEqual(todayFilter);

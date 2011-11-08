@@ -24,7 +24,7 @@ SidebarView = Backbone.View.extend({
       ich.filterItem(filter.presenter()).appendTo($('.filters', self.el));
     });
     setTimeout(function() { $('.search', self.el).focus(); }, 0);
-    $('.search', this.el).focus();
+    $(document).scrollTop(0);
     return this;
   },
 

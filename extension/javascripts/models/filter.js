@@ -1,8 +1,7 @@
 Filter = Backbone.Model.extend({
   defaults: {
     text: '',
-    maxResults: 0,
-    timeGrouping: 15
+    maxResults: 0
   },
 
   initialize: function() {
@@ -11,8 +10,8 @@ Filter = Backbone.Model.extend({
     }
 
     var title;
-    if(this.get('hash') === 'search') {
-      title = this.buildTitle(this.get('text'));
+    if(this.searching()) {
+      title = this.buildSearchTitle(this.get('text'));
     } else if(this.get('daysSinceToday') === 0) {
       title = 'Today';
     } else if(this.get('daysSinceToday') === 1) {
@@ -21,6 +20,15 @@ Filter = Backbone.Model.extend({
       title = DateRanger.numberToDay(this.date().getDay()) + ', ' + this.date().getDate() + '<span class="ordinal" >' + this.ordinal() + '</span>';
     }
     this.set({title: title});
+  },
+
+  sync: function(method, model, options) {
+    if(method === 'read') {
+      chromeAPI.history.search(this.options(), function(history) {
+        history = model.searching() ? history : GroupBy.time(history);
+        options.success(history, model.searching());
+      });
+    }
   },
 
   date: function() {
@@ -51,7 +59,7 @@ Filter = Backbone.Model.extend({
     return properties;
   },
 
-  buildTitle: function(query) {
+  buildSearchTitle: function(query) {
     var terms = query.split(' '),
         joined = 'Searching ';
 
@@ -65,15 +73,23 @@ Filter = Backbone.Model.extend({
     return joined;
   },
 
+  searching: function() {
+    return this.get('hash') === 'search';
+  },
+
   parse:function(data) {
-    if(this.get('timeGrouping') === 0) {
-      this.set({visits: new PageVisits(data)});
+    var history;
+    if(this.searching()) {
+      history = new PageVisits(data);
     } else {
-      var timeVisits = new TimeVisits();
-      $.each(data, function(i, timeVisit) {
-        timeVisits.add({time:timeVisit.time, visits: new PageVisits(timeVisit.visits)});
+      history = new TimeVisits();
+      $.each(data, function() {
+        history.add({
+          time:this.time,
+          pageVisits: new PageVisits(this.pageVisits)
+        });
       });
-      this.set({visits: timeVisits});
     }
+    this.set({history: history});
   }
 });

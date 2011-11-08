@@ -9,7 +9,7 @@ FilterView = Backbone.View.extend({
 
   initialize: function() {
     pageTitle(this.model.get('title'));
-    this.model.bind('change', this.renderTimeVisits, this);
+    this.model.bind('change', this.renderHistory, this);
   },
 
   render: function(type) {
@@ -17,29 +17,25 @@ FilterView = Backbone.View.extend({
     return this;
   },
 
-  renderTimeVisits: function() {
-    var visits = this.model.get('visits').models,
-        self = this;
+  renderHistory: function() {
+    this.collection = this.model.get('history');
+    var self = this;
 
     $('.content', this.el).fadeOut('fast', function() {
-      $(this).html('');
-      if(self.model.get('timeGrouping') === 0) {
-        $.each(visits, function() {
-          $('.content', self.el)
-            .append(new PageVisitView({model: this}).render().el);
-        });
-      } else {
-        $.each(visits, function() {
-          $('.content', self.el)
-            .append(new TimeVisitView({
-              model: this, collection: this.get('visits')
-            }).render().el);
-        });
-      }
-      if(visits.length === 0) ich.noVisits().appendTo(this);
+      $.each(self.collection.models, function() {
+        $('.content', self.el).append(new TimeVisitView({
+            model: this,
+            collection: this.get('pageVisits')
+          }).render().el);
+      });
+
+      if(history.length === 0) ich.noVisits().appendTo(this);
 
       $(this).fadeIn('fast', function() {
-        $('.time_visit_view').stickyElements({stickyClass:'time_interval', padding:48});
+        $('.time_visit_view').stickyElements({
+          stickyClass:'time_interval',
+          padding:48
+        });
       });
     });
   },
@@ -50,10 +46,9 @@ FilterView = Backbone.View.extend({
     this.model.fetch();
   },
 
-
   collapseGroupings: function(ev) {
     ev.preventDefault();
-    $.each(this.model.get('timeVisits').models, function() {
+    $.each(this.collection.models, function() {
       this.trigger('collapse');
     });
     $(document).scrollTop(0);
@@ -61,7 +56,7 @@ FilterView = Backbone.View.extend({
 
   expandGroupings: function(ev) {
     ev.preventDefault();
-    $.each(this.model.get('timeVisits').models, function() {
+    $.each(this.collection.models, function() {
       this.trigger('expand');
     });
     $(document).scrollTop(0);

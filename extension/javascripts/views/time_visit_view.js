@@ -16,8 +16,12 @@ TimeVisitView = Backbone.View.extend({
 
   render: function() {
     ich.timeVisit(this.model.presenter()).appendTo(this.el);
+
+    var groupedVisits;
+    if(settings.get('domainGrouping')) groupedVisits = GroupBy.domain(this.collection);
+
     var self = this;
-    $.each(GroupBy.domain(this.collection), function(i, pageVisit) {
+    $.each(groupedVisits || this.collection.models, function(i, pageVisit) {
       var method = (pageVisit.length !== undefined ? 'renderGroupedVisits' : 'renderPageVisit');
       self[method](pageVisit);
     });

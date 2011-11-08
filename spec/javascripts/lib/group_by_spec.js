@@ -25,21 +25,25 @@ describe('GroupBy', function() {
   });
 
   describe('.time', function() {
+    beforeEach(function() {
+      settings = new Settings();
+    });
+
     it('groups history items by 15 minute increments when passed 15', function() {
-      var timeVisits = GroupBy.time(15, new PageVisits([pageVisit1, pageVisit2]));
+      var timeVisits = GroupBy.time(new PageVisits([pageVisit1, pageVisit2]).toJSON());
       expect(timeVisits.length).toEqual(1);
     });
 
     it('separates history items that are more than 15 minutes apart when passed 15', function() {
-      var timeVisits = GroupBy.time(15, new PageVisits([pageVisit1, pageVisit3]));
+      var timeVisits = GroupBy.time(new PageVisits([pageVisit1, pageVisit3]).toJSON());
       expect(timeVisits.length).toEqual(2);
     });
   });
 
   describe('.domain', function() {
     it('groups neighboring history items from the same domain', function() {
-        var pageVisits = GroupBy.domain(new PageVisits([pageVisit1, pageVisit4]));
-        expect(pageVisits.length).toEqual(1);
+      var pageVisits = GroupBy.domain(new PageVisits([pageVisit1, pageVisit4]));
+      expect(pageVisits.length).toEqual(1);
     });
   });
 });

@@ -12,13 +12,13 @@ SearchView = Backbone.View.extend({
   },
 
   renderPageVisits: function() {
-    var visits = this.model.get('visits').models,
-        self = this;
+    this.collection = this.model.get('history');
+    var self = this;
 
-    $.each(visits, function() {
+    $.each(this.collection.models, function() {
       $('.content', self.el).append(new PageVisitView({model: this}).render().el);
     });
 
-    if(visits.length === 0) ich.noVisits().appendTo($('.content', this.el));
+    if(this.collection.length === 0) ich.noVisits().appendTo($('.content', this.el));
   }
 });

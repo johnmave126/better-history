@@ -22,10 +22,10 @@
 
 
     <script id="app" type="text/html">
+      <div class="mainview"></div>
       <div class="navbar">
         <h1><em>Better</em> History</h1>
       </div>
-      <div class="mainview"></div>
     </script>
 
     <script id="filter" type="text/html">
@@ -110,11 +110,10 @@
                   <option value="60">60 minutes</options>
                   <option value="30">30 minutes</options>
                   <option value="15">15 minutes</options>
-                  <option value="0">No grouping</options>
                 </select>
               </label>
               <label>
-                <input type="checkbox" />
+                <input type="checkbox" class="domain_grouping"/>
                 <span>Group visits by domain</span>
               </label>
             </div>
@@ -213,13 +212,12 @@
     <script type="text/javascript" src="javascripts/views/settings_view.js"></script>
 
     <script type="text/javascript" src="javascripts/models/page_visit.js"></script>
-    <script type="text/javascript" src="javascripts/models/date_visit.js"></script>
     <script type="text/javascript" src="javascripts/models/time_visit.js"></script>
     <script type="text/javascript" src="javascripts/models/filter.js"></script>
     <script type="text/javascript" src="javascripts/models/version.js"></script>
+    <script type="text/javascript" src="javascripts/models/settings.js"></script>
 
     <script type="text/javascript" src="javascripts/collections/filters.js"></script>
-    <script type="text/javascript" src="javascripts/collections/date_visits.js"></script>
     <script type="text/javascript" src="javascripts/collections/grouped_visits.js"></script>
     <script type="text/javascript" src="javascripts/collections/time_visits.js"></script>
     <script type="text/javascript" src="javascripts/collections/page_visits.js"></script>
@@ -228,9 +226,11 @@
     <script type="text/javascript" src="javascripts/lib/group_by.js"></script>
     <script type="text/javascript" src="javascripts/lib/filters_seed.js"></script>
     <script type="text/javascript" src="javascripts/lib/chrome_api.js"></script>
-    <script type="text/javascript" src="javascripts/lib/backbone_patching.js"></script>
     <script type="text/javascript">
-      var router = new Router();
+      var router = new Router(),
+          settings = new Settings();
+
+      settings.fetch();
 
       $(function() {
         appView = new AppView({
