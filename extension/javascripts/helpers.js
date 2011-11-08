@@ -29,3 +29,9 @@ function pageTitle(title) {
   element = $('<div/>');
   document.title = $(element).html(title).text() + ' - Better History';
 }
+
+function tabIndex(selector) {
+  $(selector).each(function(i) {
+    $(this).attr('tabindex', i+2);
+  });
+}
