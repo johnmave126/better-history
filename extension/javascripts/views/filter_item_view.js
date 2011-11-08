@@ -1,5 +1,5 @@
 FilterItemView = Backbone.View.extend({
-  className: 'filter_item_view',
+  className: 'filter_item_view selectable',
   tagNase: 'ul',
 
   initialize: function() {

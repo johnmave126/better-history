@@ -104,6 +104,12 @@ span.delete_icon:before {
     -o-transform:rotate(45deg);
     transform:rotate(45deg);
 }
+.selected .settings_icon:after {
+  background: -webkit-linear-gradient(left, #bbcee9, #bbcee9 97%, #aabedc);
+}
+.selectable:hover .settings_icon:after {
+  background:rgba(216, 225, 238, 1);
+}
 
 .settings_icon .settings:before {
     left:6px;

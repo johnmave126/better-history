@@ -4,7 +4,7 @@ SidebarView = Backbone.View.extend({
   selectedClass: 'selected',
 
   events: {
-    'click .settings': 'settingsClicked',
+    'click .settings_link': 'settingsClicked',
     'click .filter a': 'filterClicked',
     'keyup .search': 'searchTyped'
   },
@@ -12,8 +12,7 @@ SidebarView = Backbone.View.extend({
   initialize: function() {
     var self = this;
     router.bind('route:filter', function(type) {
-      self.selectedFilter = filters.getByHash(router.checkType(type));
-      self.selectFilter();
+      self.filterRouted(type);
     });
   },
 
@@ -31,30 +30,29 @@ SidebarView = Backbone.View.extend({
   },
 
   settingsClicked: function(ev) {
-    ev.preventDefault();
-    delete(this.selectedFilter);
-    this.selectFilter();
-    router.navigate('settings', true);
+    this.selectElement($(ev.currentTarget, this.el));
+  },
+
+  filterRouted: function(type) {
+    var filter = filters.getByHash(router.checkType(type));
+    this.selectElement($('a[data-cid=' + filter.cid + ']', this.el));
   },
 
   filterClicked: function(ev) {
-    this.selectedFilter = filters.getByCid($(ev.currentTarget).attr('data-cid'));
-    this.selectFilter();
+    this.selectElement($(ev.currentTarget, this.el));
   },
 
   searchTyped: function(ev) {
     var term = $('.search').val();
     if(ev.keyCode === 13 && term !== '') {
-      delete(this.selectedFilter);
-      this.selectFilter();
+      this.selectElement();
       router.search(term);
     }
   },
 
-  selectFilter: function() {
-    $('.filter', this.el).removeClass(this.selectedClass);
-    if(this.selectedFilter) {
-      var element = $('a[data-cid=' + this.selectedFilter.cid + ']', this.el);
+  selectElement: function(element) {
+    $('.selectable', this.el).removeClass(this.selectedClass);
+    if(element) {
       $(element).parent().addClass(this.selectedClass);
     }
   }

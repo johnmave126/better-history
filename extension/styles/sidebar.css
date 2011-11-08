@@ -12,8 +12,7 @@
   padding:0;
   margin:5px 0;
 }
-.sidebar_view .filter a,
-.sidebar_view .settings {
+.sidebar_view .selectable a {
   padding:7px 24px;
   font-size:14px;
   padding-right:24px;
@@ -24,26 +23,26 @@
   text-shadow: white 0 1px 1px;
   text-decoration:none;
 }
-.sidebar_view .filter .ordinal { font-size:11px; }
-.sidebar_view .filter:focus a,
-.sidebar_view .filter.selected a {
+.sidebar_view .selectable .ordinal { font-size:11px; }
+.sidebar_view .selectable:focus a,
+.sidebar_view .selectable.selected a {
   border-bottom: 1px solid #8faad9;
   border-top: 1px solid #8faad9;
 }
-.sidebar_view .filter:hover a {
-  background:rgba(216, 225, 238, 0.7);
+.sidebar_view .selectable:hover a {
+  background:rgba(216, 225, 238, 1);
   opacity:1;
 }
-.sidebar_view .filter.selected a,
-.sidebar_view .filter.selected a.empty{
+.sidebar_view .selectable.selected a,
+.sidebar_view .selectable.selected a.empty {
   -webkit-box-shadow: 0px 1px 0px #f7f7f7;
   background: -webkit-linear-gradient(left, #bbcee9, #bbcee9 97%, #aabedc);
   text-shadow: #bbcee9 0 1px 1px;
   color:#000;
   opacity:1;
 }
-.sidebar_view .filter a.empty { color:#777; }
-.sidebar_view .settings_icon {
-  margin-top:20px;
+.sidebar_view .selectable a.empty { color:#777; }
+.sidebar_view .settings_link {
+  margin-top:30px;
 }
 

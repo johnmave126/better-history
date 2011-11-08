@@ -9,6 +9,7 @@ Router = Backbone.Router.extend({
   settings: function() {
     $('.mainview', appView.el)
       .html(new SettingsView({model: settings}).render().el);
+    router.navigate('settings');
   },
 
   filter: function(type) {
@@ -18,7 +19,7 @@ Router = Backbone.Router.extend({
       .html(new FilterView({model: filter}).render().el);
 
     filter.fetch();
-    router.navigate("filter/" + type);
+    router.navigate('filter/' + type);
   },
 
   search: function(query) {
@@ -33,7 +34,7 @@ Router = Backbone.Router.extend({
       .html(new SearchView({model: filter}).render().el);
 
     filter.fetch();
-    router.navigate("search/" + query);
+    router.navigate('search/' + query);
   },
 
   checkType: function(type) {

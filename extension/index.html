@@ -50,6 +50,10 @@
       <p class="no_visits">Sorry friend, no visits found.</p>
     </script>
 
+    <script id="filterItem" type="text/html">
+      <a href="#filter/{{hash}}" data-cid="{{cid}}" class="{{quantity}}">{{{title}}}</a>
+    </script>
+
     <script id="groupedVisits" type="text/html">
       <a href="{{domain}}">
         <div class="link">
@@ -131,12 +135,13 @@
     <script id="sidebar" type="text/html">
       <input class="search" type="search" placeholder="Search title, url, or date" tabindex="1">
       <ul class="filters"></ul>
-      <a href="#" class="settings_icon"><span class="settings">Settings</span></a>
-    </script>
-    <script id="filterItem" type="text/html">
-      <li class="filter">
-      <a href="#filter/{{hash}}" data-cid="{{cid}}" class="{{quantity}}">{{{title}}}</a>
-      </li>
+      <div class="settings_wrapper selectable">
+        <a href="#settings" class="settings_link">
+          <span class="settings_icon">
+            <span class="settings">Settings</span>
+          </span>
+        </a>
+      </div>
     </script>
 
     <script id="timeVisit" type="text/html">
