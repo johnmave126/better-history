@@ -36,6 +36,9 @@ FilterView = Backbone.View.extend({
           stickyClass:'time_interval',
           padding:48
         });
+        $('.content a', this.el).each(function(i) {
+          $(this).attr('tabindex', i+2);
+        });
       });
     });
   },
