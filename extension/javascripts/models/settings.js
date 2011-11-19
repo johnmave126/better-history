@@ -1,11 +1,16 @@
 Settings = Backbone.Model.extend({
   defaults: {
     timeGrouping: 15,
-    domainGrouping: true
+    domainGrouping: true,
+    timeFormat: 12
   },
 
   timeGrouping: function() {
     return parseInt(this.get('timeGrouping'), 10);
+  },
+
+  timeFormat: function() {
+    return parseInt(this.get('timeFormat'), 10);
   },
 
   sync: function(method, model, options) {

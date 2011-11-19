@@ -29,6 +29,17 @@ describe('GroupBy', function() {
       settings = new Settings();
     });
 
+    it('formats the time in 12 hours when told by settings', function() {
+      var timeVisits = GroupBy.time(new PageVisits([pageVisit1, pageVisit2]).toJSON());
+      expect(timeVisits[0].time).toEqual('3:00 AM');
+    });
+
+    it('formats the time in 24 hours when told by settings', function() {
+      settings.set({timeFormat: 24});
+      var timeVisits = GroupBy.time(new PageVisits([pageVisit1, pageVisit2]).toJSON());
+      expect(timeVisits[0].time).toEqual('3:00');
+    });
+
     it('groups history items by 15 minute increments when passed 15', function() {
       var timeVisits = GroupBy.time(new PageVisits([pageVisit1, pageVisit2]).toJSON());
       expect(timeVisits.length).toEqual(1);

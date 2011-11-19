@@ -7,11 +7,15 @@ describe('Settings', function() {
 
   describe('#initialize', function() {
     it('defaults timeGrouping when not supplied', function() {
-      expect(settings.get('timeGrouping')).toEqual(settings.defaults.timeGrouping);
+      expect(settings.get('timeGrouping')).toEqual(15);
+    });
+
+    it('defaults timeFormat when not supplied', function() {
+      expect(settings.get('timeFormat')).toEqual(12);
     });
 
     it('defaults domainGrouping when not supplied', function() {
-      expect(settings.get('domainGrouping')).toEqual(settings.defaults.domainGrouping);
+      expect(settings.get('domainGrouping')).toEqual(true);
     });
   });
 
@@ -19,6 +23,13 @@ describe('Settings', function() {
     it('returns a parsed int of timeGrouping', function() {
       settings.set({timeGrouping: '15'});
       expect(settings.timeGrouping()).toEqual(settings.defaults.timeGrouping);
+    });
+  });
+
+  describe('#timeFormat', function() {
+    it('returns a parsed int of timeFormat', function() {
+      settings.set({timeFormat: '12'});
+      expect(settings.timeFormat()).toEqual(settings.defaults.timeFormat);
     });
   });
 
@@ -53,7 +64,7 @@ describe('Settings', function() {
 
   describe('#parse', function() {
     it('passes json to set method', function() {
-      var attributes = {timeGrouping: 50, domainGrouping: false};
+      var attributes = {timeGrouping: 50, domainGrouping: false, timeFormat: 24};
       settings.parse(attributes);
       expect(settings.toJSON()).toEqual(attributes);
     });

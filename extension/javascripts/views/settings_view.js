@@ -4,6 +4,7 @@ SettingsView = Backbone.View.extend({
   events: {
     'click .clear_history': 'clickedClearHistory',
     'change .time_grouping': 'changedTimeGrouping',
+    'change .time_format': 'changedTimeFormat',
     'click .domain_grouping': 'clickedDomainGrouping'
   },
 
@@ -20,6 +21,7 @@ SettingsView = Backbone.View.extend({
     var self = this;
     $(this.el).append(ich.settings()).fadeIn('fast', function() {
       $('.time_grouping', this).val(self.model.get('timeGrouping'));
+      $('.time_format', this).val(self.model.get('timeFormat'));
       $('.domain_grouping', this).prop('checked', self.model.get('domainGrouping'));
     });
     return this;
@@ -27,6 +29,10 @@ SettingsView = Backbone.View.extend({
 
   changedTimeGrouping: function(ev) {
     this.model.set({timeGrouping: $(ev.currentTarget).val()});
+  },
+
+  changedTimeFormat: function(ev) {
+    this.model.set({timeFormat: $(ev.currentTarget).val()});
   },
 
   clickedDomainGrouping: function(ev) {

@@ -1,6 +1,6 @@
 var GroupBy;
 (function() {
-  function hours(militaryHours) {
+  function convertTo12HourTime(militaryHours) {
     if(militaryHours === 0) {
       return 12;
     } else {
@@ -19,7 +19,11 @@ var GroupBy;
   }
 
   function standardTimeByInterval(date, interval) {
-    return hours(date.getHours()) + ':' + minute(date.getMinutes()) + ' ' + period(date.getHours());
+    var hours = date.getHours();
+    if(settings.timeFormat() === 12) hours = convertTo12HourTime(hours);
+    var time = hours + ':' + minute(date.getMinutes());
+    if(settings.timeFormat() === 12) time += ' ' + period(date.getHours());
+    return time;
   }
 
   function compareVisits(visit1, visit2) {
