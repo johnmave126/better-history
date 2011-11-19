@@ -8,7 +8,7 @@ SettingsView = Backbone.View.extend({
   },
 
   initialize: function() {
-    pageTitle('Settings');
+    Helpers.pageTitle('Settings');
     this.model.unbind('change').bind('change', this.saveSettings, this);
   },
 

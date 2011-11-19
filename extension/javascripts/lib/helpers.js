@@ -25,13 +25,20 @@ String.prototype.toCamel = function(){
   return this.replace(/(\-[a-z])/g, function($1){return $1.toUpperCase().replace('-','');});
 };
 
-function pageTitle(title) {
-  element = $('<div/>');
-  document.title = $(element).html(title).text() + ' - Better History';
-}
 
-function tabIndex(selector) {
-  $(selector).each(function(i) {
-    $(this).attr('tabindex', i+2);
-  });
-}
+Helpers = {
+  getDomain: function(url) {
+    return url.match(/\w+:\/\/(.*?)\//);
+  },
+
+  pageTitle: function(title) {
+    element = $('<div/>');
+    document.title = $(element).html(title).text() + ' - Better History';
+  },
+
+  tabIndex: function(selector) {
+    $(selector).each(function(i) {
+      $(this).attr('tabindex', i+2);
+    });
+  }
+};

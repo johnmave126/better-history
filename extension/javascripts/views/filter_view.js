@@ -8,7 +8,7 @@ FilterView = Backbone.View.extend({
   },
 
   initialize: function() {
-    pageTitle(this.model.get('title'));
+    Helpers.pageTitle(this.model.get('title'));
     this.model.bind('change', this.renderHistory, this);
   },
 
@@ -36,7 +36,7 @@ FilterView = Backbone.View.extend({
           stickyClass:'time_interval',
           padding:48
         });
-        tabIndex($('.content a', this.el));
+        Helpers.tabIndex($('.content a', this.el));
       });
     });
   },

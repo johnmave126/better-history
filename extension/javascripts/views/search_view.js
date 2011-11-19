@@ -2,7 +2,7 @@ SearchView = Backbone.View.extend({
   className: 'search_view',
 
   initialize: function() {
-    pageTitle(this.model.get('title'));
+    Helpers.pageTitle(this.model.get('title'));
     this.model.bind('change', this.renderPageVisits, this);
   },
 

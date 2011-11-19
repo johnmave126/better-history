@@ -23,7 +23,7 @@ PageVisit = Backbone.Model.extend({
   },
 
   domain: function() {
-    var match = this.get('url').match(/\w+:\/\/(.*?)\//);
+    var match = Helpers.getDomain(this.get('url'));
     return (match === null ? null : match[0]);
   }
 });

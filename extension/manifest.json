@@ -10,5 +10,6 @@
   "chrome_url_overrides": {
     "history": "index.html"
   },
-  "permissions": ["chrome://favicon/", "history", "tabs"]
+  "background_page": "background.html",
+  "permissions": ["chrome://favicon/", "history", "tabs", "contextMenus"]
 }

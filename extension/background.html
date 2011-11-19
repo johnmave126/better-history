@@ -1,0 +1,11 @@
+<script type="text/javascript" src="javascripts/lib/helpers.js"></script>
+<script type="text/javascript" src="javascripts/lib/context_menus.js"></script>
+<script type="text/javascript">
+  selectionContextMenu = new SelectionContextMenu();
+  selectionContextMenu.create();
+
+  pageContextMenu = new PageContextMenu();
+  pageContextMenu.create();
+  pageContextMenu.listenToTabs();
+</script>
+
