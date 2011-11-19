@@ -3,6 +3,7 @@ SettingsView = Backbone.View.extend({
 
   events: {
     'click .clear_history': 'clickedClearHistory',
+    'click .release_announcement': 'clickedReleaseAnnouncement',
     'change .time_grouping': 'changedTimeGrouping',
     'change .time_format': 'changedTimeFormat',
     'click .domain_grouping': 'clickedDomainGrouping'
@@ -42,5 +43,10 @@ SettingsView = Backbone.View.extend({
   clickedClearHistory: function(ev) {
     ev.preventDefault();
     chrome.tabs.create({url:'chrome://settings/clearBrowserData'});
+  },
+
+  clickedReleaseAnnouncement: function(ev) {
+    ev.preventDefault();
+    versionView.open();
   }
 });

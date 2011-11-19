@@ -131,6 +131,12 @@
             </div>
           </section>
           <section class="setting">
+            <h3 class="title">What's new</h3>
+            <div class="controls">
+              <a href="#" class="release_announcement">View release announcement</a>
+            </div>
+          </section>
+          <section class="setting">
             <h3 class="title">Get in touch</h3>
             <div class="controls">
               <a href="https://docs.google.com/spreadsheet/viewform?formkey=dE15QjJjZDhPejd6Q0JYX1dxWFVpYkE6MQ">Voice your thoughts on <em>Better</em> History</a>
@@ -166,7 +172,6 @@
     </script>
 
     <script id="version" type="text/html">
-      <a href="#" class="open_version open">What's new</a>
       <div class="overlay {{visibility}}">
         <div class="modal">
           <h1 class="title"><em>Better</em> History hits 1.1.0!</h1>
@@ -250,10 +255,15 @@
       settings.fetch();
 
       $(function() {
+        versionView = new VersionView({
+          model: new Version({version: '1.1.0'})
+        });
+
         appView = new AppView({
           el: $('.app'),
-          model: new Version({version: '1.1.0'})
+          model: versionView.model
         }).render();
+
         Backbone.history.start();
       });
     </script>
