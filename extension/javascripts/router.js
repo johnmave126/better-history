@@ -6,6 +6,13 @@ Router = Backbone.Router.extend({
     'search/*query': 'search'
   },
 
+  initialize: function() {
+    var self = this;
+    this.bind('route:filter', function(page) { self.setLastRoute('filter/' + page); });
+    this.bind('route:settings', function(page) { self.setLastRoute('settings'); });
+    this.bind('route:search', function(page) { self.setLastRoute('search/' + page); });
+  },
+
   settings: function() {
     $('.mainview', appView.el)
       .html(new SettingsView({model: settings}).render().el);
@@ -39,5 +46,13 @@ Router = Backbone.Router.extend({
 
   checkType: function(type) {
     return type === undefined || type === 'undefined' ? '0_days_ago' : type;
+  },
+
+  setLastRoute: function(route) {
+    localStorage.lastRoute = route;
+  },
+
+  getLastRoute: function() {
+    return localStorage.lastRoute;
   }
 });

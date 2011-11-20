@@ -22,6 +22,6 @@ SearchView = Backbone.View.extend({
     });
 
     if(this.collection.length === 0) ich.noVisits().appendTo($('.content', this.el));
-    tabIndex($('.content a', this.el));
+    Helpers.tabIndex($('.content a', this.el));
   }
 });

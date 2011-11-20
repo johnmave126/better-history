@@ -54,7 +54,7 @@ SidebarView = Backbone.View.extend({
     var term = $('.search').val();
     if(ev.keyCode === 13 && term !== '') {
       this.selectElement();
-      router.search(term);
+      router.navigate('search/' + term, true);
     }
   },
 
