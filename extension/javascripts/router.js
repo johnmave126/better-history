@@ -1,14 +1,18 @@
 Router = Backbone.Router.extend({
   routes: {
-    '': 'filter',
     'settings': 'settings',
     'filter/:type': 'filter',
+    'filter/:type/:time': 'filter',
     'search/*query': 'search'
   },
 
   initialize: function() {
     var self = this;
-    this.bind('route:filter', function(page) { self.setLastRoute('filter/' + page); });
+    this.bind('route:filter', function(type, time) {
+      var url = 'filter/' + type;
+      if(time) url += '/' + time;
+      self.setLastRoute(url);
+    });
     this.bind('route:settings', function(page) { self.setLastRoute('settings'); });
     this.bind('route:search', function(page) { self.setLastRoute('search/' + page); });
   },
@@ -19,12 +23,13 @@ Router = Backbone.Router.extend({
     router.navigate('settings');
   },
 
-  filter: function(type) {
-    var filter = filters.getByHash(this.checkType(type));
+  filter: function(type, time) {
+    var filter = filters.getByHash(this.checkType(type)),
+        filterView = new FilterView({model: filter});
 
-    $('.mainview', appView.el)
-      .html(new FilterView({model: filter}).render().el);
+    $('.mainview', appView.el).html(filterView.render().el);
 
+    filterView.startTime = time;
     filter.fetch();
     router.navigate('filter/' + type);
   },

@@ -46,3 +46,35 @@
 .time_visit_view .page_visit_view a {
   margin-left:47px;
 }
+
+.time_visit_view .delete_wrapper {
+  float:right;
+  margin:0px 20px
+}
+.time_visit_view .collapsed .time_interval .delete_wrapper {
+  display:none;
+}
+.time_visit_view .collapsed .time_interval .delete_wrapper:hover {
+  text-shadow:2px 2px #333;
+}
+.time_visit_view .time_interval .delete_text {
+  font-size:12px;
+}
+.time_visit_view .time_interval .delete_icon {
+  display:inline;
+}
+.time_visit_view .time_interval .delete_icon {
+  margin-left:10px;
+}
+.time_visit_view .time_interval .delete_icon::before {
+  margin-top:-3px;
+}
+.time_visit_view .time_interval .delete_icon .delete::after {
+  margin-top:-8px;
+}
+.time_visit_view .time_interval .delete_icon .delete::before {
+  margin-top:-15px;
+}
+.time_visit_view .time_interval .delete_icon .delete::after {
+  margin-top:-8px;
+}

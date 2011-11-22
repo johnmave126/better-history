@@ -8,7 +8,8 @@ TimeVisit = Backbone.Model.extend({
     return {
       amount: this.get('pageVisits').length,
       time: this.get('time'),
-      state: (this.get('collapsed') ? 'collapsed' : '')
+      state: (this.get('collapsed') ? 'collapsed' : ''),
+      id: this.id
     };
   },
 

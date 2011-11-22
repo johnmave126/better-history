@@ -1,10 +1,14 @@
 <script id="timeVisit" type="text/html">
   <div class="state {{state}}">
-    <h3 class="time_interval">
+    <h3 class="time_interval" data-time="{{id}}">
       <span class="arrow arrow_down"></span>
       <span class="arrow arrow_right"></span>
       <span class="time">{{time}}</span>
       <span class="summary"><span class="amount">{{amount}}</span> visits</span>
+      <!--<div class="delete_wrapper">-->
+        <!--<span class="delete_text">Delete {{time}}</span>-->
+        <!--<span class="delete_icon delete_time_visit" title="Delete visits"><span class="delete"></span></span>-->
+      <!--</div>-->
     </h3>
     <div class="visits"></div>
   </div>

@@ -20,25 +20,37 @@ FilterView = Backbone.View.extend({
   renderHistory: function() {
     this.collection = this.model.get('history');
 
+    $('.content', this.el).css({opacity:0});
+
     var self = this;
-    $('.content', this.el).fadeOut('fast', function() {
-      $.each(self.collection.models, function() {
-        $('.content', self.el).append(new TimeVisitView({
-            model: this,
-            collection: this.get('pageVisits')
-          }).render().el);
-      });
-
-      if(self.collection.length === 0) $(this).append(ich.noVisits());
-
-      $(this).fadeIn('fast', function() {
-        $('.time_visit_view').stickyElements({
-          stickyClass:'time_interval',
-          padding:48
-        });
-        Helpers.tabIndex($('.content a', this.el));
-      });
+    $.each(self.collection.models, function() {
+      $('.content', self.el).append(new TimeVisitView({
+          model: this,
+          collection: this.get('pageVisits')
+        }).render().el);
     });
+
+    if(self.collection.length === 0) {
+      $(this).append(ich.noVisits());
+    } else {
+      if(this.startTime) {
+        $('body').scrollTop($('[data-time="' + this.startTime + '"]').offset().top - 48);
+      }
+      $('.content', this.el).css({opacity:1});
+      $('.time_visit_view').stickyElements({
+        stickyClass:'time_interval',
+        padding:48
+      }, function(element) { self.updateRoute(element); });
+
+      Helpers.tabIndex($('.content a', this.el));
+    }
+  },
+
+  updateRoute: function(element) {
+    var time = $(element).attr('data-time'),
+        url = 'filter/' + this.model.get('hash') + '/' + time;
+    router.navigate(url);
+    router.setLastRoute(url);
   },
 
   changeTimeGrouping: function(ev) {

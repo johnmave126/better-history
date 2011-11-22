@@ -47,7 +47,7 @@ var GroupBy;
             index = times.indexOf(time);
 
         if(index === -1) {
-          arrangedVisits.push({date: date, time: time, pageVisits:[]});
+          arrangedVisits.push({date: date, time: time, id: time.replace(' ', '_'), pageVisits:[]});
           index = arrangedVisits.length - 1;
         }
 

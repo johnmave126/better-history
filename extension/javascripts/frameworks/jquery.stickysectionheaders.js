@@ -1,6 +1,5 @@
 (function ($) {
-    $.fn.stickyElements = function (options) {
-
+    $.fn.stickyElements = function (options, callback) {
         var settings = $.extend({
             stickyClass: 'header',
             padding: 0
@@ -47,9 +46,9 @@
                           header.before(placeholder);
                           header.css('width', originalWidth + 'px');
                           header.addClass('stuck');
-
                       }
-                          header.css('position', 'fixed');
+                      callback(header);
+                      header.css('position', 'fixed');
                       header.css('top', settings.padding + 'px');
                   }
                   else if (pageOffset > (containerBottom - headerHeight)) {
