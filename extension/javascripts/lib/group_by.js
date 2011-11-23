@@ -31,7 +31,7 @@ var GroupBy;
 
         if(index === -1) {
           arrangedVisits.push({
-            datetime: lastVisitTime,
+            datetime: new Date(lastVisitTime.toLocaleDateString() + ' ' + id),
             id: id,
             pageVisits:[]
           });

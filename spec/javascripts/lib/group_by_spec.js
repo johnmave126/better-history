@@ -29,11 +29,11 @@ describe('GroupBy', function() {
       settings = new Settings();
     });
 
-    it('stores the time in 24 hours, the date and the page visits', function() {
+    it('stores the time in 24 hours, the date to the nearest time interval, and the page visits', function() {
       var pageVisitsJSON = new PageVisits([pageVisit1, pageVisit2]).toJSON();
       var timeVisits = GroupBy.time(pageVisitsJSON);
       expect(timeVisits[0]).toEqual({
-        datetime: new Date(2011, 5, 5, 3, 6, 4),
+        datetime: new Date(2011, 5, 5, 3, 0, 0),
         id: '3:00',
         pageVisits: pageVisitsJSON
       });
