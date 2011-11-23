@@ -64,7 +64,7 @@ Filter = Backbone.Model.extend({
   presenter: function() {
     var properties = this.toJSON();
     properties.cid = this.cid;
-    properties.date = this.date().toLocaleDateString().match(/([^,]*),(.*)/)[2];
+    properties.date = Helpers.formatDate(this.date());
     return properties;
   },
 
@@ -94,9 +94,8 @@ Filter = Backbone.Model.extend({
       history = new TimeVisits();
       $.each(data, function() {
         history.add({
-          id:this.id,
-          time:this.time,
-          date:this.date,
+          id: this.id,
+          datetime: this.datetime,
           pageVisits: new PageVisits(this.pageVisits)
         });
       });

@@ -268,7 +268,7 @@
           model: versionView.model
         }).render();
 
-        router.navigate(router.getLastRoute());
+        if(!location.hash) router.navigate(router.getLastRoute(), true);
         Backbone.history.start();
       });
     </script>

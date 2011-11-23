@@ -121,7 +121,7 @@ describe('Filter', function() {
     it('returns the properties used in the view', function() {
       var properties = filter.toJSON();
       properties.cid = filter.cid;
-      properties.date = filter.date().toLocaleDateString().match(/([^,]*),(.*)/)[2];
+      properties.date = Helpers.formatDate(filter.date());
       expect(filter.presenter()).toEqual(properties);
     });
   });

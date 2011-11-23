@@ -9,6 +9,7 @@ TimeVisitView = Backbone.View.extend({
   },
 
   initialize: function() {
+    this.model.fetch();
     this.collection.bind('destroy', this.updateCount, this);
     this.model.bind('collapse', this.collapse, this);
     this.model.bind('expand', this.expand, this);

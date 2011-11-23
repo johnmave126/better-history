@@ -18,6 +18,25 @@ describe('Helpers', function() {
     });
   });
 
+  describe('.formatDate', function() {
+    it('returns a formatted date', function() {
+      var date = new Date('december 5, 2010 10:15 pm');
+      expect(Helpers.formatDate(date)).toEqual('December 05, 2010');
+    });
+  });
+
+  describe('.formatTime', function() {
+    it('returns a formatted 12 hour time when format is 12', function() {
+      var date = new Date('december 5, 2010 10:15 pm');
+      expect(Helpers.formatTime(date, 12)).toEqual('10:15 PM');
+    });
+
+    it('returns a formatted 24 hour time when format is 24', function() {
+      var date = new Date('december 5, 2010 10:15 pm');
+      expect(Helpers.formatTime(date, 24)).toEqual('22:15');
+    });
+  });
+
   describe('.tabIndex', function() {
     beforeEach(function() {
       setFixtures('<ul class="tab"><li></li><li></li></ul>');

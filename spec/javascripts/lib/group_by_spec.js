@@ -29,15 +29,14 @@ describe('GroupBy', function() {
       settings = new Settings();
     });
 
-    it('formats the time in 12 hours when told by settings', function() {
-      var timeVisits = GroupBy.time(new PageVisits([pageVisit1, pageVisit2]).toJSON());
-      expect(timeVisits[0].time).toEqual('3:00 AM');
-    });
-
-    it('formats the time in 24 hours when told by settings', function() {
-      settings.set({timeFormat: 24});
-      var timeVisits = GroupBy.time(new PageVisits([pageVisit1, pageVisit2]).toJSON());
-      expect(timeVisits[0].time).toEqual('3:00');
+    it('stores the time in 24 hours, the date and the page visits', function() {
+      var pageVisitsJSON = new PageVisits([pageVisit1, pageVisit2]).toJSON();
+      var timeVisits = GroupBy.time(pageVisitsJSON);
+      expect(timeVisits[0]).toEqual({
+        datetime: new Date(2011, 5, 5, 3, 6, 4),
+        id: '3:00',
+        pageVisits: pageVisitsJSON
+      });
     });
 
     it('groups history items by 15 minute increments when passed 15', function() {

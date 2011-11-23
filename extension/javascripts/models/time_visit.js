@@ -1,32 +1,43 @@
 TimeVisit = Backbone.Model.extend({
-  initialize: function() {
-    var collapsed = stringToBool(localStorage[this.collapsedKey()]);
-    this.set({collapsed: collapsed});
-  },
-
   presenter: function() {
     return {
       amount: this.get('pageVisits').length,
-      time: this.get('time'),
+      time: Helpers.formatTime(this.get('datetime'), settings.timeFormat()),
       state: (this.get('collapsed') ? 'collapsed' : ''),
       id: this.id
     };
   },
 
   key: function() {
-    return 'timeVisits.' + this.get('date') + ' ' + this.get('time');
+  },
+
+  sync: function(method, model, options) {
+    if(method === 'update') {
+      var state = this.get('collapsed');
+      if(state) {
+        localStorage[this.collapsedKey()] = boolToString(state);
+      } else {
+        delete(localStorage[this.collapsedKey()]);
+      }
+      options.success(this);
+    } else if(method === 'read') {
+      options.success({
+        collapsed: stringToBool(localStorage[this.collapsedKey()])
+      });
+    }
+  },
+
+  parse: function(data) {
+    this.set(data);
   },
 
   setCollapsed: function(state) {
-    if(state) {
-      localStorage[this.collapsedKey()] = boolToString(state);
-    } else {
-      delete(localStorage[this.collapsedKey()]);
-    }
     this.set({collapsed: state});
+    this.save();
   },
 
   collapsedKey: function() {
-    return this.key() + '.collapsed';
+    var fullId = Helpers.formatDate(this.get('datetime')) + ' ' + this.get('id');
+    return 'timeVisits.' + fullId + '.collapsed';
   }
 });

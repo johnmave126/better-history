@@ -40,5 +40,33 @@ Helpers = {
     $(selector).each(function(i) {
       $(this).attr('tabindex', i+2);
     });
+  },
+
+  formatDate: function(date) {
+    return $.trim(date.toLocaleDateString().match(/([^,]*),(.*)/)[2]);
+  },
+
+  formatTime: function(date, format) {
+    function convertTo12Hour(militaryHours) {
+      if(militaryHours === 0) {
+        return 12;
+      } else {
+        return (militaryHours > 12 ? militaryHours - 12 : militaryHours);
+      }
+    }
+
+    function minute(minutes) {
+      return (minutes === 0 ? '00' : minutes);
+    }
+
+    function period(hours) {
+      return (hours < 12 ? 'AM' : 'PM');
+    }
+
+    var hours = date.getHours();
+    if (format === 12) hours = convertTo12Hour(hours);
+    var time = hours + ':' + minute(date.getMinutes());
+    if (format === 12) time += ' ' + period(date.getHours());
+    return time;
   }
 };

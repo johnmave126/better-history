@@ -1,29 +1,13 @@
 var GroupBy;
 (function() {
-  function convertTo12HourTime(militaryHours) {
-    if(militaryHours === 0) {
-      return 12;
-    } else {
-      return (militaryHours > 12 ? militaryHours - 12 : militaryHours);
-    }
-  }
-
-  function period(hours) {
-    return (hours < 12 ? 'AM' : 'PM');
-  }
-
   function minute(minutes) {
     interval = settings.timeGrouping();
     minutes = Math.floor(minutes / interval) * interval;
     return (minutes === 0 ? '00' : minutes);
   }
 
-  function standardTimeByInterval(date, interval) {
-    var hours = date.getHours();
-    if(settings.timeFormat() === 12) hours = convertTo12HourTime(hours);
-    var time = hours + ':' + minute(date.getMinutes());
-    if(settings.timeFormat() === 12) time += ' ' + period(date.getHours());
-    return time;
+  function getTime(date) {
+    return date.getHours() + ':' + minute(date.getMinutes());
   }
 
   function compareVisits(visit1, visit2) {
@@ -40,17 +24,19 @@ var GroupBy;
       var arrangedVisits = [];
       $.each(visits, function(i, visit) {
         var lastVisitTime = new Date(visit.lastVisitTime),
-            date = lastVisitTime.toLocaleDateString().match(/([^,]*),(.*)/)[2],
-            time = standardTimeByInterval(lastVisitTime);
+            id = getTime(lastVisitTime);
 
-        var times = _.pluck(arrangedVisits, 'time'),
-            index = times.indexOf(time);
+        var ids = _.pluck(arrangedVisits, 'id'),
+            index = ids.indexOf(id);
 
         if(index === -1) {
-          arrangedVisits.push({date: date, time: time, id: time.replace(' ', '_'), pageVisits:[]});
+          arrangedVisits.push({
+            datetime: lastVisitTime,
+            id: id,
+            pageVisits:[]
+          });
           index = arrangedVisits.length - 1;
         }
-
         arrangedVisits[index].pageVisits.push(visit);
       });
       return arrangedVisits;

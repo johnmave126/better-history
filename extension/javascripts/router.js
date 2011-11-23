@@ -18,9 +18,8 @@ Router = Backbone.Router.extend({
   },
 
   settings: function() {
-    $('.mainview', appView.el)
-      .html(new SettingsView({model: settings}).render().el);
-    router.navigate('settings');
+    var settingsView = new SettingsView({model: settings});
+    $('.mainview', appView.el).html(settingsView.render().el);
   },
 
   filter: function(type, time) {
@@ -31,7 +30,6 @@ Router = Backbone.Router.extend({
 
     filterView.startTime = time;
     filter.fetch();
-    router.navigate('filter/' + type);
   },
 
   search: function(query) {
@@ -42,11 +40,10 @@ Router = Backbone.Router.extend({
       startTime: DateRanger.borders(60).start.getTime()
     });
 
-    $('.mainview', appView.el)
-      .html(new SearchView({model: filter}).render().el);
+    var searchView = new SearchView({model: filter});
+    $('.mainview', appView.el).html(searchView.render().el);
 
     filter.fetch();
-    router.navigate('search/' + query);
   },
 
   checkType: function(type) {
