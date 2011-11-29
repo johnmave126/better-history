@@ -42,9 +42,9 @@
                           placeholder = $('<div/>')
                           .css('height', header.outerHeight() + 'px')
                           .addClass('placeholder')
-                          .css('width', header.width() + 'px');
+                          .css('width', '100%');
                           header.before(placeholder);
-                          header.css('width', originalWidth + 'px');
+                          header.css('width', '100%');
                           header.addClass('stuck');
                       }
                       callback(header);
