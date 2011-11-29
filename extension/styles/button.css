@@ -35,6 +35,8 @@ input[type='submit']:active {
   color: #333;
 }
 
+.button.disable,
+.button.disable:hover,
 button[disabled],
 input[type='button'][disabled],
 input[type='submit'][disabled],

@@ -14,14 +14,18 @@ SearchView = Backbone.View.extend({
 
   renderPageVisits: function() {
     this.collection = this.model.get('history');
+
     $('.content', this.el).html('');
 
-    var self = this;
-    $.each(this.collection.models, function() {
-      $('.content', self.el).append(new PageVisitView({model: this}).render().el);
-    });
+    if(this.collection.length === 0) {
+      ich.noVisits().appendTo($('.content', this.el));
+    } else {
+      var self = this;
+      $.each(this.collection.models, function() {
+        $('.content', self.el).append(new PageVisitView({model: this}).render().el);
+      });
+    }
 
-    if(this.collection.length === 0) ich.noVisits().appendTo($('.content', this.el));
     Helpers.tabIndex($('.content a', this.el));
   }
 });

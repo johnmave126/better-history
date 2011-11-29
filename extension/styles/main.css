@@ -79,3 +79,43 @@ h2 {
   background:#FFF;
   display:block;
 }
+
+
+
+.heading .controls {
+  display:inline-block;
+  margin:0;
+  padding:0;
+  position:absolute;
+  right:260px;
+  top:10px;
+}
+.heading .controls .control {
+  display:inline;
+}
+.heading .controls .control:last-child {
+  margin-left:20px;
+}
+.heading .delete_all {
+  padding: 3px 0px 3px 25px;
+  z-index:14;
+}
+.heading .button:hover .delete_icon .delete,
+.heading .button:hover .delete_icon .delete:before {
+  background:#555;
+}
+.heading .delete_icon {
+  margin-left:10px;
+}
+.heading .delete_icon::before {
+  margin-top: 3px;
+  left: -14px;
+}
+.heading .delete_icon .delete::before {
+  margin-top: 0px;
+  left: -21px;
+}
+.heading .delete_icon .delete::after {
+  margin-top: 7px;
+  left: -18px;
+}

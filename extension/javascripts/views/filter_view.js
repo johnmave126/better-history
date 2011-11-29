@@ -21,7 +21,6 @@ FilterView = Backbone.View.extend({
   renderHistory: function() {
     this.collection = this.model.get('history');
 
-    console.log('trigger');
     var contentElement = $(this.el).children('.content');
     $(contentElement).css({opacity:0}).html('');
 
