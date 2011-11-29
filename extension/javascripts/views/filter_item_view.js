@@ -4,11 +4,16 @@ FilterItemView = Backbone.View.extend({
 
   initialize: function() {
     this.model.bind('count', this.count, this);
+    this.model.bind('change', this.update, this);
   },
 
   render: function() {
     $(this.el).append(ich.filterItem(this.model.presenter()));
     return this;
+  },
+
+  update: function() {
+    this.count({count: this.model.get('history').length});
   },
 
   count: function(count) {

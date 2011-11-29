@@ -64,6 +64,21 @@ describe('Filter', function() {
     });
   });
 
+  describe('#destroyHistory', function() {
+    it('calls to chrome\'s history api with start and end time and passed callback', function() {
+      chrome = {history: {deleteRange: jasmine.createSpy('deleteRange')}};
+      var callback = jasmine.createSpy('callback');
+
+      filter.destroyHistory(callback);
+
+      expect(chrome.history.deleteRange).toHaveBeenCalledWith({
+        endTime: filter.get('endTime'),
+        startTime: filter.get('startTime')
+      }, callback);
+    });
+  });
+
+
   describe('#date', function() {
     it('returns the date as a date object', function() {
       expect(filter.date()).toEqual(new Date());

@@ -20,8 +20,11 @@
   vertical-align: baseline;
 }
 
+.settings .option {
+  margin:10px 0;
+}
 .settings .setting {
-  width:50%;
+  width:80%;
   border-bottom: 1px solid #eeeeee;
 }
 

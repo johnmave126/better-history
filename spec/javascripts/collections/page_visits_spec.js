@@ -12,7 +12,7 @@ describe("PageVisits", function() {
   });
 
   describe('#destroyAll', function() {
-    it('calls destroy all on models in the collection', function() {
+    it('calls destroy on models in the collection', function() {
 
       spyOn(pageVisit1, 'destroy').andCallThrough();
       spyOn(pageVisit2, 'destroy').andCallThrough();

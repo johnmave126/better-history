@@ -1,15 +1,3 @@
-.version_view .open_version {
-  box-shadow:0 0 6px 1px rgba(0,0,0,.4);
-  position:fixed;
-  bottom:0;
-  left:0;
-  z-index:10;
-  text-decoration:none;
-  background: -webkit-linear-gradient(#EEE, #CCC);
-  padding:4px;
-  font-size:12px;
-}
-.version_view .open_version:hover { background:#EEE; }
 .overlay {
   background: -webkit-radial-gradient(rgba(127, 127, 127, 0.5),
                                       rgba(127, 127, 127, 0.5) 35%,
@@ -40,27 +28,25 @@
   background: white;
   border: 1px solid rgb(188, 193, 208);
   border-radius: 2px;
-  width: 455px;
   padding: 0;
   position: relative;
   font-size:14px;
   color:#555;
   border-radius:5px;
   margin:auto;
+  width:375px;
 }
 .overlay .modal .title {
   background: -webkit-linear-gradient(white, #F8F8F8);
   border-bottom: 1px solid rgba(188, 193, 208, .5);
-  font-size: 105%;
+  font-size:14px;
   font-weight: bold;
   padding: 10px 15px 8px 15px;
   text-align:left;
-  font-size:20px;
   border-radius:5px;
 }
 .overlay .modal .content {
   padding: 10px 15px 5px 15px;
-  background-image: url(/images/logo_grayscale.png);
   background-repeat:no-repeat;
   background-position:294px -30px;
 }
@@ -75,4 +61,20 @@
   border-top: 1px solid rgba(188, 193, 208, .5);
   display: -webkit-box;
   padding: 12px;
+}
+
+.version_view .overlay .modal .title {
+  font-size:20px;
+}
+.version_view .overlay .modal {
+  width: 455px;
+}
+.version_view .overlay .content {
+  background-image: url(/images/logo_grayscale.png);
+}
+.prompt_view .overlay .modal .action {
+  border-top:none;
+}
+.prompt_view .overlay .modal .action .button {
+  margin-left:20px;
 }

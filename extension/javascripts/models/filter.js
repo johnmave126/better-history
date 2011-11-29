@@ -40,6 +40,13 @@ Filter = Backbone.Model.extend({
     }
   },
 
+  destroyHistory: function(callback) {
+    chrome.history.deleteRange({
+      startTime: this.get('startTime'),
+      endTime: this.get('endTime')
+    }, callback);
+  },
+
   date: function() {
     return new Date(this.get('startTime'));
   },

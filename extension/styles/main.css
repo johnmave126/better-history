@@ -8,7 +8,10 @@ body {
 
 /* Reset
 ================================= */
-a { color:#426DC9; }
+a {
+  color:#426DC9;
+  text-decoration:none;
+}
 li { list-style-type:none; }
 dl { margin:0; }
 dt, dd { margin:0; }
@@ -49,6 +52,14 @@ h2 {
   z-index:11;
   margin:0 0 0 24px;
   border-bottom: 1px solid #eee;
+}
+.filter_view .content,
+.search_view .content,
+.settings_view .content {
+  padding:47px 0 100px;
+  position:relative;
+  min-height:300px;
+  overflow:hidden;
 }
 .primary {
   padding:0 10px;

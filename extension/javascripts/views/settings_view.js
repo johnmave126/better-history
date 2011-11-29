@@ -24,6 +24,7 @@ SettingsView = Backbone.View.extend({
       $('.time_grouping', this).val(self.model.get('timeGrouping'));
       $('.time_format', this).val(self.model.get('timeFormat'));
       $('.domain_grouping', this).prop('checked', self.model.get('domainGrouping'));
+      $('.current_version', this).text(version.get('version'));
     });
     return this;
   },
