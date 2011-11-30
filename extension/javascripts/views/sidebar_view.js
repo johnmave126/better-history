@@ -38,7 +38,7 @@ SidebarView = Backbone.View.extend({
   },
 
   filterRouted: function(type) {
-    var filter = filters.getByHash(router.checkType(type));
+    var filter = filters.getByHash(type);
     this.selectElement($('a[data-cid=' + filter.cid + ']', this.el));
   },
 

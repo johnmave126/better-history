@@ -23,7 +23,7 @@ Router = Backbone.Router.extend({
   },
 
   filter: function(type, time) {
-    var filter = filters.getByHash(this.checkType(type)),
+    var filter = filters.getByHash(type),
         filterView = new FilterView({model: filter});
 
     $('.mainview', appView.el).html(filterView.render().el);
@@ -46,15 +46,11 @@ Router = Backbone.Router.extend({
     filter.fetch();
   },
 
-  checkType: function(type) {
-    return type === undefined || type === 'undefined' ? '0_days_ago' : type;
-  },
-
   setLastRoute: function(route) {
     localStorage.lastRoute = route;
   },
 
   getLastRoute: function() {
-    return localStorage.lastRoute;
+    return localStorage.lastRoute || 'filter/0_days_ago';
   }
 });

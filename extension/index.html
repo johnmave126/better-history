@@ -269,24 +269,7 @@
     <script type="text/javascript" src="javascripts/lib/filters_seed.js"></script>
     <script type="text/javascript" src="javascripts/lib/chrome_api.js"></script>
     <script type="text/javascript" src="javascripts/lib/helpers.js"></script>
-    <script type="text/javascript">
-      var router = new Router(),
-          settings = new Settings(),
-          version = new Version({version:'1.2.0'});
 
-      settings.fetch();
-
-      $(function() {
-        versionView = new VersionView({model: version})
-
-        appView = new AppView({
-          el: $('.app'),
-          model: versionView.model
-        }).render();
-
-        if(!location.hash) router.navigate(router.getLastRoute());
-        Backbone.history.start();
-      });
-    </script>
+    <script type="text/javascript" src="javascripts/initialize.js"></script>
   </body>
 </html>
