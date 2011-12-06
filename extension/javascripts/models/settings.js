@@ -2,7 +2,9 @@ Settings = Backbone.Model.extend({
   defaults: {
     timeGrouping: 15,
     domainGrouping: true,
-    timeFormat: 12
+    timeFormat: 12,
+    searchByDomain: true,
+    searchBySelection: true
   },
 
   timeGrouping: function() {

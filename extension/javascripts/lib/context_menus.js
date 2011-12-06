@@ -12,6 +12,11 @@ SelectionContextMenu = function() {
       chrome.tabs.create({
         url: Url.search(data.selectionText)
       });
+    },
+
+    remove: function() {
+      chrome.contextMenus.remove(this.menu);
+      delete(this.menu);
     }
   };
 };
@@ -41,10 +46,10 @@ PageContextMenu = function() {
     listenToTabs: function() {
       var self = this;
       chrome.tabs.onSelectionChanged.addListener(function(tabId) {
-        self.onTabSelectionChanged(tabId);
+        if(self.menu) self.onTabSelectionChanged(tabId);
       });
       chrome.tabs.onUpdated.addListener(function(tabId, changedInfo, tab) {
-        self.onTabUpdated(tab);
+        if(self.menu) self.onTabUpdated(tab);
       });
     },
 
@@ -57,6 +62,11 @@ PageContextMenu = function() {
 
     onTabUpdated: function(tab) {
       if(tab.selected) this.updateTitleDomain(tab);
+    },
+
+    remove: function() {
+      chrome.contextMenus.remove(this.menu);
+      delete(this.menu);
     }
   };
 };

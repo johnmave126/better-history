@@ -6,7 +6,9 @@ SettingsView = Backbone.View.extend({
     'click .release_announcement': 'clickedReleaseAnnouncement',
     'change .time_grouping': 'changedTimeGrouping',
     'change .time_format': 'changedTimeFormat',
-    'click .domain_grouping': 'clickedDomainGrouping'
+    'click .domain_grouping': 'clickedDomainGrouping',
+    'click .search_by_domain': 'clickedSearchByDomain',
+    'click .search_by_selection': 'clickedSearchBySelection'
   },
 
   initialize: function() {
@@ -24,6 +26,8 @@ SettingsView = Backbone.View.extend({
       $('.time_grouping', this).val(self.model.get('timeGrouping'));
       $('.time_format', this).val(self.model.get('timeFormat'));
       $('.domain_grouping', this).prop('checked', self.model.get('domainGrouping'));
+      $('.search_by_selection', this).prop('checked', self.model.get('searchBySelection'));
+      $('.search_by_domain', this).prop('checked', self.model.get('searchByDomain'));
       $('.current_version', this).text(version.get('version'));
     });
     return this;
@@ -39,6 +43,24 @@ SettingsView = Backbone.View.extend({
 
   clickedDomainGrouping: function(ev) {
     this.model.set({domainGrouping: $(ev.currentTarget).is(':checked')});
+  },
+
+  clickedSearchByDomain: function(ev) {
+    this.model.set({searchByDomain: $(ev.currentTarget).is(':checked')});
+
+    var backgroundPage = chrome.extension.getBackgroundPage(),
+        method = (this.model.get('searchByDomain') ? 'create' : 'remove');
+
+    backgroundPage.pageContextMenu[method]();
+  },
+
+  clickedSearchBySelection: function(ev) {
+    this.model.set({searchBySelection: $(ev.currentTarget).is(':checked')});
+
+    var backgroundPage = chrome.extension.getBackgroundPage(),
+        method = (this.model.get('searchBySelection') ? 'create' : 'remove');
+
+    backgroundPage.selectionContextMenu[method]();
   },
 
   clickedClearHistory: function(ev) {

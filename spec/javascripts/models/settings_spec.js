@@ -15,7 +15,15 @@ describe('Settings', function() {
     });
 
     it('defaults domainGrouping when not supplied', function() {
-      expect(settings.get('domainGrouping')).toEqual(true);
+      expect(settings.get('domainGrouping')).toBeTruthy();
+    });
+
+    it('defaults searchByDomain when not supplied', function() {
+      expect(settings.get('searchByDomain')).toBeTruthy();
+    });
+
+    it('defaults searchBySelection when not supplied', function() {
+      expect(settings.get('searchBySelection')).toBeTruthy();
     });
   });
 
@@ -64,7 +72,7 @@ describe('Settings', function() {
 
   describe('#parse', function() {
     it('passes json to set method', function() {
-      var attributes = {timeGrouping: 50, domainGrouping: false, timeFormat: 24};
+      var attributes = {timeGrouping: 50, domainGrouping: false, timeFormat: 24, searchByDomain: false, searchBySelection: false};
       settings.parse(attributes);
       expect(settings.toJSON()).toEqual(attributes);
     });

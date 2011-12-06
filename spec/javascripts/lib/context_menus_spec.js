@@ -5,6 +5,7 @@ describe('Context Menus', function() {
     chrome = {
       contextMenus: {
         create: jasmine.createSpy('create').andReturn(true),
+        remove: jasmine.createSpy('remove'),
         update: jasmine.createSpy('update')
       },
       tabs: {
@@ -47,6 +48,23 @@ describe('Context Menus', function() {
         expect(chrome.tabs.create).toHaveBeenCalledWith({
           url: Url.search(selection)
         });
+      });
+    });
+
+    describe('#remove', function() {
+      beforeEach(function() {
+        selectionContextMenu.create();
+      });
+
+      it('removes the context menu', function() {
+        var menu = selectionContextMenu.menu;
+        selectionContextMenu.remove();
+        expect(chrome.contextMenus.remove).toHaveBeenCalledWith(menu);
+      });
+
+      it('deletes the stored reference', function() {
+        selectionContextMenu.remove();
+        expect(selectionContextMenu.menu).not.toBeDefined();
       });
     });
   });
@@ -93,16 +111,30 @@ describe('Context Menus', function() {
     });
 
     describe('#listenToTabs', function() {
-      it('listens to selection change', function() {
+      it('reacts to selection change when the context menu exisits', function() {
+        pageContextMenu.create();
         pageContextMenu.listenToTabs();
         chrome.tabs.onSelectionChanged.addListener.mostRecentCall.args[0]();
         expect(chrome.contextMenus.update).toHaveBeenCalled();
       });
 
-      it('listens to tab updates', function() {
+      it('does not react to selection change when the context menu does not exist', function() {
+        pageContextMenu.listenToTabs();
+        chrome.tabs.onSelectionChanged.addListener.mostRecentCall.args[0]();
+        expect(chrome.contextMenus.update).not.toHaveBeenCalled();
+      });
+
+      it('reacts to tab updates when the context menu exists', function() {
+        pageContextMenu.create();
         pageContextMenu.listenToTabs();
         chrome.tabs.onUpdated.addListener.mostRecentCall.args[0](true, true, {selected:true, url:'http://' + domain + '/projects'});
         expect(chrome.contextMenus.update).toHaveBeenCalled();
+      });
+
+      it('does not react to tab updates when the context menu does not exists', function() {
+        pageContextMenu.listenToTabs();
+        chrome.tabs.onUpdated.addListener.mostRecentCall.args[0]();
+        expect(chrome.contextMenus.update).not.toHaveBeenCalled();
       });
     });
 
@@ -129,6 +161,23 @@ describe('Context Menus', function() {
       it('updates the title domain', function() {
         pageContextMenu.onTabSelectionChanged(id);
         expect(chrome.contextMenus.update).toHaveBeenCalled();
+      });
+    });
+
+    describe('#remove', function() {
+      beforeEach(function() {
+        pageContextMenu.create();
+      });
+
+      it('removes the context menu', function() {
+        var menu = pageContextMenu.menu;
+        pageContextMenu.remove();
+        expect(chrome.contextMenus.remove).toHaveBeenCalledWith(menu);
+      });
+
+      it('deletes the store menu', function() {
+        pageContextMenu.remove();
+        expect(pageContextMenu.menu).not.toBeDefined();
       });
     });
   });
