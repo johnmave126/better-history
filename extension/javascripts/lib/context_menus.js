@@ -10,7 +10,7 @@ SelectionContextMenu = function() {
 
     onClick: function(data) {
       chrome.tabs.create({
-        url: 'chrome://history/#search/' + data.selectionText
+        url: Url.search(data.selectionText)
       });
     }
   };
@@ -28,7 +28,7 @@ PageContextMenu = function() {
 
     onClick: function(data) {
       chrome.tabs.create({
-        url: 'chrome://history/#search/' + Helpers.getDomain(data.pageUrl)[1]
+        url: Url.search(Helpers.getDomain(data.pageUrl)[1])
       });
     },
 

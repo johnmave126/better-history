@@ -45,7 +45,7 @@ describe('Context Menus', function() {
       it('opens a tab to search by the selection', function() {
         selectionContextMenu.onClick({selectionText: selection});
         expect(chrome.tabs.create).toHaveBeenCalledWith({
-          url: 'chrome://history/#search/' + selection
+          url: Url.search(selection)
         });
       });
     });
@@ -78,7 +78,7 @@ describe('Context Menus', function() {
       it('opens a tab to search by the domain', function() {
         pageContextMenu.onClick({pageUrl: 'http://' + domain + '/projects'});
         expect(chrome.tabs.create).toHaveBeenCalledWith({
-          url: 'chrome://history/#search/' + domain
+          url: Url.search(domain)
         });
       });
     });
