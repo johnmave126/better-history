@@ -6,6 +6,7 @@ settings.fetch();
 
 $(function() {
   versionView = new VersionView({model: version});
+  creditsView = new CreditsView();
 
   appView = new AppView({
     el: $('.app'),

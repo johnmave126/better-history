@@ -6,6 +6,7 @@ AppView = Backbone.View.extend({
     $('.navbar', this.el).append(sidebarView.render().el).fadeIn(200);
 
     $(this.el).append(versionView.render().el);
+    $(this.el).append(creditsView.render().el);
 
     return this;
   }

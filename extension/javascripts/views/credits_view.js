@@ -1,18 +1,17 @@
-VersionView = Backbone.View.extend({
-  className: 'version_view',
+CreditsView = Backbone.View.extend({
+  className: 'credits_view',
 
   events: {
     'click .close': 'closeClicked'
   },
 
   render: function() {
-    ich.version(this.model.presenter()).appendTo(this.el);
+    ich.credits().appendTo(this.el);
     return this;
   },
 
   closeClicked: function(ev) {
     ev.preventDefault();
-    this.model.setSuppress(true);
     this.close();
   },
 

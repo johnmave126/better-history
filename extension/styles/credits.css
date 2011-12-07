@@ -1,0 +1,12 @@
+.credits_view .language {
+  float:right;
+}
+.credits_view li {
+  list-style-type:none;
+  border-bottom:1px solid #DDD;
+  padding:5px 0;
+}
+.credits_view ul {
+  margin:0;
+  padding:0;
+}

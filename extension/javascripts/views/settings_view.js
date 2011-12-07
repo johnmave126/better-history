@@ -4,6 +4,7 @@ SettingsView = Backbone.View.extend({
   events: {
     'click .clear_history': 'clickedClearHistory',
     'click .release_announcement': 'clickedReleaseAnnouncement',
+    'click .credits': 'clickedCredits',
     'change .time_grouping': 'changedTimeGrouping',
     'change .time_format': 'changedTimeFormat',
     'click .domain_grouping': 'clickedDomainGrouping',
@@ -71,5 +72,10 @@ SettingsView = Backbone.View.extend({
   clickedReleaseAnnouncement: function(ev) {
     ev.preventDefault();
     versionView.open();
+  },
+
+  clickedCredits: function(ev) {
+    ev.preventDefault();
+    creditsView.open();
   }
 });

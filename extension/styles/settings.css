@@ -3,6 +3,11 @@
   padding-left:24px;
 }
 
+.settings .credits {
+  margin-top:20px;
+  display:inline-block;
+}
+
 /* right table column containing settable options */
 .settings > .setting > .title + div {
   padding: 20px 0;
