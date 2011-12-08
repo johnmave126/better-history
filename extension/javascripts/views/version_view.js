@@ -6,7 +6,8 @@ VersionView = Backbone.View.extend({
   },
 
   render: function() {
-    ich.version(this.model.presenter()).appendTo(this.el);
+    var templateOptions = $.extend(this.model.presenter(), i18n.version());
+    ich.version(templateOptions).appendTo(this.el);
     return this;
   },
 

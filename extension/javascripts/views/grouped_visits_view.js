@@ -7,7 +7,9 @@ GroupedVisitsView = Backbone.View.extend({
   },
 
   render: function() {
-    ich.groupedVisits(this.collection.summary()).appendTo(this.el);
+    var templateOptions = $.extend(this.collection.summary(), i18n.groupedVisits());
+    ich.groupedVisits(templateOptions).appendTo(this.el);
+
     var expandedVisits = ich.expandedVisits();
     $.each(this.collection.models, function(i, visit) {
       var pageVisitView = new PageVisitView({model: visit});
@@ -19,12 +21,14 @@ GroupedVisitsView = Backbone.View.extend({
 
   toggle: function(ev) {
     ev.preventDefault();
-    var element = ev.target;
+    var element = ev.target,
+        translation = i18n.groupedVisits();
+
     if($(element).hasClass('active')) {
-      $(element).text('Expand');
+      $(element).text(translation.i18n_expand_button);
       $(element).parents('a').next().slideUp('fast');
     } else {
-      $(element).text('Collapse');
+      $(element).text(translation.i18n_collapse_button);
       $(element).parents('a').next().slideDown('fast');
     }
     $(element).toggleClass('active');

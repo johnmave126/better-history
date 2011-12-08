@@ -13,11 +13,13 @@ Filter = Backbone.Model.extend({
     if(this.searching()) {
       title = this.buildSearchTitle(this.get('text'));
     } else if(this.get('daysSinceToday') === 0) {
-      title = 'Today';
+      title = chrome.i18n.getMessage('today_link');
     } else if(this.get('daysSinceToday') === 1) {
-      title = 'Yesterday';
+      title = chrome.i18n.getMessage('yesterday_link');
     } else {
-      title = DateRanger.numberToDay(this.date().getDay()) + ', ' + this.date().getDate() + '<span class="ordinal" >' + this.ordinal() + '</span>';
+      var weekName = chrome.i18n.getMessage(DateRanger.numberToDay(this.date().getDay())),
+          date = chrome.i18n.getMessage(this.date().getDate().toString());
+      title = weekName + ', ' + date + '<span class="ordinal" >' + this.ordinal() + '</span>';
     }
     this.set({title: title});
   },

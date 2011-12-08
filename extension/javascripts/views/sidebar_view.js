@@ -22,7 +22,7 @@ SidebarView = Backbone.View.extend({
 
   render: function() {
     var self = this;
-    ich.sidebar().appendTo(self.el);
+    ich.sidebar(i18n.sidebar()).appendTo(self.el);
     $.each(this.collection.models, function(i, filter) {
       var filterItemView = new FilterItemView({model: filter});
       $('.filters', self.el).append(filterItemView.render().el);

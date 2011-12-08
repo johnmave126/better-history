@@ -4,15 +4,15 @@
     <span class="date">{{date}}</span>
     <ul class="controls">
       <li class="control">
-        <a href="#" class="button collapse_groupings">Collapse</a>
+        <a href="#" class="button collapse_groupings">{{i18n_collapse_button}}</a>
       </li>
       <li class="control">
-        <a href="#" class="button expand_groupings">Expand</a>
+        <a href="#" class="button expand_groupings">{{i18n_expand_button}}</a>
       </li>
       <li class="control">
         <a href="#" class="button delete_all">
           <span class="delete_icon"> <span class="delete"> </span> </span>
-          Delete...
+          {{i18n_delete_all_visits_for_filter_button}}
         </a>
       </li>
     </ul>
@@ -22,5 +22,5 @@
   </div>
 </script>
 <script id="noVisits" type="text/html">
-  <p class="no_visits">Sorry friend, no visits found.</p>
+  <p class="no_visits">{{i18n_no_visits_found}}</p>
 </script>

@@ -6,7 +6,7 @@ CreditsView = Backbone.View.extend({
   },
 
   render: function() {
-    ich.credits().appendTo(this.el);
+    ich.credits(i18n.credits()).appendTo(this.el);
     return this;
   },
 

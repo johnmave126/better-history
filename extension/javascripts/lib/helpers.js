@@ -43,7 +43,11 @@ Helpers = {
   },
 
   formatDate: function(date) {
-    return $.trim(date.toLocaleDateString().match(/([^,]*),(.*)/)[2]);
+    var month = chrome.i18n.getMessage(DateRanger.numberToMonth(date.getMonth())),
+        dateNumber = chrome.i18n.getMessage(date.getDate().toString()),
+        year = date.getFullYear();
+
+    return $.trim(month + ' ' + dateNumber + ', ' + year);
   },
 
   formatTime: function(date, format) {

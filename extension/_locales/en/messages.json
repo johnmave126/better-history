@@ -1,0 +1,449 @@
+{
+  // App
+  "history_title": {
+    "message": "History",
+    "description": "Extension title"
+  },
+
+  // Settings
+  "settings_title": {
+    "message": "Settings",
+    "description": "Settings title for Settings page"
+  },
+  "clearing_history_section_title": {
+    "message": "Clearing History",
+    "description": "Section heading in Settings"
+  },
+  "clear_history_button": {
+    "message": "Clear history...",
+    "description": "Button text for clear history button in Settings"
+  },
+  "visit_grouping_section_title": {
+    "message": "Visit grouping",
+    "description": "Section heading in Settings"
+  },
+  "group_visits_by_label": {
+    "message": "Group visits by",
+    "description": "Label for select box to set the time grouping interval for visits"
+  },
+  "60_minutes_option": {
+    "message": "60 minutes",
+    "description": "Time amount"
+  },
+  "30_minutes_option": {
+    "message": "30 minutes",
+    "description": "Time amount"
+  },
+  "15_minutes_option": {
+    "message": "15 minutes",
+    "description": "Time amount"
+  },
+  "time_format_label": {
+    "message": "Time format",
+    "description": "Label for select box to set the time format (12 or 24 hours)"
+  },
+  "12_hours_option": {
+    "message": "12 hours",
+    "description": "12 hour time format, example: 3:00 PM"
+  },
+  "24_hours_option": {
+    "message": "24 hours",
+    "description": "24 hour time format, example: 14:00"
+  },
+  "group_visits_by_domain_label": {
+    "message": "Group visits by domain",
+    "description": "Label for check box to group visits by domain"
+  },
+  "right_click_options_section_title": {
+    "message": "Right click options",
+    "description": "Section heading in Settings"
+  },
+  "search_by_text_selection_label": {
+    "message": "Search by text selection",
+    "description": "Label for check box to enable right click option"
+  },
+  "search_by_domain_label": {
+    "message": "Search by domain",
+    "description": "Label for check box to enable right click option"
+  },
+  "Whats_new_section_title": {
+    "message": "What's new",
+    "description": "Section heading in Settings"
+  },
+  "view_release_announcement_link": {
+    "message": "View release announcement",
+    "description": "Link text to view the release announcement"
+  },
+  "current_version_label": {
+    "message": "Current version",
+    "description": "label for the current version"
+  },
+  "credits": {
+    "message": "credits",
+    "description": "The word credits"
+  },
+  "feedback_section_title": {
+    "message": "Feedback",
+    "description": "Section heading in Settings"
+  },
+  "voice_your_thoughts_on_link": {
+    "message": "Voice your thoughts on",
+    "description": "Link text to give feedback"
+  },
+  "i_will_respond": {
+    "message": "I will respond to your message, promise",
+    "description": "Note text relating the voice your thoughts link"
+  },
+  "spread_the_word_section_title": {
+    "message": "Spread the word",
+    "description": "Section heading in Settings"
+  },
+  "leave_a_review": {
+    "message": "Leave a review",
+    "description": "Link text to leave a review"
+  },
+
+  // Sidebar
+  "search_input_placeholder_text": {
+    "message": "Search title, url, or date",
+    "description": "Placeholder text in the search input box"
+  },
+  "settings_link": {
+    "message": "Settings",
+    "description": "Text for the link to Settings"
+  },
+  "today_link": {
+    "message": "Today",
+    "description": "Link for today"
+  },
+  "yesterday_link": {
+    "message": "Yesterday",
+    "description": "Link for yesterday"
+  },
+  "monday": {
+    "message": "Monday",
+    "description": "The day of the week"
+  },
+  "tuesday": {
+    "message": "Tuesday",
+    "description": "The day of the week"
+  },
+  "wednesday": {
+    "message": "Wednesday",
+    "description": "The day of the week"
+  },
+  "thursday": {
+    "message": "Thursday",
+    "description": "The day of the week"
+  },
+  "friday": {
+    "message": "Friday",
+    "description": "The day of the week"
+  },
+  "saturday": {
+    "message": "Saturday",
+    "description": "The day of the week"
+  },
+  "sunday": {
+    "message": "Sunday",
+    "description": "The day of the week"
+  },
+  "1": {
+    "message": "1",
+    "description": "The number"
+  },
+  "2": {
+    "message": "2",
+    "description": "The number"
+  },
+  "3": {
+    "message": "3",
+    "description": "The number"
+  },
+  "4": {
+    "message": "4",
+    "description": "The number"
+  },
+  "5": {
+    "message": "5",
+    "description": "The number"
+  },
+  "6": {
+    "message": "6",
+    "description": "The number"
+  },
+  "7": {
+    "message": "7",
+    "description": "The number"
+  },
+  "8": {
+    "message": "8",
+    "description": "The number"
+  },
+  "9": {
+    "message": "9",
+    "description": "The number"
+  },
+  "10": {
+    "message": "10",
+    "description": "The number"
+  },
+  "11": {
+    "message": "11",
+    "description": "The number"
+  },
+  "12": {
+    "message": "12",
+    "description": "The number"
+  },
+  "13": {
+    "message": "13",
+    "description": "The number"
+  },
+  "14": {
+    "message": "14",
+    "description": "The number"
+  },
+  "15": {
+    "message": "15",
+    "description": "The number"
+  },
+  "16": {
+    "message": "16",
+    "description": "The number"
+  },
+  "17": {
+    "message": "17",
+    "description": "The number"
+  },
+  "18": {
+    "message": "18",
+    "description": "The number"
+  },
+  "19": {
+    "message": "19",
+    "description": "The number"
+  },
+  "20": {
+    "message": "20",
+    "description": "The number"
+  },
+  "21": {
+    "message": "21",
+    "description": "The number"
+  },
+  "22": {
+    "message": "22",
+    "description": "The number"
+  },
+  "23": {
+    "message": "23",
+    "description": "The number"
+  },
+  "24": {
+    "message": "24",
+    "description": "The number"
+  },
+  "25": {
+    "message": "25",
+    "description": "The number"
+  },
+  "26": {
+    "message": "26",
+    "description": "The number"
+  },
+  "27": {
+    "message": "27",
+    "description": "The number"
+  },
+  "28": {
+    "message": "28",
+    "description": "The number"
+  },
+  "29": {
+    "message": "29",
+    "description": "The number"
+  },
+  "30": {
+    "message": "30",
+    "description": "The number"
+  },
+  "31": {
+    "message": "31",
+    "description": "The number"
+  },
+
+  // Filter
+  "collapse_button": {
+    "message": "Collapse",
+    "description": "Text for collapse button"
+  },
+  "expand_button": {
+    "message": "Expand",
+    "description": "Text for expand button"
+  },
+  "delete_all_visits_for_filter_button": {
+    "message": "Delete...",
+    "description": "Text for delete all visits for a day filter button"
+  },
+  "no_visits_found": {
+    "message": "Sorry friend, no visits found.",
+    "description": "Text for no visits found message"
+  },
+  "january": {
+    "message": "January",
+    "description": "The month"
+  },
+  "february": {
+    "message": "February",
+    "description": "The month"
+  },
+  "march": {
+    "message": "March",
+    "description": "The month"
+  },
+  "april": {
+    "message": "April",
+    "description": "The month"
+  },
+  "may": {
+    "message": "May",
+    "description": "The month"
+  },
+  "june": {
+    "message": "June",
+    "description": "The month"
+  },
+  "july": {
+    "message": "July",
+    "description": "The month"
+  },
+  "august": {
+    "message": "August",
+    "description": "The month"
+  },
+  "september": {
+    "message": "September",
+    "description": "The month"
+  },
+  "october": {
+    "message": "October",
+    "description": "The month"
+  },
+  "november": {
+    "message": "November",
+    "description": "The month"
+  },
+  "december": {
+    "message": "December",
+    "description": "The month"
+  },
+  "confirm_delete_all_visits": {
+    "message": "Delete all visits from",
+    "description": "Confirmation text to delete all visits from a specific date"
+  },
+
+  // Time visits
+  "visits_label": {
+    "message": "visits",
+    "description": "Label to a number representing a number of visits"
+  },
+
+  // Prompt Modal
+  "prompt_cancel_button": {
+    "message": "Cancel",
+    "description": "Button to close modal"
+  },
+  "prompt_delete_button": {
+    "message": "Delete",
+    "description": "Button to delete history"
+  },
+  "prompt_title": {
+    "message": "Confirm",
+    "description": "Title of prompt"
+  },
+
+  // Credits
+  "credits_title": {
+    "message": "Credits",
+    "description": "Title for credits modal"
+  },
+  "developed_by": {
+    "message": "Created and developed by",
+    "description": "Developer label"
+  },
+  "translators_heading": {
+    "message": "Translators",
+    "description": "Heading for translators"
+  },
+  "spanish": {
+    "message": "Spanish",
+    "description": "The language"
+  },
+  "russian": {
+    "message": "Russian",
+    "description": "The language"
+  },
+  "portuguese": {
+    "message": "Portuguese",
+    "description": "The language"
+  },
+  "italian": {
+    "message": "Italian",
+    "description": "The language"
+  },
+  "french": {
+    "message": "French",
+    "description": "The language"
+  },
+  "swedish": {
+    "message": "Swedish",
+    "description": "The language"
+  },
+  "chinese_simplified": {
+    "message": "Chinese (Simplified)",
+    "description": "The language"
+  },
+  "german": {
+    "message": "German",
+    "description": "The language"
+  },
+  "polish": {
+    "message": "Polish",
+    "description": "The language"
+  },
+  "hungarian": {
+    "message": "Hungarian",
+    "description": "The language"
+  },
+  "arabic": {
+    "message": "Arabic",
+    "description": "The language"
+  },
+  "translation_help_heading": {
+    "message": "Dont't see your language?",
+    "description": "Heading to recruit translators"
+  },
+  "translation_instructions": {
+    "message": "Do you want to translate Better History into a new lanuage? Great! Just send an email to",
+    "description": "Instructions on how to help translate"
+  },
+  "close_button": {
+    "message": "Ok!",
+    "description": "Button to close modal"
+  },
+
+  // Version
+  "version_title": {
+    "message": "Hola, 您好, szia, Olá, bonjour, hello!",
+    "description": "Title of the version modal"
+  },
+  "version_description": {
+    "message": "This is a big, big release. With the help of 12 awesome users, Better History is now available in 12 languages! I can't thank these great users enough.",
+    "description": "Version description"
+  },
+  "version_items": {
+    "message": "<li>Translated to Spanish, German, Swedish, French, Hungarian, Chinese (Simplified), Polish, Portuguese, Russian, Italian, Finnish, Arabic</li><li>Added options in Settings to disable right click options</li><li>Added icon to display Better History in toolbar</li><li>Fixed XSS vulnerability</li><li>Added Credits section in Settings</li>",
+    "description": "Release bulletpoints"
+  }
+}

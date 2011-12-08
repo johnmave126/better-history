@@ -7,7 +7,8 @@ PromptView = Backbone.View.extend({
   },
 
   render: function() {
-    ich.prompt(this.model.toJSON()).appendTo(this.el);
+    var templateOptions = $.extend(this.model.toJSON(), i18n.prompt());
+    ich.prompt(templateOptions).appendTo(this.el);
     return this;
   },
 

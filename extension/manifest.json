@@ -2,6 +2,7 @@
   "name": "Better History",
   "version": "1.2.0",
   "description": "A better look at your browsing history. The best searching, the sharpest interface, and the most useful filters - for your history.",
+  "default_locale":"en",
   "icons": {
     "16": "images/icons/icon16.png",
     "48": "images/icons/icon48.png",

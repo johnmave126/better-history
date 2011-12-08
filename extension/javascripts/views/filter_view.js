@@ -14,7 +14,8 @@ FilterView = Backbone.View.extend({
   },
 
   render: function(type) {
-    $(this.el).html(ich.filter(this.model.presenter()));
+    var templateValues = $.extend(this.model.presenter(), i18n.filter());
+    $(this.el).html(ich.filter(templateValues));
     return this;
   },
 
@@ -33,7 +34,7 @@ FilterView = Backbone.View.extend({
     });
 
     if(this.collection.length === 0) {
-      $(contentElement).append(ich.noVisits()).css({opacity:1});
+      $(contentElement).append(ich.noVisits(i18n.filter())).css({opacity:1});
     } else {
       if(this.startTime) {
         var offset = $('[data-time="' + this.startTime + '"]').offset();
@@ -67,8 +68,7 @@ FilterView = Backbone.View.extend({
     ev.preventDefault();
     this.promptView = new PromptView({
       model: new Prompt({
-        title: 'Confirm',
-        content: 'Delete all visits from ' + this.model.presenter().date + '?'
+        content: chrome.i18n.getMessage('confirm_delete_all_visits') + ' ' + this.model.presenter().date + '?'
       })
     });
     $('body').append(this.promptView.render().el);

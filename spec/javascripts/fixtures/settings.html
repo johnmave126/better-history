@@ -1,72 +1,76 @@
 <script id="settings" type="text/html">
   <div class="heading">
-    <h2>Settings</h2>
+    <h2>{{i18n_settings_title}}</h2>
   </div>
   <div class="content">
     <div class="settings">
       <section class="setting">
-        <h3 class="title">Clearing history</h3>
+        <h3 class="title">{{i18n_clearing_history_section_title}}</h3>
         <div class="controls">
-          <a href="#" class="clear_history button">Clear history...</a>
+          <a href="#" class="clear_history button">{{i18n_clear_history_button}}</a>
         </div>
       </section>
       <section class="setting">
-        <h3 class="title">Visit grouping</h3>
+        <h3 class="title">{{i18n_visit_grouping_section_title}}</h3>
         <div class="controls">
           <label>
-            <span class="select">Group visits by</span>
+            <span class="select">{{i18n_group_visits_by_label}}</span>
             <select class="time_grouping">
-              <option value="60">60 minutes</options>
-              <option value="30">30 minutes</options>
-              <option value="15">15 minutes</options>
+              <option value="60">{{i18n_60_minutes_option}}</options>
+              <option value="30">{{i18n_30_minutes_option}}</options>
+              <option value="15">{{i18n_15_minutes_option}}</options>
             </select>
           </label>
           <label>
-            <span class="select">Time format</span>
+            <span class="select">{{i18n_time_format_label}}</span>
             <select class="time_format">
-              <option value="24">24 hours</options>
-              <option value="12">12 hours</options>
+              <option value="24">{{i18n_24_hours_option}}</options>
+              <option value="12">{{i18n_12_hours_option}}</options>
             </select>
           </label>
           <label>
             <input type="checkbox" class="domain_grouping"/>
-            <span>Group visits by domain</span>
+            <span>{{i18n_group_visits_by_domain_label}}</span>
           </label>
         </div>
       </section>
       <section class="setting">
-        <h3 class="title">Right click options</h3>
+        <h3 class="title">{{i18n_right_click_options_section_title}}</h3>
         <div class="controls">
           <label>
             <input type="checkbox" class="search_by_selection"/>
-            <span>Search by text selection</span>
+            <span>{{i18n_search_by_text_selection_label}}</span>
           </label>
           <label>
             <input type="checkbox" class="search_by_domain"/>
-            <span>Search by domain</span>
+            <span>{{i18n_search_by_domain_label}}</span>
           </label>
         </div>
       </section>
       <section class="setting">
-        <h3 class="title">What's new</h3>
+        <h3 class="title">{{i18n_whats_new_section_title}}</h3>
         <div class="controls">
-          <a href="#" class="release_announcement">View release announcement</a>
-          <div class="note">Current version: <span class="current_version"></span></div>
-          <a href="#" class="credits"><strong>Better History</strong> credits</a>
+          <a href="#" class="release_announcement">{{i18n_view_release_announcement_link}}</a>
+          <div class="note">
+            {{i18n_current_version_label}}: <span class="current_version"></span>
+          </div>
+          <a href="#" class="credits"><strong>Better History</strong> {{i18n_credits}}</a>
         </div>
       </section>
       <section class="setting">
-        <h3 class="title">Feedback</h3>
+        <h3 class="title">{{i18n_feedback_section_title}}</h3>
         <div class="controls">
-          <a href="https://docs.google.com/spreadsheet/viewform?formkey=dE15QjJjZDhPejd6Q0JYX1dxWFVpYkE6MQ">Voice your thoughts on <strong>Better History</strong></a>
-          <div class="note">I will respond to your message, promise.</div>
+          <a href="https://docs.google.com/spreadsheet/viewform?formkey=dE15QjJjZDhPejd6Q0JYX1dxWFVpYkE6MQ">
+            {{i18n_voice_your_thoughts_on}}<strong>Better History</strong>
+          </a>
+          <div class="note">{{i18n_i_will_respond}}</div>
         </div>
       </section>
       <section class="setting">
-        <h3 class="title">Spread the word</h3>
+        <h3 class="title">{{i18n_spread_the_word}}</h3>
         <div class="controls">
           <div class="option">
-            <a href="https://chrome.google.com/webstore/detail/obciceimmggglbmelaidpjlmodcebijb/reviews">Leave a review</a>
+            <a href="https://chrome.google.com/webstore/detail/obciceimmggglbmelaidpjlmodcebijb/reviews">{{i18n_leave_a_review}}</a>
           </div>
           <div class="option">
             <a href="https://twitter.com/share" class="twitter-share-button" data-url="https://chrome.google.com/webstore/detail/obciceimmggglbmelaidpjlmodcebijb" data-text="Better History for Chrome, see what you're missing!" data-count="horizontal" data-via="roykolak">Tweet</a><script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>

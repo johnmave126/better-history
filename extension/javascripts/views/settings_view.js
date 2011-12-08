@@ -23,7 +23,7 @@ SettingsView = Backbone.View.extend({
 
   render: function() {
     var self = this;
-    $(this.el).append(ich.settings()).fadeIn('fast', function() {
+    $(this.el).append(ich.settings(i18n.settings())).fadeIn('fast', function() {
       $('.time_grouping', this).val(self.model.get('timeGrouping'));
       $('.time_format', this).val(self.model.get('timeFormat'));
       $('.domain_grouping', this).prop('checked', self.model.get('domainGrouping'));
