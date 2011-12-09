@@ -1,151 +1,151 @@
 {
   // App
   "history_title": {
-    "message": "History",
+    "message": "История",
     "description": "Extension title"
   },
 
   // Settings
   "settings_title": {
-    "message": "Settings",
+    "message": "Настройки",
     "description": "Settings title for Settings page"
   },
   "clearing_history_section_title": {
-    "message": "Clearing History",
+    "message": "Очистка истории",
     "description": "Section heading in Settings"
   },
   "clear_history_button": {
-    "message": "Clear history...",
+    "message": "Очистить историю...",
     "description": "Button text for clear history button in Settings"
   },
   "visit_grouping_section_title": {
-    "message": "Visit grouping",
+    "message": "Группировка посещений",
     "description": "Section heading in Settings"
   },
   "group_visits_by_label": {
-    "message": "Group visits by",
+    "message": "Группировать каждые",
     "description": "Label for select box to set the time grouping interval for visits"
   },
   "60_minutes_option": {
-    "message": "60 minutes",
+    "message": "60 минут",
     "description": "Time amount"
   },
   "30_minutes_option": {
-    "message": "30 minutes",
+    "message": "30 минут",
     "description": "Time amount"
   },
   "15_minutes_option": {
-    "message": "15 minutes",
+    "message": "15 минут",
     "description": "Time amount"
   },
   "time_format_label": {
-    "message": "Time format",
+    "message": "формат времени",
     "description": "Label for select box to set the time format (12 or 24 hours)"
   },
   "12_hours_option": {
-    "message": "12 hours",
+    "message": "12 часов",
     "description": "12 hour time format, example: 3:00 PM"
   },
   "24_hours_option": {
-    "message": "24 hours",
+    "message": "24 часа",
     "description": "24 hour time format, example: 14:00"
   },
   "group_visits_by_domain_label": {
-    "message": "Group visits by domain",
+    "message": "Группировать посещения по домену",
     "description": "Label for check box to group visits by domain"
   },
   "right_click_options_section_title": {
-    "message": "Right click options",
+    "message": "Опции контекстного меню",
     "description": "Section heading in Settings"
   },
   "search_by_text_selection_label": {
-    "message": "Search by text selection",
+    "message": "",
     "description": "Label for check box to enable right click option"
   },
   "search_by_domain_label": {
-    "message": "Search by domain",
+    "message": "",
     "description": "Label for check box to enable right click option"
   },
   "Whats_new_section_title": {
-    "message": "What's new",
+    "message": "Что нового",
     "description": "Section heading in Settings"
   },
   "view_release_announcement_link": {
-    "message": "View release announcement",
+    "message": "Показать историю версий",
     "description": "Link text to view the release announcement"
   },
   "current_version_label": {
-    "message": "Current version",
+    "message": "Текущая версия",
     "description": "label for the current version"
   },
   "credits": {
-    "message": "credits",
+    "message": "Благодарности",
     "description": "The word credits"
   },
   "feedback_section_title": {
-    "message": "Feedback",
+    "message": "Обратная связь",
     "description": "Section heading in Settings"
   },
   "voice_your_thoughts_on_link": {
-    "message": "Voice your thoughts on",
+    "message": "Выскажите свое мнение о",
     "description": "Link text to give feedback"
   },
   "i_will_respond": {
-    "message": "I will respond to your message, promise",
+    "message": "Я буду отвечать на ваши отзывы.",
     "description": "Note text relating the voice your thoughts link"
   },
   "spread_the_word_section_title": {
-    "message": "Spread the word",
+    "message": "Расскажите о нас",
     "description": "Section heading in Settings"
   },
   "leave_a_review": {
-    "message": "Leave a review",
+    "message": "Оставить отзыв",
     "description": "Link text to leave a review"
   },
 
   // Sidebar
   "search_input_placeholder_text": {
-    "message": "Search title, url, or date",
+    "message": "Найти заголовок, URL или дату",
     "description": "Placeholder text in the search input box"
   },
   "settings_link": {
-    "message": "Settings",
+    "message": "Настройки",
     "description": "Text for the link to Settings"
   },
   "today_link": {
-    "message": "Today",
+    "message": "Сегодня",
     "description": "Link for today"
   },
   "yesterday_link": {
-    "message": "Yesterday",
+    "message": "Вчера",
     "description": "Link for yesterday"
   },
   "monday": {
-    "message": "Monday",
+    "message": "Понедельник",
     "description": "The day of the week"
   },
   "tuesday": {
-    "message": "Tuesday",
+    "message": "Вторник",
     "description": "The day of the week"
   },
   "wednesday": {
-    "message": "Wednesday",
+    "message": "Среда",
     "description": "The day of the week"
   },
   "thursday": {
-    "message": "Thursday",
+    "message": "Четверг",
     "description": "The day of the week"
   },
   "friday": {
-    "message": "Friday",
+    "message": "Пятница",
     "description": "The day of the week"
   },
   "saturday": {
-    "message": "Saturday",
+    "message": "Суббота",
     "description": "The day of the week"
   },
   "sunday": {
-    "message": "Sunday",
+    "message": "Воскресенье",
     "description": "The day of the week"
   },
   "1": {
@@ -275,97 +275,97 @@
 
   // Filter
   "collapse_button": {
-    "message": "Collapse",
+    "message": "Свернуть",
     "description": "Text for collapse button"
   },
   "expand_button": {
-    "message": "Expand",
+    "message": "Развернуть",
     "description": "Text for expand button"
   },
   "delete_all_visits_for_filter_button": {
-    "message": "Delete...",
+    "message": "Удалить...",
     "description": "Text for delete all visits for a day filter button"
   },
   "no_visits_found": {
-    "message": "Sorry friend, no visits found.",
+    "message": "",
     "description": "Text for no visits found message"
   },
   "january": {
-    "message": "January",
+    "message": "января",
     "description": "The month"
   },
   "february": {
-    "message": "February",
+    "message": "февраля",
     "description": "The month"
   },
   "march": {
-    "message": "March",
+    "message": "марта",
     "description": "The month"
   },
   "april": {
-    "message": "April",
+    "message": "апреля",
     "description": "The month"
   },
   "may": {
-    "message": "May",
+    "message": "мая",
     "description": "The month"
   },
   "june": {
-    "message": "June",
+    "message": "июня",
     "description": "The month"
   },
   "july": {
-    "message": "July",
+    "message": "июля",
     "description": "The month"
   },
   "august": {
-    "message": "August",
+    "message": "августа",
     "description": "The month"
   },
   "september": {
-    "message": "September",
+    "message": "сентября",
     "description": "The month"
   },
   "october": {
-    "message": "October",
+    "message": "октября",
     "description": "The month"
   },
   "november": {
-    "message": "November",
+    "message": "ноября",
     "description": "The month"
   },
   "december": {
-    "message": "December",
+    "message": "декабря",
     "description": "The month"
   },
   "confirm_delete_all_visits": {
-    "message": "Delete all visits from",
+    "message": "Удалить все посещения с",
     "description": "Confirmation text to delete all visits from a specific date"
   },
 
   // Time visits
   "visits_label": {
-    "message": "visits",
+    "message": "Посещения",
     "description": "Label to a number representing a number of visits"
   },
 
   // Prompt Modal
   "prompt_cancel_button": {
-    "message": "Cancel",
+    "message": "Отмена",
     "description": "Button to close modal"
   },
   "prompt_delete_button": {
-    "message": "Delete",
+    "message": "Удалить",
     "description": "Button to delete history"
   },
   "prompt_title": {
-    "message": "Confirm",
+    "message": "Подтвердить",
     "description": "Title of prompt"
   },
 
   // Credits
   "credits_title": {
-    "message": "Credits",
+    "message": "Благодарности",
     "description": "Title for credits modal"
   },
   "developed_by": {
@@ -449,11 +449,11 @@
 
   // Search
   "search_time_frame": {
-    "message": "Last few months",
+    "message": "Последние несколько месяцев",
     "description": "Time frame relating to Search"
   },
   "searching_title": {
-    "message": "Searching",
+    "message": "Поиск",
     "description": "Searching title"
   },
   "and": {

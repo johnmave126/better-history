@@ -79,12 +79,12 @@ Filter = Backbone.Model.extend({
 
   buildSearchTitle: function(query) {
     var terms = query.split(' '),
-        joined = 'Searching ';
+        joined = chrome.i18n.getMessage('searching_title') + ' ';
 
     $.each(terms, function(i) {
       joined += '"' + this + '"';
       if(i !== terms.length - 1) {
-        joined += ' and ';
+        joined += ' ' + chrome.i18n.getMessage('and') + ' ';
       }
     });
 

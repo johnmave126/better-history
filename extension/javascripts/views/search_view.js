@@ -7,7 +7,8 @@ SearchView = Backbone.View.extend({
   },
 
   render: function(type) {
-    ich.search(this.model.presenter()).appendTo(this.el);
+    var templateOptions = $.extend(this.model.presenter(), i18n.search());
+    ich.search(templateOptions).appendTo(this.el);
     $('.spinner', this.el).spin();
     return this;
   },

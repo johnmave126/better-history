@@ -103,6 +103,12 @@ i18n = {
     ]);
   },
 
+  search: function() {
+    return i18n.fetch([
+      'search_time_frame'
+    ]);
+  },
+
   fetch: function(keys) {
     var lookup = {};
     $.each(keys, function() {
