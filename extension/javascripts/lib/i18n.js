@@ -1,4 +1,12 @@
 i18n = {
+  fetch: function(keys) {
+    var lookup = {};
+    $.each(keys, function() {
+      lookup['i18n_' + this] = chrome.i18n.getMessage(this.toString());
+    });
+    return lookup;
+  },
+
   settings: function() {
     return i18n.fetch([
       'settings_title',
@@ -107,13 +115,5 @@ i18n = {
     return i18n.fetch([
       'search_time_frame'
     ]);
-  },
-
-  fetch: function(keys) {
-    var lookup = {};
-    $.each(keys, function() {
-      lookup['i18n_' + this] = chrome.i18n.getMessage(this.toString());
-    });
-    return lookup;
   }
 };
