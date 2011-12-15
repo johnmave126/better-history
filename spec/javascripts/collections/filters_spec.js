@@ -2,6 +2,7 @@ describe('Filters', function() {
   var filters, todayFilter, yesterdayFilter;
 
   beforeEach(function() {
+    loadChromeAPI();
     todayFilter = new Filter({
       daysSinceToday: 0,
       startTime: DateRanger.borders(0).start.getTime(),

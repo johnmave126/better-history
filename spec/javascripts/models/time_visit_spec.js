@@ -1,4 +1,4 @@
-delete(localStorage['timeVisits.December 05, 2010 22:15.collapsed']);
+delete(localStorage['timeVisits.11 5, 2010 22:15.collapsed']);
 
 describe('TimeVisit', function() {
   var timeVisit;
@@ -32,7 +32,7 @@ describe('TimeVisit', function() {
     });
 
     it('returns collapsed from local storage with reading', function() {
-      localStorage['timeVisits.December 05, 2010 22:15.collapsed'] = true;
+      localStorage['timeVisits.11 5, 2010 22:15.collapsed'] = true;
       timeVisit.sync('read', timeVisit, {success: callback});
       expect(callback).toHaveBeenCalledWith({
         collapsed: true
@@ -52,7 +52,7 @@ describe('TimeVisit', function() {
 
   describe('#collapsedKey', function() {
     it('returns the collapsed key', function() {
-      expect(timeVisit.collapsedKey()).toEqual('timeVisits.' + Helpers.formatDate(timeVisit.get('datetime')) + ' ' + timeVisit.get('id') + '.collapsed');
+      expect(timeVisit.collapsedKey()).toEqual('timeVisits.' + timeVisit.getDateId() + '.collapsed');
     });
   });
 
@@ -66,6 +66,12 @@ describe('TimeVisit', function() {
       spyOn(timeVisit, 'save');
       timeVisit.setCollapsed(true);
       expect(timeVisit.save).toHaveBeenCalled();
+    });
+  });
+
+  describe('#getDateId', function() {
+    it('returns the date with id', function() {
+      expect(timeVisit.getDateId()).toEqual('11 5, 2010 22:15');
     });
   });
 });

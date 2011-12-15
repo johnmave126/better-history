@@ -59,6 +59,10 @@ helpers:
 #   - **/*[sS]pec.js
 #
 spec_files:
+    - helpers/helper.js
+    - collections/*.js
+    - lib/*.js
+    - models/*.js
 
 # src_dir
 #
@@ -80,4 +84,4 @@ src_dir:
 #
 # spec_dir: spec/javascripts
 #
-spec_dir:
+spec_dir: spec/javascripts

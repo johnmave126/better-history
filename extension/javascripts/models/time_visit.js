@@ -37,7 +37,15 @@ TimeVisit = Backbone.Model.extend({
   },
 
   collapsedKey: function() {
-    var fullId = Helpers.formatDate(this.get('datetime')) + ' ' + this.get('id');
-    return 'timeVisits.' + fullId + '.collapsed';
+    return 'timeVisits.' + this.getDateId() + '.collapsed';
+  },
+
+  getDateId: function() {
+    var date = this.get('datetime');
+    var month = date.getMonth(),
+        dateNumber = date.getDate(),
+        year = date.getFullYear();
+
+    return $.trim(month + ' ' + dateNumber + ', ' + year + ' ' + this.get('id'));
   }
 });

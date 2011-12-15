@@ -1,14 +1,11 @@
 describe('i18n', function() {
-  var translatedValue = 'result';
-
   beforeEach(function() {
     spyOn(i18n, 'fetch').andCallThrough();
-    chrome = {i18n: {getMessage: jasmine.createSpy('getMessage').andReturn(translatedValue)}};
   });
 
   describe('.fetch', function() {
-    var key1 = 'test',
-        key2 = 'another';
+    var key1 = 'yesterday_link',
+        key2 = 'today_link';
 
     it('calls to i18n Chrome API with each passed key', function() {
       i18n.fetch([key1, key2]);
@@ -19,8 +16,8 @@ describe('i18n', function() {
     it('returns the key with "i18n_" appended with the value', function() {
       var result = i18n.fetch([key1, key2]);
       expect(result).toEqual({
-        i18n_test: translatedValue,
-        i18n_another: translatedValue
+        i18n_yesterday_link: 'Yesterday',
+        i18n_today_link: 'Today'
       });
     });
   });

@@ -1,29 +1,29 @@
 describe('DateRanger', function() {
   describe('.numberToDay', function() {
     it('returns Sunday when passed 0', function() {
-      expect(DateRanger.numberToDay(0)).toEqual('Sunday');
+      expect(DateRanger.numberToDay(0)).toEqual('sunday');
     });
 
     it('returns Wednesday when passed 3', function() {
-      expect(DateRanger.numberToDay(3)).toEqual('Wednesday');
+      expect(DateRanger.numberToDay(3)).toEqual('wednesday');
     });
 
     it('returns Saturday when passed 6', function() {
-      expect(DateRanger.numberToDay(6)).toEqual('Saturday');
+      expect(DateRanger.numberToDay(6)).toEqual('saturday');
     });
   });
 
   describe('.numberToMonth', function() {
     it('returns January when passed 0', function() {
-      expect(DateRanger.numberToMonth(0)).toEqual('January');
+      expect(DateRanger.numberToMonth(0)).toEqual('january');
     });
 
     it('returns June when passed 5', function() {
-      expect(DateRanger.numberToMonth(5)).toEqual('June');
+      expect(DateRanger.numberToMonth(5)).toEqual('june');
     });
 
     it('returns December when passed 11', function() {
-      expect(DateRanger.numberToMonth(11)).toEqual('December');
+      expect(DateRanger.numberToMonth(11)).toEqual('december');
     });
   });
 

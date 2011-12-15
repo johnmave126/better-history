@@ -2,21 +2,7 @@ describe('Context Menus', function() {
   var domain = 'code.google.com';
 
   beforeEach(function() {
-    chrome = {
-      contextMenus: {
-        create: jasmine.createSpy('create').andReturn(true),
-        remove: jasmine.createSpy('remove'),
-        update: jasmine.createSpy('update')
-      },
-      tabs: {
-        create: jasmine.createSpy('create'),
-        get: jasmine.createSpy('get').andCallFake(function(id, callback) {
-          callback({url: 'http://' + domain + '/projects'});
-        }),
-        onSelectionChanged: {addListener: jasmine.createSpy('addListener')},
-        onUpdated: {addListener: jasmine.createSpy('addListener')}
-      }
-    };
+    loadChromeAPI({domain: domain});
   });
 
   describe('SelectionContextMenu', function() {

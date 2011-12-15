@@ -2,16 +2,11 @@ describe('BrowserActions', function() {
   var browserActions;
 
   beforeEach(function() {
+    loadChromeAPI();
     browserActions = new BrowserActions();
   });
 
   describe('#listen', function() {
-    beforeEach(function() {
-      chrome = {browserAction: {onClicked: {
-        addListener: jasmine.createSpy('addListener')
-      }}};
-    });
-
     it('listens for onClick on the browser action', function() {
       browserActions.listen();
       expect(chrome.browserAction.onClicked.addListener).toHaveBeenCalledWith(browserActions.openHistory);

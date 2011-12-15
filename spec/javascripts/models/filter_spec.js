@@ -2,6 +2,7 @@ describe('Filter', function() {
   var filter, options;
 
   beforeEach(function() {
+    loadChromeAPI();
     options = {
       daysSinceToday: 0,
       startTime: new Date().getTime(),
