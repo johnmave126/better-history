@@ -1,13 +1,13 @@
 {
   // App
   "history_title": {
-    "message": "History",
+    "message": "Verlauf",
     "description": "Extension title"
   },
 
   // Dates
   "formal_date": {
-    "message": "$month$ $day$, $year$",
+    "message": "$day$. $month$ $year$",
     "description": "The order of a full date",
     "placeholders": {
       "month": {
@@ -25,7 +25,7 @@
     }
   },
   "informal_date": {
-    "message": "$week_day$, $day$",
+    "message": "$week_day$ $day$.",
     "description": "Date labels in sidebar",
     "placeholders": {
       "week_day": {
@@ -41,79 +41,79 @@
 
   // Settings
   "settings_title": {
-    "message": "Settings",
+    "message": "Optionen",
     "description": "Settings title for Settings page"
   },
   "clearing_history_section_title": {
-    "message": "Clearing History",
+    "message": "Lösche Verlauf",
     "description": "Section heading in Settings"
   },
   "clear_history_button": {
-    "message": "Clear history...",
+    "message": "Verlauf löschen...",
     "description": "Button text for clear history button in Settings"
   },
   "visit_grouping_section_title": {
-    "message": "Visit grouping",
+    "message": "Besuche gruppieren",
     "description": "Section heading in Settings"
   },
   "group_visits_by_label": {
-    "message": "Group visits by",
+    "message": "Besuche gruppieren nach",
     "description": "Label for select box to set the time grouping interval for visits"
   },
   "60_minutes_option": {
-    "message": "60 minutes",
+    "message": "60 Minuten",
     "description": "Time amount"
   },
   "30_minutes_option": {
-    "message": "30 minutes",
+    "message": "30 Minuten",
     "description": "Time amount"
   },
   "15_minutes_option": {
-    "message": "15 minutes",
+    "message": "15 Minuten",
     "description": "Time amount"
   },
   "time_format_label": {
-    "message": "Time format",
+    "message": "Zeit Format",
     "description": "Label for select box to set the time format (12 or 24 hours)"
   },
   "12_hours_option": {
-    "message": "12 hours",
+    "message": "12 Stunden",
     "description": "12 hour time format, example: 3:00 PM"
   },
   "24_hours_option": {
-    "message": "24 hours",
+    "message": "24 Stunden",
     "description": "24 hour time format, example: 14:00"
   },
   "group_visits_by_domain_label": {
-    "message": "Group visits by domain",
+    "message": "Besuche gruppieren nach Domain",
     "description": "Label for check box to group visits by domain"
   },
   "right_click_options_section_title": {
-    "message": "Right click options",
+    "message": "Rechtsklick Optionen",
     "description": "Section heading in Settings"
   },
   "search_by_text_selection_label": {
-    "message": "Search by text selection",
+    "message": "Aktiviere Suchen bei Text Markierung",
     "description": "Label for check box to enable right click option"
   },
   "search_by_domain_label": {
-    "message": "Search by domain",
+    "message": "Aktiviere Suchen nach Domain",
     "description": "Label for check box to enable right click option"
   },
   "Whats_new_section_title": {
-    "message": "What's new",
+    "message": "Was ist neu",
     "description": "Section heading in Settings"
   },
   "view_release_announcement_link": {
-    "message": "View release announcement",
+    "message": "Veröffentlichungs Ankündigung anschauen",
     "description": "Link text to view the release announcement"
   },
   "current_version_label": {
-    "message": "Current version",
+    "message": "aktuelle Version",
     "description": "label for the current version"
   },
   "credits": {
-    "message": "credits",
+    "message": "Credits",
     "description": "The word credits"
   },
   "feedback_section_title": {
@@ -121,65 +121,65 @@
     "description": "Section heading in Settings"
   },
   "voice_your_thoughts_on_link": {
-    "message": "Voice your thoughts on",
+    "message": "veröffentliche deine Gedanken über Better History",
     "description": "Link text to give feedback"
   },
   "i_will_respond": {
-    "message": "I will respond to your message, promise",
+    "message": "Ich werde deinem Feedback antworten",
     "description": "Note text relating the voice your thoughts link"
   },
   "spread_the_word_section_title": {
-    "message": "Spread the word",
+    "message": "verbreite Better History",
     "description": "Section heading in Settings"
   },
   "leave_a_review": {
-    "message": "Leave a review",
+    "message": "hinterlasse ein Review",
     "description": "Link text to leave a review"
   },
 
   // Sidebar
   "search_input_placeholder_text": {
-    "message": "Search title, url, or date",
+    "message": "Suche nach Titel, URL oder Datum",
     "description": "Placeholder text in the search input box"
   },
   "settings_link": {
-    "message": "Settings",
+    "message": "Optionen",
     "description": "Text for the link to Settings"
   },
   "today_link": {
-    "message": "Today",
+    "message": "Heute",
     "description": "Link for today"
   },
   "yesterday_link": {
-    "message": "Yesterday",
+    "message": "Gestern",
     "description": "Link for yesterday"
   },
   "monday": {
-    "message": "Monday",
+    "message": "Montag",
     "description": "The day of the week"
   },
   "tuesday": {
-    "message": "Tuesday",
+    "message": "Dienstag",
     "description": "The day of the week"
   },
   "wednesday": {
-    "message": "Wednesday",
+    "message": "Mittwoch",
     "description": "The day of the week"
   },
   "thursday": {
-    "message": "Thursday",
+    "message": "Donnerstag",
     "description": "The day of the week"
   },
   "friday": {
-    "message": "Friday",
+    "message": "Freitag",
     "description": "The day of the week"
   },
   "saturday": {
-    "message": "Saturday",
+    "message": "Samstag",
     "description": "The day of the week"
   },
   "sunday": {
-    "message": "Sunday",
+    "message": "Sonntag",
     "description": "The day of the week"
   },
   "1": {
@@ -309,15 +309,15 @@
 
   // Filter
   "collapse_button": {
-    "message": "Collapse",
+    "message": "Einklappen",
     "description": "Text for collapse button"
   },
   "expand_button": {
-    "message": "Expand",
+    "message": "Ausklappen",
     "description": "Text for expand button"
   },
   "delete_all_visits_for_filter_button": {
-    "message": "Delete...",
+    "message": "Löschen...",
     "description": "Text for delete all visits for a day filter button"
   },
   "no_visits_found": {
@@ -325,15 +325,15 @@
     "description": "Text for no visits found message"
   },
   "january": {
-    "message": "January",
+    "message": "Januar",
     "description": "The month"
   },
   "february": {
-    "message": "February",
+    "message": "Februar",
     "description": "The month"
   },
   "march": {
-    "message": "March",
+    "message": "März",
     "description": "The month"
   },
   "april": {
@@ -341,15 +341,15 @@
     "description": "The month"
   },
   "may": {
-    "message": "May",
+    "message": "Mai",
     "description": "The month"
   },
   "june": {
-    "message": "June",
+    "message": "Juni",
     "description": "The month"
   },
   "july": {
-    "message": "July",
+    "message": "Juli",
     "description": "The month"
   },
   "august": {
@@ -361,7 +361,7 @@
     "description": "The month"
   },
   "october": {
-    "message": "October",
+    "message": "Oktober",
     "description": "The month"
   },
   "november": {
@@ -369,11 +369,11 @@
     "description": "The month"
   },
   "december": {
-    "message": "December",
+    "message": "Dezember",
     "description": "The month"
   },
   "confirm_delete_all_visits": {
-    "message": "Delete all visits from",
+    "message": "Lösche alle Besuche von",
     "description": "Confirmation text to delete all visits from a specific date"
   },
 
@@ -385,15 +385,15 @@
 
   // Prompt Modal
   "prompt_cancel_button": {
-    "message": "Cancel",
+    "message": "Abbrechen",
     "description": "Button to close modal"
   },
   "prompt_delete_button": {
-    "message": "Delete",
+    "message": "Löschen",
     "description": "Button to delete history"
   },
   "prompt_title": {
-    "message": "Confirm",
+    "message": "Bestätigen",
     "description": "Title of prompt"
   },
 
@@ -403,7 +403,7 @@
     "description": "Title for credits modal"
   },
   "developed_by": {
-    "message": "Created and developed by",
+    "message": "Erstellt und programmiert von",
     "description": "Developer label"
   },
   "translators_heading": {
@@ -411,69 +411,69 @@
     "description": "Heading for translators"
   },
   "spanish": {
-    "message": "Spanish",
+    "message": "Spanisch",
     "description": "The language"
   },
   "russian": {
-    "message": "Russian",
+    "message": "Russisch",
     "description": "The language"
   },
   "portuguese": {
-    "message": "Portuguese",
+    "message": "Portugiesisch",
     "description": "The language"
   },
   "italian": {
-    "message": "Italian",
+    "message": "Italienisch",
     "description": "The language"
   },
   "french": {
-    "message": "French",
+    "message": "Französisch",
     "description": "The language"
   },
   "swedish": {
-    "message": "Swedish",
+    "message": "Schwedisch",
     "description": "The language"
   },
   "chinese_simplified": {
-    "message": "Chinese (Simplified)",
+    "message": "Chinesisch (vereinfacht)",
     "description": "The language"
   },
   "german": {
-    "message": "German",
+    "message": "Deutsch",
     "description": "The language"
   },
   "polish": {
-    "message": "Polish",
+    "message": "Polnisch",
     "description": "The language"
   },
   "hungarian": {
-    "message": "Hungarian",
+    "message": "Ungarisch",
     "description": "The language"
   },
   "arabic": {
-    "message": "Arabic",
+    "message": "Arabisch",
     "description": "The language"
   },
   "translation_help_heading": {
-    "message": "Don't see your language?",
+    "message": "Dir fehlt eine Sprache?",
     "description": "Heading to recruit translators"
   },
   "translation_instructions": {
-    "message": "Do you speak english and want to translate Better History into a new lanuage? Great! Just send an email to",
+    "message": "Du sprichst Englisch und willst Better History in eine neue Sprache übersetzen? Super! Send nur eine E-Mail zu",
     "description": "Instructions on how to help translate"
   },
   "close_button": {
-    "message": "Ok!",
+    "message": "OK!",
     "description": "Button to close modal"
   },
 
   // Version
   "version_title": {
-    "message": "Hola, 您好, Olá, bonjour, hello!",
+    "message": "Hola, 您好, Olá, bonjour, hallo!",
     "description": "Title of the version modal"
   },
   "version_description": {
-    "message": "This is a big, big release. With help from a bunch of awesome users, Better History is now available in 14 languages! Checkout the new $link_open$Credits section$link_close$ to say thanks to these fine translators!",
+    "message": "Dies ist eine große, sehr große Veröffentlichung. Mit Hilfe von einer Menge von super tollen Usern, ist Better History jetzt in 14 Sprachen erhältlich! Schau mal in die $link_open$Kredits Sektion$link_close$ um den coolen Übersetzern danke zu sagen!",
     "description": "Version description",
     "placeholders": {
       "link_open": {
@@ -485,7 +485,7 @@
     }
   },
   "version_items": {
-    "message": "$open$Translated to 15 languages$close$ $open$Added options in Settings to disable right click options$close$ $open$Added icon to display Better History in toolbar$close$ $open$Added Credits section in Settings$close$ $open$Fixed XSS vulnerability$close$",
+    "message": "$open$Übersetzt in 15 Sprachen$close$ $open$Option für das deaktivieren von Rechts-Klick Optionen hinzugefügt$close$ $open$Better History Icon für die Toolbar hinzugefügt$close$ $open$Kredits Sektion in den Optionen hinzugefügt$close$ $open$XSS Sicherheitslücke gefixt$close$",
     "description": "Release bulletpoints",
     "placeholders": {
       "open": {
@@ -499,15 +499,15 @@
 
   // Search
   "search_time_frame": {
-    "message": "Last few months",
+    "message": "Die letzten paar Monate",
     "description": "Time frame relating to Search"
   },
   "searching_title": {
-    "message": "Searching",
+    "message": "Suche",
     "description": "Searching title"
   },
   "and": {
-    "message": "and",
+    "message": "und",
     "description": "The word and"
   }
 }
