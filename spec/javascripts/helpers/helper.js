@@ -12,7 +12,8 @@ function loadChromeAPI(config) {
           yesterday_link: 'Yesterday',
           today_link: 'Today',
           searching_title: 'Searching',
-          and: 'and'
+          and: 'and',
+          formal_date: 'formal date'
         };
 
         return lookup[key];

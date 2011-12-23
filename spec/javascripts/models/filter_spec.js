@@ -47,6 +47,10 @@ describe('Filter', function() {
 
       expect(filter.get('title')).toContain('<span class="ordinal" >');
     });
+
+    it('sets the assembled formal date', function() {
+      expect(filter.get('formal_date')).toBeDefined();
+    });
   });
 
   describe('#sync', function() {

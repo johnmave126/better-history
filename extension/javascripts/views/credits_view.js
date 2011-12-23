@@ -13,6 +13,7 @@ CreditsView = Backbone.View.extend({
   closeClicked: function(ev) {
     ev.preventDefault();
     this.close();
+    router.navigate('#settings');
   },
 
   openClicked: function(ev) {
@@ -21,6 +22,7 @@ CreditsView = Backbone.View.extend({
   },
 
   open: function() {
+    $('.modal').hide();
     var self = this;
     $('.overlay', this.el).fadeIn('fast', function() {
       $('.overlay .modal', self.el).fadeIn('fast');
@@ -29,8 +31,8 @@ CreditsView = Backbone.View.extend({
 
   close: function() {
     var self = this;
-    $('.overlay .modal', this.el).fadeOut('fast', function() {
-      $('.overlay', self.el).fadeOut('fast');
+    $('.overlay .modal').fadeOut('fast', function() {
+      $('.overlay').fadeOut('fast');
     });
   }
 });

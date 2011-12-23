@@ -19,6 +19,7 @@
   </head>
   <body>
     <div class="app"> </div>
+    <div class="overlay"></div>
     <!-- Templates Start -->
 
 
@@ -95,7 +96,7 @@
     <script id="filter" type="text/html">
       <div class="heading">
         <h2>{{{title}}}</h2>
-        <span class="date">{{date}}</span>
+        <span class="date">{{formal_date}}</span>
         <ul class="controls">
           <li class="control">
             <a href="#" class="button collapse_groupings">{{i18n_collapse_button}}</a>
@@ -287,7 +288,7 @@
         <div class="modal">
           <h1 class="title">{{i18n_version_title}}</h1>
           <div class="content">
-            <p>{{i18n_version_description}}</p>
+            <p>{{{i18n_version_description}}}</p>
             <h4>{{i18n_whats_new}}</h4>
             <ul>{{{i18n_version_items}}}</ul>
           </div>

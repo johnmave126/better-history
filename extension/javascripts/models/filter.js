@@ -19,9 +19,18 @@ Filter = Backbone.Model.extend({
     } else {
       var weekName = chrome.i18n.getMessage(DateRanger.numberToDay(this.date().getDay())),
           date = chrome.i18n.getMessage(this.date().getDate().toString());
-      title = weekName + ', ' + date + '<span class="ordinal" >' + this.ordinal() + '</span>';
+      title = chrome.i18n.getMessage('informal_date', [weekName, date]);
+      title += '<span class="ordinal" >' + this.ordinal() + '</span>';
     }
     this.set({title: title});
+
+    var formal_date;
+    var month = chrome.i18n.getMessage(DateRanger.numberToMonth(this.date().getMonth())),
+        day = chrome.i18n.getMessage(this.date().getDate().toString()),
+        year = this.date().getFullYear();
+
+    formal_date = chrome.i18n.getMessage("formal_date", [month, day, year]);
+    this.set({formal_date: formal_date});
   },
 
   fetchCount: function() {
@@ -73,7 +82,6 @@ Filter = Backbone.Model.extend({
   presenter: function() {
     var properties = this.toJSON();
     properties.cid = this.cid;
-    properties.date = Helpers.formatDate(this.date());
     return properties;
   },
 

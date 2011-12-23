@@ -15,6 +15,7 @@ VersionView = Backbone.View.extend({
     ev.preventDefault();
     this.model.setSuppress(true);
     this.close();
+    router.navigate('#settings');
   },
 
   openClicked: function(ev) {
@@ -23,6 +24,7 @@ VersionView = Backbone.View.extend({
   },
 
   open: function() {
+    $('.modal').hide();
     var self = this;
     $('.overlay', this.el).fadeIn('fast', function() {
       $('.overlay .modal', self.el).fadeIn('fast');
@@ -31,8 +33,8 @@ VersionView = Backbone.View.extend({
 
   close: function() {
     var self = this;
-    $('.overlay .modal', this.el).fadeOut('fast', function() {
-      $('.overlay', self.el).fadeOut('fast');
+    $('.overlay .modal').fadeOut('fast', function() {
+      $('.overlay').fadeOut('fast');
     });
   }
 });

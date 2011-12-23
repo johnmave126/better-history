@@ -1,6 +1,7 @@
 Router = Backbone.Router.extend({
   routes: {
     'settings': 'settings',
+    'settings/:page': 'settings',
     'filter/:type': 'filter',
     'filter/:type/:time': 'filter',
     'search/*query': 'search'
@@ -17,9 +18,14 @@ Router = Backbone.Router.extend({
     this.bind('route:search', function(page) { self.setLastRoute('search/' + page); });
   },
 
-  settings: function() {
+  settings: function(page) {
     var settingsView = new SettingsView({model: settings});
     $('.mainview', appView.el).html(settingsView.render().el);
+    if(page === 'credits') {
+      creditsView.open();
+    } else if(page === 'announcement') {
+      versionView.open();
+    }
   },
 
   filter: function(type, time) {

@@ -102,13 +102,20 @@ i18n = {
   },
 
   version: function() {
-    return i18n.fetch([
+    var properties = i18n.fetch([
       'version_title',
-      'version_description',
-      'version_items',
       'close_button',
       'whats_new'
     ]);
+    properties.i18n_version_description = chrome.i18n.getMessage('version_description', [
+      '<a href="#settings/credits">',
+      '</a>'
+    ]);
+    properties.i18n_version_items = chrome.i18n.getMessage('version_items', [
+      '<li>',
+      '</li>'
+    ]);
+    return properties;
   },
 
   search: function() {

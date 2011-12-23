@@ -5,6 +5,40 @@
     "description": "Extension title"
   },
 
+  // Dates
+  "formal_date": {
+    "message": "$month$ $day$, $year$",
+    "description": "The order of a full date",
+    "placeholders": {
+      "month": {
+        "content": "$1",
+        "example": "March"
+      },
+      "day": {
+        "content": "$2",
+        "example": "25"
+      },
+      "year": {
+        "content": "$3",
+        "example": "2011"
+      }
+    }
+  },
+  "informal_date": {
+    "message": "$week_day$, $day$",
+    "description": "Date labels in sidebar",
+    "placeholders": {
+      "week_day": {
+        "content": "$1",
+        "example": "Monday"
+      },
+      "day": {
+        "content": "$2",
+        "example": "4"
+      }
+    }
+  },
+
   // Settings
   "settings_title": {
     "message": "Settings",
@@ -421,30 +455,46 @@
     "description": "The language"
   },
   "translation_help_heading": {
-    "message": "Dont't see your language?",
+    "message": "Don't see your language?",
     "description": "Heading to recruit translators"
   },
   "translation_instructions": {
-    "message": "Do you want to translate Better History into a new lanuage? Great! Just send an email to",
+    "message": "Do you speak english and want to translate Better History into a new lanuage? Great! Just send an email to",
     "description": "Instructions on how to help translate"
   },
   "close_button": {
-    "message": "Ok!",
+    "message": "k!",
     "description": "Button to close modal"
   },
 
   // Version
   "version_title": {
-    "message": "Hola, 您好, szia, Olá, bonjour, hello!",
+    "message": "Hola, 您好, Olá, bonjour, hello!",
     "description": "Title of the version modal"
   },
   "version_description": {
-    "message": "This is a big, big release. With the help of 12 awesome users, Better History is now available in 12 languages! I can't thank these great users enough.",
-    "description": "Version description"
+    "message": "This is a big, big release. With help from a bunch of awesome users, Better History is now available in 14 languages! Checkout the new $link_open$Credits section$link_close$ to say thanks to these fine translators!",
+    "description": "Version description",
+    "placeholders": {
+      "link_open": {
+        "content": "$1"
+      },
+      "link_close": {
+        "content": "$2"
+      }
+    }
   },
   "version_items": {
-    "message": "<li>Translated to Spanish, German, Swedish, French, Hungarian, Chinese (Simplified), Polish, Portuguese, Russian, Italian, Finnish, Arabic</li><li>Added options in Settings to disable right click options</li><li>Added icon to display Better History in toolbar</li><li>Fixed XSS vulnerability</li><li>Added Credits section in Settings</li>",
-    "description": "Release bulletpoints"
+    "message": "$open$Translated to 15 languages$close$ $open$Added options in Settings to disable right click options$close$ $open$Added icon to display Better History in toolbar$close$ $open$Added Credits section in Settings$close$ $open$Fixed XSS vulnerability$close$",
+    "description": "Release bulletpoints",
+    "placeholders": {
+      "open": {
+        "content": "$1"
+      },
+      "close": {
+        "content": "$2"
+      }
+    }
   },
 
   // Search
