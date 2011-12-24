@@ -68,7 +68,7 @@ FilterView = Backbone.View.extend({
     ev.preventDefault();
     this.promptView = new PromptView({
       model: new Prompt({
-        content: chrome.i18n.getMessage('confirm_delete_all_visits') + ' ' + this.model.presenter().date + '?'
+        content: chrome.i18n.getMessage('confirm_delete_all_visits', [this.model.get('formal_date')])
       })
     });
     $('body').append(this.promptView.render().el);

@@ -1,7 +1,7 @@
 {
-  "name": "Better History",
+  "name": "__MSG_manifest_name__",
   "version": "1.2.0",
-  "description": "A better look at your browsing history. The best searching, the sharpest interface, and the most useful filters - for your history.",
+  "description": "__MSG_manifest_description__",
   "default_locale":"en",
   "icons": {
     "16": "images/icons/icon16.png",
@@ -13,7 +13,7 @@
   },
   "browser_action": {
     "default_icon": "images/icons/icon19.png",
-    "default_title": "Browse history"
+    "default_title": "__MSG_manifest_browser_action_title__"
   },
   "background_page": "background.html",
   "permissions": ["chrome://favicon/", "history", "tabs", "contextMenus"]

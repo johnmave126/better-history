@@ -18,9 +18,10 @@ Filter = Backbone.Model.extend({
       title = chrome.i18n.getMessage('yesterday_link');
     } else {
       var weekName = chrome.i18n.getMessage(DateRanger.numberToDay(this.date().getDay())),
-          date = chrome.i18n.getMessage(this.date().getDate().toString());
-      title = chrome.i18n.getMessage('informal_date', [weekName, date]);
-      title += '<span class="ordinal" >' + this.ordinal() + '</span>';
+          date = chrome.i18n.getMessage(this.date().getDate().toString()),
+          ordinal = chrome.i18n.getMessage('ordinal_' + this.date().getDate());
+
+      title = chrome.i18n.getMessage('informal_date', [weekName, date, ordinal, '<span class="ordinal">', '</span>']);
     }
     this.set({title: title});
 
@@ -60,14 +61,6 @@ Filter = Backbone.Model.extend({
 
   date: function() {
     return new Date(this.get('startTime'));
-  },
-
-  ordinal: function() {
-    var date = this.date().getDate();
-    if(date === 1 || date === 21 || date === 31) return 'st';
-    else if(date === 2 || date === 22) return 'nd';
-    else if(date === 3 || date === 23) return 'rd';
-    else return 'th';
   },
 
   options: function() {
