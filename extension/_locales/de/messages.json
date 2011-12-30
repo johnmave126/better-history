@@ -535,7 +535,7 @@
 
   // Time visits
   "visits_label": {
-    "message": obesuche",
+    "message": "besuche",
     "description": "Label to a number representing a number of visits"
   },
 
