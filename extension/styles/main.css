@@ -93,6 +93,12 @@ h2 {
 .heading .controls .control {
   display:inline;
 }
+.heading .controls .control a:focus {
+  outline:none;
+}
+.heading .controls .control a:focus {
+  background:#DDD;
+}
 .heading .controls .control:last-child {
   margin-left:20px;
 }

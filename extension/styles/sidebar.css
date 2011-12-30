@@ -29,7 +29,8 @@
   border-bottom: 1px solid #8faad9;
   border-top: 1px solid #8faad9;
 }
-.sidebar_view .selectable:hover a {
+.sidebar_view .selectable:hover a,
+.sidebar_view .selectable a:focus {
   background:rgba(216, 225, 238, 1);
   opacity:1;
 }
@@ -50,6 +51,9 @@
 }
 .sidebar_view .selectable:hover .settings_icon:after {
   background:rgba(216, 225, 238, 1);
+}
+.sidebar_view .selectable a:focus {
+  outline:none;
 }
 .sidebar_view .selectable:hover .settings:before,
 .sidebar_view .selectable:hover .settings:after,

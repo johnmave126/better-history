@@ -39,16 +39,24 @@
   margin:0 1px;
 }
 
-.page_visit_view:hover > a > .link {
+.page_visit_view:hover > a > .link,
+.page_visit_view a:focus > .link {
   background: #eaeef3;
   border-radius: 3px;
 }
+.page_visit_view > a:focus {
+  outline:none;
+}
 .page_visit_view:hover > a > .link > .description > .title,
-.page_visit_view:hover > a > .link > .description > .location {
+.page_visit_view > a:focus > .link > .description > .title,
+.page_visit_view:hover > a > .link > .description > .location,
+.page_visit_view > a:focus > .link > .description > .location {
   text-shadow:1px 1px #FFF;
 }
 .page_visit_view:hover > a > .link > .description > .location,
-.page_visit_view:hover > a > .link > .description > .time {
+.page_visit_view > a:focus > .link > .description > .location,
+.page_visit_view:hover > a > .link > .description > .time,
+.page_visit_view > a:focus > .link > .description > .time {
   color:#555;
 }
 .page_visit_view:hover > a > .link > .delete_icon { display:inline; }
