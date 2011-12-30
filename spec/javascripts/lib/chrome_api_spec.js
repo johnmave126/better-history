@@ -97,6 +97,22 @@ describe('chromeAPI', function() {
       });
     });
 
+    describe('Removing script tags', function() {
+      it('removes any script tags in the title', function() {
+        results = [{title: 'test<script>alert("yo")</script>', url: 'yahoo.com', lastVisitTime: new Date('September 12, 2010')}];
+        chromeAPI.history.search({text:'test'}, function(results) {
+          expect(results[0].title).toEqual('<span class="match">test</span>');
+        });
+      });
+
+      it('removes any script tags in the url', function() {
+        results = [{title: 'test', url: 'yahoo.com<script>alert("yo")</script>', lastVisitTime: new Date('September 12, 2010')}];
+        chromeAPI.history.search({text:'yahoo'}, function(results) {
+          expect(results[0].location).toEqual('<span class="match">yahoo</span>.com');
+        });
+      });
+    });
+
     it('matches results by checking if the search term exists in the title, url, or last visit time', function() {
       var visit1 = {title: 'September something', url: 'google.com', lastVisitTime: new Date('December 2, 2010')},
           visit2 = {title: 'Normal something', url: 'google.com/september', lastVisitTime: new Date('July 2, 2010')},

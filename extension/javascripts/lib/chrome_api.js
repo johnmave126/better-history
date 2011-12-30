@@ -45,6 +45,15 @@ var chromeAPI = {
         });
       }
 
+      function removeScriptTags(result) {
+        var el = document.createElement('div');
+        $.each(['title', 'location'], function(i, property) {
+          el.innerHTML = result[property];
+          $('script', el).remove();
+          result[property] = $(el).text();
+        });
+      }
+
       function setAdditionalProperties(result) {
         result.location = result.url;
         result.time = new Date(result.lastVisitTime).toLocaleDateString();
@@ -66,12 +75,14 @@ var chromeAPI = {
             } else {
               setAdditionalProperties(result);
               if(verifyTextMatch(result)) {
+                removeScriptTags(result);
                 wrapTextMatch(result);
                 prunedResults.push(result);
               }
             }
           } else {
             if(verifyDateRange(result)) {
+              removeScriptTags(result);
               setAdditionalProperties(result);
               prunedResults.push(result);
             }
