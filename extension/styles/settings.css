@@ -41,7 +41,7 @@
 
 .settings .setting > .title {
   margin: 0;
-  width: 130px;
+  width: 190px;
   -webkit-padding-end: 10px;
 }
 .settings .note {
@@ -56,5 +56,5 @@
 }
 .settings span.select {
   display:inline-block;
-  width:100px;
+  width:150px;
 }

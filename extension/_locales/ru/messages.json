@@ -1,8 +1,68 @@
 {
+  // Manifest
+  "manifest_name": {
+    "message": "Better History",
+    "description": "Manifest name"
+  },
+  "manifest_browser_action_title": {
+    "message": "",
+    "description": "Manifest browser action title"
+  },
+  "manifest_description": {
+    "message": "",
+    "description": "Manifest description"
+  },
+
   // App
   "history_title": {
     "message": "История",
     "description": "Extension title"
+  },
+
+  // Dates
+  "formal_date": {
+    "message": "$day$ $month$ $year$ r.",
+    "description": "The order of a full date",
+    "placeholders": {
+      "month": {
+        "content": "$1",
+        "example": "March"
+      },
+      "day": {
+        "content": "$2",
+        "example": "25"
+      },
+      "year": {
+        "content": "$3",
+        "example": "2011"
+      }
+    }
+  },
+  "informal_date": {
+    "message": "$week_day$, $day$$ordinal_open$$ordinal$$ordinal_close$",
+    "description": "Date labels in sidebar",
+    "placeholders": {
+      "week_day": {
+        "content": "$1",
+        "example": "Monday"
+      },
+      "day": {
+        "content": "$2",
+        "example": "4"
+      },
+      "ordinal": {
+        "content": "$3",
+        "example": "st"
+      },
+      "ordinal_open": {
+        "content": "$4",
+        "example": "open tag for ordinal"
+      },
+      "ordinal_close": {
+        "content": "$5",
+        "example": "close tag for ordinal"
+      }
+    }
   },
 
   // Settings
@@ -39,7 +99,7 @@
     "description": "Time amount"
   },
   "time_format_label": {
-    "message": "формат времени",
+    "message": "Формат времени",
     "description": "Label for select box to set the time format (12 or 24 hours)"
   },
   "12_hours_option": {
@@ -59,11 +119,11 @@
     "description": "Section heading in Settings"
   },
   "search_by_text_selection_label": {
-    "message": "",
+    "message": "Включить поиск по выделенному тексту",
     "description": "Label for check box to enable right click option"
   },
   "search_by_domain_label": {
-    "message": "",
+    "message": "Включить поиск по домену",
     "description": "Label for check box to enable right click option"
   },
   "Whats_new_section_title": {
@@ -71,7 +131,7 @@
     "description": "Section heading in Settings"
   },
   "view_release_announcement_link": {
-    "message": "Показать историю версий",
+    "message": "Посмотреть историю версий",
     "description": "Link text to view the release announcement"
   },
   "current_version_label": {
@@ -87,7 +147,7 @@
     "description": "Section heading in Settings"
   },
   "voice_your_thoughts_on_link": {
-    "message": "Выскажите свое мнение о",
+    "message": "Выскажите свое мнение о Better History",
     "description": "Link text to give feedback"
   },
   "i_will_respond": {
@@ -101,6 +161,10 @@
   "leave_a_review": {
     "message": "Оставить отзыв",
     "description": "Link text to leave a review"
+  },
+  "default_time_format": {
+    "message": "24",
+    "description": "12 or 24 hour based"
   },
 
   // Sidebar
@@ -150,127 +214,251 @@
   },
   "1": {
     "message": "1",
-    "description": "The number"
+    "description": "the number"
+  },
+  "ordinal_1": {
+    "message": "й",
+    "description": "the ordinal for 1"
   },
   "2": {
     "message": "2",
-    "description": "The number"
+    "description": "the number"
+  },
+  "ordinal_2": {
+    "message": "й",
+    "description": "the ordinal for 2"
   },
   "3": {
     "message": "3",
-    "description": "The number"
+    "description": "the number"
+  },
+  "ordinal_3": {
+    "message": "й",
+    "description": "the ordinal for 3"
   },
   "4": {
     "message": "4",
-    "description": "The number"
+    "description": "the number"
+  },
+  "ordinal_4": {
+    "message": "й",
+    "description": "the ordinal for 4"
   },
   "5": {
     "message": "5",
-    "description": "The number"
+    "description": "the number"
+  },
+  "ordinal_5": {
+    "message": "й",
+    "description": "the ordinal for 5"
   },
   "6": {
     "message": "6",
-    "description": "The number"
+    "description": "the number"
+  },
+  "ordinal_6": {
+    "message": "й",
+    "description": "the ordinal for 6"
   },
   "7": {
     "message": "7",
-    "description": "The number"
+    "description": "the number"
+  },
+  "ordinal_7": {
+    "message": "й",
+    "description": "the ordinal for 7"
   },
   "8": {
     "message": "8",
-    "description": "The number"
+    "description": "the number"
+  },
+  "ordinal_8": {
+    "message": "й",
+    "description": "the ordinal for 8"
   },
   "9": {
     "message": "9",
-    "description": "The number"
+    "description": "the number"
+  },
+  "ordinal_9": {
+    "message": "й",
+    "description": "the ordinal for 9"
   },
   "10": {
     "message": "10",
-    "description": "The number"
+    "description": "the number"
+  },
+  "ordinal_10": {
+    "message": "й",
+    "description": "the ordinal for 10"
   },
   "11": {
     "message": "11",
-    "description": "The number"
+    "description": "the number"
+  },
+  "ordinal_11": {
+    "message": "й",
+    "description": "the ordinal for 11"
   },
   "12": {
     "message": "12",
-    "description": "The number"
+    "description": "the number"
+  },
+  "ordinal_12": {
+    "message": "й",
+    "description": "the ordinal for 12"
   },
   "13": {
     "message": "13",
-    "description": "The number"
+    "description": "the number"
+  },
+  "ordinal_13": {
+    "message": "й",
+    "description": "the ordinal for 13"
   },
   "14": {
     "message": "14",
-    "description": "The number"
+    "description": "the number"
+  },
+  "ordinal_14": {
+    "message": "й",
+    "description": "the ordinal for 14"
   },
   "15": {
     "message": "15",
-    "description": "The number"
+    "description": "the number"
+  },
+  "ordinal_15": {
+    "message": "й",
+    "description": "the ordinal for 15"
   },
   "16": {
     "message": "16",
-    "description": "The number"
+    "description": "the number"
+  },
+  "ordinal_16": {
+    "message": "й",
+    "description": "the ordinal for 16"
   },
   "17": {
     "message": "17",
-    "description": "The number"
+    "description": "the number"
+  },
+  "ordinal_17": {
+    "message": "й",
+    "description": "the ordinal for 17"
   },
   "18": {
     "message": "18",
-    "description": "The number"
+    "description": "the number"
+  },
+  "ordinal_18": {
+    "message": "й",
+    "description": "the ordinal for 18"
   },
   "19": {
     "message": "19",
-    "description": "The number"
+    "description": "the number"
+  },
+  "ordinal_19": {
+    "message": "й",
+    "description": "the ordinal for 19"
   },
   "20": {
     "message": "20",
-    "description": "The number"
+    "description": "the number"
+  },
+  "ordinal_20": {
+    "message": "й",
+    "description": "the ordinal for 20"
   },
   "21": {
     "message": "21",
-    "description": "The number"
+    "description": "the number"
+  },
+  "ordinal_21": {
+    "message": "й",
+    "description": "the ordinal for 21"
   },
   "22": {
     "message": "22",
-    "description": "The number"
+    "description": "the number"
+  },
+  "ordinal_22": {
+    "message": "й",
+    "description": "the ordinal for 22"
   },
   "23": {
     "message": "23",
-    "description": "The number"
+    "description": "the number"
+  },
+  "ordinal_23": {
+    "message": "й",
+    "description": "the ordinal for 23"
   },
   "24": {
     "message": "24",
-    "description": "The number"
+    "description": "the number"
+  },
+  "ordinal_24": {
+    "message": "й",
+    "description": "the ordinal for 24"
   },
   "25": {
     "message": "25",
-    "description": "The number"
+    "description": "the number"
+  },
+  "ordinal_25": {
+    "message": "й",
+    "description": "the ordinal for 25"
   },
   "26": {
     "message": "26",
-    "description": "The number"
+    "description": "the number"
+  },
+  "ordinal_26": {
+    "message": "й",
+    "description": "the ordinal for 26"
   },
   "27": {
     "message": "27",
-    "description": "The number"
+    "description": "the number"
+  },
+  "ordinal_27": {
+    "message": "й",
+    "description": "the ordinal for 27"
   },
   "28": {
     "message": "28",
-    "description": "The number"
+    "description": "the number"
+  },
+  "ordinal_28": {
+    "message": "й",
+    "description": "the ordinal for 28"
   },
   "29": {
     "message": "29",
-    "description": "The number"
+    "description": "the number"
+  },
+  "ordinal_29": {
+    "message": "й",
+    "description": "the ordinal for 29"
   },
   "30": {
     "message": "30",
-    "description": "The number"
+    "description": "the number"
+  },
+  "ordinal_30": {
+    "message": "й",
+    "description": "the ordinal for 30"
   },
   "31": {
     "message": "31",
-    "description": "The number"
+    "description": "the number"
+  },
+  "ordinal_31": {
+    "message": "й",
+    "description": "the ordinal for 31"
   },
 
   // Filter
@@ -339,8 +527,14 @@
     "description": "The month"
   },
   "confirm_delete_all_visits": {
-    "message": "Удалить все посещения с",
-    "description": "Confirmation text to delete all visits from a specific date"
+    "message": "Удалить все посещения с $formal_date$?",
+    "description": "Confirmation text to delete all visits from a specific date",
+    "placeholders": {
+      "formal_date": {
+        "content": "$1",
+        "example": "January 2, 2011"
+      }
+    }
   },
 
   // Time visits
@@ -359,7 +553,7 @@
     "description": "Button to delete history"
   },
   "prompt_title": {
-    "message": "Подтвердить",
+    "message": "Подтверждение",
     "description": "Title of prompt"
   },
 
@@ -369,82 +563,100 @@
     "description": "Title for credits modal"
   },
   "developed_by": {
-    "message": "Created and developed by",
+    "message": "Идея и разработка Роя Колака",
     "description": "Developer label"
   },
   "translators_heading": {
-    "message": "Translators",
+    "message": "",
     "description": "Heading for translators"
   },
   "spanish": {
-    "message": "Spanish",
+    "message": "Испанский",
     "description": "The language"
   },
   "russian": {
-    "message": "Russian",
+    "message": "Русский",
     "description": "The language"
   },
   "portuguese": {
-    "message": "Portuguese",
+    "message": "Португальский",
     "description": "The language"
   },
   "italian": {
-    "message": "Italian",
+    "message": "Итальянский",
     "description": "The language"
   },
   "french": {
-    "message": "French",
+    "message": "Французский",
     "description": "The language"
   },
   "swedish": {
-    "message": "Swedish",
+    "message": "Шведский",
     "description": "The language"
   },
   "chinese_simplified": {
-    "message": "Chinese (Simplified)",
+    "message": "Китайский (упрощенный)",
     "description": "The language"
   },
   "german": {
-    "message": "German",
+    "message": "Немецкий",
     "description": "The language"
   },
   "polish": {
-    "message": "Polish",
+    "message": "Польский",
     "description": "The language"
   },
   "hungarian": {
-    "message": "Hungarian",
+    "message": "Венгерский",
     "description": "The language"
   },
   "arabic": {
-    "message": "Arabic",
+    "message": "Арабский",
     "description": "The language"
   },
   "translation_help_heading": {
-    "message": "Dont't see your language?",
+    "message": "Не нашли свой язык?",
     "description": "Heading to recruit translators"
   },
   "translation_instructions": {
-    "message": "Do you want to translate Better History into a new lanuage? Great! Just send an email to",
+    "message": "Вы говорите по-английски и хотите перевести %app_name% на новый язык? Отлично! Просто отправьте письмо на",
     "description": "Instructions on how to help translate"
   },
   "close_button": {
-    "message": "Ok!",
+    "message": "Ок!",
     "description": "Button to close modal"
   },
 
   // Version
   "version_title": {
-    "message": "Hola, 您好, szia, Olá, bonjour, hello!",
+    "message": "Hola, 您好, Olá, bonjour, Привет!",
     "description": "Title of the version modal"
   },
   "version_description": {
-    "message": "This is a big, big release. With the help of 12 awesome users, Better History is now available in 12 languages! I can't thank these great users enough.",
-    "description": "Version description"
+    "message": "Это очень большое обновление. При поддержке группы удивительных людей %app_name% теперь (( доступно(а) )) на 14 языках! Посмотрите секцию $link_open$Благодарности$link_close$, чтобы сказать спасибо этим прекрасным переводчикам!",
+    "description": "Version description",
+    "placeholders": {
+      "link_open": {
+        "content": "$1"
+      },
+      "link_close": {
+        "content": "$2"
+      }
+    }
   },
   "version_items": {
-    "message": "<li>Translated to Spanish, German, Swedish, French, Hungarian, Chinese (Simplified), Polish, Portuguese, Russian, Italian, Finnish, Arabic</li><li>Added options in Settings to disable right click options</li><li>Added icon to display Better History in toolbar</li><li>Fixed XSS vulnerability</li><li>Added Credits section in Settings</li>",
-    "description": "Release bulletpoints"
+    "message": "$open$Переведено на 15 языков$close$ $open$В настройках добавлена возможность отключить опции контекстного меню$close$ $open$Добавлена иконка %app_name% на панель расширений$close$ $open$В настройках добавлена секция Благодарности$close$ $open$Исправлена XSS-уязвимость$close$",
+    "description": "Release bulletpoints",
+    "placeholders": {
+      "open": {
+        "content": "$1",
+        "example": "<li>"
+      },
+      "close": {
+        "content": "$2",
+        "example": "</li>"
+      }
+    }
   },
 
   // Search
@@ -457,7 +669,7 @@
     "description": "Searching title"
   },
   "and": {
-    "message": "and",
+    "message": "и",
     "description": "The word and"
   }
 }
