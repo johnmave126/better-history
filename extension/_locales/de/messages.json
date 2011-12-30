@@ -162,6 +162,10 @@
     "message": "hinterlasse ein Review",
     "description": "Link text to leave a review"
   },
+  "default_time_format": {
+    "message": "24",
+    "description": "12 or 24 hour based"
+  },
 
   // Sidebar
   "search_input_placeholder_text": {

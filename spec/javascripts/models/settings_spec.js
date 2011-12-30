@@ -2,6 +2,7 @@ describe('Settings', function() {
   var settings;
 
   beforeEach(function() {
+    loadChromeAPI();
     settings = new Settings();
   });
 
@@ -30,14 +31,14 @@ describe('Settings', function() {
   describe('#timeGrouping', function() {
     it('returns a parsed int of timeGrouping', function() {
       settings.set({timeGrouping: '15'});
-      expect(settings.timeGrouping()).toEqual(settings.defaults.timeGrouping);
+      expect(settings.timeGrouping()).toEqual(settings.defaults().timeGrouping);
     });
   });
 
   describe('#timeFormat', function() {
     it('returns a parsed int of timeFormat', function() {
       settings.set({timeFormat: '12'});
-      expect(settings.timeFormat()).toEqual(settings.defaults.timeFormat);
+      expect(settings.timeFormat()).toEqual(settings.defaults().timeFormat);
     });
   });
 

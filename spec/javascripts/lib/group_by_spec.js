@@ -26,6 +26,7 @@ describe('GroupBy', function() {
 
   describe('.time', function() {
     beforeEach(function() {
+      loadChromeAPI();
       settings = new Settings();
     });
 

@@ -5,8 +5,8 @@ describe('Filter', function() {
     loadChromeAPI();
     options = {
       daysSinceToday: 0,
-      startTime: new Date().getTime(),
-      endTime: new Date().getTime()
+      startTime: new Date("december 1, 2011").getTime(),
+      endTime: new Date("december 1, 2011").getTime()
     };
     filter = new Filter(options);
   });
@@ -45,7 +45,7 @@ describe('Filter', function() {
         endTime: borders.end.getTime()
       });
 
-      expect(filter.get('title')).toContain('<span class="ordinal" >');
+      expect(filter.get('title')).toContain('informal date');
     });
 
     it('sets the assembled formal date', function() {
@@ -86,43 +86,7 @@ describe('Filter', function() {
 
   describe('#date', function() {
     it('returns the date as a date object', function() {
-      expect(filter.date()).toEqual(new Date());
-    });
-  });
-
-  describe('#ordinal', function() {
-    it('return st if the date is 1, 21, or 31', function() {
-      var ordinal = 'st';
-
-      filter.set({startTime: new Date('1/1/10')});
-      expect(filter.ordinal()).toEqual(ordinal);
-
-      filter.set({startTime: new Date('1/21/10')});
-      expect(filter.ordinal()).toEqual(ordinal);
-
-      filter.set({startTime: new Date('1/31/10')});
-      expect(filter.ordinal()).toEqual(ordinal);
-    });
-
-    it('returns nd if the date is 2 or 22', function() {
-      var ordinal = 'nd';
-
-      filter.set({startTime: new Date('1/2/10')});
-      expect(filter.ordinal()).toEqual(ordinal);
-
-      filter.set({startTime: new Date('1/22/10')});
-      expect(filter.ordinal()).toEqual(ordinal);
-    });
-
-    it('returns rd if the date is 3 or 23', function() {
-      var ordinal = 'rd';
-
-      filter.set({startTime: new Date('1/3/10')});
-      expect(filter.ordinal()).toEqual(ordinal);
-
-      filter.set({startTime: new Date('1/23/10')});
-      expect(filter.ordinal()).toEqual(ordinal);
-
+      expect(filter.date()).toEqual(new Date("december 1, 2011"));
     });
   });
 
@@ -141,7 +105,6 @@ describe('Filter', function() {
     it('returns the properties used in the view', function() {
       var properties = filter.toJSON();
       properties.cid = filter.cid;
-      properties.date = Helpers.formatDate(filter.date());
       expect(filter.presenter()).toEqual(properties);
     });
   });

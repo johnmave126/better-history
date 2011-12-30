@@ -13,7 +13,10 @@ function loadChromeAPI(config) {
           today_link: 'Today',
           searching_title: 'Searching',
           and: 'and',
-          formal_date: 'formal date'
+          formal_date: 'formal date',
+          ordinal_1: '1 ordinal',
+          informal_date: 'informal date',
+          default_time_format: '12'
         };
 
         return lookup[key];

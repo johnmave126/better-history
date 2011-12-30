@@ -1,10 +1,12 @@
 Settings = Backbone.Model.extend({
-  defaults: {
-    timeGrouping: 15,
-    domainGrouping: true,
-    timeFormat: 12,
-    searchByDomain: true,
-    searchBySelection: true
+  defaults: function() {
+    return {
+      timeGrouping: 15,
+      domainGrouping: true,
+      timeFormat: parseInt(chrome.i18n.getMessage('default_time_format'), 10),
+      searchByDomain: true,
+      searchBySelection: true
+    };
   },
 
   timeGrouping: function() {
