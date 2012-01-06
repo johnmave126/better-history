@@ -80,7 +80,7 @@ i18n = {
   },
 
   credits: function() {
-    return i18n.fetch([
+    var properties = i18n.fetch([
       'credits_title',
       'developed_by',
       'translators_heading',
@@ -96,17 +96,22 @@ i18n = {
       'portuguese',
       'russian',
       'translation_help_heading',
-      'translation_instructions',
       'close_button'
     ]);
+    properties.i18n_translation_instructions = chrome.i18n.getMessage('translation_instructions', [
+      'roy.kolak@gmail.com',
+      '<a href="mailto:roy.kolak@gmail.com">',
+      '</a>'
+    ]);
+    return properties;
   },
 
   version: function() {
     var properties = i18n.fetch([
       'version_title',
       'close_button',
-      'whats_new'
-    ]);
+      'whats_new',
+    ])
     properties.i18n_version_description = chrome.i18n.getMessage('version_description', [
       '<a href="#settings/credits">',
       '</a>'

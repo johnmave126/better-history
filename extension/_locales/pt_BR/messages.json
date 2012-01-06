@@ -619,8 +619,22 @@
     "description": "Heading to recruit translators"
   },
   "translation_instructions": {
-    "message": "Sabe Inglês e quer traduzir o Histórico Melhorado (Better History) para alguma língua? Ótimo, envie um e-mail para ",
-    "description": "Instructions on how to help translate"
+    "message": "Sabe Inglês e quer traduzir o Histórico Melhorado (Better History) para alguma língua? Ótimo, envie um e-mail para $link_open$ $email$ $link_close$",
+    "description": "Instructions on how to help translate",
+    "placeholders": {
+      "email": {
+        "content": "$1",
+        "example": "Contact email address"
+      },
+      "link_open": {
+        "content": "$2",
+        "example": "open tag for email link"
+      },
+      "link_close": {
+        "content": "$3",
+        "example": "close tag for email link"
+      }
+    }
   },
   "close_button": {
     "message": "Fechar",

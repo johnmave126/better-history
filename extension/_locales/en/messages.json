@@ -619,8 +619,22 @@
     "description": "Heading to recruit translators"
   },
   "translation_instructions": {
-    "message": "Do you speak english and want to translate Better History into a new lanuage? Great! Just send an email to",
-    "description": "Instructions on how to help translate"
+    "message": "Do you speak english and want to translate Better History into a new lanuage? Great! Just send an email to $link_open$ $email$ $link_close$",
+    "description": "Instructions on how to help translate",
+    "placeholders": {
+      "email": {
+        "content": "$1",
+        "example": "Contact email address"
+      },
+      "link_open": {
+        "content": "$2",
+        "example": "open tag for email link"
+      },
+      "link_close": {
+        "content": "$3",
+        "example": "close tag for email link"
+      }
+    }
   },
   "close_button": {
     "message": "Ok!",
