@@ -150,10 +150,6 @@
     "message": "Berätta vad du tycker om Better History",
     "description": "Link text to give feedback"
   },
-  "i_will_respond": {
-    "message": "Jag svarar på din feedback",
-    "description": "Note text relating the voice your thoughts link"
-  },
   "spread_the_word_section_title": {
     "message": "Tipsa andra om programmet",
     "description": "Section heading in Settings"

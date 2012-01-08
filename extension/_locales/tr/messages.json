@@ -150,10 +150,6 @@
     "message": "better history için düşüncelerinizi dile getirin",
     "description": "Link text to give feedback"
   },
-  "i_will_respond": {
-    "message": "Geri dönüşleriniz cevaplanacaktır",
-    "description": "Note text relating the voice your thoughts link"
-  },
   "spread_the_word_section_title": {
     "message": "herkese duyurun",
     "description": "Section heading in Settings"

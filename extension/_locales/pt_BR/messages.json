@@ -150,10 +150,6 @@
     "message": "Diga-nos o que pensa sobre o histórico otimizado",
     "description": "Link text to give feedback"
   },
-  "i_will_respond": {
-    "message": "irei responder à sua opinião",
-    "description": "Note text relating the voice your thoughts link"
-  },
   "spread_the_word_section_title": {
     "message": "Contributo",
     "description": "Section heading in Settings"

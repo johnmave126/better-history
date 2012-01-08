@@ -150,10 +150,6 @@
     "message": "Voice your thoughts on",
     "description": "Link text to give feedback"
   },
-  "i_will_respond": {
-    "message": "I will respond to your message, promise",
-    "description": "Note text relating the voice your thoughts link"
-  },
   "spread_the_word_section_title": {
     "message": "Spread the word",
     "description": "Section heading in Settings"

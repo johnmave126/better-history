@@ -150,10 +150,6 @@
     "message": "wyraź swoje myśli o Better History",
     "description": "Link text to give feedback"
   },
-  "i_will_respond": {
-    "message": "Odpowiem na twoją opinię",
-    "description": "Note text relating the voice your thoughts link"
-  },
   "spread_the_word_section_title": {
     "message": "powiedz znajomym",
     "description": "Section heading in Settings"

@@ -150,10 +150,6 @@
     "message": "geef je mening over Better History",
     "description": "Link text to give feedback"
   },
-  "i_will_respond": {
-    "message": "Ik zal op je feedback reageren",
-    "description": "Note text relating the voice your thoughts link"
-  },
   "spread_the_word_section_title": {
     "message": "vertel verder",
     "description": "Section heading in Settings"
