@@ -146,9 +146,17 @@
     "message": "Feedback",
     "description": "Section heading in Settings"
   },
-  "voice_your_thoughts_on_link": {
-    "message": "Berätta vad du tycker om Better History",
-    "description": "Link text to give feedback"
+  "suggestions_bugs_comments": {
+    "message": "",
+    "description": "Link text to give feedback",
+    "placeholders": {
+      "link_open": {
+        "content": "$1"
+      },
+      "link_close": {
+        "content": "$2"
+      }
+    }
   },
   "spread_the_word_section_title": {
     "message": "Tipsa andra om programmet",
@@ -608,6 +616,46 @@
   },
   "arabic": {
     "message": "Arabiska",
+    "description": "The language"
+  },
+  "slovak": {
+    "message": "",
+    "description": "The language"
+  },
+  "turkish": {
+    "message": "",
+    "description": "The language"
+  },
+  "latvian": {
+    "message": "",
+    "description": "The language"
+  },
+  "dutch": {
+    "message": "",
+    "description": "The language"
+  },
+  "czech": {
+    "message": "",
+    "description": "The language"
+  },
+  "japanese": {
+    "message": "",
+    "description": "The language"
+  },
+  "vietnamese": {
+    "message": "",
+    "description": "The language"
+  },
+  "romanian": {
+    "message": "",
+    "description": "The language"
+  },
+  "hindi": {
+    "message": "",
+    "description": "The language"
+  },
+  "catalonian": {
+    "message": "",
     "description": "The language"
   },
   "translation_help_heading": {

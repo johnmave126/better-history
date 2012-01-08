@@ -146,9 +146,17 @@
     "message": "opinia",
     "description": "Section heading in Settings"
   },
-  "voice_your_thoughts_on_link": {
-    "message": "wyraź swoje myśli o Better History",
-    "description": "Link text to give feedback"
+  "suggestions_bugs_comments": {
+    "message": "Sugestie, błędy, komentarze? Zatweetuj do $link_open$@Better_History$link_close$!",
+    "description": "Link text to give feedback",
+    "placeholders": {
+      "link_open": {
+        "content": "$1"
+      },
+      "link_close": {
+        "content": "$2"
+      }
+    }
   },
   "spread_the_word_section_title": {
     "message": "powiedz znajomym",
@@ -563,51 +571,91 @@
     "description": "Developer label"
   },
   "translators_heading": {
-    "message": "",
+    "message": "Tłumacze",
     "description": "Heading for translators"
   },
   "spanish": {
-    "message": "Język hiszpański",
+    "message": "hiszpański",
     "description": "The language"
   },
   "russian": {
-    "message": "Język rosyjski",
+    "message": "rosyjski",
     "description": "The language"
   },
   "portuguese": {
-    "message": "Język portugalski",
+    "message": "portugalski",
     "description": "The language"
   },
   "italian": {
-    "message": "Język włoski",
+    "message": "włoski",
     "description": "The language"
   },
   "french": {
-    "message": "Język francuski",
+    "message": "francuski",
     "description": "The language"
   },
   "swedish": {
-    "message": "Język szwedzki",
+    "message": "szwedzki",
     "description": "The language"
   },
   "chinese_simplified": {
-    "message": "Język chiński (prosty)",
+    "message": "chiński (prosty)",
     "description": "The language"
   },
   "german": {
-    "message": "Język niemiecki",
+    "message": "niemiecki",
     "description": "The language"
   },
   "polish": {
-    "message": "Język niemiecki",
+    "message": "niemiecki",
     "description": "The language"
   },
   "hungarian": {
-    "message": "Język węgierski",
+    "message": "węgierski",
     "description": "The language"
   },
   "arabic": {
-    "message": "Język arabski",
+    "message": "arabski",
+    "description": "The language"
+  },
+  "slovak": {
+    "message": "słowacki",
+    "description": "The language"
+  },
+  "turkish": {
+    "message": "",
+    "description": "The language"
+  },
+  "latvian": {
+    "message": "",
+    "description": "The language"
+  },
+  "dutch": {
+    "message": "",
+    "description": "The language"
+  },
+  "czech": {
+    "message": "",
+    "description": "The language"
+  },
+  "japanese": {
+    "message": "",
+    "description": "The language"
+  },
+  "vietnamese": {
+    "message": "",
+    "description": "The language"
+  },
+  "romanian": {
+    "message": "",
+    "description": "The language"
+  },
+  "hindi": {
+    "message": "",
+    "description": "The language"
+  },
+  "catalonian": {
+    "message": "",
     "description": "The language"
   },
   "translation_help_heading": {
@@ -654,8 +702,12 @@
       }
     }
   },
+  "version_important_note": {
+    "message": "Ważna uwaga",
+    "description": "Heading for an important note"
+  },
   "version_note": {
-    "message": "",
+    "message": "Dostaję bardzo dużo maili i niestety nie mogę na nie wszystkie odpowiedzieć. Jeśli chcesz szybko coś mi podrzucić, zatweetuj do $link_close$@Better_History$link_open$! Śledź też $link_open$@Better_History$link_close$ by się dowiedzieć najnowszych wieści!",
     "descriotion": "Feedback and support note",
     "placeholders": {
       "link_open": {
@@ -667,7 +719,7 @@
     }
   },
   "version_whats_new": {
-    "message": "",
+    "message": "Co nowego",
     "description": "Heading for what's new in version"
   },
   "version_items": {

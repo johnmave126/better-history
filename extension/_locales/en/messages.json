@@ -618,6 +618,46 @@
     "message": "Arabic",
     "description": "The language"
   },
+  "slovak": {
+    "message": "",
+    "description": "The language"
+  },
+  "turkish": {
+    "message": "",
+    "description": "The language"
+  },
+  "latvian": {
+    "message": "",
+    "description": "The language"
+  },
+  "dutch": {
+    "message": "",
+    "description": "The language"
+  },
+  "czech": {
+    "message": "",
+    "description": "The language"
+  },
+  "japanese": {
+    "message": "",
+    "description": "The language"
+  },
+  "vietnamese": {
+    "message": "",
+    "description": "The language"
+  },
+  "romanian": {
+    "message": "",
+    "description": "The language"
+  },
+  "hindi": {
+    "message": "",
+    "description": "The language"
+  },
+  "catalonian": {
+    "message": "",
+    "description": "The language"
+  },
   "translation_help_heading": {
     "message": "Don't see your language?",
     "description": "Heading to recruit translators"
@@ -661,6 +701,10 @@
         "content": "$2"
       }
     }
+  },
+  "version_important_note": {
+    "message": "What's new",
+    "description": "Heading for an important note"
   },
   "version_note": {
     "message": "I'm getting so much feedback that unfortunately I can't respond to all of it anymore. For quick feedback, suggestions, and bugs just tweet to $link_open$@Better_History$link_close$! Follow $link_open$@Better_History$link_close$ for the latest news too!",
