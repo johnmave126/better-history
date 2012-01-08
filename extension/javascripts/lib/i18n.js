@@ -110,10 +110,14 @@ i18n = {
     var properties = i18n.fetch([
       'version_title',
       'close_button',
-      'whats_new',
+      'version_whats_new',
     ])
     properties.i18n_version_description = chrome.i18n.getMessage('version_description', [
       '<a href="#settings/credits">',
+      '</a>'
+    ]);
+    properties.i18n_version_note = chrome.i18n.getMessage('version_note', [
+      '<a href="http://twitter.com/Better_History">',
       '</a>'
     ]);
     properties.i18n_version_items = chrome.i18n.getMessage('version_items', [

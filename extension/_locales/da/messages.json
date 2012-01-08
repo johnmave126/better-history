@@ -658,6 +658,22 @@
       }
     }
   },
+  "version_note": {
+    "message": "",
+    "descriotion": "Feedback and support note",
+    "placeholders": {
+      "link_open": {
+        "content": "$1"
+      },
+      "link_close": {
+        "content": "$2"
+      }
+    }
+  },
+  "version_whats_new": {
+    "message": "",
+    "description": "Heading for what's new in version"
+  },
   "version_items": {
     "message": "",
     "description": "Release bulletpoints",

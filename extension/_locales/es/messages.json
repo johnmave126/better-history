@@ -658,6 +658,22 @@
       }
     }
   },
+  "version_note": {
+    "message": "",
+    "descriotion": "Feedback and support note",
+    "placeholders": {
+      "link_open": {
+        "content": "$1"
+      },
+      "link_close": {
+        "content": "$2"
+      }
+    }
+  },
+  "version_whats_new": {
+    "message": "",
+    "description": "Heading for what's new in version"
+  },
   "version_items": {
     "message": "$open$Traducción en 15 idiomas$close$ $open$Se agregaron opciones en Configuración para deshabilitar opciones de click derecho.$close$ $open$Ícono de Better History en la barra de herramientas.$close$ $open$Nueva sección de Créditos en Configuración.$close$ $open$Solucionada vulnerabilidad XSS.$close$",
     "description": "Release bulletpoints",

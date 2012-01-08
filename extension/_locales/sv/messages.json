@@ -658,6 +658,22 @@
       }
     }
   },
+  "version_note": {
+    "message": "",
+    "descriotion": "Feedback and support note",
+    "placeholders": {
+      "link_open": {
+        "content": "$1"
+      },
+      "link_close": {
+        "content": "$2"
+      }
+    }
+  },
+  "version_whats_new": {
+    "message": "",
+    "description": "Heading for what's new in version"
+  },
   "version_items": {
     "message": "$open$Översatt till 15 språk.$close$ $open$Tillagd möjlighet att stänga av inställningar vid högerklickning.$close$ $open$Tillagd ikon för att visa Better History i verktygsraden$close$ $open$Tillagd Tack-sektion i Inställningar$close$ $open$Åtgärdade XSS-sårbarhet$close$",
     "description": "Release bulletpoints",

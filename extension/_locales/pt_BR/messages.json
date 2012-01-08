@@ -658,6 +658,22 @@
       }
     }
   },
+  "version_note": {
+    "message": "",
+    "descriotion": "Feedback and support note",
+    "placeholders": {
+      "link_open": {
+        "content": "$1"
+      },
+      "link_close": {
+        "content": "$2"
+      }
+    }
+  },
+  "version_whats_new": {
+    "message": "",
+    "description": "Heading for what's new in version"
+  },
   "version_items": {
     "message": "$open$Traduzido em 15 línguas$close$ $open$Adcionada a funcionalidade de desativar o botão direito nas Opções$close$ $open$Adicionado ícone do Histórico Melhorado na área de atalhos$close$ $open$Adicionada secção de créditos nas Opções$close$ $open$Fixa vulnerabilidade com XSS$close$",
     "description": "Release bulletpoints",

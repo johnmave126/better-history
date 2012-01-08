@@ -658,6 +658,22 @@
       }
     }
   },
+  "version_note": {
+    "message": "",
+    "descriotion": "Feedback and support note",
+    "placeholders": {
+      "link_open": {
+        "content": "$1"
+      },
+      "link_close": {
+        "content": "$2"
+      }
+    }
+  },
+  "version_whats_new": {
+    "message": "",
+    "description": "Heading for what's new in version"
+  },
   "version_items": {
     "message": "$open$iPrzetłumaczono na 15 języków$close$ $open$Dodano opcje w Ustawieniach służące wyłączeniu opcji prawego przycisku myszy$close$ $open$Dodano ikonkę, by wyświetlać 'Better History' w zakładkach$close$ $open$Dodano sekcję Podziękowania w Ustawieniach$close$ $open$Poprawiono lukę XSS$close$",
     "description": "Release bulletpoints",
