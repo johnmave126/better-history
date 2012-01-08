@@ -146,9 +146,17 @@
     "message": "Feedback",
     "description": "Section heading in Settings"
   },
-  "voice_your_thoughts_on_link": {
-    "message": "Voice your thoughts on",
-    "description": "Link text to give feedback"
+  "suggestions_bugs_comments": {
+    "message": "Suggestions, bugs, comments? Tweet to $link_open$@Better_History$link_close$",
+    "description": "Link text to give feedback",
+    "placeholders": {
+      "link_open": {
+        "content": "$1"
+      },
+      "link_close": {
+        "content": "$2"
+      }
+    }
   },
   "spread_the_word_section_title": {
     "message": "Spread the word",
@@ -653,6 +661,22 @@
         "content": "$2"
       }
     }
+  },
+  "version_note": {
+    "message": "I'm getting so much feedback that unfortunately I can't respond to all of it anymore. For quick feedback, suggestions, and bugs just tweet to $link_open$@Better_History$link_close$! Follow $link_open$@Better_History$link_close$ for the latest news too!",
+    "descriotion": "Feedback and support note",
+    "placeholders": {
+      "link_open": {
+        "content": "$1"
+      },
+      "link_close": {
+        "content": "$2"
+      }
+    }
+  },
+  "version_whats_new": {
+    "message": "What's new",
+    "description": "Heading for what's new in version"
   },
   "version_items": {
     "message": "$open$Translated to 15 languages$close$ $open$Added options in Settings to disable right click options$close$ $open$Added icon to display Better History in toolbar$close$ $open$Added Credits section in Settings$close$ $open$Fixed XSS vulnerability$close$",

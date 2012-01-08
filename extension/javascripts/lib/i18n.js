@@ -8,7 +8,7 @@ i18n = {
   },
 
   settings: function() {
-    return i18n.fetch([
+    var properties = i18n.fetch([
       'settings_title',
       'clearing_history_section_title',
       'clear_history_button',
@@ -29,11 +29,14 @@ i18n = {
       'current_version_label',
       'credits',
       'feedback_section_title',
-      'voice_your_thoughts_on',
-      'i_will_respond',
       'spread_the_word',
       'leave_a_review'
     ]);
+    properties.i18n_suggestions_bugs_comments = chrome.i18n.getMessage('suggestions_bugs_comments', [
+      '<a href="http://twitter.com/Better_History">',
+      '</a>'
+    ]);
+    return properties;
   },
 
   sidebar: function() {
