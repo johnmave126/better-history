@@ -703,7 +703,7 @@
     }
   },
   "version_important_note": {
-    "message": "What's new",
+    "message": "Important note",
     "description": "Heading for an important note"
   },
   "version_note": {

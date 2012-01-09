@@ -122,6 +122,7 @@ i18n = {
   version: function() {
     var properties = i18n.fetch([
       'version_title',
+      'version_important_note',
       'close_button',
       'version_whats_new',
     ])
