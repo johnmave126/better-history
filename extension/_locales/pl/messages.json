@@ -119,11 +119,11 @@
     "description": "Section heading in Settings"
   },
   "search_by_text_selection_label": {
-    "message": "włącz wyszukiwanie po zaznaczeniu tekstu",
+    "message": "Szukaj poprzez zaznaczenie tekstu",
     "description": "Label for check box to enable right click option"
   },
   "search_by_domain_label": {
-    "message": "włącz wyszukiwanie po domenie",
+    "message": "Szukaj według domeny",
     "description": "Label for check box to enable right click option"
   },
   "Whats_new_section_title": {
@@ -623,39 +623,39 @@
     "description": "The language"
   },
   "turkish": {
-    "message": "",
+    "message": "turecki",
     "description": "The language"
   },
   "latvian": {
-    "message": "",
+    "message": "łotewski",
     "description": "The language"
   },
   "dutch": {
-    "message": "",
+    "message": "holenderski",
     "description": "The language"
   },
   "czech": {
-    "message": "",
+    "message": "czech",
     "description": "The language"
   },
   "japanese": {
-    "message": "",
+    "message": "japoński",
     "description": "The language"
   },
   "vietnamese": {
-    "message": "",
+    "message": "wietnamski",
     "description": "The language"
   },
   "romanian": {
-    "message": "",
+    "message": "rumuński",
     "description": "The language"
   },
   "hindi": {
-    "message": "",
+    "message": "hindi",
     "description": "The language"
   },
   "catalonian": {
-    "message": "",
+    "message": "katalońska",
     "description": "The language"
   },
   "translation_help_heading": {
@@ -707,7 +707,7 @@
     "description": "Heading for an important note"
   },
   "version_note": {
-    "message": "Dostaję bardzo dużo maili i niestety nie mogę na nie wszystkie odpowiedzieć. Jeśli chcesz szybko coś mi podrzucić, zatweetuj do $link_close$@Better_History$link_open$! Śledź też $link_open$@Better_History$link_close$ by się dowiedzieć najnowszych wieści!",
+    "message": "Dostaję bardzo dużo maili i niestety nie mogę na nie wszystkie odpowiedzieć. Jeśli chcesz szybko coś mi podrzucić, zatweetuj do $link_open$@Better_History$link_close$! Śledź też $link_open$@Better_History$link_close$ by się dowiedzieć najnowszych wieści!",
     "descriotion": "Feedback and support note",
     "placeholders": {
       "link_open": {
