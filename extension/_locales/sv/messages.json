@@ -119,11 +119,11 @@
     "description": "Section heading in Settings"
   },
   "search_by_text_selection_label": {
-    "message": "Aktivera sökning av markerad text",
+    "message": "sök efter markerad text",
     "description": "Label for check box to enable right click option"
   },
   "search_by_domain_label": {
-    "message": "Aktivera sökning efter domän",
+    "message": "sök genom domän",
     "description": "Label for check box to enable right click option"
   },
   "Whats_new_section_title": {
@@ -147,7 +147,7 @@
     "description": "Section heading in Settings"
   },
   "suggestions_bugs_comments": {
-    "message": "",
+    "message": "Förslag, buggar, kommentarer? Twittra $link_open$@Better_History$link_close$!",
     "description": "Link text to give feedback",
     "placeholders": {
       "link_open": {
@@ -571,7 +571,7 @@
     "description": "Developer label"
   },
   "translators_heading": {
-    "message": "",
+    "message": "Översättare",
     "description": "Heading for translators"
   },
   "spanish": {
@@ -619,43 +619,43 @@
     "description": "The language"
   },
   "slovak": {
-    "message": "",
+    "message": "Slovakiska",
     "description": "The language"
   },
   "turkish": {
-    "message": "",
+    "message": "Turkiska",
     "description": "The language"
   },
   "latvian": {
-    "message": "",
+    "message": "Lettiska",
     "description": "The language"
   },
   "dutch": {
-    "message": "",
+    "message": "Nederländska",
     "description": "The language"
   },
   "czech": {
-    "message": "",
+    "message": "Tjeckien",
     "description": "The language"
   },
   "japanese": {
-    "message": "",
+    "message": "Japanska",
     "description": "The language"
   },
   "vietnamese": {
-    "message": "",
+    "message": "Vietnamese",
     "description": "The language"
   },
   "romanian": {
-    "message": "",
+    "message": "Rumänska",
     "description": "The language"
   },
   "hindi": {
-    "message": "",
+    "message": "Hindi",
     "description": "The language"
   },
   "catalonian": {
-    "message": "",
+    "message": "Katalanska",
     "description": "The language"
   },
   "translation_help_heading": {
@@ -702,8 +702,12 @@
       }
     }
   },
+  "version_important_note": {
+    "message": "Viktig notis",
+    "description": "Heading for an important note"
+  },
   "version_note": {
-    "message": "",
+    "message": "Jag får så mycket feedback att jag tyvärr inte kan svara på samtliga kommentarer. För kort feedback, förslag och buggrapporteringar, twittra $link_open$@Better_History$link_close$! Följ gärna $link_open$@Better_History$link_close$ för att hålla dig ajour om senaste nytt!",
     "descriotion": "Feedback and support note",
     "placeholders": {
       "link_open": {
@@ -715,7 +719,7 @@
     }
   },
   "version_whats_new": {
-    "message": "",
+    "message": "Vad är nytt",
     "description": "Heading for what's new in version"
   },
   "version_items": {
