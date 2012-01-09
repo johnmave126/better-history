@@ -29,7 +29,7 @@ i18n = {
       'current_version_label',
       'credits',
       'feedback_section_title',
-      'spread_the_word',
+      'spread_the_word_section_title',
       'leave_a_review'
     ]);
     properties.i18n_suggestions_bugs_comments = chrome.i18n.getMessage('suggestions_bugs_comments', [
@@ -98,6 +98,16 @@ i18n = {
       'polish',
       'portuguese',
       'russian',
+      'slovak',
+      'catalonian',
+      'hindi',
+      'vietnamese',
+      'japanese',
+      'romanian',
+      'czech',
+      'dutch',
+      'latvian',
+      'turkish',
       'translation_help_heading',
       'close_button'
     ]);
