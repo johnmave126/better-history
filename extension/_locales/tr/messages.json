@@ -99,7 +99,7 @@
     "description": "Time amount"
   },
   "time_format_label": {
-    "message": "zaman formatı",
+    "message": "Zaman formatı",
     "description": "Label for select box to set the time format (12 or 24 hours)"
   },
   "12_hours_option": {
@@ -111,19 +111,19 @@
     "description": "24 hour time format, example: 14:00"
   },
   "group_visits_by_domain_label": {
-    "message": "alan adına göre ziyaretleri grupla",
+    "message": "Alan adına göre ziyaretleri grupla",
     "description": "Label for check box to group visits by domain"
   },
   "right_click_options_section_title": {
-    "message": "sağ tıklama ayarları",
+    "message": "Sağ tıklama ayarları",
     "description": "Section heading in Settings"
   },
   "search_by_text_selection_label": {
-    "message": "metin seçerek aramayı etkin hale getir",
+    "message": "Seçilen metine göre ara",
     "description": "Label for check box to enable right click option"
   },
   "search_by_domain_label": {
-    "message": "alan adı seçerek aramayı etkin hale getir",
+    "message": "Alan adına göre ara",
     "description": "Label for check box to enable right click option"
   },
   "Whats_new_section_title": {
@@ -131,7 +131,7 @@
     "description": "Section heading in Settings"
   },
   "view_release_announcement_link": {
-    "message": "sürüm bildirimlerine bak",
+    "message": "Sürüm bildirimlerine bak",
     "description": "Link text to view the release announcement"
   },
   "current_version_label": {
@@ -143,11 +143,11 @@
     "description": "The word credits"
   },
   "feedback_section_title": {
-    "message": "geri dönüş bildir",
+    "message": "Geri dönüş bildir",
     "description": "Section heading in Settings"
   },
   "suggestions_bugs_comments": {
-    "message": "",
+    "message": "Öneriler, bulduğun hatalar, yorumlar? $link_open$@Better_History'e$link_close$ tweetleyin.",
     "description": "Link text to give feedback",
     "placeholders": {
       "link_open": {
@@ -159,11 +159,11 @@
     }
   },
   "spread_the_word_section_title": {
-    "message": "herkese duyurun",
+    "message": "Herkese duyurun",
     "description": "Section heading in Settings"
   },
   "leave_a_review": {
-    "message": "herkese duyurun",
+    "message": "Herkese duyurun",
     "description": "Link text to leave a review"
   },
   "default_time_format": {
@@ -543,7 +543,7 @@
 
   // Time visits
   "visits_label": {
-    "message": "Ziyaretler",
+    "message": "ziyaretler",
     "description": "Label to a number representing a number of visits"
   },
 
@@ -571,7 +571,7 @@
     "description": "Developer label"
   },
   "translators_heading": {
-    "message": "",
+    "message": "Çevirenler",
     "description": "Heading for translators"
   },
   "spanish": {
@@ -702,8 +702,12 @@
       }
     }
   },
+  "version_important_note": {
+    "message": "Önemli not",
+    "description": "Heading for an important note"
+  },
   "version_note": {
-    "message": "",
+    "message": "Malesef çok fazla geri bildirim aldığımdan dolayı, herkesi cevaplayamıyorum. Hızlı geri bildirimleriniz, önerileriniz ve bulduğunuz hataları $link_open$@Better_History'e$link_close$ tweetleyebilirsiniz. En son haberler içinde $link_open$@Better_History'i$link_close$ takip edin.",
     "descriotion": "Feedback and support note",
     "placeholders": {
       "link_open": {
@@ -715,7 +719,7 @@
     }
   },
   "version_whats_new": {
-    "message": "",
+    "message": "Neler yeni",
     "description": "Heading for what's new in version"
   },
   "version_items": {
