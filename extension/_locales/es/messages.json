@@ -5,8 +5,8 @@
     "description": "Manifest name"
   },
   "manifest_browser_action_title": {
-    "message": "Sfoglia cronologia",
-    "description": "Manifest browser action title"
+    "message": "alan adına göre ara",
+    "description": "Una mejor imagen para tu historial de navegación. Interfaz limpia, búsquedas óptimas y los filtros más útiles para tu historial."
   },
   "manifest_description": {
     "message": "Un migliore approccio alla tua cronologia di navigazione. Ricerche migliori, interfaccia più nitida e filtri più utili - per la tua cronologia.",
@@ -119,11 +119,11 @@
     "description": "Section heading in Settings"
   },
   "search_by_text_selection_label": {
-    "message": "Cerca per testo selezionato",
+    "message": "Buscar por selección de texto",
     "description": "Label for check box to enable right click option"
   },
   "search_by_domain_label": {
-    "message": "Cerca per dominio",
+    "message": "Buscar por dominio",
     "description": "Label for check box to enable right click option"
   },
   "Whats_new_section_title": {
@@ -147,7 +147,7 @@
     "description": "Section heading in Settings"
   },
   "suggestions_bugs_comments": {
-    "message": "Suggerimenti, errori, commenti? Manda un tweet $link_open$ @Better_History $link_close$!",
+    "message": "¿Sugerencias, errores, comentarios? ¡Menciona a $link_open$@Better_History$link_close$ en Twitter!",
     "description": "Link text to give feedback",
     "placeholders": {
       "link_open": {
@@ -707,7 +707,7 @@
     "description": "Heading for an important note"
   },
   "version_note": {
-    "message": "Sto ricevendo tanti commenti che sfortunatamente non riesco a rispondere a tutti. Per commenti, suggerimenti e una rapida segnalazione errori, invia semplicemente un tweet $link_open$@Better_History$link_close$! Inoltre segui $link_open$ @Better_History $link_close$ per le ultime novità!",
+    "message": "Estoy recibiendo tantos comentarios que desafortunadamente no puedo seguir respondiéndolos todos. Para comentarios rápidos, sugerencias y errores, menciona a $link_open$@Better_History$link_close$ en Twitter. ¡Síguenos también para informarte sobre las últimas noticias!",
     "descriotion": "Feedback and support note",
     "placeholders": {
       "link_open": {
