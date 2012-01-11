@@ -1,0 +1,753 @@
+{
+  // Manifest
+  "manifest_name": {
+    "message": "Better History",
+    "description": "Manifest name"
+  },
+  "manifest_browser_action_title": {
+    "message": "Böngészd az előzményeket",
+    "description": "Manifest browser action title"
+  },
+  "manifest_description": {
+    "message": "Egy sokkal jobb kinézet az előzményeknek. A legjobb keresés, legkényelmesebb felhasználói felület, és a leghasznosabb szűrők - az előzményekhez",
+    "description": "Manifest description"
+  },
+
+  // App
+  "history_title": {
+    "message": "Előzmény",
+    "description": "Extension title"
+  },
+
+  // Dates
+  "formal_date": {
+    "message": "$year$ $month$ $day$",
+    "description": "The order of a full date",
+    "placeholders": {
+      "month": {
+        "content": "$1",
+        "example": "March"
+      },
+      "day": {
+        "content": "$2",
+        "example": "25"
+      },
+      "year": {
+        "content": "$3",
+        "example": "2011"
+      }
+    }
+  },
+  "informal_date": {
+    "message": "$week_day$, $day$$ordinal$",
+    "description": "Date labels in sidebar",
+    "placeholders": {
+      "week_day": {
+        "content": "$1",
+        "example": "Monday"
+      },
+      "day": {
+        "content": "$2",
+        "example": "4"
+      },
+      "ordinal": {
+        "content": "$3",
+        "example": "st"
+      },
+      "ordinal_open": {
+        "content": "$4",
+        "example": "open tag for ordinal"
+      },
+      "ordinal_close": {
+        "content": "$5",
+        "example": "close tag for ordinal"
+      }
+    }
+  },
+
+  // Settings
+  "settings_title": {
+    "message": "Beállítások",
+    "description": "Settings title for Settings page"
+  },
+  "clearing_history_section_title": {
+    "message": "Előzmények törlése",
+    "description": "Section heading in Settings"
+  },
+  "clear_history_button": {
+    "message": "Töröld az előzményeket...",
+    "description": "Button text for clear history button in Settings"
+  },
+  "visit_grouping_section_title": {
+    "message": "Látogatás csoportosítás",
+    "description": "Section heading in Settings"
+  },
+  "group_visits_by_label": {
+    "message": "Csoportosítsd a látogatásokat",
+    "description": "Label for select box to set the time grouping interval for visits"
+  },
+  "60_minutes_option": {
+    "message": "60 perc",
+    "description": "Time amount"
+  },
+  "30_minutes_option": {
+    "message": "30 perc",
+    "description": "Time amount"
+  },
+  "15_minutes_option": {
+    "message": "15 perc",
+    "description": "Time amount"
+  },
+  "time_format_label": {
+    "message": "Idő formátuma",
+    "description": "Label for select box to set the time format (12 or 24 hours)"
+  },
+  "12_hours_option": {
+    "message": "12 órás",
+    "description": "12 hour time format, example: 3:00 PM"
+  },
+  "24_hours_option": {
+    "message": "24 órás",
+    "description": "24 hour time format, example: 14:00"
+  },
+  "group_visits_by_domain_label": {
+    "message": "Csoportosítsd a látogatásokat domain alapján",
+    "description": "Label for check box to group visits by domain"
+  },
+  "right_click_options_section_title": {
+    "message": "Jobb-gombos beállítások",
+    "description": "Section heading in Settings"
+  },
+  "search_by_text_selection_label": {
+    "message": "Keresés szöveg alapján",
+    "description": "Label for check box to enable right click option"
+  },
+  "search_by_domain_label": {
+    "message": "Keresés domain alapján",
+    "description": "Label for check box to enable right click option"
+  },
+  "Whats_new_section_title": {
+    "message": "Újdonságok",
+    "description": "Section heading in Settings"
+  },
+  "view_release_announcement_link": {
+    "message": "Nézd meg a kiadási közleményt",
+    "description": "Link text to view the release announcement"
+  },
+  "current_version_label": {
+    "message": "Jelenlegi verzió",
+    "description": "label for the current version"
+  },
+  "credits": {
+    "message": "Készítők",
+    "description": "The word credits"
+  },
+  "feedback_section_title": {
+    "message": "Visszajelzés",
+    "description": "Section heading in Settings"
+  },
+  "suggestions_bugs_comments": {
+    "message": "Javaslatod van, hibát találtál vagy kommented van? Tweetelj a $link_open$@Better_History$link_close$ -ra!",
+    "description": "Link text to give feedback",
+    "placeholders": {
+      "link_open": {
+        "content": "$1"
+      },
+      "link_close": {
+        "content": "$2"
+      }
+    }
+  },
+  "spread_the_word_section_title": {
+    "message": "Oszd meg",
+    "description": "Section heading in Settings"
+  },
+  "leave_a_review": {
+    "message": "Írd meg a véleményed",
+    "description": "Link text to leave a review"
+  },
+  "default_time_format": {
+    "message": "24",
+    "description": "12 or 24 hour based"
+  },
+
+  // Sidebar
+  "search_input_placeholder_text": {
+    "message": "Keresés címre, URL-re vagy dátumra",
+    "description": "Placeholder text in the search input box"
+  },
+  "settings_link": {
+    "message": "Beállítások",
+    "description": "Text for the link to Settings"
+  },
+  "today_link": {
+    "message": "Ma",
+    "description": "Link for today"
+  },
+  "yesterday_link": {
+    "message": "Tegnap",
+    "description": "Link for yesterday"
+  },
+  "monday": {
+    "message": "Hétfő",
+    "description": "The day of the week"
+  },
+  "tuesday": {
+    "message": "Kedd",
+    "description": "The day of the week"
+  },
+  "wednesday": {
+    "message": "Szerda",
+    "description": "The day of the week"
+  },
+  "thursday": {
+    "message": "Csütörtök",
+    "description": "The day of the week"
+  },
+  "friday": {
+    "message": "Péntek",
+    "description": "The day of the week"
+  },
+  "saturday": {
+    "message": "Szombat",
+    "description": "The day of the week"
+  },
+  "sunday": {
+    "message": "Vasárnap",
+    "description": "The day of the week"
+  },
+  "1": {
+    "message": "1",
+    "description": "the number"
+  },
+  "ordinal_1": {
+    "message": ".",
+    "description": "the ordinal for 1"
+  },
+  "2": {
+    "message": "2",
+    "description": "the number"
+  },
+  "ordinal_2": {
+    "message": ".",
+    "description": "the ordinal for 2"
+  },
+  "3": {
+    "message": "3",
+    "description": "the number"
+  },
+  "ordinal_3": {
+    "message": ".",
+    "description": "the ordinal for 3"
+  },
+  "4": {
+    "message": "4",
+    "description": "the number"
+  },
+  "ordinal_4": {
+    "message": ".",
+    "description": "the ordinal for 4"
+  },
+  "5": {
+    "message": "5",
+    "description": "the number"
+  },
+  "ordinal_5": {
+    "message": ".",
+    "description": "the ordinal for 5"
+  },
+  "6": {
+    "message": "6",
+    "description": "the number"
+  },
+  "ordinal_6": {
+    "message": ".",
+    "description": "the ordinal for 6"
+  },
+  "7": {
+    "message": "7",
+    "description": "the number"
+  },
+  "ordinal_7": {
+    "message": ".",
+    "description": "the ordinal for 7"
+  },
+  "8": {
+    "message": "8",
+    "description": "the number"
+  },
+  "ordinal_8": {
+    "message": ".",
+    "description": "the ordinal for 8"
+  },
+  "9": {
+    "message": "9",
+    "description": "the number"
+  },
+  "ordinal_9": {
+    "message": ".",
+    "description": "the ordinal for 9"
+  },
+  "10": {
+    "message": "10",
+    "description": "the number"
+  },
+  "ordinal_10": {
+    "message": ".",
+    "description": "the ordinal for 10"
+  },
+  "11": {
+    "message": "11",
+    "description": "the number"
+  },
+  "ordinal_11": {
+    "message": ".",
+    "description": "the ordinal for 11"
+  },
+  "12": {
+    "message": "12",
+    "description": "the number"
+  },
+  "ordinal_12": {
+    "message": ".",
+    "description": "the ordinal for 12"
+  },
+  "13": {
+    "message": "13",
+    "description": "the number"
+  },
+  "ordinal_13": {
+    "message": ".",
+    "description": "the ordinal for 13"
+  },
+  "14": {
+    "message": "14",
+    "description": "the number"
+  },
+  "ordinal_14": {
+    "message": ".",
+    "description": "the ordinal for 14"
+  },
+  "15": {
+    "message": "15",
+    "description": "the number"
+  },
+  "ordinal_15": {
+    "message": ".",
+    "description": "the ordinal for 15"
+  },
+  "16": {
+    "message": "16",
+    "description": "the number"
+  },
+  "ordinal_16": {
+    "message": ".",
+    "description": "the ordinal for 16"
+  },
+  "17": {
+    "message": "17",
+    "description": "the number"
+  },
+  "ordinal_17": {
+    "message": ".",
+    "description": "the ordinal for 17"
+  },
+  "18": {
+    "message": "18",
+    "description": "the number"
+  },
+  "ordinal_18": {
+    "message": ".",
+    "description": "the ordinal for 18"
+  },
+  "19": {
+    "message": "19",
+    "description": "the number"
+  },
+  "ordinal_19": {
+    "message": ".",
+    "description": "the ordinal for 19"
+  },
+  "20": {
+    "message": "20",
+    "description": "the number"
+  },
+  "ordinal_20": {
+    "message": ".",
+    "description": "the ordinal for 20"
+  },
+  "21": {
+    "message": "21",
+    "description": "the number"
+  },
+  "ordinal_21": {
+    "message": ".",
+    "description": "the ordinal for 21"
+  },
+  "22": {
+    "message": "22",
+    "description": "the number"
+  },
+  "ordinal_22": {
+    "message": ".",
+    "description": "the ordinal for 22"
+  },
+  "23": {
+    "message": "23",
+    "description": "the number"
+  },
+  "ordinal_23": {
+    "message": ".",
+    "description": "the ordinal for 23"
+  },
+  "24": {
+    "message": "24",
+    "description": "the number"
+  },
+  "ordinal_24": {
+    "message": ".",
+    "description": "the ordinal for 24"
+  },
+  "25": {
+    "message": "25",
+    "description": "the number"
+  },
+  "ordinal_25": {
+    "message": ".",
+    "description": "the ordinal for 25"
+  },
+  "26": {
+    "message": "26",
+    "description": "the number"
+  },
+  "ordinal_26": {
+    "message": ".",
+    "description": "the ordinal for 26"
+  },
+  "27": {
+    "message": "27",
+    "description": "the number"
+  },
+  "ordinal_27": {
+    "message": ".",
+    "description": "the ordinal for 27"
+  },
+  "28": {
+    "message": "28",
+    "description": "the number"
+  },
+  "ordinal_28": {
+    "message": ".",
+    "description": "the ordinal for 28"
+  },
+  "29": {
+    "message": "29",
+    "description": "the number"
+  },
+  "ordinal_29": {
+    "message": ".",
+    "description": "the ordinal for 29"
+  },
+  "30": {
+    "message": "30",
+    "description": "the number"
+  },
+  "ordinal_30": {
+    "message": ".",
+    "description": "the ordinal for 30"
+  },
+  "31": {
+    "message": "31",
+    "description": "the number"
+  },
+  "ordinal_31": {
+    "message": ".",
+    "description": "the ordinal for 31"
+  },
+
+  // Filter
+  "collapse_button": {
+    "message": "Bezárás",
+    "description": "Text for collapse button"
+  },
+  "expand_button": {
+    "message": "Szétnyitás",
+    "description": "Text for expand button"
+  },
+  "delete_all_visits_for_filter_button": {
+    "message": "Törlés...",
+    "description": "Text for delete all visits for a day filter button"
+  },
+  "no_visits_found": {
+    "message": "Elnézést, nem találtam látogatásokat",
+    "description": "Text for no visits found message"
+  },
+  "january": {
+    "message": "január",
+    "description": "The month"
+  },
+  "february": {
+    "message": "február",
+    "description": "The month"
+  },
+  "march": {
+    "message": "március",
+    "description": "The month"
+  },
+  "april": {
+    "message": "április",
+    "description": "The month"
+  },
+  "may": {
+    "message": "május",
+    "description": "The month"
+  },
+  "june": {
+    "message": "június",
+    "description": "The month"
+  },
+  "july": {
+    "message": "július",
+    "description": "The month"
+  },
+  "august": {
+    "message": "augusztus",
+    "description": "The month"
+  },
+  "september": {
+    "message": "szeptember",
+    "description": "The month"
+  },
+  "october": {
+    "message": "október",
+    "description": "The month"
+  },
+  "november": {
+    "message": "november",
+    "description": "The month"
+  },
+  "december": {
+    "message": "december",
+    "description": "The month"
+  },
+  "confirm_delete_all_visits": {
+    "message": "Töröld az összes látogatást innen: $formal_date$?",
+    "description": "Confirmation text to delete all visits from a specific date",
+    "placeholders": {
+      "formal_date": {
+        "content": "$1",
+        "example": "January 2, 2011"
+      }
+    }
+  },
+
+  // Time visits
+  "visits_label": {
+    "message": "látogatások",
+    "description": "Label to a number representing a number of visits"
+  },
+
+  // Prompt Modal
+  "prompt_cancel_button": {
+    "message": "Mégse",
+    "description": "Button to close modal"
+  },
+  "prompt_delete_button": {
+    "message": "Törlés",
+    "description": "Button to delete history"
+  },
+  "prompt_title": {
+    "message": "Megerősít",
+    "description": "Title of prompt"
+  },
+
+  // Credits
+  "credits_title": {
+    "message": "Készítők",
+    "description": "Title for credits modal"
+  },
+  "developed_by": {
+    "message": "Készítette és fejlesztette",
+    "description": "Developer label"
+  },
+  "translators_heading": {
+    "message": "Fordítók",
+    "description": "Heading for translators"
+  },
+  "spanish": {
+    "message": "Spanyol",
+    "description": "The language"
+  },
+  "russian": {
+    "message": "Orosz",
+    "description": "The language"
+  },
+  "portuguese": {
+    "message": "Portugál",
+    "description": "The language"
+  },
+  "italian": {
+    "message": "Olasz",
+    "description": "The language"
+  },
+  "french": {
+    "message": "Francia",
+    "description": "The language"
+  },
+  "swedish": {
+    "message": "Svéd",
+    "description": "The language"
+  },
+  "chinese_simplified": {
+    "message": "Kinai (egyszerűsített)",
+    "description": "The language"
+  },
+  "german": {
+    "message": "Német",
+    "description": "The language"
+  },
+  "polish": {
+    "message": "Lengyel",
+    "description": "The language"
+  },
+  "hungarian": {
+    "message": "Magyar",
+    "description": "The language"
+  },
+  "arabic": {
+    "message": "Arab",
+    "description": "The language"
+  },
+  "slovak": {
+    "message": "Szlovák",
+    "description": "The language"
+  },
+  "turkish": {
+    "message": "Török",
+    "description": "The language"
+  },
+  "latvian": {
+    "message": "Litván",
+    "description": "The language"
+  },
+  "dutch": {
+    "message": "Dutch",
+    "description": "The language"
+  },
+  "czech": {
+    "message": "Czech",
+    "description": "The language"
+  },
+  "japanese": {
+    "message": "Japanese",
+    "description": "The language"
+  },
+  "vietnamese": {
+    "message": "Vietnamese",
+    "description": "The language"
+  },
+  "romanian": {
+    "message": "Romanian",
+    "description": "The language"
+  },
+  "hindi": {
+    "message": "Hindi",
+    "description": "The language"
+  },
+  "catalonian": {
+    "message": "Catalonian",
+    "description": "The language"
+  },
+  "translation_help_heading": {
+    "message": "Nem találod a nyelved?",
+    "description": "Heading to recruit translators"
+  },
+  "translation_instructions": {
+    "message": "Beszélsz angolul és szeretnéd lefordítani a Better History-t egy másik nyelvre? Remek! Csak írj egy email-t ide: $link_open$$email$$link_close$",
+    "description": "Instructions on how to help translate",
+    "placeholders": {
+      "email": {
+        "content": "$1",
+        "example": "Contact email address"
+      },
+      "link_open": {
+        "content": "$2",
+        "example": "open tag for email link"
+      },
+      "link_close": {
+        "content": "$3",
+        "example": "close tag for email link"
+      }
+    }
+  },
+  "close_button": {
+    "message": "Oké!",
+    "description": "Button to close modal"
+  },
+
+  // Version
+  "version_title": {
+    "message": "Hola, 您好, Olá, bonjour, Helló!",
+    "description": "Title of the version modal"
+  },
+  "version_description": {
+    "message": "Ez egy nagy, nagy kiadás. Egy csomó kiváló ember segítségével a Better History már 14 nyelven érhető el! Nézd meg a $link_open$készítőket$link_close$, hogy megköszönhesd nekik!",
+    "description": "Version description",
+    "placeholders": {
+      "link_open": {
+        "content": "$1"
+      },
+      "link_close": {
+        "content": "$2"
+      }
+    }
+  },
+  "version_important_note": {
+    "message": "Fontos (jegyzet)",
+    "description": "Heading for an important note"
+  },
+  "version_note": {
+    "message": "Túl sok visszajelzés kapok, így nem tudok az összesre válaszolni. Gyors visszajelzéshez csak Tweetelj a $link_open$@Better_History$link_close$ -ra. Kövesd a $link_open$@Better_History$link_close$ -t újdonságokért is!",
+    "descriotion": "Feedback and support note",
+    "placeholders": {
+      "link_open": {
+        "content": "$1"
+      },
+      "link_close": {
+        "content": "$2"
+      }
+    }
+  },
+  "version_whats_new": {
+    "message": "Újdonságok",
+    "description": "Heading for what's new in version"
+  },
+  "version_items": {
+    "message": "$open$Lefordítva 15 nyelvre$close$ $open$A beállításoknál ki lehet kapcsolni a jobb-gombos funkciókat$close$ $open$Eszköztárban megjelenik a Better History ikonja$close$ $open$Készítők rész hozzáadva a beállításokhoz$close$ $open$XSS sebezhetőség javítva$close$",
+    "description": "Release bulletpoints",
+    "placeholders": {
+      "open": {
+        "content": "$1",
+        "example": "<li>"
+      },
+      "close": {
+        "content": "$2",
+        "example": "</li>"
+      }
+    }
+  },
+
+  // Search
+  "search_time_frame": {
+    "message": "Utóbbi néhány hónap",
+    "description": "Time frame relating to Search"
+  },
+  "searching_title": {
+    "message": "Keresés",
+    "description": "Searching title"
+  },
+  "and": {
+    "message": "és",
+    "description": "The word and"
+  }
+}
