@@ -5,11 +5,11 @@
     "description": "Manifest name"
   },
   "manifest_browser_action_title": {
-    "message": "",
+    "message": "Просмотреть историю",
     "description": "Manifest browser action title"
   },
   "manifest_description": {
-    "message": "",
+    "message": "Удобный просмотр истории посещений веб-сайтов. Наилучший поиск, строгий интерфейс и множество фильтров - все это для вашего удобства.",
     "description": "Manifest description"
   },
 
@@ -119,11 +119,11 @@
     "description": "Section heading in Settings"
   },
   "search_by_text_selection_label": {
-    "message": "Включить поиск по выделенному тексту",
+    "message": "поиск по выделенному тексту",
     "description": "Label for check box to enable right click option"
   },
   "search_by_domain_label": {
-    "message": "Включить поиск по домену",
+    "message": "поиск по домену",
     "description": "Label for check box to enable right click option"
   },
   "Whats_new_section_title": {
@@ -147,7 +147,7 @@
     "description": "Section heading in Settings"
   },
   "suggestions_bugs_comments": {
-    "message": "",
+    "message": "Есть предложения, нашли ошибку, хотите написать омментарии? Пишите в Твиттер $link_open$@Better_History!$link_close$",
     "description": "Link text to give feedback",
     "placeholders": {
       "link_open": {
@@ -479,7 +479,7 @@
     "description": "Text for delete all visits for a day filter button"
   },
   "no_visits_found": {
-    "message": "",
+    "message": "Посещений не найдено. Сожалею.",
     "description": "Text for no visits found message"
   },
   "january": {
@@ -571,7 +571,7 @@
     "description": "Developer label"
   },
   "translators_heading": {
-    "message": "",
+    "message": "Переводчики",
     "description": "Heading for translators"
   },
   "spanish": {
@@ -663,7 +663,7 @@
     "description": "Heading to recruit translators"
   },
   "translation_instructions": {
-    "message": "Вы говорите по-английски и хотите перевести %app_name% на новый язык? Отлично! Просто отправьте письмо на $link_open$ $email$ $link_close$",
+    "message": "Вы говорите по-английски и хотите перевести Better History на новый язык? Отлично! Просто отправьте письмо на $link_open$ $email$ $link_close$",
     "description": "Instructions on how to help translate",
     "placeholders": {
       "email": {
@@ -702,8 +702,12 @@
       }
     }
   },
+  "version_important_note": {
+    "message": "Важное примечание",
+    "description": "Heading for an important note"
+  },
   "version_note": {
-    "message": "",
+    "message": "Я получаю настолько много сообщений, что, к сожалению, не могу ответить на все. Для быстрой обратной связи, предложений и чтобы доложить об ошибке, просто напишите в Твиттер $link_open$@Better_History!$link_close$ Подписывайтесь $link_open$@Better_History$link_close$, чтобы следить за последними новостями!",
     "descriotion": "Feedback and support note",
     "placeholders": {
       "link_open": {
