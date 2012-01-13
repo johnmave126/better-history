@@ -1,0 +1,753 @@
+{
+  // Manifest
+  "manifest_name": {
+    "message": "Better History",
+    "description": "Manifest name"
+  },
+  "manifest_browser_action_title": {
+    "message": "تصفح سجل التاريخ",
+    "description": "Manifest browser action title"
+  },
+  "manifest_description": {
+    "message": "تصفح سجل التاريخ بشكل أفضل. أفضل بحث، أجمل واجهة، والأكثر فائدة من حيث تصفية البحث لسجل التاريخ.",
+    "description": "Manifest description"
+  },
+
+  // App
+  "history_title": {
+    "message": "سجل التاريخ",
+    "description": "Extension title"
+  },
+
+  // Dates
+  "formal_date": {
+    "message": "$day$ $year$ $month$",
+    "description": "The order of a full date",
+    "placeholders": {
+      "month": {
+        "content": "$1",
+        "example": "March"
+      },
+      "day": {
+        "content": "$2",
+        "example": "25"
+      },
+      "year": {
+        "content": "$3",
+        "example": "2011"
+      }
+    }
+  },
+  "informal_date": {
+    "message": "$week_day$, $day$",
+    "description": "Date labels in sidebar",
+    "placeholders": {
+      "week_day": {
+        "content": "$1",
+        "example": "Monday"
+      },
+      "day": {
+        "content": "$2",
+        "example": "4"
+      },
+      "ordinal": {
+        "content": "$3",
+        "example": "st"
+      },
+      "ordinal_open": {
+        "content": "$4",
+        "example": "open tag for ordinal"
+      },
+      "ordinal_close": {
+        "content": "$5",
+        "example": "close tag for ordinal"
+      }
+    }
+  },
+
+  // Settings
+  "settings_title": {
+    "message": "الإعدادات",
+    "description": "Settings title for Settings page"
+  },
+  "clearing_history_section_title": {
+    "message": "مسح سجل التاريخ",
+    "description": "Section heading in Settings"
+  },
+  "clear_history_button": {
+    "message": "مسح سجل التاريخ...",
+    "description": "Button text for clear history button in Settings"
+  },
+  "visit_grouping_section_title": {
+    "message": "تجميع الزيارات",
+    "description": "Section heading in Settings"
+  },
+  "group_visits_by_label": {
+    "message": "تجميع الزيارات كل",
+    "description": "Label for select box to set the time grouping interval for visits"
+  },
+  "60_minutes_option": {
+    "message": "60 دقيقة",
+    "description": "Time amount"
+  },
+  "30_minutes_option": {
+    "message": "30 دقيقة",
+    "description": "Time amount"
+  },
+  "15_minutes_option": {
+    "message": "15 دقيقة",
+    "description": "Time amount"
+  },
+  "time_format_label": {
+    "message": "تنسيق الوقت",
+    "description": "Label for select box to set the time format (12 or 24 hours)"
+  },
+  "12_hours_option": {
+    "message": "12 ساعات",
+    "description": "12 hour time format, example: 3:00 PM"
+  },
+  "24_hours_option": {
+    "message": "24 ساعات",
+    "description": "24 hour time format, example: 14:00"
+  },
+  "group_visits_by_domain_label": {
+    "message": "تجميع الزيارات بالمجال",
+    "description": "Label for check box to group visits by domain"
+  },
+  "right_click_options_section_title": {
+    "message": "خيارات الضغطة اليمنى",
+    "description": "Section heading in Settings"
+  },
+  "search_by_text_selection_label": {
+    "message": "بحث باختيار النص",
+    "description": "Label for check box to enable right click option"
+  },
+  "search_by_domain_label": {
+    "message": "بحث بالمجال",
+    "description": "Label for check box to enable right click option"
+  },
+  "Whats_new_section_title": {
+    "message": "ما الجديد",
+    "description": "Section heading in Settings"
+  },
+  "view_release_announcement_link": {
+    "message": "عرض إعلان الإصدار",
+    "description": "Link text to view the release announcement"
+  },
+  "current_version_label": {
+    "message": "الإصدار الحالي",
+    "description": "label for the current version"
+  },
+  "credits": {
+    "message": "الاعتمادات",
+    "description": "The word credits"
+  },
+  "feedback_section_title": {
+    "message": "اتصل بنا",
+    "description": "Section heading in Settings"
+  },
+  "suggestions_bugs_comments": {
+    "message": "اقتراحات، مشاكل، تعليقات؟ ارسل تغريدة إلى $link_open$@Better_History$link_close$",
+    "description": "Link text to give feedback",
+    "placeholders": {
+      "link_open": {
+        "content": "$1"
+      },
+      "link_close": {
+        "content": "$2"
+      }
+    }
+  },
+  "spread_the_word_section_title": {
+    "message": "انشر الخبر",
+    "description": "Section heading in Settings"
+  },
+  "leave_a_review": {
+    "message": "سجل رأيك",
+    "description": "Link text to leave a review"
+  },
+  "default_time_format": {
+    "message": "12",
+    "description": "12 or 24 hour based"
+  },
+
+  // Sidebar
+  "search_input_placeholder_text": {
+    "message": "البحث عن عنوان، موقع أو تاريخ",
+    "description": "Placeholder text in the search input box"
+  },
+  "settings_link": {
+    "message": "الإعدادات",
+    "description": "Text for the link to Settings"
+  },
+  "today_link": {
+    "message": "اليوم",
+    "description": "Link for today"
+  },
+  "yesterday_link": {
+    "message": "البارحة",
+    "description": "Link for yesterday"
+  },
+  "monday": {
+    "message": " الاثنين",
+    "description": "The day of the week"
+  },
+  "tuesday": {
+    "message": "الثلاثاء",
+    "description": "The day of the week"
+  },
+  "wednesday": {
+    "message": "الأربعاء",
+    "description": "The day of the week"
+  },
+  "thursday": {
+    "message": "الخميس",
+    "description": "The day of the week"
+  },
+  "friday": {
+    "message": "الجمعة",
+    "description": "The day of the week"
+  },
+  "saturday": {
+    "message": "السبت",
+    "description": "The day of the week"
+  },
+  "sunday": {
+    "message": "الأحد",
+    "description": "The day of the week"
+  },
+  "1": {
+    "message": "١",
+    "description": "the number"
+  },
+  "ordinal_1": {
+    "message": "",
+    "description": "the ordinal for 1"
+  },
+  "2": {
+    "message": "٢",
+    "description": "the number"
+  },
+  "ordinal_2": {
+    "message": "",
+    "description": "the ordinal for 2"
+  },
+  "3": {
+    "message": "٣",
+    "description": "the number"
+  },
+  "ordinal_3": {
+    "message": "",
+    "description": "the ordinal for 3"
+  },
+  "4": {
+    "message": "٤",
+    "description": "the number"
+  },
+  "ordinal_4": {
+    "message": "",
+    "description": "the ordinal for 4"
+  },
+  "5": {
+    "message": "٥",
+    "description": "the number"
+  },
+  "ordinal_5": {
+    "message": "",
+    "description": "the ordinal for 5"
+  },
+  "6": {
+    "message": "٦",
+    "description": "the number"
+  },
+  "ordinal_6": {
+    "message": "",
+    "description": "the ordinal for 6"
+  },
+  "7": {
+    "message": "٧",
+    "description": "the number"
+  },
+  "ordinal_7": {
+    "message": "",
+    "description": "the ordinal for 7"
+  },
+  "8": {
+    "message": "٨",
+    "description": "the number"
+  },
+  "ordinal_8": {
+    "message": "",
+    "description": "the ordinal for 8"
+  },
+  "9": {
+    "message": "٩",
+    "description": "the number"
+  },
+  "ordinal_9": {
+    "message": "",
+    "description": "the ordinal for 9"
+  },
+  "10": {
+    "message": "١٠",
+    "description": "the number"
+  },
+  "ordinal_10": {
+    "message": "",
+    "description": "the ordinal for 10"
+  },
+  "11": {
+    "message": "١١",
+    "description": "the number"
+  },
+  "ordinal_11": {
+    "message": "",
+    "description": "the ordinal for 11"
+  },
+  "12": {
+    "message": "١٢",
+    "description": "the number"
+  },
+  "ordinal_12": {
+    "message": "",
+    "description": "the ordinal for 12"
+  },
+  "13": {
+    "message": "١٣",
+    "description": "the number"
+  },
+  "ordinal_13": {
+    "message": "",
+    "description": "the ordinal for 13"
+  },
+  "14": {
+    "message": "١٤",
+    "description": "the number"
+  },
+  "ordinal_14": {
+    "message": "",
+    "description": "the ordinal for 14"
+  },
+  "15": {
+    "message": "١٥",
+    "description": "the number"
+  },
+  "ordinal_15": {
+    "message": "",
+    "description": "the ordinal for 15"
+  },
+  "16": {
+    "message": "١٦",
+    "description": "the number"
+  },
+  "ordinal_16": {
+    "message": "",
+    "description": "the ordinal for 16"
+  },
+  "17": {
+    "message": "١٧",
+    "description": "the number"
+  },
+  "ordinal_17": {
+    "message": "",
+    "description": "the ordinal for 17"
+  },
+  "18": {
+    "message": "١٨",
+    "description": "the number"
+  },
+  "ordinal_18": {
+    "message": "",
+    "description": "the ordinal for 18"
+  },
+  "19": {
+    "message": "١٩",
+    "description": "the number"
+  },
+  "ordinal_19": {
+    "message": "",
+    "description": "the ordinal for 19"
+  },
+  "20": {
+    "message": "٢٠",
+    "description": "the number"
+  },
+  "ordinal_20": {
+    "message": "",
+    "description": "the ordinal for 20"
+  },
+  "21": {
+    "message": "٢١",
+    "description": "the number"
+  },
+  "ordinal_21": {
+    "message": "",
+    "description": "the ordinal for 21"
+  },
+  "22": {
+    "message": "٢٢",
+    "description": "the number"
+  },
+  "ordinal_22": {
+    "message": "",
+    "description": "the ordinal for 22"
+  },
+  "23": {
+    "message": "٢٣",
+    "description": "the number"
+  },
+  "ordinal_23": {
+    "message": "",
+    "description": "the ordinal for 23"
+  },
+  "24": {
+    "message": "٢٤",
+    "description": "the number"
+  },
+  "ordinal_24": {
+    "message": "",
+    "description": "the ordinal for 24"
+  },
+  "25": {
+    "message": "٢٥",
+    "description": "the number"
+  },
+  "ordinal_25": {
+    "message": "",
+    "description": "the ordinal for 25"
+  },
+  "26": {
+    "message": "٢٦",
+    "description": "the number"
+  },
+  "ordinal_26": {
+    "message": "",
+    "description": "the ordinal for 26"
+  },
+  "27": {
+    "message": "٢٧",
+    "description": "the number"
+  },
+  "ordinal_27": {
+    "message": "",
+    "description": "the ordinal for 27"
+  },
+  "28": {
+    "message": "٢٨",
+    "description": "the number"
+  },
+  "ordinal_28": {
+    "message": "",
+    "description": "the ordinal for 28"
+  },
+  "29": {
+    "message": "٢٩",
+    "description": "the number"
+  },
+  "ordinal_29": {
+    "message": "",
+    "description": "the ordinal for 29"
+  },
+  "30": {
+    "message": "٣٠",
+    "description": "the number"
+  },
+  "ordinal_30": {
+    "message": "",
+    "description": "the ordinal for 30"
+  },
+  "31": {
+    "message": "٣١",
+    "description": "the number"
+  },
+  "ordinal_31": {
+    "message": "",
+    "description": "the ordinal for 31"
+  },
+
+  // Filter
+  "collapse_button": {
+    "message": "تصغير",
+    "description": "Text for collapse button"
+  },
+  "expand_button": {
+    "message": "تكبير",
+    "description": "Text for expand button"
+  },
+  "delete_all_visits_for_filter_button": {
+    "message": "حذف...",
+    "description": "Text for delete all visits for a day filter button"
+  },
+  "no_visits_found": {
+    "message": "عفوا، لا يوجد زيارات",
+    "description": "Text for no visits found message"
+  },
+  "january": {
+    "message": " يناير ",
+    "description": "The month"
+  },
+  "february": {
+    "message": "فبراير",
+    "description": "The month"
+  },
+  "march": {
+    "message": "مارس",
+    "description": "The month"
+  },
+  "april": {
+    "message": " ابريل",
+    "description": "The month"
+  },
+  "may": {
+    "message": "مايو",
+    "description": "The month"
+  },
+  "june": {
+    "message": " أغسطس",
+    "description": "The month"
+  },
+  "july": {
+    "message": " يونيو",
+    "description": "The month"
+  },
+  "august": {
+    "message": " يوليو",
+    "description": "The month"
+  },
+  "september": {
+    "message": " سبتمبر",
+    "description": "The month"
+  },
+  "october": {
+    "message": " أكتوبر",
+    "description": "The month"
+  },
+  "november": {
+    "message": "نوفمبر",
+    "description": "The month"
+  },
+  "december": {
+    "message": "ديسمبر",
+    "description": "The month"
+  },
+  "confirm_delete_all_visits": {
+    "message": "حذف جميع الزيارات من $formal_date$?",
+    "description": "Confirmation text to delete all visits from a specific date",
+    "placeholders": {
+      "formal_date": {
+        "content": "$1",
+        "example": "January 2, 2011"
+      }
+    }
+  },
+
+  // Time visits
+  "visits_label": {
+    "message": "الزيارات ",
+    "description": "Label to a number representing a number of visits"
+  },
+
+  // Prompt Modal
+  "prompt_cancel_button": {
+    "message": "إلغاء ",
+    "description": "Button to close modal"
+  },
+  "prompt_delete_button": {
+    "message": "حذف",
+    "description": "Button to delete history"
+  },
+  "prompt_title": {
+    "message": "تأكيد",
+    "description": "Title of prompt"
+  },
+
+  // Credits
+  "credits_title": {
+    "message": "الاعتمادات",
+    "description": "Title for credits modal"
+  },
+  "developed_by": {
+    "message": "إنشاء وتطوير",
+    "description": "Developer label"
+  },
+  "translators_heading": {
+    "message": "المترجمين",
+    "description": "Heading for translators"
+  },
+  "spanish": {
+    "message": "الإسبانية",
+    "description": "The language"
+  },
+  "russian": {
+    "message": "الروسية",
+    "description": "The language"
+  },
+  "portuguese": {
+    "message": "البرتغالية",
+    "description": "The language"
+  },
+  "italian": {
+    "message": "الإيطالية",
+    "description": "The language"
+  },
+  "french": {
+    "message": "الفرنسية",
+    "description": "The language"
+  },
+  "swedish": {
+    "message": "السويدية",
+    "description": "The language"
+  },
+  "chinese_simplified": {
+    "message": "(الصينية) المبسطة",
+    "description": "The language"
+  },
+  "german": {
+    "message": "الألمانية",
+    "description": "The language"
+  },
+  "polish": {
+    "message": "البولندية",
+    "description": "The language"
+  },
+  "hungarian": {
+    "message": "الهنغارية",
+    "description": "The language"
+  },
+  "arabic": {
+    "message": "العربية",
+    "description": "The language"
+  },
+  "slovak": {
+    "message": "السلوفاكية",
+    "description": "The language"
+  },
+  "turkish": {
+    "message": "التركية",
+    "description": "The language"
+  },
+  "latvian": {
+    "message": "اللاتفية",
+    "description": "The language"
+  },
+  "dutch": {
+    "message": "Dutch",
+    "description": "The language"
+  },
+  "czech": {
+    "message": "Czech",
+    "description": "The language"
+  },
+  "japanese": {
+    "message": "Japanese",
+    "description": "The language"
+  },
+  "vietnamese": {
+    "message": "Vietnamese",
+    "description": "The language"
+  },
+  "romanian": {
+    "message": "Romanian",
+    "description": "The language"
+  },
+  "hindi": {
+    "message": "Hindi",
+    "description": "The language"
+  },
+  "catalonian": {
+    "message": "Catalonian",
+    "description": "The language"
+  },
+  "translation_help_heading": {
+    "message": "لاترى لغتك؟",
+    "description": "Heading to recruit translators"
+  },
+  "translation_instructions": {
+    "message": "هل تتحدث الإنجليزية وتريد ترجمة سجل تاريخ أفضل إلى لغة جديدة؟ فقط قم بإرسال رسالة إلى $link_open$ $email$ $link_close$",
+    "description": "Instructions on how to help translate",
+    "placeholders": {
+      "email": {
+        "content": "$1",
+        "example": "Contact email address"
+      },
+      "link_open": {
+        "content": "$2",
+        "example": "open tag for email link"
+      },
+      "link_close": {
+        "content": "$3",
+        "example": "close tag for email link"
+      }
+    }
+  },
+  "close_button": {
+    "message": "حسناً",
+    "description": "Button to close modal"
+  },
+
+  // Version
+  "version_title": {
+    "message": "Hola, 您好, Olá, bonjour, أهلاً",
+    "description": "Title of the version modal"
+  },
+  "version_description": {
+    "message": ".هذا إطلاق كبير جداً. بمساعدة مجموعة من المستخدمين الرائعين، سجل تاريخ أفضل متوفر الآن ب 14 لغة. راجع قسم الإعتمادات المخصص لشكر هؤلاء المترجمين",
+    "description": "Version description",
+    "placeholders": {
+      "link_open": {
+        "content": "$1"
+      },
+      "link_close": {
+        "content": "$2"
+      }
+    }
+  },
+  "version_important_note": {
+    "message": "ملاحظة هامة",
+    "description": "Heading for an important note"
+  },
+  "version_note": {
+    "message": " تأتينا ردود فعل كثيرة، للأسف لا يمكننا الرد عليها جميعا. لردود فعل سريعة والاقتراحات والمشاكل يرجى ارسال تغريدة إلى $link_open$@Better_History$link_close$.  تابع $link_open$@Better_History$link_close$ لآخر الاخبار.",
+    "descriotion": "Feedback and support note",
+    "placeholders": {
+      "link_open": {
+        "content": "$1"
+      },
+      "link_close": {
+        "content": "$2"
+      }
+    }
+  },
+  "version_whats_new": {
+    "message": "ما الجديد",
+    "description": "Heading for what's new in version"
+  },
+  "version_items": {
+    "message": "$open$هنا 15 تمت الترجمة إلى$close$ $open$إضافة خيارات في الإعدادات لتعطيل خيارات الضغطة اليمنى$close$ $open$إضافة أيقونة لعرض سجل تاريخ أفضل في شريط الأدوات$close$ $open$إضافة قسم الإعتمادات في الإعدادات$close$ $open$XSS إصلاح ضعف $close$",
+    "description": "Release bulletpoints",
+    "placeholders": {
+      "open": {
+        "content": "$1",
+        "example": "<li>"
+      },
+      "close": {
+        "content": "$2",
+        "example": "</li>"
+      }
+    }
+  },
+
+  // Search
+  "search_time_frame": {
+    "message": "الأشهر القليلة الماضية ",
+    "description": "Time frame relating to Search"
+  },
+  "searching_title": {
+    "message": "جاري البحث",
+    "description": "Searching title"
+  },
+  "and": {
+    "message": "و",
+    "description": "The word and"
+  }
+}
