@@ -2,10 +2,10 @@
 .sidebar_view {
   list-style-type: none;
   clear:both;
-  text-align:right;
+  text-align:__MSG_@@bidi_end_edge__;
 }
 .sidebar_view .search {
-  margin-right: 24px;
+  margin-__MSG_@@bidi_end_edge__: 24px;
   width:154px;
 }
 .sidebar_view .filters {

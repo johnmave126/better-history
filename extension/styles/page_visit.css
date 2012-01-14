@@ -3,7 +3,8 @@
   z-index:0;
   text-decoration:none;
   display:block;
-  margin:5px 3px 0 30px;
+  margin:5px 3px 0 0;
+  margin-__MSG_@@bidi_start_edge__:30px;
 }
 .page_visit_view .delete_icon {
   display:none;
@@ -28,8 +29,8 @@
 .page_visit_view .time { margin-top:2px; }
 .page_visit_view .description {
   background-repeat:no-repeat;
-  background-position:0 0;
-  padding-left:25px;
+  background-position:__MSG_@@bidi_start_edge__ 0;
+  padding-__MSG_@@bidi_start_edge__:25px;
 }
 .page_visit_view .match {
   background:#f2f37b;

@@ -7,7 +7,7 @@ select {
   -webkit-user-select: none;
   background-image: url("../images/select.png"),
                     -webkit-linear-gradient(#fafafa, #f4f4f4 40%, #e5e5e5);
-  background-position: center right;
+  background-position: center __MSG_@@bidi_end_edge__;
   background-repeat: no-repeat;
   border: 1px solid #aaa;
   color: #555;
@@ -16,7 +16,7 @@ select {
   overflow: hidden;
   padding-top: 3px;
   padding-bottom: 3px;
-  padding-left:10px;
+  padding-__MSG_@@bidi_start_edge__:10px;
   text-overflow: ellipsis;
   white-space: nowrap;
 }

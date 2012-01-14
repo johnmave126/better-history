@@ -1,37 +1,26 @@
 .delete_icon .delete:before {
   width:16px;
   height:16px;
-  /* css3 */
   -webkit-border-radius:16px;
-  -moz-border-radius:16px;
-  border-radius:16px;
 }
 
 .delete_icon .delete:after {
-  left:3px;
+  __MSG_@@bidi_start_edge__:3px;
   width:10px;
   height:2px;
   margin-top:-1px;
   background:#fff;
-  /* css3 */
   -webkit-transform:rotate(45deg);
-  -moz-transform:rotate(45deg);
-  -o-transform:rotate(45deg);
-  transform:rotate(45deg);
 }
 
 span.delete_icon:before {
   z-index:10;
-  left:7px;
+  __MSG_@@bidi_start_edge__:7px;
   width:2px;
   height:10px;
   margin-top:-5px;
   background:#FFF;
-  /* css3 */
   -webkit-transform:rotate(45deg);
-  -moz-transform:rotate(45deg);
-  -o-transform:rotate(45deg);
-  transform:rotate(45deg);
 }
 .delete_icon {
   position:relative;
@@ -48,7 +37,7 @@ span.delete_icon:before {
   content:"";
   position:absolute;
   top:50%;
-  left:0;
+  __MSG_@@bidi_start_edge__:0;
 }
 
 .delete:before,
@@ -60,7 +49,7 @@ span.delete_icon:before {
   position:absolute;
   display:block;
   border:0;
-  padding-left:28px;
+  padding-__MSG_@@bidi_start_edge__:28px;
 }
 .delete_icon:hover .delete,
 .delete_icon:hover .delete:before { background:#555; }
@@ -85,7 +74,8 @@ span.delete_icon:before {
     content:"";
     position:absolute;
     top:50%;
-    left:0;
+    __MSG_@@bidi_start_edge__:0;
+    __MSG_@@bidi_end_edge__:0;
 }
 .settings_icon .settings:before,
 .settings_icon .settings:after {
@@ -93,39 +83,32 @@ span.delete_icon:before {
     background:#666;
 }
 .settings_icon:after {
-    left:13px;
+    __MSG_@@bidi_start_edge__:13px;
+    __MSG_@@bidi_end_edge__:0;
     width:3px;
     height:5px;
     margin-top:-8px;
     background:#fff;
-    /* css3 */
     -webkit-transform:rotate(45deg);
-    -moz-transform:rotate(45deg);
-    -o-transform:rotate(45deg);
-    transform:rotate(45deg);
 }
 .settings_icon .settings:before {
-    left:6px;
+    __MSG_@@bidi_start_edge__:6px;
+    __MSG_@@bidi_end_edge__:0;
     width:4px;
     height:15px;
     margin-top:-7px;
     background:#666;
-    /* css3 */
     -webkit-transform:rotate(45deg);
 s
-    -moz-transform:rotate(45deg);
-    -o-transform:rotate(45deg);
-    transform:rotate(45deg);
 }
 
 .settings_icon .settings:after {
-    left:8px;
+    __MSG_@@bidi_start_edge__:8px;
+    __MSG_@@bidi_end_edge__:0;
     width:9px;
     height:9px;
     background:#666;
     -webkit-border-radius:8px;
-    -moz-border-radius:8px;
-    border-radius:8px;
 }
 .settings_icon .settings:hover:before,
 .settings_icon .settings:hover:after,

@@ -1,5 +1,6 @@
 .grouped_visits_view .expanded {
   padding:0 0 5px 0;
-  margin:0 0 5px 24px;
+  margin:0 0 5px 0;
+  margin-__MSG_@@bidi_start_edge__:24px;
   display:none;
 }

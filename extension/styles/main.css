@@ -1,4 +1,5 @@
 body {
+  direction: __MSG_@@bidi_dir__;
   font-family: Helvetica, sans-serif;
   margin: 0;
   font-size:13px;
@@ -23,7 +24,8 @@ h1 {
   font-weight: normal;
   font-size: 20px;
   margin: 0;
-  padding: 13px 24px 21px 0;
+  padding: 13px 0 21px;
+  padding-__MSG_@@bidi_end_edge__: 24px;
   font-size:200%;
   text-align: end;
   text-shadow: white 0 1px 2px;
@@ -50,7 +52,8 @@ h2 {
   position:fixed;
   width:100%;
   z-index:11;
-  margin:0 0 0 24px;
+  margin:0;
+  margin-__MSG_@@bidi_start_edge__: 24px;
   border-bottom: 1px solid #eee;
 }
 .filter_view .content,
@@ -72,9 +75,10 @@ h2 {
 .stuck {
   border:none;
   z-index:10;
-  box-shadow: 4px 2px 9px -1px rgba(0,0,0,.4);
+  box-shadow: 0px 4px 6px -2px rgba(0,0,0,.3);
   width:auto;
-  margin:0 0 0 24px;
+  margin:0;
+  margin-__MSG_@@bidi_start_edge__:24px;
   width:100%;
   background:#FFF;
   display:block;
@@ -87,7 +91,7 @@ h2 {
   margin:0;
   padding:0;
   position:absolute;
-  right:260px;
+  __MSG_@@bidi_end_edge__:260px;
   top:10px;
 }
 .heading .controls .control {
