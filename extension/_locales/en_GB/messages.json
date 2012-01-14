@@ -1,0 +1,21 @@
+{
+  // Dates
+  "formal_date": {
+    "message": "$day$ $month$ $year$",
+    "description": "The order of a full date",
+    "placeholders": {
+      "month": {
+        "content": "$1",
+        "example": "March"
+      },
+      "day": {
+        "content": "$2",
+        "example": "25"
+      },
+      "year": {
+        "content": "$3",
+        "example": "2011"
+      }
+    }
+  }
+}
