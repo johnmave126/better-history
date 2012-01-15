@@ -56,7 +56,8 @@ Helpers = {
     }
 
     function period(hours) {
-      return (hours < 12 ? 'AM' : 'PM');
+      var message = (hours < 12 ? 'am' : 'pm');
+      return chrome.i18n.getMessage(message);
     }
 
     var hours = date.getHours();

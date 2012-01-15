@@ -65,6 +65,16 @@
     }
   },
 
+  // Time
+  "am": {
+    "message": "上午",
+    "description": "The morning abbreviation when using 12 hour time"
+  },
+  "pm": {
+    "message": "下午",
+    "description": "The afternoon abbreviation when using 12 hour time"
+  },
+
   // Settings
   "settings_title": {
     "message": "设置",

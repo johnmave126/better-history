@@ -64,6 +64,15 @@
       }
     }
   },
+  // Time
+  "am": {
+    "message": "صباحاً",
+    "description": "The morning abbreviation when using 12 hour time"
+  },
+  "pm": {
+    "message": "مساءاً",
+    "description": "The afternoon abbreviation when using 12 hour time"
+  },
 
   // Settings
   "settings_title": {

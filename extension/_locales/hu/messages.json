@@ -65,6 +65,16 @@
     }
   },
 
+  // Time
+  "am": {
+    "message": "AM",
+    "description": "The morning abbreviation when using 12 hour time"
+  },
+  "pm": {
+    "message": "PM",
+    "description": "The afternoon abbreviation when using 12 hour time"
+  },
+
   // Settings
   "settings_title": {
     "message": "Beállítások",
