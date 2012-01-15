@@ -3,13 +3,12 @@
   z-index:0;
   text-decoration:none;
   display:block;
+  position:relative;
   margin:5px 3px 0 0;
   margin-__MSG_@@bidi_start_edge__:30px;
 }
 .page_visit_view .delete_icon {
   display:none;
-  top:-7px;
-  left:0px;
 }
 .page_visit_view .link {
   padding: 5px;
@@ -60,4 +59,10 @@
 .page_visit_view > a:focus > .link > .description > .time {
   color:#555;
 }
-.page_visit_view:hover > a > .link > .delete_icon { display:inline; }
+.page_visit_view:hover > a > .link > .delete_icon {
+  display:block;
+  position:absolute;
+  width:16px;
+  height:16px;
+  bottom:5px;
+}

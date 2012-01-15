@@ -104,28 +104,15 @@ h2 {
   background:#DDD;
 }
 .heading .controls .control:last-child {
-  margin-left:20px;
+  margin-__MSG_@@bidi_start_edge__:20px;
 }
 .heading .delete_all {
-  padding: 3px 0px 3px 25px;
+  padding: 3px 0 3px;
+  padding-__MSG_@@bidi_start_edge__: 5px;
+  padding-__MSG_@@bidi_end_edge__: 10px;
   z-index:14;
 }
-.heading .button:hover .delete_icon .delete,
-.heading .button:hover .delete_icon .delete:before {
-  background:#555;
-}
 .heading .delete_icon {
-  margin-left:10px;
-}
-.heading .delete_icon::before {
-  margin-top: 3px;
-  left: -14px;
-}
-.heading .delete_icon .delete::before {
-  margin-top: 0px;
-  left: -21px;
-}
-.heading .delete_icon .delete::after {
-  margin-top: 7px;
-  left: -18px;
+  display: inline-block;
+  padding-__MSG_@@bidi_start_edge__: 20px;
 }

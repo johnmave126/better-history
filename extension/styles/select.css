@@ -1,4 +1,5 @@
 select {
+  line-height:16px;
   -webkit-appearance: button;
   -webkit-border-radius: 2px;
   -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);

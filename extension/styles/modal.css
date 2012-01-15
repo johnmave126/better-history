@@ -15,7 +15,8 @@
 }
 .overlay.show { display:block; }
 .overlay ul {
-  padding:0 0 0 17px;
+  padding:0;
+  padding-__MSG_@@bidi_start_edge__: 17px;
   margin-top:5px;
 }
 .overlay li {

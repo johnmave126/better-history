@@ -148,8 +148,9 @@
           </li>
           <li class="control">
             <a href="#" class="button delete_all">
-              <span class="delete_icon"> <span class="delete"> </span> </span>
-              {{i18n_delete_all_visits_for_filter_button}}
+              <span class="delete_icon">
+                {{i18n_delete_all_visits_for_filter_button}}
+              </span>
             </a>
           </li>
         </ul>
@@ -189,7 +190,8 @@
             <dd class="location">{{{location}}}</dd>
             <dd class="time">{{{time}}}</dd>
           </dl>
-          <span class="delete_icon delete_visit" title="Delete visit"><span class="delete"></span></span>
+          <span class="delete_icon delete_visit" title="Delete visit">
+          </span>
         </div>
       </a>
     </script>
@@ -304,7 +306,7 @@
       <div class="settings_wrapper selectable">
         <a href="#settings" class="settings_link">
           <span class="settings_icon">
-            <span class="settings">{{i18n_settings_link}}</span>
+            {{i18n_settings_link}}
           </span>
         </a>
       </div>

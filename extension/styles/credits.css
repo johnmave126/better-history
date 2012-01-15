@@ -1,5 +1,5 @@
 .credits_view .language {
-  float:right;
+  float:__MSG_@@bidi_end_edge__;
 }
 .credits_view li {
   list-style-type:none;

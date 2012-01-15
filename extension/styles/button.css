@@ -5,6 +5,8 @@ input[type='submit'] {
   font: -webkit-small-control;
   -webkit-border-radius: 2px;
   -webkit-box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1);
+
+  line-height:16px;
   -webkit-user-select: none;
   background: -webkit-linear-gradient(#fafafa, #f4f4f4 40%, #e5e5e5);
   border: 1px solid #aaa;
