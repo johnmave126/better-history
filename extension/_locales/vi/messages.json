@@ -21,7 +21,7 @@
 
   // Dates
   "formal_date": {
-    "message": "$month$ $day$, $year$",
+    "message": "$day$ $month$ $year$",
     "description": "The order of a full date",
     "placeholders": {
       "month": {
@@ -67,11 +67,11 @@
 
   // Time
   "am": {
-    "message": "AM",
+    "message": "sáng",
     "description": "The morning abbreviation when using 12 hour time"
   },
   "pm": {
-    "message": "PM",
+    "message": "chiều",
     "description": "The afternoon abbreviation when using 12 hour time"
   },
 
