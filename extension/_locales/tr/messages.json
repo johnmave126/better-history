@@ -577,8 +577,22 @@
     "description": "Title for credits modal"
   },
   "developed_by": {
-    "message": "Oluşturan ve geliştiren",
-    "description": "Developer label"
+    "message": "Oluşturan ve geliştiren $link_open$$name$$link_close$",
+    "description": "Developer label",
+    "placeholders": {
+      "link_open": {
+        "content": "$1",
+        "example": "Opening link"
+      },
+      "link_close": {
+        "content": "$2",
+        "example": "Closing link"
+      },
+      "name": {
+        "content": "$3",
+        "example": "Developer name"
+      }
+    }
   },
   "translators_heading": {
     "message": "Çevirenler",

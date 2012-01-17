@@ -577,8 +577,22 @@
     "description": "Title for credits modal"
   },
   "developed_by": {
-    "message": "Viết mã và phát triển bởi", //Created and developed by
-    "description": "Developer label"
+    "message": "Viết mã và phát triển bởi $link_open$$name$$link_close$", // Created and developed by
+    "description": "Developer label",
+    "placeholders": {
+      "link_open": {
+        "content": "$1",
+        "example": "Opening link"
+      },
+      "link_close": {
+        "content": "$2",
+        "example": "Closing link"
+      },
+      "name": {
+        "content": "$3",
+        "example": "Developer name"
+      }
+    }
   },
   "translators_heading": {
     "message": "Người dịch", //Translators

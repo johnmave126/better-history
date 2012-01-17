@@ -577,8 +577,22 @@
     "description": "Title for credits modal"
   },
   "developed_by": {
-    "message": "Creato e sviluppato da",
-    "description": "Developer label"
+    "message": "Creato e sviluppato da $link_open$$name$$link_close$",
+    "description": "Developer label",
+    "placeholders": {
+      "link_open": {
+        "content": "$1",
+        "example": "Opening link"
+      },
+      "link_close": {
+        "content": "$2",
+        "example": "Closing link"
+      },
+      "name": {
+        "content": "$3",
+        "example": "Developer name"
+      }
+    }
   },
   "translators_heading": {
     "message": "Traduttori",

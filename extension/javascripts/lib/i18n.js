@@ -85,7 +85,6 @@ i18n = {
   credits: function() {
     var properties = i18n.fetch([
       'credits_title',
-      'developed_by',
       'translators_heading',
       'spanish',
       'swedish',
@@ -110,6 +109,11 @@ i18n = {
       'turkish',
       'translation_help_heading',
       'close_button'
+    ]);
+    properties.i18n_developed_by = chrome.i18n.getMessage('developed_by', [
+      '<a href="http://automagical.posterous.com/">',
+      '</a>',
+      'Roy Kolak'
     ]);
     properties.i18n_translation_instructions = chrome.i18n.getMessage('translation_instructions', [
       'roy.kolak@gmail.com',
