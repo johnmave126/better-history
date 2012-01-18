@@ -1,7 +1,11 @@
 TimeVisit = Backbone.Model.extend({
   presenter: function() {
     return {
-      amount: this.get('pageVisits').length,
+      amount: chrome.i18n.getMessage('number_of_visits', [
+        this.get('pageVisits').length,
+        '<span class="amount">',
+        '</a>'
+      ]),
       time: Helpers.formatTime(this.get('datetime'), settings.timeFormat()),
       state: (this.get('collapsed') ? 'collapsed' : ''),
       id: this.id

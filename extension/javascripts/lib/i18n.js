@@ -61,12 +61,6 @@ i18n = {
     ]);
   },
 
-  timeVisit: function() {
-    return i18n.fetch([
-      'visits_label'
-    ]);
-  },
-
   groupedVisits: function() {
     return i18n.fetch([
       'collapse_button',

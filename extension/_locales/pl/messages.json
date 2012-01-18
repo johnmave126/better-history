@@ -553,8 +553,22 @@
 
   // Time visits
   "visits_label": {
-    "message": "Wizyty",
-    "description": "Label to a number representing a number of visits"
+    "message": "$number_open$$number$$number_close$ Wizyty",
+    "description": "Label to a number representing a number of visits",
+    "placeholders": {
+      "number": {
+        "content": "$1",
+        "example": "the number of visits"
+      },
+      "number_open": {
+        "content": "$2",
+        "example": "number tag open"
+      },
+      "number_close": {
+        "content": "$3",
+        "example": "number tag close"
+      }
+    }
   },
 
   // Prompt Modal
