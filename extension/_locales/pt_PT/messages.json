@@ -65,6 +65,16 @@
     }
   },
 
+  // Time
+  "am": {
+    "message": "da manhã",
+    "description": "The morning abbreviation when using 12 hour time"
+  },
+  "pm": {
+    "message": "da tarde",
+    "description": "The afternoon abbreviation when using 12 hour time"
+  },
+
   // Settings
   "settings_title": {
     "message": "Opções",
@@ -99,7 +109,7 @@
     "description": "Time amount"
   },
   "time_format_label": {
-    "message": "formato das horas",
+    "message": "Formato das horas",
     "description": "Label for select box to set the time format (12 or 24 hours)"
   },
   "12_hours_option": {
@@ -119,11 +129,11 @@
     "description": "Section heading in Settings"
   },
   "search_by_text_selection_label": {
-    "message": "ativar a pesquisa por seleção de texto",
+    "message": "Ativar a pesquisa por seleção de texto",
     "description": "Label for check box to enable right click option"
   },
   "search_by_domain_label": {
-    "message": "ativar a pesquisa por domínio",
+    "message": "Ativar a pesquisa por domínio",
     "description": "Label for check box to enable right click option"
   },
   "Whats_new_section_title": {
@@ -131,11 +141,11 @@
     "description": "Section heading in Settings"
   },
   "view_release_announcement_link": {
-    "message": "ver detalhes da versão",
+    "message": "Ver detalhes da versão",
     "description": "Link text to view the release announcement"
   },
   "current_version_label": {
-    "message": "versão atual",
+    "message": "Versão atual",
     "description": "label for the current version"
   },
   "credits": {
@@ -147,7 +157,7 @@
     "description": "Section heading in Settings"
   },
   "suggestions_bugs_comments": {
-    "message": "",
+    "message": "Sugestões, bugs, comentarios? Tweeta em $link_open$@Better_History!$link_close$",
     "description": "Link text to give feedback",
     "placeholders": {
       "link_open": {
@@ -543,7 +553,7 @@
 
   // Time visits
   "visits_label": {
-    "message": "Visitas",
+    "message": "visitas",
     "description": "Label to a number representing a number of visits"
   },
 
@@ -567,11 +577,25 @@
     "description": "Title for credits modal"
   },
   "developed_by": {
-    "message": "Criado e desenvolvido por ",
-    "description": "Developer label"
+    "message": "Criado e desenvolvido por $link_open$$name$$link_close$",
+    "description": "Developer label",
+    "placeholders": {
+      "link_open": {
+        "content": "$1",
+        "example": "Opening link"
+      },
+      "link_close": {
+        "content": "$2",
+        "example": "Closing link"
+      },
+      "name": {
+        "content": "$3",
+        "example": "Developer name"
+      }
+    }
   },
   "translators_heading": {
-    "message": "",
+    "message": "Tradutores",
     "description": "Heading for translators"
   },
   "spanish": {
@@ -619,43 +643,43 @@
     "description": "The language"
   },
   "slovak": {
-    "message": "",
+    "message": "Eslovaco",
     "description": "The language"
   },
   "turkish": {
-    "message": "",
+    "message": "Turco",
     "description": "The language"
   },
   "latvian": {
-    "message": "",
+    "message": "Letão",
     "description": "The language"
   },
   "dutch": {
-    "message": "",
+    "message": "Dutch",
     "description": "The language"
   },
   "czech": {
-    "message": "",
+    "message": "Czech",
     "description": "The language"
   },
   "japanese": {
-    "message": "",
+    "message": "Japanese",
     "description": "The language"
   },
   "vietnamese": {
-    "message": "",
+    "message": "Vietnamese",
     "description": "The language"
   },
   "romanian": {
-    "message": "",
+    "message": "Romanian",
     "description": "The language"
   },
   "hindi": {
-    "message": "",
+    "message": "Hindi",
     "description": "The language"
   },
   "catalonian": {
-    "message": "",
+    "message": "Catalonian",
     "description": "The language"
   },
   "translation_help_heading": {
@@ -702,8 +726,12 @@
       }
     }
   },
+  "version_important_note": {
+    "message": "Nota Importante",
+    "description": "Heading for an important note"
+  },
   "version_note": {
-    "message": "",
+    "message": "Tenho tido tanto feedback que infelizmente não consigo responder a todos. Para um feedback mais rápido, sugestões ou bugs, tweeta em $link_open$@Better_History$link_close$! Segue $link_open$@Better_History$link_close$ para saber as novidades!",
     "descriotion": "Feedback and support note",
     "placeholders": {
       "link_open": {
@@ -715,7 +743,7 @@
     }
   },
   "version_whats_new": {
-    "message": "",
+    "message": "O que há de novo",
     "description": "Heading for what's new in version"
   },
   "version_items": {
