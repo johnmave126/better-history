@@ -61,6 +61,10 @@ i18n = {
     ]);
   },
 
+  timeVisit: function() {
+    return {};
+  },
+
   groupedVisits: function() {
     return i18n.fetch([
       'collapse_button',
