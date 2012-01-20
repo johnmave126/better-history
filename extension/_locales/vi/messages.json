@@ -552,7 +552,7 @@
   },
 
   // Time visits
-  "visits_label": {
+  "number_of_visits": {
     "message": "$number_open$$number$$number_close$ lượt xem", //visits
     "description": "Label to a number representing a number of visits",
     "placeholders": {
