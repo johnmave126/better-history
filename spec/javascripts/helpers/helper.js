@@ -20,7 +20,9 @@ function loadChromeAPI(config) {
           number_of_visits: '1 visits',
           morning: 'AM',
           afternoon: 'afternoon PM',
-          evening: 'evening PM'
+          evening: 'evening PM',
+          search_in_history: 'Search in history',
+          visits_to_domain: 'Visits to domain' 
         };
 
         return lookup[key];

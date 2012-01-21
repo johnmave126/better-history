@@ -791,5 +791,22 @@
   "and": {
     "message": "un",
     "description": "The word and"
+  },
+
+  // Context menus
+  "search_in_history": {
+    "message": "Search in history",
+    "description": "Label for search in history context menu item"
+  },
+  "visits_to_domain": {
+    "message": "Visits to $domain$",
+    "description": "Label for visits to domain context menu item",
+    "placeholders": {
+      "domain": {
+        "content": "$1",
+        "example": "google.com"
+      }
+    }
   }
+
 }

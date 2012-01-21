@@ -91,7 +91,7 @@ describe('Context Menus', function() {
       it('updates the title domain from the passed tab', function() {
         pageContextMenu.updateTitleDomain({url: 'http://' + domain + '/projects'});
         expect(chrome.contextMenus.update).toHaveBeenCalledWith(pageContextMenu.menu, {
-          title: 'Visits to ' + domain
+          title: 'Visits to domain'
         });
       });
     });

@@ -2,7 +2,7 @@ SelectionContextMenu = function() {
   return {
     create: function() {
       this.menu = chrome.contextMenus.create({
-        title: 'Search in history',
+        title: chrome.i18n.getMessage('search_in_history'),
         contexts: ['selection'],
         onclick: this.onClick
       });
@@ -25,7 +25,7 @@ PageContextMenu = function() {
   return {
     create: function() {
       this.menu = chrome.contextMenus.create({
-        title: 'Visits to domain',
+        title: chrome.i18n.getMessage('visits_to_domain', ['domain']),
         contexts: ['page'],
         onclick: this.onClick
       });
@@ -39,7 +39,7 @@ PageContextMenu = function() {
 
     updateTitleDomain: function(tab) {
       chrome.contextMenus.update(this.menu, {
-        title: 'Visits to ' + Helpers.getDomain(tab.url)[1]
+        title: chrome.i18n.getMessage('visits_to_domain', [Helpers.getDomain(tab.url)[1]])
       });
     },
 
