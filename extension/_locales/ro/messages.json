@@ -177,7 +177,7 @@
     "description": "Link text to leave a review"
   },
   "default_time_format": {
-    "message": "12",
+    "message": "24",
     "description": "12 or 24 hour based"
   },
 
@@ -711,7 +711,7 @@
 
   // Version
   "version_title": {
-    "message": "Hola, 您好, Olá, bonjour, hello, salut!",
+    "message": "Hola, 您好, Olá, bonjour, hello, alo!",
     "description": "Title of the version modal"
   },
   "version_description": {
@@ -763,7 +763,7 @@
 
   // Search
   "search_time_frame": {
-    "message": "Din ultimele luni",
+    "message": "Ultimele luni",
     "description": "Time frame relating to Search"
   },
   "searching_title": {
