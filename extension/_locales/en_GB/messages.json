@@ -1,5 +1,4 @@
 {
-  // Dates
   "formal_date": {
     "message": "$day$ $month$ $year$",
     "description": "The order of a full date",

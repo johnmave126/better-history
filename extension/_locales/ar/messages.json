@@ -1,5 +1,4 @@
 {
-  // Manifest
   "manifest_name": {
     "message": "Better History",
     "description": "Manifest name"
@@ -13,13 +12,11 @@
     "description": "Manifest description"
   },
 
-  // App
   "history_title": {
     "message": "سجل التاريخ",
     "description": "Extension title"
   },
 
-  // Dates
   "formal_date": {
     "message": "$day$ $year$ $month$",
     "description": "The order of a full date",
@@ -64,7 +61,6 @@
       }
     }
   },
-  // Time
   "morning": {
     "message": "صباحاً",
     "description": "The morning abbreviation when using 12 hour time"
@@ -78,7 +74,6 @@
     "description": "The evening abbreviation when using 12 hour time"
   },
 
-  // Settings
   "settings_title": {
     "message": "الإعدادات",
     "description": "Settings title for Settings page"
@@ -184,7 +179,6 @@
     "description": "12 or 24 hour based"
   },
 
-  // Sidebar
   "search_input_placeholder_text": {
     "message": "البحث عن عنوان، موقع أو تاريخ",
     "description": "Placeholder text in the search input box"
@@ -478,7 +472,6 @@
     "description": "the ordinal for 31"
   },
 
-  // Filter
   "collapse_button": {
     "message": "تصغير",
     "description": "Text for collapse button"
@@ -554,7 +547,6 @@
     }
   },
 
-  // Time visits
   "number_of_visits": {
     "message": "$number_open$$number$$number_close$ الزيارات ",
     "description": "Label to a number representing a number of visits",
@@ -574,7 +566,6 @@
     }
   },
 
-  // Prompt Modal
   "prompt_cancel_button": {
     "message": "إلغاء ",
     "description": "Button to close modal"
@@ -588,7 +579,6 @@
     "description": "Title of prompt"
   },
 
-  // Credits
   "credits_title": {
     "message": "الاعتمادات",
     "description": "Title for credits modal"
@@ -726,7 +716,6 @@
     "description": "Button to close modal"
   },
 
-  // Version
   "version_title": {
     "message": "Hola, 您好, Olá, bonjour, أهلاً",
     "description": "Title of the version modal"
@@ -778,7 +767,6 @@
     }
   },
 
-  // Search
   "search_time_frame": {
     "message": "الأشهر القليلة الماضية ",
     "description": "Time frame relating to Search"
@@ -792,7 +780,6 @@
     "description": "The word and"
   },
 
-  // Context menus
   "search_in_history": {
     "message": "Search in history",
     "description": "Label for search in history context menu item"
