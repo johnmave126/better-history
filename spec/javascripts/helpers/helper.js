@@ -16,7 +16,10 @@ function loadChromeAPI(config) {
           formal_date: 'formal date',
           ordinal_1: '1 ordinal',
           informal_date: 'informal date',
-          default_time_format: '12'
+          default_time_format: '12',
+          number_of_visits: '1 visits',
+          am: 'AM',
+          pm: 'PM'
         };
 
         return lookup[key];

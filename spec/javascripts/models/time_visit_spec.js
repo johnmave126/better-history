@@ -4,6 +4,7 @@ describe('TimeVisit', function() {
   var timeVisit;
 
   beforeEach(function() {
+    loadChromeAPI();
     settings = new Settings();
     var pageVisit = new PageVisit({url: 'google.com'});
     timeVisit = new TimeVisit({
@@ -16,7 +17,7 @@ describe('TimeVisit', function() {
   describe('#presenter', function() {
     it('returns all the properties used in the view', function() {
       expect(timeVisit.presenter()).toEqual({
-        amount: 1,
+        amount: '1 visits',
         time: '10:15 PM',
         state: '',
         id: '22:15'
