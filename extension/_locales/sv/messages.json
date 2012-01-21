@@ -733,7 +733,7 @@
     "description": "Title of the version modal"
   },
   "version_description": {
-    "message": "Detta är en stor, stor programutgåva. Med hjälp av några fantastiska användare finns nu Better History tillgängligt i 14 språk! Ta en titt i den nya $link_open$Tack-sektionen$link_close$ och passa på att tacka dessa formidabla översättare!",
+    "message": "Detta är en stor, stor programutgåva. Med hjälp av några fantastiska användare finns nu Better History tillgängligt i 19 språk! Ta en titt i den nya $link_open$Tack-sektionen$link_close$ och passa på att tacka dessa formidabla översättare!",
     "description": "Version description",
     "placeholders": {
       "link_open": {
@@ -765,7 +765,7 @@
     "description": "Heading for what's new in version"
   },
   "version_items": {
-    "message": "$open$Översatt till 15 språk.$close$ $open$Tillagd möjlighet att stänga av inställningar vid högerklickning.$close$ $open$Tillagd ikon för att visa Better History i verktygsraden$close$ $open$Tillagd Tack-sektion i Inställningar$close$ $open$Åtgärdade XSS-sårbarhet$close$",
+    "message": "$open$Översatt till 19 språk.$close$ $open$Tillagd möjlighet att stänga av inställningar vid högerklickning.$close$ $open$Tillagd ikon för att visa Better History i verktygsraden$close$ $open$Tillagd Tack-sektion i Inställningar$close$ $open$Åtgärdade XSS-sårbarhet$close$",
     "description": "Release bulletpoints",
     "placeholders": {
       "open": {

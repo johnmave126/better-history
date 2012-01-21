@@ -733,7 +733,7 @@
     "description": "Title of the version modal"
   },
   "version_description": {
-    "message": "Đây là một bản phát hành rất, rất lớn. Cùng với sự giúp đỡ từ nhiều người dùng tuyệt vời, Better History bây giờ đã có 14 ngôn ngữ! Hãy đến $link_open$Credits section$link_close$ để nói lời cảm tạ đến những người phiên dịch giỏi giang này!", //This is a big, big release. With help from a bunch of awesome users, Better History is now available in 14 languages! Checkout the new $link_open$Credits section$link_close$ to say thanks to these fine translators!
+    "message": "Đây là một bản phát hành rất, rất lớn. Cùng với sự giúp đỡ từ nhiều người dùng tuyệt vời, Better History bây giờ đã có 19 ngôn ngữ! Hãy đến $link_open$Credits section$link_close$ để nói lời cảm tạ đến những người phiên dịch giỏi giang này!", //This is a big, big release. With help from a bunch of awesome users, Better History is now available in 14 languages! Checkout the new $link_open$Credits section$link_close$ to say thanks to these fine translators!
     "description": "Version description",
     "placeholders": {
       "link_open": {
@@ -765,7 +765,7 @@
     "description": "Heading for what's new in version"
   },
   "version_items": {
-    "message": "$open$Được dịch qua 15 thứ tiếng$close$ $open$Thêm một tùy chọn trong phần thiết lập để vô hiệu các chức năng cho chuột phải$close$ $open$Thêm biểu tượng để hiện Better History trên thanh công cụ$close$ $open$Thêm phần Credit trong trang thiết lập$close$ $open$Xửa lỗ hổng XSS$close$", //$open$Translated to 15 languages$close$ $open$Added options in Settings to disable right click options$close$ $open$Added icon to display Better History in toolbar$close$ $open$Added Credits section in Settings$close$ $open$Fixed XSS vulnerability$close$
+    "message": "$open$Được dịch qua 19 thứ tiếng$close$ $open$Thêm một tùy chọn trong phần thiết lập để vô hiệu các chức năng cho chuột phải$close$ $open$Thêm biểu tượng để hiện Better History trên thanh công cụ$close$ $open$Thêm phần Credit trong trang thiết lập$close$ $open$Xửa lỗ hổng XSS$close$", //$open$Translated to 15 languages$close$ $open$Added options in Settings to disable right click options$close$ $open$Added icon to display Better History in toolbar$close$ $open$Added Credits section in Settings$close$ $open$Fixed XSS vulnerability$close$
     "description": "Release bulletpoints",
     "placeholders": {
       "open": {

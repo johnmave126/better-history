@@ -733,7 +733,7 @@
     "description": "Title of the version modal"
   },
   "version_description": {
-    "message": "Questo è un grosso, grosso rilascio. Grazie all'aiuto di un sacco di fantastici utenti, Better History è ora disponibile in 14 lingue! Controlla la nuova $link_open$sezione crediti$link_close$ per ringraziare questi bravi traduttori!",
+    "message": "Questo è un grosso, grosso rilascio. Grazie all'aiuto di un sacco di fantastici utenti, Better History è ora disponibile in 19 lingue! Controlla la nuova $link_open$sezione crediti$link_close$ per ringraziare questi bravi traduttori!",
     "description": "Version description",
     "placeholders": {
       "link_open": {
@@ -765,7 +765,7 @@
     "description": "Heading for what's new in version"
   },
   "version_items": {
-    "message": "$open$Traduzione in 15 lingue$close$ $open$Aggiunta nella sezione Opzioni la possibilità di disattivare le opzioni per il tasto destro$close$ $open$Aggiunta icona per visualizzare Better History nella barra degli Strumenti$close$ $open$Aggiunta la sezione Crediti nelle Opzioni$close$ $open$Rimossa vulnerbilità XSS$close$",
+    "message": "$open$Traduzione in 19 lingue$close$ $open$Aggiunta nella sezione Opzioni la possibilità di disattivare le opzioni per il tasto destro$close$ $open$Aggiunta icona per visualizzare Better History nella barra degli Strumenti$close$ $open$Aggiunta la sezione Crediti nelle Opzioni$close$ $open$Rimossa vulnerbilità XSS$close$",
     "description": "Release bulletpoints",
     "placeholders": {
       "open": {

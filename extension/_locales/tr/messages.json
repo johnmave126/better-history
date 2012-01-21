@@ -733,7 +733,7 @@
     "description": "Title of the version modal"
   },
   "version_description": {
-    "message": "Bu büyük, büyük bir sürüm. Harika kullanıcıların yardımlarıyla beraber, Better History artık 14 dilde. $link_open$Credits section$link_close$e göz atıp, çevirmenlere teşekkür edebilirsiniz.",
+    "message": "Bu büyük, büyük bir sürüm. Harika kullanıcıların yardımlarıyla beraber, Better History artık 19 dilde. $link_open$Credits section$link_close$e göz atıp, çevirmenlere teşekkür edebilirsiniz.",
     "description": "Version description",
     "placeholders": {
       "link_open": {
@@ -765,7 +765,7 @@
     "description": "Heading for what's new in version"
   },
   "version_items": {
-    "message": "$open$ 15 dile çevirildi.$close$ $open$Sağ tıklama ayarlarını devre dışı bırakmak için Ayarlar'a seçenek eklendi.$close$ $open$Better History'i araç çubuğunda görüntülemek için simge eklendi$close$ $open$Ayarlara Jenerik kısmı eklendi$close$ $open$XSS açıkları giderildi$close$",
+    "message": "$open$ 19 dile çevirildi.$close$ $open$Sağ tıklama ayarlarını devre dışı bırakmak için Ayarlar'a seçenek eklendi.$close$ $open$Better History'i araç çubuğunda görüntülemek için simge eklendi$close$ $open$Ayarlara Jenerik kısmı eklendi$close$ $open$XSS açıkları giderildi$close$",
     "description": "Release bulletpoints",
     "placeholders": {
       "open": {

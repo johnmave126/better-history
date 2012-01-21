@@ -719,7 +719,7 @@
     "description": "Title of the version modal"
   },
   "version_description": {
-    "message": "Aquesta és realment una gran versió. Amb l'ajuda d'un grup d'usuaris impressionant, Better History està ara disponible en 14 idiomes! Comproveu la nova $link_open$secció de Crèdits$link_close$ per donar les gràcies a eixos magnífics traductors!",
+    "message": "Aquesta és realment una gran versió. Amb l'ajuda d'un grup d'usuaris impressionant, Better History està ara disponible en 19 idiomes! Comproveu la nova $link_open$secció de Crèdits$link_close$ per donar les gràcies a eixos magnífics traductors!",
     "description": "Version description",
     "placeholders": {
       "link_open": {
@@ -751,7 +751,7 @@
     "description": "Heading for what's new in version"
   },
   "version_items": {
-    "message": "$open$S'ha traduït a 15 idiomes$close$ $open$S'han afegit opcions en Configuració per desactivar les opcions del botó dret del ratolí$close$ $open$S'ha afegit una icona per mostrar Better History a la barra d'eines$close$ $open$S'ha afegit la secció de Crèdits en la Configuració$close$ $open$S'ha corregit vulnerabilitat XSS$close$",
+    "message": "$open$S'ha traduït a 19 idiomes$close$ $open$S'han afegit opcions en Configuració per desactivar les opcions del botó dret del ratolí$close$ $open$S'ha afegit una icona per mostrar Better History a la barra d'eines$close$ $open$S'ha afegit la secció de Crèdits en la Configuració$close$ $open$S'ha corregit vulnerabilitat XSS$close$",
     "description": "Release bulletpoints",
     "placeholders": {
       "open": {

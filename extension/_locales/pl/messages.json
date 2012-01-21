@@ -733,7 +733,7 @@
     "description": "Title of the version modal"
   },
   "version_description": {
-    "message": "To jest wielkie, wielkie wydanie. Z pomocą kilku wspaniałych użytkowników, 'Better History' jest teraz dostępny w 14 językach! Sprawdź sekcję $link_open$Podziękowania$link_close$ by powiedzieć 'Dzięki' tłumaczom!",
+    "message": "To jest wielkie, wielkie wydanie. Z pomocą kilku wspaniałych użytkowników, 'Better History' jest teraz dostępny w 19 językach! Sprawdź sekcję $link_open$Podziękowania$link_close$ by powiedzieć 'Dzięki' tłumaczom!",
     "description": "Version description",
     "placeholders": {
       "link_open": {
@@ -765,7 +765,7 @@
     "description": "Heading for what's new in version"
   },
   "version_items": {
-    "message": "$open$iPrzetłumaczono na 15 języków$close$ $open$Dodano opcje w Ustawieniach służące wyłączeniu opcji prawego przycisku myszy$close$ $open$Dodano ikonkę, by wyświetlać 'Better History' w zakładkach$close$ $open$Dodano sekcję Podziękowania w Ustawieniach$close$ $open$Poprawiono lukę XSS$close$",
+    "message": "$open$iPrzetłumaczono na 19 języków$close$ $open$Dodano opcje w Ustawieniach służące wyłączeniu opcji prawego przycisku myszy$close$ $open$Dodano ikonkę, by wyświetlać 'Better History' w zakładkach$close$ $open$Dodano sekcję Podziękowania w Ustawieniach$close$ $open$Poprawiono lukę XSS$close$",
     "description": "Release bulletpoints",
     "placeholders": {
       "open": {

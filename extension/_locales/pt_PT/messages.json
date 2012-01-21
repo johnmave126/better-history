@@ -733,7 +733,7 @@
     "description": "Title of the version modal"
   },
   "version_description": {
-    "message": "Esta é uma versão muito, muito grande. Com a ajuda de vários utilizadores fabulosos, o Histórico Melhorado está agora disponível em 14 idiomas! Verifica a nova $link_open$Secção de créditos$link_close$ e agradece a estes tradutores!",
+    "message": "Esta é uma versão muito, muito grande. Com a ajuda de vários utilizadores fabulosos, o Histórico Melhorado está agora disponível em 19 idiomas! Verifica a nova $link_open$Secção de créditos$link_close$ e agradece a estes tradutores!",
     "description": "Version description",
     "placeholders": {
       "link_open": {
@@ -765,7 +765,7 @@
     "description": "Heading for what's new in version"
   },
   "version_items": {
-    "message": "$open$Traduzido em 15 línguas$close$ $open$Adcionada a funcionalidade de desativar o botão direito nas Opções$close$ $open$Adicionado ícone do Histórico Melhorado na área de atalhos$close$ $open$Adicionada secção de créditos nas Opções$close$ $open$Fixa vulnerabilidade com XSS$close$",
+    "message": "$open$Traduzido em 19 línguas$close$ $open$Adcionada a funcionalidade de desativar o botão direito nas Opções$close$ $open$Adicionado ícone do Histórico Melhorado na área de atalhos$close$ $open$Adicionada secção de créditos nas Opções$close$ $open$Fixa vulnerabilidade com XSS$close$",
     "description": "Release bulletpoints",
     "placeholders": {
       "open": {

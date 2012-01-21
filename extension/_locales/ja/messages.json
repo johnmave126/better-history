@@ -733,7 +733,7 @@
     "description": "Title of the version modal"
   },
   "version_description": {
-    "message": "このリリースは、偉大な第一歩である。数多の大いなるユーザーによる助力を経て、Better History は14もの言語に対応した！　$link_open$クレジット$link_close$を確認して、偉大なる翻訳者の皆々様に感謝を伝えよう！",
+    "message": "このリリースは、偉大な第一歩である。数多の大いなるユーザーによる助力を経て、Better History は19もの言語に対応した！　$link_open$クレジット$link_close$を確認して、偉大なる翻訳者の皆々様に感謝を伝えよう！",
     "description": "Version description",
     "placeholders": {
       "link_open": {
@@ -765,7 +765,7 @@
     "description": "Heading for what's new in version"
   },
   "version_items": {
-    "message": "$open$15の言語に翻訳されました。$close$ $open$右クリックオプションが無効にできるようになりました。$close$ $open$ツールバーに表示するアイコンを追加しました。$close$ $open$Credit セクションを追加しました。$close$ $open$XSS 脆弱性を修正しました。$close$",
+    "message": "$open$19の言語に翻訳されました。$close$ $open$右クリックオプションが無効にできるようになりました。$close$ $open$ツールバーに表示するアイコンを追加しました。$close$ $open$Credit セクションを追加しました。$close$ $open$XSS 脆弱性を修正しました。$close$",
     "description": "Release bulletpoints",
     "placeholders": {
       "open": {

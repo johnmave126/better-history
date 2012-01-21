@@ -733,7 +733,7 @@
     "description": "Title of the version modal"
   },
   "version_description": {
-    "message": "Dies ist eine große, sehr große Veröffentlichung. Mit Hilfe von einer Menge von super tollen Usern, ist Better History jetzt in 14 Sprachen erhältlich! Schau mal in die $link_open$Kredits Sektion$link_close$ um den coolen Übersetzern danke zu sagen!",
+    "message": "Dies ist eine große, sehr große Veröffentlichung. Mit Hilfe von einer Menge von super tollen Usern, ist Better History jetzt in 19 Sprachen erhältlich! Schau mal in die $link_open$Kredits Sektion$link_close$ um den coolen Übersetzern danke zu sagen!",
     "description": "Version description",
     "placeholders": {
       "link_open": {
@@ -765,7 +765,7 @@
     "description": "Heading for what's new in version"
   },
   "version_items": {
-    "message": "$open$Übersetzt in 15 Sprachen$close$ $open$Option für das deaktivieren von Rechts-Klick Optionen hinzugefügt$close$ $open$Better History Icon für die Toolbar hinzugefügt$close$ $open$Kredits Sektion in den Optionen hinzugefügt$close$ $open$XSS Sicherheitslücke gefixt$close$",
+    "message": "$open$Übersetzt in 19 Sprachen$close$ $open$Option für das deaktivieren von Rechts-Klick Optionen hinzugefügt$close$ $open$Better History Icon für die Toolbar hinzugefügt$close$ $open$Kredits Sektion in den Optionen hinzugefügt$close$ $open$XSS Sicherheitslücke gefixt$close$",
     "description": "Release bulletpoints",
     "placeholders": {
       "open": {

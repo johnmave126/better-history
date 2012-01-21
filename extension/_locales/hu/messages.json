@@ -733,7 +733,7 @@
     "description": "Title of the version modal"
   },
   "version_description": {
-    "message": "Ez egy nagy, nagy kiadás. Egy csomó kiváló ember segítségével a Better History már 14 nyelven érhető el! Nézd meg a $link_open$készítőket$link_close$, hogy megköszönhesd nekik!",
+    "message": "Ez egy nagy, nagy kiadás. Egy csomó kiváló ember segítségével a Better History már 19 nyelven érhető el! Nézd meg a $link_open$készítőket$link_close$, hogy megköszönhesd nekik!",
     "description": "Version description",
     "placeholders": {
       "link_open": {
@@ -765,7 +765,7 @@
     "description": "Heading for what's new in version"
   },
   "version_items": {
-    "message": "$open$Lefordítva 15 nyelvre$close$ $open$A beállításoknál ki lehet kapcsolni a jobb-gombos funkciókat$close$ $open$Eszköztárban megjelenik a Better History ikonja$close$ $open$Készítők rész hozzáadva a beállításokhoz$close$ $open$XSS sebezhetőség javítva$close$",
+    "message": "$open$Lefordítva 19 nyelvre$close$ $open$A beállításoknál ki lehet kapcsolni a jobb-gombos funkciókat$close$ $open$Eszköztárban megjelenik a Better History ikonja$close$ $open$Készítők rész hozzáadva a beállításokhoz$close$ $open$XSS sebezhetőség javítva$close$",
     "description": "Release bulletpoints",
     "placeholders": {
       "open": {

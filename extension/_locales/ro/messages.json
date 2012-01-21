@@ -719,7 +719,7 @@
     "description": "Title of the version modal"
   },
   "version_description": {
-    "message": "Aceasta versiune a venit cu o gramada de imbunatatiri. Cu ajutorul mai multor useri cu inima mare, Better History este acum tradus in 14 limbi! Arunca o privire la  $link_open$Credits section$link_close$ ca sa vezi cine sunt ei!",
+    "message": "Aceasta versiune a venit cu o gramada de imbunatatiri. Cu ajutorul mai multor useri cu inima mare, Better History este acum tradus in 19 limbi! Arunca o privire la  $link_open$Credits section$link_close$ ca sa vezi cine sunt ei!",
     "description": "Version description",
     "placeholders": {
       "link_open": {
@@ -751,7 +751,7 @@
     "description": "Heading for what's new in version"
   },
   "version_items": {
-    "message": "$open$Traducere in 15 limbi$close$ $open$Adaugare optiuni in setari pentru a dezactiva optiunile pentru clickul de dreapta$close$ $open$Posibilitate de a afisa o iconita Better History in toolbar$close$ $open$Adaugare sectiune Credits in setari$close$ $open$Anulare vulnerabilitate XSS$close$",
+    "message": "$open$Traducere in 19 limbi$close$ $open$Adaugare optiuni in setari pentru a dezactiva optiunile pentru clickul de dreapta$close$ $open$Posibilitate de a afisa o iconita Better History in toolbar$close$ $open$Adaugare sectiune Credits in setari$close$ $open$Anulare vulnerabilitate XSS$close$",
     "description": "Release bulletpoints",
     "placeholders": {
       "open": {

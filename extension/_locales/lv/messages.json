@@ -733,7 +733,7 @@
     "description": "Title of the version modal"
   },
   "version_description": {
-    "message": "Šī ir tiešām liela relīze, Ar palīdzību no vairākiem lieliskiem lietotājiem, Better History tagad ir pieejama 14 valodās! Izmēģiniet jauno $link_open$Kredītu sadaļu$link_close$, lai paustu pateicību šiem brašajiem tulkotājiem.",
+    "message": "Šī ir tiešām liela relīze, Ar palīdzību no vairākiem lieliskiem lietotājiem, Better History tagad ir pieejama 19 valodās! Izmēģiniet jauno $link_open$Kredītu sadaļu$link_close$, lai paustu pateicību šiem brašajiem tulkotājiem.",
     "description": "Version description",
     "placeholders": {
       "link_open": {
@@ -765,7 +765,7 @@
     "description": "Heading for what's new in version"
   },
   "version_items": {
-    "message": "$open$Pārtulkots 15 valodās$close$ $open$Pievienota iespēja Uzstādījumos izslēgt labā klikšķa papildiespējas$close$ $open$Pievienota ikona, lai uzrādītu Better History rīkjoslā$close$ $open$Pievienota kredītu sadaļa Uzstādījumos$close$ $open$Salabotas XSS ievainojamības$close$",
+    "message": "$open$Pārtulkots 19 valodās$close$ $open$Pievienota iespēja Uzstādījumos izslēgt labā klikšķa papildiespējas$close$ $open$Pievienota ikona, lai uzrādītu Better History rīkjoslā$close$ $open$Pievienota kredītu sadaļa Uzstādījumos$close$ $open$Salabotas XSS ievainojamības$close$",
     "description": "Release bulletpoints",
     "placeholders": {
       "open": {

@@ -732,7 +732,7 @@
     "description": "Title of the version modal"
   },
   "version_description": {
-    "message": ".هذا إطلاق كبير جداً. بمساعدة مجموعة من المستخدمين الرائعين، سجل تاريخ أفضل متوفر الآن ب 14 لغة. راجع قسم الإعتمادات المخصص لشكر هؤلاء المترجمين",
+    "message": ".هذا إطلاق كبير جداً. بمساعدة مجموعة من المستخدمين الرائعين، سجل تاريخ أفضل متوفر الآن ب 19 لغة. راجع قسم الإعتمادات المخصص لشكر هؤلاء المترجمين",
     "description": "Version description",
     "placeholders": {
       "link_open": {
@@ -764,7 +764,7 @@
     "description": "Heading for what's new in version"
   },
   "version_items": {
-    "message": "$open$هنا 15 تمت الترجمة إلى$close$ $open$إضافة خيارات في الإعدادات لتعطيل خيارات الضغطة اليمنى$close$ $open$إضافة أيقونة لعرض سجل تاريخ أفضل في شريط الأدوات$close$ $open$إضافة قسم الإعتمادات في الإعدادات$close$ $open$XSS إصلاح ضعف $close$",
+    "message": "$open$هنا 19 تمت الترجمة إلى$close$ $open$إضافة خيارات في الإعدادات لتعطيل خيارات الضغطة اليمنى$close$ $open$إضافة أيقونة لعرض سجل تاريخ أفضل في شريط الأدوات$close$ $open$إضافة قسم الإعتمادات في الإعدادات$close$ $open$XSS إصلاح ضعف $close$",
     "description": "Release bulletpoints",
     "placeholders": {
       "open": {
