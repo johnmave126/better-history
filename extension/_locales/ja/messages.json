@@ -729,7 +729,7 @@
 
   // Version
   "version_title": {
-    "message": "Hola, 您好, Olá, bonjour, hello!",
+    "message": "Hola, 您好, Olá, bonjour, こんにちは!",
     "description": "Title of the version modal"
   },
   "version_description": {
