@@ -46,7 +46,11 @@ TimeVisitView = Backbone.View.extend({
 
   updateCount: function() {
     if(this.collection.length >= 1) {
-      $('.amount', this.el).text(this.collection.length);
+      $('.amount', this.el).html(chrome.i18n.getMessage('number_of_visits', [
+        this.collection.length,
+        '<span class="amount">',
+        '</a>'
+      ])),
       $('.summary', this.el).css({color: '#000'}).animate({color:'#999'}, 'slow');
     } else {
       this.remove();
