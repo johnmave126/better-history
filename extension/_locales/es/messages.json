@@ -39,7 +39,7 @@
     }
   },
   "informal_date": {
-    "message": "$week_day$, $day$$ordinal_open$$ordinal$$ordinal_close$",
+    "message": "$week_day$, $day$$ordinal$",
     "description": "Date labels in sidebar",
     "placeholders": {
       "week_day": {
@@ -729,7 +729,7 @@
 
   // Version
   "version_title": {
-    "message": "¡Hola, 您好, Olá, bonjour, hola!",
+    "message": "¡您好, Olá, bonjour, hola!",
     "description": "Title of the version modal"
   },
   "version_description": {
