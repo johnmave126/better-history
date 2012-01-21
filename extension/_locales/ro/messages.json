@@ -595,8 +595,22 @@
     "description": "Title for credits modal"
   },
   "developed_by": {
-    "message": "Creat de",
-    "description": "Developer label"
+    "message": "Creat de $link_open$$name$$link_close$",
+    "description": "Developer label",
+    "placeholders": {
+      "link_open": {
+        "content": "$1",
+        "example": "Opening link"
+      },
+      "link_close": {
+        "content": "$2",
+        "example": "Closing link"
+      },
+      "name": {
+        "content": "$3",
+        "example": "Developer name"
+      }
+    }
   },
   "translators_heading": {
     "message": "Traducatori",
@@ -771,7 +785,7 @@
     "description": "Time frame relating to Search"
   },
   "searching_title": {
-    "message": "Caut...",
+    "message": "Caut",
     "description": "Searching title"
   },
   "and": {
