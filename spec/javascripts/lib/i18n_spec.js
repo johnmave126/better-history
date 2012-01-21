@@ -23,9 +23,9 @@ describe('i18n', function() {
   });
 
   describe('.settings', function() {
-    it('calls fetch with all the required keys', function() {
-      i18n.settings();
-      expect(i18n.fetch).toHaveBeenCalledWith([
+    it('returns the required keys with the i18n namespace', function() {
+      var returnedTranslations = i18n.settings();
+      var expectedKeys = [
         'settings_title',
         'clearing_history_section_title',
         'clear_history_button',
@@ -46,81 +46,100 @@ describe('i18n', function() {
         'current_version_label',
         'credits',
         'feedback_section_title',
-        'voice_your_thoughts_on',
-        'i_will_respond',
-        'spread_the_word',
-        'leave_a_review'
-      ]);
+        'spread_the_word_section_title',
+        'leave_a_review',
+        'suggestions_bugs_comments'
+      ];
+      
+      $(expectedKeys).each(function() {
+        expect(_.keys(returnedTranslations)).toContain(i18n.scopeKey(this));
+      });
     });
   });
 
   describe('.sidebar', function() {
-    it('calls fetch with all the required keys', function() {
-      i18n.sidebar();
-      expect(i18n.fetch).toHaveBeenCalledWith([
+    it('returns the required keys namespaced to i18n', function() {
+      var returnedTranslations = i18n.sidebar();
+      var expectedKeys = [
         'search_input_placeholder_text',
         'settings_link'
-      ]);
+      ];
+
+      $(expectedKeys).each(function() {
+        expect(_.keys(returnedTranslations)).toContain(i18n.scopeKey(this));
+      });
     });
   });
 
   describe('.filter', function() {
-    it('calls fetch with all the required keys', function() {
-      i18n.filter();
-      expect(i18n.fetch).toHaveBeenCalledWith([
+    it('returns the required keys namespaced to i18n', function() {
+      var returnedTranslations = i18n.filter();
+      var expectedKeys = [
         'collapse_button',
         'expand_button',
         'delete_all_visits_for_filter_button',
         'no_visits_found'
-      ]);
+      ];
+
+      $(expectedKeys).each(function() {
+        expect(_.keys(returnedTranslations)).toContain(i18n.scopeKey(this));
+      });
     });
   });
 
   describe('.app', function() {
-    it('calls fetch with all the required keys', function() {
-      i18n.app();
-      expect(i18n.fetch).toHaveBeenCalledWith([
+    it('returns the required keys namespaced to i18n', function() {
+      var returnedTranslations = i18n.app();
+      var expectedKeys = [
         'history_title'
-      ]);
+      ];
+
+      $(expectedKeys).each(function() {
+        expect(_.keys(returnedTranslations)).toContain(i18n.scopeKey(this));
+      });
     });
   });
 
   describe('.timeVisit', function() {
-    it('calls fetch with all the required keys', function() {
-      i18n.timeVisit();
-      expect(i18n.fetch).toHaveBeenCalledWith([
-        'visits_label'
-      ]);
+    it('an empty hash', function() {
+      expect(i18n.timeVisit()).toEqual({});
     });
   });
 
   describe('.groupedVisits', function() {
-    it('calls fetch with all the required keys', function() {
-      i18n.groupedVisits();
-      expect(i18n.fetch).toHaveBeenCalledWith([
+    it('returns the required keys scoped to i18n', function() {
+      var returnedTranslations = i18n.groupedVisits();
+      var expectedKeys = [
         'collapse_button',
         'expand_button'
-      ]);
+      ];
+
+      $(expectedKeys).each(function() {
+        expect(_.keys(returnedTranslations)).toContain(i18n.scopeKey(this));
+      });
     });
   });
 
   describe('.prompt', function() {
-    it('calls fetch with all the required keys', function() {
-      i18n.prompt();
-      expect(i18n.fetch).toHaveBeenCalledWith([
+    it('returns the required keys scoped to i18n', function() {
+      var returnedTranslations = i18n.prompt();
+      var expectedKeys = [
         'prompt_delete_button',
         'prompt_cancel_button',
         'prompt_title'
-      ]);
+      ];
+
+      $(expectedKeys).each(function() {
+        expect(_.keys(returnedTranslations)).toContain(i18n.scopeKey(this));
+      });
     });
   });
 
   describe('.credits', function() {
-    it('calls fetch with all the required keys', function() {
-      i18n.credits();
-      expect(i18n.fetch).toHaveBeenCalledWith([
+    it('returns the required keys scoped to i18n', function() {
+      var returnedTranslations = i18n.credits();
+      var expectedKeys = [
         'credits_title',
-        'developed_by',
         'translators_heading',
         'spanish',
         'swedish',
@@ -133,32 +152,57 @@ describe('i18n', function() {
         'polish',
         'portuguese',
         'russian',
+        'slovak',
+        'catalonian',
+        'hindi',
+        'vietnamese',
+        'japanese',
+        'romanian',
+        'czech',
+        'dutch',
+        'latvian',
+        'turkish',
         'translation_help_heading',
-        'translation_instructions',
-        'close_button'
-      ]);
+        'close_button',
+        'developed_by',
+        'translation_instructions'
+      ];
+
+      $(expectedKeys).each(function() {
+        expect(_.keys(returnedTranslations)).toContain(i18n.scopeKey(this));
+      });
     });
   });
 
   describe('.version', function() {
-    it('calls fetch with all the required keys', function() {
-      i18n.version();
-      expect(i18n.fetch).toHaveBeenCalledWith([
+    it('returns the required keys scoped to i18n', function() {
+      var returnedTranslations = i18n.version();
+      var expectedKeys = [
         'version_title',
         'version_description',
+        'version_important_note',
+        'version_note',
         'version_items',
         'close_button',
-        'whats_new'
-      ]);
+        'version_whats_new'
+      ];
+
+      $(expectedKeys).each(function() {
+        expect(_.keys(returnedTranslations)).toContain(i18n.scopeKey(this));
+      });
     });
   });
 
   describe('.search', function() {
-    it('calls fetch with all the required keys', function() {
-      i18n.search();
-      expect(i18n.fetch).toHaveBeenCalledWith([
+    it('returns the required keys scoped to i18n', function() {
+      var returnedTranslations = i18n.search();
+      var expectedKeys = [
         'search_time_frame'
-      ]);
+      ];
+      
+      $(expectedKeys).each(function() {
+        expect(_.keys(returnedTranslations)).toContain(i18n.scopeKey(this));
+      });
     });
   });
 });

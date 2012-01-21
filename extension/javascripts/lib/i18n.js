@@ -2,9 +2,13 @@ i18n = {
   fetch: function(keys) {
     var lookup = {};
     $.each(keys, function() {
-      lookup['i18n_' + this] = chrome.i18n.getMessage(this.toString());
+      lookup[i18n.scopeKey(this)] = chrome.i18n.getMessage(this.toString());
     });
     return lookup;
+  },
+
+  scopeKey: function(key) {
+    return 'i18n_' + key;
   },
 
   settings: function() {
@@ -32,7 +36,7 @@ i18n = {
       'spread_the_word_section_title',
       'leave_a_review'
     ]);
-    properties.i18n_suggestions_bugs_comments = chrome.i18n.getMessage('suggestions_bugs_comments', [
+    properties[i18n.scopeKey('suggestions_bugs_comments')] = chrome.i18n.getMessage('suggestions_bugs_comments', [
       '<a href="http://twitter.com/Better_History">',
       '</a>'
     ]);
@@ -108,12 +112,12 @@ i18n = {
       'translation_help_heading',
       'close_button'
     ]);
-    properties.i18n_developed_by = chrome.i18n.getMessage('developed_by', [
+    properties[i18n.scopeKey('developed_by')] = chrome.i18n.getMessage('developed_by', [
       '<a href="http://automagical.posterous.com/">',
       '</a>',
       'Roy Kolak'
     ]);
-    properties.i18n_translation_instructions = chrome.i18n.getMessage('translation_instructions', [
+    properties[i18n.scopeKey('translation_instructions')] = chrome.i18n.getMessage('translation_instructions', [
       'roy.kolak@gmail.com',
       '<a href="mailto:roy.kolak@gmail.com">',
       '</a>'
@@ -128,15 +132,15 @@ i18n = {
       'close_button',
       'version_whats_new',
     ])
-    properties.i18n_version_description = chrome.i18n.getMessage('version_description', [
+    properties[i18n.scopeKey('version_description')] = chrome.i18n.getMessage('version_description', [
       '<a href="#settings/credits">',
       '</a>'
     ]);
-    properties.i18n_version_note = chrome.i18n.getMessage('version_note', [
+    properties[i18n.scopeKey('version_note')] = chrome.i18n.getMessage('version_note', [
       '<a href="http://twitter.com/Better_History">',
       '</a>'
     ]);
-    properties.i18n_version_items = chrome.i18n.getMessage('version_items', [
+    properties[i18n.scopeKey('version_items')] = chrome.i18n.getMessage('version_items', [
       '<li>',
       '</li>'
     ]);
