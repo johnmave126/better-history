@@ -66,13 +66,17 @@
   },
 
   // Time
-  "am": {
+  "morning": {
     "message": "sáng",
     "description": "The morning abbreviation when using 12 hour time"
   },
-  "pm": {
+  "afternoon": {
     "message": "chiều",
     "description": "The afternoon abbreviation when using 12 hour time"
+  },
+  "evening": {
+    "message": "tối",
+    "description": "The evening abbreviation when using 12 hour time"
   },
 
   // Settings

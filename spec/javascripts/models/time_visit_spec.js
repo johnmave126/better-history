@@ -18,7 +18,7 @@ describe('TimeVisit', function() {
     it('returns all the properties used in the view', function() {
       expect(timeVisit.presenter()).toEqual({
         amount: '1 visits',
-        time: '10:15 PM',
+        time: '10:15 evening PM',
         state: '',
         id: '22:15'
       });

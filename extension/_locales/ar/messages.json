@@ -65,13 +65,17 @@
     }
   },
   // Time
-  "am": {
+  "morning": {
     "message": "صباحاً",
     "description": "The morning abbreviation when using 12 hour time"
   },
-  "pm": {
+  "afternoon": {
     "message": "مساءاً",
     "description": "The afternoon abbreviation when using 12 hour time"
+  },
+  "evening": {
+    "message": "مساءاً",
+    "description": "The evening abbreviation when using 12 hour time"
   },
 
   // Settings

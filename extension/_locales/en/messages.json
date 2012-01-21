@@ -66,13 +66,17 @@
   },
 
   // Time
-  "am": {
+  "morning": {
     "message": "AM",
     "description": "The morning abbreviation when using 12 hour time"
   },
-  "pm": {
+  "afternoon": {
     "message": "PM",
     "description": "The afternoon abbreviation when using 12 hour time"
+  },
+  "evening": {
+    "message": "PM",
+    "description": "The n abbreviation when using 12 hour time"
   },
 
   // Settings

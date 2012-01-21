@@ -18,8 +18,9 @@ function loadChromeAPI(config) {
           informal_date: 'informal date',
           default_time_format: '12',
           number_of_visits: '1 visits',
-          am: 'AM',
-          pm: 'PM'
+          morning: 'AM',
+          afternoon: 'afternoon PM',
+          evening: 'evening PM'
         };
 
         return lookup[key];

@@ -66,13 +66,17 @@
   },
 
   // Time
-  "am": {
+  "morning": {
     "message": "ごぜんごじです",
     "description": "The morning abbreviation when using 12 hour time"
   },
-  "pm": {
+  "afternoon": {
     "message": "ごごしちじです",
     "description": "The afternoon abbreviation when using 12 hour time"
+  },
+  "evening": {
+    "message": "ごごしちじです",
+    "description": "The evening abbreviation when using 12 hour time"
   },
 
   // Settings

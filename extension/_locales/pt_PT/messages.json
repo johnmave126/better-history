@@ -66,13 +66,17 @@
   },
 
   // Time
-  "am": {
+  "morning": {
     "message": "da manhã",
     "description": "The morning abbreviation when using 12 hour time"
   },
-  "pm": {
+  "afternoon": {
     "message": "da tarde",
     "description": "The afternoon abbreviation when using 12 hour time"
+  },
+  "evening": {
+    "message": "da tarde",
+    "description": "The evening abbreviation when using 12 hour time"
   },
 
   // Settings
