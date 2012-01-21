@@ -113,7 +113,7 @@
     "description": "Time amount"
   },
   "time_format_label": {
-    "message": "tidsformat",
+    "message": "Tidsformat",
     "description": "Label for select box to set the time format (12 or 24 hours)"
   },
   "12_hours_option": {
@@ -133,11 +133,11 @@
     "description": "Section heading in Settings"
   },
   "search_by_text_selection_label": {
-    "message": "sök efter markerad text",
+    "message": "Sök efter markerad text",
     "description": "Label for check box to enable right click option"
   },
   "search_by_domain_label": {
-    "message": "sök genom domän",
+    "message": "Sök genom domän",
     "description": "Label for check box to enable right click option"
   },
   "Whats_new_section_title": {
