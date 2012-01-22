@@ -17,6 +17,28 @@
     "description": "Extension title"
   },
 
+  "extended_formal_date": {
+    "message": "$weekday$, $day$ de $month$ de $year$",
+    "description": "The order of a full extended date",
+    "placeholders": {
+      "weekday": {
+        "content": "$1",
+        "example": "March"
+      },
+      "month": {
+        "content": "$2",
+        "example": "March"
+      },
+      "day": {
+        "content": "$3",
+        "example": "25"
+      },
+      "year": {
+        "content": "$4",
+        "example": "2011"
+      }
+    }
+  },
   "formal_date": {
     "message": "$day$ de $month$ de $year$",
     "description": "The order of a full date",

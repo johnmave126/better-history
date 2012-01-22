@@ -56,7 +56,8 @@ var chromeAPI = {
 
       function setAdditionalProperties(result) {
         result.location = result.url;
-        result.time = new Date(result.lastVisitTime).toLocaleDateString();
+        var date = new Date(result.lastVisitTime);
+        result.time = Helpers.formatExtendedFormalDate(date);
       }
 
       function sortByTime(a, b) {
