@@ -1,41 +1,41 @@
-This extension replaces the default history viewer.
+Это расширение заменяет стандартный просмотр истории.
 
-Suggests, questions, comments? Follow @Better_History on Twitter!
-https://twitter.com/Better_History
-
---------------------------------------------------
-Recent Changes
+Есть предложения, нашли ошибку, хотите оставить комментарий? Подписывайтесь на @Better_History в Твиттере!
+http://twitter.com/Better_History
 
 --------------------------------------------------
+Псоледние изменения
 
-Chrome is an excellent browser, but viewing your history could be a lot better. That's where Better History comes in. See below! 
+--------------------------------------------------
 
-Deleting:
-● Delete all visits for a day
-● Delete individual visits
-● Delete visits to the same domain 
-● Delete all history
+Хром - это превосходный браузер, но иногда просмотр истории посещений не удобен. А ведь может быть намного лучше, и "Better History" поможет Вам в этом. См. ниже!
 
-Grouping:
-● Group visits by 60, 30, or 15 minutes
-● Group visits to the same domain
-● Format hours to 12 or 24
-● Customizable grouping behavior
+Удаление:
+● истории посещений за день
+● истории отдельных посещений
+● истории в пределах одного домена
+● всей истории
 
-Organizing:
-● Filter visits by day
+Группировка:
+● истории каждые 60, 30 или 15 минут
+● истории по выбранному домену
+● 12/24-часовой форматы времени
+● настраиваемый режим группировки
 
-Searching:
-● Search the last few months
-● Search by date, url, and page title
-● Highlighted search terms
-● Right click option to search by domain
-● Right click option to search by selected text
+Систематизация:
+● фильтрация истории по дням
 
-Styling:
-● Styled with Chrome UI
-● Access from button in toolbar 
-● Remembers closing state
-● Back button support
+Поиск:
+● по последним нескольким месяцам
+● по дате, URL или заголовку страницы
+● выделение результатов поиска
+● опции контекстного меню для поиска по домену
+● опции контекстного меню для поиска по выделенному тексту
 
-... lots more coming. 
+Оформление:
+● стилизация под интерфейс Хрома
+● доступ через кнопку на панели расширений 
+● запоминание состояния при закрытии
+● поддержка кнопки "Назад"
+
+... со времением будет еще больше.
