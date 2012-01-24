@@ -4,11 +4,11 @@
     "description": "Manifest name"
   },
   "manifest_browser_action_title": {
-    "message": "Durchsuche den Verlauf",
+    "message": "Verlauf durchsuchen",
     "description": "Manifest browser action title"
   },
   "manifest_description": {
-    "message": "Dein Verlauf ist mehr anschaulich. Die beste Suche, das schärfste Interface und die besten Filter - für deinen Verlauf",
+    "message": "Dein Verlauf wird mehr anschaulich. Die beste Suche, das schärfste Interface und die besten Filter - für deinen Verlauf",
     "description": "Manifest description"
   },
 
@@ -23,19 +23,19 @@
     "placeholders": {
       "weekday": {
         "content": "$1",
-        "example": "March"
+        "example": "März"
       },
       "month": {
         "content": "$2",
-        "example": "March"
+        "example": "August"
       },
       "day": {
         "content": "$3",
-        "example": "25"
+        "example": "12"
       },
       "year": {
         "content": "$4",
-        "example": "2011"
+        "example": "2012"
       }
     }
   },
@@ -45,15 +45,15 @@
     "placeholders": {
       "month": {
         "content": "$1",
-        "example": "March"
+        "example": "August"
       },
       "day": {
         "content": "$2",
-        "example": "25"
+        "example": "12"
       },
       "year": {
         "content": "$3",
-        "example": "2011"
+        "example": "2012"
       }
     }
   },
@@ -63,7 +63,7 @@
     "placeholders": {
       "week_day": {
         "content": "$1",
-        "example": "Monday"
+        "example": "Montag"
       },
       "day": {
         "content": "$2",
@@ -80,6 +80,20 @@
       "ordinal_close": {
         "content": "$5",
         "example": "close tag for ordinal"
+      }
+    }
+  },
+  "12_hour_time_format": {
+    "message": "$time$ $label$",
+    "description": "Time format for 12 hour time",
+    "placeholders": {
+      "time": {
+        "content": "$1",
+        "example": "10:00"
+      },
+      "label": {
+        "content": "$2",
+        "example": "AM/PM"
       }
     }
   },
@@ -169,9 +183,19 @@
     "message": "aktuelle Version",
     "description": "label for the current version"
   },
-  "credits": {
-    "message": "Credits",
-    "description": "The word credits"
+  "credits_link": {
+    "message": "$open$Better History$close$ kredits",
+    "description": "The link to credits",
+    "placeholders": {
+      "open": {
+        "content": "$1",
+        "example": "strong open"
+      },
+      "close": {
+        "content": "$2",
+        "example": "strong close"
+      }
+    }
   },
   "feedback_section_title": {
     "message": "Feedback",
@@ -560,12 +584,12 @@
     "description": "The month"
   },
   "confirm_delete_all_visits": {
-    "message": "Lösche alle Besuche von $formal_date$?",
+    "message": "Alle Besuche vom $formal_date$ löschen?",
     "description": "Confirmation text to delete all visits from a specific date",
     "placeholders": {
       "formal_date": {
         "content": "$1",
-        "example": "January 2, 2011"
+        "example": "12. August 2012"
       }
     }
   },
@@ -603,7 +627,7 @@
   },
 
   "credits_title": {
-    "message": "Credits",
+    "message": "Kredits",
     "description": "Title for credits modal"
   },
   "developed_by": {
@@ -625,7 +649,7 @@
     }
   },
   "translators_heading": {
-    "message": "Translators",
+    "message": "Übersetzer",
     "description": "Heading for translators"
   },
   "spanish": {
@@ -756,7 +780,7 @@
     }
   },
   "version_important_note": {
-    "message": "Important note",
+    "message": "Wichtige Anmerkung",
     "description": "Heading for an important note"
   },
   "version_note": {
@@ -772,7 +796,7 @@
     }
   },
   "version_whats_new": {
-    "message": "Wichtige nachricht",
+    "message": "Wichtige Nachricht",
     "description": "Heading for what's new in version"
   },
   "version_items": {
@@ -802,16 +826,16 @@
   },
 
   "search_in_history": {
-    "message": "Search in history",
+    "message": "Im Verlauf suchen",
     "description": "Label for search in history context menu item"
   },
   "visits_to_domain": {
-    "message": "Visits to $domain$",
+    "message": "Besuche zu $domain$",
     "description": "Label for visits to domain context menu item",
     "placeholders": {
       "domain": {
         "content": "$1",
-        "example": "google.com"
+        "example": "google.de"
       }
     }
   }

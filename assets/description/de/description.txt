@@ -1,41 +1,41 @@
-This extension replaces the default history viewer.
+Diese Erweiterung ersetzt den Verlauf durch einen übersichtlichen und modernen.
 
-Suggests, questions, comments? Follow @Better_History on Twitter!
+Vorschläge, Fragen, Kommentare? Follow @Better_History auf Twitter!
 https://twitter.com/Better_History
 
 --------------------------------------------------
-Recent Changes
+Neuste Änderungen
 
 --------------------------------------------------
 
-Chrome is an excellent browser, but viewing your history could be a lot better. That's where Better History comes in. See below! 
+Chrome ist ein super Browser, aber der Verlauf könnte viel anschaulicher sein. Das ist der Part, in welchem Better History in das Spiel kommt. Siehe darunter! 
 
-Deleting:
-● Delete all visits for a day
-● Delete individual visits
-● Delete visits to the same domain 
-● Delete all history
+Löschen:
+● Alle Besuche von einem bestimmten Tag löschen
+● Inviduelle Besuche löschen
+● Besuche löschen von selben Domains
+● Gesamten Verlauf löschen
 
-Grouping:
-● Group visits by 60, 30, or 15 minutes
-● Group visits to the same domain
-● Format hours to 12 or 24
-● Customizable grouping behavior
+Gruppieren:
+● Besuche sortieren nach 60, 30, oder 15 Minuten
+● Besuche sortieren nach selber Domain
+● Zeitformat: 12 oder 24 Stunden
+● Konfigurierbares Sortierverhalten
 
-Organizing:
-● Filter visits by day
+Organisieren:
+● Besuche nach Tag sortieren
 
-Searching:
-● Search the last few months
-● Search by date, url, and page title
-● Highlighted search terms
-● Right click option to search by domain
-● Right click option to search by selected text
+Suchen:
+● Durchsuche die letzten Monate
+● Durchsuche Datum, URL und Website Titel
+● Suchen durch markierten Text
+● Rechtsklick Option um nach der Domain zu suchen
+● Rechtsklick Option um nach dem markierten Text zu suchen
 
 Styling:
-● Styled with Chrome UI
-● Access from button in toolbar 
-● Remembers closing state
-● Back button support
+● Ähnelt der Chrome UI
+● Zugang über Button in der Toolbar
+● Erinnert sich an zugeklappten Status
+● Zurück-Button unterstützung
 
-... lots more coming. 
+... noch viel mehr kommt bald. 
