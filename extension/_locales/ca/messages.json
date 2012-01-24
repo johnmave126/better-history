@@ -8,7 +8,7 @@
     "description": "Manifest browser action title"
   },
   "manifest_description": {
-    "message": "Una millor visió del vostre historial de navegació. La millor recerca, la interfície més precisa, i els filtres més útils - pel vostre historial.",
+    "message": "Una millor visió del vostre historial de navegació. La millor recerca, la interfície més neta, i els filtres més útils - pel vostre historial.",
     "description": "Manifest description"
   },
 
@@ -80,6 +80,20 @@
       "ordinal_close": {
         "content": "$5",
         "example": "close tag for ordinal"
+      }
+    }
+  },
+  "12_hour_time_format": {
+    "message": "$time$ $label$",
+    "description": "Time format for 12 hour time",
+    "placeholders": {
+      "time": {
+        "content": "$1",
+        "example": "10:00"
+      },
+      "label": {
+        "content": "$2",
+        "example": "AM/PM"
       }
     }
   },
@@ -169,9 +183,19 @@
     "message": "Versió actual",
     "description": "label for the current version"
   },
-  "credits": {
-    "message": "crèdits",
-    "description": "The word credits"
+  "credits_link": {
+    "message": "Crèdits de $open$Better History$close$",
+    "description": "The link to credits",
+    "placeholders": {
+      "open": {
+        "content": "$1",
+        "example": "strong open"
+      },
+      "close": {
+        "content": "$2",
+        "example": "strong close"
+      }
+    }
   },
   "feedback_section_title": {
     "message": "Respostes",
@@ -190,7 +214,7 @@
     }
   },
   "spread_the_word_section_title": {
-    "message": "Correu la veu",
+    "message": "Feu córrer la veu",
     "description": "Section heading in Settings"
   },
   "leave_a_review": {
@@ -560,7 +584,7 @@
     "description": "The month"
   },
   "confirm_delete_all_visits": {
-    "message": "Esborrar totes les visites des de $formal_date$?",
+    "message": "Esborrar totes les visites des del $formal_date$?",
     "description": "Confirmation text to delete all visits from a specific date",
     "placeholders": {
       "formal_date": {

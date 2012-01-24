@@ -183,9 +183,19 @@
     "message": "Current version",
     "description": "label for the current version"
   },
-  "credits": {
-    "message": "credits",
-    "description": "The word credits"
+  "credits_link": {
+    "message": "$open$Better History$close$ credits",
+    "description": "The link to credits",
+    "placeholders": {
+      "open": {
+        "content": "$1",
+        "example": "strong open"
+      },
+      "close": {
+        "content": "$2",
+        "example": "strong close"
+      }
+    }
   },
   "feedback_section_title": {
     "message": "Feedback",

@@ -31,10 +31,13 @@ i18n = {
       'whats_new_section_title',
       'view_release_announcement_link',
       'current_version_label',
-      'credits',
       'feedback_section_title',
       'spread_the_word_section_title',
       'leave_a_review'
+    ]);
+    properties[i18n.scopeKey('credits_link')] = chrome.i18n.getMessage('credits_link', [
+      '<strong>',
+      '</strong>'
     ]);
     properties[i18n.scopeKey('suggestions_bugs_comments')] = chrome.i18n.getMessage('suggestions_bugs_comments', [
       '<a href="http://twitter.com/Better_History">',
