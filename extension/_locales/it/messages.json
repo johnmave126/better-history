@@ -657,83 +657,83 @@
     "description": "The language"
   },
   "russian": {
-    "message": "Russian",
+    "message": "Russo",
     "description": "The language"
   },
   "portuguese": {
-    "message": "Portuguese",
+    "message": "Portoghese",
     "description": "The language"
   },
   "italian": {
-    "message": "Italian",
+    "message": "Italiano",
     "description": "The language"
   },
   "french": {
-    "message": "French",
+    "message": "Francese",
     "description": "The language"
   },
   "swedish": {
-    "message": "Swedish",
+    "message": "Svedese",
     "description": "The language"
   },
   "chinese_simplified": {
-    "message": "Chinese (Simplified)",
+    "message": "Cinese (Semplificato)",
     "description": "The language"
   },
   "german": {
-    "message": "German",
+    "message": "Tedesco",
     "description": "The language"
   },
   "polish": {
-    "message": "Polish",
+    "message": "Polacco",
     "description": "The language"
   },
   "hungarian": {
-    "message": "Hungarian",
+    "message": "Ungherese",
     "description": "The language"
   },
   "arabic": {
-    "message": "Arabic",
+    "message": "Arabo",
     "description": "The language"
   },
   "slovak": {
-    "message": "Slovak",
+    "message": "Slovacco",
     "description": "The language"
   },
   "turkish": {
-    "message": "Turkish",
+    "message": "Turco",
     "description": "The language"
   },
   "latvian": {
-    "message": "Latvian",
+    "message": "Lettone",
     "description": "The language"
   },
   "dutch": {
-    "message": "Dutch",
+    "message": "Olandese",
     "description": "The language"
   },
   "czech": {
-    "message": "Czech",
+    "message": "Ceco",
     "description": "The language"
   },
   "japanese": {
-    "message": "Japanese",
+    "message": "Giapponese",
     "description": "The language"
   },
   "vietnamese": {
-    "message": "Vietnamese",
+    "message": "Vietnamita",
     "description": "The language"
   },
   "romanian": {
-    "message": "Romanian",
+    "message": "Rumeno",
     "description": "The language"
   },
   "hindi": {
-    "message": "Hindi",
+    "message": "Indiano",
     "description": "The language"
   },
   "catalonian": {
-    "message": "Catalonian",
+    "message": "Catalano",
     "description": "The language"
   },
   "translation_help_heading": {
