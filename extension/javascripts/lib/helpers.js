@@ -66,7 +66,9 @@ Helpers = {
     var hours = date.getHours();
     if (format === 12) hours = convertTo12Hour(hours);
     var time = hours + ':' + minute(date.getMinutes());
-    if (format === 12) time += ' ' + period(date.getHours());
+    if (format === 12) {
+      return chrome.i18n.getMessage('12_hour_time_format', [time, period(date.getHours())]);
+    }
     return time;
   },
 
