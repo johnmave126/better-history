@@ -1,41 +1,41 @@
-This extension replaces the default history viewer.
+Ten dodatek zmienia domyślną przeglądarkę historii.
 
-Suggests, questions, comments? Follow @Better_History on Twitter!
+Sugestie, pytania, komentarze? Śledź @Better_History na Twitterze!
 https://twitter.com/Better_History
 
 --------------------------------------------------
-Recent Changes
+Ostatnie zmiany
 
 --------------------------------------------------
 
-Chrome is an excellent browser, but viewing your history could be a lot better. That's where Better History comes in. See below! 
+Chrome to wspaniała przeglądarka, lecz przeglądanie historii mogło by być trochę lepsze. Tutaj z pomocą pojawia się Better History. Zobacz niżej!
 
-Deleting:
-● Delete all visits for a day
-● Delete individual visits
-● Delete visits to the same domain 
-● Delete all history
+Usuwanie:
+● Usuwanie wszystkich wizyt z danego dnia
+● Usuwanie pojedynczych wizyt
+● Usuwanie wizyt na tej samej stronie
+● Usuwanie całej historii
 
-Grouping:
-● Group visits by 60, 30, or 15 minutes
-● Group visits to the same domain
-● Format hours to 12 or 24
-● Customizable grouping behavior
+Grupowanie:
+● Grupowanie wizyt co 60, 30 lub 15 minut
+● Grupowanie wizyt na tej samej stronie
+● Format godziny: 24-godzinny lub 12-godzinny
+● Konfigurowalne zachowanie grupy
 
-Organizing:
-● Filter visits by day
+Organizacja:
+● Filtrowanie wizyt co dzień
 
-Searching:
-● Search the last few months
-● Search by date, url, and page title
-● Highlighted search terms
-● Right click option to search by domain
-● Right click option to search by selected text
+Wyszukiwanie:
+● Przeszukiwanie ostatnich kilku miesięcy
+● Wyszukiwanie według daty, adresu i tytułu strony
+● Podświetlenie wyszukiwanych haseł
+● Opcje prawego przycisku do wyszukiwania według domeny
+● Opcje prawego przycisku do wyszukiwania według zaznaczonego tekstu
 
-Styling:
-● Styled with Chrome UI
-● Access from button in toolbar 
-● Remembers closing state
-● Back button support
+Stylizacja:
+● Stylizowany według Chrome UI
+● Dostęp z guzika na pasku narzędzi
+● Zapamiętywanie stanu po zamknięciu
+● Przycisk pomocy
 
-... lots more coming. 
+... a wiele więcej nadchodzi. 

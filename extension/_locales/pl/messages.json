@@ -83,6 +83,20 @@
       }
     }
   },
+  "12_hour_time_format": {
+    "message": "$time$ $label$",
+    "description": "Time format for 12 hour time",
+    "placeholders": {
+      "time": {
+        "content": "$1",
+        "example": "10:00"
+      },
+      "label": {
+        "content": "$2",
+        "example": "AM/PM"
+      }
+    }
+  },
 
   "morning": {
     "message": "AM",
@@ -118,7 +132,7 @@
     "description": "Label for select box to set the time grouping interval for visits"
   },
   "60_minutes_option": {
-    "message": "kwadrans",
+    "message": "godzinę",
     "description": "Time amount"
   },
   "30_minutes_option": {
@@ -126,7 +140,7 @@
     "description": "Time amount"
   },
   "15_minutes_option": {
-    "message": "godzina",
+    "message": "kwadrans",
     "description": "Time amount"
   },
   "time_format_label": {
@@ -134,19 +148,19 @@
     "description": "Label for select box to set the time format (12 or 24 hours)"
   },
   "12_hours_option": {
-    "message": "12 godzin",
+    "message": "12-godzinny",
     "description": "12 hour time format, example: 3:00 PM"
   },
   "24_hours_option": {
-    "message": "24 godzin",
+    "message": "24-godzinny",
     "description": "24 hour time format, example: 14:00"
   },
   "group_visits_by_domain_label": {
-    "message": "grupuj wizyty po domenie",
+    "message": "grupuj wizyty według domen",
     "description": "Label for check box to group visits by domain"
   },
   "right_click_options_section_title": {
-    "message": "opcje prawego kliknięcia",
+    "message": "Opcje prawego kliknięcia",
     "description": "Section heading in Settings"
   },
   "search_by_text_selection_label": {
@@ -174,7 +188,7 @@
     "description": "The word credits"
   },
   "feedback_section_title": {
-    "message": "opinia",
+    "message": "Twoja opinia",
     "description": "Section heading in Settings"
   },
   "suggestions_bugs_comments": {
@@ -190,7 +204,7 @@
     }
   },
   "spread_the_word_section_title": {
-    "message": "powiedz znajomym",
+    "message": "Powiedz znajomym",
     "description": "Section heading in Settings"
   },
   "leave_a_review": {
@@ -512,55 +526,55 @@
     "description": "Text for no visits found message"
   },
   "january": {
-    "message": "Styczeń",
+    "message": "stycznia",
     "description": "The month"
   },
   "february": {
-    "message": "Luty",
+    "message": "lutego",
     "description": "The month"
   },
   "march": {
-    "message": "Marzec",
+    "message": "marca",
     "description": "The month"
   },
   "april": {
-    "message": "Kwiecień",
+    "message": "kwietnia",
     "description": "The month"
   },
   "may": {
-    "message": "Maj",
+    "message": "maja",
     "description": "The month"
   },
   "june": {
-    "message": "Czerwiec",
+    "message": "czerwca",
     "description": "The month"
   },
   "july": {
-    "message": "Lipiec",
+    "message": "lipca",
     "description": "The month"
   },
   "august": {
-    "message": "Sierpień",
+    "message": "sierpnia",
     "description": "The month"
   },
   "september": {
-    "message": "Wrzesień",
+    "message": "września",
     "description": "The month"
   },
   "october": {
-    "message": "Październik",
+    "message": "października",
     "description": "The month"
   },
   "november": {
-    "message": "Listopad",
+    "message": "listopada",
     "description": "The month"
   },
   "december": {
-    "message": "Grudzień",
+    "message": "grudnia",
     "description": "The month"
   },
   "confirm_delete_all_visits": {
-    "message": "Usuń wszystkie wizyty z $formal_date$?",
+    "message": "Usunąć wszystkie wizyty z dnia $formal_date$?",
     "description": "Confirmation text to delete all visits from a specific date",
     "placeholders": {
       "formal_date": {
@@ -653,7 +667,7 @@
     "description": "The language"
   },
   "chinese_simplified": {
-    "message": "chiński (prosty)",
+    "message": "chiński (uproszczony)",
     "description": "The language"
   },
   "german": {
@@ -661,7 +675,7 @@
     "description": "The language"
   },
   "polish": {
-    "message": "niemiecki",
+    "message": "polski",
     "description": "The language"
   },
   "hungarian": {
@@ -709,7 +723,7 @@
     "description": "The language"
   },
   "catalonian": {
-    "message": "katalońska",
+    "message": "kataloński",
     "description": "The language"
   },
   "translation_help_heading": {
@@ -717,7 +731,7 @@
     "description": "Heading to recruit translators"
   },
   "translation_instructions": {
-    "message": "Znasz język angielski i chcesz przetłumaczyć 'Better History' na inny język? Świetnie! Napisz maila na adres $link_open$ $email$ $link_close$",
+    "message": "Znasz język angielski i chcesz przetłumaczyć 'Better History' na inny język? Świetnie! Napisz maila na adres $link_open$ $email$ $link_close$!",
     "description": "Instructions on how to help translate",
     "placeholders": {
       "email": {
@@ -776,7 +790,7 @@
     "description": "Heading for what's new in version"
   },
   "version_items": {
-    "message": "$open$iPrzetłumaczono na 19 języków$close$ $open$Dodano opcje w Ustawieniach służące wyłączeniu opcji prawego przycisku myszy$close$ $open$Dodano ikonkę, by wyświetlać 'Better History' w zakładkach$close$ $open$Dodano sekcję Podziękowania w Ustawieniach$close$ $open$Poprawiono lukę XSS$close$",
+    "message": "$open$iPrzetłumaczono na 19 języków$close$ $open$Dodano opcje w Ustawieniach służące wyłączeniu opcji prawego przycisku myszy (wyszukiwanie)$close$ $open$Dodano ikonkę, by wyświetlać 'Better History' w zakładkach$close$ $open$Dodano sekcję Podziękowania w Ustawieniach$close$ $open$Poprawiono lukę XSS$close$",
     "description": "Release bulletpoints",
     "placeholders": {
       "open": {
@@ -804,11 +818,11 @@
   },
 
   "search_in_history": {
-    "message": "Search in history",
+    "message": "Szukaj w historii",
     "description": "Label for search in history context menu item"
   },
   "visits_to_domain": {
-    "message": "Visits to $domain$",
+    "message": "Wizyty w domenie $domain$",
     "description": "Label for visits to domain context menu item",
     "placeholders": {
       "domain": {
