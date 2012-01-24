@@ -828,11 +828,11 @@
   },
 
   "search_in_history": {
-    "message": "Search in history",
+    "message": "Recerca en l'historial",
     "description": "Label for search in history context menu item"
   },
   "visits_to_domain": {
-    "message": "Visits to $domain$",
+    "message": "Visites a $domain$",
     "description": "Label for visits to domain context menu item",
     "placeholders": {
       "domain": {

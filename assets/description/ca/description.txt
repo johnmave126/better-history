@@ -1,41 +1,41 @@
-This extension replaces the default history viewer.
+Aquesta extensió reemplaça la vista per defecte de l'historial.
 
-Suggests, questions, comments? Follow @Better_History on Twitter!
+Suggeriments, preguntes, commentaris? Seguiu @Better_History a Twitter!
 https://twitter.com/Better_History
 
 --------------------------------------------------
-Recent Changes
+Darrers canvis
 
 --------------------------------------------------
 
-Chrome is an excellent browser, but viewing your history could be a lot better. That's where Better History comes in. See below! 
+Chrome és un navegador excel·lent, però com es mostra l'historial és pot millorar. Aquí és on hi intervé Better History. Veieu a sota! 
 
-Deleting:
-â— Delete all visits for a day
-â— Delete individual visits
-â— Delete visits to the same domain 
-â— Delete all history
+Esborrar:
+â— Esborrar totes les visites d'un dia
+â— Esborrar les visites individuals
+â— Esborrar les visites a un mateix domini
+â— Esborrar tot l'historial
 
-Grouping:
-â— Group visits by 60, 30, or 15 minutes
-â— Group visits to the same domain
-â— Format hours to 12 or 24
-â— Customizable grouping behavior
+Agrupar:
+â— Agrupar les visites per 60, 30, o 15 minuts
+â— Agrupar les visites a un mateix domini
+â— Format de 12 o 24 hores
+â— El comportament de l'agrupament és personalitzable
 
-Organizing:
-â— Filter visits by day
+Organitzar:
+â— Filtrar les visites per dia
 
-Searching:
-â— Search the last few months
-â— Search by date, url, and page title
-â— Highlighted search terms
-â— Right click option to search by domain
-â— Right click option to search by selected text
+Cercar:
+â— Cercar en els darrers mesos
+â— Cercar per data, url, i títol de la pàgina
+â— Termes de recerca destacats
+â— Opció del botó dret del ratolí per cercar per domini
+â— Opció del botó dret del ratolí per cercar pel text seleccionat
 
-Styling:
-â— Styled with Chrome UI
-â— Access from button in toolbar 
-â— Remembers closing state
-â— Back button support
+Estils:
+â— Estil d'interfície d'usuari de Chrome
+â— Accés des del botó en la barra d'eines 
+â— Recorda l'estat de tancament
+â— Suport del botó Enrere
 
-... lots more coming. 
+... molt més per venir. 
