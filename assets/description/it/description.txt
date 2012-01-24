@@ -1,41 +1,42 @@
-This extension replaces the default history viewer.
+Questa estensione sostituisce la normale visualizzazione della cronologia.
 
-Suggests, questions, comments? Follow @Better_History on Twitter!
+Suggerimenti, domande, commenti? Segui @Better_History su Twitter!
 https://twitter.com/Better_History
 
 --------------------------------------------------
-Recent Changes
+Ultimi cambiamenti
 
 --------------------------------------------------
 
-Chrome is an excellent browser, but viewing your history could be a lot better. That's where Better History comes in. See below! 
+Chrome é un browser eccellente, ma la consultazione della cronologia potrebbe essere molto migliore. E' qui che interviene Better History. Continua a leggere!
 
-Deleting:
-● Delete all visits for a day
-● Delete individual visits
-● Delete visits to the same domain 
-● Delete all history
 
-Grouping:
-● Group visits by 60, 30, or 15 minutes
-● Group visits to the same domain
-● Format hours to 12 or 24
-● Customizable grouping behavior
+Cancellazione:
+● Cancella tutte le visite di un giorno
+● Cancella singole visite
+● Cancella le visite su un singolo dominio
+● Cancella tutte le visite
 
-Organizing:
-● Filter visits by day
+Raggruppamento:
+● Raggruppa le visite per 60, 30 o 15 minuti
+● Raggruppa le visite allo stesso dominio
+● Formatta le ore per 12 o 24
+● Comportamento dei raggruppamenti personalizzabile
 
-Searching:
-● Search the last few months
-● Search by date, url, and page title
-● Highlighted search terms
-● Right click option to search by domain
-● Right click option to search by selected text
+Organizzazione:
+● Filtra le visite per giorno
 
-Styling:
-● Styled with Chrome UI
-● Access from button in toolbar 
-● Remembers closing state
-● Back button support
+Ricerca:
+● Ricerca negli ultimi mesi
+● Ricerca per data, url e titolo di pagina
+● Evidenzia i termini cercati
+● Opzione per la ricerca in base al dominio con il tasto destro
+● Opzione per la ricerca del testo selezionato con il tasto destro
 
-... lots more coming. 
+Stile:
+● Stile integrato con l'interfaccia di Google Chrome
+● Accesso tramite pulsante nella barra strumenti
+● Memorizza lo stato alla chiusura
+● Supporto al pulsante "indietro"
+
+... e molto altro.

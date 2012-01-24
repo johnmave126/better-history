@@ -8,7 +8,7 @@
     "description": "Manifest browser action title"
   },
   "manifest_description": {
-    "message": "Un migliore approccio alla tua cronologia di navigazione. Ricerche migliori, interfaccia più nitida e filtri più utili - per la tua cronologia.",
+    "message": "Un migliore approccio alla tua cronologia di navigazione. Ricerche migliori, interfaccia più nitida e filtri più utili.",
     "description": "Manifest description"
   },
 
@@ -80,6 +80,20 @@
       "ordinal_close": {
         "content": "$5",
         "example": "close tag for ordinal"
+      }
+    }
+  },
+  "12_hour_time_format": {
+    "message": "$time$ $label$",
+    "description": "Time format for 12 hour time",
+    "placeholders": {
+      "time": {
+        "content": "$1",
+        "example": "10:00"
+      },
+      "label": {
+        "content": "$2",
+        "example": "AM/PM"
       }
     }
   },
@@ -251,7 +265,7 @@
     "description": "the number"
   },
   "ordinal_1": {
-    "message": "°",
+    "message": " ",
     "description": "the ordinal for 1"
   },
   "2": {
@@ -259,7 +273,7 @@
     "description": "the number"
   },
   "ordinal_2": {
-    "message": "°",
+    "message": " ",
     "description": "the ordinal for 2"
   },
   "3": {
@@ -267,7 +281,7 @@
     "description": "the number"
   },
   "ordinal_3": {
-    "message": "°",
+    "message": " ",
     "description": "the ordinal for 3"
   },
   "4": {
@@ -275,7 +289,7 @@
     "description": "the number"
   },
   "ordinal_4": {
-    "message": "°",
+    "message": " ",
     "description": "the ordinal for 4"
   },
   "5": {
@@ -283,7 +297,7 @@
     "description": "the number"
   },
   "ordinal_5": {
-    "message": "°",
+    "message": " ",
     "description": "the ordinal for 5"
   },
   "6": {
@@ -291,7 +305,7 @@
     "description": "the number"
   },
   "ordinal_6": {
-    "message": "°",
+    "message": " ",
     "description": "the ordinal for 6"
   },
   "7": {
@@ -299,7 +313,7 @@
     "description": "the number"
   },
   "ordinal_7": {
-    "message": "°",
+    "message": " ",
     "description": "the ordinal for 7"
   },
   "8": {
@@ -307,7 +321,7 @@
     "description": "the number"
   },
   "ordinal_8": {
-    "message": "°",
+    "message": " ",
     "description": "the ordinal for 8"
   },
   "9": {
@@ -315,7 +329,7 @@
     "description": "the number"
   },
   "ordinal_9": {
-    "message": "°",
+    "message": " ",
     "description": "the ordinal for 9"
   },
   "10": {
@@ -323,7 +337,7 @@
     "description": "the number"
   },
   "ordinal_10": {
-    "message": "°",
+    "message": " ",
     "description": "the ordinal for 10"
   },
   "11": {
@@ -331,7 +345,7 @@
     "description": "the number"
   },
   "ordinal_11": {
-    "message": "°",
+    "message": " ",
     "description": "the ordinal for 11"
   },
   "12": {
@@ -339,7 +353,7 @@
     "description": "the number"
   },
   "ordinal_12": {
-    "message": "°",
+    "message": " ",
     "description": "the ordinal for 12"
   },
   "13": {
@@ -347,7 +361,7 @@
     "description": "the number"
   },
   "ordinal_13": {
-    "message": "°",
+    "message": " ",
     "description": "the ordinal for 13"
   },
   "14": {
@@ -355,7 +369,7 @@
     "description": "the number"
   },
   "ordinal_14": {
-    "message": "°",
+    "message": " ",
     "description": "the ordinal for 14"
   },
   "15": {
@@ -363,7 +377,7 @@
     "description": "the number"
   },
   "ordinal_15": {
-    "message": "°",
+    "message": " ",
     "description": "the ordinal for 15"
   },
   "16": {
@@ -371,7 +385,7 @@
     "description": "the number"
   },
   "ordinal_16": {
-    "message": "°",
+    "message": " ",
     "description": "the ordinal for 16"
   },
   "17": {
@@ -379,7 +393,7 @@
     "description": "the number"
   },
   "ordinal_17": {
-    "message": "°",
+    "message": " ",
     "description": "the ordinal for 17"
   },
   "18": {
@@ -387,7 +401,7 @@
     "description": "the number"
   },
   "ordinal_18": {
-    "message": "°",
+    "message": " ",
     "description": "the ordinal for 18"
   },
   "19": {
@@ -395,7 +409,7 @@
     "description": "the number"
   },
   "ordinal_19": {
-    "message": "°",
+    "message": " ",
     "description": "the ordinal for 19"
   },
   "20": {
@@ -403,7 +417,7 @@
     "description": "the number"
   },
   "ordinal_20": {
-    "message": "°",
+    "message": " ",
     "description": "the ordinal for 20"
   },
   "21": {
@@ -411,7 +425,7 @@
     "description": "the number"
   },
   "ordinal_21": {
-    "message": "°",
+    "message": " ",
     "description": "the ordinal for 21"
   },
   "22": {
@@ -419,7 +433,7 @@
     "description": "the number"
   },
   "ordinal_22": {
-    "message": "°",
+    "message": " ",
     "description": "the ordinal for 22"
   },
   "23": {
@@ -427,7 +441,7 @@
     "description": "the number"
   },
   "ordinal_23": {
-    "message": "°",
+    "message": " ",
     "description": "the ordinal for 23"
   },
   "24": {
@@ -435,7 +449,7 @@
     "description": "the number"
   },
   "ordinal_24": {
-    "message": "°",
+    "message": " ",
     "description": "the ordinal for 24"
   },
   "25": {
@@ -443,7 +457,7 @@
     "description": "the number"
   },
   "ordinal_25": {
-    "message": "°",
+    "message": " ",
     "description": "the ordinal for 25"
   },
   "26": {
@@ -451,7 +465,7 @@
     "description": "the number"
   },
   "ordinal_26": {
-    "message": "°",
+    "message": " ",
     "description": "the ordinal for 26"
   },
   "27": {
@@ -459,7 +473,7 @@
     "description": "the number"
   },
   "ordinal_27": {
-    "message": "°",
+    "message": " ",
     "description": "the ordinal for 27"
   },
   "28": {
@@ -467,7 +481,7 @@
     "description": "the number"
   },
   "ordinal_28": {
-    "message": "°",
+    "message": " ",
     "description": "the ordinal for 28"
   },
   "29": {
@@ -475,7 +489,7 @@
     "description": "the number"
   },
   "ordinal_29": {
-    "message": "°",
+    "message": " ",
     "description": "the ordinal for 29"
   },
   "30": {
@@ -483,7 +497,7 @@
     "description": "the number"
   },
   "ordinal_30": {
-    "message": "°",
+    "message": " ",
     "description": "the ordinal for 30"
   },
   "31": {
@@ -491,7 +505,7 @@
     "description": "the number"
   },
   "ordinal_31": {
-    "message": "°",
+    "message": " ",
     "description": "the ordinal for 31"
   },
 
@@ -804,11 +818,11 @@
   },
 
   "search_in_history": {
-    "message": "Search in history",
+    "message": "Cerca nella cronologia",
     "description": "Label for search in history context menu item"
   },
   "visits_to_domain": {
-    "message": "Visits to $domain$",
+    "message": "Visite a $domain$",
     "description": "Label for visits to domain context menu item",
     "placeholders": {
       "domain": {
