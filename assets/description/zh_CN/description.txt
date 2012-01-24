@@ -1,41 +1,38 @@
-This extension replaces the default history viewer.
+本扩展替换浏览器自带的历史查看页面。
 
-Suggests, questions, comments? Follow @Better_History on Twitter!
+建议，问题，意见？在twitter上关注@Better_History！
 https://twitter.com/Better_History
-
 --------------------------------------------------
-Recent Changes
-
+最近更新
 --------------------------------------------------
+Chrome浏览器是一款出色的浏览器，但是查看您的历史记录可以有更好的体验！这就是Better History的切入点。参见下文：
 
-Chrome is an excellent browser, but viewing your history could be a lot better. That's where Better History comes in. See below! 
+删除：
+● 删除一天内的浏览记录
+● 删除单独的访问记录
+● 删除同域名下的浏览记录
+● 删除所有历史记录
 
-Deleting:
-● Delete all visits for a day
-● Delete individual visits
-● Delete visits to the same domain 
-● Delete all history
+分组：
+● 按每15、30或60分钟分组浏览记录
+● 按网站域名分组浏览记录
+● 时间格式可选用12或24小时制
+● 可自定义的分组行为
 
-Grouping:
-● Group visits by 60, 30, or 15 minutes
-● Group visits to the same domain
-● Format hours to 12 or 24
-● Customizable grouping behavior
+组织：
+● 按天组织浏览记录
 
-Organizing:
-● Filter visits by day
+搜索：
+● 搜索最近几个月
+● 按日期、网址或标题搜索
+● 高亮搜索关键字
+● 右键菜单选项以按域名搜索
+● 右键菜单选项以搜索选定字段
 
-Searching:
-● Search the last few months
-● Search by date, url, and page title
-● Highlighted search terms
-● Right click option to search by domain
-● Right click option to search by selected text
+风格：
+● 按Chrome的界面风格进行设计
+● 从工具栏的按钮进入
+● 记忆关闭时的状态
+● 支持后退
 
-Styling:
-● Styled with Chrome UI
-● Access from button in toolbar 
-● Remembers closing state
-● Back button support
-
-... lots more coming. 
+……更多的特性即将来临。

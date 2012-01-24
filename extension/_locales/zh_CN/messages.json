@@ -18,16 +18,16 @@
   },
 
   "extended_formal_date": {
-    "message": "$weekday$ $year$ $month$ $day$",
-    "description": "The order of a full extended date",
+    "message": " $year$年$month$$day$日，$weekday$",
+    "description": "The order of a full extended date，",
     "placeholders": {
       "weekday": {
         "content": "$1",
-        "example": "March"
+        "example": "星期五"
       },
       "month": {
         "content": "$2",
-        "example": "March"
+        "example": "三月"
       },
       "day": {
         "content": "$3",
@@ -40,12 +40,12 @@
     }
   },
   "formal_date": {
-    "message": "$year$ $month$ $day$",
+    "message": "$year$年$month$$day$日",
     "description": "The order of a full date",
     "placeholders": {
       "month": {
         "content": "$1",
-        "example": "March"
+        "example": "三月"
       },
       "day": {
         "content": "$2",
@@ -58,12 +58,12 @@
     }
   },
   "informal_date": {
-    "message": "$week_day$, $day$$ordinal$",
+    "message": "$day$日，$week_day$",
     "description": "Date labels in sidebar",
     "placeholders": {
       "week_day": {
         "content": "$1",
-        "example": "Monday"
+        "example": "星期一"
       },
       "day": {
         "content": "$2",
@@ -83,6 +83,20 @@
       }
     }
   },
+  "12_hour_time_format": {
+    "message": "$label$ $time$",
+    "description": "Time format for 12 hour time",
+    "placeholders": {
+      "time": {
+        "content": "$1",
+        "example": "10:00"
+      },
+      "label": {
+        "content": "$2",
+        "example": "AM/PM"
+      }
+    }
+  },
 
   "morning": {
     "message": "上午",
@@ -93,7 +107,7 @@
     "description": "The afternoon abbreviation when using 12 hour time"
   },
   "evening": {
-    "message": "下午",
+    "message": "晚上",
     "description": "The evening abbreviation when using 12 hour time"
   },
 
@@ -146,7 +160,7 @@
     "description": "Label for check box to group visits by domain"
   },
   "right_click_options_section_title": {
-    "message": "右键菜单选项",
+    "message": "右键菜单",
     "description": "Section heading in Settings"
   },
   "search_by_text_selection_label": {
@@ -560,7 +574,7 @@
     "description": "The month"
   },
   "confirm_delete_all_visits": {
-    "message": "清除该时间段内的历史记录 $formal_date$?",
+    "message": "清除自$formal_date$以来的历史记录？",
     "description": "Confirmation text to delete all visits from a specific date",
     "placeholders": {
       "formal_date": {
@@ -571,7 +585,7 @@
   },
 
   "number_of_visits": {
-    "message": "$number_open$$number$$number_close$ 访问",
+    "message": "$number_open$$number$$number_close$次访问",
     "description": "Label to a number representing a number of visits",
     "placeholders": {
       "number": {
@@ -685,39 +699,39 @@
     "description": "The language"
   },
   "dutch": {
-    "message": "Dutch",
+    "message": "荷兰语",
     "description": "The language"
   },
   "czech": {
-    "message": "Czech",
+    "message": "捷克斯洛伐克语",
     "description": "The language"
   },
   "japanese": {
-    "message": "Japanese",
+    "message": "日语",
     "description": "The language"
   },
   "vietnamese": {
-    "message": "Vietnamese",
+    "message": "越南语",
     "description": "The language"
   },
   "romanian": {
-    "message": "Romanian",
+    "message": "罗马尼亚语",
     "description": "The language"
   },
   "hindi": {
-    "message": "Hindi",
+    "message": "印地语",
     "description": "The language"
   },
   "catalonian": {
-    "message": "Catalonian",
+    "message": "加泰罗尼亚语",
     "description": "The language"
   },
   "translation_help_heading": {
-    "message": "没有见到您的语言？",
+    "message": "没有见到您熟悉的语言？",
     "description": "Heading to recruit translators"
   },
   "translation_instructions": {
-    "message": "你讲英语并且想把Better History翻译到一种新的语言？太棒了！请发Email到 $link_open$$email$$link_close$",
+    "message": "你会讲英语并且想把Better History翻译到一种新的语言？太棒了！请发Email到 $link_open$$email$$link_close$",
     "description": "Instructions on how to help translate",
     "placeholders": {
       "email": {
@@ -760,7 +774,7 @@
     "description": "Heading for an important note"
   },
   "version_note": {
-    "message": "我收到如此多的反馈以致很遗憾我不能再逐一回复。为了快速的反馈，建议、不足等直接发推$link_open$@Better_History$link_close$！关注$link_open$@Better_History$link_close$同时获取最新的消息！",
+    "message": "我收到太多反馈以致很遗憾不能再逐一回复。为了得到快速的反馈，建议、不足等请直接发推$link_open$@Better_History$link_close$！关注$link_open$@Better_History$link_close$同时获取最新的消息！",
     "descriotion": "Feedback and support note",
     "placeholders": {
       "link_open": {
@@ -804,11 +818,11 @@
   },
 
   "search_in_history": {
-    "message": "Search in history",
+    "message": "在历史记录里搜索",
     "description": "Label for search in history context menu item"
   },
   "visits_to_domain": {
-    "message": "Visits to $domain$",
+    "message": "$domain$下的访问",
     "description": "Label for visits to domain context menu item",
     "placeholders": {
       "domain": {
