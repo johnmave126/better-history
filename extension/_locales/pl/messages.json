@@ -144,7 +144,7 @@
     "description": "Time amount"
   },
   "time_format_label": {
-    "message": "format czasu",
+    "message": "Format czasu",
     "description": "Label for select box to set the time format (12 or 24 hours)"
   },
   "12_hours_option": {
@@ -176,11 +176,11 @@
     "description": "Section heading in Settings"
   },
   "view_release_announcement_link": {
-    "message": "zobacz informacje o wydaniu",
+    "message": "Zobacz informacje o wydaniu",
     "description": "Link text to view the release announcement"
   },
   "current_version_label": {
-    "message": "aktualna wersja",
+    "message": "Aktualna wersja",
     "description": "label for the current version"
   },
   "credits_link": {
