@@ -4,11 +4,11 @@
     "description": "Manifest name"
   },
   "manifest_browser_action_title": {
-    "message": "alan adına göre ara",
-    "description": "Una mejor imagen para tu historial de navegación. Interfaz limpia, búsquedas óptimas y los filtros más útiles para tu historial."
+    "message": "Navegar Historial",
+    "description": "Manifest browser action title"
   },
   "manifest_description": {
-    "message": "Un migliore approccio alla tua cronologia di navigazione. Ricerche migliori, interfaccia più nitida e filtri più utili - per la tua cronologia.",
+    "message": "Una mejor imagen para tu historial de navegación. Interfaz limpia, búsquedas óptimas y los filtros más útiles para tu historial.",
     "description": "Manifest description"
   },
 
@@ -18,12 +18,12 @@
   },
 
   "extended_formal_date": {
-    "message": "$weekday$, $month$ $day$ de $year$",
+    "message": "$weekday$, $day$ de $month$ de $year$",
     "description": "The order of a full extended date",
     "placeholders": {
       "weekday": {
         "content": "$1",
-        "example": "March"
+        "example": "Jueves"
       },
       "month": {
         "content": "$2",
@@ -40,7 +40,7 @@
     }
   },
   "formal_date": {
-    "message": "$month$ $day$ de $year$",
+    "message": "$day$ de $month$ de $year$",
     "description": "The order of a full date",
     "placeholders": {
       "month": {
@@ -80,6 +80,20 @@
       "ordinal_close": {
         "content": "$5",
         "example": "close tag for ordinal"
+      }
+    }
+  },
+  "12_hour_time_format": {
+    "message": "$time$ $label$",
+    "description": "Time format for 12 hour time",
+    "placeholders": {
+      "time": {
+        "content": "$1",
+        "example": "10:00"
+      },
+      "label": {
+        "content": "$2",
+        "example": "AM/PM"
       }
     }
   },
@@ -145,17 +159,17 @@
     "message": "Agrupar visitas por dominio",
     "description": "Label for check box to group visits by domain"
   },
-  "right_click_options_section_title": {
-    "message": "Opciones de click derecho",
+  "right_clic_options_section_title": {
+    "message": "Opciones de clic derecho",
     "description": "Section heading in Settings"
   },
   "search_by_text_selection_label": {
     "message": "Buscar por selección de texto",
-    "description": "Label for check box to enable right click option"
+    "description": "Label for check box to enable right clic option"
   },
   "search_by_domain_label": {
     "message": "Buscar por dominio",
-    "description": "Label for check box to enable right click option"
+    "description": "Label for check box to enable right clic option"
   },
   "Whats_new_section_title": {
     "message": "¿Qué hay de nuevo?",
@@ -169,9 +183,19 @@
     "message": "Versión actual",
     "description": "label for the current version"
   },
-  "credits": {
-    "message": "Créditos",
-    "description": "The word credits"
+  "credits_link": {
+    "message": "$open$Better History$close$ créditos",
+    "description": "The link to credits",
+    "placeholders": {
+      "open": {
+        "content": "$1",
+        "example": "strong open"
+      },
+      "close": {
+        "content": "$2",
+        "example": "strong close"
+      }
+    }
   },
   "feedback_section_title": {
     "message": "Comentarios",
@@ -251,7 +275,7 @@
     "description": "the number"
   },
   "ordinal_1": {
-    "message": ".º",
+    "message": "ro",
     "description": "the ordinal for 1"
   },
   "2": {
@@ -259,7 +283,7 @@
     "description": "the number"
   },
   "ordinal_2": {
-    "message": ".º",
+    "message": "",
     "description": "the ordinal for 2"
   },
   "3": {
@@ -267,7 +291,7 @@
     "description": "the number"
   },
   "ordinal_3": {
-    "message": ".º",
+    "message": "",
     "description": "the ordinal for 3"
   },
   "4": {
@@ -275,7 +299,7 @@
     "description": "the number"
   },
   "ordinal_4": {
-    "message": ".º",
+    "message": "",
     "description": "the ordinal for 4"
   },
   "5": {
@@ -283,7 +307,7 @@
     "description": "the number"
   },
   "ordinal_5": {
-    "message": ".º",
+    "message": "",
     "description": "the ordinal for 5"
   },
   "6": {
@@ -291,7 +315,7 @@
     "description": "the number"
   },
   "ordinal_6": {
-    "message": ".º",
+    "message": "",
     "description": "the ordinal for 6"
   },
   "7": {
@@ -299,7 +323,7 @@
     "description": "the number"
   },
   "ordinal_7": {
-    "message": ".º",
+    "message": "",
     "description": "the ordinal for 7"
   },
   "8": {
@@ -307,7 +331,7 @@
     "description": "the number"
   },
   "ordinal_8": {
-    "message": ".º",
+    "message": "",
     "description": "the ordinal for 8"
   },
   "9": {
@@ -315,7 +339,7 @@
     "description": "the number"
   },
   "ordinal_9": {
-    "message": ".º",
+    "message": "",
     "description": "the ordinal for 9"
   },
   "10": {
@@ -323,7 +347,7 @@
     "description": "the number"
   },
   "ordinal_10": {
-    "message": ".º",
+    "message": "",
     "description": "the ordinal for 10"
   },
   "11": {
@@ -331,7 +355,7 @@
     "description": "the number"
   },
   "ordinal_11": {
-    "message": ".º",
+    "message": "",
     "description": "the ordinal for 11"
   },
   "12": {
@@ -339,7 +363,7 @@
     "description": "the number"
   },
   "ordinal_12": {
-    "message": ".º",
+    "message": "",
     "description": "the ordinal for 12"
   },
   "13": {
@@ -347,7 +371,7 @@
     "description": "the number"
   },
   "ordinal_13": {
-    "message": ".º",
+    "message": "",
     "description": "the ordinal for 13"
   },
   "14": {
@@ -355,7 +379,7 @@
     "description": "the number"
   },
   "ordinal_14": {
-    "message": ".º",
+    "message": "",
     "description": "the ordinal for 14"
   },
   "15": {
@@ -363,7 +387,7 @@
     "description": "the number"
   },
   "ordinal_15": {
-    "message": ".º",
+    "message": "",
     "description": "the ordinal for 15"
   },
   "16": {
@@ -371,7 +395,7 @@
     "description": "the number"
   },
   "ordinal_16": {
-    "message": ".º",
+    "message": "",
     "description": "the ordinal for 16"
   },
   "17": {
@@ -379,7 +403,7 @@
     "description": "the number"
   },
   "ordinal_17": {
-    "message": ".º",
+    "message": "",
     "description": "the ordinal for 17"
   },
   "18": {
@@ -387,7 +411,7 @@
     "description": "the number"
   },
   "ordinal_18": {
-    "message": ".º",
+    "message": "",
     "description": "the ordinal for 18"
   },
   "19": {
@@ -395,7 +419,7 @@
     "description": "the number"
   },
   "ordinal_19": {
-    "message": ".º",
+    "message": "",
     "description": "the ordinal for 19"
   },
   "20": {
@@ -403,7 +427,7 @@
     "description": "the number"
   },
   "ordinal_20": {
-    "message": ".º",
+    "message": "",
     "description": "the ordinal for 20"
   },
   "21": {
@@ -411,7 +435,7 @@
     "description": "the number"
   },
   "ordinal_21": {
-    "message": ".º",
+    "message": "",
     "description": "the ordinal for 21"
   },
   "22": {
@@ -419,7 +443,7 @@
     "description": "the number"
   },
   "ordinal_22": {
-    "message": ".º",
+    "message": "",
     "description": "the ordinal for 22"
   },
   "23": {
@@ -427,7 +451,7 @@
     "description": "the number"
   },
   "ordinal_23": {
-    "message": ".º",
+    "message": "",
     "description": "the ordinal for 23"
   },
   "24": {
@@ -435,7 +459,7 @@
     "description": "the number"
   },
   "ordinal_24": {
-    "message": ".º",
+    "message": "",
     "description": "the ordinal for 24"
   },
   "25": {
@@ -443,7 +467,7 @@
     "description": "the number"
   },
   "ordinal_25": {
-    "message": ".º",
+    "message": "",
     "description": "the ordinal for 25"
   },
   "26": {
@@ -451,7 +475,7 @@
     "description": "the number"
   },
   "ordinal_26": {
-    "message": ".º",
+    "message": "",
     "description": "the ordinal for 26"
   },
   "27": {
@@ -459,7 +483,7 @@
     "description": "the number"
   },
   "ordinal_27": {
-    "message": ".º",
+    "message": "",
     "description": "the ordinal for 27"
   },
   "28": {
@@ -467,7 +491,7 @@
     "description": "the number"
   },
   "ordinal_28": {
-    "message": ".º",
+    "message": "",
     "description": "the ordinal for 28"
   },
   "29": {
@@ -475,7 +499,7 @@
     "description": "the number"
   },
   "ordinal_29": {
-    "message": ".º",
+    "message": "",
     "description": "the ordinal for 29"
   },
   "30": {
@@ -483,7 +507,7 @@
     "description": "the number"
   },
   "ordinal_30": {
-    "message": ".º",
+    "message": "",
     "description": "the ordinal for 30"
   },
   "31": {
@@ -491,7 +515,7 @@
     "description": "the number"
   },
   "ordinal_31": {
-    "message": ".º",
+    "message": "",
     "description": "the ordinal for 31"
   },
 
@@ -508,7 +532,7 @@
     "description": "Text for delete all visits for a day filter button"
   },
   "no_visits_found": {
-    "message": "Spiacente, nessuna pagina visitata trovata",
+    "message": "Lo sentimos, no se encontraron visitas.",
     "description": "Text for no visits found message"
   },
   "january": {
@@ -560,7 +584,7 @@
     "description": "The month"
   },
   "confirm_delete_all_visits": {
-    "message": "¿Borrar todas las visitas de $formal_date$?",
+    "message": "¿Borrar todas las visitas del $formal_date$?",
     "description": "Confirmation text to delete all visits from a specific date",
     "placeholders": {
       "formal_date": {
@@ -625,7 +649,7 @@
     }
   },
   "translators_heading": {
-    "message": "Traduttori",
+    "message": "Traductores",
     "description": "Heading for translators"
   },
   "spanish": {
@@ -709,7 +733,7 @@
     "description": "The language"
   },
   "catalonian": {
-    "message": "Cataluña",
+    "message": "Catalán",
     "description": "The language"
   },
   "translation_help_heading": {
@@ -735,7 +759,7 @@
     }
   },
   "close_button": {
-    "message": "Ok!",
+    "message": "¡Aceptar!",
     "description": "Button to close modal"
   },
 
@@ -760,7 +784,7 @@
     "description": "Heading for an important note"
   },
   "version_note": {
-    "message": "Estoy recibiendo tantos comentarios que desafortunadamente no puedo seguir respondiéndolos todos. Para comentarios rápidos, sugerencias y errores, menciona a $link_open$@Better_History$link_close$ en Twitter. ¡Síguenos también para informarte sobre las últimas noticias!",
+    "message": "Estoy recibiendo tantos comentarios que desafortunadamente no puedo seguir respondiéndolos todos. Para saludarnos rápidamente, sugerencias y errores, menciona a $link_open$@Better_History$link_close$ en Twitter. ¡Síguenos también para informarte sobre las últimas noticias!",
     "descriotion": "Feedback and support note",
     "placeholders": {
       "link_open": {
@@ -772,11 +796,11 @@
     }
   },
   "version_whats_new": {
-    "message": "Novità",
+    "message": "¿Qué hay de nuevo?",
     "description": "Heading for what's new in version"
   },
   "version_items": {
-    "message": "$open$Traducción en 19 idiomas$close$ $open$Se agregaron opciones en Configuración para deshabilitar opciones de click derecho.$close$ $open$Ícono de Better History en la barra de herramientas.$close$ $open$Nueva sección de Créditos en Configuración.$close$ $open$Solucionada vulnerabilidad XSS.$close$",
+    "message": "$open$Traducción en 19 idiomas$close$ $open$Se agregaron opciones en Configuración para deshabilitar opciones de clic derecho.$close$ $open$Ícono de Better History en la barra de herramientas.$close$ $open$Nueva sección de Créditos en Configuración.$close$ $open$Solucionada vulnerabilidad XSS.$close$",
     "description": "Release bulletpoints",
     "placeholders": {
       "open": {
@@ -804,11 +828,11 @@
   },
 
   "search_in_history": {
-    "message": "Search in history",
+    "message": "Buscar en historial",
     "description": "Label for search in history context menu item"
   },
   "visits_to_domain": {
-    "message": "Visits to $domain$",
+    "message": "Visitas a $domain$",
     "description": "Label for visits to domain context menu item",
     "placeholders": {
       "domain": {

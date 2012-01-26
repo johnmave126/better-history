@@ -1,0 +1,41 @@
+ƒsta extensi—n reemplaza el visor por defecto del historial.
+
+ÀSugerencias, preguntas, comentarios? ÁSigue @Better_History en Twitter! 
+https://twitter.com/Better_History
+
+--------------------------------------------------
+Cambios Recientes
+
+--------------------------------------------------
+
+Chrome es un excelente navegador, pero la forma en que puedes ver tu historial puede ser mucho mejor. Para eso fue creado Better History. Podr‡s:
+
+Borrado:
+â— Borrar todas las visitas de un d’a.
+â— Borrar visitas individuales.
+â— Borrar todas las visitas a un mismo dominio.
+â— Borrar todo el historial.
+
+Agrupaci—n:
+â— Agrupar visitas cada 60, 30, — 15 minutos.
+â— Agrupar visitas del mismo dominio.
+â— Elegir formato de 12 — 24 horas.
+â— Agrupaci—n customizable.
+
+Organizaci—n:
+â— Filtrar visitas por d’a.
+
+Bœsqueda:
+â— Buscar por los œltimos meses.
+â— Buscar por fecha, url y t’tulo de p‡gina.
+â— Obtener los trminos de bœsqueda resaltados.
+â— Acceder a la bœsqueda por dominio a travs de la opci—n de clic derecho.
+â— Acceder a la bœsqueda por texto seleccionado a travs de la opci—n de clic derecho.
+
+Interfaz:
+â— Tener interfaz estilo Chrome UI
+â— Acceder desde el bot—n en la barra de herramientas.
+â— Recordar el punto en el que quedaste antes de cerrar.
+â— Tendr‡s soporte del bot—n Regresar.
+
+... y mucho m‡s est‡ por venir. 
