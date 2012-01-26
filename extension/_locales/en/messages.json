@@ -840,5 +840,19 @@
         "example": "google.com"
       }
     }
+  },
+
+  "delete_grouped_visits_title": {
+    "message": "Delete visit group",
+    "description": "Tooltip for delete button for grouped visits"
+  },
+  "delete_page_visit_title": {
+    "message": "Delete visit",
+    "description": "Tooltip for delete button for a visit"
+  },
+
+  "twitter": {
+    "message": "Better History for Chrome, see what you're missing!",
+    "description": "Twitter message template"
   }
 }
