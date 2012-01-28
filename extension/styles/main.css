@@ -57,6 +57,15 @@ h2 {
   margin-__MSG_@@bidi_start_edge__: 24px;
   border-bottom: 1px solid #eee;
 }
+a.modal_link {
+  padding: 1px 3px;
+  border-radius: 2px;
+  margin-__MSG_@@bidi_start_edge__:-3px;
+  box-shadow: 0px 0px 3px 1px #DDD;
+  border:1px solid #CCC;
+  background:#dee4f1;
+}
+a.modal_link:hover { background:#cedaf3; }
 .filter_view .content,
 .search_view .content,
 .settings_view .content {
