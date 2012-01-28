@@ -1,41 +1,41 @@
-This extension replaces the default history viewer.
+Bu eklenti geçmiş görüntüleyicinizi değiştirecektir.
 
-Suggests, questions, comments? Follow @Better_History on Twitter!
+Öneri, soru, yorum? Lütfen bizi Twitter'dan (@Better_History) takip edin.
 https://twitter.com/Better_History
 
 --------------------------------------------------
-Recent Changes
+En son yapılan değişiklikler
 
 --------------------------------------------------
 
-Chrome is an excellent browser, but viewing your history could be a lot better. That's where Better History comes in. See below! 
+Chrome mükemmel bir tarayıcıdır fakat geçmişi görüntülemek biraz daha iyi olabilirdi. Better History de tam burada imdadınıza yetişiyor. Aşağıya bak!
 
-Deleting:
-● Delete all visits for a day
-● Delete individual visits
-● Delete visits to the same domain 
-● Delete all history
+Silme:
+● Bir güne ait tüm geçmişi sil
+● Geçmişi tek tek sil
+● Bir uzantıya ait tüm geçmişi sil
+● Tüm geçmişi sil
 
-Grouping:
-● Group visits by 60, 30, or 15 minutes
-● Group visits to the same domain
-● Format hours to 12 or 24
-● Customizable grouping behavior
+Gruplandırma:
+● 60, 30 veya 15 dakika aralıklarla ziyaretleri gruplandır
+● Aynı uzantıya göre ziyaretleri gruplandır
+● 12 ve 24 saatlik zaman formatı seçeneği
+● Değiştirilebilir gruplandırma seçeneği
 
-Organizing:
-● Filter visits by day
+Düzenleme:
+● Ziyaretleri günlere göre filtreleme
 
-Searching:
-● Search the last few months
-● Search by date, url, and page title
-● Highlighted search terms
-● Right click option to search by domain
-● Right click option to search by selected text
+Arama:
+● Son bir kaç ay içinde arama yapma
+● Tarih, url ve sayfa başlığına göre arama
+● Arama kriterlerini vurgulama
+● Alan adına göre arama yapmak için sağ tuş seçeneği
+● Seçilen metine göre arama yapmak için sağ tuş seçeneği
 
-Styling:
-● Styled with Chrome UI
-● Access from button in toolbar 
-● Remembers closing state
-● Back button support
+Şekillendirme:
+● Chrome kullanıcı arayüzüne uyarlandı
+● Araç çubuğundan ulaşılabilmesi için buton eklendi
+● Bıraktığın gibi bul
+● Geri buton desteği
 
-... lots more coming. 
+... daha bir sürü değişiklik yolda. 

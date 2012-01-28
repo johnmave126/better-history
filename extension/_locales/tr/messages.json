@@ -1,4 +1,4 @@
-{
+ {
   "manifest_name": {
     "message": "Better History",
     "description": "Manifest name"
@@ -8,7 +8,7 @@
     "description": "Manifest browser action title"
   },
   "manifest_description": {
-    "message": "Geçmişe daha iyi şekilde gözatın. Geçmişiniz için en iyi arama, en düzgün arayüz ve en kullanışlı filtreleme.",
+    "message": "Geçmişe daha iyi şekilde gözatın. Geçmiş için en iyi arama, en düzgün arayüz ve en kullanışlı filtreleme seçeneği.",
     "description": "Manifest description"
   },
 
@@ -83,6 +83,20 @@
       }
     }
   },
+  "12_hour_time_format": {
+    "message": "$time$ $label$",
+    "description": "Time format for 12 hour time",
+    "placeholders": {
+      "time": {
+        "content": "$1",
+        "example": "10:00"
+      },
+      "label": {
+        "content": "$2",
+        "example": "AM/PM"
+      }
+    }
+  },
 
   "morning": {
     "message": "AM",
@@ -102,11 +116,11 @@
     "description": "Settings title for Settings page"
   },
   "clearing_history_section_title": {
-    "message": "Geçmiş temizleniyor",
+    "message": "Geçmişi temizle",
     "description": "Section heading in Settings"
   },
   "clear_history_button": {
-    "message": "Geçmiş temizleniyor...",
+    "message": "Geçmişi temizle",
     "description": "Button text for clear history button in Settings"
   },
   "visit_grouping_section_title": {
@@ -166,19 +180,29 @@
     "description": "Link text to view the release announcement"
   },
   "current_version_label": {
-    "message": "şu anki versiyon",
+    "message": "güncel versiyon",
     "description": "label for the current version"
   },
-  "credits": {
-    "message": "Jenerik",
-    "description": "The word credits"
+  "credits_link": {
+    "message": "$open$Better History$close$ jenerik",
+    "description": "The link to credits",
+    "placeholders": {
+      "open": {
+        "content": "$1",
+        "example": "strong open"
+      },
+      "close": {
+        "content": "$2",
+        "example": "strong close"
+      }
+    }
   },
   "feedback_section_title": {
     "message": "Geri dönüş bildir",
     "description": "Section heading in Settings"
   },
   "suggestions_bugs_comments": {
-    "message": "Öneriler, bulduğun hatalar, yorumlar? $link_open$@Better_History'e$link_close$ tweetleyin.",
+    "message": "Öneri, bulduğun hata, yorum? Lütfen $link_open$@Better_History$link_close$ e tweetleyin.",
     "description": "Link text to give feedback",
     "placeholders": {
       "link_open": {
@@ -571,7 +595,7 @@
   },
 
   "number_of_visits": {
-    "message": "$number_open$$number$$number_close$ ziyaretler",
+    "message": "$number_open$$number$$number_close$ ziyaret",
     "description": "Label to a number representing a number of visits",
     "placeholders": {
       "number": {
@@ -677,47 +701,47 @@
     "description": "The language"
   },
   "turkish": {
-    "message": "Turkish",
+    "message": "Türkçe",
     "description": "The language"
   },
   "latvian": {
-    "message": "Latvian",
+    "message": "Let dili",
     "description": "The language"
   },
   "dutch": {
-    "message": "Dutch",
+    "message": "Hollanda dili",
     "description": "The language"
   },
   "czech": {
-    "message": "Czech",
+    "message": "Çekce",
     "description": "The language"
   },
   "japanese": {
-    "message": "Japanese",
+    "message": "Japonca",
     "description": "The language"
   },
   "vietnamese": {
-    "message": "Vietnamese",
+    "message": "Vietnam dili",
     "description": "The language"
   },
   "romanian": {
-    "message": "Romanian",
+    "message": "Rumence",
     "description": "The language"
   },
   "hindi": {
-    "message": "Hindi",
+    "message": "Hintçe",
     "description": "The language"
   },
   "catalonian": {
-    "message": "Catalonian",
+    "message": "Katalonyaca",
     "description": "The language"
   },
   "translation_help_heading": {
-    "message": "Dilinizi göremiyor musunuz?",
+    "message": "Kendi dilinizi göremiyor musunuz?",
     "description": "Heading to recruit translators"
   },
   "translation_instructions": {
-    "message": "İngilizce konuşuyor ve Better History i yeni bir dile mi çevirmek istiyorsunuz? Harika! Tek yapmanız gereken email göndermek $link_open$ $email$ $link_close$",
+    "message": "İngilizce biliyorsunuz ve Better History i yeni bir dile mi çevirmek istiyorsunuz? Harika! Tek yapmanız gereken $link_open$ $email$ $link_close$ a email göndermek.",
     "description": "Instructions on how to help translate",
     "placeholders": {
       "email": {
@@ -744,7 +768,7 @@
     "description": "Title of the version modal"
   },
   "version_description": {
-    "message": "Bu büyük, büyük bir sürüm. Harika kullanıcıların yardımlarıyla beraber, Better History artık 19 dilde. $link_open$Credits section$link_close$e göz atıp, çevirmenlere teşekkür edebilirsiniz.",
+    "message": "Bu büyük yenilikler içeren bir sürüm. Süper kullanıcıların yardımlarıyla beraber, Better History artık 19 dilde. $link_open$Jenerik$link_close$ kısmına göz atıp, çevirmenlere teşekkür edebilirsiniz.",
     "description": "Version description",
     "placeholders": {
       "link_open": {
@@ -760,7 +784,7 @@
     "description": "Heading for an important note"
   },
   "version_note": {
-    "message": "Malesef çok fazla geri bildirim aldığımdan dolayı, herkesi cevaplayamıyorum. Hızlı geri bildirimleriniz, önerileriniz ve bulduğunuz hataları $link_open$@Better_History'e$link_close$ tweetleyebilirsiniz. En son haberler içinde $link_open$@Better_History'i$link_close$ takip edin.",
+    "message": "Malesef çok fazla geri bildirim aldığımdan dolayı, herkesin mailini cevaplayamıyorum. Hızlı geri bildirimleriniz, önerileriniz ve bulduğunuz hataları $link_open$@Better_History$link_close$ e tweetleyebilirsiniz. En son haberler için de lütfen $link_open$@Better_History$link_close$ i takip edin.",
     "descriotion": "Feedback and support note",
     "placeholders": {
       "link_open": {
@@ -776,7 +800,7 @@
     "description": "Heading for what's new in version"
   },
   "version_items": {
-    "message": "$open$ 19 dile çevirildi.$close$ $open$Sağ tıklama ayarlarını devre dışı bırakmak için Ayarlar'a seçenek eklendi.$close$ $open$Better History'i araç çubuğunda görüntülemek için simge eklendi$close$ $open$Ayarlara Jenerik kısmı eklendi$close$ $open$XSS açıkları giderildi$close$",
+    "message": "$open$ 19 dile çevirildi.$close$ $open$Sağ tıklama ayarlarını devre dışı bırakmak için Ayarlar'a seçenek eklendi.$close$ $open$Better History'i araç çubuğunda görüntülemek için simge eklendi.$close$ $open$Ayarlar'a Jenerik kısmı eklendi.$close$ $open$XSS açıkları giderildi.$close$",
     "description": "Release bulletpoints",
     "placeholders": {
       "open": {
@@ -804,11 +828,11 @@
   },
 
   "search_in_history": {
-    "message": "Search in history",
+    "message": "Geçmişte arat",
     "description": "Label for search in history context menu item"
   },
   "visits_to_domain": {
-    "message": "Visits to $domain$",
+    "message": "$domain$ ziyaretleri",
     "description": "Label for visits to domain context menu item",
     "placeholders": {
       "domain": {
