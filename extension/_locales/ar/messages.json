@@ -40,7 +40,7 @@
     }
   },
   "formal_date": {
-    "message": "$day$ $year$ $month$",
+    "message": "$day$ $month$ $year$",
     "description": "The order of a full date",
     "placeholders": {
       "month": {
@@ -83,6 +83,21 @@
       }
     }
   },
+  "12_hour_time_format": {
+    "message": "$time$ $label$",
+    "description": "Time format for 12 hour time",
+    "placeholders": {
+      "time": {
+        "content": "$1",
+        "example": "10:00"
+      },
+      "label": {
+        "content": "$2",
+        "example": "AM/PM"
+      }
+    }
+  },
+
   "morning": {
     "message": "صباحاً",
     "description": "The morning abbreviation when using 12 hour time"
@@ -133,11 +148,11 @@
     "description": "Label for select box to set the time format (12 or 24 hours)"
   },
   "12_hours_option": {
-    "message": "12 ساعات",
+    "message": "12 ساعة",
     "description": "12 hour time format, example: 3:00 PM"
   },
   "24_hours_option": {
-    "message": "24 ساعات",
+    "message": "24 ساعة",
     "description": "24 hour time format, example: 14:00"
   },
   "group_visits_by_domain_label": {
@@ -164,9 +179,19 @@
     "message": "عرض إعلان الإصدار",
     "description": "Link text to view the release announcement"
   },
-  "current_version_label": {
-    "message": "الإصدار الحالي",
-    "description": "label for the current version"
+  "credits_link": {
+    "message": "$open$Better History$close$ الإصدار الحالي",
+    "description": "The link to credits",
+    "placeholders": {
+      "open": {
+        "content": "$1",
+        "example": "strong open"
+      },
+      "close": {
+        "content": "$2",
+        "example": "strong close"
+      }
+    }
   },
   "credits": {
     "message": "الاعتمادات",
@@ -570,7 +595,7 @@
   },
 
   "number_of_visits": {
-    "message": "$number_open$$number$$number_close$ الزيارات ",
+    "message": "$number_open$$number$$number_close$ زيارة",
     "description": "Label to a number representing a number of visits",
     "placeholders": {
       "number": {
@@ -803,11 +828,11 @@
   },
 
   "search_in_history": {
-    "message": "Search in history",
+    "message": "البحث في سجل التاريخ",
     "description": "Label for search in history context menu item"
   },
   "visits_to_domain": {
-    "message": "Visits to $domain$",
+    "message": "$domain$ الزيارات ل",
     "description": "Label for visits to domain context menu item",
     "placeholders": {
       "domain": {
