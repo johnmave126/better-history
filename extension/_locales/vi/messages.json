@@ -83,6 +83,20 @@
       }
     }
   },
+  "12_hour_time_format": {
+    "message": "$time$ $label$",
+    "description": "Time format for 12 hour time",
+    "placeholders": {
+      "time": {
+        "content": "$1",
+        "example": "10:00"
+      },
+      "label": {
+        "content": "$2",
+        "example": "AM/PM"
+      }
+    }
+  },
 
   "morning": {
     "message": "sáng",
@@ -169,9 +183,19 @@
     "message": "Phiên bản hiện thời", 
     "description": "label for the current version"
   },
-  "credits": {
-    "message": "Công trạng", 
-    "description": "The word credits"
+  "credits_link": {
+    "message": "$open$Better History$close$ công trạng",
+    "description": "The link to credits",
+    "placeholders": {
+      "open": {
+        "content": "$1",
+        "example": "strong open"
+      },
+      "close": {
+        "content": "$2",
+        "example": "strong close"
+      }
+    }
   },
   "feedback_section_title": {
     "message": "Phản hồi", 
@@ -512,55 +536,55 @@
     "description": "Text for no visits found message"
   },
   "january": {
-    "message": "Tháng 1", 
+    "message": "tháng 1", 
     "description": "The month"
   },
   "february": {
-    "message": "Tháng 2", 
+    "message": "tháng 2", 
     "description": "The month"
   },
   "march": {
-    "message": "Tháng 3", 
+    "message": "tháng 3", 
     "description": "The month"
   },
   "april": {
-    "message": "Tháng 4",
+    "message": "tháng 4",
     "description": "The month"
   },
   "may": {
-    "message": "Tháng 5",
+    "message": "tháng 5",
     "description": "The month"
   },
   "june": {
-    "message": "Tháng 6",
+    "message": "tháng 6",
     "description": "The month"
   },
   "july": {
-    "message": "Tháng 7",
+    "message": "tháng 7",
     "description": "The month"
   },
   "august": {
-    "message": "Tháng 8",
+    "message": "tháng 8",
     "description": "The month"
   },
   "september": {
-    "message": "Tháng 9",
+    "message": "tháng 9",
     "description": "The month"
   },
   "october": {
-    "message": "Tháng 10",
+    "message": "tháng 10",
     "description": "The month"
   },
   "november": {
-    "message": "Tháng 11",
+    "message": "tháng 11",
     "description": "The month"
   },
   "december": {
-    "message": "Tháng 12",
+    "message": "tháng 12",
     "description": "The month"
   },
   "confirm_delete_all_visits": {
-    "message": "Xóa toàn bộ lượt xem từ $formal_date$?", 
+    "message": "Xóa toàn bộ lượt xem trong $formal_date$?", 
     "description": "Confirmation text to delete all visits from a specific date",
     "placeholders": {
       "formal_date": {
@@ -626,7 +650,7 @@
     }
   },
   "translators_heading": {
-    "message": "Người dịch", 
+    "message": "Các thông dịch viên", 
     "description": "Heading for translators"
   },
   "spanish": {
@@ -718,7 +742,7 @@
     "description": "Heading to recruit translators"
   },
   "translation_instructions": {
-    "message": "Bạn nói được tiếng Anh và muốn dịch Better History qua ngôn ngữ khác? Tuyệt vời! Chỉ cần gửi email về $link_open$ $email$ $link_close$.", 
+    "message": "Bạn nói được tiếng Anh và muốn dịch Better History qua ngôn ngữ khác? Tuyệt vời! Chỉ cần gửi email về $link_open$$email$$link_close$.", 
     "description": "Instructions on how to help translate",
     "placeholders": {
       "email": {
@@ -745,7 +769,7 @@
     "description": "Title of the version modal"
   },
   "version_description": {
-    "message": "Đây là một bản phát hành rất, rất lớn. Cùng với sự giúp đỡ từ nhiều người dùng tuyệt vời, Better History bây giờ đã có 19 ngôn ngữ! Hãy đến $link_open$Credits section$link_close$ để nói lời cảm tạ đến những người phiên dịch giỏi giang này!", 
+    "message": "Đây là một bản phát hành rất, rất lớn. Cùng với sự giúp đỡ từ nhiều người sử dụng rất tuyệt hảo, Better History bây giờ đã có 19 ngôn ngữ! Xin hãy vào mục $link_open$Công trạng$link_close$ để nói lời cảm tạ đến những thông dịch viên tài giỏi này!", 
     "description": "Version description",
     "placeholders": {
       "link_open": {
@@ -761,7 +785,7 @@
     "description": "Heading for an important note"
   },
   "version_note": {
-    "message": "Thật không may rằng tôi nhận được quá nhiều phản hồi nên tôi không thể trả lời những phản hồi đó được nữa. Để gửi lời phản hồi ngắn, góp ý, và phát hiện lỗi, hãy gửi tweet về $link_open$@Better_History$link_close$! Hãy theo cùng một tweeter $link_open$@Better_History$link_close$ để biết tin mới nhất!", 
+    "message": "Thật không may rằng tôi nhận được quá nhiều phản hồi nên tôi không thể trả lời những phản hồi đó được nữa. Để gửi lời phản hồi ngắn, góp ý, và phát hiện lỗi, hãy gửi tweet về $link_open$@Better_History$link_close$! Xin hãy theo cùng một tweeter $link_open$@Better_History$link_close$ để đọc tin mới nhất!", 
     "descriotion": "Feedback and support note",
     "placeholders": {
       "link_open": {
@@ -777,7 +801,7 @@
     "description": "Heading for what's new in version"
   },
   "version_items": {
-    "message": "$open$Được dịch qua 19 thứ tiếng$close$ $open$Thêm một tùy chọn trong phần thiết lập để vô hiệu các chức năng cho chuột phải$close$ $open$Thêm biểu tượng để hiện Better History trên thanh công cụ$close$ $open$Thêm phần Credit trong trang thiết lập$close$ $open$Xửa lỗ hổng XSS$close$", 
+    "message": "$open$Được dịch qua 19 thứ tiếng$close$ $open$Thêm tùy chọn trong phần thiết lập để vô hiệu các chức năng cho chuột phải$close$ $open$Thêm biểu tượng để hiện Better History trên thanh công cụ$close$ $open$Thêm mục Công trạng trong trang thiết lập$close$ $open$Xửa lỗ hổng XSS$close$", 
     "description": "Release bulletpoints",
     "placeholders": {
       "open": {
@@ -792,7 +816,7 @@
   },
 
   "search_time_frame": {
-    "message": "Vài tháng trước", 
+    "message": "Trong các tháng trước đây", 
     "description": "Time frame relating to Search"
   },
   "searching_title": {
@@ -805,11 +829,11 @@
   },
 
   "search_in_history": {
-    "message": "Search in history",
+    "message": "Tìm trong lược sử",
     "description": "Label for search in history context menu item"
   },
   "visits_to_domain": {
-    "message": "Visits to $domain$",
+    "message": "Các lượt xem trên $domain$",
     "description": "Label for visits to domain context menu item",
     "placeholders": {
       "domain": {

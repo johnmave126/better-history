@@ -1,41 +1,41 @@
-This extension replaces the default history viewer.
+Tiện ích mở rộng này thay thế phần lược sử mặc định.
 
-Suggests, questions, comments? Follow @Better_History on Twitter!
+Góp ý, câu hỏi, hoặc bình luận? Hãy theo @Better_History trên Twitter!
 https://twitter.com/Better_History
 
 --------------------------------------------------
-Recent Changes
+Những thay đổi gần đây
 
 --------------------------------------------------
 
-Chrome is an excellent browser, but viewing your history could be a lot better. That's where Better History comes in. See below! 
+Chrome là một trình duyệt tuyệt hảo, nhưng kiểm tra lược sử vẫn cần được làm tốt hơn. Đó là khi Better History xuất hiện. Hãy xem dưới đây!
 
-Deleting:
-● Delete all visits for a day
-● Delete individual visits
-● Delete visits to the same domain 
-● Delete all history
+Xóa:
+● Xóa tất cả các lượt xem cho một ngày
+● Xóa từng lượt xem theo ý muốn
+● Xóa lượt xem trên cùng một tên miền 
+● Xóa toàn bộ lược sử
 
-Grouping:
-● Group visits by 60, 30, or 15 minutes
-● Group visits to the same domain
-● Format hours to 12 or 24
-● Customizable grouping behavior
+Nhóm:
+● Nhóm lượt xem mỗi 60, 30, phút 15 phút
+● Nhóm lượt xem theo cùng một tên miền
+● Hiển thị thời gian theo 12 hoặc 24 giờ
+● Tùy chỉnh chức năng nhóm theo ý thích
 
-Organizing:
-● Filter visits by day
+Sắp xếp:
+● Xếp các lược xem theo ngày
 
-Searching:
-● Search the last few months
-● Search by date, url, and page title
-● Highlighted search terms
-● Right click option to search by domain
-● Right click option to search by selected text
+Tìm kiếm:
+● Tìm trong các tháng trước
+● Tìm theo ngày, địa chỉ web, hoặc tên trang
+● Đánh dấu từ khóa tìm kiếm
+● Tùy chỉnh cho chuột phải để tìm trên tên miền
+● Tùy chỉnh cho chuột phải để tìm bằng chọn văn bản
 
-Styling:
-● Styled with Chrome UI
-● Access from button in toolbar 
-● Remembers closing state
-● Back button support
+Thiết kế:
+● Thiết kế theo giao diện của Chrome
+● Mở lược sử từ nút bấm trên thanh công cụ
+● Nhớ trạng thái trang lược sử khi đóng
+● Hỗ trợ nút Quay Lui trên trình duyệt
 
-... lots more coming. 
+... và nhiều tính năng nữa sẽ được bổ sung.
