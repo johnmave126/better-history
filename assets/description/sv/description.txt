@@ -1,41 +1,41 @@
-This extension replaces the default history viewer.
+Detta Chrome-tillägg ersätter webbläsarens ordinarie historik.
 
-Suggests, questions, comments? Follow @Better_History on Twitter!
+Har du förslag, frågor eller kommentarer? Följ @Better_History på Twitter!
 https://twitter.com/Better_History
 
 --------------------------------------------------
-Recent Changes
+Senaste nytt
 
 --------------------------------------------------
 
-Chrome is an excellent browser, but viewing your history could be a lot better. That's where Better History comes in. See below! 
+Chrome är en förträfflig webbläsare, men dess möjligheter att leta i besökhistoriken hade kunnat vara mycket bättre. Det är här som Better History kommer in i bilden. Se nedan!
 
-Deleting:
-● Delete all visits for a day
-● Delete individual visits
-● Delete visits to the same domain 
-● Delete all history
+Radering:
+● Radera alla besök för en specifik dag
+● Radera specifika besök
+● Radera besök till en och samma domän
+● Radera all historik
 
-Grouping:
-● Group visits by 60, 30, or 15 minutes
-● Group visits to the same domain
-● Format hours to 12 or 24
-● Customizable grouping behavior
+Gruppering:
+● Gruppera besök efter 60, 30 eller 15 minuter
+● Gruppera besök till en och samma domän
+● Formatera tidsformat enligt 12 eller 24 timmar
+● Anpassa gruppering av besök
 
-Organizing:
-● Filter visits by day
+Organisation:
+● Filtrera besök efter dag
 
-Searching:
-● Search the last few months
-● Search by date, url, and page title
-● Highlighted search terms
-● Right click option to search by domain
-● Right click option to search by selected text
+Sökfunktion:
+● Sök inom de senaste månaderna
+● Sök efter datum, URL eller titel på sidor
+● Markerade söktermer
+● Inställning vid högerklickning: sök efter besök i aktuell domän
+● Inställning vid högerklickning: sök efter markerad text
 
-Styling:
-● Styled with Chrome UI
-● Access from button in toolbar 
-● Remembers closing state
-● Back button support
+Design:
+● Stylad med Chrome UI
+● Enkel åtkomlighet genom knapp i Chromes verktygsfält
+● Kommer ihåg läge vid stängning
+● Stöd för Bakåt-knapp
 
-... lots more coming. 
+… mer funktioner framöver.
