@@ -741,7 +741,7 @@
     "description": "Heading to recruit translators"
   },
   "translation_instructions": {
-    "message": "Вы говорите по-английски и хотите перевести "Продвинутую историю" на свой язык? Отлично! Просто отправьте письмо на e-mail: $link_open$ $email$ $link_close$",
+    "message": "Вы говорите по-английски и хотите перевести 'Продвинутую историю' на свой язык? Отлично! Просто отправьте письмо на e-mail: $link_open$ $email$ $link_close$",
     "description": "Instructions on how to help translate",
     "placeholders": {
       "email": {
@@ -768,7 +768,7 @@
     "description": "Title of the version modal"
   },
   "version_description": {
-    "message": "Это очень большое обновление. При поддержке группы потрясающих людей расширение "Продвинутая история" теперь доступно на 19 языках! Просмотрите $link_open$Благодарности$link_close$, чтобы сказать "Спасибо!" этим прекрасным переводчикам!",
+    "message": "Это очень большое обновление. При поддержке группы потрясающих людей расширение 'Продвинутая история' теперь доступно на 19 языках! Просмотрите $link_open$Благодарности$link_close$, чтобы сказать 'Спасибо!' этим прекрасным переводчикам!",
     "description": "Version description",
     "placeholders": {
       "link_open": {
@@ -800,7 +800,7 @@
     "description": "Heading for what's new in version"
   },
   "version_items": {
-    "message": "$open$Расширение переведено на 19 языков$close$ $open$В настройках добавлена возможность отключить опции контекстного меню$close$ $open$Добавлена иконка "Продвинутой истории" на панель расширений$close$ $open$В настройках добавлен пункт "Благодарности"$close$ $open$Исправлена XSS-уязвимость$close$",
+    "message": "$open$Расширение переведено на 19 языков$close$ $open$В настройках добавлена возможность отключить опции контекстного меню$close$ $open$Добавлена иконка 'Продвинутой истории' на панель расширений$close$ $open$В настройках добавлен пункт 'Благодарности'$close$ $open$Исправлена XSS-уязвимость$close$",
     "description": "Release bulletpoints",
     "placeholders": {
       "open": {
