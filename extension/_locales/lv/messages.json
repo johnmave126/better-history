@@ -83,6 +83,20 @@
       }
     }
   },
+  "12_hour_time_format": {
+    "message": "$time$ $label$",
+    "description": "Time format for 12 hour time",
+    "placeholders": {
+      "time": {
+        "content": "$1",
+        "example": "10:00"
+      },
+      "label": {
+        "content": "$2",
+        "example": "AM/PM"
+      }
+    }
+  },
 
   "morning": {
     "message": "AM",
@@ -102,7 +116,7 @@
     "description": "Settings title for Settings page"
   },
   "clearing_history_section_title": {
-    "message": "Dzēš vēsturi",
+    "message": "Vēstures dzēšana",
     "description": "Section heading in Settings"
   },
   "clear_history_button": {
@@ -169,9 +183,19 @@
     "message": "Pašreizējā versija",
     "description": "label for the current version"
   },
-  "credits": {
-    "message": "Kredīti",
-    "description": "The word credits"
+  "credits_link": {
+    "message": "$open$Better History$close$ kredīti",
+    "description": "The link to credits",
+    "placeholders": {
+      "open": {
+        "content": "$1",
+        "example": "strong open"
+      },
+      "close": {
+        "content": "$2",
+        "example": "strong close"
+      }
+    }
   },
   "feedback_section_title": {
     "message": "Atsauksmes",
