@@ -1,41 +1,41 @@
-This extension replaces the default history viewer.
+Ez a kiegészítö kicseréli az elözmények megjelenését.
 
-Suggests, questions, comments? Follow @Better_History on Twitter!
+Javaslatod, kérdésed vagy kommented vanö Kövesd a @Better_History -t Twitteren!
 https://twitter.com/Better_History
 
 --------------------------------------------------
-Recent Changes
+Utóbbi ujítások
 
 --------------------------------------------------
 
-Chrome is an excellent browser, but viewing your history could be a lot better. That's where Better History comes in. See below! 
+A Chrome egy nagyon jó böngészö, de az elözmények megjelenítése lehetne sokkal jobb is. Itt jön a Better History. 
 
-Deleting:
-● Delete all visits for a day
-● Delete individual visits
-● Delete visits to the same domain 
-● Delete all history
+Törlések:
+● Összes látogatás törlése egy napon
+● Különbözö látogatások törlése
+● Egy weboldalhoz tartozó látogatások törlése 
+● Az összes elözmény törlése
 
-Grouping:
-● Group visits by 60, 30, or 15 minutes
-● Group visits to the same domain
-● Format hours to 12 or 24
-● Customizable grouping behavior
+Csoportosítások:
+● A látogatásokat lehet 60, 30, vagy 15 percenkéntire csoportosítani
+● Látogatások csoportosítása weboldalakhoz kapcsolva
+● 12 és 24 órás idöformátum
+● Testreszabható csoportosítási viselkedés
 
-Organizing:
-● Filter visits by day
+Rendszerezés:
+● Naponkénti látogatás-szörés
 
-Searching:
-● Search the last few months
-● Search by date, url, and page title
-● Highlighted search terms
-● Right click option to search by domain
-● Right click option to search by selected text
+Keresések:
+● Keresés az utolsó néhány hónap látogatásai között
+● Keresés dátum, url vagy weboldal neve alapján
+● Kiemelt keresési elemek
+● Jobb-gombos lehetöség weboldal neve alapján való kereséshez
+● Jobb-gombos lehetöség kijelölt szöveg alapján való kereséshez
 
-Styling:
-● Styled with Chrome UI
-● Access from button in toolbar 
-● Remembers closing state
-● Back button support
+Kinézet:
+● A Chrome UI felületét használja
+● Elérés az eszköztárból
+● Megjegyzi a bezáráskor maradt állapotot
+● Vissza gomb elérhetö
 
-... lots more coming. 
+... és még sok más jön. 

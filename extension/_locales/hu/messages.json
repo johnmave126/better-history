@@ -4,16 +4,16 @@
     "description": "Manifest name"
   },
   "manifest_browser_action_title": {
-    "message": "Böngészd az előzményeket",
+    "message": "Böngészési előzmények",
     "description": "Manifest browser action title"
   },
   "manifest_description": {
-    "message": "Egy sokkal jobb kinézet az előzményeknek. A legjobb keresés, legkényelmesebb felhasználói felület, és a leghasznosabb szűrők - az előzményekhez",
+    "message": "Sokkal jobb kinézet az előzményeidnek! A leggyorsabb keresés, legtisztább felhasználói felület és a legjobb szűrők.",
     "description": "Manifest description"
   },
 
   "history_title": {
-    "message": "Előzmény",
+    "message": "Előzmények",
     "description": "Extension title"
   },
 
@@ -83,17 +83,31 @@
       }
     }
   },
+  "12_hour_time_format": {
+    "message": "$time$ $label$",
+    "description": "Time format for 12 hour time",
+    "placeholders": {
+      "time": {
+        "content": "$1",
+        "example": "10:00"
+      },
+      "label": {
+        "content": "$2",
+        "example": "AM/PM"
+      }
+    }
+  },
 
   "morning": {
-    "message": "AM",
+    "message": "de.",
     "description": "The morning abbreviation when using 12 hour time"
   },
   "afternoon": {
-    "message": "PM",
+    "message": "du.",
     "description": "The afternoon abbreviation when using 12 hour time"
   },
   "evening": {
-    "message": "PM",
+    "message": "este",
     "description": "The evening abbreviation when using 12 hour time"
   },
 
@@ -110,7 +124,7 @@
     "description": "Button text for clear history button in Settings"
   },
   "visit_grouping_section_title": {
-    "message": "Látogatás csoportosítás",
+    "message": "Látogatások csoportosítása",
     "description": "Section heading in Settings"
   },
   "group_visits_by_label": {
@@ -118,15 +132,15 @@
     "description": "Label for select box to set the time grouping interval for visits"
   },
   "60_minutes_option": {
-    "message": "60 perc",
+    "message": "60 percenként",
     "description": "Time amount"
   },
   "30_minutes_option": {
-    "message": "30 perc",
+    "message": "30 percenként",
     "description": "Time amount"
   },
   "15_minutes_option": {
-    "message": "15 perc",
+    "message": "15 percenként",
     "description": "Time amount"
   },
   "time_format_label": {
@@ -142,19 +156,19 @@
     "description": "24 hour time format, example: 14:00"
   },
   "group_visits_by_domain_label": {
-    "message": "Csoportosítsd a látogatásokat domain alapján",
+    "message": "Csoportosítsd a látogatásokat weboldal alapján",
     "description": "Label for check box to group visits by domain"
   },
   "right_click_options_section_title": {
-    "message": "Jobb-gombos beállítások",
+    "message": "Jobbgomb beállításai",
     "description": "Section heading in Settings"
   },
   "search_by_text_selection_label": {
-    "message": "Keresés szöveg alapján",
+    "message": "Keresés kijelölt szöveg alapján",
     "description": "Label for check box to enable right click option"
   },
   "search_by_domain_label": {
-    "message": "Keresés domain alapján",
+    "message": "Keresés weboldal alapján",
     "description": "Label for check box to enable right click option"
   },
   "Whats_new_section_title": {
@@ -162,23 +176,33 @@
     "description": "Section heading in Settings"
   },
   "view_release_announcement_link": {
-    "message": "Nézd meg a kiadási közleményt",
+    "message": "Nézd meg a leírást",
     "description": "Link text to view the release announcement"
   },
   "current_version_label": {
     "message": "Jelenlegi verzió",
     "description": "label for the current version"
   },
-  "credits": {
-    "message": "Készítők",
-    "description": "The word credits"
+  "credits_link": {
+    "message": "$open$Better History$close$ készítők",
+    "description": "The link to credits",
+    "placeholders": {
+      "open": {
+        "content": "$1",
+        "example": "strong open"
+      },
+      "close": {
+        "content": "$2",
+        "example": "strong close"
+      }
+    }
   },
   "feedback_section_title": {
     "message": "Visszajelzés",
     "description": "Section heading in Settings"
   },
   "suggestions_bugs_comments": {
-    "message": "Javaslatod van, hibát találtál vagy kommented van? Tweetelj a $link_open$@Better_History$link_close$ -ra!",
+    "message": "Javaslatod van, hibát találtál vagy kommented vanő Tweetelj a $link_open$@Better_History$link_close$ -ra!",
     "description": "Link text to give feedback",
     "placeholders": {
       "link_open": {
@@ -190,7 +214,7 @@
     }
   },
   "spread_the_word_section_title": {
-    "message": "Oszd meg",
+    "message": "Oszd meg gondolataid",
     "description": "Section heading in Settings"
   },
   "leave_a_review": {
@@ -203,7 +227,7 @@
   },
 
   "search_input_placeholder_text": {
-    "message": "Keresés címre, URL-re vagy dátumra",
+    "message": "Keresés weboldal nevére, URL-re vagy dátumra",
     "description": "Placeholder text in the search input box"
   },
   "settings_link": {
@@ -496,11 +520,11 @@
   },
 
   "collapse_button": {
-    "message": "Bezárás",
+    "message": "Összezárás",
     "description": "Text for collapse button"
   },
   "expand_button": {
-    "message": "Szétnyitás",
+    "message": "Kinyitás",
     "description": "Text for expand button"
   },
   "delete_all_visits_for_filter_button": {
@@ -508,7 +532,7 @@
     "description": "Text for delete all visits for a day filter button"
   },
   "no_visits_found": {
-    "message": "Elnézést, nem találtam látogatásokat",
+    "message": "Nem találok ilyen látogatást",
     "description": "Text for no visits found message"
   },
   "january": {
@@ -560,7 +584,7 @@
     "description": "The month"
   },
   "confirm_delete_all_visits": {
-    "message": "Töröld az összes látogatást innen: $formal_date$?",
+    "message": "Biztosan törölni akarod a $formal_date$-i látogatásokat?",
     "description": "Confirmation text to delete all visits from a specific date",
     "placeholders": {
       "formal_date": {
@@ -571,7 +595,7 @@
   },
 
   "number_of_visits": {
-    "message": "$number_open$$number$$number_close$ látogatások",
+    "message": "$number_open$$number$$number_close$ látogatás",
     "description": "Label to a number representing a number of visits",
     "placeholders": {
       "number": {
@@ -598,7 +622,7 @@
     "description": "Button to delete history"
   },
   "prompt_title": {
-    "message": "Megerősít",
+    "message": "­Megerősítés",
     "description": "Title of prompt"
   },
 
@@ -685,23 +709,23 @@
     "description": "The language"
   },
   "dutch": {
-    "message": "Dutch",
+    "message": "Holland",
     "description": "The language"
   },
   "czech": {
-    "message": "Czech",
+    "message": "Cseh",
     "description": "The language"
   },
   "japanese": {
-    "message": "Japanese",
+    "message": "Japán",
     "description": "The language"
   },
   "vietnamese": {
-    "message": "Vietnamese",
+    "message": "Vietnami",
     "description": "The language"
   },
   "romanian": {
-    "message": "Romanian",
+    "message": "Román",
     "description": "The language"
   },
   "hindi": {
@@ -709,7 +733,7 @@
     "description": "The language"
   },
   "catalonian": {
-    "message": "Catalonian",
+    "message": "Katalóniai",
     "description": "The language"
   },
   "translation_help_heading": {
@@ -717,7 +741,7 @@
     "description": "Heading to recruit translators"
   },
   "translation_instructions": {
-    "message": "Beszélsz angolul és szeretnéd lefordítani a Better History-t egy másik nyelvre? Remek! Csak írj egy email-t ide: $link_open$$email$$link_close$",
+    "message": "Beszélsz angolul és szeretnéd lefordí­tani a Better History-t egy másik nyelvre? Í­rj egy email-t a $link_open$$email$$link_close$ címre és hamarosan hallani fogsz rólam",
     "description": "Instructions on how to help translate",
     "placeholders": {
       "email": {
@@ -740,11 +764,11 @@
   },
 
   "version_title": {
-    "message": "Hola, 您好, Olá, bonjour, Helló!",
+    "message": "Helló!",
     "description": "Title of the version modal"
   },
   "version_description": {
-    "message": "Ez egy nagy, nagy kiadás. Egy csomó kiváló ember segítségével a Better History már 19 nyelven érhető el! Nézd meg a $link_open$készítőket$link_close$, hogy megköszönhesd nekik!",
+    "message": "Ez egy nagyon sok dologban új kiadás. Egy csomó kiváló ember segí­tségével a Better History már 19 nyelven érhet? el! Nézd meg a $link_open$készítőket$link_close$, hogy megköszönhesd nekik!",
     "description": "Version description",
     "placeholders": {
       "link_open": {
@@ -756,11 +780,11 @@
     }
   },
   "version_important_note": {
-    "message": "Fontos (jegyzet)",
+    "message": "Fontos",
     "description": "Heading for an important note"
   },
   "version_note": {
-    "message": "Túl sok visszajelzés kapok, így nem tudok az összesre válaszolni. Gyors visszajelzéshez csak Tweetelj a $link_open$@Better_History$link_close$ -ra. Kövesd a $link_open$@Better_History$link_close$ -t újdonságokért is!",
+    "message": "Túl sok visszajelzést kapok, így nem tudok az összesre válaszolni. Gyors válaszhoz csak Tweetelj a $link_open$@Better_History$link_close$-ra és kövesd a $link_open$@Better_History$link_close$-t frissítésekért is!",
     "descriotion": "Feedback and support note",
     "placeholders": {
       "link_open": {
@@ -776,7 +800,7 @@
     "description": "Heading for what's new in version"
   },
   "version_items": {
-    "message": "$open$Lefordítva 19 nyelvre$close$ $open$A beállításoknál ki lehet kapcsolni a jobb-gombos funkciókat$close$ $open$Eszköztárban megjelenik a Better History ikonja$close$ $open$Készítők rész hozzáadva a beállításokhoz$close$ $open$XSS sebezhetőség javítva$close$",
+    "message": "$open$19 nyelven elérhető$close$ $open$Jobbgombos beállítások fejlesztve$close$ $open$Eszköztárban a Better History ikonja$close$ $open$A készítők feltüntetve$close$ $open$XSS sebezhetőség javí­tva$close$",
     "description": "Release bulletpoints",
     "placeholders": {
       "open": {
@@ -804,11 +828,11 @@
   },
 
   "search_in_history": {
-    "message": "Search in history",
+    "message": "Keresés az előzményekben",
     "description": "Label for search in history context menu item"
   },
   "visits_to_domain": {
-    "message": "Visits to $domain$",
+    "message": "Látogatások a $domain$-on",
     "description": "Label for visits to domain context menu item",
     "placeholders": {
       "domain": {
