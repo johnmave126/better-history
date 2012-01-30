@@ -1,41 +1,40 @@
-This extension replaces the default history viewer.
+هذه الإضافة تستبدل سجل التاريخ الافتراضي.
 
-Suggests, questions, comments? Follow @Better_History on Twitter!
+لديك اقتراحات، أسئلة أو تعليقات؟ تابع @Better_History على تويتر!
 https://twitter.com/Better_History
 
 --------------------------------------------------
-Recent Changes
+آخر التغييرات
 
 --------------------------------------------------
+Chrome متصفح ممتاز ولكن عرض سجل التاريخ يمكن أن يكون أفضل كثيراً. هنا تأتي فائدة Better History. أنظر أدناه.
 
-Chrome is an excellent browser, but viewing your history could be a lot better. That's where Better History comes in. See below! 
+الحذف:
+● حذف جميع الزيارات ليوم واحد
+● حذف الزيارات الفردية
+● حذف الزيارات لنفس المجال
+● حذف كامل سجل التاريخ
 
-Deleting:
-● Delete all visits for a day
-● Delete individual visits
-● Delete visits to the same domain 
-● Delete all history
+التجميع:
+● تجميع الزيارات كل 15 ، 30 أو 60 دقيقة
+● تجميع الزيارات بالمجال
+● تنسيق الساعة إلى 12 أو 24 ساعة
+● تخصيص سلوك التجميع
 
-Grouping:
-● Group visits by 60, 30, or 15 minutes
-● Group visits to the same domain
-● Format hours to 12 or 24
-● Customizable grouping behavior
+التنظيم:
+● تصفية الزيارات باليوم
 
-Organizing:
-● Filter visits by day
+البحث:
+● البحث في الأشهر القليلة الماضية
+● البحث بالتاريخ، العنوان وعنوان الصفحة
+● مصطلحات البحث تكون بارزة
+● خيار الضغطى اليمنى للبحث بالمجال
+● خيار الضغطى اليمنى للبحث بالنص المحدد
 
-Searching:
-● Search the last few months
-● Search by date, url, and page title
-● Highlighted search terms
-● Right click option to search by domain
-● Right click option to search by selected text
+التصميم:
+● مصمم بواجهة المستخدم لChrome
+● الوصول من زر في شريط الأدوات
+● تذكر حالة الإغلاق
+● دعم زر الرجوع
 
-Styling:
-● Styled with Chrome UI
-● Access from button in toolbar 
-● Remembers closing state
-● Back button support
-
-... lots more coming. 
+والقادم أكثر...
