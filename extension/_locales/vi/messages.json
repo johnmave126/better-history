@@ -18,7 +18,7 @@
   },
 
   "extended_formal_date": {
-    "message": "$weekday$, $day$ $month$ $year$",
+    "message": "$weekday$, $day$ $month$ năm $year$",
     "description": "The order of a full extended date",
     "placeholders": {
       "weekday": {
@@ -40,7 +40,7 @@
     }
   },
   "formal_date": {
-    "message": "$day$ $month$ $year$",
+    "message": "$day$ $month$ năm $year$",
     "description": "The order of a full date",
     "placeholders": {
       "month": {
@@ -227,7 +227,7 @@
   },
 
   "search_input_placeholder_text": {
-    "message": "Tìm theo tên, địa chỉ, hoặc ngày", 
+    "message": "Tìm tên, địa chỉ, hoặc ngày", 
     "description": "Placeholder text in the search input box"
   },
   "settings_link": {
@@ -726,7 +726,7 @@
     "description": "The language"
   },
   "romanian": {
-    "message": "Tiếng La Mã", 
+    "message": "Tiếng Ru-ma-ni", 
     "description": "The language"
   },
   "hindi": {
@@ -765,7 +765,7 @@
   },
 
   "version_title": {
-    "message": "Hola, 您好, Olá, bonjour, hello, xin chào!", 
+    "message": "Xin chào, hola, 您好, Olá, bonjour, hello!", 
     "description": "Title of the version modal"
   },
   "version_description": {
@@ -844,18 +844,17 @@
   },
 
   "delete_grouped_visits": {
-    "message": "Delete grouped visits",
+    "message": "Xóa lượt xem trong nhóm",
     "description": "Tooltip for the delete button on grouped visits"
   },
   "delete_visit": {
-    "message": "Delete visit",
+    "message": "Xóa lượt xem",
     "description": "Tooltip for the delete button on a page visit"
   },
 
   "twitter_template": {
-    "message": "Better History for Chrome, see what you're missing!",
+    "message": "Better History cho Chrome: hãy xem bạn đang thiếu gì!",
     "description": "Default message for Twitter sharing"
   }
-
 
 }
