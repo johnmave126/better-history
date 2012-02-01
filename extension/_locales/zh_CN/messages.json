@@ -784,7 +784,7 @@
     "description": "Heading for an important note"
   },
   "version_note": {
-    "message": "我收到太多反馈以致很遗憾不能再逐一回复。为了得到快速的反馈，建议、不足等请直接发推$link_open$@Better_History$link_close$！关注$link_open$@Better_History$link_close$同时获取最新的消息！",
+    "message": "很遗憾，我收到太多反馈因此不能再逐一回复。为了快速反馈，建议、不足等请直接发推$link_open$@Better_History$link_close$！关注$link_open$@Better_History$link_close$同时获取最新的消息！",
     "descriotion": "Feedback and support note",
     "placeholders": {
       "link_open": {
@@ -800,7 +800,7 @@
     "description": "Heading for what's new in version"
   },
   "version_items": {
-    "message": "$open$翻译至19种语言$close$ $open$在设置中添加选项以禁用右键菜单选项$close$ $open$在工具栏新增了显示Better History的图标$close$ $open$在设置中添加了鸣谢部分$close$ $open$修正了XSS攻击漏洞$close$",
+    "message": "$open$翻译至19种语言$close$ $open$在设置中添加选项以禁用右键菜单条目$close$ $open$在工具栏新增了显示Better History的图标$close$ $open$在设置中添加了鸣谢部分$close$ $open$修正了XSS攻击漏洞$close$",
     "description": "Release bulletpoints",
     "placeholders": {
       "open": {
@@ -843,16 +843,16 @@
   },
 
   "delete_grouped_visits": {
-    "message": "Delete grouped visits",
+    "message": "删除本组访问",
     "description": "Tooltip for the delete button on grouped visits"
   },
   "delete_visit": {
-    "message": "Delete visit",
+    "message": "删除访问",
     "description": "Tooltip for the delete button on a page visit"
   },
 
   "twitter_template": {
-    "message": "Better History for Chrome, see what you're missing!",
+    "message": "试用Chrome的扩展Better History，看看你错过了什么！",
     "description": "Default message for Twitter sharing"
   }
 
