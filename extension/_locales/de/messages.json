@@ -180,11 +180,11 @@
     "description": "Link text to view the release announcement"
   },
   "current_version_label": {
-    "message": "aktuelle Version",
+    "message": "Aktuelle Version",
     "description": "label for the current version"
   },
   "credits_link": {
-    "message": "$open$Better History$close$ kredits",
+    "message": "$open$Better History$close$ Kredits",
     "description": "The link to credits",
     "placeholders": {
       "open": {
@@ -841,16 +841,16 @@
   },
 
   "delete_grouped_visits": {
-    "message": "Delete grouped visits",
+    "message": "Sortierte Besuche löschen",
     "description": "Tooltip for the delete button on grouped visits"
   },
   "delete_visit": {
-    "message": "Delete visit",
+    "message": "Besuch löschen",
     "description": "Tooltip for the delete button on a page visit"
   },
 
   "twitter_template": {
-    "message": "Better History for Chrome, see what you're missing!",
+    "message": "Better History für Chrome, schau' was du verpasst!",
     "description": "Default message for Twitter sharing"
   }
 
