@@ -1,6 +1,6 @@
-This extension replaces the default history viewer.
+この機能拡張は、デフォルトの閲覧履歴ページを置き換えます。
 
-Suggests, questions, comments? Follow @Better_History on Twitter!
+提案・質問・コメントがある人は、Twitter で @Better_History をフォローしよう！
 https://twitter.com/Better_History
 
 --------------------------------------------------
@@ -8,34 +8,34 @@ Recent Changes
 
 --------------------------------------------------
 
-Chrome is an excellent browser, but viewing your history could be a lot better. That's where Better History comes in. See below! 
+Chrome は素晴らしいブラウザだけど、閲覧履歴の表示には改善の余地があります。Better History でもっと素敵な閲覧履歴を。
 
-Deleting:
-● Delete all visits for a day
-● Delete individual visits
-● Delete visits to the same domain 
-● Delete all history
 
-Grouping:
-● Group visits by 60, 30, or 15 minutes
-● Group visits to the same domain
-● Format hours to 12 or 24
-● Customizable grouping behavior
+閲覧履歴の削除:
+● 一日単位での履歴の削除
+● 履歴の個別削除
+● 同一ドメインの閲覧履歴の一括削除
+● 前閲覧履歴の削除
+
+グループ化機能:
+● 1時間・30分・15分毎に履歴を自動グループ化
+● ドメインごとの閲覧履歴を自動グループ化
 
 Organizing:
-● Filter visits by day
+● 日付単位でのフィルタリング
 
-Searching:
-● Search the last few months
-● Search by date, url, and page title
-● Highlighted search terms
-● Right click option to search by domain
-● Right click option to search by selected text
+検索機能:
+● ここ数ヶ月の閲覧履歴の検索
+● 日付・URL・ページタイトルから履歴を検索
+● 検索語のハイライト表示
+● 右クリックオプションでドメイン単位の検索
+● 右クリックオプションで選択範囲からの検索
 
 Styling:
-● Styled with Chrome UI
-● Access from button in toolbar 
-● Remembers closing state
-● Back button support
+● Chrome の UI らしいスタイル
+● ツールバーのボタンから履歴を表示可能
+● 履歴ページの状態の再現
+● 『戻る』ボタンによる状態遷移のサポート
 
 ... lots more coming. 
+● 日付・URL・タイトルからの検索

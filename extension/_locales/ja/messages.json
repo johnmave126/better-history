@@ -18,7 +18,7 @@
   },
 
   "extended_formal_date": {
-    "message": "$weekday$ $year$ $month$ $day$",
+    "message": "$weekday$ $year$年 $month$月 $day$日",
     "description": "The order of a full extended date",
     "placeholders": {
       "weekday": {
@@ -40,7 +40,7 @@
     }
   },
   "formal_date": {
-    "message": "$year$ $month$ $day$",
+    "message": "$year$年 $month$月 $day$日",
     "description": "The order of a full date",
     "placeholders": {
       "month": {
@@ -85,15 +85,15 @@
   },
 
   "morning": {
-    "message": "ごぜんごじです",
+    "message": "早朝",
     "description": "The morning abbreviation when using 12 hour time"
   },
   "afternoon": {
-    "message": "ごごしちじです",
+    "message": "昼頃",
     "description": "The afternoon abbreviation when using 12 hour time"
   },
   "evening": {
-    "message": "ごごしちじです",
+    "message": "夕方",
     "description": "The evening abbreviation when using 12 hour time"
   },
 
@@ -512,51 +512,51 @@
     "description": "Text for no visits found message"
   },
   "january": {
-    "message": "1月",
+    "message": "1",
     "description": "The month"
   },
   "february": {
-    "message": "2月",
+    "message": "2",
     "description": "The month"
   },
   "march": {
-    "message": "3月",
+    "message": "3",
     "description": "The month"
   },
   "april": {
-    "message": "4月",
+    "message": "4",
     "description": "The month"
   },
   "may": {
-    "message": "5月",
+    "message": "5",
     "description": "The month"
   },
   "june": {
-    "message": "6月",
+    "message": "6",
     "description": "The month"
   },
   "july": {
-    "message": "7月",
+    "message": "7",
     "description": "The month"
   },
   "august": {
-    "message": "8月",
+    "message": "8",
     "description": "The month"
   },
   "september": {
-    "message": "9月",
+    "message": "9",
     "description": "The month"
   },
   "october": {
-    "message": "10月",
+    "message": "10",
     "description": "The month"
   },
   "november": {
-    "message": "11月",
+    "message": "11",
     "description": "The month"
   },
   "december": {
-    "message": "12月",
+    "message": "12",
     "description": "The month"
   },
   "confirm_delete_all_visits": {
@@ -804,11 +804,11 @@
   },
 
   "search_in_history": {
-    "message": "Search in history",
+    "message": "閲覧履歴から検索",
     "description": "Label for search in history context menu item"
   },
   "visits_to_domain": {
-    "message": "Visits to $domain$",
+    "message": "$domain$ へアクセスする",
     "description": "Label for visits to domain context menu item",
     "placeholders": {
       "domain": {
@@ -819,16 +819,16 @@
   },
 
   "delete_grouped_visits": {
-    "message": "Delete grouped visits",
+    "message": "このグループを削除する",
     "description": "Tooltip for the delete button on grouped visits"
   },
   "delete_visit": {
-    "message": "Delete visit",
+    "message": "この履歴を削除する",
     "description": "Tooltip for the delete button on a page visit"
   },
 
   "twitter_template": {
-    "message": "Better History for Chrome, see what you're missing!",
+    "message": "Chrome 用 Better History で、閲覧履歴が素敵に！",
     "description": "Default message for Twitter sharing"
   }
 
