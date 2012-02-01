@@ -184,7 +184,7 @@
     "description": "label for the current version"
   },
   "credits_link": {
-    "message": "Créditos $open$Better History$close$",
+    "message": "$open$Better History$close$ créditos",
     "description": "The link to credits",
     "placeholders": {
       "open": {
@@ -784,7 +784,7 @@
     "description": "Heading for an important note"
   },
   "version_note": {
-    "message": "Estoy recibiendo tantos comentarios que desafortunadamente no puedo seguir respondiéndolos todos. Para saludarnos rápidamente, sugerencias y errores, menciona a $link_open$@Better_History$link_close$ en Twitter. ¡Síguenos también para informarte sobre las últimas noticias!",
+    "message": "Estoy recibiendo tantos comentarios que desafortunadamente no puedo seguir respondiéndolos todos. Para un rápido saludo, comentar sugerencias y/o errores, menciona a $link_open$@Better_History$link_close$ en Twitter. ¡Síguenos también para informarte sobre las últimas noticias!",
     "descriotion": "Feedback and support note",
     "placeholders": {
       "link_open": {
@@ -843,16 +843,16 @@
   },
 
   "delete_grouped_visits": {
-    "message": "Delete grouped visits",
+    "message": "Borrar visitas agrupadas",
     "description": "Tooltip for the delete button on grouped visits"
   },
   "delete_visit": {
-    "message": "Delete visit",
+    "message": "Borrar visita",
     "description": "Tooltip for the delete button on a page visit"
   },
 
   "twitter_template": {
-    "message": "Better History for Chrome, see what you're missing!",
+    "message": "Better History para Chrome, ¡Mira lo que te estás perdiendo!",
     "description": "Default message for Twitter sharing"
   }
 
