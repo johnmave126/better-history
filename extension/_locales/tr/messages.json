@@ -202,7 +202,7 @@
     "description": "Section heading in Settings"
   },
   "suggestions_bugs_comments": {
-    "message": "Öneri, bulduğun hata, yorum? Lütfen $link_open$@Better_History$link_close$ e tweetleyin.",
+    "message": "Önerileriniz, bulduğun hatalar, yorumlarınız mı var? Lütfen $link_open$@Better_History$link_close$e tweetleyin.",
     "description": "Link text to give feedback",
     "placeholders": {
       "link_open": {
@@ -227,7 +227,7 @@
   },
 
   "search_input_placeholder_text": {
-    "message": "Başlık, url veya tarih olarak arat",
+    "message": "Başlık, url veya tarihe göre arat",
     "description": "Placeholder text in the search input box"
   },
   "settings_link": {
@@ -584,7 +584,7 @@
     "description": "The month"
   },
   "confirm_delete_all_visits": {
-    "message": "Bu tarihteki tüm geçmişi sil $formal_date$?",
+    "message": "$formal_date$ tarihine ait tüm geçmişi silmek istediğinize emin misiniz?",
     "description": "Confirmation text to delete all visits from a specific date",
     "placeholders": {
       "formal_date": {
@@ -784,7 +784,7 @@
     "description": "Heading for an important note"
   },
   "version_note": {
-    "message": "Malesef çok fazla geri bildirim aldığımdan dolayı, herkesin mailini cevaplayamıyorum. Hızlı geri bildirimleriniz, önerileriniz ve bulduğunuz hataları $link_open$@Better_History$link_close$ e tweetleyebilirsiniz. En son haberler için de lütfen $link_open$@Better_History$link_close$ i takip edin.",
+    "message": "Malesef çok fazla geri bildirim aldığımdan dolayı, herkesin mailini cevaplayamıyorum. Hızlı geri bildirimleriniz, önerileriniz ve bulduğunuz hataları $link_open$@Better_History$link_close$ e tweetleyebilirsiniz. En son haberler için de lütfen $link_open$@Better_History$link_close$i takip edin.",
     "descriotion": "Feedback and support note",
     "placeholders": {
       "link_open": {
@@ -800,7 +800,7 @@
     "description": "Heading for what's new in version"
   },
   "version_items": {
-    "message": "$open$ 19 dile çevirildi.$close$ $open$Sağ tıklama ayarlarını devre dışı bırakmak için Ayarlar'a seçenek eklendi.$close$ $open$Better History'i araç çubuğunda görüntülemek için simge eklendi.$close$ $open$Ayarlar'a Jenerik kısmı eklendi.$close$ $open$XSS açıkları giderildi.$close$",
+    "message": "$open$ 19 dile çevirildi.$close$ $open$Sağ tıklama ayarlarını devre dışı bırakmak için Ayarlara seçenek eklendi.$close$ $open$Better Historyi araç çubuğunda görüntülemek için simge eklendi.$close$ $open$Ayarlara Jenerik kısmı eklendi.$close$ $open$XSS açıkları giderildi.$close$",
     "description": "Release bulletpoints",
     "placeholders": {
       "open": {
@@ -843,16 +843,16 @@
   },
 
   "delete_grouped_visits": {
-    "message": "Delete grouped visits",
+    "message": "Ziyaret grubunu sil",
     "description": "Tooltip for the delete button on grouped visits"
   },
   "delete_visit": {
-    "message": "Delete visit",
+    "message": "Ziyareti sil",
     "description": "Tooltip for the delete button on a page visit"
   },
 
   "twitter_template": {
-    "message": "Better History for Chrome, see what you're missing!",
+    "message": "Chrome için Better History, ne kaçırdığını gör!",
     "description": "Default message for Twitter sharing"
   }
 
