@@ -85,7 +85,7 @@ a.modal_link:hover { background:#cedaf3; }
 .stuck {
   border:none;
   z-index:10;
-  box-shadow: 0px 4px 6px -2px rgba(0,0,0,.3);
+  box-shadow: 0px 4px 6px -3px rgba(0,0,0,.3);
   width:auto;
   margin:0;
   margin-__MSG_@@bidi_start_edge__:24px;
