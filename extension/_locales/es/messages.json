@@ -184,7 +184,7 @@
     "description": "label for the current version"
   },
   "credits_link": {
-    "message": "$open$Better History$close$ créditos",
+    "message": "Créditos $open$Better History$close$",
     "description": "The link to credits",
     "placeholders": {
       "open": {
