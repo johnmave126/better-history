@@ -13,8 +13,8 @@
   },
 
   "history_title": {
-    "message": "History",
-    "description": "Cronologia"
+    "message": "Cronologia",
+    "description": "History"
   },
 
   "extended_formal_date": {
@@ -116,7 +116,7 @@
     "description": "Settings title for Settings page"
   },
   "clearing_history_section_title": {
-    "message": "Cancellazione cronologia",
+    "message": "Cancella cronologia",
     "description": "Section heading in Settings"
   },
   "clear_history_button": {
@@ -532,7 +532,7 @@
     "description": "Text for delete all visits for a day filter button"
   },
   "no_visits_found": {
-    "message": "Spiacente, nessuna pagina visitata trovata",
+    "message": "Spiacente, nessuna pagina trovata",
     "description": "Text for no visits found message"
   },
   "january": {
@@ -653,7 +653,7 @@
     "description": "Heading for translators"
   },
   "spanish": {
-    "message": "Spanish",
+    "message": "Spagnolo",
     "description": "The language"
   },
   "russian": {
@@ -768,7 +768,7 @@
     "description": "Title of the version modal"
   },
   "version_description": {
-    "message": "Questo è un grosso, grosso rilascio. Grazie all'aiuto di un sacco di fantastici utenti, Better History è ora disponibile in 19 lingue! Controlla la nuova $link_open$sezione crediti$link_close$ per ringraziare questi bravi traduttori!",
+    "message": "Questo è un rilascio davvero importante. Grazie all'aiuto di un sacco di fantastici utenti, Better History è ora disponibile in 19 lingue! Controlla la nuova $link_open$sezione crediti$link_close$ per ringraziare questi bravi traduttori!",
     "description": "Version description",
     "placeholders": {
       "link_open": {
@@ -843,16 +843,16 @@
   },
 
   "delete_grouped_visits": {
-    "message": "Delete grouped visits",
+    "message": "Elimina il gruppo di visite selezionato",
     "description": "Tooltip for the delete button on grouped visits"
   },
   "delete_visit": {
-    "message": "Delete visit",
+    "message": "Elimina questa visita",
     "description": "Tooltip for the delete button on a page visit"
   },
 
   "twitter_template": {
-    "message": "Better History for Chrome, see what you're missing!",
+    "message": "Better History per Google Chrome, non sai cosa ti perdi!",
     "description": "Default message for Twitter sharing"
   }
 
