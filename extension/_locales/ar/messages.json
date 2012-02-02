@@ -709,31 +709,31 @@
     "description": "The language"
   },
   "dutch": {
-    "message": "الهولندية",
+    "message": "Dutch",
     "description": "The language"
   },
   "czech": {
-    "message": "التشيكية",
+    "message": "Czech",
     "description": "The language"
   },
   "japanese": {
-    "message": "اليابانية",
+    "message": "Japanese",
     "description": "The language"
   },
   "vietnamese": {
-    "message": "الفيتنامية",
+    "message": "Vietnamese",
     "description": "The language"
   },
   "romanian": {
-    "message": "الرومانية",
+    "message": "Romanian",
     "description": "The language"
   },
   "hindi": {
-    "message": "الهندية",
+    "message": "Hindi",
     "description": "The language"
   },
   "catalonian": {
-    "message": "الكاتالونيا",
+    "message": "Catalonian",
     "description": "The language"
   },
   "translation_help_heading": {
@@ -843,16 +843,16 @@
   },
 
   "delete_grouped_visits": {
-    "message": "Delete grouped visits",
+    "message": "حذف الزيارات المجمعة",
     "description": "Tooltip for the delete button on grouped visits"
   },
   "delete_visit": {
-    "message": "Delete visit",
+    "message": "حذف هذه الزيارة",
     "description": "Tooltip for the delete button on a page visit"
   },
 
   "twitter_template": {
-    "message": "Better History for Chrome, see what you're missing!",
+    "message": "!لا يفوتك .Chrome على Better History",
     "description": "Default message for Twitter sharing"
   }
 
