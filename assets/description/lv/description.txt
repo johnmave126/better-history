@@ -1,41 +1,41 @@
-This extension replaces the default history viewer.
+Šis paplašinājums aizstāj noklusējuma vēstures pārlūku.
 
-Suggests, questions, comments? Follow @Better_History on Twitter!
+Ierosinājumi, jautājumi, komentāri? Seko @ Better_History Tviterī!
 https://twitter.com/Better_History
 
 --------------------------------------------------
-Recent Changes
+Pēdējās Izmaiņas
 
 --------------------------------------------------
 
-Chrome is an excellent browser, but viewing your history could be a lot better. That's where Better History comes in. See below! 
+Chrome ir lielisks pārlūks, bet pārskatīt jūsu vēsturi varētu būt daudz ērtāk. Šeit nāk palīgā Better History. Skaties zemāk!
 
-Deleting:
-● Delete all visits for a day
-● Delete individual visits
-● Delete visits to the same domain 
-● Delete all history
+Dzēšana:
+● Dzēst visas vizītes dienā
+● Dzēst individuālos apmeklejumus
+● Dzēst konkrētā domēna apmeklējumus
+● Dzēst visu vēsturi
 
-Grouping:
-● Group visits by 60, 30, or 15 minutes
-● Group visits to the same domain
-● Format hours to 12 or 24
-● Customizable grouping behavior
+Grupēšana:
+● Grupēt vizītes pa 60, 30, 15 vai minūtēm
+● Grupēt vizītes pēc domēna
+● Laika formāts: 12 vai 24
+● Pielāgojama grupas uzvedība
 
-Organizing:
-● Filter visits by day
+Organizēšana:
+● Filtrēt vizītes pa dienām
 
-Searching:
-● Search the last few months
-● Search by date, url, and page title
-● Highlighted search terms
-● Right click option to search by domain
-● Right click option to search by selected text
+Meklēšana:
+● Meklēt pēdējo mēnešu laikā
+● Meklēt pēc datuma, linka un lapas virsraksta
+● Izcelti meklēšanas nosacījumi
+● Labā klikšķa iespeja meklēt pēc domēna
+● Labā klikšķa iespeja meklēt pēc iezīmēta teksta
 
-Styling:
-● Styled with Chrome UI
-● Access from button in toolbar 
-● Remembers closing state
-● Back button support
+Stilizācija:
+● Chrome interfeisa stils
+● Piekļuves poga rīkjoslā
+● Saglabā pozīciju pirms aizvēršanas
+● "Atpakaļ" pogas atbalsts
 
-... lots more coming. 
+... un drīz vēl vairāk.
