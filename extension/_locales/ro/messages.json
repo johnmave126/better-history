@@ -1,4 +1,4 @@
-{
+﻿{
   "manifest_name": {
     "message": "Better History",
     "description": "Manifest name"
@@ -162,7 +162,7 @@
     "description": "Section heading in Settings"
   },
   "view_release_announcement_link": {
-    "message": "Imbunatatiri versiune curenta",
+    "message": "Imbunatatiri in versiunea curenta",
     "description": "Link text to view the release announcement"
   },
   "current_version_label": {
@@ -170,7 +170,7 @@
     "description": "label for the current version"
   },
   "credits": {
-    "message": "credits",
+    "message": "Credits",
     "description": "The word credits"
   },
   "feedback_section_title": {
@@ -629,7 +629,7 @@
     "description": "Heading for translators"
   },
   "spanish": {
-    "message": "Spaniona",
+    "message": "Spaniola",
     "description": "The language"
   },
   "russian": {
@@ -693,7 +693,7 @@
     "description": "The language"
   },
   "japanese": {
-    "message": "Japanese",
+    "message": "Japoneza",
     "description": "The language"
   },
   "vietnamese": {
@@ -744,7 +744,7 @@
     "description": "Title of the version modal"
   },
   "version_description": {
-    "message": "Aceasta versiune a venit cu o gramada de imbunatatiri. Cu ajutorul mai multor useri cu inima mare, Better History este acum tradus in 19 limbi! Arunca o privire la  $link_open$Credits section$link_close$ ca sa vezi cine sunt ei!",
+    "message": "Aceasta versiune a venit cu o gramada de imbunatatiri. Cu ajutorul mai multor useri cu inima mare, Better History este acum tradus in 19 limbi! Arunca o privire la  $link_open$Credits section$link_close$ ca sa vezi cine sunt!",
     "description": "Version description",
     "placeholders": {
       "link_open": {
@@ -804,11 +804,11 @@
   },
 
   "search_in_history": {
-    "message": "Search in history",
+    "message": "Cauta in istoric",
     "description": "Label for search in history context menu item"
   },
   "visits_to_domain": {
-    "message": "Visits to $domain$",
+    "message": "Vizite la $domain$",
     "description": "Label for visits to domain context menu item",
     "placeholders": {
       "domain": {
@@ -819,16 +819,16 @@
   },
 
   "delete_grouped_visits": {
-    "message": "Delete grouped visits",
+    "message": "Sterge vizitele grupate",
     "description": "Tooltip for the delete button on grouped visits"
   },
   "delete_visit": {
-    "message": "Delete visit",
+    "message": "Sterge vizita",
     "description": "Tooltip for the delete button on a page visit"
   },
 
   "twitter_template": {
-    "message": "Better History for Chrome, see what you're missing!",
+    "message": "Arunca un ochi pe Better History pentru Chrome!",
     "description": "Default message for Twitter sharing"
   }
 
