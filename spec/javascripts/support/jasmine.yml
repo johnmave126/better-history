@@ -14,7 +14,7 @@ src_files:
     - extension/javascripts/frameworks/jquery-1.6.2.min.js
     - extension/javascripts/frameworks/ICanHaz.min.js
     - extension/javascripts/frameworks/underscore-min.js
-    - extension/javascripts/frameworks/backbone.js
+    - extension/javascripts/frameworks/backbone-min.js
     - extension/javascripts/frameworks/spin.min.js
     - extension/javascripts/frameworks/jquery.stickysectionheaders.js
     - extension/javascripts/models/*.js

@@ -3,6 +3,7 @@ describe('chromeAPI', function() {
     var options, callback, results;
 
     beforeEach(function() {
+      loadChromeAPI();
       options = {
         text: 'option'
       };

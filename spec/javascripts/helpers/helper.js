@@ -7,7 +7,7 @@ function insertFixtures(fixtures) {
 function loadChromeAPI(config) {
   chrome = {
     i18n: {
-      getMessage: jasmine.createSpy('getMessage').andCallFake(function(key) {
+      getMessage: jasmine.createSpy('getMessage').andCallFake(function(key, substitutions) {
         var lookup = {
           yesterday_link: 'Yesterday',
           today_link: 'Today',
@@ -22,10 +22,20 @@ function loadChromeAPI(config) {
           afternoon: 'afternoon PM',
           evening: 'evening PM',
           search_in_history: 'Search in history',
-          visits_to_domain: 'Visits to domain' 
+          visits_to_domain: 'Visits to domain', 
+          twelve_hour_time_format: '$time$ $label$',
+          thursday: 'Thursday',
+          december: 'December',
+          extended_formal_date: '$weekday$, $month$ $day$, $year$'
         };
 
-        return lookup[key];
+        var result = lookup[key];
+
+        $(substitutions).each(function() {
+          result = result.replace(/\$\w+\$/, this);
+        });
+
+        return result;
       })
     },
     browserAction: {
