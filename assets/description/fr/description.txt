@@ -1,41 +1,41 @@
-This extension replaces the default history viewer.
+﻿Cette extension remplacera la fenêtre d'historique de votre naviguateur par défaut.
 
-Suggests, questions, comments? Follow @Better_History on Twitter!
+Suggstions, questions, commentaires? Suivez @ Better_History sur Twitter!
 https://twitter.com/Better_History
 
 --------------------------------------------------
-Recent Changes
+changements récents
 
 --------------------------------------------------
 
-Chrome is an excellent browser, but viewing your history could be a lot better. That's where Better History comes in. See below! 
+Chrome est un excellent navigateur, mais affichez votre histoire pourrait être beaucoup mieux. C'est là que l'histoire entre en jeu. Mieux Voir ci-dessous!
 
-Deleting:
-● Delete all visits for a day
-● Delete individual visits
-● Delete visits to the same domain 
-● Delete all history
+Suppression:
+● Supprimez toutes les visites d'un jour
+● Supprimez les visites individuelles
+● Supprimer les visites dans le même domaine
+● Supprimer tout l'historique
 
-Grouping:
-● Group visits by 60, 30, or 15 minutes
-● Group visits to the same domain
-● Format hours to 12 or 24
-● Customizable grouping behavior
+Groupement:
+● Groupement des visites en bouquets de 60, 30 ou 15 minutes
+● Groupement des visites du même domaine
+● Format heure à 12 ou 24
+● comportement de regroupement personnalisable
 
-Organizing:
-● Filter visits by day
+Organiser:
+● Classement des visites  par jour
 
-Searching:
-● Search the last few months
-● Search by date, url, and page title
-● Highlighted search terms
-● Right click option to search by domain
-● Right click option to search by selected text
+Recherche:
+● Rechercher des derniers mois
+● Recherche par date, url, et titre de la page
+● Les termes de recherche en surbrillance
+● Un clic droit vous permettra d'avoir l'option d'effectuer une recherche par nom de domaine
+● Aussi le clic droit vous offrira l'option de recherche par le texte sélectionné
 
 Styling:
-● Styled with Chrome UI
-● Access from button in toolbar 
-● Remembers closing state
-● Back button support
+● Stylé avec l'interface d'utilisateur Chrome 
+● Accès à partir du bouton dans la barre d'outils
+● Mémorisation de la session en cours de fermeture
+● supporte le 'bouton Retour'
 
-... lots more coming. 
+... et beaucoup plus à venir.

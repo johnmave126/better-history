@@ -114,7 +114,7 @@
     "description": "Section heading in Settings"
   },
   "group_visits_by_label": {
-    "message": "Visites de groupe par",
+    "message": "Grouper les visites par",
     "description": "Label for select box to set the time grouping interval for visits"
   },
   "60_minutes_option": {
@@ -804,11 +804,11 @@
   },
 
   "search_in_history": {
-    "message": "Search in history",
+    "message": "Chercher l'historique",
     "description": "Label for search in history context menu item"
   },
   "visits_to_domain": {
-    "message": "Visits to $domain$",
+    "message": "Visites à $domain$",
     "description": "Label for visits to domain context menu item",
     "placeholders": {
       "domain": {
@@ -819,16 +819,16 @@
   },
 
   "delete_grouped_visits": {
-    "message": "Delete grouped visits",
+    "message": "Supprimer les visites des groupes",
     "description": "Tooltip for the delete button on grouped visits"
   },
   "delete_visit": {
-    "message": "Delete visit",
+    "message": "Supprimer la visite",
     "description": "Tooltip for the delete button on a page visit"
   },
 
   "twitter_template": {
-    "message": "Better History for Chrome, see what you're missing!",
+    "message": "Better History pour Chrome, vous allez l'aimer!",
     "description": "Default message for Twitter sharing"
   }
 
