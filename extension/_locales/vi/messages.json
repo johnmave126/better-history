@@ -83,7 +83,7 @@
       }
     }
   },
-  "12_hour_time_format": {
+  "twelve_hour_time_format": {
     "message": "$time$ $label$",
     "description": "Time format for 12 hour time",
     "placeholders": {
