@@ -1,41 +1,41 @@
-This extension replaces the default history viewer.
+Aceasta extensie inlocuieste istoricul nativ al lui Google Chrome.
 
-Suggests, questions, comments? Follow @Better_History on Twitter!
+Sugestii, intrebari, comentarii? Urmareste @Better_History pe Twitter!
 https://twitter.com/Better_History
 
 --------------------------------------------------
-Recent Changes
+Schimbari recente
 
 --------------------------------------------------
 
-Chrome is an excellent browser, but viewing your history could be a lot better. That's where Better History comes in. See below! 
+Chrome este un browser super, dar modul in care iti afiseaza istoricul ar putea fi imbunatatit. Cu Better History am facut tocmai asta. Uita-te mai jos ca sa vezi cum te poate ajuta!
 
-Deleting:
-● Delete all visits for a day
-● Delete individual visits
-● Delete visits to the same domain 
-● Delete all history
+Sterge istoricul:
+● Sterge istoricul dintr-o anumita zi
+● Sterge vizite individuale
+● Sterge vizitele doar de pe un site anume 
+● Sterge tot istoricul
 
-Grouping:
-● Group visits by 60, 30, or 15 minutes
-● Group visits to the same domain
-● Format hours to 12 or 24
-● Customizable grouping behavior
+Grupeaza vizitele:
+● Grupeaza vizitele in intervale de 60, 30 sau 15 minute
+● Grupeaza vizitele dupa un anume site.
+● Formatul orei: 12h sau 24h
+● Poti sa customizezi modul in care grupeaza vizitele
 
-Organizing:
-● Filter visits by day
+Organizare:
+● Poti filtra vizitele pe zile
 
-Searching:
-● Search the last few months
-● Search by date, url, and page title
-● Highlighted search terms
-● Right click option to search by domain
-● Right click option to search by selected text
+Cautare:
+● Cauta vizite din ultimele luni sau de cand vrei tu
+● Cauta dupa zi, site si titlul paginii
+● Evidentiaza termenii cautati in lista de rezultate
+● Optiune rapida pentru cautare dupa domeniu (click dreapta)
+● Optiune rapida pentru cautarea unui text selectat de tine (click dreapta)
 
-Styling:
-● Styled with Chrome UI
-● Access from button in toolbar 
-● Remembers closing state
-● Back button support
+Interfata:
+● Integrat in interfata Google Chrome
+● Buton dedicat in toolbar
+● Better History retine unde ai ramas atunci cand il inchizi
+● Poti folosi butonul Back
 
-... lots more coming. 
+... plus multe altele, in versiunile viitoare.
