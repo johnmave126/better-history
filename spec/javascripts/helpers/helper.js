@@ -25,6 +25,12 @@ function loadChromeAPI(config) {
           visits_to_domain: 'Visits to domain', 
           twelve_hour_time_format: '$time$ $label$',
           thursday: 'Thursday',
+          tuesday: 'Tuesday',
+          october: 'October',
+          friday: 'Friday',
+          july: 'July',
+          september: 'September',
+          sunday: 'Sunday',
           december: 'December',
           extended_formal_date: '$weekday$, $month$ $day$, $year$'
         };
