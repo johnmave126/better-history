@@ -1,6 +1,6 @@
-�sta extensi�n reemplaza el visor por defecto del historial.
+Ésta extensión reemplaza el visor por defecto del historial.
 
-�Sugerencias, preguntas, comentarios? �Sigue @Better_History en Twitter! 
+¿Sugerencias, preguntas, comentarios? ¡Sigue @Better_History en Twitter! 
 https://twitter.com/Better_History
 
 --------------------------------------------------
@@ -8,34 +8,34 @@ Cambios Recientes
 
 --------------------------------------------------
 
-Chrome es un excelente navegador, pero la forma en que puedes ver tu historial puede ser mucho mejor. Para eso fue creado Better History. Podr�s:
+Chrome es un excelente navegador, pero la forma en que puedes ver tu historial puede ser mucho mejor. Para eso fue creado Better History. Podrás:
 
 Borrado:
-● Borrar todas las visitas de un d�a.
+● Borrar todas las visitas de un día.
 ● Borrar visitas individuales.
 ● Borrar todas las visitas a un mismo dominio.
 ● Borrar todo el historial.
 
-Agrupaci�n:
-● Agrupar visitas cada 60, 30, � 15 minutos.
+Agrupación:
+● Agrupar visitas cada 60, 30, ó 15 minutos.
 ● Agrupar visitas del mismo dominio.
-● Elegir formato de 12 � 24 horas.
-● Agrupaci�n customizable.
+● Elegir formato de 12 ó 24 horas.
+● Agrupación customizable.
 
-Organizaci�n:
-● Filtrar visitas por d�a.
+Organización:
+● Filtrar visitas por día.
 
-B�squeda:
-● Buscar por los �ltimos meses.
-● Buscar por fecha, url y t�tulo de p�gina.
-● Obtener los t�rminos de b�squeda resaltados.
-● Acceder a la b�squeda por dominio a trav�s de la opci�n de clic derecho.
-● Acceder a la b�squeda por texto seleccionado a trav�s de la opci�n de clic derecho.
+Búsqueda:
+● Buscar por los últimos meses.
+● Buscar por fecha, url y título de página.
+● Obtener los términos de búsqueda resaltados.
+● Acceder a la búsqueda por dominio a través de la opción de clic derecho.
+● Acceder a la búsqueda por texto seleccionado a través de la opción de clic derecho.
 
 Interfaz:
 ● Tener interfaz estilo Chrome UI
-● Acceder desde el bot�n en la barra de herramientas.
+● Acceder desde el botón en la barra de herramientas.
 ● Recordar el punto en el que quedaste antes de cerrar.
-● Tendr�s soporte del bot�n Regresar.
+● Tendrás soporte del botón Regresar.
 
-... y mucho m�s est� por venir. 
+... y mucho más está por venir. 
