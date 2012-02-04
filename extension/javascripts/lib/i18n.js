@@ -33,7 +33,8 @@ i18n = {
       'current_version_label',
       'feedback_section_title',
       'spread_the_word_section_title',
-      'leave_a_review'
+      'leave_a_review',
+      'twitter_template'
     ]);
     properties[i18n.scopeKey('credits_link')] = chrome.i18n.getMessage('credits_link', [
       '<strong>',
