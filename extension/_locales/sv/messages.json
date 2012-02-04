@@ -784,7 +784,7 @@
     "description": "Heading for an important note"
   },
   "version_note": {
-    "message": "Jag får så mycket feedback att jag tyvärr inte kan svara på samtliga kommentarer. För kort feedback, förslag och buggrapporteringar, twittra $link_open$@Better_History$link_close$! Följ gärna $link_open$@Better_History$link_close$ för att hålla dig ajour om senaste nytt!",
+    "message": "Jag får för närvarande så mycket feedback att jag tyvärr inte hinner besvara allt. För kort feedback, förslag och buggrapporteringar, twittra $link_open$@Better_History$link_close$! Följ gärna $link_open$@Better_History$link_close$ för att hålla dig ajour om senaste nytt!",
     "descriotion": "Feedback and support note",
     "placeholders": {
       "link_open": {
@@ -828,11 +828,11 @@
   },
 
   "search_in_history": {
-    "message": "Search in history",
+    "message": "Sök i historik",
     "description": "Label for search in history context menu item"
   },
   "visits_to_domain": {
-    "message": "Visits to $domain$",
+    "message": "Besök till $domain$",
     "description": "Label for visits to domain context menu item",
     "placeholders": {
       "domain": {
@@ -843,16 +843,16 @@
   },
 
   "delete_grouped_visits": {
-    "message": "Delete grouped visits",
+    "message": "Radera den här grupperingen av besökshistorik",
     "description": "Tooltip for the delete button on grouped visits"
   },
   "delete_visit": {
-    "message": "Delete visit",
+    "message": "Radera besökshistorik för den här sidan",
     "description": "Tooltip for the delete button on a page visit"
   },
 
   "twitter_template": {
-    "message": "Better History for Chrome, see what you're missing!",
+    "message": "Better History för Chrome, hitta vad du annars skulle missa i din besökshistorik!",
     "description": "Default message for Twitter sharing"
   }
 
