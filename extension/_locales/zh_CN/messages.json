@@ -627,7 +627,7 @@
   },
 
   "credits_title": {
-    "message": "鸣谢",
+    "message": "Better History 鸣谢",
     "description": "Title for credits modal"
   },
   "developed_by": {
@@ -855,6 +855,4 @@
     "message": "试用Chrome的扩展Better History，看看你错过了什么！",
     "description": "Default message for Twitter sharing"
   }
-
-
 }

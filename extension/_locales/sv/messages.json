@@ -627,7 +627,7 @@
   },
 
   "credits_title": {
-    "message": "Tack till",
+    "message": "Better History Tack till",
     "description": "Title for credits modal"
   },
   "developed_by": {
@@ -855,6 +855,4 @@
     "message": "Better History för Chrome, hitta vad du annars skulle missa i din besökshistorik!",
     "description": "Default message for Twitter sharing"
   }
-
-
 }

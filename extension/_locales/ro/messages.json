@@ -83,6 +83,20 @@
       }
     }
   },
+  "12_hour_time_format": {
+    "message": "$time$ $label$",
+    "description": "Time format for 12 hour time",
+    "placeholders": {
+      "time": {
+        "content": "$1",
+        "example": "10:00"
+      },
+      "label": {
+        "content": "$2",
+        "example": "AM/PM"
+      }
+    }
+  },
 
   "morning": {
     "message": "AM",
@@ -169,9 +183,19 @@
     "message": "Versiune curenta",
     "description": "label for the current version"
   },
-  "credits": {
-    "message": "Credits",
-    "description": "The word credits"
+  "credits_link": {
+    "message": "$open$Better History$close$ credits",
+    "description": "The link to credits",
+    "placeholders": {
+      "open": {
+        "content": "$1",
+        "example": "strong open"
+      },
+      "close": {
+        "content": "$2",
+        "example": "strong close"
+      }
+    }
   },
   "feedback_section_title": {
     "message": "Feedback",
@@ -603,7 +627,7 @@
   },
 
   "credits_title": {
-    "message": "Credits",
+    "message": "Better History Credits",
     "description": "Title for credits modal"
   },
   "developed_by": {
@@ -831,6 +855,4 @@
     "message": "Arunca un ochi pe Better History pentru Chrome!",
     "description": "Default message for Twitter sharing"
   }
-
-
 }

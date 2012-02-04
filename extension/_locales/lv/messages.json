@@ -627,7 +627,7 @@
   },
 
   "credits_title": {
-    "message": "Kredīti",
+    "message": "Better History Kredīti",
     "description": "Title for credits modal"
   },
   "developed_by": {
@@ -855,6 +855,4 @@
     "message": "Better History for Chrome, see what you're missing!",
     "description": "Default message for Twitter sharing"
   }
-
-
 }

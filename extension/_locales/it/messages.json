@@ -627,7 +627,7 @@
   },
 
   "credits_title": {
-    "message": "Riconoscimenti",
+    "message": "Better History Riconoscimenti",
     "description": "Title for credits modal"
   },
   "developed_by": {
@@ -855,6 +855,4 @@
     "message": "Better History per Google Chrome, non sai cosa ti perdi!",
     "description": "Default message for Twitter sharing"
   }
-
-
 }

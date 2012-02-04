@@ -627,7 +627,7 @@
   },
 
   "credits_title": {
-    "message": "Jenerik",
+    "message": "Better History Jenerik",
     "description": "Title for credits modal"
   },
   "developed_by": {
@@ -855,6 +855,4 @@
     "message": "Chrome için Better History, ne kaçırdığını gör!",
     "description": "Default message for Twitter sharing"
   }
-
-
 }

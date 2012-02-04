@@ -197,7 +197,6 @@
       }
     }
   },
-
   "feedback_section_title": {
     "message": "Twoja opinia",
     "description": "Section heading in Settings"
@@ -628,7 +627,7 @@
   },
 
   "credits_title": {
-    "message": "Podziękowania",
+    "message": "Better History Podziękowania",
     "description": "Title for credits modal"
   },
   "developed_by": {
@@ -856,6 +855,4 @@
     "message": "Better History dla Google Chrome, zobacz co tracisz!",
     "description": "Default message for Twitter sharing"
   }
-
-
 }

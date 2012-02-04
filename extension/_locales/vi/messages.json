@@ -613,7 +613,6 @@
     }
   },
 
-  
   "prompt_cancel_button": {
     "message": "Không", 
     "description": "Button to close modal"
@@ -628,7 +627,7 @@
   },
 
   "credits_title": {
-    "message": "Công trạng", 
+    "message": "Better History Công trạng", 
     "description": "Title for credits modal"
   },
   "developed_by": {
@@ -856,5 +855,4 @@
     "message": "Better History cho Chrome: hãy xem bạn đang thiếu gì!",
     "description": "Default message for Twitter sharing"
   }
-
 }

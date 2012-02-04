@@ -627,7 +627,7 @@
   },
 
   "credits_title": {
-    "message": "Créditos",
+    "message": " Better History Créditos",
     "description": "Title for credits modal"
   },
   "developed_by": {
@@ -855,6 +855,4 @@
     "message": "Better History para o Chrome! Veja o que está a perder",
     "description": "Default message for Twitter sharing"
   }
-
-
 }
