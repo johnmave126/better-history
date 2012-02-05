@@ -1,6 +1,6 @@
 var router = new Router(),
     settings = new Settings(),
-    version = new Version({version:'1.5.0'});
+    version = new Version({version:'1.5.1'});
 
 settings.fetch();
 
