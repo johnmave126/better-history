@@ -768,7 +768,7 @@
     "description": "Title of the version modal"
   },
   "version_description": {
-    "message": "This is a big, big release. With help from a bunch of awesome users, Better History is now available in 14 languages! Checkout the new $link_open$Credits section$link_close$ to say thanks to these fine translators!",
+    "message": "This is a big, big release. With help from a bunch of awesome users, Better History is now available in 19 languages! Checkout the new $link_open$Credits section$link_close$ to say thanks to these fine translators!",
     "description": "Version description",
     "placeholders": {
       "link_open": {
@@ -800,7 +800,7 @@
     "description": "Heading for what's new in version"
   },
   "version_items": {
-    "message": "$open$Translated to 15 languages$close$ $open$Added options in Settings to disable right click options$close$ $open$Added icon to display Better History in toolbar$close$ $open$Added Credits section in Settings$close$ $open$Fixed XSS vulnerability$close$",
+    "message": "$open$Translated to 19 languages$close$ $open$Added options in Settings to disable right click options$close$ $open$Added icon to display Better History in toolbar$close$ $open$Added Credits section in Settings$close$ $open$Fixed XSS vulnerability$close$",
     "description": "Release bulletpoints",
     "placeholders": {
       "open": {
