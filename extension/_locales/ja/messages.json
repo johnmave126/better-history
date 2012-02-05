@@ -854,5 +854,9 @@
   "twitter_template": {
     "message": "Chrome 用 Better History で、閲覧履歴が素敵に！",
     "description": "Default message for Twitter sharing"
+  },
+  "twitter_language": {
+    "message": "ja",
+    "description": "Twitter language abbreviation"
   }
 }

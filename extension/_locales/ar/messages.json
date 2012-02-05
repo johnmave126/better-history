@@ -854,7 +854,9 @@
   "twitter_template": {
     "message": "!لا يفوتك .Chrome على Better History",
     "description": "Default message for Twitter sharing"
+  },
+  "twitter_language": {
+    "message": "ar",
+    "description": "Twitter language abbreviation"
   }
-
-
 }

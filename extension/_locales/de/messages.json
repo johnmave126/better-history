@@ -852,7 +852,9 @@
   "twitter_template": {
     "message": "Better History für Chrome, schau' was du verpasst!",
     "description": "Default message for Twitter sharing"
+  },
+  "twitter_language": {
+    "message": "de",
+    "description": "Twitter language abbreviation"
   }
-
-
 }

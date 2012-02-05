@@ -854,7 +854,9 @@
   "twitter_template": {
     "message": "Itt a Better History a Chrome-hoz, nézd meg mit hagysz épp ki!",
     "description": "Default message for Twitter sharing"
+  },
+  "twitter_language": {
+    "message": "hu",
+    "description": "Twitter language abbreviation"
   }
-
-
 }

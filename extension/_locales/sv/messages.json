@@ -854,5 +854,9 @@
   "twitter_template": {
     "message": "Better History för Chrome, hitta vad du annars skulle missa i din besökshistorik!",
     "description": "Default message for Twitter sharing"
+  },
+  "twitter_language": {
+    "message": "sv",
+    "description": "Twitter language abbreviation"
   }
 }

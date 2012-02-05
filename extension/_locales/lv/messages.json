@@ -854,5 +854,9 @@
   "twitter_template": {
     "message": "Better History for Chrome, see what you're missing!",
     "description": "Default message for Twitter sharing"
+  },
+  "twitter_language": {
+    "message": "lv",
+    "description": "Twitter language abbreviation"
   }
 }

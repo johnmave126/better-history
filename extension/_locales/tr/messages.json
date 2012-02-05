@@ -854,5 +854,9 @@
   "twitter_template": {
     "message": "Chrome için Better History, ne kaçırdığını gör!",
     "description": "Default message for Twitter sharing"
+  },
+  "twitter_language": {
+    "message": "tr",
+    "description": "Twitter language abbreviation"
   }
 }

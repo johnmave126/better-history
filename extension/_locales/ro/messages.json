@@ -854,5 +854,9 @@
   "twitter_template": {
     "message": "Arunca un ochi pe Better History pentru Chrome!",
     "description": "Default message for Twitter sharing"
+  },
+  "twitter_language": {
+    "message": "ro",
+    "description": "Twitter language abbreviation"
   }
 }

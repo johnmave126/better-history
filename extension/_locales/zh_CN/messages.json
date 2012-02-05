@@ -854,5 +854,9 @@
   "twitter_template": {
     "message": "试用Chrome的扩展Better History，看看你错过了什么！",
     "description": "Default message for Twitter sharing"
+  },
+  "twitter_language": {
+    "message": "zh-cn",
+    "description": "Twitter language abbreviation"
   }
 }

@@ -854,5 +854,9 @@
   "twitter_template": {
     "message": "Better History cho Chrome: hãy xem bạn đang thiếu gì!",
     "description": "Default message for Twitter sharing"
+  },
+  "twitter_language": {
+    "message": "vi",
+    "description": "Twitter language abbreviation"
   }
 }

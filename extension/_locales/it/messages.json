@@ -854,5 +854,9 @@
   "twitter_template": {
     "message": "Better History per Google Chrome, non sai cosa ti perdi!",
     "description": "Default message for Twitter sharing"
+  },
+  "twitter_language": {
+    "message": "it",
+    "description": "Twitter language abbreviation"
   }
 }
