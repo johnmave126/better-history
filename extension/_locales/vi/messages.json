@@ -858,5 +858,10 @@
   "twitter_language": {
     "message": "vi",
     "description": "Twitter language abbreviation"
+  },
+
+  "google_plus_language": {
+    "message": "vi",
+    "description": "Google plus language abbreviation"
   }
 }

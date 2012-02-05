@@ -858,5 +858,10 @@
   "twitter_language": {
     "message": "ca",
     "description": "Twitter language abbreviation"
+  },
+
+  "google_plus_language": {
+    "message": "ca",
+    "description": "Google plus language abbreviation"
   }
 }

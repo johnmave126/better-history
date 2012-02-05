@@ -29,7 +29,17 @@ SettingsView = Backbone.View.extend({
       $('.search_by_domain', this).prop('checked', self.model.get('searchByDomain'));
       $('.current_version', this).text(version.get('version'));
     });
+    this.renderGooglePlus();
     return this;
+  },
+
+  renderGooglePlus: function() {
+    window.___gcfg = {lang: chrome.i18n.getMessage('google_plus_language')};
+    (function() {
+      var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+      po.src = 'https://apis.google.com/js/plusone.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+    })();
   },
 
   changedTimeGrouping: function(ev) {

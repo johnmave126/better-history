@@ -858,5 +858,10 @@
   "twitter_language": {
     "message": "ro",
     "description": "Twitter language abbreviation"
+  },
+
+  "google_plus_language": {
+    "message": "ro",
+    "description": "Google plus language abbreviation"
   }
 }

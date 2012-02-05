@@ -38,5 +38,10 @@
         "example": "2011"
       }
     }
+  },
+
+  "google_plus_language": {
+    "message": "en-GB",
+    "description": "Google plus language abbreviation"
   }
 }

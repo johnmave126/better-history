@@ -858,5 +858,10 @@
   "twitter_language": {
     "message": "ar",
     "description": "Twitter language abbreviation"
+  },
+
+  "google_plus_language": {
+    "message": "ar",
+    "description": "Google plus language abbreviation"
   }
 }
