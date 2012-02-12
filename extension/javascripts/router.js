@@ -10,6 +10,7 @@ Router = Backbone.Router.extend({
   initialize: function() {
     var self = this;
     this.bind('route:filter', function(type, time) {
+      console.log('asdf');
       var url = 'filter/' + type;
       if(time) url += '/' + time;
       self.setLastRoute(url);
@@ -29,6 +30,7 @@ Router = Backbone.Router.extend({
   },
 
   filter: function(type, time) {
+    console.log('yo')
     var filter = filters.getByHash(type),
         filterView = new FilterView({model: filter});
 

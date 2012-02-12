@@ -13,6 +13,6 @@ $(function() {
     model: versionView.model
   }).render();
 
-  if(!location.hash) router.navigate(router.getLastRoute());
   Backbone.history.start();
+  if(!location.hash) router.navigate(router.getLastRoute(), {trigger: true});
 });

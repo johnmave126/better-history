@@ -12,7 +12,7 @@ SettingsView = Backbone.View.extend({
 
   initialize: function() {
     Helpers.pageTitle(chrome.i18n.getMessage('settings_title'));
-    this.model.unbind('change').bind('change', this.saveSettings, this);
+    this.model.off('change').on('change', this.saveSettings, this);
   },
 
   saveSettings: function() {

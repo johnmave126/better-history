@@ -3,8 +3,8 @@ FilterItemView = Backbone.View.extend({
   tagNase: 'ul',
 
   initialize: function() {
-    this.model.bind('count', this.count, this);
-    this.model.bind('change', this.update, this);
+    this.model.on('count', this.count, this);
+    this.model.on('change', this.update, this);
   },
 
   render: function() {

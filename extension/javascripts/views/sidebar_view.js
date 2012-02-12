@@ -11,11 +11,11 @@ SidebarView = Backbone.View.extend({
 
   initialize: function() {
     var self = this;
-    router.bind('route:filter', function(type) {
+    router.on('route:filter', function(type) {
       self.filterRouted(type);
     });
 
-    router.bind('route:settings', function() {
+    router.on('route:settings', function() {
       self.settingsRouted();
     });
   },

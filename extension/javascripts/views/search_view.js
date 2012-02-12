@@ -3,7 +3,7 @@ SearchView = Backbone.View.extend({
 
   initialize: function() {
     Helpers.pageTitle(this.model.get('title'));
-    this.model.bind('change', this.renderPageVisits, this);
+    this.model.on('change', this.renderPageVisits, this);
   },
 
   render: function(type) {

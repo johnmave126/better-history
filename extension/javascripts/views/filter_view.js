@@ -10,7 +10,7 @@ FilterView = Backbone.View.extend({
 
   initialize: function() {
     Helpers.pageTitle(this.model.get('title'));
-    this.model.bind('change', this.renderHistory, this);
+    this.model.on('change', this.renderHistory, this);
   },
 
   render: function(type) {
@@ -73,7 +73,7 @@ FilterView = Backbone.View.extend({
     });
     $('body').append(this.promptView.render().el);
     this.promptView.open();
-    this.promptView.model.bind('change', this.deleteAction, this);
+    this.promptView.model.on('change', this.deleteAction, this);
   },
 
   deleteAction: function(prompt) {
