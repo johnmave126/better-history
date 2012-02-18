@@ -1,5 +1,6 @@
 describe('i18n', function() {
   beforeEach(function() {
+    loadChromeAPI();
     spyOn(i18n, 'fetch').andCallThrough();
   });
 
@@ -44,7 +45,6 @@ describe('i18n', function() {
         'whats_new_section_title',
         'view_release_announcement_link',
         'current_version_label',
-        'credits',
         'feedback_section_title',
         'spread_the_word_section_title',
         'leave_a_review',

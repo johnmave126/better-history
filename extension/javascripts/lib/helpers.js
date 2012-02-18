@@ -72,6 +72,14 @@ Helpers = {
     return time;
   },
 
+  formatFormalDate: function(date) {
+    return chrome.i18n.getMessage('formal_date', [
+      chrome.i18n.getMessage(DateRanger.numberToMonth(date.getMonth())),
+      date.getDate(),
+      date.getFullYear()
+    ]);
+  },
+
   formatExtendedFormalDate: function(date) {
     return chrome.i18n.getMessage('extended_formal_date', [
       chrome.i18n.getMessage(DateRanger.numberToDay(date.getDay())),

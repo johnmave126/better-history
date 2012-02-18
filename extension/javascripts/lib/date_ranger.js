@@ -40,7 +40,7 @@ DateRanger = {
       start: start,
       end: end,
       day: this.numberToDay(start.getDay()),
-      date: start.toLocaleDateString().match(/([^,]*),(.*)/)[2]
+      date: Helpers.formatFormalDate(start) 
     };
   }
 };

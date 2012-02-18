@@ -70,7 +70,7 @@ describe('chromeAPI', function() {
           startTime: new Date("October 1, 2010"),
           endTime: new Date("October 14, 2010")
         }, function(results) {
-          expect(results[0].time).toEqual(results[0].lastVisitTime.toLocaleDateString());
+          expect(results[0].time).toEqual('Tuesday, October 12, 2010');
         });
       });
     });

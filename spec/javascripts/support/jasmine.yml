@@ -19,9 +19,17 @@ src_files:
     - extension/javascripts/frameworks/jquery.stickysectionheaders.js
     - extension/javascripts/models/*.js
     - extension/javascripts/collections/*.js
-    - extension/javascripts/lib/*.js
+    - extension/javascripts/lib/helpers.js
+    - extension/javascripts/lib/browser_actions.js
+    - extension/javascripts/lib/date_ranger.js
+    - extension/javascripts/lib/chrome_api.js
+    - extension/javascripts/lib/context_menus.js
+    - extension/javascripts/lib/filters_seed.js
+    - extension/javascripts/lib/group_by.js
+    - extension/javascripts/lib/i18n.js
+    - extension/javascripts/lib/url.js
     - extension/javascripts/views/*.js
-    - extension/javascripts/*.js
+    - extension/javascripts/router.js
 
 # stylesheets
 #
@@ -47,7 +55,7 @@ stylesheets:
 #   - helpers/**/*.js
 #
 helpers:
-
+    - helpers/helper.js
 # spec_files
 #
 #  Return an array of filepaths relative to spec_dir to include.
@@ -59,7 +67,6 @@ helpers:
 #   - **/*[sS]pec.js
 #
 spec_files:
-    - helpers/helper.js
     - collections/*.js
     - lib/*.js
     - models/*.js

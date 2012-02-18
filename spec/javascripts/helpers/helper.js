@@ -32,14 +32,17 @@ function loadChromeAPI(config) {
           september: 'September',
           sunday: 'Sunday',
           december: 'December',
-          extended_formal_date: '$weekday$, $month$ $day$, $year$'
+          extended_formal_date: '$weekday$, $month$ $day$, $year$',
+          formal_date: '$month$ $day$, $year$'
         };
 
         var result = lookup[key];
 
-        $(substitutions).each(function() {
-          result = result.replace(/\$\w+\$/, this);
-        });
+        if(result) {
+          $(substitutions).each(function() {
+            result = result.replace(/\$\w+\$/, this);
+          });
+        }
 
         return result;
       })

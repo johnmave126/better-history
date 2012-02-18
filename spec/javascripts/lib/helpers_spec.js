@@ -32,6 +32,20 @@ describe('Helpers', function() {
     });
   });
 
+  describe('.formatFormalDate', function() { 
+    it('returns the formal date', function() {
+      var date = new Date('12/2/10 18:00');
+      expect(Helpers.formatFormalDate(date)).toEqual('December 2, 2010');
+    });
+  });
+
+  describe('.formatExtendedFormalDate', function() { 
+    it('returns the formally formated extended date', function() {
+      var date = new Date('12/2/10 18:00');
+      expect(Helpers.formatExtendedFormalDate(date)).toEqual('Thursday, December 2, 2010');
+    });
+  });
+
   describe('.getDomain', function() {
     it('gets the domain from a url', function() {
       expect(Helpers.getDomain('http://www.google.com/page')[0]).toEqual('http://www.google.com/');
