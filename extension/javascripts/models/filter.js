@@ -27,7 +27,7 @@ Filter = Backbone.Model.extend({
 
     var formal_date;
     var month = chrome.i18n.getMessage(DateRanger.numberToMonth(this.date().getMonth())),
-        day = chrome.i18n.getMessage(this.date().getDate().toString()),
+        day = this.date().getDate().toString(),
         year = this.date().getFullYear();
 
     formal_date = chrome.i18n.getMessage("formal_date", [month, day, year.toString()]);
@@ -72,10 +72,10 @@ Filter = Backbone.Model.extend({
     };
   },
 
-  presenter: function() {
+  toTemplate: function() {
     var properties = this.toJSON();
     properties.cid = this.cid;
-    return properties;
+    return $.extend(properties, (this.searching() ? i18n.search() : i18n.filter()));
   },
 
   buildSearchTitle: function(query) {

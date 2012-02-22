@@ -16,7 +16,7 @@ PageVisit = Backbone.Model.extend({
     }
   },
 
-  presenter: function() {
+  toTemplate: function() {
     var properties = this.toJSON();
     properties.cid = this.cid;
     return properties;

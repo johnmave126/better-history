@@ -101,11 +101,28 @@ describe('Filter', function() {
     });
   });
 
-  describe('#presenter', function() {
-    it('returns the properties used in the view', function() {
-      var properties = filter.toJSON();
-      properties.cid = filter.cid;
-      expect(filter.presenter()).toEqual(properties);
+  describe('#toTemplate', function() {
+    it('returns the properties on the model', function() {
+      spyOn(filter, 'toJSON').andReturn({json: 'properties'});
+      var properties = filter.toTemplate();
+      expect(properties.json).toEqual('properties');
+    });
+
+    it('includes the cid in the properties', function() {
+      var properties = filter.toTemplate();
+      expect(properties.cid).toBeDefined();
+    });
+
+    it('merges in filter i18n properties when the hash is not search', function() {
+      filter.set({hash: 'not_search'});
+      var properties = filter.toTemplate();
+      expect(properties.i18n_no_visits_found).toBeDefined();
+    });
+
+    it('merges in search i18n properties when the hash is search', function() {
+      filter.set({hash: 'search'});
+      var properties = filter.toTemplate();
+      expect(properties.i18n_search_time_frame).toBeDefined();
     });
   });
 

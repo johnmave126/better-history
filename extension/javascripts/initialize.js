@@ -1,17 +1,27 @@
-var router = new Router(),
-    settings = new Settings(),
-    version = new Version({version:'1.5.1'});
+BH = {
+  router: new Router(),
+  models: {
+    settings: new Settings(),
+    version: new Version({version:'1.5.1'})
+  },
+};
 
-settings.fetch();
+BH.models.settings.fetch();
 
 $(function() {
-  versionView = new VersionView({model: version});
-  creditsView = new CreditsView();
+  BH.views = {
+    versionView: new VersionView({
+      model: BH.models.version
+    }),
+    creditsView: new CreditsView(),
+    appView: new AppView({
+      el: $('.app'),
+      model: BH.models.version,
+      collection: DefaultFilters.fetch()
+    })
+  };
 
-  appView = new AppView({
-    el: $('.app'),
-    model: versionView.model
-  }).render();
+  BH.views.appView.render();
 
   Backbone.history.start();
   if(!location.hash) router.navigate(router.getLastRoute(), {trigger: true});

@@ -1,5 +1,7 @@
-PromptView = Backbone.View.extend({
+PromptView = Backbone.Modal.extend({
   className: 'prompt_view',
+
+  templateId: 'prompt',
 
   events: {
     'click .no': 'clickedNo',
@@ -7,8 +9,7 @@ PromptView = Backbone.View.extend({
   },
 
   render: function() {
-    var templateOptions = $.extend(this.model.toJSON(), i18n.prompt());
-    ich.prompt(templateOptions).appendTo(this.el);
+    this.$el.html(this.template(this.model.toTemplate()));
     return this;
   },
 
@@ -20,20 +21,13 @@ PromptView = Backbone.View.extend({
   clickedYes: function(ev) {
     ev.preventDefault();
     this.model.set({action: true});
-  },
-
-  open: function() {
-    var self = this;
-    $('.overlay', this.el).fadeIn('fast', function() {
-      $('.overlay .modal', self.el).fadeIn('fast');
-    });
-  },
-
-  close: function() {
-    var self = this;
-    $('.overlay .modal').fadeOut('fast', function() {
-      $('.overlay', self.el).fadeOut('fast');
-      self.remove();
-    });
   }
 });
+
+CreatePrompt = function(content) {
+  var view = new PromptView({
+    model: new Prompt({content: content})
+  });
+  $('body').append(view.render().el);
+  return view;
+};

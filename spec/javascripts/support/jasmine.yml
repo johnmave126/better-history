@@ -12,8 +12,8 @@
 #
 src_files:
     - extension/javascripts/frameworks/jquery-1.6.2.min.js
-    - extension/javascripts/frameworks/ICanHaz.min.js
     - extension/javascripts/frameworks/underscore-min.js
+    - extension/javascripts/frameworks/mustache.js
     - extension/javascripts/frameworks/backbone-min.js
     - extension/javascripts/frameworks/spin.min.js
     - extension/javascripts/frameworks/jquery.stickysectionheaders.js
@@ -28,6 +28,7 @@ src_files:
     - extension/javascripts/lib/group_by.js
     - extension/javascripts/lib/i18n.js
     - extension/javascripts/lib/url.js
+    - extension/javascripts/lib/backbone_hacks.js
     - extension/javascripts/views/*.js
     - extension/javascripts/router.js
 
@@ -56,6 +57,7 @@ stylesheets:
 #
 helpers:
     - helpers/helper.js
+    - helpers/jasmine-jquery.js
 # spec_files
 #
 #  Return an array of filepaths relative to spec_dir to include.
@@ -70,6 +72,7 @@ spec_files:
     - collections/*.js
     - lib/*.js
     - models/*.js
+    - views/*.js
 
 # src_dir
 #

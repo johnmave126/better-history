@@ -23,11 +23,11 @@ describe('PageVisit', function() {
     });
   });
 
-  describe('#presenter', function() {
+  describe('#toTemplate', function() {
     it('returns all the properties used in the view', function() {
       var presentedProperties = properties;
       presentedProperties.cid = pageVisit.cid;
-      expect(pageVisit.presenter()).toEqual(presentedProperties);
+      expect(pageVisit.toTemplate()).toEqual(presentedProperties);
     });
   });
 

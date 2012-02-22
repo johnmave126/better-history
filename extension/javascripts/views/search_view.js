@@ -1,5 +1,6 @@
 SearchView = Backbone.View.extend({
   className: 'search_view',
+  templateId: 'search',
 
   initialize: function() {
     Helpers.pageTitle(this.model.get('title'));
@@ -7,8 +8,7 @@ SearchView = Backbone.View.extend({
   },
 
   render: function(type) {
-    var templateOptions = $.extend(this.model.presenter(), i18n.search());
-    ich.search(templateOptions).appendTo(this.el);
+    this.$el.append(this.template(this.model.toTemplate()));
     $('.spinner', this.el).spin();
     return this;
   },
@@ -16,17 +16,20 @@ SearchView = Backbone.View.extend({
   renderPageVisits: function() {
     this.collection = this.model.get('history');
 
-    $('.content', this.el).html('');
+    var contentElement = $(this.el).children('.content');
+    $(contentElement).html('');
 
     if(this.collection.length === 0) {
-      ich.noVisits().appendTo($('.content', this.el));
+        $(contentElement)
+          .append(Mustache.render($('#noVisits').html(), i18n.search()))
     } else {
       var self = this;
       $.each(this.collection.models, function() {
-        $('.content', self.el).append(new PageVisitView({model: this}).render().el);
+        $(contentElement)
+          .append(new PageVisitView({model: this}).render().el);
       });
     }
 
-    Helpers.tabIndex($('.content a', this.el));
+    Helpers.tabIndex($(contentElement).find('a'));
   }
 });

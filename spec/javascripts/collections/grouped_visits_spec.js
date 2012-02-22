@@ -2,6 +2,7 @@ describe('GroupedVisits', function() {
   var groupedVisits, visits;
 
   beforeEach(function() {
+    loadChromeAPI();
     pageVisits = [
       new PageVisit({
         url: 'http://google.com/page'
@@ -17,13 +18,20 @@ describe('GroupedVisits', function() {
     expect(new groupedVisits.model() instanceof PageVisit).toBeTruthy();
   });
 
-  describe('#summary', function() {
+  describe('#toTemplate', function() {
     it('returns the domain', function() {
-      expect(groupedVisits.summary().domain).toEqual(pageVisits[1].domain());
+      var properties = groupedVisits.toTemplate();
+      expect(properties.domain).toEqual(pageVisits[1].domain());
     });
 
     it('returns the url for the first page visit', function() {
-      expect(groupedVisits.summary().url).toEqual(groupedVisits.at(0).get('url'));
+      var properties = groupedVisits.toTemplate();
+      expect(properties.url).toEqual(groupedVisits.at(0).get('url'));
+    });
+
+    it('returns translated values', function() {
+      var properties = groupedVisits.toTemplate();
+      expect(properties.i18n_collapse_button).toBeDefined();
     });
   });
 

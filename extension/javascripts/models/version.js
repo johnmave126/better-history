@@ -4,8 +4,10 @@ Version = Backbone.Model.extend({
     this.set({suppress: suppress});
   },
 
-  presenter: function() {
-    return {visibility: (this.get('suppress') ? '' : 'show')};
+  toTemplate: function() {
+    return $.extend({
+      visibility: (this.get('suppress') ? '' : 'show')
+    }, i18n.version());
   },
 
   key: function() {

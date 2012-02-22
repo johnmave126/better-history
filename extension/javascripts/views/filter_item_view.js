@@ -1,6 +1,6 @@
 FilterItemView = Backbone.View.extend({
   className: 'filter_item_view selectable',
-  tagNase: 'ul',
+  templateId: 'filterItem',
 
   initialize: function() {
     this.model.on('count', this.count, this);
@@ -8,7 +8,7 @@ FilterItemView = Backbone.View.extend({
   },
 
   render: function() {
-    $(this.el).append(ich.filterItem(this.model.presenter()));
+    this.$el.html(this.template(this.model.toTemplate()));
     return this;
   },
 

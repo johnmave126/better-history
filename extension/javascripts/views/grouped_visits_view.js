@@ -1,5 +1,7 @@
 GroupedVisitsView = Backbone.View.extend({
   className: 'page_visit_view grouped_visits_view',
+  templateId: 'groupedVisits',
+  expandedClass: 'active',
 
   events: {
     'click .expand': 'toggle',
@@ -7,31 +9,31 @@ GroupedVisitsView = Backbone.View.extend({
   },
 
   render: function() {
-    var templateOptions = $.extend(this.collection.summary(), i18n.groupedVisits());
-    ich.groupedVisits(templateOptions).appendTo(this.el);
+    this.$el.append(this.template(this.collection.toTemplate())); 
 
-    var expandedVisits = ich.expandedVisits();
+    var self = this;
     $.each(this.collection.models, function(i, visit) {
       var pageVisitView = new PageVisitView({model: visit});
-      $(expandedVisits).append(pageVisitView.render().el);
+      $('.expanded', self.$el).append(pageVisitView.render().el);
     });
-    $(this.el).append(expandedVisits);
+
     return this;
   },
 
   toggle: function(ev) {
     ev.preventDefault();
-    var element = ev.target,
-        translation = i18n.groupedVisits();
 
-    if($(element).hasClass('active')) {
-      $(element).text(translation.i18n_expand_button);
-      $(element).parents('a').next().slideUp('fast');
+    if($(ev.target).hasClass(this.expandedClass)) {
+      $(ev.target)
+        .text(this.collection.toTemplate().i18n_expand_button)
+        .removeClass(this.expandedClass)
+        .parents('a').next().slideUp('fast');
     } else {
-      $(element).text(translation.i18n_collapse_button);
-      $(element).parents('a').next().slideDown('fast');
+      $(ev.target)
+        .text(this.collection.toTemplate().i18n_collapse_button)
+        .addClass(this.expandedClass)
+        .parents('a').next().slideDown('fast');
     }
-    $(element).toggleClass('active');
   },
 
   deleteClicked: function(ev) {
@@ -41,7 +43,7 @@ GroupedVisitsView = Backbone.View.extend({
   },
 
   remove: function() {
-    $(this.el).slideUp('fast', function() {
+    this.$el.slideUp('fast', function() {
       $(this).remove();
     });
   }

@@ -1,9 +1,10 @@
 $.fx.off = true;
 
-function insertFixtures(fixtures) {
-  loadFixtures(fixtures);
-  ich.refresh();
+BH = {
+  views: {},
+  models: {}
 }
+
 function loadChromeAPI(config) {
   chrome = {
     i18n: {
@@ -13,17 +14,19 @@ function loadChromeAPI(config) {
           today_link: 'Today',
           searching_title: 'Searching',
           and: 'and',
-          formal_date: 'formal date',
           ordinal_1: '1 ordinal',
           informal_date: 'informal date',
           default_time_format: '12',
-          number_of_visits: '1 visits',
+          number_of_visits: '$number_open$$number$$number_close$ visits',
           morning: 'AM',
           afternoon: 'afternoon PM',
           evening: 'evening PM',
           search_in_history: 'Search in history',
           visits_to_domain: 'Visits to domain', 
           twelve_hour_time_format: '$time$ $label$',
+          monday: 'Monday',
+          saturday: 'Saturday',
+          wednesday: 'Wednesday',
           thursday: 'Thursday',
           tuesday: 'Tuesday',
           october: 'October',
@@ -33,8 +36,15 @@ function loadChromeAPI(config) {
           sunday: 'Sunday',
           december: 'December',
           extended_formal_date: '$weekday$, $month$ $day$, $year$',
-          formal_date: '$month$ $day$, $year$'
-        };
+          formal_date: '$month$ $day$, $year$',
+          version_title: 'version title',
+          prompt_title: 'prompt title',
+          collapse_button: 'collapse',
+          expand_button: 'expand',
+          no_visits_found: 'Sorry, no visits found.',
+          confirm_delete_all_visits: 'Delete all visits from $formal_date$?',
+          search_time_frame: 'past few months'
+        }
 
         var result = lookup[key];
 
@@ -46,6 +56,9 @@ function loadChromeAPI(config) {
 
         return result;
       })
+    },
+    history: {
+      search: function() {} 
     },
     browserAction: {
       onClicked: {

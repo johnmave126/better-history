@@ -4,12 +4,16 @@ describe('Version', function() {
   var version;
 
   beforeEach(function() {
+    loadChromeAPI();
     version = new Version({version: '1.0'});
   });
 
-  describe('#presenter', function() {
-    it('returns an object for the template', function() {
-      expect(version.presenter()).toEqual({visibility: 'show'});
+  describe('#toTemplate', function() {
+    it('returns a merged object with model and i18n properties', function() {
+      expect(version.toTemplate()).toEqual({
+        visibility: 'show',
+        i18n_version_title: 'version title'
+      });
     });
   });
 

@@ -10,7 +10,6 @@ Router = Backbone.Router.extend({
   initialize: function() {
     var self = this;
     this.bind('route:filter', function(type, time) {
-      console.log('asdf');
       var url = 'filter/' + type;
       if(time) url += '/' + time;
       self.setLastRoute(url);
@@ -20,21 +19,20 @@ Router = Backbone.Router.extend({
   },
 
   settings: function(page) {
-    var settingsView = new SettingsView({model: settings});
-    $('.mainview', appView.el).html(settingsView.render().el);
+    var settingsView = new SettingsView({model: BH.models.settings});
+    $('.mainview', BH.views.appView.el).html(settingsView.render().el);
     if(page === 'credits') {
-      creditsView.open();
+      BH.views.creditsView.open();
     } else if(page === 'announcement') {
-      versionView.open();
+      BH.views.versionView.open();
     }
   },
 
   filter: function(type, time) {
-    console.log('yo')
     var filter = filters.getByHash(type),
         filterView = new FilterView({model: filter});
 
-    $('.mainview', appView.el).html(filterView.render().el);
+    $('.mainview', BH.views.appView.el).html(filterView.render().el);
 
     filterView.startTime = time;
     filter.fetch();
@@ -49,7 +47,7 @@ Router = Backbone.Router.extend({
     });
 
     var searchView = new SearchView({model: filter});
-    $('.mainview', appView.el).html(searchView.render().el);
+    $('.mainview', BH.views.appView.el).html(searchView.render().el);
 
     filter.fetch();
   },

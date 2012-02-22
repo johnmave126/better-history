@@ -1,11 +1,11 @@
 FilterView = Backbone.View.extend({
   className: 'filter_view',
+  templateId: 'filter',
 
   events: {
     'click .collapse_groupings': 'collapseGroupings',
     'click .expand_groupings': 'expandGroupings',
     'click .delete_all': 'clickedDeleteAll',
-    'change .time_grouping': 'changeTimeGrouping'
   },
 
   initialize: function() {
@@ -14,8 +14,7 @@ FilterView = Backbone.View.extend({
   },
 
   render: function(type) {
-    var templateValues = $.extend(this.model.presenter(), i18n.filter());
-    $(this.el).html(ich.filter(templateValues));
+    this.$el.html(this.template(this.model.toTemplate()));
     return this;
   },
 
@@ -34,7 +33,9 @@ FilterView = Backbone.View.extend({
     });
 
     if(this.collection.length === 0) {
-      $(contentElement).append(ich.noVisits(i18n.filter())).css({opacity:1});
+      $(contentElement)
+        .append(Mustache.render($('#noVisits').html(), i18n.filter()))
+        .css({opacity:1});
     } else {
       if(this.startTime) {
         var offset = $('[data-time="' + this.startTime + '"]').offset();
@@ -52,26 +53,15 @@ FilterView = Backbone.View.extend({
   },
 
   updateRoute: function(element) {
-    var time = $(element).attr('data-time'),
+    var time = $(element).data('time'),
         url = 'filter/' + this.model.get('hash') + '/' + time;
-    router.navigate(url);
-    router.setLastRoute(url);
-  },
-
-  changeTimeGrouping: function(ev) {
-    ev.preventDefault();
-    this.model.set({timeGrouping: parseInt($(ev.currentTarget).val(), 10)}, {silent: true});
-    this.model.fetch();
+    BH.router.navigate(url);
+    BH.router.setLastRoute(url);
   },
 
   clickedDeleteAll: function(ev) {
     ev.preventDefault();
-    this.promptView = new PromptView({
-      model: new Prompt({
-        content: chrome.i18n.getMessage('confirm_delete_all_visits', [this.model.get('formal_date')])
-      })
-    });
-    $('body').append(this.promptView.render().el);
+    this.promptView = CreatePrompt(chrome.i18n.getMessage('confirm_delete_all_visits', [this.model.get('formal_date')]));
     this.promptView.open();
     this.promptView.model.on('change', this.deleteAction, this);
   },

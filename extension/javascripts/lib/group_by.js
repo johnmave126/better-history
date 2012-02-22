@@ -1,7 +1,7 @@
 var GroupBy;
 (function() {
   function minute(minutes) {
-    interval = settings.timeGrouping();
+    interval = BH.models.settings.timeGrouping();
     minutes = Math.floor(minutes / interval) * interval;
     return (minutes === 0 ? '00' : minutes);
   }

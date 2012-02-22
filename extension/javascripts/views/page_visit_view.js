@@ -1,12 +1,13 @@
 PageVisitView = Backbone.View.extend({
   className: 'page_visit_view',
+  templateId: 'pageVisit',
 
   events: {
     'click .delete_visit': 'deleteClicked'
   },
 
   render: function() {
-    ich.pageVisit(this.model.presenter()).appendTo(this.el);
+    this.$el.html(this.template(this.model.toTemplate()));
     return this;
   },
 
@@ -15,29 +16,29 @@ PageVisitView = Backbone.View.extend({
     var self = this;
     this.model.destroy({
       success: function() {
-        var method = (self.isGroupedAndEmpty() ? 'removeGroup' : 'remove');
+        var method = (self._isGroupedAndEmpty() ? '_removeGroup' : '_remove');
         self[method]();
       }
     });
   },
 
-  remove: function() {
+  _remove: function() {
     $(this.el).slideUp('fast', function() {
       $(this).remove();
     });
   },
 
-  removeGroup: function() {
-    $(this.getGroup()).slideUp('fast', function() {
+  _removeGroup: function() {
+    $(this._getGroup()).slideUp('fast', function() {
       $(this).remove();
     });
   },
 
-  isGroupedAndEmpty: function() {
+  _isGroupedAndEmpty: function() {
     return ($(this.el).parents('.expanded').children().length === 1 ? true : false);
   },
 
-  getGroup: function() {
+  _getGroup: function() {
     return $(this.el).parents('.grouped_visits_view');
   }
 });

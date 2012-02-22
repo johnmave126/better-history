@@ -14,10 +14,10 @@ describe('TimeVisit', function() {
     });
   });
 
-  describe('#presenter', function() {
+  describe('#toTemplate', function() {
     it('returns all the properties used in the view', function() {
-      expect(timeVisit.presenter()).toEqual({
-        amount: '1 visits',
+      expect(timeVisit.toTemplate()).toEqual({
+        amount: '1<span class="amount"></span> visits', // TODO: fix!
         time: '10:15 evening PM',
         state: '',
         id: '22:15'

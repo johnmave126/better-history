@@ -3,5 +3,11 @@ Filters = Backbone.Collection.extend({
 
   getByHash: function(hash) {
     return this.at(this.pluck('hash').indexOf(hash));
+  },
+
+  fetchCounts: function() {
+    $(this.models).each(function() {
+      this.fetchCount();
+    });
   }
 });

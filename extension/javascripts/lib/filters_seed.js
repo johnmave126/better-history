@@ -1,4 +1,4 @@
-var defaultFilters = {
+var DefaultFilters = {
   fetch: function() {
     var today = DateRanger.borders(0),
         yesterday = DateRanger.borders(1),

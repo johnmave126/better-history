@@ -27,7 +27,7 @@ describe('GroupBy', function() {
   describe('.time', function() {
     beforeEach(function() {
       loadChromeAPI();
-      settings = new Settings();
+      BH.models.settings = new Settings();
     });
 
     it('stores the time in 24 hours, the date to the nearest time interval, and the page visits', function() {
