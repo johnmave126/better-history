@@ -47,7 +47,7 @@ TimeVisitView = Backbone.View.extend({
   updateCount: function() {
     if(this.collection.length >= 1) {
       $('.amount', this.el).html(chrome.i18n.getMessage('number_of_visits', [
-        this.collection.length,
+        this.collection.length.toString(),
         '<span class="amount">',
         '</a>'
       ])),

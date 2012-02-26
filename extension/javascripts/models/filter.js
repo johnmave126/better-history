@@ -30,7 +30,7 @@ Filter = Backbone.Model.extend({
         day = chrome.i18n.getMessage(this.date().getDate().toString()),
         year = this.date().getFullYear();
 
-    formal_date = chrome.i18n.getMessage("formal_date", [month, day, year]);
+    formal_date = chrome.i18n.getMessage("formal_date", [month, day, year.toString()]);
     this.set({formal_date: formal_date});
   },
 

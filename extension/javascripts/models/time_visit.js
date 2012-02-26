@@ -2,7 +2,7 @@ TimeVisit = Backbone.Model.extend({
   presenter: function() {
     return {
       amount: chrome.i18n.getMessage('number_of_visits', [
-        this.get('pageVisits').length,
+        this.get('pageVisits').length.toString(),
         '<span class="amount">',
         '</a>'
       ]),

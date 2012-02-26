@@ -76,8 +76,8 @@ Helpers = {
     return chrome.i18n.getMessage('extended_formal_date', [
       chrome.i18n.getMessage(DateRanger.numberToDay(date.getDay())),
       chrome.i18n.getMessage(DateRanger.numberToMonth(date.getMonth())),
-      date.getDate(),
-      date.getFullYear()
+      date.getDate().toString(),
+      date.getFullYear().toString()
     ]);
   }
 };
