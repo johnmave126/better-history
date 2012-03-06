@@ -24,5 +24,5 @@ $(function() {
   BH.views.appView.render();
 
   Backbone.history.start();
-  if(!location.hash) router.navigate(router.getLastRoute(), {trigger: true});
+  if(!location.hash) BH.router.navigate(BH.router.getLastRoute(), {trigger: true});
 });
