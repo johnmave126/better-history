@@ -2,21 +2,16 @@
   <div class="heading">
     <h2>{{{title}}}</h2>
     <span class="date">{{formal_date}}</span>
-    <ul class="controls">
-      <li class="control">
-        <a href="#" class="button collapse_groupings">{{i18n_collapse_button}}</a>
-      </li>
-      <li class="control">
-        <a href="#" class="button expand_groupings">{{i18n_expand_button}}</a>
-      </li>
-      <li class="control">
-        <a href="#" class="button delete_all">
-          <span class="delete_icon">
-            {{i18n_delete_all_visits_for_filter_button}}
-          </span>
-        </a>
-      </li>
-    </ul>
+    <input type="search" class="filter_visits" placeholder="Filter visits" />
+    <div class="controls">
+      <button class="collapse_groupings">{{i18n_collapse_button}}</button>
+      <button class="expand_groupings">{{i18n_expand_button}}</button>
+      <button class="delete_all">
+        <span class="delete_icon">
+          {{i18n_delete_all_visits_for_filter_button}}
+        </span>
+      </button>
+    </div>
   </div>
   <div class="content">
     <div class="spinner"></div>

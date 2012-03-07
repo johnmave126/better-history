@@ -5,6 +5,7 @@
     <link rel="stylesheet" type="text/css" href="styles/main.css"/>
     <link rel="stylesheet" type="text/css" href="styles/button.css"/>
     <link rel="stylesheet" type="text/css" href="styles/select.css"/>
+    <link rel="stylesheet" type="text/css" href="styles/checkbox.css"/>
     <link rel="stylesheet" type="text/css" href="styles/icon.css"/>
     <link rel="stylesheet" type="text/css" href="styles/app.css"/>
     <link rel="stylesheet" type="text/css" href="styles/filter.css"/>
@@ -124,21 +125,16 @@
       <div class="heading">
         <h2>{{{title}}}</h2>
         <span class="date">{{formal_date}}</span>
-        <ul class="controls">
-          <li class="control">
-            <a href="#" class="button collapse_groupings">{{i18n_collapse_button}}</a>
-          </li>
-          <li class="control">
-            <a href="#" class="button expand_groupings">{{i18n_expand_button}}</a>
-          </li>
-          <li class="control">
-            <a href="#" class="button delete_all">
-              <span class="delete_icon">
-                {{i18n_delete_all_visits_for_filter_button}}
-              </span>
-            </a>
-          </li>
-        </ul>
+        <input type="search" class="filter_visits" placeholder="Filter visits" />
+        <div class="controls">
+          <button class="collapse_groupings">{{i18n_collapse_button}}</button>
+          <button class="expand_groupings">{{i18n_expand_button}}</button>
+          <button class="delete_all">
+            <span class="delete_icon">
+              {{i18n_delete_all_visits_for_filter_button}}
+            </span>
+          </button>
+        </div>
       </div>
       <div class="content">
         <div class="spinner"></div>
@@ -181,12 +177,20 @@
 
     <script id="prompt" type="text/html">
       <div class="overlay">
-        <div class="modal">
-          <h1 class="title">{{i18n_prompt_title}}</h1>
-          <div class="content">{{{content}}}</div>
-          <div class="action">
-            <a href="#" class="button no">{{i18n_prompt_cancel_button}}</a>
-            <a href="#" class="button yes">{{i18n_prompt_delete_button}}</a>
+        <div class="page">
+          <div class="modal">
+            <h1 class="title">{{i18n_prompt_title}}</h1>
+            <div class="content-area">{{{content}}}</div>
+            <div class="action-wrapper">
+              <div class="action-area">
+                <div class="action-area-right">
+                  <div class="button-strip">
+                    <button class="no">{{i18n_prompt_cancel_button}}</button>
+                    <button class="yes">{{i18n_prompt_delete_button}}</button>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -256,10 +260,10 @@
             <h3 class="title">{{i18n_whats_new_section_title}}</h3>
             <div class="controls">
               <a href="#settings/announcement" class="modal_link release_announcement">{{i18n_view_release_announcement_link}}</a>
+              <a href="#settings/credits" class="modal_link credits">{{{i18n_credits_link}}}</a>
               <div class="note">
                 {{i18n_current_version_label}}: <span class="current_version"></span>
               </div>
-              <a href="#settings/credits" class="modal_link credits">{{{i18n_credits_link}}}</a>
             </div>
           </section>
           <section class="setting">
@@ -290,13 +294,10 @@
     </script>
 
     <script id="sidebar" type="text/html">
-      <input class="search" type="search" title="{{i18n_search_input_placeholder_text}}" placeholder="{{i18n_search_input_placeholder_text}}" tabindex="1">
       <ul class="filters"></ul>
       <div class="settings_wrapper selectable">
         <a href="#settings" class="settings_link">
-          <span class="settings_icon">
-            {{i18n_settings_link}}
-          </span>
+          {{i18n_settings_link}}
         </a>
       </div>
     </script>
@@ -308,6 +309,9 @@
           <span class="arrow arrow_right"></span>
           <span class="time">{{time}}</span>
           <span class="summary">{{{amount}}}</span>
+          <!--<button class="delete_interval delete_icon">-->
+            <!--<span class="delete_icon">Delete</span>-->
+          <!--</button>-->
         </h3>
         <div class="visits"></div>
       </div>

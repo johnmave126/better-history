@@ -2,28 +2,23 @@
   -webkit-box-align: stretch;
   margin: 0;
   position: absolute;
-  -webkit-padding-start: 216px;
+  -webkit-padding-start: 155px;
   right: 0;
   left: 0;
   top: 0;
   bottom: 0;
+  width: 600px;
   z-index: 1;
 }
 .navbar {
-  -webkit-border-end: 1px solid #c6c9ce;
-  background-image: -webkit-linear-gradient(rgba(234, 238, 243, 0.2), rgba(243, 238, 243, 1)),
-              -webkit-linear-gradient(left, rgba(234, 238, 243, 1), rgba(234, 238, 243, 1) 97%, rgba(211, 215, 219, 1));
-  background-repeat:repeat, repeat;
-  background-position:top left, top left;
   position: fixed;
   bottom: 0;
   left: 0;
   right: 0;
   top: 0;
-  width: 216px;
+  width: 155px;
   z-index: 2;
   display:none;
-  overflow:auto;
   height:100%;
 }
 .navbar .logo {

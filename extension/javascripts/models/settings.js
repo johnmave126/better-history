@@ -20,7 +20,6 @@ Settings = Backbone.Model.extend({
   sync: function(method, model, options) {
     if(method === 'create') {
       localStorage.settings = JSON.stringify(this);
-      options.success(this);
     } else if(method === 'read') {
       var parsedSettings = {};
       if(localStorage.settings) parsedSettings = JSON.parse(localStorage.settings);

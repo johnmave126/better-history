@@ -1,17 +1,14 @@
 body {
   direction: __MSG_@@bidi_dir__;
-  font-family: Helvetica, sans-serif;
+  font-family: 'Lucida Grande', sans-serif;
   margin: 0;
-  font-size:13px;
 }
-
-
 
 /* Reset
 ================================= */
 a {
-  color:#426DC9;
-  text-decoration:none;
+  color: #15C;
+  text-decoration: underline;
 }
 li { list-style-type:none; }
 dl { margin:0; }
@@ -20,27 +17,21 @@ dt, dd { margin:0; }
 /* Headings
 ================================= */
 h1 {
-  color: #53637D;
+  -webkit-margin-after: 1em;
+  -webkit-margin-before: 20px;
+  -webkit-margin-start: 23px;
+  color: #5C6166;
+  font-size: 18px;
   font-weight: normal;
-  font-size: 20px;
-  margin: 0;
-  padding: 13px 0 21px;
-  padding-__MSG_@@bidi_end_edge__: 24px;
-  font-size:200%;
-  text-align: end;
-  text-shadow: white 0 1px 2px;
 }
 h2 {
-  color: #53637d;
-  font-size: 200%;
-  font-weight: normal;
   margin: 0;
-  padding: 13px 0 5px;
-  text-shadow: white 0 1px 2px;
+  font-size: 18px;
+  font-weight: normal;
   display:inline-block;
   height:30px;
 }
-
+.ordinal { display: none; }
 
 /* Randoms
 ================================== */
@@ -51,25 +42,22 @@ h2 {
 .heading {
   background:#FFF;
   position:fixed;
-  width:100%;
   z-index:11;
-  margin:0;
-  margin-__MSG_@@bidi_start_edge__: 24px;
-  border-bottom: 1px solid #eee;
+  padding:20px 0 0;
 }
-a.modal_link {
-  padding: 1px 3px;
-  border-radius: 2px;
-  margin-__MSG_@@bidi_start_edge__:-3px;
-  box-shadow: 0px 0px 3px 1px #DDD;
-  border:1px solid #CCC;
-  background:#dee4f1;
-}
-a.modal_link:hover { background:#cedaf3; }
+.heading, .time_interval,
 .filter_view .content,
 .search_view .content,
 .settings_view .content {
-  padding:47px 0 100px;
+  width:738px;
+}
+a.modal_link {
+  padding: 1px 3px;
+}
+.filter_view .content,
+.search_view .content,
+.settings_view .content {
+  padding:97px 0 100px;
   position:relative;
   min-height:300px;
   overflow:hidden;
@@ -96,25 +84,29 @@ a.modal_link:hover { background:#cedaf3; }
 
 
 
+.heading input.filter_visits[type=search] {
+  float: right;
+  font-size: 75%;
+}
 .heading .controls {
-  display:inline-block;
+  border-top:1px solid #EEE;
+  border-bottom:1px solid #EEE;
   margin:0;
-  padding:0;
-  position:absolute;
+  padding:10px 0;
+  font-size: 75%;
   __MSG_@@bidi_end_edge__:260px;
-  top:10px;
 }
-.heading .controls .control {
-  display:inline;
+.heading .controls button {
+  display: inline-block;
 }
-.heading .controls .control a:focus {
+.heading .controls button:focus {
   outline:none;
 }
-.heading .controls .control a:focus {
+.heading .controls button:focus {
   background:#DDD;
 }
-.heading .controls .control:last-child {
-  margin-__MSG_@@bidi_start_edge__:20px;
+.heading .controls button.delete_all {
+  float: right;
 }
 .heading .delete_all {
   padding: 3px 0 3px;

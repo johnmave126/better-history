@@ -6,6 +6,7 @@
   position:relative;
   margin:5px 3px 0 0;
   margin-__MSG_@@bidi_start_edge__:30px;
+  font-size: 12px
 }
 .page_visit_view .delete_icon {
   display:none;
@@ -41,7 +42,7 @@
 
 .page_visit_view:hover > a > .link,
 .page_visit_view a:focus > .link {
-  background: #eaeef3;
+  background: #EEE;
   border-radius: 3px;
 }
 .page_visit_view > a:focus {
