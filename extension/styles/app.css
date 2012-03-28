@@ -10,6 +10,21 @@
   width: 600px;
   z-index: 1;
 }
+.mainview > * {
+  -webkit-margin-start: -20px;
+  -webkit-transition: margin 100ms, opacity 100ms;
+  opacity: 0;
+  z-index: 0;
+  position: absolute;
+  top: 0;
+}
+.mainview > .selected {
+  -webkit-margin-start: 0;
+  -webkit-transition: margin 200ms, opacity 200ms;
+  -webkit-transition-delay: 100ms;
+  opacity: 1;
+  z-index: 1;
+}
 .navbar {
   position: fixed;
   bottom: 0;
@@ -18,7 +33,6 @@
   top: 0;
   width: 155px;
   z-index: 2;
-  display:none;
   height:100%;
 }
 .navbar .logo {

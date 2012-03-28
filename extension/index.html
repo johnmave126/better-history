@@ -125,7 +125,7 @@
       <div class="heading">
         <h2>{{{title}}}</h2>
         <span class="date">{{formal_date}}</span>
-        <input type="search" class="filter_visits" placeholder="Filter visits" />
+        <input type="search" class="search" placeholder="{{i18n_search_input_placeholder_text}}" tabindex="1" />
         <div class="controls">
           <button class="collapse_groupings">{{i18n_collapse_button}}</button>
           <button class="expand_groupings">{{i18n_expand_button}}</button>
@@ -145,7 +145,7 @@
     </script>
 
     <script id="filterItem" type="text/html">
-      <a href="#filter/{{hash}}" data-cid="{{cid}}" class="{{quantity}}">{{{title}}}</a>
+      <a href="#filter/{{id}}" data-id="{{id}}" class="{{quantity}}">{{{title}}}</a>
     </script>
 
     <script id="groupedVisits" type="text/html">
@@ -153,7 +153,7 @@
         <div class="link">
           <dl class="description" style="background-image: url(chrome://favicon/{{url}})">
             <dt class="title">{{domain}}</dt>
-            <dd class="location"><span class="expand button small_button">{{i18n_expand_button}}</span></dd>
+            <dd class="location"><button class="expand button small_button">{{i18n_expand_button}}</button></dd>
           </dl>
           <span class="delete_icon delete_group" title="{{i18n_delete_grouped_visits}}"><span class="delete"></span></span>
         </div>

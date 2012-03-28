@@ -55,11 +55,6 @@ describe('Settings', function() {
         settings.sync('create', settings, {success: callback});
         expect(localStorage.settings).toEqual(JSON.stringify(settings));
       });
-
-      it('calls the success callback', function() {
-        settings.sync('create', settings, {success: callback});
-        expect(callback).toHaveBeenCalledWith(settings);
-      });
     });
 
     describe('when method id read', function() {

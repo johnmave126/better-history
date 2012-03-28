@@ -8,6 +8,7 @@ SearchView = Backbone.View.extend({
   },
 
   render: function(type) {
+    this.$el.attr('data-id', this.model.id);
     this.$el.append(this.template(this.model.toTemplate()));
     $('.spinner', this.el).spin();
     return this;
@@ -20,8 +21,7 @@ SearchView = Backbone.View.extend({
     $(contentElement).html('');
 
     if(this.collection.length === 0) {
-        $(contentElement)
-          .append(Mustache.render($('#noVisits').html(), i18n.search()))
+        $(contentElement).append(Mustache.render($('#noVisits').html(), i18n.search()));
     } else {
       var self = this;
       $.each(this.collection.models, function() {

@@ -5,8 +5,8 @@ Filter = Backbone.Model.extend({
   },
 
   initialize: function() {
-    if(this.get('hash') === undefined) {
-      this.set({hash: this.get('daysSinceToday') + '_days_ago'});
+    if(this.id === undefined) {
+      this.id = this.get('daysSinceToday') + '_days_ago';
     }
 
     var title;
@@ -21,7 +21,7 @@ Filter = Backbone.Model.extend({
           date = chrome.i18n.getMessage(this.date().getDate().toString()),
           ordinal = chrome.i18n.getMessage('ordinal_' + this.date().getDate());
 
-      title = chrome.i18n.getMessage('informal_date', [weekName, date, ordinal, '<span class="ordinal">', '</span>']);
+      title = chrome.i18n.getMessage('informal_date', [weekName, '', '', '<span class="ordinal">', '</span>', '<span class="date">', '</span>']);
     }
     this.set({title: title});
 
@@ -74,7 +74,7 @@ Filter = Backbone.Model.extend({
 
   toTemplate: function() {
     var properties = this.toJSON();
-    properties.cid = this.cid;
+    properties.id = this.id;
     return $.extend(properties, (this.searching() ? i18n.search() : i18n.filter()));
   },
 
@@ -93,7 +93,7 @@ Filter = Backbone.Model.extend({
   },
 
   searching: function() {
-    return this.get('hash') === 'search';
+    return this.id === 'search';
   },
 
   parse:function(data) {

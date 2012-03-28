@@ -1,28 +1,49 @@
 BH = {
-  router: new Router(),
-  models: {
-    settings: new Settings(),
-    version: new Version({version:'1.5.1'})
-  },
+  initialize: function() {
+    this.router = new Router();
+    this.models = {
+      settings: new Settings(),
+      version: new Version({version:'1.5.1'}),
+      searchFilter: new Filter({
+        id: 'search',
+        endTime: new Date().getTime(),
+        startTime: DateRanger.borders(60).start.getTime()
+      })
+    };
+    this.collections = {
+      filters: DefaultFilters.fetch()
+    };
+    this.views = {
+      sidebarView: new SidebarView({collection: this.collections.filters}),
+      searchView: new SearchView({model: this.models.searchFilter}),
+      settingsView: new SettingsView({model: this.models.settings}),
+      versionView: new VersionView({model: this.models.version}),
+      creditsView: new CreditsView(),
+      appView: new AppView({
+        el: $('.app'),
+        model: BH.models.version,
+        collection: DefaultFilters.fetch()
+      }),
+      filterViews: {}
+    };
+
+    var self = this;
+    this.collections.filters.each(function(filter) {
+      self.views.filterViews[filter.id] = new FilterView({model: filter});
+    });
+
+    this.models.settings.fetch();
+  }
 };
 
-BH.models.settings.fetch();
+BH.initialize();
 
 $(function() {
-  BH.views = {
-    versionView: new VersionView({
-      model: BH.models.version
-    }),
-    creditsView: new CreditsView(),
-    appView: new AppView({
-      el: $('.app'),
-      model: BH.models.version,
-      collection: DefaultFilters.fetch()
-    })
-  };
-
   BH.views.appView.render();
 
   Backbone.history.start();
-  if(!location.hash) BH.router.navigate(BH.router.getLastRoute(), {trigger: true});
+
+  if(!location.hash) {
+    BH.router.navigate(BH.router.getLastRoute(), {trigger: true});
+  }
 });

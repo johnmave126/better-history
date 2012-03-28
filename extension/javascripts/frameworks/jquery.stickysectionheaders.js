@@ -19,6 +19,7 @@
                 placeholder, headerOrigin, headerHeight, containerHeight, containerTop, containerSize, pageOffset, containerBottom;
 
             $(window).scroll(function (ev) {
+              if($(container).parents('.filter_view').hasClass('selected')) {
                 containerTop = container.offset().top;
                 headerOrigin = header.offset().top;
                 headerHeight = header.outerHeight();
@@ -55,6 +56,7 @@
                       header.css('top', (containerBottom - headerHeight) - pageOffset + settings.padding + 'px');
                   }
                 }
+              }
             });
         });
     }

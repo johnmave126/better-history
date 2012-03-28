@@ -50,7 +50,6 @@ i18n = {
 
   sidebar: function() {
     return i18n.fetch([
-      'search_input_placeholder_text',
       'settings_link'
     ]);
   },
@@ -60,7 +59,8 @@ i18n = {
       'collapse_button',
       'expand_button',
       'delete_all_visits_for_filter_button',
-      'no_visits_found'
+      'no_visits_found',
+      'search_input_placeholder_text',
     ]);
   },
 
@@ -154,7 +154,8 @@ i18n = {
 
   search: function() {
     return i18n.fetch([
-      'search_time_frame'
+      'search_time_frame',
+      'search_input_placeholder_text',
     ]);
   }
 };

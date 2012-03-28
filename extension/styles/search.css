@@ -1,1 +1,4 @@
 .search_view .time { display:block; }
+.search_view .content {
+  padding-top: 60px;
+}

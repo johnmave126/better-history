@@ -6,6 +6,7 @@ FilterView = Backbone.View.extend({
     'click .collapse_groupings': 'collapseGroupings',
     'click .expand_groupings': 'expandGroupings',
     'click .delete_all': 'clickedDeleteAll',
+    'keyup .search': 'searchTyped'
   },
 
   initialize: function() {
@@ -14,6 +15,7 @@ FilterView = Backbone.View.extend({
   },
 
   render: function(type) {
+    this.$el.attr('data-id', this.model.id);
     this.$el.html(this.template(this.model.toTemplate()));
     return this;
   },
@@ -25,10 +27,10 @@ FilterView = Backbone.View.extend({
     $(contentElement).css({opacity:0}).html('');
 
     var self = this;
-    $.each(this.collection.models, function(i) {
+    this.collection.each(function(model) {
       $(contentElement).append(new TimeVisitView({
-        model: this,
-        collection: this.get('pageVisits')
+        model: model,
+        collection: model.get('pageVisits')
       }).render().el);
     });
 
@@ -54,7 +56,7 @@ FilterView = Backbone.View.extend({
 
   updateRoute: function(element) {
     var time = $(element).data('time'),
-        url = 'filter/' + this.model.get('hash') + '/' + time;
+        url = 'filter/' + this.model.id + '/' + time;
     BH.router.navigate(url);
     BH.router.setLastRoute(url);
   },
@@ -82,17 +84,24 @@ FilterView = Backbone.View.extend({
 
   collapseGroupings: function(ev) {
     ev.preventDefault();
-    $.each(this.collection.models, function() {
-      this.trigger('collapse');
+    this.collection.each(function(model) {
+      model.trigger('collapse');
     });
     $(document).scrollTop(0);
   },
 
   expandGroupings: function(ev) {
     ev.preventDefault();
-    $.each(this.collection.models, function() {
-      this.trigger('expand');
+    this.collection.each(function(model) {
+      model.trigger('expand');
     });
     $(document).scrollTop(0);
+  },
+
+  searchTyped: function(ev) {
+    var term = $('.search', this.$el).val();
+    if(ev.keyCode === 13 && term !== '') {
+      BH.router.navigate('search/' + term, true);
+    }
   }
 });

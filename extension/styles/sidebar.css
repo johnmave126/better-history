@@ -3,19 +3,19 @@
   list-style-type: none;
   clear:both;
 }
-.sidebar_view .search {
-  margin-__MSG_@@bidi_end_edge__: 24px;
-  width:175px;
-}
 .sidebar_view .filters {
   padding:0;
   margin:5px 0;
 }
+.sidebar_view .date {
+  font-size: 11px;
+  float: right;
+  margin-right: 20px;
+}
 .sidebar_view .selectable a {
   -webkit-border-start: 6px solid transparent;
   -webkit-padding-start: 18px;
-  color:
-  #999;
+  color: #666;
   cursor: pointer;
   line-height: 17px;
   margin: 5px 0;
@@ -30,26 +30,31 @@
   margin-bottom: 20px;
 }
 .sidebar_view .selectable .ordinal {
-  display: none;
   font-size:11px;
+}
+.sidebar_view .date {
+  display:none;
 }
 .sidebar_view .selectable:focus a,
 .sidebar_view .selectable.selected a {
   -webkit-border-start-color: rgb(78, 87, 100);
-  color: #464E5A;
+  color: #333;
 }
 .sidebar_view .selectable:hover a,
 .sidebar_view .selectable a:focus {
-  color: #777;
+  color: #333;
   opacity:1;
 }
 .sidebar_view .selectable.selected a,
 .sidebar_view .selectable.selected a.empty {
   -webkit-border-start-color: rgb(78, 87, 100);
-  color: #464E5A;
+  color: #333;
+  font-weight: bold;
   opacity:1;
 }
-.sidebar_view .selectable a.empty { color:#999; }
+.sidebar_view .selectable a.empty {
+  color: #BBB;
+}
 .sidebar_view .settings_wrapper {
   margin-top:30px;
 }

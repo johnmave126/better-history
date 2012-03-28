@@ -2,6 +2,7 @@ body {
   direction: __MSG_@@bidi_dir__;
   font-family: 'Lucida Grande', sans-serif;
   margin: 0;
+  color: #303942;
 }
 
 /* Reset
@@ -31,7 +32,6 @@ h2 {
   display:inline-block;
   height:30px;
 }
-.ordinal { display: none; }
 
 /* Randoms
 ================================== */
@@ -67,7 +67,6 @@ a.modal_link {
 }
 .no_visits {
   color:#AAA;
-  padding:24px;
   font-size:20px;
 }
 .stuck {
@@ -84,9 +83,10 @@ a.modal_link {
 
 
 
-.heading input.filter_visits[type=search] {
+.heading input.search[type=search] {
   float: right;
   font-size: 75%;
+  width: 180px;
 }
 .heading .controls {
   border-top:1px solid #EEE;

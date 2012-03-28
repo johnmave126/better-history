@@ -3,11 +3,11 @@ describe('FilterView', function() {
 
   beforeEach(function() {
     loadChromeAPI();
-    loadFixtures('filter.html', 'time_visit.html'); 
+    loadFixtures('filter.html', 'time_visit.html');
 
     BH.models.settings = new Settings();
     filter = new Filter({
-      title: 'Today', 
+      title: 'Today',
       startTime: new Date('December 1, 2010'),
       hash: 'today',
       history: new TimeVisits([
@@ -74,7 +74,7 @@ describe('FilterView', function() {
       filterView.renderHistory();
       expect($.fn.stickyElements).toHaveBeenCalledWith({
         stickyClass: 'time_interval',
-        padding: 48
+        padding: 96
       }, jasmine.any(Function));
     });
 
@@ -160,10 +160,10 @@ describe('FilterView', function() {
         callback();
       });
     });
-      
+
     describe('when passed prompt action is false', function() {
       beforeEach(function() {
-        spyOn(prompt, 'get').andReturn(false); 
+        spyOn(prompt, 'get').andReturn(false);
       });
 
       it('does not destroy any history', function() {
@@ -262,5 +262,8 @@ describe('FilterView', function() {
       filterView.expandGroupings(ev);
       expect($(document).scrollTop()).toEqual(0);
     });
+  });
+
+  describe('#filterVisits', function() {
   });
 });

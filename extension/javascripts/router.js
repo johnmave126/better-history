@@ -2,16 +2,18 @@ Router = Backbone.Router.extend({
   routes: {
     'settings': 'settings',
     'settings/:page': 'settings',
-    'filter/:type': 'filter',
-    'filter/:type/:time': 'filter',
+    'filter/:id': 'filter',
+    'filter/:id/:time': 'filter',
     'search/*query': 'search'
   },
 
   initialize: function() {
     var self = this;
-    this.bind('route:filter', function(type, time) {
-      var url = 'filter/' + type;
-      if(time) url += '/' + time;
+    this.bind('route:filter', function(id, time) {
+      var url = 'filter/' + id;
+      if(time) {
+        url += '/' + time;
+      }
       self.setLastRoute(url);
     });
     this.bind('route:settings', function(page) { self.setLastRoute('settings'); });
@@ -19,8 +21,8 @@ Router = Backbone.Router.extend({
   },
 
   settings: function(page) {
-    var settingsView = new SettingsView({model: BH.models.settings});
-    $('.mainview', BH.views.appView.el).html(settingsView.render().el);
+    $('.mainview > *', BH.views.appView.el).removeClass('selected');
+    $('.mainview .settings_view').addClass('selected');
     if(page === 'credits') {
       BH.views.creditsView.open();
     } else if(page === 'announcement') {
@@ -28,28 +30,23 @@ Router = Backbone.Router.extend({
     }
   },
 
-  filter: function(type, time) {
-    var filter = filters.getByHash(type),
-        filterView = new FilterView({model: filter});
+  filter: function(id, time) {
+    var filter = BH.collections.filters.get(id);
+    $('.mainview > *', BH.views.appView.el).removeClass('selected');
+    $('.mainview [data-id=' + filter.id + ']', BH.views.appView.el).addClass('selected');
 
-    $('.mainview', BH.views.appView.el).html(filterView.render().el);
-
-    filterView.startTime = time;
+    BH.views.filterViews[filter.id].startTime = time;
     filter.fetch();
   },
 
   search: function(query) {
-    var filter = new Filter({
-      text: query,
-      hash: 'search',
-      endTime: new Date().getTime(),
-      startTime: DateRanger.borders(60).start.getTime()
-    });
+    BH.models.searchFilter.set({text: query}, {silent: true});
+    $('h2', BH.views.searchView.$el).text(BH.models.searchFilter.buildSearchTitle(BH.models.searchFilter.get('text')));
+    $('.content', BH.views.searchView.$el).html('');
+    $('.mainview > *', BH.views.appView.el).removeClass('selected');
+    $('.mainview [data-id=' + BH.models.searchFilter.id + ']', BH.views.appView.el).addClass('selected');
 
-    var searchView = new SearchView({model: filter});
-    $('.mainview', BH.views.appView.el).html(searchView.render().el);
-
-    filter.fetch();
+    BH.models.searchFilter.fetch();
   },
 
   setLastRoute: function(route) {

@@ -7,6 +7,7 @@
   font-size: 13px;
   position:relative;
   cursor:pointer;
+  color: #000;
 }
 .time_visit_view .time_interval .time {
   font-size: 1.1em;
@@ -55,4 +56,10 @@
   float:right;
   padding-left: 20px;
   font-size: 12px;
+}
+.time_visit_view button.small_button {
+  font-size: 10px;
+  padding: 3px 5px;
+  line-height: 5px;
+  height: 18px;
 }

@@ -5,8 +5,7 @@ SidebarView = Backbone.View.extend({
 
   events: {
     'click .settings_link': 'settingsClicked',
-    'click .filter a': 'filterClicked',
-    'keyup .search': 'searchTyped'
+    'click .filter a': 'filterClicked'
   },
 
   initialize: function() {
@@ -24,7 +23,7 @@ SidebarView = Backbone.View.extend({
     this.$el.html(this.template(i18n.sidebar()));
 
     var self = this;
-    $.each(this.collection.models, function(i, filter) {
+    this.collection.map(function(filter) {
       var filterItemView = new FilterItemView({model: filter});
       $('.filters', self.el).append(filterItemView.render().el);
     });
@@ -41,9 +40,9 @@ SidebarView = Backbone.View.extend({
     this._selectElement($('.settings_link', this.$el));
   },
 
-  filterRouted: function(type) {
-    var filter = filters.getByHash(type);
-    this._selectElement($('a[data-cid=' + filter.cid + ']', this.el));
+  filterRouted: function(id) {
+    var filter = filters.get(id);
+    this._selectElement($('a[data-id=' + filter.id + ']', this.el));
   },
 
   settingsClicked: function(ev) {
@@ -52,14 +51,6 @@ SidebarView = Backbone.View.extend({
 
   filterClicked: function(ev) {
     this._selectElement($(ev.currentTarget, this.$el));
-  },
-
-  searchTyped: function(ev) {
-    var term = $('.search', this.$el).val();
-    if(ev.keyCode === 13 && term !== '') {
-      this._selectElement();
-      BH.router.navigate('search/' + term, true);
-    }
   },
 
   _selectElement: function(element) {

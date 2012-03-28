@@ -17,6 +17,8 @@ FilterItemView = Backbone.View.extend({
   },
 
   count: function(count) {
-    if(count.count === 0) $('a', this.el).addClass('empty');
+    if(count.count === 0) {
+      $('a', this.el).addClass('empty');
+    }
   }
 });
