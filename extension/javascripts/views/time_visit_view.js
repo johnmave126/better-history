@@ -4,7 +4,8 @@ TimeVisitView = Backbone.View.extend({
   collapsedClass: 'collapsed',
 
   events: {
-    'click .time_interval': 'toggleStateClicked'
+    'click .time_interval': 'toggleStateClicked',
+    'click .delete_interval': 'deleteTimeVisit'
   },
 
   initialize: function() {
@@ -40,7 +41,7 @@ TimeVisitView = Backbone.View.extend({
         this.collection.length.toString(),
         '<span class="amount">',
         '</a>'
-      ])),
+      ]));
       $('.summary', this.el).css({color: '#000'}).animate({color:'#999'}, 'slow');
     } else {
       this._remove();
@@ -72,6 +73,11 @@ TimeVisitView = Backbone.View.extend({
         self._toggleState();
       });
     }
+  },
+
+  deleteTimeVisit: function(ev) {
+    this.collection.destroyAll();
+    this._remove();
   },
 
   _remove: function() {

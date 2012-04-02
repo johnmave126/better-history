@@ -17,13 +17,15 @@
   z-index: 0;
   position: absolute;
   top: 0;
+  display:none;
 }
 .mainview > .selected {
   -webkit-margin-start: 0;
   -webkit-transition: margin 200ms, opacity 200ms;
   -webkit-transition-delay: 100ms;
-  opacity: 1;
   z-index: 1;
+  opacity: 1;
+  display:block;
 }
 .navbar {
   position: fixed;

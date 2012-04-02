@@ -23,8 +23,13 @@ SidebarView = Backbone.View.extend({
     this.$el.html(this.template(i18n.sidebar()));
 
     var self = this;
-    this.collection.map(function(filter) {
+    this.collection.map(function(filter, i) {
       var filterItemView = new FilterItemView({model: filter});
+      if(i === 0) {
+        $('.filters', self.el).append('<div class="break">This week</div>');
+      } else if(i === 7) {
+        $('.filters', self.el).append('<div class="break">Last week</div>');
+      }
       $('.filters', self.el).append(filterItemView.render().el);
     });
 

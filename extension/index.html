@@ -294,7 +294,7 @@
     </script>
 
     <script id="sidebar" type="text/html">
-      <ul class="filters"></ul>
+      <div class="filters"></div>
       <div class="settings_wrapper selectable">
         <a href="#settings" class="settings_link">
           {{i18n_settings_link}}
@@ -309,9 +309,9 @@
           <span class="arrow arrow_right"></span>
           <span class="time">{{time}}</span>
           <span class="summary">{{{amount}}}</span>
-          <!--<button class="delete_interval delete_icon">-->
-            <!--<span class="delete_icon">Delete</span>-->
-          <!--</button>-->
+          <button class="delete_interval delete_icon">
+            <span class="delete_icon">Delete</span>
+          </button>
         </h3>
         <div class="visits"></div>
       </div>
