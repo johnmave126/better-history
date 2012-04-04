@@ -11,9 +11,6 @@ AppView = Backbone.View.extend({
     });
 
     $('.navbar', this.$el).append(BH.views.sidebarView.render().el);
-    this.$el.append(BH.views.versionView.render().el);
-    this.$el.append(BH.views.creditsView.render().el);
-
     return this;
   }
 });

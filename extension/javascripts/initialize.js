@@ -17,8 +17,6 @@ BH = {
       sidebarView: new SidebarView({collection: this.collections.filters}),
       searchView: new SearchView({model: this.models.searchFilter}),
       settingsView: new SettingsView({model: this.models.settings}),
-      versionView: new VersionView({model: this.models.version}),
-      creditsView: new CreditsView(),
       appView: new AppView({
         el: $('.app'),
         model: BH.models.version,

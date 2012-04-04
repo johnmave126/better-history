@@ -119,3 +119,20 @@ a.modal_link {
   display: inline-block;
   padding-__MSG_@@bidi_start_edge__: 20px;
 }
+
+
+/* Overlays */
+
+#overlay {
+  z-index: 5;
+}
+
+#overlay .page:not(.showing) {
+  display: none;
+}
+#overlay h1 {
+  font-size: 14px;
+}
+#overlay {
+  font-size: 12px;
+}
