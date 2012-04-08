@@ -17,6 +17,8 @@ FilterView = Backbone.View.extend({
   render: function(type) {
     this.$el.attr('data-id', this.model.id);
     this.$el.html(this.template(this.model.toTemplate()));
+    var contentElement = $(this.el).children('.content');
+    $(contentElement).css({opacity:0}).html('');
     return this;
   },
 

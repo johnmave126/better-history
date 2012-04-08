@@ -20,8 +20,21 @@ Backbone.Modal = Backbone.View.extend({
     });
   },
   close:function() {
+    var self = this;
     $('.overlay .modal', this.$el).fadeOut('fast', function() {
-      $('.overlay').fadeOut('fast');
+      $('.overlay').fadeOut('fast', function() {
+        self.remove();
+      });
     });
   }
+});
+
+
+_.extend(Backbone.History.prototype, {
+  loadUrl: _.wrap(Backbone.History.prototype.loadUrl, function(func) {
+    var argsCalledWith = Array.prototype.slice.call(arguments, 1);
+    BH.router.trigger('route:before', argsCalledWith);
+    arguments[0].apply(this, argsCalledWith);
+    BH.router.trigger('route:after', argsCalledWith);
+  })
 });

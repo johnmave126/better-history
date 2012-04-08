@@ -8,12 +8,15 @@ SettingsView = Backbone.View.extend({
     'change .time_format': 'changedTimeFormat',
     'click .domain_grouping': 'clickedDomainGrouping',
     'click .search_by_domain': 'clickedSearchByDomain',
-    'click .search_by_selection': 'clickedSearchBySelection'
+    'click .search_by_selection': 'clickedSearchBySelection',
+    'click .credits': 'clickedCredits',
+    'click .release_announcement': 'clickedReleaseAnnouncement'
   },
 
   initialize: function() {
     Helpers.pageTitle(chrome.i18n.getMessage('settings_title'));
-    this.model.off('change').on('change', this.saveSettings, this);
+    this.model.off('change');
+    this.model.on('change', this.saveSettings, this);
   },
 
   saveSettings: function() {
@@ -75,5 +78,19 @@ SettingsView = Backbone.View.extend({
   clickedClearHistory: function(ev) {
     ev.preventDefault();
     chrome.tabs.create({url:'chrome://settings/clearBrowserData'});
+  },
+
+  clickedCredits: function(ev) {
+    ev.preventDefault();
+    var creditsView = new CreditsView();
+    $('body').append(creditsView.render().el);
+    creditsView.open();
+  },
+
+  clickedReleaseAnnouncement: function(ev) {
+    ev.preventDefault();
+    var versionView = new VersionView({model: BH.models.version});
+    $('body').append(versionView.render().el);
+    versionView.open();
   }
 });
