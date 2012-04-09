@@ -15,36 +15,34 @@ Router = Backbone.Router.extend({
         $('.mainview > *').removeClass(self.selectedClass);
       })
       .bind('route:after', function(urlFragment) {
-        self.setLastRoute(urlFragment);
+        if(urlFragment.length !== 0) {
+          BH.models.state.set({'route': urlFragment[0]});
+        }
       });
   },
 
   settings: function() {
-    $('.mainview .settings_view').addClass('selected');
+    var view = BH.views.settingsView;
+
+    view.$el.addClass(this.selectedClass);
   },
 
   filter: function(id, time) {
-    var filter = BH.collections.filters.get(id);
-    $('.mainview [data-id=' + filter.id + ']', BH.views.ppView.el).addClass('selected');
+    var model = BH.collections.filters.get(id),
+        view = BH.views.filterViews[model.id];
 
-    BH.views.filterViews[filter.id].startTime = time;
-    filter.fetch();
+    view.$el.addClass(this.selectedClass);
+    view.startTime = time;
+
+    model.fetch();
   },
 
   search: function(query) {
-    BH.models.searchFilter.set({text: query}, {silent: true});
-    $('h2', BH.views.searchView.$el).text(BH.models.searchFilter.buildSearchTitle(BH.models.searchFilter.get('text')));
-    $('.content', BH.views.searchView.$el).html('');
-    $('.mainview [data-id=' + BH.models.searchFilter.id + ']', BH.views.appView.el).addClass('selected');
+    var model = BH.models.searchFilter,
+        view = BH.views.searchView;
 
-    BH.models.searchFilter.fetch();
-  },
+    view.$el.addClass(this.selectedClass);
 
-  setLastRoute: function(route) {
-    localStorage.lastRoute = route;
-  },
-
-  getLastRoute: function() {
-    return localStorage.lastRoute || 'filter/0_days_ago';
+    model.set({text: query}).fetch();
   }
 });

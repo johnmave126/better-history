@@ -60,7 +60,7 @@ FilterView = Backbone.View.extend({
     var time = $(element).data('time'),
         url = 'filter/' + this.model.id + '/' + time;
     BH.router.navigate(url);
-    BH.router.setLastRoute(url);
+    BH.models.state.set({route: url});
   },
 
   clickedDeleteAll: function(ev) {

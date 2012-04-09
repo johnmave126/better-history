@@ -4,6 +4,7 @@ BH = {
     this.models = {
       settings: new Settings(),
       version: new Version({version:'1.5.1'}),
+      state: new State(),
       searchFilter: new Filter({
         id: 'search',
         endTime: new Date().getTime(),
@@ -31,6 +32,7 @@ BH = {
     });
 
     this.models.settings.fetch();
+    this.models.state.fetch();
   }
 };
 
@@ -42,6 +44,6 @@ $(function() {
   Backbone.history.start();
 
   if(!location.hash) {
-    BH.router.navigate(BH.router.getLastRoute(), {trigger: true});
+    BH.router.navigate(BH.models.state.get('route'), {trigger: true});
   }
 });

@@ -4,7 +4,8 @@ SearchView = Backbone.View.extend({
 
   initialize: function() {
     Helpers.pageTitle(this.model.get('title'));
-    this.model.on('change', this.renderPageVisits, this);
+    this.model.on('change:history', this.renderPageVisits, this);
+    this.model.on('change:text', this.updateTitle, this);
   },
 
   render: function(type) {
@@ -31,5 +32,10 @@ SearchView = Backbone.View.extend({
     }
 
     Helpers.tabIndex($(contentElement).find('a'));
+  },
+
+  updateTitle: function() {
+    $('h2', this.$el).text(this.model.buildSearchTitle(this.model.get('text')));
+    $('.content', this.$el).html('');
   }
 });

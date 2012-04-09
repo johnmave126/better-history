@@ -1,4 +1,6 @@
 Settings = Backbone.Model.extend({
+  storeName: 'settings',
+
   defaults: function() {
     return {
       timeGrouping: 15,
@@ -17,19 +19,7 @@ Settings = Backbone.Model.extend({
     return parseInt(this.get('timeFormat'), 10);
   },
 
-  sync: function(method, model, options) {
-    if(method === 'create') {
-      localStorage.settings = JSON.stringify(this);
-    } else if(method === 'read') {
-      var parsedSettings = {};
-      if(localStorage.settings) {
-        parsedSettings = JSON.parse(localStorage.settings);
-      }
-      options.success(parsedSettings);
-    }
-  },
-
   parse: function(data) {
-    this.set(data);
+    this.set(JSON.parse(data));
   }
 });
