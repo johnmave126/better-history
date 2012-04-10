@@ -95,6 +95,7 @@ a.modal_link {
   margin:0;
   padding:10px 0;
   font-size: 75%;
+  height: 24px;
   __MSG_@@bidi_end_edge__:260px;
 }
 .heading .controls button {

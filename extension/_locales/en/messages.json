@@ -834,6 +834,24 @@
     "message": "and",
     "description": "The word and"
   },
+  "delete_all_visits_for_search_button": {
+    "message": "Delete...",
+    "description": "Text for delete all visits from search button"
+  },
+  "confirm_delete_all_search_results": {
+    "message": "Delete all search results?",
+    "description": "Confirmation text to delete all search results"
+  },
+  "number_of_search_results": {
+    "message": "Found $number$ results",
+    "description": "number of search results found",
+    "placeholders": {
+      "number": {
+        "content": "$1",
+        "example": "10"
+      }
+    }
+  },
 
   "search_in_history": {
     "message": "Search in history",

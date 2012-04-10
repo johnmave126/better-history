@@ -135,8 +135,8 @@ i18n = {
       'version_title',
       'version_important_note',
       'close_button',
-      'version_whats_new',
-    ])
+      'version_whats_new'
+    ]);
     properties[i18n.scopeKey('version_description')] = chrome.i18n.getMessage('version_description', [
       '<a href="#settings/credits">',
       '</a>'
@@ -156,6 +156,7 @@ i18n = {
     return i18n.fetch([
       'search_time_frame',
       'search_input_placeholder_text',
+      'delete_all_visits_for_search_button'
     ]);
   }
 };
