@@ -60,13 +60,8 @@ SearchView = Backbone.View.extend({
 
   deleteAction: function(prompt) {
     if(prompt.get('action')) {
-      if(this.collection) {
-        var self = this;
-        this.model.destroyHistory(function() {
-          self.model.set({history: new TimeVisits()});
-          self.promptView.close();
-        });
-      }
+      this.collection.destroyAll();
+      this.promptView.close();
     } else {
       this.promptView.close();
     }
