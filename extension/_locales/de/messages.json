@@ -58,7 +58,7 @@
     }
   },
  "informal_date": {
-    "message": "$week_day$, $day$$ordinal$",
+    "message": "$week_day$ $date_open$$day$$ordinal$$date_close$",
     "description": "Date labels in sidebar",
     "placeholders": {
       "week_day": {
@@ -80,6 +80,14 @@
       "ordinal_close": {
         "content": "$5",
         "example": "close tag for ordinal"
+      },
+      "date_open": {
+        "content": "$6",
+        "example": "open tag for date"
+      },
+      "date_close": {
+        "content": "$7",
+        "example": "close tag for date"
       }
     }
   },
@@ -96,6 +104,14 @@
         "example": "AM/PM"
       }
     }
+  },
+  "this_week": {
+    "message": "Diese Woche",
+    "description": "this week"
+  },
+  "last_week": {
+    "message": "Letzte Woche",
+    "description": "last week"
   },
 
   "morning": {
@@ -612,6 +628,14 @@
       }
     }
   },
+  "delete_time_interval_button": {
+    "message": "Löschen",
+    "description": "delete button label"
+  },
+  "delete_time_interval_button_tooltip": {
+    "message": "Löschen",
+    "description": "delete button tooltip"
+  },
 
   "prompt_cancel_button": {
     "message": "Abbrechen",
@@ -764,43 +788,27 @@
   },
 
   "version_title": {
-    "message": "Hola, 您好, Olá, bonjour, hallo!",
+    "message": "Ein ganz neues Aussehen mit den meist geforderten Features!",
     "description": "Title of the version modal"
   },
   "version_description": {
-    "message": "Dies ist eine große, sehr große Veröffentlichung. Mit Hilfe von einer Menge von super tollen Usern, ist Better History jetzt in 19 Sprachen erhältlich! Schau mal in die $link_open$Kredits Sektion$link_close$ um den coolen Übersetzern danke zu sagen!",
-    "description": "Version description",
-    "placeholders": {
-      "link_open": {
-        "content": "$1"
-      },
-      "link_close": {
-        "content": "$2"
-      }
-    }
+    "message": "",
+    "description": "Version description"
   },
   "version_important_note": {
     "message": "Wichtige Anmerkung",
     "description": "Heading for an important note"
   },
   "version_note": {
-    "message": "Ich bekomme so viel Feedback, dass ich unglücklicherweise nicht mehr auf alle Antworten kann. Für kurzes Feedback, Vorschläge und Fehler einfach zu $link_open$@Better_History$link_close$ tweeten! Außerdem folge $link_open$@Better_History$link_close$ für die neusten News.",
-    "descriotion": "Feedback and support note",
-    "placeholders": {
-      "link_open": {
-        "content": "$1"
-      },
-      "link_close": {
-        "content": "$2"
-      }
-    }
+    "message": "",
+    "descriotion": "Feedback and support note"
   },
   "version_whats_new": {
     "message": "Wichtige Nachricht",
     "description": "Heading for what's new in version"
   },
   "version_items": {
-    "message": "$open$Übersetzt in 19 Sprachen$close$ $open$Option für das deaktivieren von Rechts-Klick Optionen hinzugefügt$close$ $open$Better History Icon für die Toolbar hinzugefügt$close$ $open$Kredits Sektion in den Optionen hinzugefügt$close$ $open$XSS Sicherheitslücke gefixt$close$",
+    "message": "$open$Brand neues Interface um mit dem zukünftige Design von Chrome mit zu halten$close$ $open$Alle Suchergebnisse löschen$close$ $open$Neue Sortierung des Menüs an der Seite$close$ $open$Alle Besuche von einer Zeit Gruppierung löschen$close$ $open$Geschwindigkeit wurde drastisch erhöht$close$",
     "description": "Release bulletpoints",
     "placeholders": {
       "open": {
@@ -823,6 +831,24 @@
   "and": {
     "message": "und",
     "description": "The word and"
+  },
+  "delete_all_visits_for_search_button": {
+    "message": "Löschen...",
+    "description": "Text for delete all visits from search button"
+  },
+  "confirm_delete_all_search_results": {
+    "message": "Sollen alle Suchergebnisse gelöscht werden?",
+    "description": "Confirmation text to delete all search results"
+  },
+  "number_of_search_results": {
+    "message": "Ich habe $number$ ergebnisse gefunden",
+    "description": "number of search results found",
+    "placeholders": {
+      "number": {
+        "content": "$1",
+        "example": "10"
+      }
+    }
   },
 
   "search_in_history": {
