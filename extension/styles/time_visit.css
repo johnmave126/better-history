@@ -1,7 +1,8 @@
 .time_visit_view .time_interval {
   z-index:10;
   margin:0;
-  padding:10px 0 10px 10px;
+  padding:10px;
+  padding-__MSG_@@bidi_start_edge:0;
   color:#555;
   font-weight:normal;
   font-size: 13px;
@@ -54,7 +55,7 @@
 .time_visit_view .collapsed .arrow_down { display:none; }
 .time_visit_view .collapsed .arrow_right { display:inline-block; }
 .time_visit_view .delete_icon {
-  float:right;
+  float: __MSG_@@bidi_end_edge__;
   font-size: 12px;
 }
 .time_visit_view button.small_button {
@@ -64,12 +65,12 @@
   height: 18px;
 }
 .time_visit_view button.delete_interval {
-  float: right;
+  float: __MSG_@@bidi_end_edge__;
   height: 23px;
   padding: 1px 5px;
   margin: -2px 0;
 }
 .time_visit_view .delete_interval .delete_icon {
   float: none;
-  padding-left: 20px;
+  padding-__MSG_@@bidi_start_edge__: 20px;
 }

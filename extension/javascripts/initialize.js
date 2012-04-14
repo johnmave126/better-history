@@ -3,7 +3,7 @@ BH = {
     this.router = new Router();
     this.models = {
       settings: new Settings(),
-      version: new Version({version:'1.5.1'}),
+      version: new Version({version:'1.6.0'}),
       state: new State(),
       searchFilter: new Filter({
         id: 'search',
@@ -41,6 +41,11 @@ BH.initialize();
 $(function() {
   BH.views.appView.render();
 
+  if(BH.models.version.get('suppress') === false) {
+    var versionView = new VersionView({model: BH.models.version});
+    $('body').append(versionView.render().el);
+    versionView.open();
+  }
   Backbone.history.start();
 
   if(!location.hash) {

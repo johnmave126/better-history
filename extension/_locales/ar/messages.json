@@ -58,7 +58,7 @@
     }
   },
   "informal_date": {
-    "message": "$week_day$, $day$",
+    "message": "$week_day$ $date_open$$day$$date_close$",
     "description": "Date labels in sidebar",
     "placeholders": {
       "week_day": {
@@ -80,6 +80,14 @@
       "ordinal_close": {
         "content": "$5",
         "example": "close tag for ordinal"
+      },
+      "date_open": {
+        "content": "$6",
+        "example": "open tag for date"
+      },
+      "date_close": {
+        "content": "$7",
+        "example": "close tag for date"
       }
     }
   },
@@ -96,6 +104,14 @@
         "example": "AM/PM"
       }
     }
+  },
+  "this_week": {
+    "message": "هذا الأسبوع",
+    "description": "this week"
+  },
+  "last_week": {
+    "message": "الأسبوع القادم",
+    "description": "last week"
   },
 
   "morning": {
@@ -612,6 +628,14 @@
       }
     }
   },
+  "delete_time_interval_button": {
+    "message": "حذف",
+    "description": "delete button label"
+  },
+  "delete_time_interval_button_tooltip": {
+    "message": "حذف",
+    "description": "delete button tooltip"
+  },
 
   "prompt_cancel_button": {
     "message": "إلغاء ",
@@ -764,43 +788,27 @@
   },
 
   "version_title": {
-    "message": "Hola, 您好, Olá, bonjour, أهلاً",
+    "message": "واجهة جديدة كليا مع الميزات الأكثر طلبا!",
     "description": "Title of the version modal"
   },
   "version_description": {
-    "message": ".هذا إطلاق كبير جداً. بمساعدة مجموعة من المستخدمين الرائعين، سجل تاريخ أفضل متوفر الآن ب 19 لغة. راجع قسم الإعتمادات المخصص لشكر هؤلاء المترجمين",
-    "description": "Version description",
-    "placeholders": {
-      "link_open": {
-        "content": "$1"
-      },
-      "link_close": {
-        "content": "$2"
-      }
-    }
+    "message": "",
+    "description": "Version description"
   },
   "version_important_note": {
     "message": "ملاحظة هامة",
     "description": "Heading for an important note"
   },
   "version_note": {
-    "message": " تأتينا ردود فعل كثيرة، للأسف لا يمكننا الرد عليها جميعا. لردود فعل سريعة والاقتراحات والمشاكل يرجى ارسال تغريدة إلى $link_open$@Better_History$link_close$.  تابع $link_open$@Better_History$link_close$ لآخر الاخبار.",
-    "descriotion": "Feedback and support note",
-    "placeholders": {
-      "link_open": {
-        "content": "$1"
-      },
-      "link_close": {
-        "content": "$2"
-      }
-    }
+    "message": "",
+    "descriotion": "Feedback and support note"
   },
   "version_whats_new": {
     "message": "ما الجديد",
     "description": "Heading for what's new in version"
   },
   "version_items": {
-    "message": "$open$هنا 19 تمت الترجمة إلى$close$ $open$إضافة خيارات في الإعدادات لتعطيل خيارات الضغطة اليمنى$close$ $open$إضافة أيقونة لعرض سجل تاريخ أفضل في شريط الأدوات$close$ $open$إضافة قسم الإعتمادات في الإعدادات$close$ $open$XSS إصلاح ضعف $close$",
+    "message": "$open$واجهة جديدة كليا لتتناسب مع تصميم كروم في المستقبل$close$ $open$حذف جميع نتائج البحث$close$ $open$تنظيم جديد للملاحة الجانبية$close$ $open$حذف جميع الزيارات المجموعة بالوقت$close$ $open$تحسينات كبيرة من ناحية السرعة$close$",
     "description": "Release bulletpoints",
     "placeholders": {
       "open": {
@@ -825,6 +833,24 @@
   "and": {
     "message": "و",
     "description": "The word and"
+  },
+  "delete_all_visits_for_search_button": {
+    "message": "حذف...",
+    "description": "Text for delete all visits from search button"
+  },
+  "confirm_delete_all_search_results": {
+    "message": "حذف جميع نتائج البحث؟",
+    "description": "Confirmation text to delete all search results"
+  },
+  "number_of_search_results": {
+    "message": "نتائج $number$ تم العثور على",
+    "description": "number of search results found",
+    "placeholders": {
+      "number": {
+        "content": "$1",
+        "example": "10"
+      }
+    }
   },
 
   "search_in_history": {

@@ -26,9 +26,9 @@ SidebarView = Backbone.View.extend({
     this.collection.map(function(filter, i) {
       var filterItemView = new FilterItemView({model: filter});
       if(i === 0) {
-        $('.filters', self.el).append('<div class="break">This week</div>');
+        $('.filters', self.el).append('<div class="break">' + chrome.i18n.getMessage('this_week') + '</div>');
       } else if(i === 7) {
-        $('.filters', self.el).append('<div class="break">Last week</div>');
+        $('.filters', self.el).append('<div class="break">' + chrome.i18n.getMessage('last_week') + '</div>');
       }
       $('.filters', self.el).append(filterItemView.render().el);
     });

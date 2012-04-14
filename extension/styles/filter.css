@@ -17,3 +17,6 @@
   top:10px;
   right:20pc;
 }
+.filter_view .heading h2 .date {
+  display: none;
+}

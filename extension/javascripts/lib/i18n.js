@@ -71,7 +71,10 @@ i18n = {
   },
 
   timeVisit: function() {
-    return {};
+    return i18n.fetch([
+      'delete_time_interval_button',
+      'delete_time_interval_button_tooltip'
+    ]);
   },
 
   groupedVisits: function() {

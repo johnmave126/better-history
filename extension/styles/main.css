@@ -85,7 +85,7 @@ a.modal_link {
 
 
 .heading input.search[type=search] {
-  float: right;
+  float: __MSG_@@bidi_end_edge__;
   font-size: 75%;
   width: 180px;
 }
@@ -108,7 +108,7 @@ a.modal_link {
   background:#DDD;
 }
 .heading .controls button.delete_all {
-  float: right;
+  float: __MSG_@@bidi_end_edge__;
 }
 .heading .delete_all {
   padding: 3px 0 3px;
@@ -136,4 +136,11 @@ a.modal_link {
 }
 #overlay {
   font-size: 12px;
+}
+.version_view .page {
+  width:500px;
+}
+#overlay li {
+  list-style-type: disc;
+  padding-bottom:5px;
 }
