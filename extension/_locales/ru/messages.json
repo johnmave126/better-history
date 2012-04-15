@@ -58,7 +58,7 @@
     }
   },
   "informal_date": {
-    "message": "$week_day$, $day$$ordinal_open$$ordinal$$ordinal_close$",
+    "message": "$week_day$ $date_open$$day$$ordinal_open$$ordinal$$ordinal_close$$date_close$",
     "description": "Date labels in sidebar",
     "placeholders": {
       "week_day": {
@@ -80,6 +80,14 @@
       "ordinal_close": {
         "content": "$5",
         "example": "close tag for ordinal"
+      },
+      "date_open": {
+        "content": "$6",
+        "example": "open tag for date"
+      },
+      "date_close": {
+        "content": "$7",
+        "example": "close tag for date"
       }
     }
   },
@@ -96,6 +104,14 @@
         "example": "AM/PM"
       }
     }
+  },
+  "this_week": {
+    "message": "Текущая неделя",
+    "description": "this week"
+  },
+  "last_week": {
+    "message": "Следующая неделя",
+    "description": "last week"
   },
 
   "morning": {
@@ -612,6 +628,14 @@
       }
     }
   },
+  "delete_time_interval_button": {
+    "message": "Удалить",
+    "description": "delete button label"
+  },
+  "delete_time_interval_button_tooltip": {
+    "message": "Удалить",
+    "description": "delete button tooltip"
+  },
 
   "prompt_cancel_button": {
     "message": "Отмена",
@@ -764,43 +788,27 @@
   },
 
   "version_title": {
-    "message": "Hola, 您好, Olá, bonjour, Привет!",
+    "message": "Совершенно новый взгляд на наиболее востребованные функции!",
     "description": "Title of the version modal"
   },
   "version_description": {
-    "message": "Это очень большое обновление. При поддержке группы потрясающих людей расширение 'Продвинутая история' теперь доступно на 19 языках! Просмотрите $link_open$Благодарности$link_close$, чтобы сказать 'Спасибо!' этим прекрасным переводчикам!",
-    "description": "Version description",
-    "placeholders": {
-      "link_open": {
-        "content": "$1"
-      },
-      "link_close": {
-        "content": "$2"
-      }
-    }
+    "message": "",
+    "description": "Version description"
   },
   "version_important_note": {
     "message": "Важное примечание",
     "description": "Heading for an important note"
   },
   "version_note": {
-    "message": "Я получаю настолько много сообщений, что, к сожалению, не могу ответить на все. Для быстрой обратной связи, предложений или чтобы доложить об ошибке, просто напишите в Твиттер $link_open$@Better_History!$link_close$ Подписывайтесь на $link_open$@Better_History$link_close$, чтобы следить за последними новостями!",
-    "descriotion": "Feedback and support note",
-    "placeholders": {
-      "link_open": {
-        "content": "$1"
-      },
-      "link_close": {
-        "content": "$2"
-      }
-    }
+    "message": "",
+    "descriotion": "Feedback and support note"
   },
   "version_whats_new": {
     "message": "Что нового в этой версии:",
     "description": "Heading for what's new in version"
   },
   "version_items": {
-    "message": "$open$Расширение переведено на 19 языков$close$ $open$В настройках добавлена возможность отключить опции контекстного меню$close$ $open$Добавлена иконка 'Продвинутой истории' на панель расширений$close$ $open$В настройках добавлен пункт 'Благодарности'$close$ $open$Исправлена XSS-уязвимость$close$",
+    "message": "$open$Новый интерфейс в соответствии с дизайном будущего Хрома$close$ $open$Удалить все результаты поиска$close$ $open$Новый принцип навигации по элементам интерфейса$close$ $open$Удаление всех посещений, группированных по времени$close$ $open$Увеличение быстродействия$close$",
     "description": "Release bulletpoints",
     "placeholders": {
       "open": {
@@ -825,6 +833,24 @@
   "and": {
     "message": "и",
     "description": "The word and"
+  },
+  "delete_all_visits_for_search_button": {
+    "message": "Удалить...",
+    "description": "Text for delete all visits from search button"
+  },
+  "confirm_delete_all_search_results": {
+    "message": "Удалить все результаты поиска?",
+    "description": "Confirmation text to delete all search results"
+  },
+  "number_of_search_results": {
+    "message": "Найдено $number$ совпадений",
+    "description": "number of search results found",
+    "placeholders": {
+      "number": {
+        "content": "$1",
+        "example": "10"
+      }
+    }
   },
 
   "search_in_history": {
