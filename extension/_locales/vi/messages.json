@@ -1,19 +1,19 @@
 {
   "manifest_name": {
-    "message": "Better History", 
+    "message": "Better History",
     "description": "Manifest name"
   },
   "manifest_browser_action_title": {
-    "message": "Duyệt lược sử", 
+    "message": "Duyệt lược sử",
     "description": "Manifest browser action title"
   },
   "manifest_description": {
-    "message": "Một giao diện tốt hơn cho lược sử duyệt web của bạn. Tìm kiếm tốt hơn, giao diện sắc xảo hơn, và các bộ lọc hữu hiệu hơn - cho phần lược sử.", 
+    "message": "Một giao diện tốt hơn cho lược sử duyệt web của bạn. Tìm kiếm tốt hơn, giao diện sắc xảo hơn, và các bộ lọc hữu hiệu hơn - cho phần lược sử.",
     "description": "Manifest description"
   },
 
   "history_title": {
-    "message": "Lược Sử", 
+    "message": "Lược Sử",
     "description": "Extension title"
   },
 
@@ -58,7 +58,7 @@
     }
   },
   "informal_date": {
-    "message": "$week_day$, $day$$ordinal_open$$ordinal$$ordinal_close$",
+    "message": "$week_day$ $date_open$$day$$ordinal_open$$ordinal$$ordinal_close$$date_close$",
     "description": "Date labels in sidebar",
     "placeholders": {
       "week_day": {
@@ -80,6 +80,14 @@
       "ordinal_close": {
         "content": "$5",
         "example": "close tag for ordinal"
+      },
+      "date_open": {
+        "content": "$6",
+        "example": "open tag for date"
+      },
+      "date_close": {
+        "content": "$7",
+        "example": "close tag for date"
       }
     }
   },
@@ -97,6 +105,14 @@
       }
     }
   },
+  "this_week": {
+    "message": "Tuần này",
+    "description": "this week"
+  },
+  "last_week": {
+    "message": "Tuần tới",
+    "description": "last week"
+  },
 
   "morning": {
     "message": "sáng",
@@ -112,23 +128,23 @@
   },
 
   "settings_title": {
-    "message": "Thiết lập", 
+    "message": "Thiết lập",
     "description": "Settings title for Settings page"
   },
   "clearing_history_section_title": {
-    "message": "Xóa lược sử", 
+    "message": "Xóa lược sử",
     "description": "Section heading in Settings"
   },
   "clear_history_button": {
-    "message": "Xóa lược sử...", 
+    "message": "Xóa lược sử...",
     "description": "Button text for clear history button in Settings"
   },
   "visit_grouping_section_title": {
-    "message": "Nhóm lượt xem", 
+    "message": "Nhóm lượt xem",
     "description": "Section heading in Settings"
   },
   "group_visits_by_label": {
-    "message": "Nhóm lượt xem mỗi", 
+    "message": "Nhóm lượt xem mỗi",
     "description": "Label for select box to set the time grouping interval for visits"
   },
   "60_minutes_option": {
@@ -144,7 +160,7 @@
     "description": "Time amount"
   },
   "time_format_label": {
-    "message": "Hiển thị thời gian", 
+    "message": "Hiển thị thời gian",
     "description": "Label for select box to set the time format (12 or 24 hours)"
   },
   "12_hours_option": {
@@ -156,31 +172,31 @@
     "description": "24 hour time format, example: 14:00"
   },
   "group_visits_by_domain_label": {
-    "message": "Nhóm lượt xem theo tên miền", 
+    "message": "Nhóm lượt xem theo tên miền",
     "description": "Label for check box to group visits by domain"
   },
   "right_click_options_section_title": {
-    "message": "Tùy chọn cho chuột phải", 
+    "message": "Tùy chọn cho chuột phải",
     "description": "Section heading in Settings"
   },
   "search_by_text_selection_label": {
-    "message": "Tìm kiếm bằng cách chọn văn bản", 
+    "message": "Tìm kiếm bằng cách chọn văn bản",
     "description": "Label for check box to enable right click option"
   },
   "search_by_domain_label": {
-    "message": "Tìm kiếm bằng tên miền", 
+    "message": "Tìm kiếm bằng tên miền",
     "description": "Label for check box to enable right click option"
   },
   "Whats_new_section_title": {
-    "message": "Chức năng mới", 
+    "message": "Chức năng mới",
     "description": "Section heading in Settings"
   },
   "view_release_announcement_link": {
-    "message": "Xem thông báo cho phiên bản này", 
+    "message": "Xem thông báo cho phiên bản này",
     "description": "Link text to view the release announcement"
   },
   "current_version_label": {
-    "message": "Phiên bản hiện thời", 
+    "message": "Phiên bản hiện thời",
     "description": "label for the current version"
   },
   "credits_link": {
@@ -198,11 +214,11 @@
     }
   },
   "feedback_section_title": {
-    "message": "Phản hồi", 
+    "message": "Phản hồi",
     "description": "Section heading in Settings"
   },
   "suggestions_bugs_comments": {
-    "message": "Bạn muốn góp ý, phát hiện lỗi, hoặc bình luận? Hãy gửi tweet về $link_open$@Better_History$link_close$", 
+    "message": "Bạn muốn góp ý, phát hiện lỗi, hoặc bình luận? Hãy gửi tweet về $link_open$@Better_History$link_close$",
     "description": "Link text to give feedback",
     "placeholders": {
       "link_open": {
@@ -214,11 +230,11 @@
     }
   },
   "spread_the_word_section_title": {
-    "message": "Loan tin", 
+    "message": "Loan tin",
     "description": "Section heading in Settings"
   },
   "leave_a_review": {
-    "message": "Viết một bài bình luận", 
+    "message": "Viết một bài bình luận",
     "description": "Link text to leave a review"
   },
   "default_time_format": {
@@ -227,23 +243,23 @@
   },
 
   "search_input_placeholder_text": {
-    "message": "Tìm tên, địa chỉ, hoặc ngày", 
+    "message": "Tìm tên, địa chỉ, hoặc ngày",
     "description": "Placeholder text in the search input box"
   },
   "settings_link": {
-    "message": "Thiếp lập", 
+    "message": "Thiếp lập",
     "description": "Text for the link to Settings"
   },
   "today_link": {
-    "message": "Hôm nay", 
+    "message": "Hôm nay",
     "description": "Link for today"
   },
   "yesterday_link": {
-    "message": "Hôm qua", 
+    "message": "Hôm qua",
     "description": "Link for yesterday"
   },
   "monday": {
-    "message": "Thứ hai", 
+    "message": "Thứ hai",
     "description": "The day of the week"
   },
   "tuesday": {
@@ -271,11 +287,11 @@
     "description": "The day of the week"
   },
   "1": {
-    "message": "ngày 1", 
+    "message": "ngày 1",
     "description": "the number"
   },
   "ordinal_1": {
-    "message": "", 
+    "message": "",
     "description": "the ordinal for 1"
   },
   "2": {
@@ -283,7 +299,7 @@
     "description": "the number"
   },
   "ordinal_2": {
-    "message": "", 
+    "message": "",
     "description": "the ordinal for 2"
   },
   "3": {
@@ -291,7 +307,7 @@
     "description": "the number"
   },
   "ordinal_3": {
-    "message": "", 
+    "message": "",
     "description": "the ordinal for 3"
   },
   "4": {
@@ -299,7 +315,7 @@
     "description": "the number"
   },
   "ordinal_4": {
-    "message": "", 
+    "message": "",
     "description": "the ordinal for 4"
   },
   "5": {
@@ -520,31 +536,31 @@
   },
 
   "collapse_button": {
-    "message": "Thu gọn", 
+    "message": "Thu gọn",
     "description": "Text for collapse button"
   },
   "expand_button": {
-    "message": "Mở rộng", 
+    "message": "Mở rộng",
     "description": "Text for expand button"
   },
   "delete_all_visits_for_filter_button": {
-    "message": "Xóa...", 
+    "message": "Xóa...",
     "description": "Text for delete all visits for a day filter button"
   },
   "no_visits_found": {
-    "message": "Rất tiếc, không có lượt xem nào được tìm thấy.", 
+    "message": "Rất tiếc, không có lượt xem nào được tìm thấy.",
     "description": "Text for no visits found message"
   },
   "january": {
-    "message": "tháng 1", 
+    "message": "tháng 1",
     "description": "The month"
   },
   "february": {
-    "message": "tháng 2", 
+    "message": "tháng 2",
     "description": "The month"
   },
   "march": {
-    "message": "tháng 3", 
+    "message": "tháng 3",
     "description": "The month"
   },
   "april": {
@@ -584,7 +600,7 @@
     "description": "The month"
   },
   "confirm_delete_all_visits": {
-    "message": "Xóa toàn bộ lượt xem trong $formal_date$?", 
+    "message": "Xóa toàn bộ lượt xem trong $formal_date$?",
     "description": "Confirmation text to delete all visits from a specific date",
     "placeholders": {
       "formal_date": {
@@ -595,7 +611,7 @@
   },
 
   "number_of_visits": {
-    "message": "$number_open$$number$$number_close$ lượt xem", 
+    "message": "$number_open$$number$$number_close$ lượt xem",
     "description": "Label to a number representing a number of visits",
     "placeholders": {
       "number": {
@@ -612,26 +628,34 @@
       }
     }
   },
+  "delete_time_interval_button": {
+    "message": "Xóa",
+    "description": "delete button label"
+  },
+  "delete_time_interval_button_tooltip": {
+    "message": "Xóa",
+    "description": "delete button tooltip"
+  },
 
   "prompt_cancel_button": {
-    "message": "Không", 
+    "message": "Không",
     "description": "Button to close modal"
   },
   "prompt_delete_button": {
-    "message": "Xóa", 
+    "message": "Xóa",
     "description": "Button to delete history"
   },
   "prompt_title": {
-    "message": "Xác nhận", 
+    "message": "Xác nhận",
     "description": "Title of prompt"
   },
 
   "credits_title": {
-    "message": "Better History Công trạng", 
+    "message": "Better History Công trạng",
     "description": "Title for credits modal"
   },
   "developed_by": {
-    "message": "Viết mã và phát triển bởi $link_open$$name$$link_close$", 
+    "message": "Viết mã và phát triển bởi $link_open$$name$$link_close$",
     "description": "Developer label",
     "placeholders": {
       "link_open": {
@@ -649,99 +673,99 @@
     }
   },
   "translators_heading": {
-    "message": "Các thông dịch viên", 
+    "message": "Các thông dịch viên",
     "description": "Heading for translators"
   },
   "spanish": {
-    "message": "Tiếng Tây Ban Nha", 
+    "message": "Tiếng Tây Ban Nha",
     "description": "The language"
   },
   "russian": {
-    "message": "Tiếng Nga", 
+    "message": "Tiếng Nga",
     "description": "The language"
   },
   "portuguese": {
-    "message": "Tiếng Bồ Đào Nha", 
+    "message": "Tiếng Bồ Đào Nha",
     "description": "The language"
   },
   "italian": {
-    "message": "Tiếng Ý", 
+    "message": "Tiếng Ý",
     "description": "The language"
   },
   "french": {
-    "message": "Tiếng Pháp", 
+    "message": "Tiếng Pháp",
     "description": "The language"
   },
   "swedish": {
-    "message": "Tiếng Thụy Điển", 
+    "message": "Tiếng Thụy Điển",
     "description": "The language"
   },
   "chinese_simplified": {
-    "message": "Tiếng Trung Quốc (Giản Lược)", 
+    "message": "Tiếng Trung Quốc (Giản Lược)",
     "description": "The language"
   },
   "german": {
-    "message": "Tiếng Đức", 
+    "message": "Tiếng Đức",
     "description": "The language"
   },
   "polish": {
-    "message": "Tiếng Ba Lan", 
+    "message": "Tiếng Ba Lan",
     "description": "The language"
   },
   "hungarian": {
-    "message": "Tiếng Hung-ga-ri", 
+    "message": "Tiếng Hung-ga-ri",
     "description": "The language"
   },
   "arabic": {
-    "message": "Tiếng Ả Rập", 
+    "message": "Tiếng Ả Rập",
     "description": "The language"
   },
   "slovak": {
-    "message": "Tiếng Xơ-lô-vác", 
+    "message": "Tiếng Xơ-lô-vác",
     "description": "The language"
   },
   "turkish": {
-    "message": "Tiếng Thổ Nhĩ Kỳ", 
+    "message": "Tiếng Thổ Nhĩ Kỳ",
     "description": "The language"
   },
   "latvian": {
-    "message": "Tiếng Lát-vi-a", 
+    "message": "Tiếng Lát-vi-a",
     "description": "The language"
   },
   "dutch": {
-    "message": "Tiếng Hà Lan", 
+    "message": "Tiếng Hà Lan",
     "description": "The language"
   },
   "czech": {
-    "message": "Tiếng Séc", 
+    "message": "Tiếng Séc",
     "description": "The language"
   },
   "japanese": {
-    "message": "Tiếng Nhật", 
+    "message": "Tiếng Nhật",
     "description": "The language"
   },
   "vietnamese": {
-    "message": "Tiếng Việt", 
+    "message": "Tiếng Việt",
     "description": "The language"
   },
   "romanian": {
-    "message": "Tiếng Ru-ma-ni", 
+    "message": "Tiếng Ru-ma-ni",
     "description": "The language"
   },
   "hindi": {
-    "message": "Tiếng Hin-đi", 
+    "message": "Tiếng Hin-đi",
     "description": "The language"
   },
   "catalonian": {
-    "message": "Tiếng Ca-ta-lô-nha", 
+    "message": "Tiếng Ca-ta-lô-nha",
     "description": "The language"
   },
   "translation_help_heading": {
-    "message": "Không có ngôn ngữ của bạn?", 
+    "message": "Không có ngôn ngữ của bạn?",
     "description": "Heading to recruit translators"
   },
   "translation_instructions": {
-    "message": "Bạn nói được tiếng Anh và muốn dịch Better History qua ngôn ngữ khác? Tuyệt vời! Chỉ cần gửi email về $link_open$$email$$link_close$.", 
+    "message": "Bạn nói được tiếng Anh và muốn dịch Better History qua ngôn ngữ khác? Tuyệt vời! Chỉ cần gửi email về $link_open$$email$$link_close$.",
     "description": "Instructions on how to help translate",
     "placeholders": {
       "email": {
@@ -764,43 +788,27 @@
   },
 
   "version_title": {
-    "message": "Xin chào, hola, 您好, Olá, bonjour, hello!", 
+    "message": "Một giao diện hoàn toàn mới với những chức năng được yêu cầu nhiều nhất!",
     "description": "Title of the version modal"
   },
   "version_description": {
-    "message": "Đây là một bản phát hành rất, rất lớn. Cùng với sự giúp đỡ từ nhiều người sử dụng rất tuyệt hảo, Better History bây giờ đã có 19 ngôn ngữ! Xin hãy vào mục $link_open$Công trạng$link_close$ để nói lời cảm tạ đến những thông dịch viên tài giỏi này!", 
-    "description": "Version description",
-    "placeholders": {
-      "link_open": {
-        "content": "$1"
-      },
-      "link_close": {
-        "content": "$2"
-      }
-    }
+    "message": "",
+    "description": "Version description"
   },
   "version_important_note": {
-    "message": "Ghi chú quan trọng", 
+    "message": "Ghi chú quan trọng",
     "description": "Heading for an important note"
   },
   "version_note": {
-    "message": "Thật không may rằng tôi nhận được quá nhiều phản hồi nên tôi không thể trả lời những phản hồi đó được nữa. Để gửi lời phản hồi ngắn, góp ý, và phát hiện lỗi, hãy gửi tweet về $link_open$@Better_History$link_close$! Xin hãy theo cùng một tweeter $link_open$@Better_History$link_close$ để đọc tin mới nhất!", 
-    "descriotion": "Feedback and support note",
-    "placeholders": {
-      "link_open": {
-        "content": "$1"
-      },
-      "link_close": {
-        "content": "$2"
-      }
-    }
+    "message": "",
+    "descriotion": "Feedback and support note"
   },
   "version_whats_new": {
-    "message": "Có gì mới", 
+    "message": "Có gì mới",
     "description": "Heading for what's new in version"
   },
   "version_items": {
-    "message": "$open$Được dịch qua 19 thứ tiếng$close$ $open$Thêm tùy chọn trong phần thiết lập để vô hiệu các chức năng cho chuột phải$close$ $open$Thêm biểu tượng để hiện Better History trên thanh công cụ$close$ $open$Thêm mục Công trạng trong trang thiết lập$close$ $open$Xửa lỗ hổng XSS$close$", 
+    "message": "$open$Giao diện hoàn toàn mới phù hợp với thiết kế của Chrome trong tương lai$close$ $open$Xóa toàn bộ các kết quả tìm kiếm$close$ $open$Thanh duyệt dọc được sắp xếp lại$close$ $open$Xóa toàn bộ các lượt xem trong một nhóm theo thời gian$close$ $open$Nhiều cải thiện cho tốc độ$close$",
     "description": "Release bulletpoints",
     "placeholders": {
       "open": {
@@ -815,16 +823,34 @@
   },
 
   "search_time_frame": {
-    "message": "Trong các tháng trước đây", 
+    "message": "Trong các tháng trước đây",
     "description": "Time frame relating to Search"
   },
   "searching_title": {
-    "message": "Đang tìm", 
+    "message": "Đang tìm",
     "description": "Searching title"
   },
   "and": {
-    "message": "và", 
+    "message": "và",
     "description": "The word and"
+  },
+  "delete_all_visits_for_search_button": {
+    "message": "Xóa...",
+    "description": "Text for delete all visits from search button"
+  },
+  "confirm_delete_all_search_results": {
+    "message": "Xóa toàn bộ kết quả tìm kiếm?",
+    "description": "Confirmation text to delete all search results"
+  },
+  "number_of_search_results": {
+    "message": "Tìm thấy $number$ kết quả",
+    "description": "number of search results found",
+    "placeholders": {
+      "number": {
+        "content": "$1",
+        "example": "10"
+      }
+    }
   },
 
   "search_in_history": {
