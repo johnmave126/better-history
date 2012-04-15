@@ -58,7 +58,7 @@
     }
   },
   "informal_date": {
-    "message": "$week_day$, $day$$ordinal$",
+    "message": "$week_day$ $date_open$$day$$ordinal$$date_close$",
     "description": "Date labels in sidebar",
     "placeholders": {
       "week_day": {
@@ -80,6 +80,14 @@
       "ordinal_close": {
         "content": "$5",
         "example": "close tag for ordinal"
+      },
+      "date_open": {
+        "content": "$6",
+        "example": "open tag for date"
+      },
+      "date_close": {
+        "content": "$7",
+        "example": "close tag for date"
       }
     }
   },
@@ -96,6 +104,14 @@
         "example": "AM/PM"
       }
     }
+  },
+  "this_week": {
+    "message": "Denna vecka",
+    "description": "this week"
+  },
+  "last_week": {
+    "message": "Nästa vecka",
+    "description": "last week"
   },
 
   "morning": {
@@ -612,6 +628,14 @@
       }
     }
   },
+  "delete_time_interval_button": {
+    "message": "Radera",
+    "description": "delete button label"
+  },
+  "delete_time_interval_button_tooltip": {
+    "message": "Radera",
+    "description": "delete button tooltip"
+  },
 
   "prompt_cancel_button": {
     "message": "Avbryt",
@@ -764,43 +788,27 @@
   },
 
   "version_title": {
-    "message": "Hola, 您好, Olá, bonjour, Hej!",
+    "message": "Ett nytt utseende och de mest efterfrågade funktionerna!",
     "description": "Title of the version modal"
   },
   "version_description": {
-    "message": "Detta är en omfattande programutgåva. Med hjälp av några fantastiska användare finns nu Better History tillgängligt i 19 språk! Ta en titt i den nya $link_open$Tack-sektionen$link_close$ och passa på att tacka dessa formidabla översättare!",
-    "description": "Version description",
-    "placeholders": {
-      "link_open": {
-        "content": "$1"
-      },
-      "link_close": {
-        "content": "$2"
-      }
-    }
+    "message": "",
+    "description": "Version description"
   },
   "version_important_note": {
     "message": "Viktigt meddelande",
     "description": "Heading for an important note"
   },
   "version_note": {
-    "message": "Jag får för närvarande så mycket feedback att jag tyvärr inte hinner besvara allt. För kort feedback, förslag och buggrapporteringar, twittra $link_open$@Better_History$link_close$! Följ gärna $link_open$@Better_History$link_close$ för att hålla dig ajour om senaste nytt!",
-    "descriotion": "Feedback and support note",
-    "placeholders": {
-      "link_open": {
-        "content": "$1"
-      },
-      "link_close": {
-        "content": "$2"
-      }
-    }
+    "message": "",
+    "descriotion": "Feedback and support note"
   },
   "version_whats_new": {
     "message": "Nyheter",
     "description": "Heading for what's new in version"
   },
   "version_items": {
-    "message": "$open$Översatt till 19 språk.$close$ $open$Möjlighet att stänga av inställningar vid högerklickning.$close$ $open$Ikon för att visa Better History i verktygsraden$close$ $open$Tack-sektion i Inställningar$close$ $open$Åtgärdad XSS-sårbarhet$close$",
+    "message": "$open$Purfärskt användargränssnitt som matchar Chrome:s framtida design$close$ $open$Radera alla sökresultat$close$ $open$Sidomenyn har omorganiserats$close$ $open$Radera alla besök från en tidsgruppering$close$ $open$Stora hastighetsförbättringar$close$",
     "description": "Release bulletpoints",
     "placeholders": {
       "open": {
@@ -825,6 +833,24 @@
   "and": {
     "message": "och",
     "description": "The word and"
+  },
+  "delete_all_visits_for_search_button": {
+    "message": "Radera...",
+    "description": "Text for delete all visits from search button"
+  },
+  "confirm_delete_all_search_results": {
+    "message": "Radera alla sökresultat?",
+    "description": "Confirmation text to delete all search results"
+  },
+  "number_of_search_results": {
+    "message": "Hittade $number$ resultat",
+    "description": "number of search results found",
+    "placeholders": {
+      "number": {
+        "content": "$1",
+        "example": "10"
+      }
+    }
   },
 
   "search_in_history": {
