@@ -58,7 +58,7 @@
     }
   },
   "informal_date": {
-    "message": "$week_day$, $day$$ordinal_open$$ordinal$$ordinal_close$",
+    "message": "$week_day$ $date_open$$day$$ordinal_open$$ordinal$$ordinal_close$$date_close$",
     "description": "Date labels in sidebar",
     "placeholders": {
       "week_day": {
@@ -80,6 +80,14 @@
       "ordinal_close": {
         "content": "$5",
         "example": "close tag for ordinal"
+      },
+      "date_open": {
+        "content": "$6",
+        "example": "open tag for date"
+      },
+      "date_close": {
+        "content": "$7",
+        "example": "close tag for date"
       }
     }
   },
@@ -96,6 +104,14 @@
         "example": "AM/PM"
       }
     }
+  },
+  "this_week": {
+    "message": "Saptamana asta",
+    "description": "this week"
+  },
+  "last_week": {
+    "message": "Saptamana viitoare",
+    "description": "last week"
   },
 
   "morning": {
@@ -612,6 +628,14 @@
       }
     }
   },
+  "delete_time_interval_button": {
+    "message": "Sterge",
+    "description": "delete button label"
+  },
+  "delete_time_interval_button_tooltip": {
+    "message": "Sterge",
+    "description": "delete button tooltip"
+  },
 
   "prompt_cancel_button": {
     "message": "Stop",
@@ -764,43 +788,27 @@
   },
 
   "version_title": {
-    "message": "Hola, 您好, Olá, bonjour, hello, alo!",
+    "message": "Un nou look, impreuna cu cele mai cerute imbunatatiri!",
     "description": "Title of the version modal"
   },
   "version_description": {
-    "message": "Aceasta versiune a venit cu o gramada de imbunatatiri. Cu ajutorul mai multor useri cu inima mare, Better History este acum tradus in 19 limbi! Arunca o privire la  $link_open$Credits section$link_close$ ca sa vezi cine sunt!",
-    "description": "Version description",
-    "placeholders": {
-      "link_open": {
-        "content": "$1"
-      },
-      "link_close": {
-        "content": "$2"
-      }
-    }
+    "message": "",
+    "description": "Version description"
   },
   "version_important_note": {
     "message": "Important",
     "description": "Heading for an important note"
   },
   "version_note": {
-    "message": "Momentan, primesc atat de multe mesaje, incat nu pot sa promit ca va voi raspunde fiecaruia in parte. Daca vrei sa ma contactezi pentru sugestii, comentarii sau intrebari, trimite un tweet aici: $link_open$@Better_History$link_close$. Vrei sa fii primul care afla noutati despre Better History? Atunci, da-mi follow pe Twitter la $link_open$@Better_History$link_close$!",
-    "descriotion": "Feedback and support note",
-    "placeholders": {
-      "link_open": {
-        "content": "$1"
-      },
-      "link_close": {
-        "content": "$2"
-      }
-    }
+    "message": "",
+    "descriotion": "Feedback and support note"
   },
   "version_whats_new": {
     "message": "Noutati in versiunea curenta",
     "description": "Heading for what's new in version"
   },
   "version_items": {
-    "message": "$open$Traducere in 19 limbi$close$ $open$Adaugare optiuni in setari pentru a dezactiva optiunile pentru clickul de dreapta$close$ $open$Posibilitate de a afisa o iconita Better History in toolbar$close$ $open$Adaugare sectiune Credits in setari$close$ $open$Anulare vulnerabilitate XSS$close$",
+    "message": "$open$Interfata nou-nouta care se potriveste cu viitorul design al lui Chrome$close$ $open$Sterge toate rezultatele cautarii$close$ $open$Organizare noua a barei de navigatie$close$ $open$Sterge toate vizitele dintr-un anumit interval de timp$close$ $open$Mult mai rapid$close$",
     "description": "Release bulletpoints",
     "placeholders": {
       "open": {
@@ -825,6 +833,24 @@
   "and": {
     "message": "si",
     "description": "The word and"
+  },
+  "delete_all_visits_for_search_button": {
+    "message": "Sterge...",
+    "description": "Text for delete all visits from search button"
+  },
+  "confirm_delete_all_search_results": {
+    "message": "Sterg toate rezultatele cautarii?",
+    "description": "Confirmation text to delete all search results"
+  },
+  "number_of_search_results": {
+    "message": "$number$ rezultate gasite",
+    "description": "number of search results found",
+    "placeholders": {
+      "number": {
+        "content": "$1",
+        "example": "10"
+      }
+    }
   },
 
   "search_in_history": {
