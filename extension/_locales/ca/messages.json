@@ -58,7 +58,7 @@
     }
   },
   "informal_date": {
-    "message": "$week_day$, $day$",
+    "message": "$week_day$ $date_open$$day$$date_close$",
     "description": "Date labels in sidebar",
     "placeholders": {
       "week_day": {
@@ -80,6 +80,14 @@
       "ordinal_close": {
         "content": "$5",
         "example": "close tag for ordinal"
+      },
+      "date_open": {
+        "content": "$6",
+        "example": "open tag for date"
+      },
+      "date_close": {
+        "content": "$7",
+        "example": "close tag for date"
       }
     }
   },
@@ -96,6 +104,14 @@
         "example": "AM/PM"
       }
     }
+  },
+  "this_week": {
+    "message": "Aquesta setmana",
+    "description": "this week"
+  },
+  "last_week": {
+    "message": "Darrera setmana",
+    "description": "last week"
   },
 
   "morning": {
@@ -612,6 +628,14 @@
       }
     }
   },
+  "delete_time_interval_button": {
+    "message": "Esborrar",
+    "description": "delete button label"
+  },
+  "delete_time_interval_button_tooltip": {
+    "message": "Esborrar",
+    "description": "delete button tooltip"
+  },
 
   "prompt_cancel_button": {
     "message": "Cancel·lar",
@@ -764,43 +788,27 @@
   },
 
   "version_title": {
-    "message": "Hola, 您好, bonjour, hola!",
+    "message": "Una nova imatge amb les característiques més sol·licitades!",
     "description": "Title of the version modal"
   },
   "version_description": {
-    "message": "Aquesta és realment una gran versió. Amb l'ajuda d'un grup d'usuaris impressionant, Better History està ara disponible en 19 idiomes! Comproveu la nova $link_open$secció de Crèdits$link_close$ per donar les gràcies a eixos magnífics traductors!",
-    "description": "Version description",
-    "placeholders": {
-      "link_open": {
-        "content": "$1"
-      },
-      "link_close": {
-        "content": "$2"
-      }
-    }
+    "message": "",
+    "description": "Version description"
   },
   "version_important_note": {
     "message": "Nota important",
     "description": "Heading for an important note"
   },
   "version_note": {
-    "message": "Estic rebent tantes resposts que, malauradament ja no puc respondre a tot. Per una resposta ràpida, suggeriments, i errors simplement envieu un tweet a $link_open$@Better_History$link_close$! Consulteu $link_open$@Better_History$link_close$ per obtenir també les darreres novetats !",
-    "descriotion": "Feedback and support note",
-    "placeholders": {
-      "link_open": {
-        "content": "$1"
-      },
-      "link_close": {
-        "content": "$2"
-      }
-    }
+    "message": "",
+    "descriotion": "Feedback and support note"
   },
   "version_whats_new": {
     "message": "Novetats",
     "description": "Heading for what's new in version"
   },
   "version_items": {
-    "message": "$open$S'ha traduït a 19 idiomes$close$ $open$S'han afegit opcions en Configuració per desactivar les opcions del botó dret del ratolí$close$ $open$S'ha afegit una icona per mostrar Better History a la barra d'eines$close$ $open$S'ha afegit la secció de Crèdits en la Configuració$close$ $open$S'ha corregit vulnerabilitat XSS$close$",
+    "message": "$open$Una nova interfície per a que coincideixi amb el disseny futur de Chrome$close$ $open$Esborrar tots els resultats de la recerca$close$ $open$Nova organització de la navegació lateral$close$ $open$Esborrar totes les visites d'una agrupació temporal$close$ $open$Grans millores en la velocitat$close$",
     "description": "Release bulletpoints",
     "placeholders": {
       "open": {
@@ -825,6 +833,24 @@
   "and": {
     "message": "i",
     "description": "The word and"
+  },
+  "delete_all_visits_for_search_button": {
+    "message": "Esborrar...",
+    "description": "Text for delete all visits from search button"
+  },
+  "confirm_delete_all_search_results": {
+    "message": "Esborrar tots els resultats de la recerca?",
+    "description": "Confirmation text to delete all search results"
+  },
+  "number_of_search_results": {
+    "message": "Trobats $number$ resultats",
+    "description": "number of search results found",
+    "placeholders": {
+      "number": {
+        "content": "$1",
+        "example": "10"
+      }
+    }
   },
 
   "search_in_history": {
