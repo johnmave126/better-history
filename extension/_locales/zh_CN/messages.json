@@ -110,7 +110,7 @@
     "description": "this week"
   },
   "last_week": {
-    "message": "下周",
+    "message": "上周",
     "description": "last week"
   },
 

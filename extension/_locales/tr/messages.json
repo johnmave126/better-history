@@ -110,7 +110,7 @@
     "description": "this week"
   },
   "last_week": {
-    "message": "Sonraki hafta",
+    "message": "Geçen hafta",
     "description": "last week"
   },
 

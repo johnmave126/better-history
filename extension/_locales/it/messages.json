@@ -110,7 +110,7 @@
     "description": "this week"
   },
   "last_week": {
-    "message": "Prossima settimana",
+    "message": "Settimana scorsa",
     "description": "last week"
   },
 
