@@ -62,6 +62,7 @@ SearchView = Backbone.View.extend({
     if(prompt.get('action')) {
       this.collection.destroyAll();
       this.promptView.close();
+      this.collection.trigger('change:history');
     } else {
       this.promptView.close();
     }
