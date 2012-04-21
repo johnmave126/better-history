@@ -19,6 +19,7 @@ FilterView = Backbone.View.extend({
     this.$el.html(this.template(this.model.toTemplate()));
     var contentElement = $(this.el).children('.content');
     $(contentElement).css({opacity:0}).html('');
+    this.$('button').attr('disabled', 'disabled');
     return this;
   },
 
@@ -40,6 +41,8 @@ FilterView = Backbone.View.extend({
       $(contentElement)
         .append(Mustache.render($('#noVisits').html(), i18n.filter()))
         .css({opacity:1});
+      this.$('button').attr('disabled', 'disabled');
+      $(document).scrollTop(0);
     } else {
       if(this.startTime) {
         var offset = $('[data-time="' + this.startTime + '"]').offset();
@@ -53,6 +56,7 @@ FilterView = Backbone.View.extend({
       }, function(element) { self.updateRoute(element); });
 
       Helpers.tabIndex($('.content a', this.el));
+      this.$('button').attr('disabled', null);
     }
   },
 
@@ -64,10 +68,12 @@ FilterView = Backbone.View.extend({
   },
 
   clickedDeleteAll: function(ev) {
-    ev.preventDefault();
-    this.promptView = CreatePrompt(chrome.i18n.getMessage('confirm_delete_all_visits', [this.model.get('formal_date')]));
-    this.promptView.open();
-    this.promptView.model.on('change', this.deleteAction, this);
+    if($(ev.target).parent().attr('disabled') != 'disabled') {
+      ev.preventDefault();
+      this.promptView = CreatePrompt(chrome.i18n.getMessage('confirm_delete_all_visits', [this.model.get('formal_date')]));
+      this.promptView.open();
+      this.promptView.model.on('change', this.deleteAction, this);
+    }
   },
 
   deleteAction: function(prompt) {
