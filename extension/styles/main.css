@@ -144,3 +144,8 @@ a.modal_link {
   list-style-type: disc;
   padding-bottom:5px;
 }
+.prompt_view .spinner {
+  top: 74px;
+  left: 349px;
+  position:absolute;
+}

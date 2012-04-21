@@ -21,6 +21,13 @@ PromptView = Backbone.Modal.extend({
   clickedYes: function(ev) {
     ev.preventDefault();
     this.model.set({action: true});
+  },
+
+  spin: function() {
+    var self = this;
+    this.$('button').animate({opacity: 0}, 'fast', function() {
+      self.$('.spinner').spin();
+    });
   }
 });
 

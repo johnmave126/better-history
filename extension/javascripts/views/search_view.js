@@ -17,6 +17,7 @@ SearchView = Backbone.View.extend({
     this.$el.attr('data-id', this.model.id);
     this.$el.append(this.template(this.model.toTemplate()));
     $('.spinner', this.el).spin();
+    this.$('.delete_all').attr('disabled', 'disabled');
     return this;
   },
 
@@ -29,11 +30,13 @@ SearchView = Backbone.View.extend({
 
     if(this.collection.length === 0) {
         $(contentElement).append(Mustache.render($('#noVisits').html(), i18n.search()));
+      this.$('.delete_all').attr('disabled', 'disabled');
     } else {
       var self = this;
       this.collection.each(function(model) {
         $(contentElement).append(new PageVisitView({model: model}).render().el);
       });
+      this.$('.delete_all').attr('disabled', null);
     }
 
     Helpers.tabIndex($(contentElement).find('a'));
@@ -53,16 +56,22 @@ SearchView = Backbone.View.extend({
 
   clickedDeleteAll: function(ev) {
     ev.preventDefault();
-    this.promptView = CreatePrompt(chrome.i18n.getMessage('confirm_delete_all_search_results'));
-    this.promptView.open();
-    this.promptView.model.on('change', this.deleteAction, this);
+    if($(ev.target).parent().attr('disabled') != 'disabled') {
+      this.promptView = CreatePrompt(chrome.i18n.getMessage('confirm_delete_all_search_results'));
+      this.promptView.open();
+      this.promptView.model.on('change', this.deleteAction, this);
+    }
   },
 
   deleteAction: function(prompt) {
     if(prompt.get('action')) {
+      var self = this;
+      this.promptView.spin();
       this.collection.destroyAll();
-      this.promptView.close();
-      this.collection.trigger('change:history');
+      this.model.fetch({success: function(model) {
+        model.trigger('change:history'); // make sure
+        self.promptView.close();
+      }});
     } else {
       this.promptView.close();
     }
