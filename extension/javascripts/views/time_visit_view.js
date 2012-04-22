@@ -50,18 +50,18 @@ TimeVisitView = Backbone.View.extend({
 
   collapse: function() {
     var self = this;
-    $(this.el).find('.visits').slideUp('fast', function() {
-      $('.time_interval', self.el).attr('style', '').removeClass('stuck');
-      $('.placeholder', self.el).remove();
-      $('.state', self.el).addClass(self.collapsedClass);
+    this.$('.visits').slideUp('fast', function() {
+      self.$('.time_interval').attr('style', '').removeClass('stuck');
+      self.$('.placeholder').remove();
+      self.$('.state').addClass(self.collapsedClass);
       self.model.setCollapsed(true);
     });
   },
 
   expand: function() {
     var self = this;
-    $(this.el).find('.visits').slideDown('fast', function() {
-      $('.state', self.el).removeClass(self.collapsedClass);
+    this.$('.visits').slideDown('fast', function() {
+      self.$('.state').removeClass(self.collapsedClass);
       self.model.setCollapsed(false);
     });
   },
@@ -69,7 +69,7 @@ TimeVisitView = Backbone.View.extend({
   toggleStateClicked: function(ev) {
     if(!$(ev.currentTarget).hasClass('stuck')) {
       var self = this;
-      $(this.el).find('.visits').slideToggle('fast', function() {
+      this.$('.visits').slideToggle('fast', function() {
         self._toggleState();
       });
     }
@@ -81,13 +81,13 @@ TimeVisitView = Backbone.View.extend({
   },
 
   _remove: function() {
-    $(this.el).slideUp('fast', function() {
+    this.$el.slideUp('fast', function() {
       $(this).remove();
     });
   },
 
   _toggleState: function() {
-    $('.state', this.el).toggleClass(this.collapsedClass);
-    this.model.setCollapsed($('.state', this.el).hasClass(this.collapsedClass));
+    this.$('.state').toggleClass(this.collapsedClass);
+    this.model.setCollapsed(this.$('.state').hasClass(this.collapsedClass));
   }
 });

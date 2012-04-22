@@ -5,7 +5,7 @@ Version = Backbone.Model.extend({
   },
 
   toTemplate: function() {
-    return $.extend({
+    return _.extend({
       visibility: (this.get('suppress') ? '' : 'show')
     }, i18n.version());
   },

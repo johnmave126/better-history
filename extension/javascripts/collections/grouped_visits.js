@@ -2,7 +2,7 @@ GroupedVisits = Backbone.Collection.extend({
   model: PageVisit,
 
   toTemplate: function() {
-    return $.extend({
+    return _.extend({
       domain: this.at(0).domain(),
       url: this.at(0).get('url')
     }, i18n.groupedVisits());
@@ -10,7 +10,9 @@ GroupedVisits = Backbone.Collection.extend({
 
   destroyAll: function() {
     while(this.length > 0) {
-      if(this.at(0)) this.at(0).destroy();
+      if(this.at(0)) {
+        this.at(0).destroy();
+      }
     }
   }
 });

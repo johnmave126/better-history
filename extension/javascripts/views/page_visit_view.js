@@ -23,7 +23,7 @@ PageVisitView = Backbone.View.extend({
   },
 
   _remove: function() {
-    $(this.el).slideUp('fast', function() {
+    this.$el.slideUp('fast', function() {
       $(this).remove();
     });
   },
@@ -35,10 +35,10 @@ PageVisitView = Backbone.View.extend({
   },
 
   _isGroupedAndEmpty: function() {
-    return ($(this.el).parents('.expanded').children().length === 1 ? true : false);
+    return (this.$el.parents('.expanded').children().length === 1 ? true : false);
   },
 
   _getGroup: function() {
-    return $(this.el).parents('.grouped_visits_view');
+    return this.$el.parents('.grouped_visits_view');
   }
 });

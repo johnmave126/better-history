@@ -20,5 +20,5 @@ CreditsView = Backbone.Modal.extend({
   openClicked: function(ev) {
     ev.preventDefault();
     this.open();
-  } 
+  }
 });
