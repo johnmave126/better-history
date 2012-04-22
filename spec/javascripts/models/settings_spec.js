@@ -6,6 +6,10 @@ describe('Settings', function() {
     settings = new Settings();
   });
 
+  it('sets a store name', function() {
+    expect(settings.storeName).toEqual('settings');
+  });
+
   describe('#initialize', function() {
     it('defaults timeGrouping when not supplied', function() {
       expect(settings.get('timeGrouping')).toEqual(15);
@@ -42,35 +46,14 @@ describe('Settings', function() {
     });
   });
 
-  describe('#sync', function() {
-    var callback;
-
-    beforeEach(function() {
-      localStorage.settings = {};
-      callback = jasmine.createSpy('callback');
-    });
-
-    describe('when method is create', function() {
-      it('stores the settings in localStorage as json', function() {
-        settings.sync('create', settings, {success: callback});
-        expect(localStorage.settings).toEqual(JSON.stringify(settings));
-      });
-    });
-
-    describe('when method id read', function() {
-      it('calls the success callback with parsed settings from localStorage', function() {
-        settings.sync('create', settings, {success: callback});
-        settings.sync('read', settings, {success: callback});
-        expect(callback).toHaveBeenCalledWith(settings.toJSON());
-      });
-    });
-  });
-
   describe('#parse', function() {
     it('passes json to set method', function() {
-      var attributes = {timeGrouping: 50, domainGrouping: false, timeFormat: 24, searchByDomain: false, searchBySelection: false};
+      var attributes = "{timeGrouping: 50, domainGrouping: false}";
       settings.parse(attributes);
-      expect(settings.toJSON()).toEqual(attributes);
+      expect(settings.toJSON()).toEqual({
+        timeGrouping: 50,
+        domainGrouping: false
+      });
     });
   });
 });

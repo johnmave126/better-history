@@ -18,8 +18,8 @@ Filters = Backbone.Collection.extend({
   },
 
   fetchCounts: function() {
-    $(this.models).each(function() {
-      this.fetchCount();
+    this.each(function(model) {
+      model.fetchCount();
     });
   }
 });
