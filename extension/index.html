@@ -310,12 +310,25 @@
     </script>
 
     <script id="sidebar" type="text/html">
-      <div class="filters"></div>
-      <div class="settings_wrapper selectable">
-        <a href="#settings" class="settings_link">
-          {{i18n_settings_link}}
-        </a>
-      </div>
+      <div class="break">{{i18n_this_week}}</div>
+      <ul class="filters this_week">
+        {{#this_week_filters}}
+          <li>
+            <a href="#filter/{{id}}" data-id="{{id}}" class="{{quantity}}">{{{title}}}</a>
+          </li>
+        {{/this_week_filters}}
+      </ul>
+      <div class="break">{{i18n_last_week}}</div>
+      <uli class="filters last_week">
+        {{#last_week_filters}}
+          <li>
+            <a href="#filter/{{id}}" data-id="{{id}}" class="{{quantity}}">{{{title}}}</a>
+          </li>
+        {{/last_week_filters}}
+      </ul>
+      <a href="#settings" class="setting">
+        {{i18n_settings_link}}
+      </a>
     </script>
 
     <script id="timeVisit" type="text/html">
@@ -390,7 +403,6 @@
     <script type="text/javascript" src="javascripts/views/time_visit_view.js"></script>
     <script type="text/javascript" src="javascripts/views/version_view.js"></script>
     <script type="text/javascript" src="javascripts/views/settings_view.js"></script>
-    <script type="text/javascript" src="javascripts/views/filter_item_view.js"></script>
     <script type="text/javascript" src="javascripts/views/prompt_view.js"></script>
     <script type="text/javascript" src="javascripts/views/credits_view.js"></script>
 

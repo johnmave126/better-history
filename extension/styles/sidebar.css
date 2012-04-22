@@ -1,4 +1,3 @@
-
 .sidebar_view {
   list-style-type: none;
   clear:both;
@@ -12,7 +11,7 @@
   float: right;
   margin-right: 20px;
 }
-.sidebar_view .selectable a,
+.sidebar_view a,
 .sidebar_view .break {
   -webkit-border-start: 6px solid transparent;
   -webkit-padding-start: 18px;
@@ -24,7 +23,7 @@
   text-decoration: none;
   font-size: 75%;
 }
-.sidebar_view .filter_item_view:nth-child(3) {
+.sidebar_view .this_week a:nth-child(3) {
   margin-bottom: 15px;
 }
 .sidebar_view .selectable .ordinal {
@@ -33,27 +32,22 @@
 .sidebar_view .date {
   display:none;
 }
-.sidebar_view .selectable:focus a,
-.sidebar_view .selectable.selected a {
-  -webkit-border-start-color: rgb(78, 87, 100);
-  color: #333;
-}
-.sidebar_view .selectable:hover a,
-.sidebar_view .selectable a:focus {
+.sidebar_view a:hover,
+.sidebar_view a:focus {
   color: #333;
   opacity:1;
 }
-.sidebar_view .selectable.selected a,
-.sidebar_view .selectable.selected a.empty {
+.sidebar_view a.selected,
+.sidebar_view a.selected.empty {
   -webkit-border-start-color: rgb(78, 87, 100);
   color: #333;
   font-weight: bold;
   opacity:1;
 }
-.sidebar_view .selectable a.empty {
+.sidebar_view a.empty {
   color: #BBB;
 }
-.sidebar_view .settings_wrapper {
+.sidebar_view a.setting {
   margin-top:30px;
 }
 .sidebar_view .break {

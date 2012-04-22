@@ -50,7 +50,9 @@ i18n = {
 
   sidebar: function() {
     return i18n.fetch([
-      'settings_link'
+      'settings_link',
+      'last_week',
+      'this_week'
     ]);
   },
 

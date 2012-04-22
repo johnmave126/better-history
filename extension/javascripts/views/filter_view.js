@@ -80,6 +80,7 @@ FilterView = Backbone.View.extend({
     if(prompt.get('action')) {
       if(this.collection) {
         var self = this;
+        this.promptView.spin();
         this.model.destroyHistory(function() {
           self.model.set({history: new TimeVisits()});
           self.promptView.close();

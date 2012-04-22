@@ -38,7 +38,7 @@ Filter = Backbone.Model.extend({
     var self = this;
     this.sync('read', this, {
       success: function(data) {
-        self.trigger('count', {count: data.length});
+        self.trigger('count', {model: self, count: data.length});
       }
     });
   },
