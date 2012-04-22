@@ -1,16 +1,16 @@
-SearchView = Backbone.View.extend({
+SearchView = Backbone.ViewWithSearch.extend({
   className: 'search_view',
   templateId: 'search',
 
   events: {
-    'click .delete_all': 'clickedDeleteAll',
-    'keyup .search': 'searchTyped'
+    'click .delete_all': 'clickedDeleteAll'
   },
 
   initialize: function() {
     Helpers.pageTitle(this.model.get('title'));
     this.model.on('change:history', this.renderPageVisits, this);
     this.model.on('change:text', this.updateTitle, this);
+    this.applySearchBehavior();
   },
 
   render: function(type) {
@@ -24,6 +24,7 @@ SearchView = Backbone.View.extend({
   renderPageVisits: function() {
     this.collection = this.model.get('history');
 
+    this.$('.search').focus();
     var contentElement = $(this.el).children('.content');
     $(contentElement).html('');
     this.$('.number_of_results').text(chrome.i18n.getMessage('number_of_search_results', [this.collection.length]));
@@ -45,13 +46,6 @@ SearchView = Backbone.View.extend({
   updateTitle: function() {
     $('h2', this.$el).text(this.model.buildSearchTitle(this.model.get('text')));
     $('.content', this.$el).html('');
-  },
-
-  searchTyped: function(ev) {
-    var term = $('.search', this.$el).val();
-    if(ev.keyCode === 13 && term !== '') {
-      BH.router.navigate('search/' + term, true);
-    }
   },
 
   clickedDeleteAll: function(ev) {

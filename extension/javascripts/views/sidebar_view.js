@@ -37,7 +37,6 @@ SidebarView = Backbone.View.extend({
     });
     this.collection.fetchCounts();
 
-    setTimeout(function() { $('.search', self.el).focus(); }, 0);
 
     return this;
   },

@@ -1,17 +1,17 @@
-FilterView = Backbone.View.extend({
+FilterView = Backbone.ViewWithSearch.extend({
   className: 'filter_view',
   templateId: 'filter',
 
   events: {
     'click .collapse_groupings': 'collapseGroupings',
     'click .expand_groupings': 'expandGroupings',
-    'click .delete_all': 'clickedDeleteAll',
-    'keyup .search': 'searchTyped'
+    'click .delete_all': 'clickedDeleteAll'
   },
 
   initialize: function() {
     Helpers.pageTitle(this.model.get('title'));
     this.model.on('change', this.renderHistory, this);
+    this.applySearchBehavior();
   },
 
   render: function(type) {
@@ -26,6 +26,7 @@ FilterView = Backbone.View.extend({
   renderHistory: function() {
     this.collection = this.model.get('history');
 
+    this.$('.search').focus();
     var contentElement = $(this.el).children('.content');
     $(contentElement).css({opacity:0}).html('');
 
@@ -105,12 +106,5 @@ FilterView = Backbone.View.extend({
       model.trigger('expand');
     });
     $(document).scrollTop(0);
-  },
-
-  searchTyped: function(ev) {
-    var term = $('.search', this.$el).val();
-    if(ev.keyCode === 13 && term !== '') {
-      BH.router.navigate('search/' + term, true);
-    }
   }
 });
