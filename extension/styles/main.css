@@ -59,7 +59,7 @@ a.modal_link {
 .filter_view .content,
 .search_view .content,
 .settings_view .content {
-  padding:97px 0 100px;
+  padding:104px 0 100px;
   position:relative;
   min-height:300px;
   overflow:hidden;
@@ -77,7 +77,7 @@ a.modal_link {
   box-shadow: 0px 4px 6px -3px rgba(0,0,0,.3);
   width:auto;
   margin:0;
-  width: 726px;
+  width: 738px;
   background:#FFF;
   display:block;
 }

@@ -58,6 +58,9 @@ FilterView = Backbone.ViewWithSearch.extend({
 
       Helpers.tabIndex($('.content a', this.el));
       this.$('button').attr('disabled', null);
+      $('.spacer').remove();
+      this.$el.append('<div class="spacer" />');
+      this.$('.spacer').height($(window).height() - this.$('.time_visit_view:last-child').height() - 210);
     }
   },
 

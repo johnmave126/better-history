@@ -32,7 +32,6 @@
 }
 .page_visit_view .match {
   background:#f2f37b;
-  border-radius:2px;
   display:inline-block;
   padding:1 2px;
   margin:0 1px;
@@ -41,7 +40,6 @@
 .page_visit_view:hover > a > .link,
 .page_visit_view a:focus > .link {
   background: #EEE;
-  border-radius: 3px;
 }
 .page_visit_view > a:focus {
   outline:none;
