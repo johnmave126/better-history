@@ -18,6 +18,9 @@
   margin-left: 0px;
   -webkit-transition: margin 200ms, opacity 200ms;
 }
+.stuck {
+  overflow:hidden;
+}
 .time_visit_view .stuck .time {
   margin-left: -10px;
   -webkit-transition: margin 200ms, opacity 200ms;
@@ -62,9 +65,23 @@
 }
 .time_visit_view .collapsed .arrow_down { display:none; }
 .time_visit_view .collapsed .arrow_right { display:inline-block; }
-.time_visit_view .delete_icon {
+.time_visit_view .time_interval .delete_icon {
   float: __MSG_@@bidi_end_edge__;
   font-size: 12px;
+}
+.time_visit_view .time_interval .delete_layer {
+  right:-100px;
+  position:absolute;
+  top:0;
+  margin:10px;
+  -webkit-transition: right 200ms, opacity 200ms;
+}
+.time_visit_view:hover .time_interval .delete_layer {
+  right:-8px;
+  -webkit-transition-delay: 300ms;
+}
+.time_visit_view .stuck .delete_layer {
+  right:-8px;
 }
 .time_visit_view button.small_button {
   font-size: 10px;
@@ -77,7 +94,7 @@
   height: 23px;
   padding: 1px 5px;
 }
-.time_visit_view .delete_interval .delete_icon {
+.delete_icon {
   float: none;
   padding-__MSG_@@bidi_start_edge__: 20px;
 }

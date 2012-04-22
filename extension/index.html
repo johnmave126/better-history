@@ -160,7 +160,9 @@
             <dt class="title">{{domain}}</dt>
             <dd class="location"><button class="expand button small_button">{{i18n_expand_button}}</button></dd>
           </dl>
-          <span class="delete_icon delete_group" title="{{i18n_delete_grouped_visits}}"><span class="delete"></span></span>
+          <div class="delete_layer">
+            <button class="delete_icon delete_group">{{i18n_prompt_delete_button}}</button>
+          </div>
         </div>
       </a>
       <div class="expanded"></div>
@@ -174,8 +176,9 @@
             <dd class="location">{{{location}}}</dd>
             <dd class="time">{{{time}}}</dd>
           </dl>
-          <span class="delete_icon delete_visit" title="{{i18n_delete_visit}}">
-          </span>
+          <div class="delete_layer">
+            <button class="delete_icon delete_visit">{{i18n_prompt_delete_button}}</button>
+          </div>
         </div>
       </a>
     </script>
@@ -335,9 +338,11 @@
           <span class="arrow arrow_right"></span>
           <span class="time">{{time}}</span>
           <span class="summary">{{{amount}}}</span>
-          <button class="delete_interval delete_icon">
-            <span class="delete_icon" title="{{i18n_delete_time_interval_button_tooltip}}">{{i18n_delete_time_interval_button}}</span>
-          </button>
+          <div class="delete_layer">
+            <button class="delete_interval delete_icon">
+              <span class="delete_icon" title="{{i18n_delete_time_interval_button_tooltip}}">{{i18n_delete_time_interval_button}}</span>
+            </button>
+          </div>
         </h3>
         <div class="visits"></div>
       </div>

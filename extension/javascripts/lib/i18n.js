@@ -11,6 +11,12 @@ i18n = {
     return 'i18n_' + key;
   },
 
+  pageVisit: function() {
+    return i18n.fetch([
+      'prompt_delete_button'
+    ]);
+  },
+
   settings: function() {
     var properties = i18n.fetch([
       'settings_title',
@@ -62,7 +68,7 @@ i18n = {
       'expand_button',
       'delete_all_visits_for_filter_button',
       'no_visits_found',
-      'search_input_placeholder_text',
+      'search_input_placeholder_text'
     ]);
   },
 
@@ -82,7 +88,8 @@ i18n = {
   groupedVisits: function() {
     return i18n.fetch([
       'collapse_button',
-      'expand_button'
+      'expand_button',
+      'prompt_delete_button'
     ]);
   },
 
