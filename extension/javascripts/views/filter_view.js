@@ -47,13 +47,13 @@ FilterView = Backbone.ViewWithSearch.extend({
     } else {
       if(this.startTime) {
         var offset = $('[data-time="' + this.startTime + '"]').offset();
-        $('body').scrollTop((offset ? offset.top : 0) - 96);
+        $('body').scrollTop((offset ? offset.top : 0) - 104);
       }
       $(contentElement).css({opacity:1});
 
       $('.time_visit_view').stickyElements({
         stickyClass:'time_interval',
-        padding:96
+        padding:104
       }, function(element) { self.updateRoute(element); });
 
       Helpers.tabIndex($('.content a', this.el));

@@ -26,12 +26,12 @@ SettingsView = Backbone.View.extend({
   render: function() {
     var self = this;
     this.$el.append(this.template(i18n.settings()));
-    $('.time_grouping', this).val(self.model.get('timeGrouping'));
-    $('.time_format', this).val(self.model.get('timeFormat'));
-    $('.domain_grouping', this).prop('checked', self.model.get('domainGrouping'));
-    $('.search_by_selection', this).prop('checked', self.model.get('searchBySelection'));
-    $('.search_by_domain', this).prop('checked', self.model.get('searchByDomain'));
-    $('.current_version', this).text(BH.models.version.get('version'));
+    this.$('.time_grouping').val(self.model.get('timeGrouping'));
+    this.$('.time_format').val(self.model.get('timeFormat'));
+    this.$('.domain_grouping').prop('checked', self.model.get('domainGrouping'));
+    this.$('.search_by_selection').prop('checked', self.model.get('searchBySelection'));
+    this.$('.search_by_domain').prop('checked', self.model.get('searchByDomain'));
+    this.$('.current_version').text(BH.models.version.get('version'));
     this.renderGooglePlus();
     return this;
   },

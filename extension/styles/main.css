@@ -31,7 +31,7 @@ h2 {
   font-size: 18px;
   font-weight: normal;
   display:inline-block;
-  height:30px;
+  height:32px;
 }
 
 /* Randoms
@@ -93,7 +93,7 @@ a.modal_link {
   border-top:1px solid #EEE;
   border-bottom:1px solid #EEE;
   margin:0;
-  padding:10px 0;
+  padding:13px 3px;
   font-size: 75%;
   height: 24px;
   __MSG_@@bidi_end_edge__:260px;
@@ -148,4 +148,9 @@ a.modal_link {
   top: 74px;
   left: 349px;
   position:absolute;
+}
+#BB_BuyButtonForm {
+  float: left;
+  width: 200px;
+  margin-left: 20px;
 }

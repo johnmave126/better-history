@@ -23,6 +23,7 @@
   text-decoration: none;
   font-size: 75%;
 }
+
 .sidebar_view .this_week li:nth-child(2) {
   margin-bottom: 15px;
 }
@@ -53,7 +54,10 @@
   margin-top:30px;
 }
 .sidebar_view .break {
-  border-bottom: 1px solid #CCC;
+  border-bottom: 1px solid #EEE;
   width: 110px;
-  margin-top: 25px;
+  margin-top: 20px;
+  -webkit-padding-start: 0;
+  margin-left: 18px;
+  color:#53637D;
 }

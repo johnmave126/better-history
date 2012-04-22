@@ -25,6 +25,7 @@
   padding:1px 0;
   overflow:hidden;
   white-space: nowrap;
+  font-size: 11px;
 }
 .page_visit_view .time { margin-top:2px; }
 .page_visit_view .description {
