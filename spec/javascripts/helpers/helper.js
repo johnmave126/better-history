@@ -3,7 +3,7 @@ $.fx.off = true;
 BH = {
   views: {},
   models: {}
-}
+};
 
 function loadChromeAPI(config) {
   chrome = {
@@ -22,7 +22,7 @@ function loadChromeAPI(config) {
           afternoon: 'afternoon PM',
           evening: 'evening PM',
           search_in_history: 'Search in history',
-          visits_to_domain: 'Visits to domain', 
+          visits_to_domain: 'Visits to domain',
           twelve_hour_time_format: '$time$ $label$',
           monday: 'Monday',
           saturday: 'Saturday',
@@ -58,7 +58,7 @@ function loadChromeAPI(config) {
       })
     },
     history: {
-      search: function() {} 
+      search: function() {}
     },
     browserAction: {
       onClicked: {

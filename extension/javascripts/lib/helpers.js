@@ -37,6 +37,7 @@ Helpers = {
   },
 
   tabIndex: function(selector) {
+    $('button').attr('tabindex', '-1');
     $(selector).each(function(i) {
       $(this).attr('tabindex', i+2);
     });
