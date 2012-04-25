@@ -92,7 +92,6 @@
 .time_visit_view button.delete_interval {
   float: __MSG_@@bidi_end_edge__;
   height: 23px;
-  padding: 1px 5px;
 }
 .delete_icon {
   float: none;

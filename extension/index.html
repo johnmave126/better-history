@@ -134,11 +134,7 @@
         <div class="controls">
           <button class="collapse_groupings">{{i18n_collapse_button}}</button>
           <button class="expand_groupings">{{i18n_expand_button}}</button>
-          <button class="delete_all">
-            <span class="delete_icon">
-              {{i18n_delete_all_visits_for_filter_button}}
-            </span>
-          </button>
+          <button class="delete_all">{{i18n_delete_all_visits_for_filter_button}}</button>
         </div>
       </div>
       <div class="content">
@@ -161,7 +157,7 @@
             <dd class="location"><button class="expand button small_button">{{i18n_expand_button}}</button></dd>
           </dl>
           <div class="delete_layer">
-            <button class="delete_icon delete_group">{{i18n_prompt_delete_button}}</button>
+            <button class="delete_group">{{i18n_prompt_delete_button}}</button>
           </div>
         </div>
       </a>
@@ -177,7 +173,7 @@
             <dd class="time">{{{time}}}</dd>
           </dl>
           <div class="delete_layer">
-            <button class="delete_icon delete_visit">{{i18n_prompt_delete_button}}</button>
+            <button class="delete_visit">{{i18n_prompt_delete_button}}</button>
           </div>
         </div>
       </a>
@@ -210,11 +206,7 @@
         <input type="search" class="search" placeholder="{{i18n_search_input_placeholder_text}}" tabindex="1" />
         <div class="controls">
           <span class="number_of_results">{{i18n_number_of_search_results}}</span>
-          <button class="delete_all">
-            <span class="delete_icon">
-              {{i18n_delete_all_visits_for_search_button}}
-            </span>
-          </button>
+          <button class="delete_all">{{i18n_delete_all_visits_for_search_button}}</button>
         </div>
       </div>
       <div class="fade"></div>
@@ -345,9 +337,7 @@
           <span class="time">{{time}}</span>
           <span class="summary">{{{amount}}}</span>
           <div class="delete_layer">
-            <button class="delete_interval delete_icon">
-              <span class="delete_icon" title="{{i18n_delete_time_interval_button_tooltip}}">{{i18n_delete_time_interval_button}}</span>
-            </button>
+            <button class="delete_interval" title="{{i18n_delete_time_interval_button_tooltip}}">{{i18n_delete_time_interval_button}}</button>
           </div>
         </h3>
         <div class="visits"></div>
