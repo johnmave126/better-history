@@ -14,8 +14,8 @@
 .sidebar_view a,
 .sidebar_view .break {
   -webkit-border-start: 6px solid transparent;
-  -webkit-padding-start: 18px;
   color: #666;
+  -webkit-padding-start: 18px;
   cursor: pointer;
   line-height: 17px;
   margin: 5px 0;
@@ -57,7 +57,14 @@
   border-bottom: 1px solid #EEE;
   width: 110px;
   margin-top: 20px;
-  -webkit-padding-start: 0;
-  margin-left: 18px;
+  margin-left: 0;
+  color:#53637D;
+  cursor: auto;
+  font-size:13px;
+}
+.sidebar_view .categories {
+  padding:0;
+}
+.sidebar_view .category {
   color:#53637D;
 }

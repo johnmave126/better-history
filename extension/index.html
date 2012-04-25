@@ -310,21 +310,27 @@
     </script>
 
     <script id="sidebar" type="text/html">
-      <div class="break">{{i18n_this_week}}</div>
-      <ul class="filters this_week">
-        {{#this_week_filters}}
-          <li>
-            <a href="#filter/{{id}}" data-id="{{id}}" class="{{quantity}}">{{{title}}}</a>
-          </li>
-        {{/this_week_filters}}
-      </ul>
-      <div class="break">{{i18n_last_week}}</div>
-      <uli class="filters last_week">
-        {{#last_week_filters}}
-          <li>
-            <a href="#filter/{{id}}" data-id="{{id}}" class="{{quantity}}">{{{title}}}</a>
-          </li>
-        {{/last_week_filters}}
+      <ul class="categories">
+        <li class="category">
+          <div class="break">{{i18n_this_week}}</div>
+          <ul class="filters this_week">
+            {{#this_week_filters}}
+              <li>
+                <a href="#filter/{{id}}" data-id="{{id}}" class="{{quantity}}">{{{title}}}</a>
+              </li>
+            {{/this_week_filters}}
+          </ul>
+        </li>
+        <li class="category">
+          <div class="break">{{i18n_last_week}}</div>
+          <ul class="filters last_week">
+            {{#last_week_filters}}
+              <li>
+                <a href="#filter/{{id}}" data-id="{{id}}" class="{{quantity}}">{{{title}}}</a>
+              </li>
+            {{/last_week_filters}}
+          </ul>
+        </li>
       </ul>
       <a href="#settings" class="setting">
         {{i18n_settings_link}}
