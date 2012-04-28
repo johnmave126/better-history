@@ -106,11 +106,11 @@
     }
   },
   "this_week": {
-    "message": "This week",
+    "message": "Cette Semaine",
     "description": "this week"
   },
   "last_week": {
-    "message": "Last week",
+    "message": "Semaine Dernière",
     "description": "last week"
   },
 
@@ -629,11 +629,11 @@
     }
   },
   "delete_time_interval_button": {
-    "message": "Delete",
+    "message": "Supprimer",
     "description": "delete button label"
   },
   "delete_time_interval_button_tooltip": {
-    "message": "Delete",
+    "message": "Supprimer",
     "description": "delete button tooltip"
   },
 
@@ -788,7 +788,7 @@
   },
 
   "version_title": {
-    "message": "A brand new look with the most requested features!",
+    "message": "Un look tout neuf avec les fonctionnalités les plus demandées!",
     "description": "Title of the version modal"
   },
   "version_description": {
@@ -808,7 +808,7 @@
     "description": "Heading for what's new in version"
   },
   "version_items": {
-    "message": "$open$Brand new interface to match Chrome's future design$close$ $open$Delete all search results$close$ $open$New organization of side navigation$close$ $open$Delete all visits from a time grouping$close$ $open$Big speed improvements$close$",
+    "message": "$open$Une conception d'interface neuve qui correspond au futur designs de Chrome$close$ $open$Supprimer tous les résultats de la recherche$close$ $open$Nouvelle organisation de la side-navigation$close$ $open$Supprimer tous les visites d'un groupement temps$close$ $open$Une grande  améliorations de vitesse$close$",
     "description": "Release bulletpoints",
     "placeholders": {
       "open": {
@@ -835,15 +835,15 @@
     "description": "The word and"
   },
   "delete_all_visits_for_search_button": {
-    "message": "Delete...",
+    "message": "Supprimer...",
     "description": "Text for delete all visits from search button"
   },
   "confirm_delete_all_search_results": {
-    "message": "Delete all search results?",
+    "message": "Supprimer tous les résultats de recherche?",
     "description": "Confirmation text to delete all search results"
   },
   "number_of_search_results": {
-    "message": "Found $number$ results",
+    "message": "Résultats trouvés $number$",
     "description": "number of search results found",
     "placeholders": {
       "number": {

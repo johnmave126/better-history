@@ -106,11 +106,11 @@
     }
   },
   "this_week": {
-    "message": "This week",
+    "message": "Šonedēļ",
     "description": "this week"
   },
   "last_week": {
-    "message": "Last week",
+    "message": "Pagājušajā nedēļā",
     "description": "last week"
   },
 
@@ -638,7 +638,7 @@
   },
 
   "prompt_cancel_button": {
-    "message": "Atcelt",
+    "message": "Dzēst",
     "description": "Button to close modal"
   },
   "prompt_delete_button": {
@@ -788,7 +788,7 @@
   },
 
   "version_title": {
-    "message": "A brand new look with the most requested features!",
+    "message": "Pavisam jaunu izskatu ar visvairāk pieprasīto iespējas!",
     "description": "Title of the version modal"
   },
   "version_description": {
@@ -808,7 +808,7 @@
     "description": "Heading for what's new in version"
   },
   "version_items": {
-    "message": "$open$Brand new interface to match Chrome's future design$close$ $open$Delete all search results$close$ $open$New organization of side navigation$close$ $open$Delete all visits from a time grouping$close$ $open$Big speed improvements$close$",
+    "message": "$open$Pavisam jaunu interfeisu, lai atbilstu Chrome nākotnes dizainu$close$ $open$Izdzēst visus meklēšanas rezultātus$close$ $open$Jaunā organizācija malā$close$ $open$Izdzēst visas apmeklējumiem pēc laika grupas$close$ $open$Big ātruma uzlabojumus$close$",
     "description": "Release bulletpoints",
     "placeholders": {
       "open": {
@@ -835,15 +835,15 @@
     "description": "The word and"
   },
   "delete_all_visits_for_search_button": {
-    "message": "Delete...",
+    "message": "Dzēst...",
     "description": "Text for delete all visits from search button"
   },
   "confirm_delete_all_search_results": {
-    "message": "Delete all search results?",
+    "message": "Izdzēst visus meklēšanas rezultātus?",
     "description": "Confirmation text to delete all search results"
   },
   "number_of_search_results": {
-    "message": "Found $number$ results",
+    "message": "Atrasti $number$ rezultāti",
     "description": "number of search results found",
     "placeholders": {
       "number": {
