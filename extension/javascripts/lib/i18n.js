@@ -147,7 +147,8 @@ i18n = {
       'version_title',
       'version_important_note',
       'close_button',
-      'version_whats_new'
+      'version_whats_new',
+      'leave_a_review'
     ]);
     properties[i18n.scopeKey('version_description')] = chrome.i18n.getMessage('version_description', [
       '<a href="#settings/credits">',

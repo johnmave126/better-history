@@ -149,8 +149,17 @@ a.modal_link {
   left: 349px;
   position:absolute;
 }
-#BB_BuyButtonForm {
-  float: left;
-  width: 200px;
-  margin-left: 20px;
+.action-area-link-container {
+  -webkit-box-flex: 1;
+}
+.version_view .page,
+.credits_view .page {
+  overflow: hidden;
+}
+.modal img {
+  width: 170px;
+  right: -50px;
+  top: -50px;
+  opacity: 0.5;
+  position:absolute;
 }
