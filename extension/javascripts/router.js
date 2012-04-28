@@ -24,6 +24,7 @@ Router = Backbone.Router.extend({
   settings: function() {
     var view = BH.views.settingsView;
 
+    Helpers.pageTitle(chrome.i18n.getMessage('settings_title'));
     view.$el.addClass(this.selectedClass);
   },
 
@@ -31,6 +32,7 @@ Router = Backbone.Router.extend({
     var model = BH.collections.filters.get(id),
         view = BH.views.filterViews[model.id];
 
+    Helpers.pageTitle(model.get('title'));
     view.$el.addClass(this.selectedClass);
     view.startTime = time;
 

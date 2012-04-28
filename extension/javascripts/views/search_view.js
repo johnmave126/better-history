@@ -7,7 +7,6 @@ SearchView = Backbone.ViewWithSearch.extend({
   },
 
   initialize: function() {
-    Helpers.pageTitle(this.model.get('title'));
     this.model.on('change:history', this.renderPageVisits, this);
     this.model.on('change:text', this.updateTitle, this);
     this.applySearchBehavior();
@@ -44,7 +43,9 @@ SearchView = Backbone.ViewWithSearch.extend({
   },
 
   updateTitle: function() {
-    $('h2', this.$el).text(this.model.buildSearchTitle(this.model.get('text')));
+    var title = this.model.buildSearchTitle(this.model.get('text'));
+    $('h2', this.$el).text(title);
+    Helpers.pageTitle(title);
     $('.content', this.$el).html('');
   },
 

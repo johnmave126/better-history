@@ -9,7 +9,6 @@ FilterView = Backbone.ViewWithSearch.extend({
   },
 
   initialize: function() {
-    Helpers.pageTitle(this.model.get('title'));
     this.model.on('change', this.renderHistory, this);
     this.applySearchBehavior();
   },
