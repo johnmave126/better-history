@@ -788,7 +788,7 @@
   },
 
   "version_title": {
-    "message": "Совершенно новый взгляд на наиболее востребованные функции!",
+    "message": "Совершенно новый взгляд<br/> на наиболее востребованные функции!",
     "description": "Title of the version modal"
   },
   "version_description": {
@@ -808,7 +808,7 @@
     "description": "Heading for what's new in version"
   },
   "version_items": {
-    "message": "$open$Новый интерфейс в соответствии с дизайном будущего Хрома$close$ $open$Удалить все результаты поиска$close$ $open$Новый принцип навигации по элементам интерфейса$close$ $open$Удаление всех посещений, группированных по времени$close$ $open$Увеличение быстродействия$close$",
+    "message": "$open$Стилизация под будущий дизайн Хрома$close$ $open$Удаление всех результатов поиска$close$ $open$Обновленный принцип навигации по элементам интерфейса$close$ $open$Удаление всех посещений, группированных по времени$close$ $open$Увеличение быстродействия$close$",
     "description": "Release bulletpoints",
     "placeholders": {
       "open": {
