@@ -163,3 +163,6 @@ a.modal_link {
   opacity: 0.5;
   position:absolute;
 }
+.prompt_view img {
+  display:none;
+}

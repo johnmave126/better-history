@@ -12,7 +12,11 @@ Backbone.Modal = Backbone.View.extend({
       $('.page', this).addClass(self.pulseClass);
     });
 
-    return $(overlay).append(Mustache.render($('#' + this.templateId).html(), json));
+    $(overlay)
+      .append(Mustache.render($('#' + this.templateId).html(), json))
+      .find('.modal').append($('<img src="images/logo.png" />'));
+
+    return overlay;
   },
   open: function() {
     $('.overlay', this.$el).fadeIn('fast', function() {
