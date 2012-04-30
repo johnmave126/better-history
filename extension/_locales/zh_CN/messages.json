@@ -58,7 +58,7 @@
     }
   },
   "informal_date": {
-    "message": "$week_day$ $date_open$$day$日$date_close$",
+    "message": "$week_day$ $date_open$$day$$date_close$",
     "description": "Date labels in sidebar",
     "placeholders": {
       "week_day": {
