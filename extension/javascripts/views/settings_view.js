@@ -24,24 +24,14 @@ SettingsView = Backbone.View.extend({
 
   render: function() {
     var self = this;
-    this.$el.append(this.template(i18n.settings()));
-    this.$('.time_grouping').val(self.model.get('timeGrouping'));
-    this.$('.time_format').val(self.model.get('timeFormat'));
-    this.$('.domain_grouping').prop('checked', self.model.get('domainGrouping'));
-    this.$('.search_by_selection').prop('checked', self.model.get('searchBySelection'));
-    this.$('.search_by_domain').prop('checked', self.model.get('searchByDomain'));
-    this.$('.current_version').text(BH.models.version.get('version'));
-    this.renderGooglePlus();
-    return this;
-  },
-
-  renderGooglePlus: function() {
+    this.$el.append(this.template(this.model.toTemplate()));
     window.___gcfg = {lang: chrome.i18n.getMessage('google_plus_language')};
     (function() {
       var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
       po.src = 'https://apis.google.com/js/plusone.js';
       var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
     })();
+    return this;
   },
 
   changedTimeGrouping: function(ev) {

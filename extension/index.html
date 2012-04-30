@@ -233,20 +233,21 @@
               <label>
                 <span class="select">{{i18n_group_visits_by_label}}</span>
                 <select class="time_grouping">
-                  <option value="60">{{i18n_60_minutes_option}}</options>
-                  <option value="30">{{i18n_30_minutes_option}}</options>
-                  <option value="15">{{i18n_15_minutes_option}}</options>
+                  {{#timeGrouping}}
+                    <option value="{{value}}" {{#selected}}selected="selected"{{/selected}}>{{text}}</options>
+                  {{/timeGrouping}}
                 </select>
               </label>
               <label>
                 <span class="select">{{i18n_time_format_label}}</span>
                 <select class="time_format">
-                  <option value="24">{{i18n_24_hours_option}}</options>
-                  <option value="12">{{i18n_12_hours_option}}</options>
+                  {{#timeFormats}}
+                    <option value="{{value}}" {{#selected}}selected="selected"{{/selected}}>{{text}}</option>
+                  {{/timeFormats}}
                 </select>
               </label>
               <label>
-                <input type="checkbox" class="domain_grouping"/>
+                <input type="checkbox" class="domain_grouping" {{#domainGrouping}}checked="checked"{{/domainGrouping}}/>
                 <span>{{i18n_group_visits_by_domain_label}}</span>
               </label>
             </div>
@@ -255,11 +256,11 @@
             <h3 class="title">{{i18n_right_click_options_section_title}}</h3>
             <div class="controls">
               <label>
-                <input type="checkbox" class="search_by_selection"/>
+                <input type="checkbox" class="search_by_selection" {{#searchBySelection}}checked="checked"{{/searchBySelection}}/>
                 <span>{{i18n_search_by_text_selection_label}}</span>
               </label>
               <label>
-                <input type="checkbox" class="search_by_domain"/>
+                <input type="checkbox" class="search_by_domain" {{#searchByDomain}}checked="checked"{{/searchByDomain}}/>
                 <span>{{i18n_search_by_domain_label}}</span>
               </label>
             </div>
@@ -270,7 +271,7 @@
               <a href="#settings/announcement" class="modal_link release_announcement">{{i18n_view_release_announcement_link}}</a>
               <a href="#settings/credits" class="modal_link credits">{{{i18n_credits_link}}}</a>
               <div class="note">
-                {{i18n_current_version_label}}: <span class="current_version"></span>
+                {{i18n_current_version_label}}: <span class="current_version">{{version}}</span>
               </div>
             </div>
           </section>
