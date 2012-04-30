@@ -808,7 +808,7 @@
     "description": "Heading for what's new in version"
   },
   "version_items": {
-    "message": "$open$Nowy interfejs pasujący do przyszłego wyglądu Google Chrome$close$ $open$Usuń wyniki wyszukiwania$close$ $open$Nowa organizacja paska bocznego$close$ $open$Usuń wszystkie wizyty z tej godziny$close$ $open$Wielkie przyspieszenia prędkości$close$",
+    "message": "$open$Nowy interfejs pasujący do przyszłego wyglądu Google Chrome$close$ $open$Usuń wyniki wyszukiwania$close$ $open$Nowa organizacja paska bocznego$close$ $open$Usuwanie wizyt z danej godziny$close$ $open$Wielkie przyspieszenia prędkości$close$",
     "description": "Release bulletpoints",
     "placeholders": {
       "open": {
