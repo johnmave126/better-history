@@ -176,7 +176,7 @@
     "description": "Label for check box to group visits by domain"
   },
   "right_click_options_section_title": {
-    "message": "Inställningar vid högerklickning",
+    "message": "Alternativ för högerklickning",
     "description": "Section heading in Settings"
   },
   "search_by_text_selection_label": {
@@ -218,7 +218,7 @@
     "description": "Section heading in Settings"
   },
   "suggestions_bugs_comments": {
-    "message": "Förslag, buggar, kommentarer? Twittra $link_open$@Better_History$link_close$!",
+    "message": "Förslag, buggar, synpunkter? Twittra $link_open$@Better_History$link_close$!",
     "description": "Link text to give feedback",
     "placeholders": {
       "link_open": {
