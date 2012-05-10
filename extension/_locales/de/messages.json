@@ -8,7 +8,7 @@
     "description": "Manifest browser action title"
   },
   "manifest_description": {
-    "message": "Dein Verlauf wird mehr anschaulich. Die beste Suche, das schärfste Interface und die besten Filter - für deinen Verlauf",
+    "message": "Dein Verlauf wird anschaulicher. Die beste Suche, das schärfste Interface und die besten Filter - für deinen Verlauf",
     "description": "Manifest description"
   },
 
@@ -123,16 +123,16 @@
     "description": "The afternoon abbreviation when using 12 hour time"
   },
   "evening": {
-    "message": "nachmittags",
+    "message": "abends",
     "description": "The evening abbreviation when using 12 hour time"
   },
 
   "settings_title": {
-    "message": "Optionen",
+    "message": "Einstellungen",
     "description": "Settings title for Settings page"
   },
   "clearing_history_section_title": {
-    "message": "Lösche Verlauf",
+    "message": "Verlauf löschen",
     "description": "Section heading in Settings"
   },
   "clear_history_button": {
@@ -192,7 +192,7 @@
     "description": "Section heading in Settings"
   },
   "view_release_announcement_link": {
-    "message": "Veröffentlichungs Ankündigung anschauen",
+    "message": "Versions Änderungen anschauen",
     "description": "Link text to view the release announcement"
   },
   "current_version_label": {
@@ -200,7 +200,7 @@
     "description": "label for the current version"
   },
   "credits_link": {
-    "message": "$open$Better History$close$ Kredits",
+    "message": "$open$Better History$close$ Credits",
     "description": "The link to credits",
     "placeholders": {
       "open": {
@@ -234,7 +234,7 @@
     "description": "Section heading in Settings"
   },
   "leave_a_review": {
-    "message": "Hinterlasse ein Review",
+    "message": "Hinterlasse deine Meinung",
     "description": "Link text to leave a review"
   },
   "default_time_format": {
@@ -651,7 +651,7 @@
   },
 
   "credits_title": {
-    "message": "Better History Kredits",
+    "message": "Better History Credits",
     "description": "Title for credits modal"
   },
   "developed_by": {
@@ -733,7 +733,7 @@
     "description": "The language"
   },
   "dutch": {
-    "message": "Holländer",
+    "message": "Niederländisch",
     "description": "The language"
   },
   "czech": {
@@ -741,7 +741,7 @@
     "description": "The language"
   },
   "japanese": {
-    "message": "Japaner",
+    "message": "Japanisch",
     "description": "The language"
   },
   "vietnamese": {
@@ -757,7 +757,7 @@
     "description": "The language"
   },
   "catalonian": {
-    "message": "Katalanischen",
+    "message": "Katalanisch",
     "description": "The language"
   },
   "translation_help_heading": {
@@ -765,7 +765,7 @@
     "description": "Heading to recruit translators"
   },
   "translation_instructions": {
-    "message": "Du sprichst Englisch und willst Better Hisrory in eine neue Sprache übersetzen? Super! Send nur eine E-Mail zu $link_open$ $email$ $link_close$",
+    "message": "Du sprichst Englisch und willst Better Hisrory in eine neue Sprache übersetzen? Super! Sende eine E-Mail an $link_open$ $email$ $link_close$",
     "description": "Instructions on how to help translate",
     "placeholders": {
       "email": {
@@ -804,7 +804,7 @@
     "descriotion": "Feedback and support note"
   },
   "version_whats_new": {
-    "message": "Wichtige Nachricht",
+    "message": "Was ist neu?",
     "description": "Heading for what's new in version"
   },
   "version_items": {
@@ -843,7 +843,7 @@
     "description": "Confirmation text to delete all search results"
   },
   "number_of_search_results": {
-    "message": "Ich habe $number$ ergebnisse gefunden",
+    "message": "Ich habe $number$ Ergebnisse gefunden",
     "description": "number of search results found",
     "placeholders": {
       "number": {
