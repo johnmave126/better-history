@@ -22,7 +22,7 @@
   overflow:hidden;
 }
 .time_visit_view .stuck .time {
-  margin-left: -10px;
+  margin-__MSG_@@bidi_start_edge__: -10px;
   -webkit-transition: margin 200ms, opacity 200ms;
 }
 .time_visit_view .time_interval:hover .time {
@@ -70,18 +70,18 @@
   font-size: 12px;
 }
 .time_visit_view .time_interval .delete_layer {
-  right:-100px;
+  __MSG_@@bidi_end_edge__:-100px;
   position:absolute;
   top:0;
   margin:10px;
-  -webkit-transition: right 200ms, opacity 200ms;
+  -webkit-transition: __MSG_@@bidi_end_edge__ 200ms, opacity 200ms;
 }
 .time_visit_view:hover .time_interval .delete_layer {
-  right:-8px;
+  __MSG_@@bidi_end_edge__:-8px;
   -webkit-transition-delay: 300ms;
 }
 .time_visit_view .stuck .delete_layer {
-  right:-8px;
+  __MSG_@@bidi_end_edge__:-8px;
 }
 .time_visit_view button.small_button {
   font-size: 10px;

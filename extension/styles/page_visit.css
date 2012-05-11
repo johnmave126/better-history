@@ -58,13 +58,13 @@
 }
 .page_visit_view > a > .link > .delete_layer {
   position:absolute;
-  right:-200px;
+  __MSG_@@bidi_end_edge__:-200px;
   top:0;
   padding:10px;
-  -webkit-transition: right 200ms, opacity 200ms;
+  -webkit-transition: __MSG_@@bidi_end_edge__ 200ms, opacity 200ms;
 }
 .page_visit_view:hover > a > .link > .delete_layer {
   -webkit-transition-delay: 300ms;
-  right: -9px;
+  __MSG_@@bidi_end_edge__: -9px;
   background: #EEE;
 }

@@ -161,7 +161,7 @@ a.modal_link {
 }
 .modal img {
   width: 170px;
-  right: -50px;
+  __MSG_@@bidi_end_edge__: -50px;
   top: -50px;
   opacity: 0.5;
   position:absolute;
