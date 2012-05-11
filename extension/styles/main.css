@@ -156,6 +156,9 @@ a.modal_link {
 .credits_view .page {
   overflow: hidden;
 }
+.version_view h1 {
+  width: 355px;
+}
 .modal img {
   width: 170px;
   right: -50px;
