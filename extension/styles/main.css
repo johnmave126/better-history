@@ -87,7 +87,7 @@ a.modal_link {
 .heading input.search[type=search] {
   float: __MSG_@@bidi_end_edge__;
   font-size: 75%;
-  width: 180px;
+  width: 200px;
 }
 .heading .controls {
   border-top:1px solid #EEE;
