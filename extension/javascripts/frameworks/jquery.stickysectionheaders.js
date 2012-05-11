@@ -18,7 +18,8 @@
             var originalWidth = header.outerWidth(),
                 placeholder, headerOrigin, headerHeight, containerHeight, containerTop, containerSize, pageOffset, containerBottom;
 
-            $(window).scroll(function (ev) {
+            (function animLoop() {
+              webkitRequestAnimationFrame(animLoop);
               if($(container).parents('.filter_view').hasClass('selected')) {
                 containerTop = container.offset().top;
                 headerOrigin = header.offset().top;
@@ -41,7 +42,7 @@
                   else if (pageOffset > containerTop && pageOffset < (containerBottom - headerHeight) && $(window).scrollTop() > 0) {
                       if (placeholder == undefined) {
                           placeholder = $('<div/>')
-                          .css('height', header.outerHeight() + 'px')
+                          .css('height', headerHeight + 'px')
                           .addClass('placeholder')
                           .css('width', 732);
                           header.before(placeholder);
@@ -57,7 +58,7 @@
                   }
                 }
               }
-            });
+            })();
         });
     }
 })(jQuery);
