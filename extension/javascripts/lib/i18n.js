@@ -57,10 +57,18 @@ i18n = {
     ]);
   },
 
-  filter: function() {
+  day: function() {
     return i18n.fetch([
       'collapse_button',
       'expand_button',
+      'delete_all_visits_for_filter_button',
+      'no_visits_found',
+      'search_input_placeholder_text'
+    ]);
+  },
+
+  week: function() {
+    return i18n.fetch([
       'delete_all_visits_for_filter_button',
       'no_visits_found',
       'search_input_placeholder_text'

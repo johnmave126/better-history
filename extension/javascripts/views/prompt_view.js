@@ -8,6 +8,10 @@ PromptView = Backbone.Modal.extend({
     'click .yes': 'clickedYes'
   },
 
+  initialize: function() {
+    this.attachGeneralEvents();
+  },
+
   render: function() {
     this.$el.html(this.template(this.model.toTemplate()));
     return this;

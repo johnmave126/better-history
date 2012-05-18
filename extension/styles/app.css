@@ -17,7 +17,7 @@
   z-index: 0;
   position: absolute;
   top: 0;
-  display: none;
+  display: block;
 }
 .mainview > .selected {
   -webkit-margin-start: 0;
@@ -25,7 +25,6 @@
   -webkit-transition-delay: 100ms;
   z-index: 1;
   opacity: 1;
-  display: block;
 }
 .navbar {
   position: fixed;

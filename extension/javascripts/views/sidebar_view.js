@@ -23,21 +23,6 @@ SidebarView = Backbone.View.extend({
 
   render: function() {
     this.$el.html(this.template(_.extend(i18n.sidebar(), this.collection.toTemplate())));
-
-    var self = this;
-    this.collection.each(function(model) {
-      model
-        .on('count', self.updateFilterLinkCount, self)
-        .on('change', function(model) {
-          self.updateFilterLinkCount({
-            model: model,
-            count: model.get('history').length
-          });
-        });
-    });
-    this.collection.fetchCounts();
-
-
     return this;
   },
 

@@ -1,23 +1,21 @@
-FilterView = Backbone.ViewWithSearch.extend({
-  className: 'filter_view',
-  templateId: 'filter',
+DayView = Backbone.Modal.extend({
+  className: 'day_view',
+  templateId: 'day',
 
   events: {
-    'click .collapse_groupings': 'collapseGroupings',
-    'click .expand_groupings': 'expandGroupings',
-    'click .delete_all': 'clickedDeleteAll'
+    'click .delete_all': 'clickedDeleteAll',
+    'keyup .search': 'filtered'
   },
 
   initialize: function() {
+    this.attachGeneralEvents();
     this.model.on('change', this.renderHistory, this);
-    this.applySearchBehavior();
+    //this.applySearchBehavior();
   },
 
   render: function(type) {
-    this.$el.attr('data-id', this.model.id);
-    this.$el.html(this.template(this.model.toTemplate()));
-    var contentElement = $(this.el).children('.content');
-    $(contentElement).css({opacity:0}).html('');
+    this.$el.html(this.template(_.extend(i18n.day(), this.model.toTemplate())));
+    this.$('.content').css({opacity:0}).html('');
     this.$('button').attr('disabled', 'disabled');
     return this;
   },
@@ -25,8 +23,9 @@ FilterView = Backbone.ViewWithSearch.extend({
   renderHistory: function() {
     this.collection = this.model.get('history');
 
+
     this.$('.search').focus();
-    var contentElement = $(this.el).children('.content');
+    var contentElement = this.$('.content');
     $(contentElement).css({opacity:0}).html('');
 
     var self = this;
@@ -39,10 +38,14 @@ FilterView = Backbone.ViewWithSearch.extend({
 
     if(this.collection.length === 0) {
       $(contentElement)
-        .append(Mustache.render($('#noVisits').html(), i18n.filter()))
+        .append(Mustache.render($('#noVisits').html(), i18n.day()))
         .css({opacity:1});
       this.$('button').attr('disabled', 'disabled');
       $(document).scrollTop(0);
+
+      if(this.model.get('filter')) {
+        this.$('.content').append('<a href="3">Maybe try searching full history?</a>');
+      }
     } else {
       if(this.startTime) {
         var offset = $('[data-time="' + this.startTime + '"]').offset();
@@ -60,6 +63,7 @@ FilterView = Backbone.ViewWithSearch.extend({
       $('.spacer').remove();
       this.$el.append('<div class="spacer" />');
       this.$('.spacer').height($(window).height() - this.$('.time_visit_view:last-child').height() - 210);
+
     }
   },
 
@@ -73,7 +77,7 @@ FilterView = Backbone.ViewWithSearch.extend({
   clickedDeleteAll: function(ev) {
     if($(ev.target).parent().attr('disabled') != 'disabled') {
       ev.preventDefault();
-      this.promptView = CreatePrompt(chrome.i18n.getMessage('confirm_delete_all_visits', [this.model.get('formal_date')]));
+      this.promptView = CreatePrompt(chrome.i18n.getMessage('confirm_delete_all_visits', [this.model.get('extendedFormalDate')]));
       this.promptView.open();
       this.promptView.model.on('change', this.deleteAction, this);
     }
@@ -84,29 +88,15 @@ FilterView = Backbone.ViewWithSearch.extend({
       if(this.collection) {
         var self = this;
         this.promptView.spin();
-        this.model.destroyHistory(function() {
-          self.model.set({history: new TimeVisits()});
-          self.promptView.close();
-        });
+        this.model.clear();
+        this.promptView.close();
       }
     } else {
       this.promptView.close();
     }
   },
 
-  collapseGroupings: function(ev) {
-    ev.preventDefault();
-    this.collection.each(function(model) {
-      model.trigger('collapse');
-    });
-    $(document).scrollTop(0);
-  },
-
-  expandGroupings: function(ev) {
-    ev.preventDefault();
-    this.collection.each(function(model) {
-      model.trigger('expand');
-    });
-    $(document).scrollTop(0);
+  filtered: function(ev) {
+    this.model.set({filter: $(ev.currentTarget).val()});
   }
 });

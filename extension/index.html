@@ -8,7 +8,7 @@
     <link rel="stylesheet" type="text/css" href="styles/checkbox.css"/>
     <link rel="stylesheet" type="text/css" href="styles/icon.css"/>
     <link rel="stylesheet" type="text/css" href="styles/app.css"/>
-    <link rel="stylesheet" type="text/css" href="styles/filter.css"/>
+    <link rel="stylesheet" type="text/css" href="styles/day.css"/>
     <link rel="stylesheet" type="text/css" href="styles/grouped_visits.css"/>
     <link rel="stylesheet" type="text/css" href="styles/page_visit.css"/>
     <link rel="stylesheet" type="text/css" href="styles/search.css"/>
@@ -17,6 +17,7 @@
     <link rel="stylesheet" type="text/css" href="styles/overlay.css"/>
     <link rel="stylesheet" type="text/css" href="styles/settings.css"/>
     <link rel="stylesheet" type="text/css" href="styles/credits.css"/>
+    <link rel="stylesheet" type="text/css" href="styles/week.css"/>
     <title>Better History</title>
   </head>
   <body>
@@ -30,123 +31,131 @@
     </script>
 
     <script id="credits" type="text/html">
-      <div class="overlay {{visibility}}">
-        <div class="page">
-          <div class="modal">
-            <h1 class="title">{{i18n_credits_title}}</h1>
-            <div class="content-area">
-              <div>{{{i18n_developed_by}}}</div>
-              <h3>{{i18n_translators_heading}}</h3>
-              <ul class="translators">
-                <li>
-                  <a href="http://twitter.com/laucmar">Laura Martínez</a>
-                  <div class="language">{{i18n_spanish}}</div>
-                </li>
-                <li>
-                  <a href="http://gplus.to/vangraff">Damir Fakhriev</a>
-                  <div class="language">{{i18n_russian}}</div>
-                </li>
-                <li>
-                  <a href="https://plus.google.com/115314774787477379472">Filipe Catalão</a>
-                  <div class="language">{{i18n_portuguese}}</div>
-                </li>
-                <li>
-                  <a href="http://theopenspring.com">Gianluca Sangiovanni</a>
-                  <div class="language">{{i18n_italian}}</div>
-                </li>
-                <li>
-                  <a href="mailto:tebai.hamza@gmail.com">Hamza Tebai</a>
-                  <div class="language">{{i18n_french}}</div>
-                </li>
-                <li>
-                  <a href="http://about.me/henrikcederblad">Henrik Cederblad</a>
-                  <div class="language">{{i18n_swedish}}</div>
-                </li>
-                <li>
-                  <a href="https://plus.google.com/u/0/115959812130668207635/posts">PBB</a>
-                  <div class="language">{{i18n_chinese_simplified}}</div>
-                </li>
-                <li>
-                  <a href="http://twitter.com/kurtextrem">Jacob G</a>
-                  <div class="language">{{i18n_german}}</div>
-                </li>
-                <li>
-                  <a href="http://www.jedlikowski.com">Przemek Jedlikowski</a>
-                  <div class="language">{{i18n_polish}}</div>
-                </li>
-                <li>
-                  Szilvási Dávid
-                  <div class="language">{{i18n_hungarian}}</div>
-                </li>
-              </ul>
-              <ul class="translators">
-                <li>
-                  <a href="https://twitter.com/yl_ksa">Wael M. Hazzazi</a>
-                  <div class="language">{{i18n_arabic}}</div>
-                </li>
-                <li>
-                  <a href="http://twitter.com/snanyucel">Sinan Yucel</a>
-                  <div class="language">{{i18n_turkish}}</div>
-                </li>
-                <li>
-                  <a href="http://www.draugiem.lv/jurisplakans">Juris Plakans</a>
-                  <div class="language">{{i18n_latvian}}</div>
-                </li>
-                <li>
-                  <a href="http://twitter.com/HowManyFiles">ハウメニ</a>
-                  <div class="language">{{i18n_japanese}}</div>
-                </li>
-                <li>
-                  <a href="http://facebook.com/khaister">Khai Nguyen</a>
-                  <div class="language">{{i18n_vietnamese}}</div>
-                </li>
-                <li>
-                  <a href="mailto:alexandruandrei90@gmail.com">Alexandru Andrei</a>
-                  <div class="language">{{i18n_romanian}}</div>
-                </li>
-                <li>
-                  Juanjo Teruel
-                  <div class="language">{{i18n_catalonian}}</div>
-                </li>
-              </ul>
-              <h4>{{i18n_translation_help_heading}}</h4>
-              <p style="width:auto">{{{i18n_translation_instructions}}}</p>
-            </div>
-            <div class="action-wrapper">
-              <div class="action-area">
-                <div class="action-area-right">
-                  <div class="button-strip">
-                    <button class="button close">{{i18n_close_button}}</button>
-                  </div>
-                </div>
-              </div>
-            </div>
+      <h1 class="title">{{i18n_credits_title}}</h1>
+      <div class="content-area">
+        <div>{{{i18n_developed_by}}}</div>
+        <h3>{{i18n_translators_heading}}</h3>
+        <ul class="translators">
+          <li>
+            <a href="http://twitter.com/laucmar">Laura Martínez</a>
+            <div class="language">{{i18n_spanish}}</div>
+          </li>
+          <li>
+            <a href="http://gplus.to/vangraff">Damir Fakhriev</a>
+            <div class="language">{{i18n_russian}}</div>
+          </li>
+          <li>
+            <a href="https://plus.google.com/115314774787477379472">Filipe Catalão</a>
+            <div class="language">{{i18n_portuguese}}</div>
+          </li>
+          <li>
+            <a href="http://theopenspring.com">Gianluca Sangiovanni</a>
+            <div class="language">{{i18n_italian}}</div>
+          </li>
+          <li>
+            <a href="mailto:tebai.hamza@gmail.com">Hamza Tebai</a>
+            <div class="language">{{i18n_french}}</div>
+          </li>
+          <li>
+            <a href="http://about.me/henrikcederblad">Henrik Cederblad</a>
+            <div class="language">{{i18n_swedish}}</div>
+          </li>
+          <li>
+            <a href="https://plus.google.com/u/0/115959812130668207635/posts">PBB</a>
+            <div class="language">{{i18n_chinese_simplified}}</div>
+          </li>
+          <li>
+            <a href="http://twitter.com/kurtextrem">Jacob G</a>
+            <div class="language">{{i18n_german}}</div>
+          </li>
+          <li>
+            <a href="http://www.jedlikowski.com">Przemek Jedlikowski</a>
+            <div class="language">{{i18n_polish}}</div>
+          </li>
+          <li>
+            Szilvási Dávid
+            <div class="language">{{i18n_hungarian}}</div>
+          </li>
+        </ul>
+        <ul class="translators">
+          <li>
+            <a href="https://twitter.com/yl_ksa">Wael M. Hazzazi</a>
+            <div class="language">{{i18n_arabic}}</div>
+          </li>
+          <li>
+            <a href="http://twitter.com/snanyucel">Sinan Yucel</a>
+            <div class="language">{{i18n_turkish}}</div>
+          </li>
+          <li>
+            <a href="http://www.draugiem.lv/jurisplakans">Juris Plakans</a>
+            <div class="language">{{i18n_latvian}}</div>
+          </li>
+          <li>
+            <a href="http://twitter.com/HowManyFiles">ハウメニ</a>
+            <div class="language">{{i18n_japanese}}</div>
+          </li>
+          <li>
+            <a href="http://facebook.com/khaister">Khai Nguyen</a>
+            <div class="language">{{i18n_vietnamese}}</div>
+          </li>
+          <li>
+            <a href="mailto:alexandruandrei90@gmail.com">Alexandru Andrei</a>
+            <div class="language">{{i18n_romanian}}</div>
+          </li>
+          <li>
+            Juanjo Teruel
+            <div class="language">{{i18n_catalonian}}</div>
+          </li>
+        </ul>
+        <h4>{{i18n_translation_help_heading}}</h4>
+        <p style="width:auto">{{{i18n_translation_instructions}}}</p>
+      </div>
+      <div class="action-area">
+        <div class="action-area-right">
+          <div class="button-strip">
+            <button class="button close">{{i18n_close_button}}</button>
           </div>
         </div>
       </div>
     </script>
 
-    <script id="filter" type="text/html">
+    <script id="week" type="text/html">
       <div class="heading">
         <h2>{{{title}}}</h2>
-        <span class="date">{{formal_date}}</span>
+        <span class="sub_title">{{formal_date}}</span>
         <input type="search" class="search" placeholder="{{i18n_search_input_placeholder_text}}" tabindex="1" />
         <div class="controls">
-          <button class="collapse_groupings">{{i18n_collapse_button}}</button>
-          <button class="expand_groupings">{{i18n_expand_button}}</button>
+          <span class="number_of_visits_all_week"></span> visits
           <button class="delete_all">{{i18n_delete_all_visits_for_filter_button}}</button>
         </div>
       </div>
       <div class="content">
-        <div class="spinner"></div>
+        <ol class="days">
+          {{#days}}
+            <li class="day" data-id="{{id}}">
+              <h3 class="title">{{title}}</h3>
+              <a href="{{url}}" class="count"><span class="number_of_visits"></span> visits</a>
+              <div class="bar_container"><div class="bar"></div></div>
+            </li>
+          {{/days}}
+        </ol>
+      </div>
+    </script>
+
+    <script id="day" type="text/html">
+      <div class="content-area">
+        <div class="heading">
+          <h2>{{{title}}}<span class="date">{{formalDate}}</span></h2>
+          <div class="controls">
+            <input type="search" class="search" placeholder="{{i18n_search_input_placeholder_text}}" tabindex="1" />
+            <button class="delete_all">{{i18n_delete_all_visits_for_filter_button}}</button>
+          </div>
+        </div>
+        <div class="content"></div>
       </div>
     </script>
     <script id="noVisits" type="text/html">
       <p class="no_visits">{{i18n_no_visits_found}}</p>
-    </script>
-
-    <script id="filterItem" type="text/html">
-      <a href="#filter/{{id}}" data-id="{{id}}" class="{{quantity}}">{{{title}}}</a>
     </script>
 
     <script id="groupedVisits" type="text/html">
@@ -181,18 +190,14 @@
 
     <script id="prompt" type="text/html">
       <div class="page">
-        <div class="modal">
-          <div class="spinner"></div>
-          <h1 class="title">{{i18n_prompt_title}}</h1>
-          <div class="content-area">{{{content}}}</div>
-          <div class="action-wrapper">
-            <div class="action-area">
-              <div class="action-area-right">
-                <div class="button-strip">
-                  <button class="no">{{i18n_prompt_cancel_button}}</button>
-                  <button class="yes">{{i18n_prompt_delete_button}}</button>
-                </div>
-              </div>
+        <div class="spinner"></div>
+        <h1 class="title">{{i18n_prompt_title}}</h1>
+        <div class="content-area">{{{content}}}</div>
+        <div class="action-area">
+          <div class="action-area-right">
+            <div class="button-strip">
+              <button class="no">{{i18n_prompt_cancel_button}}</button>
+              <button class="yes">{{i18n_prompt_delete_button}}</button>
             </div>
           </div>
         </div>
@@ -303,27 +308,12 @@
     </script>
 
     <script id="sidebar" type="text/html">
-      <ul class="categories">
-        <li class="category">
-          <div class="break">{{i18n_this_week}}</div>
-          <ul class="filters this_week">
-            {{#this_week_filters}}
-              <li>
-                <a href="#filter/{{id}}" data-id="{{id}}" class="{{quantity}}">{{{title}}}</a>
-              </li>
-            {{/this_week_filters}}
-          </ul>
-        </li>
-        <li class="category">
-          <div class="break">{{i18n_last_week}}</div>
-          <ul class="filters last_week">
-            {{#last_week_filters}}
-              <li>
-                <a href="#filter/{{id}}" data-id="{{id}}" class="{{quantity}}">{{{title}}}</a>
-              </li>
-            {{/last_week_filters}}
-          </ul>
-        </li>
+      <ul class="weeks">
+        {{#weeks}}
+          <li class="week">
+            <a href="{{url}}">{{{shortTitle}}}</a>
+          </li>
+        {{/weeks}}
       </ul>
       <a href="#settings" class="setting">
         {{i18n_settings_link}}
@@ -331,46 +321,42 @@
     </script>
 
     <script id="timeVisit" type="text/html">
-      <div class="state {{state}}">
-        <h3 class="time_interval" data-time="{{id}}">
-          <span class="arrow arrow_down"></span>
-          <span class="arrow arrow_right"></span>
-          <span class="time">{{time}}</span>
-          <span class="summary">{{{amount}}}</span>
-          <div class="delete_layer">
-            <button class="delete_interval" title="{{i18n_delete_time_interval_button_tooltip}}">{{i18n_delete_time_interval_button}}</button>
-          </div>
-        </h3>
-        <div class="visits"></div>
+      <h3 class="time_interval" data-time="{{id}}">
+        <span class="time">{{time}}</span>
+        <span class="summary">{{{amount}}}</span>
+        <div class="delete_layer">
+          <button class="delete_interval" title="{{i18n_delete_time_interval_button_tooltip}}">{{i18n_delete_time_interval_button}}</button>
+        </div>
+      </h3>
+      <div class="visits"></div>
+    </script>
+
+    <script id="modal" type="text/html">
+      <div class="overlay" id="overlay">
+        <div class="page">
+          <div class="close-button"></div>
+        </div>
       </div>
     </script>
 
     <script id="version" type="text/html">
-      <div class="overlay {{visibility}}">
-        <div class="page">
-          <div class="modal">
-            <h1 class="title">{{{i18n_version_title}}}</h1>
-            <div class="content-area">
-              <p>{{{i18n_version_description}}}</p>
-              <h4>{{i18n_version_whats_new}}</h4>
-              <ul>{{{i18n_version_items}}}</ul>
-              <!--<h4>{{i18n_version_important_note}}</h4>-->
-              <!--<p style="width:400px;">-->
-                <!--{{{i18n_version_note}}}-->
-              <!--</p>-->
-            </div>
-            <div class="action-wrapper">
-              <div class="action-area">
-                <div class="action-area-link-container">
-                  <a href="https://chrome.google.com/webstore/detail/obciceimmggglbmelaidpjlmodcebijb/reviews" class="review">{{i18n_leave_a_review}}</a>
-                </div>
-                <div class="action-area-right">
-                  <div class="button-strip">
-                    <button class="button close">{{i18n_close_button}}</button>
-                  </div>
-                </div>
-              </div>
-            </div>
+      <h1 class="title">{{{i18n_version_title}}}</h1>
+      <div class="content-area">
+        <p>{{{i18n_version_description}}}</p>
+        <h4>{{i18n_version_whats_new}}</h4>
+        <ul>{{{i18n_version_items}}}</ul>
+        <!--<h4>{{i18n_version_important_note}}</h4>-->
+        <!--<p style="width:400px;">-->
+          <!--{{{i18n_version_note}}}-->
+        <!--</p>-->
+      </div>
+      <div class="action-area">
+        <div class="action-area-link-container">
+          <a href="https://chrome.google.com/webstore/detail/obciceimmggglbmelaidpjlmodcebijb/reviews" class="review">{{i18n_leave_a_review}}</a>
+        </div>
+        <div class="action-area-right">
+          <div class="button-strip">
+            <button class="button close">{{i18n_close_button}}</button>
           </div>
         </div>
       </div>
@@ -383,21 +369,25 @@
     <script type="text/javascript" src="javascripts/frameworks/spin.min.js"></script>
     <script type="text/javascript" src="javascripts/frameworks/underscore-min.js"></script>
     <script type="text/javascript" src="javascripts/frameworks/backbone-min.js"></script>
+    <script type="text/javascript" src="javascripts/frameworks/moment.js"></script>
 
     <script type="text/javascript" src="javascripts/lib/date_ranger.js"></script>
     <script type="text/javascript" src="javascripts/lib/group_by.js"></script>
-    <script type="text/javascript" src="javascripts/lib/filters_seed.js"></script>
+    <script type="text/javascript" src="javascripts/lib/weeks_seed.js"></script>
     <script type="text/javascript" src="javascripts/lib/chrome_api.js"></script>
     <script type="text/javascript" src="javascripts/lib/helpers.js"></script>
     <script type="text/javascript" src="javascripts/lib/i18n.js"></script>
     <script type="text/javascript" src="javascripts/lib/backbone_hacks.js"></script>
+    <script type="text/javascript" src="javascripts/lib/url.js"></script>
 
     <script type="text/javascript" src="javascripts/router.js"></script>
 
+    <script type="text/javascript" src="javascripts/views/modal_view.js"></script>
     <script type="text/javascript" src="javascripts/views/app_view.js"></script>
     <script type="text/javascript" src="javascripts/views/sidebar_view.js"></script>
     <script type="text/javascript" src="javascripts/views/grouped_visits_view.js"></script>
-    <script type="text/javascript" src="javascripts/views/filter_view.js"></script>
+    <script type="text/javascript" src="javascripts/views/week_view.js"></script>
+    <script type="text/javascript" src="javascripts/views/day_view.js"></script>
     <script type="text/javascript" src="javascripts/views/page_visit_view.js"></script>
     <script type="text/javascript" src="javascripts/views/search_view.js"></script>
     <script type="text/javascript" src="javascripts/views/time_visit_view.js"></script>
@@ -408,13 +398,15 @@
 
     <script type="text/javascript" src="javascripts/models/page_visit.js"></script>
     <script type="text/javascript" src="javascripts/models/time_visit.js"></script>
-    <script type="text/javascript" src="javascripts/models/filter.js"></script>
+    <script type="text/javascript" src="javascripts/models/week.js"></script>
+    <script type="text/javascript" src="javascripts/models/day.js"></script>
     <script type="text/javascript" src="javascripts/models/version.js"></script>
     <script type="text/javascript" src="javascripts/models/settings.js"></script>
     <script type="text/javascript" src="javascripts/models/prompt.js"></script>
     <script type="text/javascript" src="javascripts/models/state.js"></script>
 
-    <script type="text/javascript" src="javascripts/collections/filters.js"></script>
+    <script type="text/javascript" src="javascripts/collections/weeks.js"></script>
+    <script type="text/javascript" src="javascripts/collections/days.js"></script>
     <script type="text/javascript" src="javascripts/collections/grouped_visits.js"></script>
     <script type="text/javascript" src="javascripts/collections/time_visits.js"></script>
     <script type="text/javascript" src="javascripts/collections/page_visits.js"></script>

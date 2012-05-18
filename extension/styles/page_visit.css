@@ -5,7 +5,6 @@
   display:block;
   position:relative;
   margin:5px 3px 0 0;
-  margin-__MSG_@@bidi_start_edge__:15px;
   font-size: 12px
 }
 .page_visit_view .link {
@@ -19,7 +18,6 @@
 .page_visit_view .location,
 .page_visit_view .time {
   color: #999;
-  padding:1px 0;
   overflow:hidden;
   white-space: nowrap;
   font-size: 11px;

@@ -1,48 +1,56 @@
 Router = Backbone.Router.extend({
   routes: {
     'settings': 'settings',
-    'filter/:id': 'filter',
-    'filter/:id/:time': 'filter',
-    'search/*query': 'search'
+    'search/*query': 'search',
+    'weeks/:id': 'week',
+    'weeks/:weekId/days/:id': 'day'
   },
 
   selectedClass: 'selected',
 
-  initialize: function() {
+  //_after: function() {
+    //if(urlFragment.length !== 0) {
+      //BH.models.state.set({'route': urlFragment[0]});
+    //}
+  //},
+
+  week: function(id) {
+    var model = BH.collections.weeks.get(id),
+        view = BH.views.weekViews[model.id];
+
+    $('.mainview > *').removeClass(this.selectedClass);
+    Helpers.pageTitle(model.get('title'));
+    view.$el.addClass(this.selectedClass);
+    model.fetch();
+  },
+
+  day: function(weekId, id) {
+    var model = BH.collections.weeks.get(weekId).get('days').get(id);
+
+    var dayView = new DayView({model: model});
+    $('body').append(dayView.render().el);
     var self = this;
-    this
-      .bind('route:before', function() {
-        $('.mainview > *').removeClass(self.selectedClass);
-      })
-      .bind('route:after', function(urlFragment) {
-        if(urlFragment.length !== 0) {
-          BH.models.state.set({'route': urlFragment[0]});
-        }
-      });
+    dayView.bind('close', function () {
+      self.navigate('#weeks/' + weekId);
+    });
+
+    dayView.open();
+    model.fetch();
   },
 
   settings: function() {
     var view = BH.views.settingsView;
 
+    $('.mainview > *').removeClass(this.selectedClass);
     Helpers.pageTitle(chrome.i18n.getMessage('settings_title'));
     view.$el.addClass(this.selectedClass);
-  },
-
-  filter: function(id, time) {
-    var model = BH.collections.filters.get(id),
-        view = BH.views.filterViews[model.id];
-
-    Helpers.pageTitle(model.get('title'));
-    view.$el.addClass(this.selectedClass);
-    view.startTime = time;
-
-    model.fetch();
   },
 
   search: function(query) {
     var model = BH.models.searchFilter,
         view = BH.views.searchView;
 
+    $('.mainview > *').removeClass(this.selectedClass);
     view.$el.addClass(this.selectedClass);
 
     model.set({text: query}).fetch();

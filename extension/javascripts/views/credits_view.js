@@ -6,6 +6,10 @@ CreditsView = Backbone.Modal.extend({
     'click .close': 'closeClicked'
   },
 
+  initialize: function() {
+    this.attachGeneralEvents();
+  },
+
   render: function() {
     this.$el.html(this.template(i18n.credits()));
     return this;
