@@ -17,14 +17,11 @@
 
     TimeVisitView.prototype.templateId = 'timeVisit';
 
-    TimeVisitView.prototype.collapsedClass = 'collapsed';
-
     TimeVisitView.prototype.events = {
       'click .delete_interval': 'deleteTimeVisit'
     };
 
     TimeVisitView.prototype.initialize = function() {
-      this.model.fetch();
       return this.collection.on('destroy', this.updateCount, this);
     };
 
@@ -33,7 +30,7 @@
       this.$el.html(this.template(this.model.toTemplate()));
       groupedVisits;
 
-      if (app.options.settings.get('domainGrouping')) {
+      if (settings.get('domainGrouping')) {
         groupedVisits = GroupBy.domain(this.collection);
       }
       $.each(groupedVisits || this.collection.models, function(i, pageVisit) {

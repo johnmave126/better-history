@@ -23,11 +23,13 @@
     Router.prototype.selectedClass = 'selected';
 
     Router.prototype.initialize = function() {
-      window.app = this.app = new BH.Views.AppView({
+      window.settings = new BH.Models.Settings();
+      window.version = new BH.Models.Version({
+        version: '1.6.0'
+      });
+      window.appView = this.app = new BH.Views.AppView({
         el: $('.app'),
-        model: new BH.Models.Version({
-          version: '1.6.0'
-        }),
+        model: version,
         collection: new BH.Collections.Weeks([
           {
             date: moment().past('Monday', 0)
@@ -51,8 +53,6 @@
             date: moment().past('Monday', 9)
           }
         ])
-      }, {
-        settings: new BH.Models.Settings()
       }).render();
       return Backbone.history.start();
     };
@@ -60,7 +60,7 @@
     Router.prototype.week = function(id) {
       var model, view;
       model = this.app.collection.get(id);
-      view = this.app.weekViews[model.id];
+      view = this.app.views.weeks[model.id];
       $('.mainview > *').removeClass(this.selectedClass);
       Helpers.pageTitle(model.get('title'));
       view.$el.addClass(this.selectedClass);
@@ -68,9 +68,11 @@
     };
 
     Router.prototype.day = function(weekId, id) {
-      var dayView, model,
+      var dayView, model, view,
         _this = this;
       model = this.app.collection.get(weekId).get('days').get(id);
+      view = this.app.views.weeks[this.app.collection.get(weekId).id];
+      view.$el.addClass(this.selectedClass);
       dayView = new BH.Views.DayView({
         model: model
       }, this.app.options);
@@ -85,17 +87,15 @@
     Router.prototype.settings = function() {
       $('.mainview > *').removeClass(this.selectedClass);
       Helpers.pageTitle(chrome.i18n.getMessage('settings_title'));
-      return this.views.settingsView.$el.addClass(this.selectedClass);
+      return this.app.views.settings.$el.addClass(this.selectedClass);
     };
 
     Router.prototype.search = function(query) {
-      var model;
-      model = BH.models.searchFilter;
       $('.mainview > *').removeClass(this.selectedClass);
-      this.views.searchView.$el.addClass(this.selectedClass);
-      return model.set({
-        text: query
-      }).fetch();
+      this.app.views.search.model.set({
+        query: query
+      });
+      return this.app.views.search.$el.addClass(this.selectedClass);
     };
 
     return Router;

@@ -6,6 +6,6 @@ class BH.Models.TimeVisit extends Backbone.Model
         '<span class="amount">',
         '</span>'
       ])
-      time: Helpers.formatTime(@get('datetime'), BH.models.settings.timeFormat())
+      time: Helpers.formatTime(@get('datetime'), settings.timeFormat())
       id: this.id
     , i18n.timeVisit()

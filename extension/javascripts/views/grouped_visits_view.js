@@ -3,15 +3,28 @@
   var __hasProp = {}.hasOwnProperty,
     __extends = function(child, parent) { for (var key in parent) { if (__hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor; child.__super__ = parent.prototype; return child; };
 
-  __extends(BH.Views.GroupedVisitsView, Backbone.View({
-    className: 'page_visit_view grouped_visits_view',
-    templateId: 'groupedVisits',
-    expandedClass: 'active',
-    events: {
+  BH.Views.GroupedVisitsView = (function(_super) {
+
+    __extends(GroupedVisitsView, _super);
+
+    GroupedVisitsView.name = 'GroupedVisitsView';
+
+    function GroupedVisitsView() {
+      return GroupedVisitsView.__super__.constructor.apply(this, arguments);
+    }
+
+    GroupedVisitsView.prototype.className = 'page_visit_view grouped_visits_view';
+
+    GroupedVisitsView.prototype.templateId = 'groupedVisits';
+
+    GroupedVisitsView.prototype.expandedClass = 'active';
+
+    GroupedVisitsView.prototype.events = {
       'click .expand': 'toggle',
       'click .delete_group': 'deleteClicked'
-    },
-    render: function() {
+    };
+
+    GroupedVisitsView.prototype.render = function() {
       this.$el.append(this.template(this.collection.toTemplate()));
       this.collection.each(function(model) {
         var pageVisitView;
@@ -21,25 +34,31 @@
         return self.$('.expanded').append(pageVisitView.render().el);
       });
       return this;
-    },
-    toggle: function(ev) {
+    };
+
+    GroupedVisitsView.prototype.toggle = function(ev) {
       ev.preventDefault();
       if ($(ev.target).hasClass(this.expandedClass)) {
         return $(ev.target).text(this.collection.toTemplate().i18n_expand_button).removeClass(this.expandedClass).parents('a').next().slideUp('fast');
       } else {
         return $(ev.target).text(this.collection.toTemplate().i18n_collapse_button).addClass(this.expandedClass).parents('a').next().slideDown('fast');
       }
-    },
-    deleteClicked: function(ev) {
+    };
+
+    GroupedVisitsView.prototype.deleteClicked = function(ev) {
       ev.preventDefault();
       this.collection.destroyAll();
       return this.remove();
-    },
-    remove: function() {
+    };
+
+    GroupedVisitsView.prototype.remove = function() {
       return this.$el.slideUp('fast', function() {
         return $(this).remove();
       });
-    }
-  }));
+    };
+
+    return GroupedVisitsView;
+
+  })(Backbone.View);
 
 }).call(this);

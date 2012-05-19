@@ -15,6 +15,17 @@
 
     TimeVisits.prototype.model = BH.Models.TimeVisit;
 
+    TimeVisits.prototype.toTemplate = function() {
+      var timeVisits;
+      timeVisits = {};
+      this.each(function(model) {
+        return timeVisits.push(model.toTemplate());
+      });
+      return {
+        timeVisits: timeVisits
+      };
+    };
+
     TimeVisits.prototype.destroyAll = function() {
       var _results;
       _results = [];

@@ -15,7 +15,7 @@
 
     Week.prototype.format = {
       shortTitle: 'MMMM Do',
-      title: 'Week of dddd Do',
+      title: 'Week of dddd, MMMM Do',
       id: 'D-M-YY'
     };
 
@@ -26,7 +26,7 @@
         shortTitle: this._weekFormat('shortTitle'),
         title: this._weekFormat('title'),
         id: id,
-        url: "#weeks/" + id,
+        url: BH.Lib.Url.week(id),
         days: new BH.Collections.Days([
           {
             date: this._generateDate(0),

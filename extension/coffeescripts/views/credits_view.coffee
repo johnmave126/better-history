@@ -1,7 +1,6 @@
-class BH.Views.VersionView extends BH.Views.Modal
-  className: 'version_view'
-
-  templateId: 'version'
+class BH.Views.CreditsView extends BH.Views.Modal
+  className: 'credits_view'
+  templateId: 'credits'
 
   events:
     'click .close': 'closeClicked'
@@ -10,12 +9,11 @@ class BH.Views.VersionView extends BH.Views.Modal
     @attachGeneralEvents()
 
   render: ->
-    @$el.html(@template(@model.toTemplate()))
-    @
+    @$el.html(@template(i18n.credits()))
+    return this
 
   closeClicked: (ev) ->
     ev.preventDefault()
-    @model.setSuppress(true)
     @close()
     BH.router.navigate('#settings')
 

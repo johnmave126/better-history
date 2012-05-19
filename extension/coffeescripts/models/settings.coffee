@@ -44,7 +44,7 @@ class BH.Models.Settings extends Backbone.Model
       searchBySelection: @get('searchBySelection')
       searchByDomain: @get('searchByDomain')
       domainGrouping: @get('domainGrouping')
-      version: BH.models.version.get('version')
+      version: version.get('version')
     , i18n.settings()
 
   timeGrouping: ->

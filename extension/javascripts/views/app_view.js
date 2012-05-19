@@ -28,6 +28,9 @@
     AppView.prototype.initialize = function(config, options) {
       var versionView;
       this.options = options;
+      this.views = {
+        weeks: {}
+      };
       if (this.model.get('suppress') === false) {
         versionView = new VersionView({
           model: this.model
@@ -43,11 +46,19 @@
       properties = _.extend(i18n.app(), this.collection.toTemplate());
       this.$el.html(this.template(properties));
       this.collection.each(function(model) {
-        _this.weekViews[model.id] = new BH.Views.WeekView({
+        _this.views.weeks[model.id] = new BH.Views.WeekView({
           model: model
         }, _this.options);
-        return _this.$('.mainview').append(_this.weekViews[model.id].render().el);
+        return _this.$('.mainview').append(_this.views.weeks[model.id].render().el);
       });
+      this.views.search = new BH.Views.SearchView({
+        model: new BH.Models.Search()
+      });
+      this.$('.mainview').append(this.views.search.render().el);
+      this.views.settings = new BH.Views.SettingsView({
+        model: settings
+      });
+      this.$('.mainview').append(this.views.settings.render().el);
       return this;
     };
 

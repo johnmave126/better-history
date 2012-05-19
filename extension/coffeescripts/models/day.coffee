@@ -32,7 +32,7 @@ class BH.Models.Day extends Backbone.Model
   sync: (method, model, options) ->
     if method == 'read'
       chromeAPI.history.search @toChrome(), (history) ->
-        options.success(GroupBy.time(history, app.options.settings.timeGrouping()))
+        options.success(GroupBy.time(history, settings.timeGrouping()))
 
   clear: ->
     chrome.history.deleteRange

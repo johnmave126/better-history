@@ -39,4 +39,4 @@
 //  }
 //};
 
-new BH.Router();
+router = new BH.Router();

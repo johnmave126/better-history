@@ -1,19 +1,17 @@
 class BH.Views.TimeVisitView extends Backbone.View
   className: 'time_visit_view'
   templateId: 'timeVisit'
-  collapsedClass: 'collapsed'
 
   events:
     'click .delete_interval': 'deleteTimeVisit'
 
   initialize: ->
-    @model.fetch()
     @collection.on('destroy', @updateCount, @)
 
   render: ->
     @$el.html(@template(@model.toTemplate()))
     groupedVisits
-    if app.options.settings.get('domainGrouping')
+    if settings.get('domainGrouping')
       groupedVisits = GroupBy.domain(@collection)
 
     $.each groupedVisits || @collection.models, (i, pageVisit) ->

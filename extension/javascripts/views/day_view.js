@@ -19,7 +19,8 @@
 
     DayView.prototype.events = {
       'click .delete_all': 'clickedDeleteAll',
-      'keyup .search': 'filtered'
+      'keyup .search': 'filtered',
+      'click .full_search': 'fullSearchClicked'
     };
 
     DayView.prototype.initialize = function(config) {
@@ -57,7 +58,8 @@
         this.$('button').attr('disabled', 'disabled');
         $(document).scrollTop(0);
         if (this.model.get('filter')) {
-          return this.$('.content').append('<a href="3">Maybe try searching full history?</a>');
+          this.$('.content').append('<p> TODO: filtering</p>');
+          return this.$('.content').append("<a class='full_search' href='" + (BH.Lib.Url.search(this.model.get('filter'))) + "'>Maybe try searching full history?</a>");
         }
       } else {
         if (this.startTime) {
@@ -84,7 +86,7 @@
     DayView.prototype.clickedDeleteAll = function(ev) {
       if ($(ev.target).parent().attr('disabled') !== 'disabled') {
         ev.preventDefault();
-        this.promptView = CreatePrompt(chrome.i18n.getMessage('confirm_delete_all_visits', [this.model.get('extendedFormalDate')]));
+        this.promptView = BH.Views.CreatePrompt(chrome.i18n.getMessage('confirm_delete_all_visits', [this.model.get('extendedFormalDate')]));
         this.promptView.open();
         return this.promptView.model.on('change', this.deleteAction, this);
       }
@@ -106,6 +108,10 @@
       return this.model.set({
         filter: $(ev.currentTarget).val()
       });
+    };
+
+    DayView.prototype.fullSearchClicked = function() {
+      return this.close();
     };
 
     return DayView;

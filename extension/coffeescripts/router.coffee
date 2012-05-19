@@ -7,15 +7,13 @@ class BH.Router extends Backbone.Router
 
   selectedClass: 'selected'
 
-#  _after: function() {
-#    if(urlFragment.length !== 0) {
-#      BH.models.state.set({'route': urlFragment[0]});
-#    }
-
   initialize: ->
-    window.app = @app = new BH.Views.AppView(
+    # yuck
+    window.settings = new BH.Models.Settings()
+    window.version = new BH.Models.Version({version: '1.6.0'})
+    window.appView = @app = new BH.Views.AppView(
       el: $('.app')
-      model: new BH.Models.Version({version: '1.6.0'})
+      model: version
       collection: new BH.Collections.Weeks([
         {date: moment().past('Monday', 0)},
         {date: moment().past('Monday', 1)},
@@ -28,17 +26,13 @@ class BH.Router extends Backbone.Router
         {date: moment().past('Monday', 8)},
         {date: moment().past('Monday', 9)}
       ])
-    , settings: new BH.Models.Settings()).render()
+    ).render()
 
     Backbone.history.start()
 
-#    if(!location.hash) {
-#      @navigate(BH.models.state.get('route'), {trigger: true});
-#    }
-
   week: (id) ->
     model = @app.collection.get(id)
-    view = @app.weekViews[model.id]
+    view = @app.views.weeks[model.id]
 
     $('.mainview > *').removeClass(@selectedClass)
     Helpers.pageTitle(model.get('title'))
@@ -48,6 +42,9 @@ class BH.Router extends Backbone.Router
 
   day: (weekId, id) ->
     model = @app.collection.get(weekId).get('days').get(id)
+
+    view = @app.views.weeks[@app.collection.get(weekId).id]
+    view.$el.addClass(@selectedClass)
 
     dayView = new BH.Views.DayView({model: model}, @app.options)
     $('body').append(dayView.render().el)
@@ -60,12 +57,10 @@ class BH.Router extends Backbone.Router
   settings: ->
     $('.mainview > *').removeClass(@selectedClass)
     Helpers.pageTitle(chrome.i18n.getMessage('settings_title'))
-    @views.settingsView.$el.addClass(@selectedClass)
+    @app.views.settings.$el.addClass(@selectedClass)
 
   search: (query) ->
-    model = BH.models.searchFilter
-
     $('.mainview > *').removeClass(@selectedClass)
-    @views.searchView.$el.addClass(@selectedClass)
+    @app.views.search.model.set({query: query})
+    @app.views.search.$el.addClass(@selectedClass)
 
-    model.set({text: query}).fetch()

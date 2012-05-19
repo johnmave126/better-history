@@ -16,7 +16,7 @@
     TimeVisit.prototype.toTemplate = function() {
       return _.extend({
         amount: chrome.i18n.getMessage('number_of_visits', [this.get('pageVisits').length.toString(), '<span class="amount">', '</span>']),
-        time: Helpers.formatTime(this.get('datetime'), BH.models.settings.timeFormat()),
+        time: Helpers.formatTime(this.get('datetime'), settings.timeFormat()),
         id: this.id
       }, i18n.timeVisit());
     };

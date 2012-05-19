@@ -5,6 +5,7 @@ class BH.Views.DayView extends BH.Views.Modal
   events:
     'click .delete_all': 'clickedDeleteAll'
     'keyup .search': 'filtered'
+    'click .full_search': 'fullSearchClicked'
 
   initialize: (config) ->
     @attachGeneralEvents()
@@ -37,7 +38,8 @@ class BH.Views.DayView extends BH.Views.Modal
       $(document).scrollTop(0)
 
       if @model.get('filter')
-        @$('.content').append('<a href="3">Maybe try searching full history?</a>')
+        @$('.content').append('<p> TODO: filtering</p>')
+        @$('.content').append("<a class='full_search' href='#{BH.Lib.Url.search(@model.get('filter'))}'>Maybe try searching full history?</a>")
     else
       if @startTime
         offset = $("[data-time='#{@startTime}']").offset()
@@ -62,7 +64,7 @@ class BH.Views.DayView extends BH.Views.Modal
   clickedDeleteAll: (ev) ->
     if $(ev.target).parent().attr('disabled') != 'disabled'
       ev.preventDefault()
-      @promptView = CreatePrompt(chrome.i18n.getMessage('confirm_delete_all_visits', [@model.get('extendedFormalDate')]))
+      @promptView = BH.Views.CreatePrompt(chrome.i18n.getMessage('confirm_delete_all_visits', [@model.get('extendedFormalDate')]))
       @promptView.open()
       @promptView.model.on('change', @deleteAction, @)
 
@@ -77,3 +79,6 @@ class BH.Views.DayView extends BH.Views.Modal
 
   filtered: (ev) ->
     @model.set({filter: $(ev.currentTarget).val()})
+
+  fullSearchClicked: ->
+    @close()

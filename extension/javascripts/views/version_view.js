@@ -3,29 +3,47 @@
   var __hasProp = {}.hasOwnProperty,
     __extends = function(child, parent) { for (var key in parent) { if (__hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor; child.__super__ = parent.prototype; return child; };
 
-  __extends(BH.Views.VersionView, BH.Views.Modal({
-    className: 'version_view',
-    templateId: 'version',
-    events: {
+  BH.Views.VersionView = (function(_super) {
+
+    __extends(VersionView, _super);
+
+    VersionView.name = 'VersionView';
+
+    function VersionView() {
+      return VersionView.__super__.constructor.apply(this, arguments);
+    }
+
+    VersionView.prototype.className = 'version_view';
+
+    VersionView.prototype.templateId = 'version';
+
+    VersionView.prototype.events = {
       'click .close': 'closeClicked'
-    },
-    initialize: function() {
+    };
+
+    VersionView.prototype.initialize = function() {
       return this.attachGeneralEvents();
-    },
-    render: function() {
+    };
+
+    VersionView.prototype.render = function() {
       this.$el.html(this.template(this.model.toTemplate()));
       return this;
-    },
-    closeClicked: function(ev) {
+    };
+
+    VersionView.prototype.closeClicked = function(ev) {
       ev.preventDefault();
       this.model.setSuppress(true);
       this.close();
       return BH.router.navigate('#settings');
-    },
-    openClicked: function(ev) {
+    };
+
+    VersionView.prototype.openClicked = function(ev) {
       ev.preventDefault();
       return this.open();
-    }
-  }));
+    };
+
+    return VersionView;
+
+  })(BH.Views.Modal);
 
 }).call(this);

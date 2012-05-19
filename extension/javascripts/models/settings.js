@@ -56,7 +56,7 @@
         searchBySelection: this.get('searchBySelection'),
         searchByDomain: this.get('searchByDomain'),
         domainGrouping: this.get('domainGrouping'),
-        version: BH.models.version.get('version')
+        version: version.get('version')
       }, i18n.settings());
     };
 

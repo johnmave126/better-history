@@ -1,4 +1,4 @@
-BH.Views.GroupedVisitsView extends Backbone.View
+class BH.Views.GroupedVisitsView extends Backbone.View
   className: 'page_visit_view grouped_visits_view'
   templateId: 'groupedVisits'
   expandedClass: 'active'

@@ -2,7 +2,6 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <link rel="stylesheet" type="text/css" href="styles/main.css"/>
     <link rel="stylesheet" type="text/css" href="styles/button.css"/>
     <link rel="stylesheet" type="text/css" href="styles/select.css"/>
     <link rel="stylesheet" type="text/css" href="styles/checkbox.css"/>
@@ -122,8 +121,7 @@
 
     <script id="week" type="text/html">
       <div class="heading">
-        <h2>{{{title}}}</h2>
-        <span class="sub_title">{{formal_date}}</span>
+        <h2 class="title">{{{title}}}</h2>
         <input type="search" class="search" placeholder="{{i18n_search_input_placeholder_text}}" tabindex="1" />
         <div class="controls">
           <span class="number_of_visits_all_week"></span> visits
@@ -146,7 +144,7 @@
     <script id="day" type="text/html">
       <div class="content-area">
         <div class="heading">
-          <h2>{{{title}}}<span class="date">{{formalDate}}</span></h2>
+          <h2 class="title">{{{title}}}<span class="sub_title">{{formalDate}}</span></h2>
           <div class="controls">
             <input type="search" class="search" placeholder="{{i18n_search_input_placeholder_text}}" tabindex="1" />
             <button class="delete_all">{{i18n_delete_all_visits_for_filter_button}}</button>
@@ -206,8 +204,8 @@
     </script>
 
     <script id="search" type="text/html">
-      <div class="heading stuck">
-        <h2>{{title}}</h2>
+      <div class="heading">
+        <h2 class="title">{{title}}</h2>
         <span class="date">{{i18n_search_time_frame}}</span>
         <input type="search" class="search" placeholder="{{i18n_search_input_placeholder_text}}" tabindex="1" />
         <div class="controls">
@@ -223,7 +221,7 @@
 
     <script id="settings" type="text/html">
       <div class="heading">
-        <h2>{{i18n_settings_title}}</h2>
+        <h2 class="title">{{i18n_settings_title}}</h2>
       </div>
       <div class="content">
         <div class="settings">
@@ -309,8 +307,8 @@
     </script>
 
     <script id="timeVisit" type="text/html">
-      <h3 class="time_interval" data-time="{{id}}">
-        <span class="time">{{time}}</span>
+      <h3 class="title" data-time="{{id}}">
+        {{time}}
         <span class="summary">{{{amount}}}</span>
         <div class="delete_layer">
           <button class="delete_interval" title="{{i18n_delete_time_interval_button_tooltip}}">{{i18n_delete_time_interval_button}}</button>
@@ -394,6 +392,7 @@
     <script type="text/javascript" src="javascripts/models/settings.js"></script>
     <script type="text/javascript" src="javascripts/models/prompt.js"></script>
     <script type="text/javascript" src="javascripts/models/state.js"></script>
+    <script type="text/javascript" src="javascripts/models/search.js"></script>
 
     <script type="text/javascript" src="javascripts/collections/weeks.js"></script>
     <script type="text/javascript" src="javascripts/collections/days.js"></script>

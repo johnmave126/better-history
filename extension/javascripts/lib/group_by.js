@@ -49,7 +49,7 @@ var GroupBy;
           if (compareVisits(visit, previous)) {
             if (groupedVisits[groupedVisits.length - 1].length === undefined) {
               groupedVisits.remove(-1);
-              groupedVisits.push(new GroupedVisits([previous, visit]));
+              groupedVisits.push(new BH.Collections.GroupedVisits([previous, visit]));
             } else {
               groupedVisits[groupedVisits.length - 1].add(visit);
             }

@@ -13,7 +13,7 @@ Backbone.ViewWithSearch = Backbone.View.extend({
   searchTyped: function(ev) {
     var term = this._trimedSearchTerm();
     if(ev.keyCode === 13 && term !== '') {
-      BH.router.navigate('search/' + term, true);
+      router.navigate('search/' + term, true);
     }
   },
 
@@ -38,7 +38,7 @@ _.extend(Backbone.Model.prototype, {
         localStorage[this.storeName] = JSON.stringify(this);
       }
     } else {
-      arguments[0].apply(this, argsCalledWith);
+      arguments[0].apply(this, args);
     }
   })
 });

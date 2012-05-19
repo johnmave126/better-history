@@ -71,9 +71,6 @@ a.modal_link {
 
 
 
-.heading input.search[type=search] {
-  width: 200px;
-}
 .heading .controls {
   border-top:1px solid #EEE;
   border-bottom:1px solid #EEE;
@@ -108,51 +105,3 @@ a.modal_link {
 
 /* Overlays */
 
-#overlay {
-  z-index: 5;
-}
-
-#overlay h1 {
-  font-size: 14px;
-}
-#overlay {
-  font-size: 12px;
-}
-.version_view .page {
-  width:500px;
-}
-#overlay li {
-  list-style-type: disc;
-  padding-bottom:5px;
-}
-#overlay .close-button {
-  z-index:100;
-}
-.prompt_view .spinner {
-  top: 74px;
-  left: 349px;
-  position:absolute;
-}
-.action-area-link-container {
-  -webkit-box-flex: 1;
-}
-.version_view .page,
-.credits_view .page {
-  overflow: hidden;
-}
-.version_view h1 {
-  width: 355px;
-}
-.modal img {
-  width: 170px;
-  __MSG_@@bidi_end_edge__: -50px;
-  top: -50px;
-  opacity: 0.5;
-  position:absolute;
-}
-.prompt_view img {
-  display:none;
-}
-.no_visits {
-  padding: 20px 0;
-}

@@ -59,7 +59,7 @@
     Day.prototype.sync = function(method, model, options) {
       if (method === 'read') {
         return chromeAPI.history.search(this.toChrome(), function(history) {
-          return options.success(GroupBy.time(history, app.options.settings.timeGrouping()));
+          return options.success(GroupBy.time(history, settings.timeGrouping()));
         });
       }
     };

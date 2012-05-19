@@ -9,12 +9,31 @@ a {
   color: #15C;
   text-decoration: none;
 }
-a:hover, a:focus { outline: none; }
-ul { padding: 0; }
-li { list-style-type:none; }
-dl, dt, dd { margin:0; }
-button { cursor: pointer; }
-
+a:hover, a:focus {
+  outline: none;
+}
+ul, ol {
+  padding: 0;
+}
+li {
+  list-style-type:none;
+}
+dl, dt, dd {
+  margin:0;
+}
+button {
+  cursor: pointer;
+}
+h1, h2, h3, h4, h5 {
+  font-weight: normal;
+  color: #5C6166;
+}
+h1 {
+  -webkit-margin-after: 1em;
+  -webkit-margin-before: 20px;
+  -webkit-margin-start: 23px;
+  font-size: 18px;
+}
 
 .mainview {
   -webkit-box-align: stretch;
@@ -79,22 +98,12 @@ button { cursor: pointer; }
 }
 
 
-.week_view .heading .search {
-  float: right;
-}
-.week_view .number_of_visits_all_week {
-  line-height: 23px;
-}
-.week_view .days {
-  padding-left: 0;
-}
 .week_view .days .title {
   margin:0;
   font-size: 14px;
 }
 .week_view .days .sub_title {
   margin:3px 0;
-  font-weight: normal;
 }
 .week_view .days .day {
   margin-bottom:20px;
@@ -130,4 +139,279 @@ button { cursor: pointer; }
   top: 0;
   right: 0;
   height: 100%;
+}
+
+
+.day_view .overlay .page .content-area {
+  width: 750px;
+  overflow-x:hidden;
+  padding: 0px;
+}
+.day_view .content {
+  margin-top: 104px;
+  padding:0 17px 0;
+}
+.day_view .heading {
+  position: absolute;
+  top:0;
+  width: 100%;
+  padding:20px 17px 0;
+  -webkit-box-sizing: border-box;
+}
+.day_view .page {
+  height: 100%;
+}
+.day_view .delete_all {
+  float: right;
+}
+.day_view .heading input {
+  margin-right: 30px;
+}
+
+.heading {
+  padding:20px 0 0;
+}
+.heading,
+.content {
+  width: 738px;
+}
+.heading > input {
+  float: right;
+}
+.heading input.search {
+  width: 200px;
+}
+.heading .sub_title {
+  font-size:15px;
+  margin-__MSG_@@bidi_start_edge__:10px;
+  color:#53637D;
+}
+.heading .title {
+  font-size: 18px;
+  display:inline-block;
+  margin-top: 0;
+  margin-bottom: 14px;
+}
+
+.controls {
+  border-top:1px solid #EEE;
+  border-bottom:1px solid #EEE;
+  margin:0;
+  padding:13px 3px;
+  height: 24px;
+  __MSG_@@bidi_end_edge__:260px;
+}
+.controls button {
+  float: right;
+}
+.controls input {
+  float: left;
+}
+.controls span {
+  line-height: 23px;
+}
+
+
+.page_visit_view a {
+  position:relative;
+  z-index:0;
+  text-decoration:none;
+  display:block;
+  position:relative;
+  margin:5px 3px 0 0;
+  font-size: 12px
+}
+.page_visit_view .link {
+  padding: 5px;
+}
+.page_visit_view .time { display:none; }
+.page_visit_view .title {
+  font-size:105%;
+  padding-bottom:3px;
+}
+.page_visit_view .location,
+.page_visit_view .time {
+  color: #999;
+  overflow:hidden;
+  white-space: nowrap;
+  font-size: 11px;
+}
+.page_visit_view .time { margin-top:2px; }
+.page_visit_view .description {
+  background-repeat:no-repeat;
+  background-position:__MSG_@@bidi_start_edge__ 0;
+  padding-__MSG_@@bidi_start_edge__:25px;
+}
+.page_visit_view .match {
+  background:#f2f37b;
+  display:inline-block;
+  padding:1 2px;
+  margin:0 1px;
+}
+
+.page_visit_view:hover > a > .link,
+.page_visit_view a:focus > .link {
+  background: #EEE;
+}
+.page_visit_view > a:focus {
+  outline:none;
+}
+.page_visit_view:hover > a > .link > .description > .title,
+.page_visit_view > a:focus > .link > .description > .title,
+.page_visit_view:hover > a > .link > .description > .location,
+.page_visit_view > a:focus > .link > .description > .location {
+  text-shadow:1px 1px #FFF;
+}
+.page_visit_view:hover > a > .link > .description > .location,
+.page_visit_view > a:focus > .link > .description > .location,
+.page_visit_view:hover > a > .link > .description > .time,
+.page_visit_view > a:focus > .link > .description > .time {
+  color:#555;
+}
+.page_visit_view > a > .link > .delete_layer {
+  position:absolute;
+  __MSG_@@bidi_end_edge__:-200px;
+  top:0;
+  padding:10px;
+  -webkit-transition: __MSG_@@bidi_end_edge__ 200ms, opacity 200ms;
+}
+.page_visit_view:hover > a > .link > .delete_layer {
+  -webkit-transition-delay: 300ms;
+  __MSG_@@bidi_end_edge__: -9px;
+  background: #EEE;
+}
+
+.time_visit_view > .title {
+  z-index:10;
+  margin:0;
+  padding:10px 3px;
+  padding-__MSG_@@bidi_start_edge:0;
+  font-size: 13px;
+  position:relative;
+  color: #000;
+}
+.time_visit_view. .visits { display:none; }
+.time_visit_view .summary {
+  color:#999;
+  margin-__MSG_@@bidi_start_edge__:5px;
+  font-size:12px;
+}
+.time_visit_view .visits { margin-bottom:10px; }
+.time_visit_view .time_interval .delete_layer {
+  __MSG_@@bidi_end_edge__:-100px;
+  position:absolute;
+  top:0;
+  margin:10px;
+  -webkit-transition: __MSG_@@bidi_end_edge__ 200ms, opacity 200ms;
+}
+.time_visit_view:hover .title .delete_layer {
+  __MSG_@@bidi_end_edge__:-8px;
+  -webkit-transition-delay: 300ms;
+}
+.time_visit_view .stuck .delete_layer {
+  __MSG_@@bidi_end_edge__:-8px;
+}
+.time_visit_view button.small_button {
+  font-size: 10px;
+  padding: 3px 5px;
+  line-height: 5px;
+  height: 18px;
+}
+.time_visit_view button.delete_interval {
+  float: __MSG_@@bidi_end_edge__;
+  height: 23px;
+}
+
+
+#overlay {
+  z-index: 5;
+}
+
+#overlay h1 {
+  font-size: 14px;
+}
+#overlay {
+  font-size: 12px;
+}
+.version_view .page {
+  width:500px;
+}
+#overlay li {
+  list-style-type: disc;
+  padding-bottom:5px;
+}
+#overlay .close-button {
+  z-index:100;
+}
+.prompt_view .spinner {
+  top: 74px;
+  left: 349px;
+  position:absolute;
+}
+.action-area-link-container {
+  -webkit-box-flex: 1;
+}
+.version_view .page,
+.credits_view .page {
+  overflow: hidden;
+}
+.version_view h1 {
+  width: 355px;
+}
+.modal img {
+  width: 170px;
+  __MSG_@@bidi_end_edge__: -50px;
+  top: -50px;
+  opacity: 0.5;
+  position:absolute;
+}
+.prompt_view img {
+  display:none;
+}
+.no_visits {
+  padding: 20px 0;
+}
+
+
+.settings {
+  width: 100%;
+  padding-__MSG_@@bidi_start_edge__:24px;
+  font-size: 12px;
+}
+.settings_view .heading {
+  border-bottom: 1px solid #EEE;
+}
+.setting {
+  margin-bottom: 24px;
+  margin-top: 8px;
+  max-width: 600px;
+}
+/* Setting the padding on the header so the alignment doesn't depend on the
+ * contents of the right table column.  */
+.settings > .setting > .title {
+  -webkit-margin-start: -23px;
+  margin-bottom: 7px;
+  font-size: 14px;
+  font-weight:normal;
+}
+
+.settings .option {
+  margin:10px 0;
+}
+.settings .note {
+  padding-top:5px;
+}
+.settings label {
+  display:block;
+  padding-top:5px;
+}
+.settings .controls {
+  border: none;
+}
+.settings .controls label:first-child {
+  padding-top:0;
+}
+.settings span.select {
+  display:inline-block;
+  width:175px;
 }
