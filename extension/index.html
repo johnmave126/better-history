@@ -7,17 +7,8 @@
     <link rel="stylesheet" type="text/css" href="styles/select.css"/>
     <link rel="stylesheet" type="text/css" href="styles/checkbox.css"/>
     <link rel="stylesheet" type="text/css" href="styles/icon.css"/>
-    <link rel="stylesheet" type="text/css" href="styles/app.css"/>
-    <link rel="stylesheet" type="text/css" href="styles/day.css"/>
-    <link rel="stylesheet" type="text/css" href="styles/grouped_visits.css"/>
-    <link rel="stylesheet" type="text/css" href="styles/page_visit.css"/>
-    <link rel="stylesheet" type="text/css" href="styles/search.css"/>
-    <link rel="stylesheet" type="text/css" href="styles/sidebar.css"/>
-    <link rel="stylesheet" type="text/css" href="styles/time_visit.css"/>
     <link rel="stylesheet" type="text/css" href="styles/overlay.css"/>
-    <link rel="stylesheet" type="text/css" href="styles/settings.css"/>
-    <link rel="stylesheet" type="text/css" href="styles/credits.css"/>
-    <link rel="stylesheet" type="text/css" href="styles/week.css"/>
+    <link rel="stylesheet" type="text/css" href="styles/app.css"/>
     <title>Better History</title>
   </head>
   <body>
@@ -27,6 +18,16 @@
       <div class="mainview"></div>
       <div class="navbar">
         <h1>{{i18n_history_title}}</h1>
+        <ul class="weeks">
+          {{#weeks}}
+            <li class="week">
+              <a href="{{url}}">{{{shortTitle}}}</a>
+            </li>
+          {{/weeks}}
+        </ul>
+        <a href="#settings" class="setting">
+          {{i18n_settings_link}}
+        </a>
       </div>
     </script>
 
@@ -307,19 +308,6 @@
       </div>
     </script>
 
-    <script id="sidebar" type="text/html">
-      <ul class="weeks">
-        {{#weeks}}
-          <li class="week">
-            <a href="{{url}}">{{{shortTitle}}}</a>
-          </li>
-        {{/weeks}}
-      </ul>
-      <a href="#settings" class="setting">
-        {{i18n_settings_link}}
-      </a>
-    </script>
-
     <script id="timeVisit" type="text/html">
       <h3 class="time_interval" data-time="{{id}}">
         <span class="time">{{time}}</span>
@@ -370,6 +358,8 @@
     <script type="text/javascript" src="javascripts/frameworks/underscore-min.js"></script>
     <script type="text/javascript" src="javascripts/frameworks/backbone-min.js"></script>
     <script type="text/javascript" src="javascripts/frameworks/moment.js"></script>
+
+    <script type="text/javascript" src="javascripts/namespace.js"></script>
 
     <script type="text/javascript" src="javascripts/lib/date_ranger.js"></script>
     <script type="text/javascript" src="javascripts/lib/group_by.js"></script>

@@ -1,3 +1,21 @@
+body {
+  direction: __MSG_@@bidi_dir__;
+  font-family: 'Lucida Grande', sans-serif;
+  margin: 0;
+  color: #303942;
+  font-size: 12px;
+}
+a {
+  color: #15C;
+  text-decoration: none;
+}
+a:hover, a:focus { outline: none; }
+ul { padding: 0; }
+li { list-style-type:none; }
+dl, dt, dd { margin:0; }
+button { cursor: pointer; }
+
+
 .mainview {
   -webkit-box-align: stretch;
   margin: 0;
@@ -26,6 +44,8 @@
   z-index: 1;
   opacity: 1;
 }
+
+
 .navbar {
   position: fixed;
   bottom: 0;
@@ -36,10 +56,78 @@
   z-index: 2;
   height:100%;
 }
-.navbar .logo {
-  opacity:0.1;
-  position:absolute;
-  bottom:-20px;
-  left:10px;
-  z-index:-1;
+.navbar a {
+  -webkit-border-start: 6px solid transparent;
+  color: #999;
+  -webkit-padding-start: 18px;
+  line-height: 17px;
+  margin: 5px 0;
+  display: block;
+}
+.navbar a:hover,
+.navbar a:focus,
+.navbar a.selected {
+  color: #333;
+}
+.navbar a:hover,
+.navbar a:focus {
+  -webkit-border-start-color: #AAA;
+}
+.navbar a.selected {
+  -webkit-border-start-color: rgb(78, 87, 100);
+  font-weight: bold;
+}
+
+
+.week_view .heading .search {
+  float: right;
+}
+.week_view .number_of_visits_all_week {
+  line-height: 23px;
+}
+.week_view .days {
+  padding-left: 0;
+}
+.week_view .days .title {
+  margin:0;
+  font-size: 14px;
+}
+.week_view .days .sub_title {
+  margin:3px 0;
+  font-weight: normal;
+}
+.week_view .days .day {
+  margin-bottom:20px;
+  position: relative;
+  background-color:#EEE;
+  border-radius: 5px;
+  padding: 10px;
+}
+.week_view .day:hover .bar {
+  background-color:#888;
+}
+.week_view .day_view .page {
+  width: 766px;
+}
+.week_view .days .delete {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+.week_view .bar {
+  background: #CCC;
+  height: 100%;
+  min-width:1%;
+  position: absolute;
+  right: 0;
+  -webkit-transition:width 0.5s;
+  border-radius: 5px;
+}
+.week_view .bar_container {
+  float: right;
+  width: 500px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100%;
 }

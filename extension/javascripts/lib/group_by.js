@@ -1,13 +1,12 @@
 var GroupBy;
 (function() {
-  function minute(minutes) {
-    interval = BH.models.settings.timeGrouping();
+  function minute(minutes, interval) {
     minutes = Math.floor(minutes / interval) * interval;
     return (minutes === 0 ? '00' : minutes);
   }
 
-  function getTime(date) {
-    return date.getHours() + ':' + minute(date.getMinutes());
+  function getTime(date, interval) {
+    return date.getHours() + ':' + minute(date.getMinutes(), interval);
   }
 
   function compareVisits(visit1, visit2) {
@@ -20,11 +19,11 @@ var GroupBy;
     }
   }
   GroupBy = {
-    time: function(visits) {
+    time: function(visits, interval) {
       var arrangedVisits = [];
       $.each(visits, function(i, visit) {
         var lastVisitTime = new Date(visit.lastVisitTime),
-            id = getTime(lastVisitTime);
+            id = getTime(lastVisitTime, interval);
 
         var ids = _.pluck(arrangedVisits, 'id'),
             index = ids.indexOf(id);

@@ -49,14 +49,6 @@ i18n = {
     return properties;
   },
 
-  sidebar: function() {
-    return i18n.fetch([
-      'settings_link',
-      'last_week',
-      'this_week'
-    ]);
-  },
-
   day: function() {
     return i18n.fetch([
       'collapse_button',
@@ -77,7 +69,10 @@ i18n = {
 
   app: function() {
     return i18n.fetch([
-      'history_title'
+      'history_title',
+      'settings_link',
+      'last_week',
+      'this_week'
     ]);
   },
 
