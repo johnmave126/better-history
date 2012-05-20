@@ -172,7 +172,32 @@
       <div class="expanded"></div>
     </script>
 
-    <script id="pageVisit" type="text/html">
+    <script id="search_results" type="text/html">
+      {{#hasVisits}}
+        <ol class="visits">
+          {{#visits}}
+            <li class="visit visit_view">
+              <a href="{{url}}" data-id="{{id}}">
+                <div class="link">
+                  <dl class="description" style="background-image: url(chrome://favicon/{{url}})">
+                    <dt class="title">{{{title}}}</dt>
+                    <dd class="location">{{{location}}}</dd>
+                    <dd class="time">{{{time}}}</dd>
+                  </dl>
+                  <div class="delete_layer">
+                    <button class="delete_visit">{{i18n_prompt_delete_button}}</button>
+                  </div>
+                </div>
+              </a>
+            </li>
+          {{/visits}}
+        </ol>
+      {{/hasVisits}}
+      {{#noVisits}}
+        <p class="no_visits">{{i18n_no_visits_found}}</p>
+      {{/noVisits}}
+    </script>
+    <script id="visit" type="text/html">
       <a href="{{url}}" data-cid="{{cid}}">
         <div class="link">
           <dl class="description" style="background-image: url(chrome://favicon/{{url}})">
@@ -206,7 +231,7 @@
     <script id="search" type="text/html">
       <div class="heading">
         <h2 class="title">{{title}}</h2>
-        <span class="date">{{i18n_search_time_frame}}</span>
+        <span class="sub_title">{{i18n_search_time_frame}}</span>
         <input type="search" class="search" placeholder="{{i18n_search_input_placeholder_text}}" tabindex="1" />
         <div class="controls">
           <span class="number_of_results">{{i18n_number_of_search_results}}</span>
@@ -376,15 +401,16 @@
     <script type="text/javascript" src="javascripts/views/grouped_visits_view.js"></script>
     <script type="text/javascript" src="javascripts/views/week_view.js"></script>
     <script type="text/javascript" src="javascripts/views/day_view.js"></script>
-    <script type="text/javascript" src="javascripts/views/page_visit_view.js"></script>
-    <script type="text/javascript" src="javascripts/views/search_view.js"></script>
+    <script type="text/javascript" src="javascripts/views/visit_view.js"></script>
+    <script type="text/javascript" src="javascripts/views/search/search_view.js"></script>
+    <script type="text/javascript" src="javascripts/views/search/search_results_view.js"></script>
     <script type="text/javascript" src="javascripts/views/time_visit_view.js"></script>
     <script type="text/javascript" src="javascripts/views/version_view.js"></script>
     <script type="text/javascript" src="javascripts/views/settings_view.js"></script>
     <script type="text/javascript" src="javascripts/views/prompt_view.js"></script>
     <script type="text/javascript" src="javascripts/views/credits_view.js"></script>
 
-    <script type="text/javascript" src="javascripts/models/page_visit.js"></script>
+    <script type="text/javascript" src="javascripts/models/visit.js"></script>
     <script type="text/javascript" src="javascripts/models/time_visit.js"></script>
     <script type="text/javascript" src="javascripts/models/week.js"></script>
     <script type="text/javascript" src="javascripts/models/day.js"></script>
@@ -398,7 +424,7 @@
     <script type="text/javascript" src="javascripts/collections/days.js"></script>
     <script type="text/javascript" src="javascripts/collections/grouped_visits.js"></script>
     <script type="text/javascript" src="javascripts/collections/time_visits.js"></script>
-    <script type="text/javascript" src="javascripts/collections/page_visits.js"></script>
+    <script type="text/javascript" src="javascripts/collections/visits.js"></script>
 
     <script type="text/javascript" src="javascripts/initialize.js"></script>
   </body>

@@ -81,7 +81,7 @@ var chromeAPI = {
                 prunedResults.push(result);
               }
             }
-          } else {
+         } else {
             if(verifyDateRange(result)) {
               removeScriptTags(result);
               setAdditionalProperties(result);

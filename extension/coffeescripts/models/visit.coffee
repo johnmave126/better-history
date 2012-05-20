@@ -1,9 +1,11 @@
-class BH.Models.PageVisit extends Backbone.Model
+class BH.Models.Visit extends Backbone.Model
   defaults:
     title: '(No Title)'
 
   initialize: ->
-    @set({title: @defaults.title}) if @get('title') == ''
+    @set
+      title: @defaults.title if @get('title') == ''
+      id: @cid
 
   sync: (method, model, options) ->
     if method == 'delete'
@@ -11,10 +13,7 @@ class BH.Models.PageVisit extends Backbone.Model
       options.success(@)
 
   toTemplate: ->
-    properties = @toJSON()
-    properties.cid = @cid
-
-    _.extend properties, i18n.pageVisit()
+    _.extend(@toJSON(), i18n.pageVisit())
 
   domain: ->
     match = Helpers.getDomain @get('url')

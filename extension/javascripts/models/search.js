@@ -36,6 +36,26 @@
       });
     };
 
+    Search.prototype.toChrome = function() {
+      return {
+        text: this.get('query')
+      };
+    };
+
+    Search.prototype.sync = function(method, model, options) {
+      if (method === 'read') {
+        return chromeAPI.history.search(this.toChrome(), function(history) {
+          return options.success(history);
+        });
+      }
+    };
+
+    Search.prototype.parse = function(data) {
+      return {
+        history: new BH.Collections.Visits(data)
+      };
+    };
+
     return Search;
 
   })(Backbone.Model);

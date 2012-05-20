@@ -92,10 +92,10 @@
 
     Router.prototype.search = function(query) {
       $('.mainview > *').removeClass(this.selectedClass);
-      this.app.views.search.model.set({
+      this.app.views.search.$el.addClass(this.selectedClass);
+      return this.app.views.search.model.set({
         query: query
       });
-      return this.app.views.search.$el.addClass(this.selectedClass);
     };
 
     return Router;

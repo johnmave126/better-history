@@ -15,3 +15,14 @@ class BH.Models.Search extends Backbone.Model
         joined += ' ' + chrome.i18n.getMessage('and') + ' '
 
     @set({title: joined})
+
+  toChrome: ->
+    text: @get('query')
+
+  sync: (method, model, options) ->
+    if method == 'read'
+      chromeAPI.history.search @toChrome(), (history) ->
+        options.success(history)
+
+  parse: (data) ->
+    history: new BH.Collections.Visits(data)

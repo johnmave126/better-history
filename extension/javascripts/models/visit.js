@@ -3,29 +3,29 @@
   var __hasProp = {}.hasOwnProperty,
     __extends = function(child, parent) { for (var key in parent) { if (__hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor; child.__super__ = parent.prototype; return child; };
 
-  BH.Models.PageVisit = (function(_super) {
+  BH.Models.Visit = (function(_super) {
 
-    __extends(PageVisit, _super);
+    __extends(Visit, _super);
 
-    PageVisit.name = 'PageVisit';
+    Visit.name = 'Visit';
 
-    function PageVisit() {
-      return PageVisit.__super__.constructor.apply(this, arguments);
+    function Visit() {
+      return Visit.__super__.constructor.apply(this, arguments);
     }
 
-    PageVisit.prototype.defaults = {
+    Visit.prototype.defaults = {
       title: '(No Title)'
     };
 
-    PageVisit.prototype.initialize = function() {
-      if (this.get('title') === '') {
-        return this.set({
-          title: this.defaults.title
-        });
-      }
+    Visit.prototype.initialize = function() {
+      return this.set(this.get('title') === '' ? {
+        title: this.defaults.title
+      } : void 0, {
+        id: this.cid
+      });
     };
 
-    PageVisit.prototype.sync = function(method, model, options) {
+    Visit.prototype.sync = function(method, model, options) {
       if (method === 'delete') {
         chrome.history.deleteUrl({
           url: this.get('url')
@@ -34,14 +34,11 @@
       }
     };
 
-    PageVisit.prototype.toTemplate = function() {
-      var properties;
-      properties = this.toJSON();
-      properties.cid = this.cid;
-      return _.extend(properties, i18n.pageVisit());
+    Visit.prototype.toTemplate = function() {
+      return _.extend(this.toJSON(), i18n.pageVisit());
     };
 
-    PageVisit.prototype.domain = function() {
+    Visit.prototype.domain = function() {
       var match;
       match = Helpers.getDomain(this.get('url'));
       if (match === null) {
@@ -51,7 +48,7 @@
       }
     };
 
-    return PageVisit;
+    return Visit;
 
   })(Backbone.Model);
 

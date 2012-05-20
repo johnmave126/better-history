@@ -61,6 +61,7 @@ class BH.Router extends Backbone.Router
 
   search: (query) ->
     $('.mainview > *').removeClass(@selectedClass)
-    @app.views.search.model.set({query: query})
     @app.views.search.$el.addClass(@selectedClass)
+    @app.views.search.model.set({query: query})
+
 

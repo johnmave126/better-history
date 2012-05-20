@@ -1,6 +1,6 @@
-class BH.Views.PageVisitView extends Backbone.View
-  className: 'page_visit_view'
-  templateId: 'pageVisit'
+class BH.Views.VisitView extends Backbone.View
+  className: 'visit_view'
+  templateId: 'visit'
 
   events:
     'click .delete_visit': 'deleteClicked'

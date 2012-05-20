@@ -3,30 +3,30 @@
   var __hasProp = {}.hasOwnProperty,
     __extends = function(child, parent) { for (var key in parent) { if (__hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor; child.__super__ = parent.prototype; return child; };
 
-  BH.Views.PageVisitView = (function(_super) {
+  BH.Views.VisitView = (function(_super) {
 
-    __extends(PageVisitView, _super);
+    __extends(VisitView, _super);
 
-    PageVisitView.name = 'PageVisitView';
+    VisitView.name = 'VisitView';
 
-    function PageVisitView() {
-      return PageVisitView.__super__.constructor.apply(this, arguments);
+    function VisitView() {
+      return VisitView.__super__.constructor.apply(this, arguments);
     }
 
-    PageVisitView.prototype.className = 'page_visit_view';
+    VisitView.prototype.className = 'visit_view';
 
-    PageVisitView.prototype.templateId = 'pageVisit';
+    VisitView.prototype.templateId = 'visit';
 
-    PageVisitView.prototype.events = {
+    VisitView.prototype.events = {
       'click .delete_visit': 'deleteClicked'
     };
 
-    PageVisitView.prototype.render = function() {
+    VisitView.prototype.render = function() {
       this.$el.html(this.template(this.model.toTemplate()));
       return this;
     };
 
-    PageVisitView.prototype.deleteClicked = function(ev) {
+    VisitView.prototype.deleteClicked = function(ev) {
       var _this = this;
       ev.preventDefault();
       return this.model.destroy({
@@ -38,19 +38,19 @@
       });
     };
 
-    PageVisitView.prototype._remove = function() {
+    VisitView.prototype._remove = function() {
       return this.$el.slideUp('fast', function() {
         return $el.remove();
       });
     };
 
-    PageVisitView.prototype._removeGroup = function() {
+    VisitView.prototype._removeGroup = function() {
       return $(this._getGroup()).slideUp('fast', function() {
         return $el.remove();
       });
     };
 
-    PageVisitView.prototype._isGroupedAndEmpty = function() {
+    VisitView.prototype._isGroupedAndEmpty = function() {
       if (this.$el.parents('.expanded').children().length === 1) {
         return true;
       } else {
@@ -58,11 +58,11 @@
       }
     };
 
-    PageVisitView.prototype._getGroup = function() {
+    VisitView.prototype._getGroup = function() {
       return this.$el.parents('.grouped_visits_view');
     };
 
-    return PageVisitView;
+    return VisitView;
 
   })(Backbone.View);
 
