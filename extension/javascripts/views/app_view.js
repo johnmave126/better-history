@@ -32,7 +32,7 @@
         weeks: {}
       };
       if (this.model.get('suppress') === false) {
-        versionView = new VersionView({
+        versionView = new BH.Views.VersionView({
           model: this.model
         });
         $('body').append(versionView.render().el);

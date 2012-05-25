@@ -13,7 +13,7 @@ class BH.Views.AppView extends Backbone.View
       weeks: {}
     }
     if @model.get('suppress') == false
-      versionView = new VersionView({model: @model})
+      versionView = new BH.Views.VersionView({model: @model})
       $('body').append(versionView.render().el)
       versionView.open()
 
