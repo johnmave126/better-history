@@ -3,25 +3,25 @@
   var __hasProp = {}.hasOwnProperty,
     __extends = function(child, parent) { for (var key in parent) { if (__hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor; child.__super__ = parent.prototype; return child; };
 
-  BH.Models.TimeVisit = (function(_super) {
+  BH.Models.Interval = (function(_super) {
 
-    __extends(TimeVisit, _super);
+    __extends(Interval, _super);
 
-    TimeVisit.name = 'TimeVisit';
+    Interval.name = 'Interval';
 
-    function TimeVisit() {
-      return TimeVisit.__super__.constructor.apply(this, arguments);
+    function Interval() {
+      return Interval.__super__.constructor.apply(this, arguments);
     }
 
-    TimeVisit.prototype.toTemplate = function() {
+    Interval.prototype.toTemplate = function() {
       return _.extend({
         amount: chrome.i18n.getMessage('number_of_visits', [this.get('pageVisits').length.toString(), '<span class="amount">', '</span>']),
         time: Helpers.formatTime(this.get('datetime'), settings.timeFormat()),
         id: this.id
-      }, i18n.timeVisit());
+      }, this.get('pageVisits').toTemplate(), i18n.timeVisit());
     };
 
-    return TimeVisit;
+    return Interval;
 
   })(Backbone.Model);
 

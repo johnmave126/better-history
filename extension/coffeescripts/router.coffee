@@ -41,12 +41,15 @@ class BH.Router extends Backbone.Router
     model.fetch()
 
   day: (weekId, id) ->
-    model = @app.collection.get(weekId).get('days').get(id)
+    weekModel = @app.collection.get(weekId)
+    model = weekModel.get('days').get(id)
 
     view = @app.views.weeks[@app.collection.get(weekId).id]
     view.$el.addClass(@selectedClass)
 
-    dayView = new BH.Views.DayView({model: model}, @app.options)
+    dayView = new BH.Views.DayView
+      model: model
+
     $('body').append(dayView.render().el)
     dayView.bind 'close', =>
       @navigate(BH.Lib.Url.week(weekId))

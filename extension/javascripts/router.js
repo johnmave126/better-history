@@ -68,14 +68,15 @@
     };
 
     Router.prototype.day = function(weekId, id) {
-      var dayView, model, view,
+      var dayView, model, view, weekModel,
         _this = this;
-      model = this.app.collection.get(weekId).get('days').get(id);
+      weekModel = this.app.collection.get(weekId);
+      model = weekModel.get('days').get(id);
       view = this.app.views.weeks[this.app.collection.get(weekId).id];
       view.$el.addClass(this.selectedClass);
       dayView = new BH.Views.DayView({
         model: model
-      }, this.app.options);
+      });
       $('body').append(dayView.render().el);
       dayView.bind('close', function() {
         return _this.navigate(BH.Lib.Url.week(weekId));

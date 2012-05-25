@@ -28,6 +28,7 @@
       this.set({
         title: this._dateFormat('title'),
         subTitle: this._dateFormat('subTitle'),
+        inFuture: moment() < this.get('date'),
         formalDate: this._dateFormat('formalDate'),
         extendedFormalDate: this._dateFormat('extendedFormalDate'),
         id: id,
@@ -38,7 +39,7 @@
 
     Day.prototype.filterHistory = function() {
       var history;
-      history = this.get('filter') ? new BH.Collections.TimeVisits() : this.originalHistory;
+      history = this.get('filter') ? new BH.Collections.Intervals() : this.originalHistory;
       return this.set({
         history: history
       });
@@ -71,20 +72,20 @@
         endTime: this._getEOD()
       }, function() {
         return _this.set({
-          history: new BH.Collections.TimeVisits()
+          history: new BH.Collections.Intervals()
         });
       });
     };
 
     Day.prototype.parse = function(data) {
       var count, history;
-      history = new BH.Collections.TimeVisits();
+      history = new BH.Collections.Intervals();
       count = 0;
       $.each(data, function() {
         history.add({
           id: this.id,
           datetime: this.datetime,
-          pageVisits: new BH.Collections.PageVisits(this.pageVisits)
+          pageVisits: new BH.Collections.Visits(this.pageVisits)
         });
         return count += this.pageVisits.length;
       });

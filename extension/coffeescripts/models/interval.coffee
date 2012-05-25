@@ -1,4 +1,4 @@
-class BH.Models.TimeVisit extends Backbone.Model
+class BH.Models.Interval extends Backbone.Model
   toTemplate: ->
     _.extend
       amount: chrome.i18n.getMessage('number_of_visits', [
@@ -7,5 +7,6 @@ class BH.Models.TimeVisit extends Backbone.Model
         '</span>'
       ])
       time: Helpers.formatTime(@get('datetime'), settings.timeFormat())
-      id: this.id
-    , i18n.timeVisit()
+      id: @id
+
+    , @get('pageVisits').toTemplate(), i18n.timeVisit()

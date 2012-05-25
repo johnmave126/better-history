@@ -30,56 +30,25 @@
 
     DayView.prototype.render = function(type) {
       this.$el.html(this.template(_.extend(i18n.day(), this.model.toTemplate())));
-      this.$('.content').css({
-        opacity: 0
-      }).html('');
       this.$('button').attr('disabled', 'disabled');
       return this;
     };
 
     DayView.prototype.renderHistory = function() {
-      var contentElement, offset;
+      var contentElement;
       this.collection = this.model.get('history');
       this.$('.search').focus();
       contentElement = this.$('.content');
-      $(contentElement).css({
-        opacity: 0
-      }).html('');
-      this.collection.each(function(model) {
-        return $(contentElement).append(new BH.Views.TimeVisitView({
-          model: model,
-          collection: model.get('pageVisits')
-        }).render().el);
-      });
+      new BH.Views.DayResultsView({
+        collection: this.model.get('history'),
+        model: this.model,
+        el: contentElement
+      }).render();
       if (this.collection.length === 0) {
-        $(contentElement).append(Mustache.render($('#noVisits').html(), i18n.day())).css({
-          opacity: 1
-        });
-        this.$('button').attr('disabled', 'disabled');
-        $(document).scrollTop(0);
-        if (this.model.get('filter')) {
-          this.$('.content').append('<p> TODO: filtering</p>');
-          return this.$('.content').append("<a class='full_search' href='" + (BH.Lib.Url.search(this.model.get('filter'))) + "'>Maybe try searching full history?</a>");
-        }
+        return this.$('button').attr('disabled', 'disabled');
       } else {
-        if (this.startTime) {
-          offset = $("[data-time='" + this.startTime + "']").offset();
-          $('body').scrollTop((offset ? offset.top : 0) - 104);
-        }
-        $(contentElement).css({
-          opacity: 1
-        });
-        $('.time_visit_view').stickyElements({
-          stickyClass: 'time_interval',
-          padding: 104
-        }, function(element) {
-          return self.updateRoute(element);
-        });
         Helpers.tabIndex($('.content a', this.el));
-        this.$('button').attr('disabled', null);
-        $('.spacer').remove();
-        this.$el.append('<div class="spacer" />');
-        return this.$('.spacer').height($(window).height() - this.$('.time_visit_view:last-child').height() - 210);
+        return this.$('button').attr('disabled', null);
       }
     };
 

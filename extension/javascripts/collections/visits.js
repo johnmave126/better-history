@@ -15,17 +15,13 @@
 
     Visits.prototype.model = BH.Models.Visit;
 
-    Visits.prototype.destroyAll = function() {
-      var _results;
-      _results = [];
+    Visits.prototype.destroyAll = function(options) {
       while (this.length > 0) {
         if (this.at(0)) {
-          _results.push(this.at(0).destroy());
-        } else {
-          _results.push(void 0);
+          this.at(0).destroy();
         }
       }
-      return _results;
+      return options.success();
     };
 
     Visits.prototype.toTemplate = function() {

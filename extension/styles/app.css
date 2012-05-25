@@ -112,6 +112,9 @@ h1 {
   border-radius: 5px;
   padding: 10px;
 }
+.week_view .day.future {
+  opacity: 0.6;
+}
 .week_view .day:hover .bar {
   background-color:#888;
 }
@@ -150,6 +153,8 @@ h1 {
 .day_view .content {
   margin-top: 104px;
   padding:0 17px 0;
+  width: 100%;
+  -webkit-box-sizing: border-box;
 }
 .day_view .heading {
   position: absolute;
@@ -170,6 +175,8 @@ h1 {
 
 .heading {
   padding:20px 0 0;
+  background: #FFF;
+  z-index: 50;
 }
 .heading,
 .content {
@@ -213,7 +220,7 @@ h1 {
 }
 
 
-.visit_view a {
+.visit a {
   position:relative;
   z-index:0;
   text-decoration:none;
@@ -222,67 +229,67 @@ h1 {
   margin:5px 3px 0 0;
   font-size: 12px
 }
-.visit_view .link {
+.visit .link {
   padding: 5px;
 }
-.visit_view .time { display:none; }
-.visit_view .title {
+.visit .time { display:none; }
+.visit .title {
   font-size:105%;
   padding-bottom:3px;
 }
-.visit_view .location,
-.visit_view .time {
+.visit .location,
+.visit .time {
   color: #999;
   overflow:hidden;
   white-space: nowrap;
   font-size: 11px;
 }
-.visit_view .time { margin-top:2px; }
-.visit_view .description {
+.visit .time { margin-top:2px; }
+.visit .description {
   background-repeat:no-repeat;
   background-position:__MSG_@@bidi_start_edge__ 0;
   padding-__MSG_@@bidi_start_edge__:25px;
 }
-.visit_view .match {
+.visit .match {
   background:#f2f37b;
   display:inline-block;
   padding:1 2px;
   margin:0 1px;
 }
 
-.visit_view:hover > a > .link,
-.visit_view a:focus > .link {
+.visit:hover > a > .link,
+.visit a:focus > .link {
   background: #EEE;
 }
-.visit_view > a:focus {
+.visit > a:focus {
   outline:none;
 }
-.visit_view:hover > a > .link > .description > .title,
-.visit_view > a:focus > .link > .description > .title,
-.visit_view:hover > a > .link > .description > .location,
-.visit_view > a:focus > .link > .description > .location {
+.visit:hover > a > .link > .description > .title,
+.visit > a:focus > .link > .description > .title,
+.visit:hover > a > .link > .description > .location,
+.visit > a:focus > .link > .description > .location {
   text-shadow:1px 1px #FFF;
 }
-.visit_view:hover > a > .link > .description > .location,
-.visit_view > a:focus > .link > .description > .location,
-.visit_view:hover > a > .link > .description > .time,
-.visit_view > a:focus > .link > .description > .time {
+.visit:hover > a > .link > .description > .location,
+.visit > a:focus > .link > .description > .location,
+.visit:hover > a > .link > .description > .time,
+.visit > a:focus > .link > .description > .time {
   color:#555;
 }
-.visit_view > a > .link > .delete_layer {
+.visit:hover > a > .link > .delete_layer {
+  -webkit-transition-delay: 100ms;
+  __MSG_@@bidi_end_edge__: -9px;
+  background: #EEE;
+}
+
+.delete_layer {
   position:absolute;
   __MSG_@@bidi_end_edge__:-100px;
   top:0;
   padding:10px;
   -webkit-transition: __MSG_@@bidi_end_edge__ 200ms, opacity 200ms;
 }
-.visit_view:hover > a > .link > .delete_layer {
-  -webkit-transition-delay: 100ms;
-  __MSG_@@bidi_end_edge__: -9px;
-  background: #EEE;
-}
-
-.time_visit_view > .title {
+.interval > .title {
   z-index:10;
   margin:0;
   padding:10px 3px;
@@ -291,38 +298,17 @@ h1 {
   position:relative;
   color: #000;
 }
-.time_visit_view. .visits { display:none; }
-.time_visit_view .summary {
+.interval. .visits { display:none; }
+.interval .summary {
   color:#999;
   margin-__MSG_@@bidi_start_edge__:5px;
   font-size:12px;
 }
-.time_visit_view .visits { margin-bottom:10px; }
-.time_visit_view .time_interval .delete_layer {
-  __MSG_@@bidi_end_edge__:-100px;
-  position:absolute;
-  top:0;
-  margin:10px;
-  -webkit-transition: __MSG_@@bidi_end_edge__ 200ms, opacity 200ms;
-}
-.time_visit_view:hover .title .delete_layer {
-  __MSG_@@bidi_end_edge__:-8px;
+.interval .visits { margin-bottom:10px; }
+.interval:hover .title .delete_layer {
+  __MSG_@@bidi_end_edge__:-5px;
   -webkit-transition-delay: 300ms;
 }
-.time_visit_view .stuck .delete_layer {
-  __MSG_@@bidi_end_edge__:-8px;
-}
-.time_visit_view button.small_button {
-  font-size: 10px;
-  padding: 3px 5px;
-  line-height: 5px;
-  height: 18px;
-}
-.time_visit_view button.delete_interval {
-  float: __MSG_@@bidi_end_edge__;
-  height: 23px;
-}
-
 
 #overlay {
   z-index: 5;
@@ -336,10 +322,6 @@ h1 {
 }
 .version_view .page {
   width:500px;
-}
-#overlay li {
-  list-style-type: disc;
-  padding-bottom:5px;
 }
 #overlay .close-button {
   z-index:100;

@@ -131,7 +131,7 @@
       <div class="content">
         <ol class="days">
           {{#days}}
-            <li class="day" data-id="{{id}}">
+          <li class="day {{#inFuture}}future{{/inFuture}}" data-id="{{id}}">
               <h3 class="title">{{title}}</h3>
               <a href="{{url}}" class="count"><span class="number_of_visits"></span> visits</a>
               <div class="bar_container"><div class="bar"></div></div>
@@ -146,7 +146,7 @@
         <div class="heading">
           <h2 class="title">{{{title}}}<span class="sub_title">{{formalDate}}</span></h2>
           <div class="controls">
-            <input type="search" class="search" placeholder="{{i18n_search_input_placeholder_text}}" tabindex="1" />
+            <input type="text" class="search" placeholder="{{i18n_search_input_placeholder_text}}" tabindex="1" />
             <button class="delete_all">{{i18n_delete_all_visits_for_filter_button}}</button>
           </div>
         </div>
@@ -170,6 +170,44 @@
         </div>
       </a>
       <div class="expanded"></div>
+    </script>
+
+    <script id="day_results" type="text/html">
+      {{#hasIntervals}}
+        <ol class="intervals">
+          {{#intervals}}
+            <li class="interval" data-id="{{id}}">
+              <h3 class="title">
+                {{time}}
+                <div class="delete_layer">
+                  <button class="delete_interval" title="{{i18n_delete_time_interval_button_tooltip}}">{{i18n_delete_time_interval_button}}</button>
+                </div>
+              </h3>
+              <ol class="visits">
+                {{#visits}}
+                  <li class="visit" data-id="{{id}}">
+                    <a href="{{url}}">
+                      <div class="link">
+                        <dl class="description" style="background-image: url(chrome://favicon/{{url}})">
+                          <dt class="title">{{{title}}}</dt>
+                          <dd class="location">{{{location}}}</dd>
+                          <dd class="time">{{{time}}}</dd>
+                        </dl>
+                        <div class="delete_layer">
+                          <button class="delete_visit">{{i18n_prompt_delete_button}}</button>
+                        </div>
+                      </div>
+                    </a>
+                  </li>
+                {{/visits}}
+              </ol>
+            </li>
+          {{/intervals}}
+        </ol>
+      {{/hasIntervals}}
+      {{#noIntervals}}
+        <p class="no_visits">{{i18n_no_visits_found}}</p>
+      {{/noIntervals}}
     </script>
 
     <script id="search_results" type="text/html">
@@ -197,6 +235,7 @@
         <p class="no_visits">{{i18n_no_visits_found}}</p>
       {{/noVisits}}
     </script>
+
     <script id="visit" type="text/html">
       <a href="{{url}}" data-cid="{{cid}}">
         <div class="link">
@@ -232,7 +271,7 @@
       <div class="heading">
         <h2 class="title">{{title}}</h2>
         <span class="sub_title">{{i18n_search_time_frame}}</span>
-        <input type="search" class="search" placeholder="{{i18n_search_input_placeholder_text}}" tabindex="1" />
+        <input type="text" class="search" placeholder="{{i18n_search_input_placeholder_text}}" tabindex="1" />
         <div class="controls">
           <span class="number_of_results">{{i18n_number_of_search_results}}</span>
           <button class="delete_all">{{i18n_delete_all_visits_for_search_button}}</button>
@@ -400,7 +439,8 @@
     <script type="text/javascript" src="javascripts/views/sidebar_view.js"></script>
     <script type="text/javascript" src="javascripts/views/grouped_visits_view.js"></script>
     <script type="text/javascript" src="javascripts/views/week_view.js"></script>
-    <script type="text/javascript" src="javascripts/views/day_view.js"></script>
+    <script type="text/javascript" src="javascripts/views/day/day_view.js"></script>
+    <script type="text/javascript" src="javascripts/views/day/day_results_view.js"></script>
     <script type="text/javascript" src="javascripts/views/visit_view.js"></script>
     <script type="text/javascript" src="javascripts/views/search/search_view.js"></script>
     <script type="text/javascript" src="javascripts/views/search/search_results_view.js"></script>
@@ -411,7 +451,7 @@
     <script type="text/javascript" src="javascripts/views/credits_view.js"></script>
 
     <script type="text/javascript" src="javascripts/models/visit.js"></script>
-    <script type="text/javascript" src="javascripts/models/time_visit.js"></script>
+    <script type="text/javascript" src="javascripts/models/interval.js"></script>
     <script type="text/javascript" src="javascripts/models/week.js"></script>
     <script type="text/javascript" src="javascripts/models/day.js"></script>
     <script type="text/javascript" src="javascripts/models/version.js"></script>
@@ -423,7 +463,7 @@
     <script type="text/javascript" src="javascripts/collections/weeks.js"></script>
     <script type="text/javascript" src="javascripts/collections/days.js"></script>
     <script type="text/javascript" src="javascripts/collections/grouped_visits.js"></script>
-    <script type="text/javascript" src="javascripts/collections/time_visits.js"></script>
+    <script type="text/javascript" src="javascripts/collections/intervals.js"></script>
     <script type="text/javascript" src="javascripts/collections/visits.js"></script>
 
     <script type="text/javascript" src="javascripts/initialize.js"></script>
