@@ -6,7 +6,7 @@ BrowserActions = function() {
 
     openHistory: function() {
       chrome.tabs.create({
-        url: Url.base()
+        url: BH.Lib.Url.base()
       });
     }
   };
