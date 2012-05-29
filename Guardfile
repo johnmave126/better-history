@@ -9,13 +9,16 @@ spec_location = "spec/javascripts/%s_spec"
 # uncomment if you use NerdCapsSpec.js
 # spec_location = "spec/javascripts/%sSpec"
 
-# guard 'jasmine-headless-webkit' do
-#   watch(%r{^app/views/.*\.jst$})
-#   watch(%r{^public/javascripts/(.*)\.js$}) { |m| newest_js_file(spec_location % m[1]) }
-#   watch(%r{^app/assets/javascripts/(.*)\.(js|coffee)$}) { |m| newest_js_file(spec_location % m[1]) }
-#   watch(%r{^spec/javascripts/(.*)_spec\..*}) { |m| newest_js_file(spec_location % m[1]) }
-# end
-#
-guard 'less', :all_on_start => true, :all_after_change => true, :output => 'extension/styles', :import_paths => 'extension/less' do
-  watch(%r{^.*\.less$})
+guard 'jasmine-headless-webkit' do
+  watch(%r{^app/views/.*\.jst$})
+  watch(%r{^public/javascripts/(.*)\.js$}) { |m| newest_js_file(spec_location % m[1]) }
+  watch(%r{^app/assets/javascripts/(.*)\.(js|coffee)$}) { |m| newest_js_file(spec_location % m[1]) }
+  watch(%r{^spec/javascripts/(.*)_spec\..*}) { |m| newest_js_file(spec_location % m[1]) }
+end
+
+
+guard 'jasmine' do
+  watch(%r{spec/javascripts/spec\.(js\.coffee|js|coffee)$})         { "spec/javascripts" }
+  watch(%r{spec/javascripts/.+_spec\.(js\.coffee|js|coffee)$})
+  watch(%r{app/assets/javascripts/(.+?)\.(js\.coffee|js|coffee)$})  { |m| "spec/javascripts/#{m[1]}_spec.#{m[2]}" }
 end

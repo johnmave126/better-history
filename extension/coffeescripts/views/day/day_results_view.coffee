@@ -1,4 +1,4 @@
-class BH.Views.DayResultsView extends Backbone.View
+class BH.Views.DayResultsView extends BH.Views.BaseView
   templateId: 'day_results'
 
   events:

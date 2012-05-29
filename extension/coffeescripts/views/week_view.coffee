@@ -1,4 +1,4 @@
-class BH.Views.WeekView extends Backbone.ViewWithSearch
+class BH.Views.WeekView extends BH.Views.ViewWithSearch
   className: 'week_view'
   templateId: 'week'
 
@@ -6,7 +6,7 @@ class BH.Views.WeekView extends Backbone.ViewWithSearch
     'click .delete_all': 'clickedDeleteAll'
 
   initialize: ->
-    @applySearchBehavior()
+    super()
     @model.bind('change:percentages', @updatePercentages, @)
     @model.bind('change:count', @updateWeekStats, @)
 

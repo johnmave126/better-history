@@ -1,4 +1,4 @@
-class BH.Views.AppView extends Backbone.View
+class BH.Views.AppView extends BH.Views.BaseView
   className: 'app_view'
   templateId: 'app'
   selectedClass: 'selected'

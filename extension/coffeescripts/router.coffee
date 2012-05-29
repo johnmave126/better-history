@@ -27,14 +27,20 @@ class BH.Router extends Backbone.Router
         {date: moment().past('Monday', 9)}
       ])
     ).render()
+    window.state = new BH.Models.State
+      route: BH.Lib.Url.week(@app.collection.at(0).id)
 
-    Backbone.history.start()
+    @bind 'route:before', () =>
+      $('.mainview > *').removeClass(@selectedClass)
+    @bind 'route:after', (urlFragment) ->
+      if urlFragment.length != 0
+        state.set({'route': urlFragment})
+
 
   week: (id) ->
     model = @app.collection.get(id)
     view = @app.views.weeks[model.id]
 
-    $('.mainview > *').removeClass(@selectedClass)
     Helpers.pageTitle(model.get('title'))
     view.$el.addClass(@selectedClass)
 
@@ -58,12 +64,10 @@ class BH.Router extends Backbone.Router
     model.fetch()
 
   settings: ->
-    $('.mainview > *').removeClass(@selectedClass)
     Helpers.pageTitle(chrome.i18n.getMessage('settings_title'))
     @app.views.settings.$el.addClass(@selectedClass)
 
   search: (query) ->
-    $('.mainview > *').removeClass(@selectedClass)
     @app.views.search.$el.addClass(@selectedClass)
     @app.views.search.model.set({query: query})
 

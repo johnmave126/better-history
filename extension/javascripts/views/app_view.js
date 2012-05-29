@@ -69,6 +69,6 @@
 
     return AppView;
 
-  })(Backbone.View);
+  })(BH.Views.BaseView);
 
 }).call(this);

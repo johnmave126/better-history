@@ -1,4 +1,4 @@
-class BH.Views.SearchResultsView extends Backbone.View
+class BH.Views.SearchResultsView extends BH.Views.BaseView
   templateId: 'search_results'
 
   events:

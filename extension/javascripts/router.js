@@ -23,6 +23,7 @@
     Router.prototype.selectedClass = 'selected';
 
     Router.prototype.initialize = function() {
+      var _this = this;
       window.settings = new BH.Models.Settings();
       window.version = new BH.Models.Version({
         version: '1.6.0'
@@ -54,14 +55,25 @@
           }
         ])
       }).render();
-      return Backbone.history.start();
+      window.state = new BH.Models.State({
+        route: BH.Lib.Url.week(this.app.collection.at(0).id)
+      });
+      this.bind('route:before', function() {
+        return $('.mainview > *').removeClass(_this.selectedClass);
+      });
+      return this.bind('route:after', function(urlFragment) {
+        if (urlFragment.length !== 0) {
+          return state.set({
+            'route': urlFragment
+          });
+        }
+      });
     };
 
     Router.prototype.week = function(id) {
       var model, view;
       model = this.app.collection.get(id);
       view = this.app.views.weeks[model.id];
-      $('.mainview > *').removeClass(this.selectedClass);
       Helpers.pageTitle(model.get('title'));
       view.$el.addClass(this.selectedClass);
       return model.fetch();
@@ -86,13 +98,11 @@
     };
 
     Router.prototype.settings = function() {
-      $('.mainview > *').removeClass(this.selectedClass);
       Helpers.pageTitle(chrome.i18n.getMessage('settings_title'));
       return this.app.views.settings.$el.addClass(this.selectedClass);
     };
 
     Router.prototype.search = function(query) {
-      $('.mainview > *').removeClass(this.selectedClass);
       this.app.views.search.$el.addClass(this.selectedClass);
       return this.app.views.search.model.set({
         query: query

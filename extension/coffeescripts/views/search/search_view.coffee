@@ -1,4 +1,4 @@
-class BH.Views.SearchView extends Backbone.ViewWithSearch
+class BH.Views.SearchView extends BH.Views.ViewWithSearch
   className: 'search_view'
   templateId: 'search'
 
@@ -9,7 +9,7 @@ class BH.Views.SearchView extends Backbone.ViewWithSearch
     @model.on('change:title', @refreshTitle, @)
     @model.on('change:history', @renderVisits, @)
     @model.on('change:query', @refreshTitle, @)
-    @applySearchBehavior()
+    super()
 
   render: ->
     @$el.append(@template(_.extend(i18n.search(), @model.toTemplate())))

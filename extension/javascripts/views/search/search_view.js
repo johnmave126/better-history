@@ -25,7 +25,7 @@
       this.model.on('change:title', this.refreshTitle, this);
       this.model.on('change:history', this.renderVisits, this);
       this.model.on('change:query', this.refreshTitle, this);
-      return this.applySearchBehavior();
+      return SearchView.__super__.initialize.call(this);
     };
 
     SearchView.prototype.render = function() {
@@ -84,6 +84,6 @@
 
     return SearchView;
 
-  })(Backbone.ViewWithSearch);
+  })(BH.Views.ViewWithSearch);
 
 }).call(this);

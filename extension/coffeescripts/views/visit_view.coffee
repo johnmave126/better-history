@@ -1,4 +1,4 @@
-class BH.Views.VisitView extends Backbone.View
+class BH.Views.VisitView extends BH.Views.BaseView
   className: 'visit_view'
   templateId: 'visit'
 

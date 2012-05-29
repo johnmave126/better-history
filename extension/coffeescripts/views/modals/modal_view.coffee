@@ -1,4 +1,4 @@
-class BH.Views.Modal extends Backbone.View
+class BH.Views.Modal extends BH.Views.BaseView
   pulseClass: 'pulse'
 
   generalEvents:

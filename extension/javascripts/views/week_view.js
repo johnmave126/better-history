@@ -23,7 +23,7 @@
 
     WeekView.prototype.initialize = function() {
       var _this = this;
-      this.applySearchBehavior();
+      WeekView.__super__.initialize.call(this);
       this.model.bind('change:percentages', this.updatePercentages, this);
       this.model.bind('change:count', this.updateWeekStats, this);
       return this.model.get('days').each(function(model) {
@@ -83,6 +83,6 @@
 
     return WeekView;
 
-  })(Backbone.ViewWithSearch);
+  })(BH.Views.ViewWithSearch);
 
 }).call(this);

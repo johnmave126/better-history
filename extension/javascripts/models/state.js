@@ -15,10 +15,6 @@
 
     State.prototype.storeName = 'state';
 
-    State.prototype.defaults = {
-      route: 'filter/0_days_ago'
-    };
-
     State.prototype.initialize = function() {
       return this.bind('change', this.save, this);
     };

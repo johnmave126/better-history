@@ -1,4 +1,4 @@
-class BH.Views.SettingsView extends Backbone.View
+class BH.Views.SettingsView extends BH.Views.BaseView
   className: 'settings_view'
   templateId: 'settings'
 
