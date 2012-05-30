@@ -33,25 +33,25 @@
         model: version,
         collection: new BH.Collections.Weeks([
           {
-            date: moment().past('Monday', 0)
+            date: moment().past(chrome.i18n.getMessage('monday'), 0)
           }, {
-            date: moment().past('Monday', 1)
+            date: moment().past(chrome.i18n.getMessage('monday'), 1)
           }, {
-            date: moment().past('Monday', 2)
+            date: moment().past(chrome.i18n.getMessage('monday'), 2)
           }, {
-            date: moment().past('Monday', 3)
+            date: moment().past(chrome.i18n.getMessage('monday'), 3)
           }, {
-            date: moment().past('Monday', 4)
+            date: moment().past(chrome.i18n.getMessage('monday'), 4)
           }, {
-            date: moment().past('Monday', 5)
+            date: moment().past(chrome.i18n.getMessage('monday'), 5)
           }, {
-            date: moment().past('Monday', 6)
+            date: moment().past(chrome.i18n.getMessage('monday'), 6)
           }, {
-            date: moment().past('Monday', 7)
+            date: moment().past(chrome.i18n.getMessage('monday'), 7)
           }, {
-            date: moment().past('Monday', 8)
+            date: moment().past(chrome.i18n.getMessage('monday'), 8)
           }, {
-            date: moment().past('Monday', 9)
+            date: moment().past(chrome.i18n.getMessage('monday'), 9)
           }
         ])
       }).render();
