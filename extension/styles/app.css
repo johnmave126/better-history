@@ -96,6 +96,9 @@ h1 {
   -webkit-border-start-color: rgb(78, 87, 100);
   font-weight: bold;
 }
+.navbar .weeks {
+  margin-bottom: 40px;
+}
 
 
 .search_view .visit .time {
@@ -376,7 +379,7 @@ h1 {
   border-bottom: 1px solid #EEE;
 }
 .setting {
-  margin-bottom: 24px;
+  margin-bottom: 14px;
   margin-top: 8px;
   max-width: 600px;
 }
@@ -401,6 +404,7 @@ h1 {
 }
 .settings .controls {
   border: none;
+  height: auto;
 }
 .settings .controls label:first-child {
   padding-top:0;

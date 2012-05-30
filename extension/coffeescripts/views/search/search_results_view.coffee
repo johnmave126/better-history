@@ -14,7 +14,7 @@ class BH.Views.SearchResultsView extends BH.Views.BaseView
     model.destroy
       success: =>
         @_getElementFromModel(model).slideUp 'fast', ->
-          @.remove()
+          $(@).remove()
 
 
   _getModelFromElement: (element) ->

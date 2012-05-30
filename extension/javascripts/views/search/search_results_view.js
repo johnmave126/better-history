@@ -32,7 +32,7 @@
       return model.destroy({
         success: function() {
           return _this._getElementFromModel(model).slideUp('fast', function() {
-            return this.remove();
+            return $(this).remove();
           });
         }
       });
