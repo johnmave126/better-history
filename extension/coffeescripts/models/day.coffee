@@ -18,17 +18,11 @@ class BH.Models.Day extends Backbone.Model
       url: BH.Lib.Url.day(@get('weekId'), id)
     })
 
-    @bind('change:filter', @filterHistory, @)
-
-  filterHistory: ->
-    history = if @get('filter') then new BH.Collections.Intervals() else @originalHistory
-    @set({history: history})
-
   toTemplate: ->
     @toJSON()
 
   toChrome: ->
-    {text: '', startTime: @_getSOD(), endTime: @_getEOD()}
+    {text: @get('filter') || '', startTime: @_getSOD(), endTime: @_getEOD()}
 
   sync: (method, model, options) ->
     if method == 'read'
@@ -53,12 +47,8 @@ class BH.Models.Day extends Backbone.Model
         pageVisits: new BH.Collections.Visits(@pageVisits)
       count += @pageVisits.length
 
-    @originalHistory = history
-
-    {
-      history: history
-      count: count
-    }
+    history: history
+    count: count
 
   _getSOD: ->
     new Date(@get('date').sod()).getTime()

@@ -25,7 +25,7 @@
 
     DayView.prototype.initialize = function(config) {
       this.attachGeneralEvents();
-      return this.model.on('change', this.renderHistory, this);
+      return this.model.on('change:history', this.renderHistory, this);
     };
 
     DayView.prototype.render = function(type) {
@@ -44,7 +44,7 @@
         model: this.model,
         el: contentElement
       }).render();
-      if (this.collection.length === 0) {
+      if (this.collection.length === 0 || this.model.get('filter')) {
         return this.$('button').attr('disabled', 'disabled');
       } else {
         Helpers.tabIndex($('.content a', this.el));
@@ -74,9 +74,10 @@
     };
 
     DayView.prototype.filtered = function(ev) {
-      return this.model.set({
+      this.model.set({
         filter: $(ev.currentTarget).val()
       });
+      return this.model.fetch();
     };
 
     DayView.prototype.fullSearchClicked = function() {

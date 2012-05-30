@@ -9,7 +9,7 @@ class BH.Views.DayView extends BH.Views.Modal
 
   initialize: (config) ->
     @attachGeneralEvents()
-    @model.on('change', @renderHistory, @)
+    @model.on('change:history', @renderHistory, @)
 
   render: (type) ->
     @$el.html(@template(_.extend(i18n.day(), @model.toTemplate())))
@@ -28,7 +28,7 @@ class BH.Views.DayView extends BH.Views.Modal
       el: contentElement
     ).render()
 
-    if @collection.length == 0
+    if @collection.length == 0 || @model.get('filter')
       @$('button').attr('disabled', 'disabled')
     else
       Helpers.tabIndex($('.content a', @el))
@@ -53,6 +53,7 @@ class BH.Views.DayView extends BH.Views.Modal
 
   filtered: (ev) ->
     @model.set({filter: $(ev.currentTarget).val()})
+    @model.fetch()
 
   fullSearchClicked: ->
     @close()

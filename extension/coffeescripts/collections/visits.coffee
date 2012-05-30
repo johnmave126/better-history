@@ -4,7 +4,7 @@ class BH.Collections.Visits extends Backbone.Collection
   destroyAll: (options) ->
     while(@length > 0)
       this.at(0).destroy() if @at(0)
-    options.success()
+    options.success() if options?
 
   toTemplate: ->
     visits = []

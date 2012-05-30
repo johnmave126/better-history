@@ -98,6 +98,10 @@ h1 {
 }
 
 
+.search_view .visit .time {
+  display: block;
+}
+
 .week_view .days .title {
   margin:0;
   font-size: 14px;
@@ -172,7 +176,15 @@ h1 {
 .day_view .heading input {
   margin-right: 30px;
 }
-
+.day_view .full_search {
+  padding: 14px 17px;
+  position: absolute;
+  bottom: 0;
+  background: white;
+  width: 100%;
+  -webkit-box-sizing: border-box;
+  margin: 0 0 0 -17px;
+}
 .heading {
   padding:20px 0 0;
   background: #FFF;
@@ -290,7 +302,6 @@ h1 {
   -webkit-transition: __MSG_@@bidi_end_edge__ 200ms, opacity 200ms;
 }
 .interval > .title {
-  z-index:10;
   margin:0;
   padding:10px 3px;
   padding-__MSG_@@bidi_start_edge:0;

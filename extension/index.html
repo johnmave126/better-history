@@ -153,24 +153,6 @@
         <div class="content"></div>
       </div>
     </script>
-    <script id="noVisits" type="text/html">
-      <p class="no_visits">{{i18n_no_visits_found}}</p>
-    </script>
-
-    <script id="groupedVisits" type="text/html">
-      <a href="{{domain}}">
-        <div class="link">
-          <dl class="description" style="background-image: url(chrome://favicon/{{url}})">
-            <dt class="title">{{domain}}</dt>
-            <dd class="location"><button class="expand button small_button">{{i18n_expand_button}}</button></dd>
-          </dl>
-          <div class="delete_layer">
-            <button class="delete_group">{{i18n_prompt_delete_button}}</button>
-          </div>
-        </div>
-      </a>
-      <div class="expanded"></div>
-    </script>
 
     <script id="day_results" type="text/html">
       {{#hasIntervals}}
@@ -208,6 +190,9 @@
       {{#noIntervals}}
         <p class="no_visits">{{i18n_no_visits_found}}</p>
       {{/noIntervals}}
+      {{#filter}}
+        <p class="full_search">No luck? Try <a href="#search/{{filter}}">searching your full history &rarr;</a></p>
+      {{/filter}}
     </script>
 
     <script id="search_results" type="text/html">

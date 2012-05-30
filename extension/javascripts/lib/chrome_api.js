@@ -26,7 +26,7 @@ var chromeAPI = {
       }
 
       function isSearchQuery() {
-        return (terms ? terms.length !== 0 : false);
+        return typeof(options.endTime) === 'undefined';
       }
 
       function wrapMatchInProperty(regExp, property, match) {
@@ -85,7 +85,18 @@ var chromeAPI = {
             if(verifyDateRange(result)) {
               removeScriptTags(result);
               setAdditionalProperties(result);
-              prunedResults.push(result);
+              if (terms ? terms.length !== 0 : false) {
+                if(verifyTextMatch(result)) {
+                  wrapTextMatch(result);
+                }
+              }
+              if (terms ? terms.length !== 0 : false) {
+                if(verifyTextMatch(result)) {
+                  prunedResults.push(result);
+                }
+              } else {
+                prunedResults.push(result);
+              }
             }
           }
         });
@@ -95,6 +106,10 @@ var chromeAPI = {
         return prunedResults;
       }
 
+      if(isSearchQuery()) {
+        options.startTime = 0;
+        options.maxResults = 0;
+      }
       chrome.history.search(options, function(results) {
         if(originalText) options.text = originalText;
         callback(pruneResults(results));

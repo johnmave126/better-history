@@ -25,7 +25,7 @@
       var id;
       this.options = options;
       id = this._dateFormat('id');
-      this.set({
+      return this.set({
         title: this._dateFormat('title'),
         subTitle: this._dateFormat('subTitle'),
         inFuture: moment() < this.get('date'),
@@ -33,15 +33,6 @@
         extendedFormalDate: this._dateFormat('extendedFormalDate'),
         id: id,
         url: BH.Lib.Url.day(this.get('weekId'), id)
-      });
-      return this.bind('change:filter', this.filterHistory, this);
-    };
-
-    Day.prototype.filterHistory = function() {
-      var history;
-      history = this.get('filter') ? new BH.Collections.Intervals() : this.originalHistory;
-      return this.set({
-        history: history
       });
     };
 
@@ -51,7 +42,7 @@
 
     Day.prototype.toChrome = function() {
       return {
-        text: '',
+        text: this.get('filter') || '',
         startTime: this._getSOD(),
         endTime: this._getEOD()
       };
@@ -89,7 +80,6 @@
         });
         return count += this.pageVisits.length;
       });
-      this.originalHistory = history;
       return {
         history: history,
         count: count

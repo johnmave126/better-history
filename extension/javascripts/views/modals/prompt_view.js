@@ -50,7 +50,8 @@
       return this.$('button').animate({
         opacity: 0
       }, 'fast', function() {
-        return _this.$('.spinner').spin();
+        _this.$('.spinner').spin();
+        return _this.$('.close-button').fadeOut();
       });
     };
 

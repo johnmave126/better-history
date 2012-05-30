@@ -25,6 +25,7 @@ class BH.Views.PromptView extends BH.Views.Modal
   spin: ->
     @$('button').animate {opacity: 0}, 'fast', =>
       @$('.spinner').spin()
+      @$('.close-button').fadeOut()
 
 BH.Views.CreatePrompt = (content) ->
   view = new BH.Views.PromptView

@@ -21,7 +21,7 @@
     };
 
     DayResultsView.prototype.render = function() {
-      return this.$el.html(this.template(_.extend(i18n.day(), this.collection.toTemplate())));
+      return this.$el.html(this.template(_.extend(i18n.day(), this.model.toTemplate(), this.collection.toTemplate())));
     };
 
     DayResultsView.prototype.deleteIntervalClicked = function(ev) {

@@ -21,7 +21,9 @@
           this.at(0).destroy();
         }
       }
-      return options.success();
+      if (options != null) {
+        return options.success();
+      }
     };
 
     Visits.prototype.toTemplate = function() {
