@@ -1,6 +1,6 @@
 body {
   direction: __MSG_@@bidi_dir__;
-  font-family: 'Lucida Grande', sans-serif;
+  font-family: 'Chrome Droid Sans', 'Droid Sans Fallback', 'Lucida Grande', sans-serif;
   margin: 0;
   color: #303942;
   font-size: 12px;
@@ -32,6 +32,10 @@ h1 {
   -webkit-margin-after: 1em;
   -webkit-margin-before: 20px;
   -webkit-margin-start: 23px;
+  font-size: 18px;
+}
+h2 {
+  color: #303942;
   font-size: 18px;
 }
 
@@ -82,6 +86,7 @@ h1 {
   line-height: 17px;
   margin: 5px 0;
   display: block;
+  font-weight: normal;
 }
 .navbar a:hover,
 .navbar a:focus,
@@ -108,6 +113,7 @@ h1 {
 .week_view .days .title {
   margin:0;
   font-size: 14px;
+  color: #303942;
 }
 .week_view .days .sub_title {
   margin:3px 0;
