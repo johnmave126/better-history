@@ -17,54 +17,80 @@
 
     AppView.prototype.templateId = 'app';
 
-    AppView.prototype.selectedClass = 'selected';
-
-    AppView.prototype.weekViews = {};
+    AppView.prototype["class"] = {
+      selected: 'selected'
+    };
 
     AppView.prototype.events = {
       'click .navbar a': 'weekClicked'
     };
 
     AppView.prototype.initialize = function(config, options) {
-      var versionView;
       this.options = options;
-      this.views = {
-        weeks: {}
+      return this.views = {
+        weeks: this._initWeekViews(),
+        search: this._initSearchView(),
+        settings: this._initSettingsView()
       };
-      if (this.model.get('suppress') === false) {
-        versionView = new BH.Views.VersionView({
-          model: this.model
-        });
-        $('body').append(versionView.render().el);
-        return versionView.open();
-      }
     };
 
     AppView.prototype.render = function() {
-      var properties,
+      var container, properties,
         _this = this;
+      if (!this.model.get('suppress')) {
+        this._renderVersionView();
+      }
       properties = _.extend(i18n.app(), this.collection.toTemplate());
       this.$el.html(this.template(properties));
-      this.collection.each(function(model) {
-        _this.views.weeks[model.id] = new BH.Views.WeekView({
-          model: model
-        }, _this.options);
-        return _this.$('.mainview').append(_this.views.weeks[model.id].render().el);
+      container = this.$('.mainview');
+      _.each(this.views.weeks, function(weekView) {
+        return container.append(weekView.render().el);
       });
-      this.views.search = new BH.Views.SearchView({
-        model: new BH.Models.Search()
-      });
-      this.$('.mainview').append(this.views.search.render().el);
-      this.views.settings = new BH.Views.SettingsView({
-        model: settings
-      });
-      this.$('.mainview').append(this.views.settings.render().el);
+      container.append(this.views.search.render().el);
+      container.append(this.views.settings.render().el);
       return this;
     };
 
     AppView.prototype.weekClicked = function(ev) {
-      this.$('.navbar a').removeClass(this.selectedClass);
-      return this.$(ev.currentTarget).addClass(this.selectedClass);
+      this.$('.navbar a').removeClass(this["class"].selected);
+      return this.$(ev.currentTarget).addClass(this["class"].selected);
+    };
+
+    AppView.prototype.weekSelected = function(id) {
+      return this.$("[data-id=" + id + "] a").addClass(this["class"].selected);
+    };
+
+    AppView.prototype._initWeekViews = function() {
+      var views,
+        _this = this;
+      views = {};
+      this.collection.map(function(model) {
+        return views[model.id] = new BH.Views.WeekView({
+          model: model
+        }, _this.options);
+      });
+      return views;
+    };
+
+    AppView.prototype._initSearchView = function() {
+      return new BH.Views.SearchView({
+        model: new BH.Models.Search()
+      });
+    };
+
+    AppView.prototype._initSettingsView = function() {
+      return new BH.Views.SettingsView({
+        model: settings
+      });
+    };
+
+    AppView.prototype._renderVersionView = function() {
+      var versionView;
+      versionView = new BH.Views.VersionView({
+        model: this.model
+      });
+      $('body').append(versionView.render().el);
+      return versionView.open();
     };
 
     return AppView;

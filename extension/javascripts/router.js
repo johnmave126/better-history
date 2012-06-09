@@ -72,7 +72,7 @@
 
     Router.prototype.week = function(id) {
       var model, view;
-      $("[data-id=" + id + "] a").addClass(this.app.selectedClass);
+      this.app.weekSelected(id);
       model = this.app.collection.get(id);
       view = this.app.views.weeks[model.id];
       Helpers.pageTitle(model.get('title'));
@@ -83,6 +83,7 @@
     Router.prototype.day = function(weekId, id) {
       var dayView, model, view, weekModel,
         _this = this;
+      this.app.weekSelected(weekId);
       weekModel = this.app.collection.get(weekId);
       model = weekModel.get('days').get(id);
       view = this.app.views.weeks[this.app.collection.get(weekId).id];

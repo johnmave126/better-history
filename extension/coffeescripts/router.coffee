@@ -38,7 +38,7 @@ class BH.Router extends Backbone.Router
 
 
   week: (id) ->
-    $("[data-id=#{id}] a").addClass(@app.selectedClass)
+    @app.weekSelected(id)
 
     model = @app.collection.get(id)
     view = @app.views.weeks[model.id]
@@ -49,6 +49,8 @@ class BH.Router extends Backbone.Router
     model.fetch()
 
   day: (weekId, id) ->
+    @app.weekSelected(weekId)
+
     weekModel = @app.collection.get(weekId)
     model = weekModel.get('days').get(id)
 
