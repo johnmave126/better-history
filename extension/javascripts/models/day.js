@@ -14,10 +14,8 @@
     }
 
     Day.prototype.format = {
-      title: 'dddd',
-      subTitle: 'MMMM Do',
-      formalDate: 'MMMM Do YYYY',
-      extendedFormalDate: 'dddd MMMM Do YYYY',
+      title: chrome.i18n.getMessage('day_date'),
+      formalDate: chrome.i18n.getMessage('formal_date'),
       id: 'D'
     };
 
@@ -27,10 +25,8 @@
       id = this._dateFormat('id');
       return this.set({
         title: this._dateFormat('title'),
-        subTitle: this._dateFormat('subTitle'),
         inFuture: moment() < this.get('date'),
         formalDate: this._dateFormat('formalDate'),
-        extendedFormalDate: this._dateFormat('extendedFormalDate'),
         id: id,
         url: BH.Lib.Url.day(this.get('weekId'), id)
       });

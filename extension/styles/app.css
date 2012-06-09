@@ -106,6 +106,9 @@ h2 {
 }
 
 
+.search_view a {
+  color: #15C;
+}
 .search_view .visit .time {
   display: block;
 }
@@ -164,6 +167,9 @@ h2 {
 }
 
 
+.day_view a {
+  color: #15C;
+}
 .day_view .overlay .page .content-area {
   width: 750px;
   overflow-x:hidden;

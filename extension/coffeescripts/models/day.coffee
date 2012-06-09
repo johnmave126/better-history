@@ -1,19 +1,15 @@
 class BH.Models.Day extends Backbone.Model
   format:
-    title: 'dddd'
-    subTitle: 'MMMM Do'
-    formalDate: 'MMMM Do YYYY'
-    extendedFormalDate: 'dddd MMMM Do YYYY'
+    title: chrome.i18n.getMessage('day_date')
+    formalDate: chrome.i18n.getMessage('formal_date')
     id: 'D'
 
   initialize: (properties, @options) ->
     id = @_dateFormat('id')
     this.set({
       title: @_dateFormat('title')
-      subTitle: @_dateFormat('subTitle')
       inFuture: moment() < @get('date')
       formalDate: @_dateFormat('formalDate')
-      extendedFormalDate: @_dateFormat('extendedFormalDate')
       id: id
       url: BH.Lib.Url.day(@get('weekId'), id)
     })

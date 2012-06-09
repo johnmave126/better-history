@@ -1,43 +1,34 @@
 {
-  "extended_formal_date": {
-    "message": "$weekday$, $day$ $month$ $year$",
-    "description": "The order of a full extended date",
+  "short_date": {
+    "message": "Do MMMM",
+    "description": "for Moment.js"
+  },
+  "short_date_with_day": {
+    "message": "dddd, Do MMMM",
+    "description": "for Moment.js"
+  },
+  "date_week_label": {
+    "message": "Week of $week$",
+    "description": "short week w/ label",
     "placeholders": {
-      "weekday": {
+      "week": {
         "content": "$1",
-        "example": "March"
-      },
-      "month": {
-        "content": "$2",
-        "example": "March"
-      },
-      "day": {
-        "content": "$3",
-        "example": "25"
-      },
-      "year": {
-        "content": "$4",
-        "example": "2011"
+        "example": "date"
       }
     }
   },
+  "day_date": {
+    "message": "dddd",
+    "description": "the day"
+  },
+
+  "extended_formal_date": {
+    "message": "dddd, Do MMMM YYYY",
+    "description": "The order of a full extended date"
+  },
   "formal_date": {
-    "message": "$day$ $month$ $year$",
-    "description": "The order of a full date",
-    "placeholders": {
-      "month": {
-        "content": "$1",
-        "example": "March"
-      },
-      "day": {
-        "content": "$2",
-        "example": "25"
-      },
-      "year": {
-        "content": "$3",
-        "example": "2011"
-      }
-    }
+    "message": "Do MMMM YYYY",
+    "description": "The order of a full date"
   },
 
   "google_plus_language": {

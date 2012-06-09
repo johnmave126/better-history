@@ -15,7 +15,6 @@ function loadChromeAPI(config) {
           searching_title: 'Searching',
           and: 'and',
           ordinal_1: '1 ordinal',
-          informal_date: 'informal date',
           default_time_format: '12',
           number_of_visits: '$number_open$$number$$number_close$ visits',
           morning: 'AM',

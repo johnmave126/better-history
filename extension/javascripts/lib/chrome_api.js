@@ -57,7 +57,8 @@ var chromeAPI = {
       function setAdditionalProperties(result) {
         result.location = result.url;
         var date = new Date(result.lastVisitTime);
-        result.time = Helpers.formatExtendedFormalDate(date);
+
+        result.time = moment(date).format(chrome.i18n.getMessage('extended_formal_date'));
       }
 
       function sortByTime(a, b) {

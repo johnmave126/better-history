@@ -17,79 +17,36 @@
     "description": "Extension title"
   },
 
-  "extended_formal_date": {
-    "message": " $year$年$month$$day$日，$weekday$",
-    "description": "The order of a full extended date，",
+  "short_date": {
+    "message": "MMMM Do",
+    "description": "for Moment.js"
+  },
+  "short_date_with_day": {
+    "message": "dddd, MMMM Do",
+    "description": "for Moment.js"
+  },
+  "date_week_label": {
+    "message": "Week of $week$",
+    "description": "short week w/ label",
     "placeholders": {
-      "weekday": {
+      "week": {
         "content": "$1",
-        "example": "星期五"
-      },
-      "month": {
-        "content": "$2",
-        "example": "三月"
-      },
-      "day": {
-        "content": "$3",
-        "example": "25"
-      },
-      "year": {
-        "content": "$4",
-        "example": "2011"
+        "example": "date"
       }
     }
+  },
+  "day_date": {
+    "message": "dddd",
+    "description": "the day"
+  },
+
+  "extended_formal_date": {
+    "message": " YYYY年MMMMDo日，dddd",
+    "description": "The order of a full extended date，"
   },
   "formal_date": {
-    "message": "$year$年$month$$day$日",
-    "description": "The order of a full date",
-    "placeholders": {
-      "month": {
-        "content": "$1",
-        "example": "三月"
-      },
-      "day": {
-        "content": "$2",
-        "example": "25"
-      },
-      "year": {
-        "content": "$3",
-        "example": "2011"
-      }
-    }
-  },
-  "informal_date": {
-    "message": "$week_day$ $date_open$$day$$date_close$",
-    "description": "Date labels in sidebar",
-    "placeholders": {
-      "week_day": {
-        "content": "$1",
-        "example": "星期一"
-      },
-      "day": {
-        "content": "$2",
-        "example": "4"
-      },
-      "ordinal": {
-        "content": "$3",
-        "example": "st"
-      },
-      "ordinal_open": {
-        "content": "$4",
-        "example": "open tag for ordinal"
-      },
-      "ordinal_close": {
-        "content": "$5",
-        "example": "close tag for ordinal"
-      },
-      "date_open": {
-        "content": "$6",
-        "example": "open tag for date"
-      },
-      "date_close": {
-        "content": "$7",
-        "example": "close tag for date"
-      }
-    }
+    "message": "YYYY年MMMMDo日",
+    "description": "The order of a full date"
   },
   "twelve_hour_time_format": {
     "message": "$label$ $time$",

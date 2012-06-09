@@ -1,7 +1,9 @@
 class BH.Models.Week extends Backbone.Model
   format:
-    shortTitle: 'MMMM Do'
-    title: 'Week of dddd, MMMM Do'
+    shortTitle: chrome.i18n.getMessage('short_date')
+    title: chrome.i18n.getMessage('date_week_label', [
+      chrome.i18n.getMessage('short_date_with_day')
+    ])
     id: 'D-M-YY'
 
   initialize: ->
