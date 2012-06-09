@@ -85,6 +85,7 @@
         _this = this;
       this.app.weekSelected(weekId);
       weekModel = this.app.collection.get(weekId);
+      weekModel.fetch();
       model = weekModel.get('days').get(id);
       view = this.app.views.weeks[this.app.collection.get(weekId).id];
       view.$el.addClass(this.selectedClass);

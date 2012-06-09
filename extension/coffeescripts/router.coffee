@@ -52,6 +52,7 @@ class BH.Router extends Backbone.Router
     @app.weekSelected(weekId)
 
     weekModel = @app.collection.get(weekId)
+    weekModel.fetch()
     model = weekModel.get('days').get(id)
 
     view = @app.views.weeks[@app.collection.get(weekId).id]
