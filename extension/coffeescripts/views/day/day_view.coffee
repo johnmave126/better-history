@@ -38,7 +38,7 @@ class BH.Views.DayView extends BH.Views.Modal
   clickedDeleteAll: (ev) ->
     if $(ev.target).parent().attr('disabled') != 'disabled'
       ev.preventDefault()
-      @promptView = BH.Views.CreatePrompt(chrome.i18n.getMessage('confirm_delete_all_visits', [@model.get('extendedFormalDate')]))
+      @promptView = BH.Views.CreatePrompt(chrome.i18n.getMessage('confirm_delete_all_visits', [@model.toJSON().formalDate]))
       @promptView.open()
       @promptView.model.on('change', @deleteAction, @)
 

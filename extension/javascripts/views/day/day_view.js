@@ -55,7 +55,7 @@
     DayView.prototype.clickedDeleteAll = function(ev) {
       if ($(ev.target).parent().attr('disabled') !== 'disabled') {
         ev.preventDefault();
-        this.promptView = BH.Views.CreatePrompt(chrome.i18n.getMessage('confirm_delete_all_visits', [this.model.get('extendedFormalDate')]));
+        this.promptView = BH.Views.CreatePrompt(chrome.i18n.getMessage('confirm_delete_all_visits', [this.model.toJSON().formalDate]));
         this.promptView.open();
         return this.promptView.model.on('change', this.deleteAction, this);
       }
