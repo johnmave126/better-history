@@ -38,6 +38,8 @@ class BH.Router extends Backbone.Router
 
 
   week: (id) ->
+    $("[data-id=#{id}] a").addClass(@app.selectedClass)
+
     model = @app.collection.get(id)
     view = @app.views.weeks[model.id]
 

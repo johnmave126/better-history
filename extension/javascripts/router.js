@@ -72,6 +72,7 @@
 
     Router.prototype.week = function(id) {
       var model, view;
+      $("[data-id=" + id + "] a").addClass(this.app.selectedClass);
       model = this.app.collection.get(id);
       view = this.app.views.weeks[model.id];
       Helpers.pageTitle(model.get('title'));
