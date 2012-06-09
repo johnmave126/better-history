@@ -89,9 +89,13 @@
         count += model.get('count');
         return model.get('count');
       });
-      largest = Math.max.apply(Math, visits);
+      largest = Math.max.apply(Math, visits) || 0;
       this.get('days').each(function(model) {
-        return percentages.push(model.get('count') / largest * 100);
+        if (largest === 0) {
+          return percentages.push(0);
+        } else {
+          return percentages.push(model.get('count') / largest * 100);
+        }
       });
       return {
         percentages: percentages,

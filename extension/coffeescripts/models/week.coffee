@@ -49,9 +49,12 @@ class BH.Models.Week extends Backbone.Model
       count += model.get('count')
       model.get('count')
 
-    largest = Math.max.apply(Math, visits)
+    largest = Math.max.apply(Math, visits) || 0
     @get('days').each (model) ->
-      percentages.push(model.get('count')/largest*100)
+      if largest == 0
+        percentages.push 0
+      else
+        percentages.push(model.get('count')/largest*100)
 
     {percentages: percentages, count: count}
 
