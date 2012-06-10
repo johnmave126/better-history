@@ -1,4 +1,10 @@
 .DS_Store
 *.swp
 *.zip
+extension/javascripts/collections/*
+extension/javascripts/models/*
+extension/javascripts/views/*
+extension/javascripts/initialize.js
+extension/javascripts/namespace.js
+extension/javascripts/router.js
 .jhw-cache
