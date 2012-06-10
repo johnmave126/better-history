@@ -13,14 +13,18 @@
   var settings = new BH.Models.Settings();
   settings.fetch();
 
-  selectionContextMenu = new SelectionContextMenu();
-  if(settings.get('searchBySelection')) selectionContextMenu.create();
+  selectionContextMenu = new BH.Lib.SelectionContextMenu();
+  if(settings.get('searchBySelection')) {
+    selectionContextMenu.create();
+  }
 
-  pageContextMenu = new PageContextMenu();
+  pageContextMenu = new BH.Lib.PageContextMenu();
   pageContextMenu.listenToTabs();
-  if(settings.get('searchByDomain')) pageContextMenu.create();
+  if(settings.get('searchByDomain')) {
+    pageContextMenu.create();
+  }
 
-  browserActions = new BrowserActions();
+  browserActions = new BH.Lib.BrowserActions();
   browserActions.listen();
 </script>
 
