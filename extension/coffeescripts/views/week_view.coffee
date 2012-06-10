@@ -17,6 +17,9 @@ class BH.Views.WeekView extends BH.Views.ViewWithSearch
     @$el.html(@template(_.extend(i18n.week(), @model.toTemplate())))
     @
 
+  pageTitle: ->
+    Helpers.pageTitle(@model.get('title'))
+
   updateDay: (model) ->
     $('.number_of_visits', @_getDayElement(model.id)).text(model.get('count'))
 

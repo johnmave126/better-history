@@ -20,10 +20,7 @@
       'weeks/:weekId/days/:id': 'day'
     };
 
-    Router.prototype.selectedClass = 'selected';
-
     Router.prototype.initialize = function() {
-      var _this = this;
       window.settings = new BH.Models.Settings();
       window.version = new BH.Models.Version({
         version: '1.6.0'
@@ -58,9 +55,6 @@
       window.state = new BH.Models.State({
         route: BH.Lib.Url.week(this.app.collection.at(0).id)
       });
-      this.bind('route:before', function() {
-        return $('.mainview > *').removeClass(_this.selectedClass);
-      });
       return this.bind('route:after', function(urlFragment) {
         if (urlFragment.length !== 0) {
           return state.set({
@@ -71,43 +65,38 @@
     };
 
     Router.prototype.week = function(id) {
-      var model, view;
+      var view;
       this.app.weekSelected(id);
-      model = this.app.collection.get(id);
-      view = this.app.views.weeks[model.id];
-      Helpers.pageTitle(model.get('title'));
-      view.$el.addClass(this.selectedClass);
-      return model.fetch();
+      view = this.app.views.weeks[id];
+      view.model.fetch();
+      return view.select();
     };
 
     Router.prototype.day = function(weekId, id) {
-      var dayView, model, view, weekModel,
-        _this = this;
+      var model, view;
       this.app.weekSelected(weekId);
-      weekModel = this.app.collection.get(weekId);
-      weekModel.fetch();
-      model = weekModel.get('days').get(id);
-      view = this.app.views.weeks[this.app.collection.get(weekId).id];
-      view.$el.addClass(this.selectedClass);
-      dayView = new BH.Views.DayView({
-        model: model
-      });
-      $('body').append(dayView.render().el);
-      dayView.bind('close', function() {
-        return _this.navigate(BH.Lib.Url.week(weekId));
-      });
-      dayView.open();
+      view = this.app.views.weeks[weekId];
+      view.model.fetch();
+      view.select();
+      model = view.model.get('days').get(id);
+      new BH.Views.DayView({
+        model: model,
+        weekModel: view.model
+      }).open();
       return model.fetch();
     };
 
     Router.prototype.settings = function() {
-      Helpers.pageTitle(chrome.i18n.getMessage('settings_title'));
-      return this.app.views.settings.$el.addClass(this.selectedClass);
+      var view;
+      view = this.app.views.settings;
+      return view.select();
     };
 
     Router.prototype.search = function(query) {
-      this.app.views.search.$el.addClass(this.selectedClass);
-      return this.app.views.search.model.set({
+      var view;
+      view = this.app.views.search;
+      view.select();
+      return view.model.set({
         query: query
       });
     };

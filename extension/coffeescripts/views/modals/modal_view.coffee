@@ -14,6 +14,7 @@ class BH.Views.Modal extends BH.Views.BaseView
     overlay
 
   open: ->
+    $('body').append(@render().el)
     @_globalBinds()
     @$('.overlay').fadeIn 'fast', ->
       $(@).children().fadeIn 'fast', ->

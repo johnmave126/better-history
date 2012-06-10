@@ -32,6 +32,7 @@
     };
 
     Modal.prototype.open = function() {
+      $('body').append(this.render().el);
       this._globalBinds();
       return this.$('.overlay').fadeIn('fast', function() {
         return $(this).children().fadeIn('fast', function() {

@@ -36,6 +36,10 @@
       return this;
     };
 
+    WeekView.prototype.pageTitle = function() {
+      return Helpers.pageTitle(this.model.get('title'));
+    };
+
     WeekView.prototype.updateDay = function(model) {
       return $('.number_of_visits', this._getDayElement(model.id)).text(model.get('count'));
     };

@@ -2,9 +2,6 @@ class BH.Views.AppView extends BH.Views.BaseView
   className: 'app_view'
   templateId: 'app'
 
-  class:
-    selected: 'selected'
-
   events:
     'click .navbar a': 'weekClicked'
 
@@ -30,11 +27,11 @@ class BH.Views.AppView extends BH.Views.BaseView
     @
 
   weekClicked: (ev) ->
-    @$('.navbar a').removeClass(@class.selected)
-    @$(ev.currentTarget).addClass(@class.selected)
+    @$('.navbar a').removeClass(@cssClass.selected)
+    @$(ev.currentTarget).addClass(@cssClass.selected)
 
   weekSelected: (id) ->
-    @$("[data-id=#{id}] a").addClass(@class.selected)
+    @$("[data-id=#{id}] a").addClass(@cssClass.selected)
 
   _initWeekViews: ->
     views = {}

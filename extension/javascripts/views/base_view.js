@@ -13,8 +13,20 @@
       return BaseView.__super__.constructor.apply(this, arguments);
     }
 
+    BaseView.prototype.cssClass = {
+      selected: 'selected'
+    };
+
     BaseView.prototype.template = function(json) {
       return Mustache.render($('#' + this.templateId).html(), json);
+    };
+
+    BaseView.prototype.select = function() {
+      $('.mainview > *').removeClass(this.cssClass.selected);
+      this.$el.addClass(this.cssClass.selected);
+      if (this.pageTitle) {
+        return this.pageTitle();
+      }
     };
 
     return BaseView;

@@ -17,10 +17,6 @@
 
     AppView.prototype.templateId = 'app';
 
-    AppView.prototype["class"] = {
-      selected: 'selected'
-    };
-
     AppView.prototype.events = {
       'click .navbar a': 'weekClicked'
     };
@@ -52,12 +48,12 @@
     };
 
     AppView.prototype.weekClicked = function(ev) {
-      this.$('.navbar a').removeClass(this["class"].selected);
-      return this.$(ev.currentTarget).addClass(this["class"].selected);
+      this.$('.navbar a').removeClass(this.cssClass.selected);
+      return this.$(ev.currentTarget).addClass(this.cssClass.selected);
     };
 
     AppView.prototype.weekSelected = function(id) {
-      return this.$("[data-id=" + id + "] a").addClass(this["class"].selected);
+      return this.$("[data-id=" + id + "] a").addClass(this.cssClass.selected);
     };
 
     AppView.prototype._initWeekViews = function() {

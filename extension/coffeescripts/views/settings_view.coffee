@@ -19,6 +19,9 @@ class BH.Views.SettingsView extends BH.Views.BaseView
   saveSettings: ->
     @model.save()
 
+  pageTitle: ->
+    Helpers.pageTitle(chrome.i18n.getMessage('settings_title'))
+
   render: ->
     @$el.append(@template(@model.toTemplate()))
     window.___gcfg = {lang: chrome.i18n.getMessage('google_plus_language')}

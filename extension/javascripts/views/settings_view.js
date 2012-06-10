@@ -37,6 +37,10 @@
       return this.model.save();
     };
 
+    SettingsView.prototype.pageTitle = function() {
+      return Helpers.pageTitle(chrome.i18n.getMessage('settings_title'));
+    };
+
     SettingsView.prototype.render = function() {
       this.$el.append(this.template(this.model.toTemplate()));
       window.___gcfg = {

@@ -5,8 +5,6 @@ class BH.Router extends Backbone.Router
     'weeks/:id': 'week'
     'weeks/:weekId/days/:id': 'day'
 
-  selectedClass: 'selected'
-
   initialize: ->
     # yuck
     window.settings = new BH.Models.Settings()
@@ -30,50 +28,37 @@ class BH.Router extends Backbone.Router
     window.state = new BH.Models.State
       route: BH.Lib.Url.week(@app.collection.at(0).id)
 
-    @bind 'route:before', () =>
-      $('.mainview > *').removeClass(@selectedClass)
     @bind 'route:after', (urlFragment) ->
       if urlFragment.length != 0
         state.set({'route': urlFragment})
 
-
   week: (id) ->
     @app.weekSelected(id)
 
-    model = @app.collection.get(id)
-    view = @app.views.weeks[model.id]
-
-    Helpers.pageTitle(model.get('title'))
-    view.$el.addClass(@selectedClass)
-
-    model.fetch()
+    view = @app.views.weeks[id]
+    view.model.fetch()
+    view.select()
 
   day: (weekId, id) ->
     @app.weekSelected(weekId)
 
-    weekModel = @app.collection.get(weekId)
-    weekModel.fetch()
-    model = weekModel.get('days').get(id)
+    view = @app.views.weeks[weekId]
+    view.model.fetch()
+    view.select()
 
-    view = @app.views.weeks[@app.collection.get(weekId).id]
-    view.$el.addClass(@selectedClass)
-
-    dayView = new BH.Views.DayView
+    model = view.model.get('days').get(id)
+    new BH.Views.DayView(
       model: model
+      weekModel: view.model
+    ).open()
 
-    $('body').append(dayView.render().el)
-    dayView.bind 'close', =>
-      @navigate(BH.Lib.Url.week(weekId))
-
-    dayView.open()
     model.fetch()
 
   settings: ->
-    Helpers.pageTitle(chrome.i18n.getMessage('settings_title'))
-    @app.views.settings.$el.addClass(@selectedClass)
+    view = @app.views.settings
+    view.select()
 
   search: (query) ->
-    @app.views.search.$el.addClass(@selectedClass)
-    @app.views.search.model.set({query: query})
-
-
+    view = @app.views.search
+    view.select()
+    view.model.set({query: query})

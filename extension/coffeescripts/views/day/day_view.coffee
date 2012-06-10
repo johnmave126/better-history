@@ -10,6 +10,7 @@ class BH.Views.DayView extends BH.Views.Modal
   initialize: (config) ->
     @attachGeneralEvents()
     @model.on('change:history', @renderHistory, @)
+    @on('close', @updateUrl, @)
 
   render: (type) ->
     @$el.html(@template(_.extend(i18n.day(), @model.toTemplate())))
@@ -34,6 +35,8 @@ class BH.Views.DayView extends BH.Views.Modal
       Helpers.tabIndex($('.content a', @el))
       @$('button').attr('disabled', null)
 
+  updateUrl: ->
+    router.navigate(BH.Lib.Url.week(@options.weekModel.id))
 
   clickedDeleteAll: (ev) ->
     if $(ev.target).parent().attr('disabled') != 'disabled'

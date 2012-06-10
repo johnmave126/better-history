@@ -25,7 +25,8 @@
 
     DayView.prototype.initialize = function(config) {
       this.attachGeneralEvents();
-      return this.model.on('change:history', this.renderHistory, this);
+      this.model.on('change:history', this.renderHistory, this);
+      return this.on('close', this.updateUrl, this);
     };
 
     DayView.prototype.render = function(type) {
@@ -50,6 +51,10 @@
         Helpers.tabIndex($('.content a', this.el));
         return this.$('button').attr('disabled', null);
       }
+    };
+
+    DayView.prototype.updateUrl = function() {
+      return router.navigate(BH.Lib.Url.week(this.options.weekModel.id));
     };
 
     DayView.prototype.clickedDeleteAll = function(ev) {
