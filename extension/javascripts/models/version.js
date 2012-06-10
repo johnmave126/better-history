@@ -15,7 +15,7 @@
 
     Version.prototype.initialize = function() {
       return this.set({
-        suppress: stringToBool(localStorage[this.suppressKey()])
+        suppress: this._stringToBool(localStorage[this.suppressKey()])
       });
     };
 
@@ -31,7 +31,7 @@
 
     Version.prototype.setSuppress = function(value) {
       if (value) {
-        localStorage[this.suppressKey()] = boolToString(value);
+        localStorage[this.suppressKey()] = this._boolToString(value);
       } else {
         delete localStorage[this.suppressKey()];
       }
@@ -42,6 +42,22 @@
 
     Version.prototype.suppressKey = function() {
       return "" + (this.key()) + ".suppress";
+    };
+
+    Version.prototype._stringToBool = function(string) {
+      if (string === 'true') {
+        return true;
+      } else {
+        return false;
+      }
+    };
+
+    Version.prototype._boolToString = function(bool) {
+      if (bool) {
+        return 'true';
+      } else {
+        return 'false';
+      }
     };
 
     return Version;

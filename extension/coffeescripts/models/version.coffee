@@ -1,7 +1,7 @@
 class BH.Models.Version extends Backbone.Model
   initialize: ->
     @set
-      suppress: stringToBool(localStorage[@suppressKey()])
+      suppress: @_stringToBool(localStorage[@suppressKey()])
 
   toTemplate: ->
     _.extend
@@ -13,10 +13,16 @@ class BH.Models.Version extends Backbone.Model
 
   setSuppress: (value) ->
     if value
-      localStorage[@suppressKey()] = boolToString(value)
+      localStorage[@suppressKey()] = @_boolToString(value)
     else
       delete(localStorage[@suppressKey()])
     @set({suppress: value})
 
   suppressKey: ->
     "#{@key()}.suppress"
+
+  _stringToBool: (string) ->
+    if string == 'true' then true else false
+
+  _boolToString: (bool) ->
+    if bool then 'true' else 'false'
