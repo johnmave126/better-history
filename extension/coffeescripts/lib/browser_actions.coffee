@@ -1,7 +1,9 @@
 class BH.Lib.BrowserActions
+  constructor: (@chromeAPI, @urlBuilder) ->
+
   listen: ->
-    chrome.browserAction.onClicked.addListener(@openHistory)
+    @chromeAPI.browserAction.onClicked.addListener(@openHistory)
 
   openHistory: ->
-    chrome.tabs.create
-      url: BH.Lib.Url.base()
+    @chromeAPI.tabs.create
+      url: @urlBuilder.build('base')

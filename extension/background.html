@@ -7,24 +7,26 @@
 <script type="text/javascript" src="javascripts/lib/helpers.js"></script>
 <script type="text/javascript" src="javascripts/lib/context_menus.js"></script>
 <script type="text/javascript" src="javascripts/lib/browser_actions.js"></script>
-<script type="text/javascript" src="javascripts/lib/url.js"></script>
+<script type="text/javascript" src="javascripts/lib/url_builder.js"></script>
 <script type="text/javascript" src="javascripts/lib/backbone_hacks.js"></script>
 <script type="text/javascript">
   var settings = new BH.Models.Settings();
   settings.fetch();
 
-  selectionContextMenu = new BH.Lib.SelectionContextMenu();
+  var urlBuilder = new BH.Lib.UrlBuilder();
+
+  selectionContextMenu = new BH.Lib.SelectionContextMenu(chrome, urlBuilder);
   if(settings.get('searchBySelection')) {
     selectionContextMenu.create();
   }
 
-  pageContextMenu = new BH.Lib.PageContextMenu();
+  pageContextMenu = new BH.Lib.PageContextMenu(chrome, urlBuilder);
   pageContextMenu.listenToTabs();
   if(settings.get('searchByDomain')) {
     pageContextMenu.create();
   }
 
-  browserActions = new BH.Lib.BrowserActions();
+  browserActions = new BH.Lib.BrowserActions(chrome, urlBuilder);
   browserActions.listen();
 </script>
 

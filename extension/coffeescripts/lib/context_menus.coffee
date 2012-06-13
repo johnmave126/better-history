@@ -1,47 +1,51 @@
 class BH.Lib.SelectionContextMenu
+  constructor: (@chromeAPI, @urlBuilder) ->
+
   create: ->
-    @menu = chrome.contextMenus.create
-      title: chrome.i18n.getMessage('search_in_history')
+    @menu = @chromeAPI.contextMenus.create
+      title: @chromeAPI.i18n.getMessage('search_in_history')
       contexts: ['selection']
       onclick: @onClick
 
   onClick: (data) ->
-    chrome.tabs.create
-      url: "#{BH.Lib.Url.base()}#{BH.Lib.Url.search(data.selectionText)}"
+    @chromeAPI.tabs.create
+      url: @urlBuilder.build('search', [data.selectionText], {absolute: true})
 
   remove: ->
-    chrome.contextMenus.remove(@menu)
+    @chromeAPI.contextMenus.remove(@menu)
     delete(@menu)
 
 class BH.Lib.PageContextMenu
+  constructor: (@chromeAPI, @urlBuilder) ->
+
   create: ->
-    @menu = chrome.contextMenus.create
-      title: chrome.i18n.getMessage('visits_to_domain', ['domain'])
+    @menu = @chromeAPI.contextMenus.create
+      title: @chromeAPI.i18n.getMessage('visits_to_domain', ['domain'])
       contexts: ['page']
       onclick: @onClick
 
   onClick: (data) ->
-    chrome.tabs.create
-      url: "#{BH.Lib.Url.base()}#{BH.Lib.Url.search(Helpers.getDomain(data.pageUrl)[1])}"
+    @chromeAPI.tabs.create
+      url: @urlBuilder.build('search', [Helpers.getDomain(data.pageUrl)[1]], {absolute: true})
 
   updateTitleDomain: (tab) ->
-    chrome.contextMenus.update @menu,
-      title: chrome.i18n.getMessage('visits_to_domain', [Helpers.getDomain(tab.url)[1]])
+    @chromeAPI.contextMenus.update @menu,
+      title: @chromeAPI.i18n.getMessage('visits_to_domain', [Helpers.getDomain(tab.url)[1]])
 
   listenToTabs: ->
-    chrome.tabs.onSelectionChanged.addListener (tabId) =>
+    @chromeAPI.tabs.onSelectionChanged.addListener (tabId) =>
       @onTabSelectionChanged(tabId) if @menu
 
-    chrome.tabs.onUpdated.addListener (tabId, changedInfo, tab) =>
+    @chromeAPI.tabs.onUpdated.addListener (tabId, changedInfo, tab) =>
       @onTabUpdated(tab) if @menu
 
   onTabSelectionChanged: (tabId) ->
-    chrome.tabs.get tabId, (tab) =>
+    @chromeAPI.tabs.get tabId, (tab) =>
       @updateTitleDomain(tab)
 
   onTabUpdated: (tab) ->
     @updateTitleDomain(tab) if tab.selected
 
   remove: ->
-    chrome.contextMenus.remove(@menu)
+    @chromeAPI.contextMenus.remove(@menu)
     delete(@menu)
