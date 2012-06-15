@@ -5,7 +5,7 @@
     browserActions = chromeAPI = urlBuilder = null;
     beforeEach(function() {
       chromeAPI = loadChromeAPI();
-      urlBuilder = new BH.Lib.UrlBuilder();
+      urlBuilder = new BH.Helpers.UrlBuilder();
       urlBuilder.build = jasmine.createSpy('build').andCallFake(function(key) {
         return "" + key + " url";
       });

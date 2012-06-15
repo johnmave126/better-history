@@ -1,8 +1,8 @@
-describe "BH.Lib.UrlBuilder", ->
+describe "BH.Helpers.UrlBuilder", ->
   urlBuilder = null
 
   beforeEach ->
-    urlBuilder = new BH.Lib.UrlBuilder()
+    urlBuilder = new BH.Helpers.UrlBuilder()
 
   describe ".build", ->
     describe "when the passed key is 'base'", ->

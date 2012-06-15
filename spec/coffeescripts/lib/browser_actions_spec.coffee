@@ -3,7 +3,7 @@ describe "BrowserActions", ->
 
   beforeEach ->
     chromeAPI = loadChromeAPI()
-    urlBuilder = new BH.Lib.UrlBuilder()
+    urlBuilder = new BH.Helpers.UrlBuilder()
     urlBuilder.build = jasmine.createSpy('build').andCallFake (key) ->
         "#{key} url"
 

@@ -8,7 +8,7 @@
       chromeAPI = loadChromeAPI({
         domain: domain
       });
-      urlBuilder = new BH.Lib.UrlBuilder();
+      urlBuilder = new BH.Helpers.UrlBuilder();
       return urlBuilder.build = jasmine.createSpy('build').andCallFake(function(key) {
         return "" + key + " url";
       });

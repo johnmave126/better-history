@@ -3,3 +3,4 @@
   Models: {}
   Collections: {}
   Lib: {}
+  Helpers: {}

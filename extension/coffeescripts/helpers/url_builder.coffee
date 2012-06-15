@@ -1,4 +1,4 @@
-class BH.Lib.UrlBuilder
+class BH.Helpers.UrlBuilder
   base: 'chrome://history/'
   build: (key, params, options) ->
     if key == 'base'
