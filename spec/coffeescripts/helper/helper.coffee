@@ -46,7 +46,7 @@ window.loadChromeAPI = (config) ->
       )
 
     history:
-      search: ->
+      search: jasmine.createSpy("search")
 
     browserAction:
       onClicked:

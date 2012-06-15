@@ -52,7 +52,7 @@
         })
       },
       history: {
-        search: function() {}
+        search: jasmine.createSpy("search")
       },
       browserAction: {
         onClicked: {
