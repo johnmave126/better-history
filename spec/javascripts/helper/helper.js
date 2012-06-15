@@ -32,7 +32,6 @@
             september: "September",
             sunday: "Sunday",
             december: "December",
-            extended_formal_date: "$weekday$, $month$ $day$, $year$",
             formal_date: "$month$ $day$, $year$",
             version_title: "version title",
             prompt_title: "prompt title",
@@ -40,7 +39,8 @@
             expand_button: "expand",
             no_visits_found: "Sorry, no visits found.",
             confirm_delete_all_visits: "Delete all visits from $formal_date$?",
-            search_time_frame: "past few months"
+            search_time_frame: "past few months",
+            extended_formal_date: "dddd, MMMM Do, YYYY"
           };
           result = lookup[key];
           if (result) {

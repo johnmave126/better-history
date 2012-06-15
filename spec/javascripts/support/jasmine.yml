@@ -11,6 +11,7 @@
 #   - dist/**/*.js
 #
 src_files:
+    - extension/javascripts/frameworks/jquery-1.7.1.min.js
     - extension/javascripts/frameworks/underscore-min.js
     - extension/javascripts/frameworks/mustache.js
     - extension/javascripts/frameworks/backbone-min.js
@@ -19,6 +20,7 @@ src_files:
     - extension/javascripts/models/*.js
     - extension/javascripts/collections/*.js
     - extension/javascripts/lib/*.js
+    - extension/javascripts/helpers/*.js
 
 # stylesheets
 #
