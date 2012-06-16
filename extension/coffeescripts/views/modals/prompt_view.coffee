@@ -11,7 +11,7 @@ class BH.Views.PromptView extends BH.Views.Modal
     @attachGeneralEvents()
 
   render: ->
-    @$el.html(@template(@model.toTemplate()))
+    @$el.html(@template(_.extend(@getI18nValues(), @model.toTemplate())))
     @
 
   clickedNo: (ev) ->
@@ -27,8 +27,16 @@ class BH.Views.PromptView extends BH.Views.Modal
       @$('.spinner').spin()
       @$('.close-button').fadeOut()
 
+  getI18nValues: ->
+    @i18nFetcher.get([
+      'prompt_delete_button',
+      'prompt_cancel_button',
+      'prompt_title'
+    ])
+
 BH.Views.CreatePrompt = (content) ->
   view = new BH.Views.PromptView
     model: new BH.Models.Prompt({content: content})
   $('body').append(view.render().el)
   view
+

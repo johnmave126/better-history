@@ -6,7 +6,7 @@ class BH.Views.VisitView extends BH.Views.BaseView
     'click .delete_visit': 'deleteClicked'
 
   render: ->
-    @$el.html(@template(@model.toTemplate()))
+    @$el.html(@template(_.extend(@getI18nValues(), @model.toTemplate())))
     @
 
   deleteClicked: (ev) ->
@@ -32,3 +32,8 @@ class BH.Views.VisitView extends BH.Views.BaseView
 
   _getGroup: ->
     @$el.parents('.grouped_visits_view')
+
+  getI18nValues: ->
+    @i18nFetcher.get([
+      'prompt_delete_button'
+    ])

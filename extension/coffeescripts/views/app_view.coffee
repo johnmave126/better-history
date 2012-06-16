@@ -14,7 +14,7 @@ class BH.Views.AppView extends BH.Views.BaseView
   render: ->
     @_renderVersionView() if !@model.get('suppress')
 
-    properties = _.extend(i18n.app(), @collection.toTemplate())
+    properties = _.extend(@getI18nValues(), @collection.toTemplate())
     @$el.html(@template(properties))
 
     container = @$('.mainview')
@@ -53,3 +53,11 @@ class BH.Views.AppView extends BH.Views.BaseView
     versionView = new BH.Views.VersionView({model: @model})
     $('body').append(versionView.render().el)
     versionView.open()
+
+  getI18nValues: ->
+    @i18nFetcher.get([
+      'history_title',
+      'settings_link',
+      'last_week',
+      'this_week'
+    ])

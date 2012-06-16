@@ -14,7 +14,7 @@ class BH.Views.WeekView extends BH.Views.ViewWithSearch
       model.bind('change:count', @updateDay, @)
 
   render: (type) ->
-    @$el.html(@template(_.extend(i18n.week(), @model.toTemplate())))
+    @$el.html(@template(_.extend(@getI18nValues(), @model.toTemplate())))
     @
 
   pageTitle: ->
@@ -50,3 +50,10 @@ class BH.Views.WeekView extends BH.Views.ViewWithSearch
 
   _getDayElement: (id) ->
     @$("[data-id=#{id}]")
+
+  getI18nValues: ->
+    @i18nFetcher.get([
+      'delete_all_visits_for_filter_button',
+      'no_visits_found',
+      'search_input_placeholder_text'
+    ])

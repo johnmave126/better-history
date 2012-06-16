@@ -13,7 +13,7 @@ class BH.Views.DayView extends BH.Views.Modal
     @on('close', @updateUrl, @)
 
   render: (type) ->
-    @$el.html(@template(_.extend(i18n.day(), @model.toTemplate())))
+    @$el.html(@template(_.extend(@getI18nValues(), @model.toTemplate())))
     @$('button').attr('disabled', 'disabled')
     @
 
@@ -60,3 +60,12 @@ class BH.Views.DayView extends BH.Views.Modal
 
   fullSearchClicked: ->
     @close()
+
+  getI18nValues: ->
+    @i18nFetcher.get [
+      'collapse_button',
+      'expand_button',
+      'delete_all_visits_for_filter_button',
+      'no_visits_found',
+      'search_input_placeholder_text'
+    ]

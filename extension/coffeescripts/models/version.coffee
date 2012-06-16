@@ -4,9 +4,7 @@ class BH.Models.Version extends Backbone.Model
       suppress: @_stringToBool(localStorage[@suppressKey()])
 
   toTemplate: ->
-    _.extend
-      visibility: if @get('suppress') then '' else 'show'
-    , i18n.version()
+    visibility: if @get('suppress') then '' else 'show'
 
   key: ->
     "versions.#{@get('version')}"

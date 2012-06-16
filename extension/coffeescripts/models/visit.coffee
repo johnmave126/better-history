@@ -13,7 +13,7 @@ class BH.Models.Visit extends Backbone.Model
       options.success(@)
 
   toTemplate: ->
-    _.extend(@toJSON(), i18n.pageVisit())
+    @toJSON()
 
   domain: ->
     match = @_getDomain @get('url')

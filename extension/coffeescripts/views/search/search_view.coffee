@@ -12,7 +12,7 @@ class BH.Views.SearchView extends BH.Views.ViewWithSearch
     super()
 
   render: ->
-    @$el.append(@template(_.extend(i18n.search(), @model.toTemplate())))
+    @$el.append(@template(_.extend(@getI18nValues(), @model.toTemplate())))
     @
 
   refreshTitle: ->
@@ -56,3 +56,11 @@ class BH.Views.SearchView extends BH.Views.ViewWithSearch
           @promptView.close()
     else
       @promptView.close()
+
+  getI18nValues: ->
+    @i18nFetcher.get([
+      'search_time_frame',
+      'search_input_placeholder_text',
+      'delete_all_visits_for_search_button',
+      'no_visits_found'
+    ])

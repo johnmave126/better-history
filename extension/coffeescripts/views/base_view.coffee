@@ -2,6 +2,8 @@ class BH.Views.BaseView extends Backbone.View
   cssClass:
     selected: 'selected'
 
+  i18nFetcher: new BH.Helpers.I18nFetcher(chrome)
+
   template: (json) ->
     Mustache.render($('#' + this.templateId).html(), json)
 
