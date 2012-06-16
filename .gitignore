@@ -8,4 +8,7 @@ extension/javascripts/helpers/*
 extension/javascripts/initialize.js
 extension/javascripts/namespace.js
 extension/javascripts/router.js
+/spec/javascripts/*
+!/spec/javascripts/support
+!/spec/javascripts/spec_helper.js
 .jhw-cache
