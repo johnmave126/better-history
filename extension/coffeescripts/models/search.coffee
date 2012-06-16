@@ -21,7 +21,9 @@ class BH.Models.Search extends Backbone.Model
 
   sync: (method, model, options) ->
     if method == 'read'
-      chromeAPI.history.search @toChrome(), (history) ->
+      sanitizer = new BH.Lib.SearchResultsSanitizer(chrome)
+      historyQuery = new BH.Lib.HistoryQuery(chrome, sanitizer)
+      historyQuery.run @toChrome(), (history) ->
         options.success(history)
 
   parse: (data) ->
