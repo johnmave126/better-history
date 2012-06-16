@@ -26,11 +26,11 @@ class BH.Lib.PageContextMenu
 
   onClick: (data) ->
     @chromeAPI.tabs.create
-      url: @urlBuilder.build('search', [Helpers.getDomain(data.pageUrl)[1]], {absolute: true})
+      url: @urlBuilder.build('search', [@_getDomain(data.pageUrl)[1]], {absolute: true})
 
   updateTitleDomain: (tab) ->
     @chromeAPI.contextMenus.update @menu,
-      title: @chromeAPI.i18n.getMessage('visits_to_domain', [Helpers.getDomain(tab.url)[1]])
+      title: @chromeAPI.i18n.getMessage('visits_to_domain', [@_getDomain(tab.url)[1]])
 
   listenToTabs: ->
     @chromeAPI.tabs.onSelectionChanged.addListener (tabId) =>
@@ -49,3 +49,6 @@ class BH.Lib.PageContextMenu
   remove: ->
     @chromeAPI.contextMenus.remove(@menu)
     delete(@menu)
+
+  _getDomain: (url) ->
+    url.match(/\w+:\/\/(.*?)\//)

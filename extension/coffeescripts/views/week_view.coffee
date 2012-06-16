@@ -18,7 +18,7 @@ class BH.Views.WeekView extends BH.Views.ViewWithSearch
     @
 
   pageTitle: ->
-    Helpers.pageTitle(@model.get('title'))
+    @setPageTitle(@model.get('title'))
 
   updateDay: (model) ->
     $('.number_of_visits', @_getDayElement(model.id)).text(model.get('count'))

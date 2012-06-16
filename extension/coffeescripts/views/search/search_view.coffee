@@ -37,7 +37,7 @@ class BH.Views.SearchView extends BH.Views.ViewWithSearch
     else
       @$('.delete_all').attr('disabled', null)
 
-    Helpers.tabIndex($(contentElement).find('a'))
+    @tabIndex($(contentElement).find('a'))
 
   clickedDeleteAll: (ev) ->
     ev.preventDefault()

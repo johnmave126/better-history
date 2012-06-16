@@ -16,5 +16,8 @@ class BH.Models.Visit extends Backbone.Model
     _.extend(@toJSON(), i18n.pageVisit())
 
   domain: ->
-    match = Helpers.getDomain @get('url')
+    match = @_getDomain @get('url')
     if match == null then null else match[0]
+
+  _getDomain: (url) ->
+    url.match(/\w+:\/\/(.*?)\//)

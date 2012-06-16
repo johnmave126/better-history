@@ -20,7 +20,7 @@ class BH.Views.SettingsView extends BH.Views.BaseView
     @model.save()
 
   pageTitle: ->
-    Helpers.pageTitle(chrome.i18n.getMessage('settings_title'))
+    @setPageTitle(chrome.i18n.getMessage('settings_title'))
 
   render: ->
     @$el.append(@template(@model.toTemplate()))

@@ -32,7 +32,7 @@ class BH.Views.DayView extends BH.Views.Modal
     if @collection.length == 0 || @model.get('filter')
       @$('button').attr('disabled', 'disabled')
     else
-      Helpers.tabIndex($('.content a', @el))
+      @tabIndex($('.content a', @el))
       @$('button').attr('disabled', null)
 
   updateUrl: ->

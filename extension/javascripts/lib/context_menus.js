@@ -49,7 +49,7 @@
 
     PageContextMenu.prototype.onClick = function(data) {
       return this.chromeAPI.tabs.create({
-        url: this.urlBuilder.build('search', [Helpers.getDomain(data.pageUrl)[1]], {
+        url: this.urlBuilder.build('search', [this._getDomain(data.pageUrl)[1]], {
           absolute: true
         })
       });
@@ -57,7 +57,7 @@
 
     PageContextMenu.prototype.updateTitleDomain = function(tab) {
       return this.chromeAPI.contextMenus.update(this.menu, {
-        title: this.chromeAPI.i18n.getMessage('visits_to_domain', [Helpers.getDomain(tab.url)[1]])
+        title: this.chromeAPI.i18n.getMessage('visits_to_domain', [this._getDomain(tab.url)[1]])
       });
     };
 
@@ -91,6 +91,10 @@
     PageContextMenu.prototype.remove = function() {
       this.chromeAPI.contextMenus.remove(this.menu);
       return delete this.menu;
+    };
+
+    PageContextMenu.prototype._getDomain = function(url) {
+      return url.match(/\w+:\/\/(.*?)\//);
     };
 
     return PageContextMenu;
