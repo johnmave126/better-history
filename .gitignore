@@ -4,6 +4,7 @@
 extension/javascripts/collections/*
 extension/javascripts/models/*
 extension/javascripts/views/*
+extension/javascripts/helpers/*
 extension/javascripts/initialize.js
 extension/javascripts/namespace.js
 extension/javascripts/router.js
