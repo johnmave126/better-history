@@ -1,6 +1,6 @@
 class BH.Views.DayView extends BH.Views.Modal
   className: 'day_view'
-  templateId: 'day'
+  template: BH.Templates['day']
 
   events:
     'click .delete_all': 'clickedDeleteAll'
@@ -13,7 +13,7 @@ class BH.Views.DayView extends BH.Views.Modal
     @on('close', @updateUrl, @)
 
   render: (type) ->
-    @$el.html(@template(_.extend(@getI18nValues(), @model.toTemplate())))
+    @$el.html(@renderTemplate(_.extend(@getI18nValues(), @model.toTemplate())))
     @$('button').attr('disabled', 'disabled')
     @
 

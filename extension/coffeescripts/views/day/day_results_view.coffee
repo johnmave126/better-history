@@ -1,12 +1,12 @@
 class BH.Views.DayResultsView extends BH.Views.BaseView
-  templateId: 'day_results'
+  template: BH.Templates['day_results']
 
   events:
     'click .delete_visit': 'deleteVisitClicked'
     'click .delete_interval': 'deleteIntervalClicked'
 
   render: ->
-    @$el.html(@template(_.extend(i18n.day(), @model.toTemplate(), @collection.toTemplate())))
+    @$el.html(@renderTemplate(_.extend(i18n.day(), @model.toTemplate(), @collection.toTemplate())))
 
   deleteIntervalClicked: (ev) ->
     ev.preventDefault()

@@ -1,6 +1,6 @@
 class BH.Views.WeekView extends BH.Views.ViewWithSearch
   className: 'week_view'
-  templateId: 'week'
+  template: BH.Templates['week']
 
   events:
     'click .delete_all': 'clickedDeleteAll'
@@ -14,7 +14,7 @@ class BH.Views.WeekView extends BH.Views.ViewWithSearch
       model.bind('change:count', @updateDay, @)
 
   render: (type) ->
-    @$el.html(@template(_.extend(@getI18nValues(), @model.toTemplate())))
+    @$el.html(@renderTemplate(_.extend(@getI18nValues(), @model.toTemplate())))
     @
 
   pageTitle: ->

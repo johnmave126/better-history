@@ -1,6 +1,6 @@
 class BH.Views.CreditsView extends BH.Views.Modal
   className: 'credits_view'
-  templateId: 'credits'
+  template: BH.Templates['credits']
 
   events:
     'click .close': 'closeClicked'
@@ -9,7 +9,7 @@ class BH.Views.CreditsView extends BH.Views.Modal
     @attachGeneralEvents()
 
   render: ->
-    @$el.html(@template(@getI18nValues()))
+    @$el.html(@renderTemplate(@getI18nValues()))
     return this
 
   closeClicked: (ev) ->

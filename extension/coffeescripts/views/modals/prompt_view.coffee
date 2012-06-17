@@ -1,7 +1,7 @@
 class BH.Views.PromptView extends BH.Views.Modal
   className: 'prompt_view'
 
-  templateId: 'prompt'
+  template: BH.Templates['prompt']
 
   events:
     'click .no': 'clickedNo'
@@ -11,7 +11,7 @@ class BH.Views.PromptView extends BH.Views.Modal
     @attachGeneralEvents()
 
   render: ->
-    @$el.html(@template(_.extend(@getI18nValues(), @model.toTemplate())))
+    @$el.html(@renderTemplate(_.extend(@getI18nValues(), @model.toTemplate())))
     @
 
   clickedNo: (ev) ->

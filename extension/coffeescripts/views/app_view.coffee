@@ -1,6 +1,6 @@
 class BH.Views.AppView extends BH.Views.BaseView
   className: 'app_view'
-  templateId: 'app'
+  template: BH.Templates['app']
 
   events:
     'click .navbar a': 'weekClicked'
@@ -15,7 +15,7 @@ class BH.Views.AppView extends BH.Views.BaseView
     @_renderVersionView() if !@model.get('suppress')
 
     properties = _.extend(@getI18nValues(), @collection.toTemplate())
-    @$el.html(@template(properties))
+    @$el.html(@renderTemplate(properties))
 
     container = @$('.mainview')
 

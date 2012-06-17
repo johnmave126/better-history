@@ -1,0 +1,21 @@
+<div class="heading">
+  <h2 class="title">{{{title}}}</h2>
+  <input type="search" class="search" placeholder="{{i18n_search_input_placeholder_text}}" tabindex="1" />
+  <div class="controls">
+    <span class="number_of_visits_all_week"></span> visits
+    <button class="delete_all">{{i18n_delete_all_visits_for_filter_button}}</button>
+  </div>
+</div>
+<div class="content">
+  <ol class="days">
+    {{#days}}
+      <li class="day {{#inFuture}}future{{/inFuture}}" data-id="{{id}}">
+        <a href="{{url}}">
+          <h3 class="title">{{title}}</h3>
+          <div class="count"><span class="number_of_visits"></span> visits</div>
+          <div class="bar_container"><div class="bar"></div></div>
+        </a>
+      </li>
+    {{/days}}
+  </ol>
+</div>

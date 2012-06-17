@@ -1,6 +1,6 @@
 class BH.Views.SearchView extends BH.Views.ViewWithSearch
   className: 'search_view'
-  templateId: 'search'
+  template: BH.Templates['search']
 
   events:
     'click .delete_all': 'clickedDeleteAll'
@@ -12,7 +12,7 @@ class BH.Views.SearchView extends BH.Views.ViewWithSearch
     super()
 
   render: ->
-    @$el.append(@template(_.extend(@getI18nValues(), @model.toTemplate())))
+    @$el.append(@renderTemplate(_.extend(@getI18nValues(), @model.toTemplate())))
     @
 
   refreshTitle: ->

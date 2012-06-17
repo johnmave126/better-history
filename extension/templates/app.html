@@ -1,0 +1,14 @@
+<div class="mainview"></div>
+<div class="navbar">
+  <h1>{{i18n_history_title}}</h1>
+  <ul class="weeks">
+    {{#weeks}}
+      <li class="week" data-id="{{id}}">
+        <a href="{{url}}">{{{shortTitle}}}</a>
+      </li>
+    {{/weeks}}
+  </ul>
+  <a href="#settings" class="setting">
+    {{i18n_settings_link}}
+  </a>
+</div>

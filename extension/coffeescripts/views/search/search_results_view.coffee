@@ -1,11 +1,11 @@
 class BH.Views.SearchResultsView extends BH.Views.BaseView
-  templateId: 'search_results'
+  template: BH.Templates['search_results']
 
   events:
     'click .delete_visit': 'deleteClicked'
 
   render: ->
-    @$el.html(@template(_.extend(i18n.search(), @collection.toTemplate())))
+    @$el.html(@renderTemplate(_.extend(i18n.search(), @collection.toTemplate())))
     @
 
   deleteClicked: (ev) ->

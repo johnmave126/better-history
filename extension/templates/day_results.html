@@ -1,0 +1,38 @@
+{{#hasIntervals}}
+  <ol class="intervals">
+    {{#intervals}}
+      <li class="interval" data-id="{{id}}">
+        <h3 class="title">
+          {{time}}
+          <div class="delete_layer">
+            <button class="delete_interval" title="{{i18n_delete_time_interval_button_tooltip}}">{{i18n_delete_time_interval_button}}</button>
+          </div>
+        </h3>
+        <ol class="visits">
+          {{#visits}}
+            <li class="visit" data-id="{{id}}">
+              <a href="{{url}}">
+                <div class="link">
+                  <dl class="description" style="background-image: url(chrome://favicon/{{url}})">
+                    <dt class="title">{{{title}}}</dt>
+                    <dd class="location">{{{location}}}</dd>
+                    <dd class="time">{{{time}}}</dd>
+                  </dl>
+                  <div class="delete_layer">
+                    <button class="delete_visit">{{i18n_prompt_delete_button}}</button>
+                  </div>
+                </div>
+              </a>
+            </li>
+          {{/visits}}
+        </ol>
+      </li>
+    {{/intervals}}
+  </ol>
+{{/hasIntervals}}
+{{#noIntervals}}
+  <p class="no_visits">{{i18n_no_visits_found}}</p>
+{{/noIntervals}}
+{{#filter}}
+  <p class="full_search">No luck? Try <a href="#search/{{filter}}">searching your full history &rarr;</a></p>
+{{/filter}}

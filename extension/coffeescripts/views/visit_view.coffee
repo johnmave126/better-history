@@ -1,12 +1,12 @@
 class BH.Views.VisitView extends BH.Views.BaseView
   className: 'visit_view'
-  templateId: 'visit'
+  template: BH.Templates['visit']
 
   events:
     'click .delete_visit': 'deleteClicked'
 
   render: ->
-    @$el.html(@template(_.extend(@getI18nValues(), @model.toTemplate())))
+    @$el.html(@renderTemplate(_.extend(@getI18nValues(), @model.toTemplate())))
     @
 
   deleteClicked: (ev) ->

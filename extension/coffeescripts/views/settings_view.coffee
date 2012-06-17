@@ -1,6 +1,6 @@
 class BH.Views.SettingsView extends BH.Views.BaseView
   className: 'settings_view'
-  templateId: 'settings'
+  template: BH.Templates['settings']
 
   events:
     'click .clear_history': 'clickedClearHistory'
@@ -23,7 +23,7 @@ class BH.Views.SettingsView extends BH.Views.BaseView
     @setPageTitle(chrome.i18n.getMessage('settings_title'))
 
   render: ->
-    @$el.append(@template(@model.toTemplate()))
+    @$el.append(@renderTemplate(@model.toTemplate()))
     window.___gcfg = {lang: chrome.i18n.getMessage('google_plus_language')}
     (->
       po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;

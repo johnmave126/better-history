@@ -4,8 +4,8 @@ class BH.Views.BaseView extends Backbone.View
 
   i18nFetcher: new BH.Helpers.I18nFetcher(chrome)
 
-  template: (json) ->
-    Mustache.render($('#' + this.templateId).html(), json)
+  renderTemplate: (json) ->
+    Mustache.render(@template, json)
 
   select: ->
     $('.mainview > *').removeClass(@cssClass.selected)

@@ -1,7 +1,7 @@
 class BH.Views.VersionView extends BH.Views.Modal
   className: 'version_view'
 
-  templateId: 'version'
+  template: BH.Templates['version']
 
   events:
     'click .close': 'closeClicked'
@@ -10,7 +10,7 @@ class BH.Views.VersionView extends BH.Views.Modal
     @attachGeneralEvents()
 
   render: ->
-    @$el.html(@template(_.extend(@getI18nValues(), @model.toTemplate())))
+    @$el.html(@renderTemplate(_.extend(@getI18nValues(), @model.toTemplate())))
     @
 
   closeClicked: (ev) ->
