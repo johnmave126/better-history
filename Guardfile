@@ -1,4 +1,12 @@
-def build_templates
+guard 'coffeescript', :output => 'extension/javascripts/' do
+  watch('^extension/coffeescripts/(.*)\.coffee')
+end
+
+guard 'coffeescript', :output => 'spec/javascripts' do
+  watch('^spec/coffeescripts/(.*)\.coffee')
+end
+
+watch('extension/templates/(.*)\.html') do
   template_file = ""
   Dir.foreach('extension/templates/') do |file|
     if file.match(/.html$/)
@@ -9,19 +17,4 @@ def build_templates
     end
   end
   File.open('extension/javascripts/templates.js', 'w') {|f| f.write(template_file) }
-  puts "Generated templates"
 end
-
-guard 'coffeescript', :output => 'extension/javascripts/' do
-  watch('^extension/coffeescripts/(.*)\.coffee')
-end
-
-guard 'coffeescript', :output => 'spec/javascripts' do
-  watch('^spec/coffeescripts/(.*)\.coffee')
-end
-
-watch('extension/templates/(.*)\.html') do
-  build_templates()
-end
-
-build_templates()
