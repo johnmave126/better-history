@@ -4,3 +4,4 @@
   Collections: {}
   Lib: {}
   Helpers: {}
+  Templates: {}
