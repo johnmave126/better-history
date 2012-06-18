@@ -18,6 +18,6 @@ class BH.Views.BaseView extends Backbone.View
 
   tabIndex: (selector) ->
     $('button').attr('tabindex', '-1')
-    $(selector).each (i)
+    $(selector).each (i) ->
       $(this).attr('tabindex', i + 2)
 
