@@ -17,8 +17,6 @@ src_files:
     - extension/javascripts/frameworks/backbone-min.js
     - extension/javascripts/frameworks/moment.js
     - extension/javascripts/namespace.js
-    - extension/javascripts/models/*.js
-    - extension/javascripts/collections/*.js
     - extension/javascripts/lib/*.js
     - extension/javascripts/helpers/*.js
 
