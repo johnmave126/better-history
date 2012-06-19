@@ -12,7 +12,7 @@ class BH.Models.Week extends Backbone.Model
       shortTitle: @_weekFormat('shortTitle')
       title: @_weekFormat('title')
       id: id
-      url: BH.Lib.Url.week(id)
+      url: new BH.Helpers.UrlBuilder().build('week', [id])
       days: new BH.Collections.Days([
         {date: @_generateDate(0), weekId: id}
         {date: @_generateDate(1), weekId: id}

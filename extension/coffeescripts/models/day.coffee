@@ -11,7 +11,7 @@ class BH.Models.Day extends Backbone.Model
       inFuture: moment() < @get('date')
       formalDate: @_dateFormat('formalDate')
       id: id
-      url: BH.Lib.Url.day(@get('weekId'), id)
+      url: new BH.Helpers.UrlBuilder().build('day', [@get('weekId'), id])
     })
 
   toTemplate: ->

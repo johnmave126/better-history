@@ -26,7 +26,7 @@ class BH.Router extends Backbone.Router
       ])
     ).render()
     window.state = new BH.Models.State
-      route: BH.Lib.Url.week(@app.collection.at(0).id)
+      route: new BH.Helpers.UrlBuilder().build('week', [@app.collection.at(0).id])
 
     @bind 'route:after', (urlFragment) ->
       if urlFragment.length != 0
