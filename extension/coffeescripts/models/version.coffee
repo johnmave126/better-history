@@ -1,4 +1,4 @@
-class BH.Models.Version extends Backbone.Model
+class BH.Models.Version extends BH.Models.Base
   initialize: ->
     @set
       suppress: @_stringToBool(localStorage[@suppressKey()])

@@ -1,4 +1,4 @@
-class BH.Models.State extends Backbone.Model
+class BH.Models.State extends BH.Models.Base
   storeName: 'state'
 
   initialize: ->

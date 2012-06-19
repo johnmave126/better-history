@@ -1,3 +1,3 @@
-class BH.Models.Prompt extends Backbone.Model
+class BH.Models.Prompt extends BH.Models.Base
   toTemplate: ->
     @toJSON()

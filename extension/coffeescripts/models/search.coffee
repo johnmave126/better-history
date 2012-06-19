@@ -1,4 +1,4 @@
-class BH.Models.Search extends Backbone.Model
+class BH.Models.Search extends BH.Models.Base
   initialize: ->
     @bind('change:query', @updateTitle, @)
 
@@ -7,12 +7,12 @@ class BH.Models.Search extends Backbone.Model
 
   updateTitle: ->
     terms = @get('query').split(' ')
-    joined = chrome.i18n.getMessage('searching_title') + ' '
+    joined = @chromeAPI.i18n.getMessage('searching_title') + ' '
 
     $.each terms, (i) ->
       joined += '"' + @ + '"'
       if i != terms.length - 1
-        joined += ' ' + chrome.i18n.getMessage('and') + ' '
+        joined += ' ' + @chromeAPI.i18n.getMessage('and') + ' '
 
     @set({title: joined})
 
@@ -21,8 +21,8 @@ class BH.Models.Search extends Backbone.Model
 
   sync: (method, model, options) ->
     if method == 'read'
-      sanitizer = new BH.Lib.SearchResultsSanitizer(chrome)
-      historyQuery = new BH.Lib.HistoryQuery(chrome, sanitizer)
+      sanitizer = new BH.Lib.SearchResultsSanitizer(@chromeAPI)
+      historyQuery = new BH.Lib.HistoryQuery(@chromeAPI, sanitizer)
       historyQuery.run @toChrome(), (history) ->
         options.success(history)
 

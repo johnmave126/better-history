@@ -1,4 +1,4 @@
-class BH.Models.Visit extends Backbone.Model
+class BH.Models.Visit extends BH.Models.Base
   defaults:
     title: '(No Title)'
 
@@ -9,7 +9,7 @@ class BH.Models.Visit extends Backbone.Model
 
   sync: (method, model, options) ->
     if method == 'delete'
-      chrome.history.deleteUrl({url: @get('url')})
+      @chromeAPI.history.deleteUrl({url: @get('url')})
       options.success(@)
 
   toTemplate: ->

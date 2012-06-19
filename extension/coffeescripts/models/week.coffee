@@ -1,11 +1,4 @@
-class BH.Models.Week extends Backbone.Model
-  format:
-    shortTitle: chrome.i18n.getMessage('short_date')
-    title: chrome.i18n.getMessage('date_week_label', [
-      chrome.i18n.getMessage('short_date_with_day')
-    ])
-    id: 'D-M-YY'
-
+class BH.Models.Week extends BH.Models.Base
   initialize: ->
     id = @_weekFormat('id')
     @set
@@ -59,7 +52,14 @@ class BH.Models.Week extends Backbone.Model
     {percentages: percentages, count: count}
 
   _weekFormat: (type) ->
-    @get('date').format(@format[type])
+    @get('date').format(@_getFormats()[type])
 
   _generateDate: (amount) ->
     moment(@get('date')).add('days', amount)
+
+  _getFormats: ->
+    shortTitle: @chromeAPI.i18n.getMessage('short_date')
+    title: @chromeAPI.i18n.getMessage('date_week_label', [
+      @chromeAPI.i18n.getMessage('short_date_with_day')
+    ])
+    id: 'D-M-YY'

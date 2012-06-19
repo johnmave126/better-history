@@ -1,9 +1,4 @@
-class BH.Models.Day extends Backbone.Model
-  format:
-    title: chrome.i18n.getMessage('day_date')
-    formalDate: chrome.i18n.getMessage('formal_date')
-    id: 'D'
-
+class BH.Models.Day extends BH.Models.Base
   initialize: (properties, @options) ->
     id = @_dateFormat('id')
     this.set({
@@ -22,14 +17,14 @@ class BH.Models.Day extends Backbone.Model
 
   sync: (method, model, options) ->
     if method == 'read'
-      sanitizer = new BH.Lib.SearchResultsSanitizer(chrome)
-      historyQuery = new BH.Lib.HistoryQuery(chrome, sanitizer)
+      sanitizer = new BH.Lib.SearchResultsSanitizer(@chromeAPI)
+      historyQuery = new BH.Lib.HistoryQuery(@chromeAPI, sanitizer)
       historyQuery.run @toChrome(), (history) ->
         grouper = new BH.Lib.HistoryGrouper()
         options.success(grouper.time(history, settings.timeGrouping()))
 
   clear: ->
-    chrome.history.deleteRange
+    @chromeAPI.history.deleteRange
       startTime: @_getSOD()
       endTime: @_getEOD()
     , =>
@@ -56,4 +51,10 @@ class BH.Models.Day extends Backbone.Model
     new Date(@get('date').eod()).getTime()
 
   _dateFormat: (type) ->
-    @get('date').format(@format[type])
+    @get('date').format(@_getFormats()[type])
+
+  _getFormats: ->
+    title: @chromeAPI.i18n.getMessage('day_date')
+    formalDate: @chromeAPI.i18n.getMessage('formal_date')
+    id: 'D'
+
