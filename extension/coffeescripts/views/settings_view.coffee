@@ -1,5 +1,6 @@
 class BH.Views.SettingsView extends BH.Views.BaseView
   className: 'settings_view'
+
   template: BH.Templates['settings']
 
   events:
@@ -23,7 +24,7 @@ class BH.Views.SettingsView extends BH.Views.BaseView
     @setPageTitle(chrome.i18n.getMessage('settings_title'))
 
   render: ->
-    @$el.append(@renderTemplate(@model.toTemplate()))
+    @$el.append(@renderTemplate(_.extend(@getI18nValues(), @model.toTemplate())))
     window.___gcfg = {lang: chrome.i18n.getMessage('google_plus_language')}
     (->
       po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
