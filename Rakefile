@@ -16,6 +16,7 @@ end
 desc "Generate coffeeScript"
 task :coffee do
   system('coffee -c -o extension/javascripts/ extension/coffeescripts/')
+  system('coffee -c -o spec/javascripts/ spec/coffeescripts/')
 end
 
 desc "Generate templates"
