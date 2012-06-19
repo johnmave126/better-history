@@ -5,7 +5,7 @@ class BH.Views.SearchResultsView extends BH.Views.BaseView
     'click .delete_visit': 'deleteClicked'
 
   render: ->
-    @$el.html(@renderTemplate(_.extend(i18n.search(), @collection.toTemplate())))
+    @$el.html(@renderTemplate(_.extend(@getI18nValues(), @collection.toTemplate())))
     @
 
   deleteClicked: (ev) ->
@@ -22,3 +22,7 @@ class BH.Views.SearchResultsView extends BH.Views.BaseView
 
   _getElementFromModel: (model) ->
     $("[data-id=#{model.id}]").parents('li')
+
+  getI18nValues: ->
+    @i18nFetcher.get([
+    ])
