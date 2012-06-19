@@ -8,9 +8,9 @@ class BH.Views.Modal extends BH.Views.BaseView
   attachGeneralEvents: ->
     _.extend(@events, @generalEvents)
 
-  template: (json) ->
-    overlay = $($('#modal').html())
-    $('.page', overlay).append(Mustache.render($("##{@templateId}").html(), json))
+  renderTemplate: (json) ->
+    overlay = $(BH.Templates['modal'])
+    $('.page', overlay).append(Mustache.render(@template, json))
     overlay
 
   open: ->
