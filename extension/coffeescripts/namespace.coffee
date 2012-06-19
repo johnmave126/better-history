@@ -2,6 +2,8 @@
   Views: {}
   Models: {}
   Collections: {}
-  Lib: {}
+  Lib: {
+    ContextMenus: {}
+  }
   Helpers: {}
   Templates: {}

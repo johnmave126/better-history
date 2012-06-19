@@ -5,7 +5,8 @@
 <script type="text/javascript" src="javascripts/namespace.js"></script>
 <script type="text/javascript" src="javascripts/models/settings.js"></script>
 <script type="text/javascript" src="javascripts/lib/helpers.js"></script>
-<script type="text/javascript" src="javascripts/lib/context_menus.js"></script>
+<script type="text/javascript" src="javascripts/lib/context_menus/page_context_menu.js"></script>
+<script type="text/javascript" src="javascripts/lib/context_menus/selection_context_menu.js"></script>
 <script type="text/javascript" src="javascripts/lib/browser_actions.js"></script>
 <script type="text/javascript" src="javascripts/lib/url_builder.js"></script>
 <script type="text/javascript" src="javascripts/lib/backbone_hacks.js"></script>
@@ -15,12 +16,12 @@
 
   var urlBuilder = new BH.Lib.UrlBuilder();
 
-  selectionContextMenu = new BH.Lib.SelectionContextMenu(chrome, urlBuilder);
+  selectionContextMenu = new BH.Lib.ContextMenus.SelectionContextMenu(chrome, urlBuilder);
   if(settings.get('searchBySelection')) {
     selectionContextMenu.create();
   }
 
-  pageContextMenu = new BH.Lib.PageContextMenu(chrome, urlBuilder);
+  pageContextMenu = new BH.Lib.ContextMenus.PageContextMenu(chrome, urlBuilder);
   pageContextMenu.listenToTabs();
   if(settings.get('searchByDomain')) {
     pageContextMenu.create();
