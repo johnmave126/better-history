@@ -6,10 +6,10 @@ class BH.Models.Interval extends Backbone.Model
         '<span class="amount">',
         '</span>'
       ])
-      time: Helpers.formatTime(@get('datetime'), settings.timeFormat())
+      time: @formatTime(@get('datetime'), settings.timeFormat())
       id: @id
 
-    , @get('pageVisits').toTemplate(), i18n.timeVisit()
+    , @get('pageVisits').toTemplate()
 
 
   formatTime: (date, format) ->
