@@ -1,4 +1,4 @@
-describe "BrowserActions", ->
+describe "BH.Lib.BrowserActions", ->
   browserActions = chromeAPI = urlBuilder = null
 
   beforeEach ->
