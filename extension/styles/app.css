@@ -69,43 +69,6 @@ h2 {
 }
 
 
-.navbar {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  top: 0;
-  width: 155px;
-  z-index: 2;
-  height:100%;
-}
-.navbar a {
-  -webkit-border-start: 6px solid transparent;
-  color: #999;
-  -webkit-padding-start: 18px;
-  line-height: 17px;
-  margin: 5px 0;
-  display: block;
-  font-weight: normal;
-}
-.navbar a:hover,
-.navbar a:focus,
-.navbar a.selected {
-  color: #333;
-}
-.navbar a:hover,
-.navbar a:focus {
-  -webkit-border-start-color: #AAA;
-}
-.navbar a.selected {
-  -webkit-border-start-color: rgb(78, 87, 100);
-  font-weight: bold;
-}
-.navbar .weeks {
-  margin-bottom: 40px;
-}
-
-
 .search_view a {
   color: #15C;
 }
