@@ -1,17 +1,17 @@
 <div class="heading">
-  <h2 class="title">{{i18n_settings_title}}</h2>
+  <h2>{{i18n_settings_title}}</h2>
 </div>
 <div class="content">
   <div class="settings">
-    <section class="setting">
-      <h3 class="title">{{i18n_clearing_history_section_title}}</h3>
-      <div class="controls">
-        <a href="#" class="clear_history button">{{i18n_clear_history_button}}</a>
+    <section>
+      <h3>{{i18n_clearing_history_section_title}}</h3>
+      <div>
+        <button class="clear_history">{{i18n_clear_history_button}}</button>
       </div>
     </section>
-    <section class="setting">
-      <h3 class="title">{{i18n_visit_grouping_section_title}}</h3>
-      <div class="controls">
+    <section>
+      <h3>{{i18n_visit_grouping_section_title}}</h3>
+      <div class="row">
         <label>
           <span class="select">{{i18n_group_visits_by_label}}</span>
           <select class="time_grouping">
@@ -20,6 +20,8 @@
             {{/timeGrouping}}
           </select>
         </label>
+      </div>
+      <div class="row">
         <label>
           <span class="select">{{i18n_time_format_label}}</span>
           <select class="time_format">
@@ -28,52 +30,60 @@
             {{/timeFormats}}
           </select>
         </label>
+      </div>
+      <div class="checkbox">
         <label>
           <input type="checkbox" class="domain_grouping" {{#domainGrouping}}checked="checked"{{/domainGrouping}}/>
           <span>{{i18n_group_visits_by_domain_label}}</span>
         </label>
       </div>
     </section>
-    <section class="setting">
-      <h3 class="title">{{i18n_right_click_options_section_title}}</h3>
-      <div class="controls">
+    <section>
+      <h3>{{i18n_right_click_options_section_title}}</h3>
+      <div class="checkbox">
         <label>
           <input type="checkbox" class="search_by_selection" {{#searchBySelection}}checked="checked"{{/searchBySelection}}/>
           <span>{{i18n_search_by_text_selection_label}}</span>
         </label>
+      </div>
+      <div class="checkbox">
         <label>
           <input type="checkbox" class="search_by_domain" {{#searchByDomain}}checked="checked"{{/searchByDomain}}/>
           <span>{{i18n_search_by_domain_label}}</span>
         </label>
       </div>
     </section>
-    <section class="setting">
-      <h3 class="title">{{i18n_whats_new_section_title}}</h3>
-      <div class="controls">
-        <a href="#settings/announcement" class="modal_link release_announcement">{{i18n_view_release_announcement_link}}</a>
-        <a href="#settings/credits" class="modal_link credits">{{{i18n_credits_link}}}</a>
-        <div class="note">
+    <section>
+      <h3>{{i18n_whats_new_section_title}}</h3>
+      <div>
+        <div class="row">
+          <a href="#settings/announcement" class="modal_link release_announcement">{{i18n_view_release_announcement_link}}</a>
+        </div>
+        <div class="row">
+          <a href="#settings/credits" class="modal_link credits">{{{i18n_credits_link}}}</a>
+        </div>
+        <div class="row">
           {{i18n_current_version_label}}: <span class="current_version">{{version}}</span>
         </div>
       </div>
     </section>
-    <section class="setting">
-      <h3 class="title">{{i18n_feedback_section_title}}</h3>
-      <div class="controls">
+    <section>
+      <h3>{{i18n_feedback_section_title}}</h3>
+      <div>
         {{{i18n_suggestions_bugs_comments}}}
       </div>
     </section>
-    <section class="setting">
-      <h3 class="title">{{i18n_spread_the_word_section_title}}</h3>
-      <div class="controls">
-        <div class="option">
+    <section>
+      <h3>{{i18n_spread_the_word_section_title}}</h3>
+      <div>
+        <div class="row">
           <a href="https://chrome.google.com/webstore/detail/obciceimmggglbmelaidpjlmodcebijb/reviews">{{i18n_leave_a_review}}</a>
         </div>
-        <div class="option">
+        <div class="row">
           <!-- Place this tag where you want the +1 button to render -->
           <div class="g-plusone" data-annotation="inline" data-href="https://chrome.google.com/webstore/detail/obciceimmggglbmelaidpjlmodcebijb"></div>
         </div>
-        <div class="option">
+        <div class="row">
           <a href="https://twitter.com/better_history" class="twitter-follow-button" data-show-count="false" data-width="150px" data-lang="{{i18n_twitter_language}}">Follow @better_history</a>
           <a href="https://twitter.com/share" class="twitter-share-button" data-url="https://chrome.google.com/webstore/detail/obciceimmggglbmelaidpjlmodcebijb" data-text="{{i18n_twitter_template}}" data-count="horizontal" data-via="Better_History" data-lang="{{i18n_twitter_language}}">Tweet</a><script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
           <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="http://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>

@@ -7,7 +7,6 @@ body {
 }
 a {
   text-decoration: none;
-  color: #303942;
 }
 a:hover, a:focus {
   outline: none;
@@ -39,18 +38,6 @@ h2 {
   font-size: 18px;
 }
 
-.mainview {
-  -webkit-box-align: stretch;
-  margin: 0;
-  position: absolute;
-  -webkit-padding-start: 155px;
-  right: 0;
-  left: 0;
-  top: 0;
-  bottom: 0;
-  width: 600px;
-  z-index: 1;
-}
 .mainview > * {
   -webkit-margin-start: -20px;
   -webkit-transition: margin 100ms, opacity 100ms;
@@ -363,34 +350,4 @@ h2 {
   margin-bottom: 14px;
   margin-top: 8px;
   max-width: 600px;
-}
-/* Setting the padding on the header so the alignment doesn't depend on the
- * contents of the right table column.  */
-.settings > .setting > .title {
-  -webkit-margin-start: -23px;
-  margin-bottom: 7px;
-  font-size: 14px;
-  font-weight:normal;
-}
-
-.settings .option {
-  margin:10px 0;
-}
-.settings .note {
-  padding-top:5px;
-}
-.settings label {
-  display:block;
-  padding-top:5px;
-}
-.settings .controls {
-  border: none;
-  height: auto;
-}
-.settings .controls label:first-child {
-  padding-top:0;
-}
-.settings span.select {
-  display:inline-block;
-  width:175px;
 }
