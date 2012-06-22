@@ -1,11 +1,14 @@
-<div class="heading">
-  <h2 class="title">{{{title}}}</h2>
-  <input type="search" class="search" placeholder="{{i18n_search_input_placeholder_text}}" tabindex="1" />
+<header>
+  <h1>{{{title}}}</h1>
+  <div class="corner">
+    <input type="search" class="search" placeholder="{{i18n_search_input_placeholder_text}}" tabindex="1" />
+  </div>
   <div class="controls">
     <span class="number_of_visits_all_week"></span> visits
+    <div class="spacer"></div>
     <button class="delete_all">{{i18n_delete_all_visits_for_filter_button}}</button>
   </div>
-</div>
+</header>
 <div class="content">
   <ol class="days">
     {{#days}}
