@@ -22,7 +22,7 @@ class BH.Models.Interval extends BH.Models.Base
     minute = (minutes) ->
       if minutes == 0 then '00' else minutes
 
-    period = (hours) ->
+    period = (hours) =>
       key = 'morning'
       if hours > 11
         key = if hours < 18 then 'afternoon' else 'evening'
