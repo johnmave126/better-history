@@ -42,7 +42,7 @@
             search_time_frame: "past few months",
             extended_formal_date: "dddd, MMMM Do, YYYY"
           };
-          result = lookup[key];
+          result = lookup[key] || 'translated ' + key;
           if (result) {
             _.each(substitutions, function(substitution) {
               return result = result.replace(/\$\w+\$/, substitution);
