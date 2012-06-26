@@ -13,6 +13,9 @@ class BH.Views.BaseView extends Backbone.View
     @$el.addClass(@cssClass.selected)
     @pageTitle() if @pageTitle
 
+  isSelected: ->
+    @$el.hasClass(@cssClass.selected)
+
   setPageTitle: (title) ->
     element = $('<div/>')
     document.title = $(element).html(title).text() + ' - Better History'

@@ -7,11 +7,26 @@ class BH.Views.WeekView extends BH.Views.ViewWithSearch
 
   initialize: ->
     super()
+    @dayViews = {}
     @model.bind('change:percentages', @updatePercentages, @)
     @model.bind('change:count', @updateWeekStats, @)
 
     @model.get('days').each (model) =>
       model.bind('change:count', @updateDay, @)
+
+  select: ->
+    super()
+    @$('.day_views > *').removeClass('selected')
+    @model.get('days').each (model) =>
+      @dayViews[model.id] = view = new BH.Views.DayView
+        model: model,
+        weekModel: @model
+      @$('.day_views').append(view.render().el)
+
+  selectDay: (id) ->
+    @$('.day_views > *').removeClass('selected')
+    @dayViews[id].$el.addClass('selected')
+    @dayViews[id].renderHistory()
 
   render: (type) ->
     @$el.html(@renderTemplate(_.extend(@getI18nValues(), @model.toTemplate())))

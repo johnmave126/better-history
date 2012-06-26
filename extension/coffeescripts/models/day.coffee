@@ -7,6 +7,7 @@ class BH.Models.Day extends BH.Models.Base
       formalDate: @_dateFormat('formalDate')
       id: id
       url: new BH.Helpers.UrlBuilder().build('day', [@get('weekId'), id])
+      weekUrl: new BH.Helpers.UrlBuilder().build('week', [@get('weekId')])
     })
 
   toTemplate: ->

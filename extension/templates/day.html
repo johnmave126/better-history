@@ -1,11 +1,12 @@
-<div class="content-area">
-  <div class="heading">
-    <h2 class="title">{{{title}}}<span class="sub_title">{{formalDate}}</span></h2>
-    <div class="controls">
-      <input type="text" class="search" placeholder="{{i18n_search_input_placeholder_text}}" tabindex="1" />
-      <div class="spacer"></div>
-      <button class="delete_all">{{i18n_delete_all_visits_for_filter_button}}</button>
-    </div>
+<header>
+  <h1 class="title">{{{title}}}<span class="sub_title">{{formalDate}}</span></h1>
+  <div class="corner">
+    <input type="text" class="search" placeholder="{{i18n_search_input_placeholder_text}}" tabindex="1" />
   </div>
-  <div class="content"></div>
-</div>
+  <div class="controls">
+    <a href="{{weekUrl}}">&larr; Back to Week</a>
+    <div class="spacer"></div>
+    <button class="delete_all">{{i18n_delete_all_visits_for_filter_button}}</button>
+  </div>
+</header>
+<div class="content"></div>

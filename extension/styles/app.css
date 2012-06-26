@@ -55,6 +55,23 @@ h2 {
   opacity: 1;
 }
 
+.day_views > * {
+  -webkit-margin-start: -20px;
+  -webkit-transition: margin 100ms, opacity 100ms;
+  opacity: 0;
+  z-index: 0;
+  position: absolute;
+  top: 0;
+  display:block;
+}
+.day_views > .selected {
+  -webkit-margin-start: 0;
+  -webkit-transition: margin 200ms, opacity 200ms;
+  -webkit-transition-delay: 100ms;
+  z-index: 1;
+  opacity: 1;
+  background: #FFF;
+}
 
 .search_view a {
   color: #15C;
@@ -126,9 +143,7 @@ h2 {
   padding: 0px;
 }
 .day_view .content {
-  margin-top: 104px;
-  padding:0 17px 0;
-  width: 100%;
+  padding:0;
   -webkit-box-sizing: border-box;
 }
 .day_view .heading {
@@ -145,13 +160,9 @@ h2 {
   margin-right: 30px;
 }
 .day_view .full_search {
-  padding: 14px 17px;
-  position: absolute;
-  bottom: 0;
-  background: white;
-  width: 100%;
+  margin: 4px 10px;
   -webkit-box-sizing: border-box;
-  margin: 0 0 0 -17px;
+  display: none;
 }
 .heading {
   padding:20px 0 0;
@@ -169,14 +180,13 @@ h2 {
 .heading input.search {
   width: 200px;
 }
-.heading .sub_title {
+.sub_title {
   font-size:15px;
   margin-__MSG_@@bidi_start_edge__:10px;
   color:#53637D;
 }
 .heading .title {
   font-size: 18px;
-  display:inline-block;
   margin-top: 0;
   margin-bottom: 14px;
 }

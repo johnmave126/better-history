@@ -1,16 +1,10 @@
-class BH.Views.DayView extends BH.Views.Modal
+class BH.Views.DayView extends BH.Views.BaseView
   className: 'day_view'
   template: BH.Templates['day']
 
   events:
     'click .delete_all': 'clickedDeleteAll'
     'keyup .search': 'filtered'
-    'click .full_search': 'fullSearchClicked'
-
-  initialize: (config) ->
-    @attachGeneralEvents()
-    @model.on('change:history', @renderHistory, @)
-    @on('close', @updateUrl, @)
 
   render: (type) ->
     @$el.html(@renderTemplate(_.extend(@getI18nValues(), @model.toTemplate())))
@@ -57,9 +51,9 @@ class BH.Views.DayView extends BH.Views.Modal
   filtered: (ev) ->
     @model.set({filter: $(ev.currentTarget).val()})
     @model.fetch()
-
-  fullSearchClicked: ->
-    @close()
+    url = @urlBuilder.build('search', [@model.get('filter')])
+    @$('.full_search').fadeIn('slow')
+    @$('.full_search a').attr(href: url)
 
   getI18nValues: ->
     @i18nFetcher.get [
