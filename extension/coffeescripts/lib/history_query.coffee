@@ -6,7 +6,10 @@ class BH.Lib.HistoryQuery
       @text = @options.text
       @options.text = ''
 
-    _.extend(@options, @searchOptions) if @options.searching?
+    options = {}
+    _.extend(options, @options)
+    _.extend(options, @searchOptions) if @options.searching?
+    delete options.searching
 
     @chromeAPI.history.search options, (results) =>
       @searchHandler(results, callback)

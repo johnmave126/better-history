@@ -9,15 +9,16 @@ class BH.Models.Search extends BH.Models.Base
     terms = @get('query').split(' ')
     joined = @chromeAPI.i18n.getMessage('searching_title') + ' '
 
-    $.each terms, (i) ->
-      joined += '"' + @ + '"'
+    _.each terms, (term, i) =>
+      joined += "\"#{term}\""
       if i != terms.length - 1
         joined += ' ' + @chromeAPI.i18n.getMessage('and') + ' '
 
-    @set({title: joined})
+    @set(title: joined)
 
   toChrome: ->
     text: @get('query')
+    searching: true
 
   sync: (method, model, options) ->
     if method == 'read'

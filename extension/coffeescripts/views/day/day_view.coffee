@@ -1,4 +1,4 @@
-class BH.Views.DayView extends BH.Views.BaseView
+class BH.Views.DayView extends BH.Views.ViewWithSearch
   className: 'day_view'
   template: BH.Templates['day']
 
