@@ -88,8 +88,11 @@ h2 {
 }
 
 .week_view .days .title {
-  margin:0;
+  margin:0 0 3px;
   font-size: 14px;
+  color: #303942;
+}
+.week_view .days * {
   color: #303942;
 }
 .week_view .days .sub_title {
