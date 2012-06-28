@@ -3,7 +3,7 @@ class BH.Views.DayView extends BH.Views.ViewWithSearch
   template: BH.Templates['day']
 
   events:
-    'click .delete_all': 'clickedDeleteAll'
+    'click .delete_day': 'clickedDeleteAll'
     'keyup .search': 'filtered'
     'click .back_to_week': 'backToWeekClicked'
 
