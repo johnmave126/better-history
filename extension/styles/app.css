@@ -63,6 +63,7 @@ h2 {
   position: absolute;
   top: 0;
   display:block;
+  min-height:800px;
 }
 .day_views > .selected {
   -webkit-margin-start: 0;

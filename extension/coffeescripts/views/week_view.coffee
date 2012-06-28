@@ -17,6 +17,7 @@ class BH.Views.WeekView extends BH.Views.ViewWithSearch
   select: ->
     super()
     @$('.day_views > *').removeClass('selected')
+    @$('.day_views').css(visibility: 'hidden')
     @model.get('days').each (model) =>
       @dayViews[model.id] = view = new BH.Views.DayView
         model: model,
@@ -24,6 +25,7 @@ class BH.Views.WeekView extends BH.Views.ViewWithSearch
       @$('.day_views').append(view.render().el)
 
   selectDay: (id) ->
+    @$('.day_views').css(visibility: 'visible')
     @$('.day_views > *').removeClass('selected')
     @dayViews[id].$el.addClass('selected')
     @dayViews[id].renderHistory()

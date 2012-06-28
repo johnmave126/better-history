@@ -5,6 +5,7 @@ class BH.Views.DayView extends BH.Views.ViewWithSearch
   events:
     'click .delete_all': 'clickedDeleteAll'
     'keyup .search': 'filtered'
+    'click .back_to_week': 'backToWeekClicked'
 
   render: (type) ->
     @$el.html(@renderTemplate(_.extend(@getI18nValues(), @model.toTemplate())))
@@ -54,6 +55,9 @@ class BH.Views.DayView extends BH.Views.ViewWithSearch
     url = @urlBuilder.build('search', [@model.get('filter')])
     @$('.full_search').fadeIn('slow')
     @$('.full_search a').attr(href: url)
+
+  backToWeekClicked: (ev) ->
+    @$('.content').html('')
 
   getI18nValues: ->
     @i18nFetcher.get [
