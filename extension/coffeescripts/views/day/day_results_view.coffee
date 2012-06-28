@@ -33,4 +33,5 @@ class BH.Views.DayResultsView extends BH.Views.BaseView
     @i18nFetcher.get([
       'prompt_delete_button'
       'delete_time_interval_button'
+      'no_visits_found'
     ])
