@@ -16,21 +16,21 @@ describe "BH.Lib.HistoryQuery", ->
       expect(chromeAPI.history.search).toHaveBeenCalledWith(options, jasmine.any(Function))
 
     describe "when searching is not set on the options", ->
-      it "does not modify the options", ->
+      it "calls to chrome history API with the passed options and a callback", ->
         historyQuery.run(options, callback)
-        expect(historyQuery.options).toEqual(options)
+        expect(chromeAPI.history.search).toHaveBeenCalledWith(options, jasmine.any(Function))
 
     describe "when searching is set in the options", ->
       beforeEach ->
-        options = {searching: true}
+        options = {searching: true, text: 'the search'}
 
-      it "sets the startTime to 0 on the options", ->
+      it "calls to chrome history API with the searching property option removed, search options added, and callback", ->
         historyQuery.run(options, callback)
-        expect(historyQuery.options.startTime).toEqual(0)
+        searchOptions = {}
+        _.extend(searchOptions, options, historyQuery.searchOptions)
+        delete searchOptions.searching
+        expect(chromeAPI.history.search).toHaveBeenCalledWith(searchOptions, jasmine.any(Function))
 
-      it "sets the maxResults to 0 on the options", ->
-        historyQuery.run(options, callback)
-        expect(historyQuery.options.maxResults).toEqual(0)
 
   describe "#searchHandler", ->
     results = null
