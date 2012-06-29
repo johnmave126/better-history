@@ -8,19 +8,16 @@
             <button class="delete_interval" title="{{i18n_delete_time_interval_button_tooltip}}">{{i18n_delete_time_interval_button}}</button>
           </div>
         </h3>
-        <ol class="visits">
+        <ol class="visits highlighted">
           {{#visits}}
             <li class="visit" data-id="{{id}}">
               <a href="{{url}}">
-                <div class="link">
-                  <dl class="description" style="background-image: url(chrome://favicon/{{url}})">
-                    <dt class="title">{{{title}}}</dt>
-                    <dd class="location">{{{location}}}</dd>
-                    <dd class="time">{{{time}}}</dd>
-                  </dl>
-                  <div class="delete_layer">
-                    <button class="delete_visit">{{i18n_prompt_delete_button}}</button>
-                  </div>
+                <dl class="description" style="background-image: url(chrome://favicon/{{url}})">
+                  <dt>{{{title}}}</dt>
+                  <dd>{{{location}}}</dd>
+                </dl>
+                <div class="delete_layer">
+                  <button class="delete_visit">{{i18n_prompt_delete_button}}</button>
                 </div>
               </a>
             </li>
