@@ -36,18 +36,18 @@ class BH.Router extends Backbone.Router
     @app.weekSelected(id)
 
     view = @app.views.weeks[id]
-    view.model.fetch()
     view.select()
+    view.model.fetch()
 
   day: (weekId, id) ->
     @app.weekSelected(weekId)
 
     view = @app.views.weeks[weekId]
-    view.model.fetch()
     view.select() unless view.isSelected()
-    view.selectDay(id)
 
-    view.model.get('days').get(id).fetch()
+    view.model.get('days').get(id).fetch
+      success: -> view.selectDay(id)
+
 
   settings: ->
     view = @app.views.settings

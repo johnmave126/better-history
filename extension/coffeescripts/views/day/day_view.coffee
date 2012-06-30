@@ -19,7 +19,7 @@ class BH.Views.DayView extends BH.Views.ViewWithSearch
     contentElement = @$('.content')
 
     new BH.Views.DayResultsView(
-      collection: @model.get('history')
+      collection: @collection
       model: @model
       el: contentElement
     ).render()
