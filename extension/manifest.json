@@ -1,6 +1,7 @@
 {
   "name": "__MSG_manifest_name__",
   "version": "1.6.0",
+  "manifest_version": 2,
   "description": "__MSG_manifest_description__",
   "default_locale":"en",
   "icons": {
@@ -15,6 +16,6 @@
     "default_icon": "images/icons/icon19.png",
     "default_title": "__MSG_manifest_browser_action_title__"
   },
-  "background_page": "background.html",
+  "background": "background.html",
   "permissions": ["chrome://favicon/", "history", "tabs", "contextMenus"]
 }
