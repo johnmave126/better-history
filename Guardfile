@@ -16,5 +16,12 @@ watch('extension/templates/(.*)\.html') do
       template_file += "BH.Templates.#{key} = '#{template_content}';\n\n"
     end
   end
+  puts 'generating js'
+  system('rake concat_js')
   File.open('extension/javascripts/templates.js', 'w') {|f| f.write(template_file) }
+end
+
+watch('^extension/coffeescripts/(.*)\.coffee') do
+  puts 'generating js'
+  system('rake concat_js')
 end

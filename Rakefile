@@ -32,3 +32,16 @@ task :templates do
   end
   File.open('extension/javascripts/templates.js', 'w') {|f| f.write(template_file) }
 end
+
+desc "Concat javascript"
+task :concat_js do
+  require 'yaml'
+  packaged = ""
+  assets = YAML::load(File.open('extension/coffeescripts/assets.yml'))
+  assets.each do |asset|
+    packaged += "\n\n// #{asset}.js \n"
+    packaged += File.read("extension/javascripts/#{asset}.js")
+  end
+  system('rm extension/javascripts/package.js')
+  File.open("extension/javascripts/package.js", 'w') {|f| f.write(packaged) }
+end
