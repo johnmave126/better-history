@@ -2,25 +2,6 @@ body {
   direction: __MSG_@@bidi_dir__;
 }
 
-.day_views > * {
-  -webkit-margin-start: -20px;
-  -webkit-transition: margin 100ms, opacity 100ms;
-  opacity: 0;
-  z-index: 0;
-  position: absolute;
-  top: 0;
-  display:block;
-  min-height:800px;
-}
-.day_views > .selected {
-  -webkit-margin-start: 0;
-  -webkit-transition: margin 200ms, opacity 200ms;
-  -webkit-transition-delay: 100ms;
-  z-index: 1;
-  opacity: 1;
-  background: #FFF;
-}
-
 .search_view .visit .time {
   display: block;
 }

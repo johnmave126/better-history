@@ -14,24 +14,19 @@ class BH.Views.WeekView extends BH.Views.ViewWithSearch
     @model.get('days').each (model) =>
       model.bind('change:count', @updateDay, @)
 
-  select: ->
-    super()
-    @$('.day_views > *').removeClass('selected')
-    @$('.day_views').css(visibility: 'hidden')
-    @model.get('days').each (model) =>
-      @dayViews[model.id] = view = new BH.Views.DayView
-        model: model,
-        weekModel: @model
-      @$('.day_views').append(view.render().el)
-
   selectDay: (id) ->
-    @$('.day_views').css(visibility: 'visible')
-    @$('.day_views > *').removeClass('selected')
+    $('.mainview > *').removeClass('selected')
     @dayViews[id].$el.addClass('selected')
     @dayViews[id].renderHistory()
 
   render: (type) ->
     @$el.html(@renderTemplate(_.extend(@getI18nValues(), @model.toTemplate())))
+
+    @model.get('days').each (model) =>
+      @dayViews[model.id] = view = new BH.Views.DayView
+        model: model,
+        weekModel: @model
+      $('.mainview').append(view.render().el)
     @
 
   pageTitle: ->
