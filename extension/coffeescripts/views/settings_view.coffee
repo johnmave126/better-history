@@ -23,14 +23,26 @@ class BH.Views.SettingsView extends BH.Views.BaseView
   pageTitle: ->
     @setPageTitle(chrome.i18n.getMessage('settings_title'))
 
-  render: ->
-    @$el.append(@renderTemplate(_.extend(@getI18nValues(), @model.toTemplate())))
+  select: ->
+    super()
+    !((d,s,id) ->
+      js
+      fjs=d.getElementsByTagName(s)[0];
+      if !d.getElementById(id)
+        js=d.createElement(s);
+        js.id=id;
+        js.src="https://platform.twitter.com/widgets.js";
+        fjs.parentNode.insertBefore(js,fjs);
+    )(document,"script","twitter-wjs");
     window.___gcfg = {lang: chrome.i18n.getMessage('google_plus_language')}
     (->
       po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
       po.src = 'https://apis.google.com/js/plusone.js';
       s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
     )()
+
+  render: ->
+    @$el.append(@renderTemplate(_.extend(@getI18nValues(), @model.toTemplate())))
     @
 
   changedTimeGrouping: (ev) ->
