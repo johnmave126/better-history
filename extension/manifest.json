@@ -17,5 +17,6 @@
     "default_title": "__MSG_manifest_browser_action_title__"
   },
   "background": "background.html",
-  "permissions": ["chrome://favicon/", "history", "tabs", "contextMenus"]
+  "permissions": ["chrome://favicon/", "history", "tabs", "contextMenus"],
+  "content_security_policy": "script-src 'self' https://platform.twitter.com https://apis.google.com; object-src 'self'"
 }
