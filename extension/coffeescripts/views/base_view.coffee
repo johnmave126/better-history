@@ -6,7 +6,7 @@ class BH.Views.BaseView extends Backbone.View
   urlBuilder: new BH.Helpers.UrlBuilder()
 
   renderTemplate: (json) ->
-    Mustache.render(@template, json)
+    Mustache.to_html(@template, json)
 
   select: ->
     $('.mainview > *').removeClass(@cssClass.selected)

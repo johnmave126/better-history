@@ -10,7 +10,7 @@ class BH.Views.Modal extends BH.Views.BaseView
 
   renderTemplate: (json) ->
     overlay = $(BH.Templates['modal'])
-    $('.page', overlay).append(Mustache.render(@template, json))
+    $('.page', overlay).append(Mustache.to_html(@template, json))
     overlay
 
   open: ->
