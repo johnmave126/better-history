@@ -3,12 +3,15 @@ class BH.Collections.Visits extends Backbone.Collection
 
   destroyAll: (options) ->
     while(@length > 0)
-      this.at(0).destroy() if @at(0)
+      @at(0).destroy() if @at(0)
     options.success() if options?
 
   toTemplate: ->
+    if settings.get('domainGrouping')
+      groupedVisits = new BH.Lib.HistoryGrouper().domain(@)
+
     visits = []
-    @each (model) ->
+    _.each groupedVisits || @models, (model) ->
       visits.push(model.toTemplate())
 
     visits: visits
@@ -20,4 +23,3 @@ class BH.Collections.Visits extends Backbone.Collection
 
   hasVisits: ->
     !@noVisits()
-

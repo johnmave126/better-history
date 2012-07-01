@@ -10,17 +10,50 @@
         </h3>
         <ol class="visits highlightable">
           {{#visits}}
-            <li class="visit" data-id="{{id}}">
-              <a href="{{url}}">
-                <dl class="description" style="background-image: url(chrome://favicon/{{url}})">
-                  <dt>{{{title}}}</dt>
-                  <dd>{{{location}}}</dd>
-                </dl>
-                <div class="delete_layer">
-                  <button class="delete_visit">{{i18n_prompt_delete_button}}</button>
-                </div>
-              </a>
-            </li>
+            {{#isGrouped}}
+              <li class="visit" data-id="{{id}}">
+                <a href="{{url}}">
+                  <dl class="description" style="background-image: url(chrome://favicon/{{url}})">
+                    <dt>{{domain}}</dt>
+                    <dd>
+                      <button class="small show_visits">{{i18n_expand_button}}</button>
+                      <button class="small hide_visits">{{i18n_collapse_button}}</button>
+                    </dd>
+                  </dl>
+                  <div class="delete_layer">
+                    <button class="delete_visit">{{i18n_prompt_delete_button}}</button>
+                  </div>
+                </a>
+                <ol class="visits highlightable">
+                  {{#groupedVisits}}
+                    <li class="visit" data-id="{{id}}">
+                      <a href="{{url}}">
+                        <dl class="description" style="background-image: url(chrome://favicon/{{url}})">
+                          <dt>{{{title}}}</dt>
+                          <dd>{{{location}}}</dd>
+                        </dl>
+                        <div class="delete_layer">
+                          <button class="delete_visit">{{i18n_prompt_delete_button}}</button>
+                        </div>
+                      </a>
+                    </li>
+                  {{/groupedVisits}}
+                </ol>
+              </li>
+            {{/isGrouped}}
+            {{#notGrouped}}
+              <li class="visit" data-id="{{id}}">
+                <a href="{{url}}">
+                  <dl class="description" style="background-image: url(chrome://favicon/{{url}})">
+                    <dt>{{{title}}}</dt>
+                    <dd>{{{location}}}</dd>
+                  </dl>
+                  <div class="delete_layer">
+                    <button class="delete_visit">{{i18n_prompt_delete_button}}</button>
+                  </div>
+                </a>
+              </li>
+            {{/notGrouped}}
           {{/visits}}
         </ol>
       </li>

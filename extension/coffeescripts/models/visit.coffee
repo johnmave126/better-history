@@ -13,7 +13,9 @@ class BH.Models.Visit extends BH.Models.Base
       options.success(@)
 
   toTemplate: ->
-    @toJSON()
+    _.extend
+      notGrouped: true
+    , @toJSON()
 
   domain: ->
     match = @_getDomain @get('url')

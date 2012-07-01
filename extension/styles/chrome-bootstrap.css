@@ -185,7 +185,7 @@ ul.menu li a {
 }
 /* Highlightable list
 ============================================== */
-.highlightable li:hover *:not(.match) {
+.highlightable li:hover > a {
   background-color: #F0F6FE;
   color: #555;
 }
@@ -214,6 +214,9 @@ ul.menu li a {
   white-space: nowrap;
   font-size: 11px;
 }
+.highlightable li .highlightable {
+  margin-left: 30px;
+}
 .match {
   background: #f2f37b;
   display: inline-block;
@@ -236,6 +239,10 @@ button {
   font: inherit;
   margin: 0 1px 0 0;
   text-shadow: 0 1px 0 #F0F0F0;
+}
+button.small {
+  padding: 1px 5px 2px;
+  min-height: 1em;
 }
 input[type='checkbox']:checked::before {
   -webkit-user-select: none;

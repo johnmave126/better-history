@@ -2,6 +2,22 @@ body {
   direction: __MSG_@@bidi_dir__;
 }
 
+.visit .visits {
+  display: none;
+}
+.visit.expanded .hide_visits {
+  display: block;
+}
+.visit.expanded .show_visits {
+  display: none;
+}
+.visit .hide_visits {
+  display: none;
+}
+.visit .show_visits {
+  display: block;
+}
+
 .search_view .visit .time {
   display: block;
 }

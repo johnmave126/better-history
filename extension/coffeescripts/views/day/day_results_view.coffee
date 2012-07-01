@@ -4,6 +4,8 @@ class BH.Views.DayResultsView extends BH.Views.BaseView
   events:
     'click .delete_visit': 'deleteVisitClicked'
     'click .delete_interval': 'deleteIntervalClicked'
+    'click .show_visits': 'toggleGroupedVisitsClicked'
+    'click .hide_visits': 'toggleGroupedVisitsClicked'
 
   render: ->
     @$el.html(@renderTemplate(_.extend(@getI18nValues(), @model.toTemplate(), @collection.toTemplate())))
@@ -22,6 +24,12 @@ class BH.Views.DayResultsView extends BH.Views.BaseView
       success: =>
         @removeElement(element)
 
+  toggleGroupedVisitsClicked: (ev) ->
+    ev.preventDefault()
+    $(ev.currentTarget).parents('.visit')
+      .toggleClass('expanded')
+      .find('.visits').slideToggle('fast')
+
   removeElement: (element)->
     element.slideUp 'fast', ->
       element.remove()
@@ -34,4 +42,6 @@ class BH.Views.DayResultsView extends BH.Views.BaseView
       'prompt_delete_button'
       'delete_time_interval_button'
       'no_visits_found'
+      'expand_button'
+      'collapse_button'
     ])
