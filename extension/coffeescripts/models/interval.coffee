@@ -2,14 +2,14 @@ class BH.Models.Interval extends BH.Models.Base
   toTemplate: ->
     _.extend
       amount: @chromeAPI.i18n.getMessage('number_of_visits', [
-        @get('pageVisits').length.toString(),
+        @get('visits').length.toString(),
         '<span class="amount">',
         '</span>'
       ])
       time: @formatTime(@get('datetime'), settings.timeFormat())
       id: @id
 
-    , @get('pageVisits').toTemplate()
+    , @get('visits').toTemplate()
 
 
   formatTime: (date, format) ->

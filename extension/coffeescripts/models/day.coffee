@@ -39,8 +39,8 @@ class BH.Models.Day extends BH.Models.Base
       history.add
         id: @id
         datetime: @datetime
-        pageVisits: new BH.Collections.Visits(@pageVisits)
-      count += @pageVisits.length
+        visits: new BH.Collections.Visits(@visits)
+      count += @visits.length
 
     history: history
     count: count

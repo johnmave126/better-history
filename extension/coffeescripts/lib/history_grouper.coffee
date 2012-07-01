@@ -12,9 +12,9 @@ class BH.Lib.HistoryGrouper
         arrangedVisits.push
           datetime: new Date(lastVisitTime.toLocaleDateString() + ' ' + id)
           id: id
-          pageVisits:[]
+          visits:[]
         index = arrangedVisits.length - 1
-      arrangedVisits[index].pageVisits.push(visit)
+      arrangedVisits[index].visits.push(visit)
     arrangedVisits
 
   domain: (visits) ->

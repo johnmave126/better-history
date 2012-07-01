@@ -11,7 +11,7 @@ class BH.Views.DayResultsView extends BH.Views.BaseView
   deleteIntervalClicked: (ev) ->
     ev.preventDefault()
     element = @_getTopElement(ev.currentTarget)
-    @collection.get($(element).data('id')).get('pageVisits').destroyAll
+    @collection.get($(element).data('id')).get('visits').destroyAll
       success: =>
         @removeElement(element)
 

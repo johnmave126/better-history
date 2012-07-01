@@ -22,5 +22,5 @@ class BH.Collections.Intervals extends Backbone.Collection
 
   findVisitById: (id) ->
     interval = _.find @models, (model) ->
-      model.get('pageVisits').get(id)
-    interval.get('pageVisits').get(id)
+      model.get('visits').get(id)
+    interval.get('visits').get(id)
