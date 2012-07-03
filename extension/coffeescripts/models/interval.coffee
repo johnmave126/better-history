@@ -9,7 +9,7 @@ class BH.Models.Interval extends BH.Models.Base
       time: @formatTime(@get('datetime'), settings.timeFormat())
       id: @id
 
-    , @get('visits').toTemplate()
+    , @get('visits').toTemplate(grouped: true)
 
 
   formatTime: (date, format) ->

@@ -6,8 +6,8 @@ class BH.Collections.Visits extends Backbone.Collection
       @at(0).destroy() if @at(0)
     options.success() if options?
 
-  toTemplate: ->
-    if settings.get('domainGrouping')
+  toTemplate: (options) ->
+    if options.grouped && settings.get('domainGrouping')
       groupedVisits = new BH.Lib.HistoryGrouper().domain(@)
 
     visits = []
