@@ -5,7 +5,7 @@ class BH.Lib.ContextMenus.SelectionContextMenu
     @menu = @chromeAPI.contextMenus.create
       title: @chromeAPI.i18n.getMessage('search_in_history')
       contexts: ['selection']
-      onclick: @onClick
+      onclick: (data) => @onClick(data)
 
   onClick: (data) ->
     @chromeAPI.tabs.create

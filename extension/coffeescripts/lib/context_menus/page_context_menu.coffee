@@ -5,7 +5,7 @@ class BH.Lib.ContextMenus.PageContextMenu
     @menu = @chromeAPI.contextMenus.create
       title: @chromeAPI.i18n.getMessage('visits_to_domain', ['domain'])
       contexts: ['page']
-      onclick: @onClick
+      onclick: (data) => @onClick(data)
 
   onClick: (data) ->
     @chromeAPI.tabs.create

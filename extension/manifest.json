@@ -16,7 +16,26 @@
     "default_icon": "images/icons/icon19.png",
     "default_title": "__MSG_manifest_browser_action_title__"
   },
-  "background": "background.html",
-  "permissions": ["chrome://favicon/", "history", "tabs", "contextMenus"],
+  "background": {
+    "scripts": [
+      "javascripts/frameworks/underscore-min.js",
+      "javascripts/frameworks/backbone-min.js",
+      "javascripts/namespace.js",
+      "javascripts/lib/backbone_extensions.js",
+      "javascripts/lib/context_menus/page_context_menu.js",
+      "javascripts/lib/context_menus/selection_context_menu.js",
+      "javascripts/lib/browser_actions.js",
+      "javascripts/models/base.js",
+      "javascripts/models/settings.js",
+      "javascripts/helpers/url_builder.js",
+      "javascripts/initialize_background.js"
+    ]
+  },
+  "permissions": [
+    "chrome://favicon/",
+    "history",
+    "tabs",
+    "contextMenus"
+  ],
   "content_security_policy": "script-src 'self' https://platform.twitter.com https://apis.google.com; object-src 'self'"
 }
