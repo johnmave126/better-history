@@ -15,9 +15,7 @@ class BH.Views.WeekView extends BH.Views.ViewWithSearch
       model.bind('change:count', @updateDay, @)
 
   selectDay: (id) ->
-    $('.mainview > *').removeClass('selected')
-    @dayViews[id].$el.addClass('selected')
-    @dayViews[id].renderHistory()
+    @dayViews[id].select().renderHistory()
 
   render: (type) ->
     @$el.html(@renderTemplate(_.extend(@getI18nValues(), @model.toTemplate())))
@@ -30,7 +28,7 @@ class BH.Views.WeekView extends BH.Views.ViewWithSearch
     @
 
   pageTitle: ->
-    @setPageTitle(@model.get('title'))
+    @model.get('title')
 
   updateDay: (model) ->
     $('.number_of_visits', @_getDayElement(model.id)).text(model.get('count'))

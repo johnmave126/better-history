@@ -12,6 +12,9 @@ class BH.Views.DayView extends BH.Views.ViewWithSearch
     @$('button').attr('disabled', 'disabled')
     @
 
+  pageTitle: ->
+    @model.get('formalDate')
+
   renderHistory: ->
     @collection = @model.get('history')
 

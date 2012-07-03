@@ -21,7 +21,7 @@ class BH.Views.SettingsView extends BH.Views.BaseView
     @model.save()
 
   pageTitle: ->
-    @setPageTitle(chrome.i18n.getMessage('settings_title'))
+    chrome.i18n.getMessage('settings_title')
 
   select: ->
     super()

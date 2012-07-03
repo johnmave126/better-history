@@ -11,7 +11,8 @@ class BH.Views.BaseView extends Backbone.View
   select: ->
     $('.mainview > *').removeClass(@cssClass.selected)
     @$el.addClass(@cssClass.selected)
-    @pageTitle() if @pageTitle
+    @setPageTitle(@pageTitle()) if @pageTitle
+    @
 
   isSelected: ->
     @$el.hasClass(@cssClass.selected)
