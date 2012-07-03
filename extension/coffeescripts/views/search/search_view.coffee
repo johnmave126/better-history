@@ -6,17 +6,17 @@ class BH.Views.SearchView extends BH.Views.ViewWithSearch
     'click .delete_all': 'clickedDeleteAll'
 
   initialize: ->
-    @model.on('change:title', @refreshTitle, @)
     @model.on('change:history', @renderVisits, @)
-    @model.on('change:query', @refreshTitle, @)
+    @model.on('change:query', @updateQueryReferences, @)
     super()
 
   render: ->
     @$el.append(@renderTemplate(_.extend(@getI18nValues(), @model.toTemplate())))
     @
 
-  refreshTitle: ->
+  updateQueryReferences: ->
     @$('.title').text(@model.get('title'))
+    @$('.search').val(@model.get('query'))
     @$('.content').html('')
     @model.fetch()
 
