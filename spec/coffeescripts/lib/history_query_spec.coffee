@@ -61,4 +61,4 @@ describe "BH.Lib.HistoryQuery", ->
           }
         ]
       }
-      expect(worker).toHaveBeenCalledWith('javascripts/workers/visits_sanitizer.js', expectedOptions, callback)
+      expect(worker).toHaveBeenCalledWith('sanitizer', expectedOptions, callback)

@@ -20,8 +20,11 @@ class BH.Models.Day extends BH.Models.Base
     if method == 'read'
       historyQuery = new BH.Lib.HistoryQuery(@chromeAPI)
       historyQuery.run @toChrome(), (history) ->
-        grouper = new BH.Lib.HistoryGrouper()
-        options.success(grouper.time(history, settings.timeGrouping()))
+        workerOptions =
+          visits: history
+          interval: settings.timeGrouping()
+        worker 'time_grouper', workerOptions, (visits) ->
+          options.success(visits)
 
   clear: ->
     @chromeAPI.history.deleteRange

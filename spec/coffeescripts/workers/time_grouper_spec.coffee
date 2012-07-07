@@ -1,8 +1,8 @@
-describe 'BH.Lib.HistoryGrouper', ->
-  historyGrouper = visit1 = visit2 = visit3 = visit4 = null
+describe 'TimeGrouper', ->
+  timeGrouper = visit1 = visit2 = visit3 = visit4 = null
 
   beforeEach ->
-    historyGrouper = new BH.Lib.HistoryGrouper()
+    timeGrouper = new TimeGrouper()
 
     visit1 = new BH.Models.Visit
       title: 'test'
@@ -27,24 +27,18 @@ describe 'BH.Lib.HistoryGrouper', ->
   describe '#time', ->
     it 'stores the time in 24 hours, the date to the nearest time interval, and the page visits', ->
       visits = new BH.Collections.Visits([visit1, visit2])
-      timeVisits = historyGrouper.time(visits.toJSON(), 15)
+      timeVisits = timeGrouper.run(visits.toJSON(), 15)
       expect(timeVisits[0]).toEqual
-        datetime: new Date(2011, 5, 5, 3, 0, 0),
-        id: '3:00',
+        datetime: new Date(2011, 5, 5, 3, 0, 0)
+        id: '3:00'
         visits: visits.toJSON()
 
     it 'groups history items by 15 minute increments when passed 15', ->
       visits = new BH.Collections.Visits([visit1, visit2])
-      timeVisits = historyGrouper.time(visits.toJSON(), 15)
+      timeVisits = timeGrouper.run(visits.toJSON(), 15)
       expect(timeVisits.length).toEqual(1)
 
     it 'separates history items that are more than 15 minutes apart when passed 15', ->
       visits = new BH.Collections.Visits([visit1, visit3])
-      timeVisits = historyGrouper.time(visits.toJSON(), 15)
+      timeVisits = timeGrouper.run(visits.toJSON(), 15)
       expect(timeVisits.length).toEqual(2)
-
-  describe '#domain', ->
-    it 'groups neighboring history items from the same domain', ->
-      visits = new BH.Collections.Visits([visit1, visit4])
-      visits = historyGrouper.domain(visits)
-      expect(visits.length).toEqual(1)

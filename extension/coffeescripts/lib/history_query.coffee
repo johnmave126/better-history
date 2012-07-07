@@ -20,11 +20,10 @@ class BH.Lib.HistoryQuery
     @_sanitizeResults(results, callback)
 
   _sanitizeResults: (results, callback) ->
-    path = 'javascripts/workers/visits_sanitizer.js'
     options =
       options: @options
       results: results
-    worker(path, options, callback)
+    worker('sanitizer', options, callback)
 
   _prepareResults: (results) ->
     extendedFormalDate = @chromeAPI.i18n.getMessage('extended_formal_date')
