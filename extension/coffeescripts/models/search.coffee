@@ -6,12 +6,12 @@ class BH.Models.Search extends BH.Models.Base
     @toJSON()
 
   updateTitle: ->
-    terms = @get('query').split(' ')
+    @terms = @get('query').split(' ')
     joined = @chromeAPI.i18n.getMessage('searching_title') + ' '
 
-    _.each terms, (term, i) =>
+    _.each @terms, (term, i) =>
       joined += "\"#{term}\""
-      if i != terms.length - 1
+      if i != @terms.length - 1
         joined += ' ' + @chromeAPI.i18n.getMessage('and') + ' '
 
     @set(title: joined)
@@ -22,8 +22,7 @@ class BH.Models.Search extends BH.Models.Base
 
   sync: (method, model, options) ->
     if method == 'read'
-      sanitizer = new BH.Lib.SearchResultsSanitizer(@chromeAPI)
-      historyQuery = new BH.Lib.HistoryQuery(@chromeAPI, sanitizer)
+      historyQuery = new BH.Lib.HistoryQuery(@chromeAPI)
       historyQuery.run @toChrome(), (history) ->
         options.success(history)
 

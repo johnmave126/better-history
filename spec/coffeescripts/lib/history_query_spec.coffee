@@ -1,11 +1,11 @@
 describe "BH.Lib.HistoryQuery", ->
-  options = callback = chromeAPI = sanitizer = historyQuery = null
+  options = callback = chromeAPI = historyQuery = null
 
   beforeEach ->
+    spyOn(window, 'worker')
     chromeAPI = loadChromeAPI()
     callback = jasmine.createSpy("callback")
-    sanitizer = clean: jasmine.createSpy('clean').andReturn('cleaned results')
-    historyQuery = new BH.Lib.HistoryQuery(chromeAPI, sanitizer)
+    historyQuery = new BH.Lib.HistoryQuery(chromeAPI)
 
   describe "#run", ->
     beforeEach ->
@@ -31,23 +31,34 @@ describe "BH.Lib.HistoryQuery", ->
         delete searchOptions.searching
         expect(chromeAPI.history.search).toHaveBeenCalledWith(searchOptions, jasmine.any(Function))
 
-
   describe "#searchHandler", ->
     results = null
 
     beforeEach ->
       options = text: 'value'
-      results = 'search results'
+      results = [
+        {url: 'google.com', lastVisitTime: 'May 5 2010'},
+        {url: 'yahoo.com', lastVisitTime: 'May 6 2010'}
+      ]
       historyQuery.run(options, callback)
 
-    it "assigned the value of text back to the options", ->
+    it 'starts the sanitize worker with options, prepared results and a callback', ->
       historyQuery.searchHandler(results, callback)
-      expect(historyQuery.options.text).toEqual('value')
-
-    it "calls to the sanitizer to clean the results with the options", ->
-      historyQuery.searchHandler(results, callback)
-      expect(sanitizer.clean).toHaveBeenCalledWith(options, results)
-
-    it "calls the passed callback with the cleaned results", ->
-      historyQuery.searchHandler(results, callback)
-      expect(callback).toHaveBeenCalledWith('cleaned results')
+      expectedOptions = {
+        options: options,
+        results: [
+          {
+            url: 'google.com',
+            lastVisitTime: 'May 5 2010',
+            date: new Date('May 5 2010')
+            time: 'Wednesday, May 5th, 2010',
+          },
+          {
+            url: 'yahoo.com',
+            lastVisitTime: 'May 6 2010',
+            time: 'Thursday, May 6th, 2010',
+            date: new Date('May 6 2010')
+          }
+        ]
+      }
+      expect(worker).toHaveBeenCalledWith('javascripts/workers/visits_sanitizer.js', expectedOptions, callback)

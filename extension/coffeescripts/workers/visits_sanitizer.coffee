@@ -1,6 +1,6 @@
-class BH.Lib.SearchResultsSanitizer
-  constructor: (@chromeAPI) ->
+importScripts('../frameworks/underscore-min.js')
 
+class @VisitsSanitizer
   clean: (@options, results) ->
     if @options.text
       @terms = options.text.split(' ')
@@ -14,12 +14,11 @@ class BH.Lib.SearchResultsSanitizer
           @setAdditionalProperties(result)
           if @verifyTextMatch(result)
             @removeScriptTags(result)
-            @wrapTextMatch(result)
             prunedResults.push(result)
       else
         if @verifyDateRange(result)
-          @removeScriptTags(result)
           @setAdditionalProperties(result)
+          @removeScriptTags(result)
           if @terms && @terms.length != 0
             if @verifyTextMatch(result)
               @wrapTextMatch(result)
@@ -46,32 +45,19 @@ class BH.Lib.SearchResultsSanitizer
   verifyDateRange: (result) ->
     result.lastVisitTime > @options.startTime && result.lastVisitTime < @options.endTime
 
-  wrapMatchInProperty: (regExp, property, match) ->
-    match = property.match(regExp)
-    if match then property.replace(regExp, '<span class="match">' + match + '</span>') else property
-
-  wrapTextMatch: (result) ->
-    regExp = titleMatch = locationMatch = timeMatch = null
-
-    _.each @terms, (term) =>
-      regExp = new RegExp(term, "i")
-      result.title = @wrapMatchInProperty(regExp, result.title)
-      result.location = @wrapMatchInProperty(regExp, result.location)
-      result.time = @wrapMatchInProperty(regExp, result.time)
-
   removeScriptTags: (result) ->
-    el = document.createElement('div')
-    _.each ['title', 'location'], (property) ->
-      el.innerHTML = result[property]
-      $('script', el).remove()
-      result[property] = $(el).text()
+    regex = /<(.|\n)*?>/ig
+    _.each ['title', 'url', 'location'], (property) ->
+      result[property] = result[property].replace(regex, "")
 
   setAdditionalProperties: (result) ->
     result.location = result.url
-    date = new Date(result.lastVisitTime)
-    result.time = moment(date).format(@chromeAPI.i18n.getMessage('extended_formal_date'))
 
   sortByTime: (a, b) ->
     return -1 if a.lastVisitTime > b.lastVisitTime
     return 1 if a.lastVisitTime < b.lastVisitTime
     0
+
+self.addEventListener 'message', (e) ->
+  sanitizer = new VisitsSanitizer()
+  postMessage(sanitizer.clean(e.data.options, e.data.results))

@@ -1,5 +1,5 @@
 (function() {
-
+  window.importScripts = function() { };
   window.loadChromeAPI = function(config) {
     var chrome;
     return chrome = {

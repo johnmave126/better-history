@@ -21,6 +21,7 @@ src_files:
     - extension/javascripts/models/*.js
     - extension/javascripts/collections/*.js
     - extension/javascripts/lib/**/*.js
+    - extension/javascripts/workers/*.js
     - extension/javascripts/helpers/*.js
 
 # stylesheets

@@ -56,7 +56,7 @@ body {
   min-width:1%;
   position: absolute;
   right: 0;
-  -webkit-transition:width 0.5s;
+  -webkit-transition:width 0.2s;
   border-radius: 5px;
 }
 .week_view .bar_container {

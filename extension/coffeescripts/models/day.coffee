@@ -18,8 +18,7 @@ class BH.Models.Day extends BH.Models.Base
 
   sync: (method, model, options) ->
     if method == 'read'
-      sanitizer = new BH.Lib.SearchResultsSanitizer(@chromeAPI)
-      historyQuery = new BH.Lib.HistoryQuery(@chromeAPI, sanitizer)
+      historyQuery = new BH.Lib.HistoryQuery(@chromeAPI)
       historyQuery.run @toChrome(), (history) ->
         grouper = new BH.Lib.HistoryGrouper()
         options.success(grouper.time(history, settings.timeGrouping()))

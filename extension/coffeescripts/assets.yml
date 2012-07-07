@@ -7,9 +7,9 @@
  - frameworks/moment
  - namespace
  - templates
+ - lib/worker
  - lib/history_grouper
  - lib/history_query
- - lib/search_results_sanitizer
  - lib/backbone_extensions
  - helpers/i18n_fetcher
  - helpers/url_builder

@@ -28,6 +28,7 @@ class BH.Views.SearchView extends BH.Views.ViewWithSearch
     @$('.number_of_results').text(chrome.i18n.getMessage('number_of_search_results', [@collection.length]))
 
     new BH.Views.SearchResultsView(
+      model: @model
       collection: @collection
       el: contentElement
     ).render()

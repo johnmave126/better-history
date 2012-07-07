@@ -1,5 +1,5 @@
 class BH.Lib.HistoryQuery
-  constructor: (@chromeAPI, @sanitizer) ->
+  constructor: (@chromeAPI) ->
 
   run: (@options, callback) ->
     if @options.text
@@ -16,7 +16,22 @@ class BH.Lib.HistoryQuery
 
   searchHandler: (results, callback) ->
     @options.text = @text if @text
-    callback(@sanitizer.clean(@options, results))
+    results = @_prepareResults(results)
+    @_sanitizeResults(results, callback)
+
+  _sanitizeResults: (results, callback) ->
+    path = 'javascripts/workers/visits_sanitizer.js'
+    options =
+      options: @options
+      results: results
+    worker(path, options, callback)
+
+  _prepareResults: (results) ->
+    extendedFormalDate = @chromeAPI.i18n.getMessage('extended_formal_date')
+    _(results).each (result) =>
+      result.date = new Date(result.lastVisitTime)
+      result.time = moment(result.date).format(extendedFormalDate)
+    results
 
   searchOptions:
     startTime: 0
