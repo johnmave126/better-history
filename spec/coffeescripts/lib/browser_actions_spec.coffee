@@ -12,7 +12,7 @@ describe "BH.Lib.BrowserActions", ->
   describe "#listen", ->
     it "listens for onClick on the browser action", ->
       browserActions.listen()
-      expect(chromeAPI.browserAction.onClicked.addListener).toHaveBeenCalledWith browserActions.openHistory
+      expect(chromeAPI.browserAction.onClicked.addListener).toHaveBeenCalledWith(jasmine.any(Function))
 
   describe "#openHistory", ->
     it "opens history in a new tab", ->

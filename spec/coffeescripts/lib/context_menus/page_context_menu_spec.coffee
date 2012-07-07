@@ -16,7 +16,7 @@ describe "BH.Lib.ContextMenus.PageContextMenu", ->
       expect(chromeAPI.contextMenus.create).toHaveBeenCalledWith
         title: "Visits to domain"
         contexts: [ "page" ]
-        onclick: pageContextMenu.onClick
+        onclick: jasmine.any(Function)
 
     it "stores the menu", ->
       pageContextMenu.create()

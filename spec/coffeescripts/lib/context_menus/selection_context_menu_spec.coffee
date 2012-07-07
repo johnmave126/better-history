@@ -19,7 +19,7 @@ describe "BH.Lib.ContextMenus.SelectionContextMenu", ->
         expect(chromeAPI.contextMenus.create).toHaveBeenCalledWith
           title: "Search in history"
           contexts: [ "selection" ]
-          onclick: selectionContextMenu.onClick
+          onclick: jasmine.any(Function)
 
       it "stores the menu", ->
         selectionContextMenu.create()
