@@ -28,6 +28,20 @@ body {
   display: inline;
 }
 
+header {
+  position:fixed;
+  background: #FFF;
+  z-index: 3;
+  width: 738px;
+}
+.content {
+  padding-top: 100px;
+}
+.settings_view .content {
+  padding-top: 50px;
+}
+
+
 .week_view .days .title {
   margin:0 0 3px;
 }
