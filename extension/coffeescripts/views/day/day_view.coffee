@@ -19,13 +19,11 @@ class BH.Views.DayView extends BH.Views.ViewWithSearch
     @collection = @model.get('history')
 
     @$('.search').focus()
-    contentElement = @$('.content')
 
-    new BH.Views.DayResultsView(
+    @dayResultsView = new BH.Views.DayResultsView
       collection: @collection
       model: @model
-      el: contentElement
-    ).render()
+    @$('.content').html(@dayResultsView.render())
 
     if @collection.length == 0 || @model.get('filter')
       @$('button').attr('disabled', 'disabled')
