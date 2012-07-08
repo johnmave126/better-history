@@ -23,7 +23,7 @@ class BH.Models.Day extends BH.Models.Base
         workerOptions =
           visits: history
           interval: settings.timeGrouping()
-        worker 'time_grouper', workerOptions, (visits) ->
+        worker 'grouper', workerOptions, (visits) ->
           options.success(visits)
 
   clear: ->
@@ -34,17 +34,25 @@ class BH.Models.Day extends BH.Models.Base
       @set({history: new BH.Collections.Intervals()})
 
   parse: (data) ->
-    history = new BH.Collections.Intervals()
+    intervals = new BH.Collections.Intervals()
     count = 0
 
-    $.each data, ->
-      history.add
-        id: @id
-        datetime: @datetime
-        visits: new BH.Collections.Visits(@visits)
-      count += @visits.length
+    _.each data, (interval) ->
+      visits = new BH.Collections.Visits()
+      _.each interval.visits, (visit) ->
+        if _.isArray(visit)
+          visits.add(new BH.Models.GroupedVisit(visit))
+          count += visit.length
+        else
+          visits.add(new BH.Models.Visit(visit))
+          count += 1
 
-    history: history
+      intervals.add
+        id: interval.id
+        datetime: interval.datetime
+        visits: visits
+
+    history: intervals
     count: count
 
   _getSOD: ->

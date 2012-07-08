@@ -5,13 +5,7 @@ class BH.Collections.GroupedVisits extends Backbone.Collection
     visits = []
     @each (model) ->
       visits.push(model.toTemplate())
-
-    _.extend
-      domain: @at(0).domain()
-      url: @at(0).get('url')
-      isGrouped: true
-    , groupedVisits: visits
-
+    visits
 
   destroyAll: ->
     while(@length > 0)

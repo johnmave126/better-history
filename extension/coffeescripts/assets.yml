@@ -8,7 +8,6 @@
  - namespace
  - templates
  - lib/worker
- - lib/history_grouper
  - lib/history_query
  - lib/backbone_extensions
  - helpers/i18n_fetcher
@@ -38,6 +37,7 @@
  - models/prompt
  - models/state
  - models/search
+ - models/grouped_visit
  - collections/weeks
  - collections/days
  - collections/grouped_visits

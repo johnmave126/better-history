@@ -1,10 +1,8 @@
 @worker = (name, options, callback) ->
   if name == 'sanitizer'
-    path = 'javascripts/workers/visits_sanitizer.js'
-  else if name == 'time_grouper'
-    path = 'javascripts/workers/time_grouper.js'
-  else if name == 'domain_grouper'
-    path = 'javascripts/workers/domain_grouper.js'
+    path = 'javascripts/workers/sanitizer.js'
+  else if name == 'grouper'
+    path = 'javascripts/workers/grouper.js'
 
   worker = new Worker(path)
   worker.onmessage = (e) ->

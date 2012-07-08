@@ -27,4 +27,9 @@ class BH.Models.Search extends BH.Models.Base
         options.success(history)
 
   parse: (data) ->
-    history: new BH.Collections.Visits(data)
+    visits = new BH.Collections.Visits()
+
+    _.each data, (visit) ->
+      visits.add(new BH.Models.Visit(visit))
+
+    history: visits
