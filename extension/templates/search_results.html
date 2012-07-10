@@ -1,5 +1,5 @@
 {{#hasVisits}}
-  <ol class="visits highlightable">
+  <ol class="visits highlightable editable">
     {{#visits}}
       <li class="visit visit_view">
         <a href="{{url}}" data-id="{{id}}">
@@ -8,10 +8,8 @@
             <dd>{{{location}}}</dd>
             <dd>{{{time}}}</dd>
           </dl>
-          <div class="delete_layer">
-            <button class="delete_visit">{{i18n_prompt_delete_button}}</button>
-          </div>
         </a>
+        <a href="#" class="delete_visit delete" title="{{i18n_prompt_delete_button}}">{{i18n_prompt_delete_button}}</a>
       </li>
     {{/visits}}
   </ol>
