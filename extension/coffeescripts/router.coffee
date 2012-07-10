@@ -49,6 +49,7 @@ class BH.Router extends Backbone.Router
     view.select()
 
   search: (query) ->
+    @app.weekSelected()
     view = @app.views.search
     view.select()
     view.model.set({query: query})

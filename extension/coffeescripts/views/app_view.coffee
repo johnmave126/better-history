@@ -31,6 +31,7 @@ class BH.Views.AppView extends BH.Views.BaseView
     @$(ev.currentTarget).addClass(@cssClass.selected)
 
   weekSelected: (id) ->
+    @$('.menu > *').removeClass(@cssClass.selected)
     @$("[data-id=#{id}]").addClass(@cssClass.selected)
 
   _initWeekViews: ->
