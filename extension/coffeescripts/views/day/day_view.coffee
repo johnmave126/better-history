@@ -66,5 +66,6 @@ class BH.Views.DayView extends BH.Views.ViewWithSearch
       'expand_button',
       'delete_all_visits_for_filter_button',
       'no_visits_found',
-      'search_input_placeholder_text'
+      'search_input_placeholder_text',
+      'back_to_week_link'
     ]

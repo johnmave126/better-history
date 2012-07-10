@@ -846,5 +846,17 @@
   "google_plus_language": {
     "message": "ca",
     "description": "Google plus language abbreviation"
+  },
+
+  "back_to_week_link": {
+    "message": "$arrow$ Back to Week",
+    "description": "back to week link",
+    "placeholders": {
+      "arrow": {
+        "content": "&larr;",
+        "example": "an arrow"
+      }
+    }
   }
+
 }
