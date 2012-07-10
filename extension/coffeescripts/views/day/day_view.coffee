@@ -1,5 +1,5 @@
 class BH.Views.DayView extends BH.Views.ViewWithSearch
-  className: 'day_view'
+  className: 'day_view with_controls'
   template: BH.Templates['day']
 
   events:

@@ -1,5 +1,5 @@
 class BH.Views.WeekView extends BH.Views.ViewWithSearch
-  className: 'week_view'
+  className: 'week_view with_controls'
   template: BH.Templates['week']
 
   events:

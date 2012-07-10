@@ -1,5 +1,5 @@
 class BH.Views.SearchView extends BH.Views.ViewWithSearch
-  className: 'search_view'
+  className: 'search_view with_controls'
   template: BH.Templates['search']
 
   events:

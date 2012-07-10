@@ -4,11 +4,8 @@
       <li class="interval" data-id="{{id}}">
         <h3 class="title">
           {{time}}
-          <div class="delete_layer">
-            <button class="delete_interval" title="{{i18n_delete_time_interval_button_tooltip}}">{{i18n_delete_time_interval_button}}</button>
-          </div>
         </h3>
-        <ol class="visits highlightable">
+        <ol class="visits highlightable editable">
           {{#visits}}
             {{#isGrouped}}
               <li class="visit" data-id="{{id}}">
@@ -20,10 +17,8 @@
                       <button class="small hide_visits">{{i18n_collapse_button}}</button>
                     </dd>
                   </dl>
-                  <div class="delete_layer">
-                    <button class="delete_visit">{{i18n_prompt_delete_button}}</button>
-                  </div>
                 </a>
+                <a href="#" class="delete_visit delete" title="{{i18n_prompt_delete_button}}">{{i18n_prompt_delete_button}}</a>
                 <ol class="visits highlightable">
                   {{#groupedVisits}}
                     <li class="visit" data-id="{{id}}">
@@ -32,10 +27,8 @@
                           <dt>{{{title}}}</dt>
                           <dd>{{{location}}}</dd>
                         </dl>
-                        <div class="delete_layer">
-                          <button class="delete_visit">{{i18n_prompt_delete_button}}</button>
-                        </div>
                       </a>
+                      <a href="#" class="delete_visit delete" title="{{i18n_prompt_delete_button}}">{{i18n_prompt_delete_button}}</a>
                     </li>
                   {{/groupedVisits}}
                 </ol>
@@ -48,10 +41,8 @@
                     <dt>{{{title}}}</dt>
                     <dd>{{{location}}}</dd>
                   </dl>
-                  <div class="delete_layer">
-                    <button class="delete_visit">{{i18n_prompt_delete_button}}</button>
-                  </div>
                 </a>
+                <a href="#" class="delete_visit delete" title="{{i18n_prompt_delete_button}}">{{i18n_prompt_delete_button}}</a>
               </li>
             {{/notGrouped}}
           {{/visits}}

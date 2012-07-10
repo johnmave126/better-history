@@ -28,20 +28,6 @@ body {
   display: inline;
 }
 
-header {
-  position:fixed;
-  background: #FFF;
-  z-index: 3;
-  width: 738px;
-}
-.content {
-  padding-top: 100px;
-}
-.settings_view .content {
-  padding-top: 50px;
-}
-
-
 .week_view .days .title {
   margin:0 0 3px;
 }
@@ -95,7 +81,7 @@ header {
 
 .delete_layer {
   position:absolute;
-  __MSG_@@bidi_end_edge__:-100px;
+  __MSG_@@bidi_end_edge__:-9px;
   top:0;
   padding:10px;
   -webkit-transition: __MSG_@@bidi_end_edge__ 200ms, opacity 200ms;
