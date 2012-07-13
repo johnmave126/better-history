@@ -1,11 +1,3 @@
-_.extend Backbone.History.prototype,
-  loadUrl: _.wrap(Backbone.History.prototype.loadUrl, ->
-    argsCalledWith = Array.prototype.slice.call(arguments, 1)
-    router.trigger('route:before', argsCalledWith)
-    arguments[0].apply(this, argsCalledWith)
-    router.trigger('route:after', this.fragment)
-  )
-
 _.extend Backbone.Model.prototype,
   sync: _.wrap(Backbone.Model.prototype.sync, ->
     args = Array.prototype.slice.call(arguments, 1)

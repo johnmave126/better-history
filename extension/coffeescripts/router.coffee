@@ -26,11 +26,12 @@ class BH.Router extends Backbone.Router
       ])
     ).render()
     window.state = new BH.Models.State
-      route: new BH.Helpers.UrlBuilder().build('week', [@app.collection.at(0).id])
+          route: new BH.Helpers.UrlBuilder().build('week', [@app.collection.at(0).id])
+    window.state.fetch()
 
-    @bind 'route:after', (urlFragment) ->
-      if urlFragment.length != 0
-        state.set({'route': urlFragment})
+
+    @bind 'all', (route) ->
+      state.set({'route': location.hash})
 
   week: (id) ->
     @app.weekSelected(id)
