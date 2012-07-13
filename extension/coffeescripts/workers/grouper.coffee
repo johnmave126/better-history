@@ -1,6 +1,6 @@
 importScripts('../frameworks/underscore-min.js')
 
-class @TimeGrouper
+class @Grouper
   run: (visits, interval) ->
     intervals = @groupByTime(visits, interval)
     _(intervals).each (interval) =>
@@ -64,5 +64,5 @@ class @TimeGrouper
 
 
 self.addEventListener 'message', (e) ->
-  grouper = new TimeGrouper()
+  grouper = new Grouper()
   postMessage(grouper.run(e.data.visits, e.data.interval))

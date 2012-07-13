@@ -21,10 +21,10 @@ describe 'Grouper', ->
 
     visit4 = new BH.Models.Visit
       title: 'test again'
-      url: 'http://www.google.com/another_page'
+      url: 'https://www.google.com/another_page'
       lastVisitTime: new Date(2011, 5, 5, 3, 6, 5)
 
-  describe '#time', ->
+  describe '#run', ->
     it 'stores the time in 24 hours, the date to the nearest time interval, and the page visits', ->
       visits = new BH.Collections.Visits([visit1, visit2])
       timeVisits = grouper.run(visits.toJSON(), 15)
@@ -42,3 +42,8 @@ describe 'Grouper', ->
       visits = new BH.Collections.Visits([visit1, visit3])
       timeVisits = grouper.run(visits.toJSON(), 15)
       expect(timeVisits.length).toEqual(2)
+
+    it 'groups neighboring history items from the same domain', ->
+      visits = new BH.Collections.Visits([visit1, visit4])
+      pageVisits = grouper.run(visits.toJSON(), 15)
+      expect(pageVisits.length).toEqual(1)
