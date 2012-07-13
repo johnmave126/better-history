@@ -25,7 +25,14 @@ class BH.Views.SearchView extends BH.Views.ViewWithSearch
 
     @$('.search').focus()
     contentElement = @$el.children('.content')
-    @$('.number_of_results').text(chrome.i18n.getMessage('number_of_search_results', [@collection.length]))
+
+    if @collection.length == 100
+      key = 'max_number_of_search_results'
+    else
+      key = 'number_of_search_results'
+
+    @$('.number_of_results').text(chrome.i18n.getMessage(key, [@collection.length]))
+
 
     new BH.Views.SearchResultsView(
       model: @model

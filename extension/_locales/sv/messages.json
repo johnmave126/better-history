@@ -45,24 +45,6 @@
     "description": "The order of a full extended date"
   },
   "formal_date": {
-    "message": "$day$ $month$ $year$",
-    "description": "The order of a full date",
-    "placeholders": {
-      "month": {
-        "content": "$1",
-        "example": "March"
-      },
-      "day": {
-        "content": "$2",
-        "example": "25"
-      },
-      "year": {
-        "content": "$3",
-        "example": "2011"
-      }
-    }
-  },
-  "formal_date": {
     "message": "Do MMMM YYYY",
     "description": "The order of a full date"
   },
@@ -819,6 +801,16 @@
   },
   "number_of_search_results": {
     "message": "Hittade $number$ resultat",
+    "description": "number of search results found",
+    "placeholders": {
+      "number": {
+        "content": "$1",
+        "example": "10"
+      }
+    }
+  },
+  "max_number_of_search_results": {
+    "message": "Found more than $number$ results",
     "description": "number of search results found",
     "placeholders": {
       "number": {

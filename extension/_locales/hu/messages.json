@@ -809,6 +809,16 @@
       }
     }
   },
+  "max_number_of_search_results": {
+    "message": "Found more than $number$ results",
+    "description": "number of search results found",
+    "placeholders": {
+      "number": {
+        "content": "$1",
+        "example": "10"
+      }
+    }
+  },
 
   "search_in_history": {
     "message": "Keresés az előzményekben",
