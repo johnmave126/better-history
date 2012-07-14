@@ -31,6 +31,7 @@ class BH.Router extends Backbone.Router
 
 
     @bind 'all', (route) ->
+      $(document).scrollTop(0)
       state.set({'route': location.hash})
 
   week: (id) ->

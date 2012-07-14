@@ -15,11 +15,17 @@ class BH.Models.Visit extends BH.Models.Base
   toTemplate: ->
     _.extend
       notGrouped: true
+      host: @domain()
+      path: @path()
+
     , @toJSON()
 
   domain: ->
     match = @_getDomain @get('url')
     if match == null then null else match[0]
+
+  path: () ->
+    @get('url').replace(@_getDomain(@get('url'))[0], '')
 
   _getDomain: (url) ->
     url.match(/\w+:\/\/(.*?)\//)

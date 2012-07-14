@@ -18,14 +18,16 @@
                     </dd>
                   </dl>
                 </a>
-                <a href="#" class="delete_visit delete" title="{{i18n_prompt_delete_button}}">{{i18n_prompt_delete_button}}</a>
+                <a href="#" class="delete_grouped_visit delete" title="{{i18n_prompt_delete_button}}">{{i18n_prompt_delete_button}}</a>
                 <ol class="visits highlightable">
                   {{#groupedVisits}}
                     <li class="visit" data-id="{{id}}">
                       <a href="{{url}}">
                         <dl class="description" style="background-image: url(chrome://favicon/{{url}})">
                           <dt>{{{title}}}</dt>
-                          <dd>{{{location}}}</dd>
+                          <dd class="location">
+                            <span class="fake_link search_domain" href="#search/{{host}}">{{host}}</span>{{path}}
+                          </dd>
                         </dl>
                       </a>
                       <a href="#" class="delete_visit delete" title="{{i18n_prompt_delete_button}}">{{i18n_prompt_delete_button}}</a>
@@ -39,7 +41,9 @@
                 <a href="{{url}}">
                   <dl class="description" style="background-image: url(chrome://favicon/{{url}})">
                     <dt>{{{title}}}</dt>
-                    <dd>{{{location}}}</dd>
+                    <dd class="location">
+                      <span class="fake_link search_domain" href="#search/{{host}}">{{host}}</span>{{path}}
+                    </dd>
                   </dl>
                 </a>
                 <a href="#" class="delete_visit delete" title="{{i18n_prompt_delete_button}}">{{i18n_prompt_delete_button}}</a>

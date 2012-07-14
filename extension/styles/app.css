@@ -68,10 +68,29 @@ body {
   height: 100%;
 }
 
+.visit {
+  padding-top:4px;
+}
 .visit .description {
   background-repeat:no-repeat;
   background-position:__MSG_@@bidi_start_edge__ 0;
   padding:0 25px;
+}
+.visit .location a {
+  display: inline;
+  color: #999;
+  padding-right: 0;
+}
+.visit .location > .search_domain {
+  background: #EEE;
+  color: #888;
+  padding: 1px 2px;
+  border-radius: 3px;
+  margin-right: 2px;
+  display: inline-block;
+}
+.visit .location > .search_domain:hover {
+  color: #15C;
 }
 .visit:hover > a > .link > .delete_layer {
   -webkit-transition-delay: 100ms;

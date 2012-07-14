@@ -3,12 +3,19 @@ class BH.Views.DayResultsView extends BH.Views.BaseView
 
   events:
     'click .delete_visit': 'deleteVisitClicked'
+    'click .delete_grouped_visit': 'deleteGroupedVisitClicked'
     'click .delete_interval': 'deleteIntervalClicked'
     'click .show_visits': 'toggleGroupedVisitsClicked'
     'click .hide_visits': 'toggleGroupedVisitsClicked'
+    'click .visit > a': 'visitClicked'
 
   render: ->
     @$el.html(@renderTemplate(_.extend(@getI18nValues(), @model.toTemplate(), @collection.toTemplate())))
+
+  visitClicked: (ev) ->
+    if $(ev.target).hasClass('search_domain')
+      ev.preventDefault()
+      router.navigate($(ev.target).attr('href'), trigger: true)
 
   deleteIntervalClicked: (ev) ->
     ev.preventDefault()
@@ -19,6 +26,14 @@ class BH.Views.DayResultsView extends BH.Views.BaseView
 
   deleteVisitClicked: (ev) ->
     ev.preventDefault()
+    element = @_getTopElement(ev.currentTarget)
+    @collection.findVisitById($(element).data('id')).destroy
+      success: =>
+        @removeElement(element)
+
+  deleteGroupedVisitClicked: (ev) ->
+    ev.preventDefault()
+
     element = @_getTopElement(ev.currentTarget)
     @collection.findVisitById($(element).data('id')).destroy
       success: =>
