@@ -140,3 +140,28 @@ body {
 .credits_view .page {
   overflow: hidden;
 }
+
+.credits_view .translators {
+  width: 300px;
+  display: inline-block;
+  vertical-align: top;
+  margin-top: 0;
+}
+.credits_view .translators li {
+  padding:3px 0;
+}
+.credits_view .translators:first-child {
+  margin-right: 40px;
+}
+.credits_view .translators .language {
+  display: inline-block;
+  text-align: right;
+  float:right;
+}
+.credits_view .content-area h3 {
+  margin-top: 30px;
+}
+.credits_view .open_source li {
+  display: inline;
+  margin-right: 10px;
+}
