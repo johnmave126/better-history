@@ -17,7 +17,6 @@ class BH.Views.VersionView extends BH.Views.Modal
     ev.preventDefault()
     @model.setSuppress(true)
     @close()
-    BH.router.navigate('#settings')
 
   openClicked: (ev) ->
     ev.preventDefault()

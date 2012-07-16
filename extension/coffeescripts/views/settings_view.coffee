@@ -82,7 +82,7 @@ class BH.Views.SettingsView extends BH.Views.BaseView
 
   clickedReleaseAnnouncement: (ev) ->
     ev.preventDefault()
-    versionView = new VersionView({model: app.model})
+    versionView = new BH.Views.VersionView({model: version})
     $('body').append(versionView.render().el)
     versionView.open()
 
