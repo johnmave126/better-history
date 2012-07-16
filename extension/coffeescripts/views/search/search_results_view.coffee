@@ -30,14 +30,14 @@ class BH.Views.SearchResultsView extends BH.Views.BaseView
 
   deleteClicked: (ev) ->
     ev.preventDefault()
-    model = @_getModelFromElement($(ev.currentTarget))
+    model = @_getModelFromElement($(ev.target))
     model.destroy
       success: =>
         @_getElementFromModel(model).slideUp 'fast', ->
           $(@).remove()
 
   _getModelFromElement: (element) ->
-    @collection.get($(element).parents('a').data().id)
+    @collection.get($(element).prev().data('id'))
 
   _getElementFromModel: (model) ->
     $("[data-id=#{model.id}]").parents('li')
