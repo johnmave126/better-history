@@ -867,5 +867,10 @@
         "example": "an arrow"
       }
     }
+  },
+
+  "search_by_domain": {
+    "message": "More from site",
+    "description": "search by domain of visit"
   }
 }

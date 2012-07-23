@@ -61,4 +61,5 @@ class BH.Views.DayResultsView extends BH.Views.BaseView
       'no_visits_found'
       'expand_button'
       'collapse_button'
+      'search_by_domain'
     ])

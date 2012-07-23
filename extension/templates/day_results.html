@@ -25,11 +25,10 @@
                       <a href="{{url}}">
                         <dl class="description" style="background-image: url(chrome://favicon/{{url}})">
                           <dt>{{{title}}}</dt>
-                          <dd class="location">
-                            <span class="fake_link search_domain" href="#search/{{host}}">{{host}}</span>{{path}}
-                          </dd>
+                          <dd class="location">{{host}}{{path}}</dd>
                         </dl>
                       </a>
+                      <a class="search_domain action" href="#search/{{host}}">{{i18n_search_by_domain}}</a>
                       <a href="#" class="delete_visit delete" title="{{i18n_prompt_delete_button}}">{{i18n_prompt_delete_button}}</a>
                     </li>
                   {{/groupedVisits}}
@@ -41,11 +40,10 @@
                 <a href="{{url}}">
                   <dl class="description" style="background-image: url(chrome://favicon/{{url}})">
                     <dt>{{{title}}}</dt>
-                    <dd class="location">
-                      <span class="fake_link search_domain" href="#search/{{host}}">{{host}}</span>{{path}}
-                    </dd>
+                    <dd class="location">{{host}}{{path}}</dd>
                   </dl>
                 </a>
+                <a class="search_domain action" href="#search/{{host}}">{{i18n_search_by_domain}}</a>
                 <a href="#" class="delete_visit delete" title="{{i18n_prompt_delete_button}}">{{i18n_prompt_delete_button}}</a>
               </li>
             {{/notGrouped}}
