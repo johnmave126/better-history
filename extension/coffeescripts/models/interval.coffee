@@ -9,7 +9,7 @@ class BH.Models.Interval extends BH.Models.Base
       time: @formatTime(@get('datetime'), settings.timeFormat())
       id: @id
 
-    , @get('visits').toTemplate(grouped: true)
+    , @get('visits').toTemplate()
 
 
   formatTime: (date, format) ->
@@ -34,3 +34,13 @@ class BH.Models.Interval extends BH.Models.Base
     if format == 12
       @chromeAPI.i18n.getMessage('twelve_hour_time_format', [time, period(date.getHours())])
     time
+
+  findVisitById: (id) ->
+    foundVisit = @get('visits').get(id)
+    return foundVisit if foundVisit?
+
+    @get('visits').find (visit) =>
+      if visit.get('visits')?
+        foundVisit = visit.get('visits').get(id)
+        return true if foundVisit?
+    return foundVisit

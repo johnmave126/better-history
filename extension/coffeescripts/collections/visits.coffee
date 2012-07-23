@@ -4,7 +4,7 @@ class BH.Collections.Visits extends Backbone.Collection
       @at(0).destroy() if @at(0)
     options.success() if options?
 
-  toTemplate: (options) ->
+  toTemplate: ->
     visits = []
     @each (model) ->
       visits.push(model.toTemplate())

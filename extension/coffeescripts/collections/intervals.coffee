@@ -19,8 +19,3 @@ class BH.Collections.Intervals extends Backbone.Collection
 
   hasIntervals: ->
     !@noIntervals()
-
-  findVisitById: (id) ->
-    interval = _.find @models, (model) ->
-      model.get('visits').get(id)
-    interval.get('visits').get(id)

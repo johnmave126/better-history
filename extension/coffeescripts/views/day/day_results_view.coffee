@@ -27,17 +27,19 @@ class BH.Views.DayResultsView extends BH.Views.BaseView
   deleteVisitClicked: (ev) ->
     ev.preventDefault()
     element = @_getTopElement(ev.currentTarget)
-    @collection.findVisitById($(element).data('id')).destroy
+    intervalId = $(ev.currentTarget).parents('.interval').data('id')
+    interval = @collection.get(intervalId)
+    interval.findVisitById($(element).data('id')).destroy
       success: =>
         @removeElement(element)
 
   deleteGroupedVisitClicked: (ev) ->
     ev.preventDefault()
 
-    element = @_getTopElement(ev.currentTarget)
-    @collection.findVisitById($(element).data('id')).destroy
-      success: =>
-        @removeElement(element)
+    $(ev.currentTarget).siblings('.visits').children().each (i, visit) ->
+      $(visit).find('.delete').click()
+
+    @removeElement($(ev.currentTarget).parents('.visit'))
 
   toggleGroupedVisitsClicked: (ev) ->
     ev.preventDefault()
