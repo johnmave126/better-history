@@ -39,33 +39,35 @@ body {
   position: relative;
   background-color:#EEE;
   border-radius: 5px;
-  padding: 10px;
+  height: 50px;
 }
 .week_view .day.future {
   opacity: 0.6;
 }
 .week_view .day:hover .bar {
-  background-color:#888;
+  background-color:#CCC;
 }
 .week_view .day_view .page {
   width: 766px;
 }
 .week_view .bar {
-  background: #CCC;
+  background: #DDD;
   height: 100%;
   min-width:1%;
   position: absolute;
-  right: 0;
+  left: 0;
   -webkit-transition:width 0.2s;
   border-radius: 5px;
 }
 .week_view .bar_container {
-  float: right;
-  width: 500px;
-  position: absolute;
-  top: 0;
-  right: 0;
+  width: 100%;
   height: 100%;
+}
+.week_view .label {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  z-index: 10;
 }
 
 .visit {

@@ -195,9 +195,12 @@ ul.menu li a {
 .highlightable li {
   position: relative;
 }
-.highlightable li:hover > a {
+.highlightable li:hover > a:not(.action) {
   background-color: #F0F6FE;
   color: #555;
+}
+.highlightable li:hover > .action {
+  opacity: 0.7;
 }
 .highlightable li .visit a {
   position: relative;
@@ -224,6 +227,27 @@ ul.menu li a {
   white-space: nowrap;
   font-size: 11px;
 }
+.highlightable li .action {
+  -webkit-appearance: none;
+  -webkit-transition: opacity 150ms;
+  background: #8AAAED;
+  border: none;
+  border-radius: 2px;
+  color: white;
+  font-weight: bold;
+  opacity: 0;
+  margin-top: 0;
+  font-size: 10px;
+  padding: 1px 6px;
+  position: absolute;
+  top: 11px;
+  right: 35px;
+  -webkit-transition: 150ms opacity;
+  cursor: pointer;
+}
+.highlightable li .action:hover {
+  opacity: 1;
+}
 .highlightable li .highlightable {
   margin-left: 30px;
 }
@@ -238,7 +262,7 @@ ul.menu li a {
   background-color: transparent;
   text-indent: -5000px;
   position: absolute;
-  top: 11px;
+  top: 8px;
   right: 0px;
 }
 .highlightable.editable .delete:hover {

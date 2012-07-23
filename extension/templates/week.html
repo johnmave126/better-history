@@ -14,8 +14,10 @@
     {{#days}}
       <li class="day {{#inFuture}}future{{/inFuture}}" data-id="{{id}}">
         <a href="{{url}}">
-          <h3 class="title">{{title}}</h3>
-          <div class="count"><span class="number_of_visits"></span> visits</div>
+          <div class="label">
+            <h3 class="title">{{title}}</h3>
+            <div class="count"><span class="number_of_visits"></span> visits</div>
+          </div>
           <div class="bar_container"><div class="bar"></div></div>
         </a>
       </li>
