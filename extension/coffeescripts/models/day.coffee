@@ -23,6 +23,7 @@ class BH.Models.Day extends BH.Models.Base
         workerOptions =
           visits: history
           interval: settings.timeGrouping()
+          domainGrouping: settings.get('domainGrouping')
         worker 'grouper', workerOptions, (visits) ->
           options.success(visits)
 

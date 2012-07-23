@@ -11,12 +11,12 @@ describe 'Grouper', ->
 
     visit2 = new BH.Models.Visit
       title: 'another test'
-      url: 'yahoo.com'
+      url: 'http://yahoo.com'
       lastVisitTime: new Date(2011, 5, 5, 3, 6, 5)
 
     visit3 = new BH.Models.Visit
       title: 'test again'
-      url: 'aol.com'
+      url: 'http://aol.com'
       lastVisitTime: new Date(2011, 5, 5, 5, 6, 5)
 
     visit4 = new BH.Models.Visit
@@ -27,23 +27,28 @@ describe 'Grouper', ->
   describe '#run', ->
     it 'stores the time in 24 hours, the date to the nearest time interval, and the page visits', ->
       visits = new BH.Collections.Visits([visit1, visit2])
-      timeVisits = grouper.run(visits.toJSON(), 15)
-      expect(timeVisits[0]).toEqual
+      pageVisits = grouper.run(visits.toJSON(), {interval: 15, grouping: true})
+      expect(pageVisits[0]).toEqual
         datetime: new Date(2011, 5, 5, 3, 0, 0)
         id: '3:00'
         visits: visits.toJSON()
 
     it 'groups history items by 15 minute increments when passed 15', ->
       visits = new BH.Collections.Visits([visit1, visit2])
-      timeVisits = grouper.run(visits.toJSON(), 15)
-      expect(timeVisits.length).toEqual(1)
+      pageVisits = grouper.run(visits.toJSON(), {interval: 15, domainGrouping: true})
+      expect(pageVisits.length).toEqual(1)
 
     it 'separates history items that are more than 15 minutes apart when passed 15', ->
       visits = new BH.Collections.Visits([visit1, visit3])
-      timeVisits = grouper.run(visits.toJSON(), 15)
-      expect(timeVisits.length).toEqual(2)
+      pageVisits = grouper.run(visits.toJSON(), {interval: 15, domainGrouping: true})
+      expect(pageVisits.length).toEqual(2)
 
-    it 'groups neighboring history items from the same domain', ->
+    it 'groups neighboring history items from the same domain (ignoring protocol) when grouping is true', ->
       visits = new BH.Collections.Visits([visit1, visit4])
-      pageVisits = grouper.run(visits.toJSON(), 15)
-      expect(pageVisits.length).toEqual(1)
+      pageVisits = grouper.run(visits.toJSON(), {interval: 15, domainGrouping: true})
+      expect(pageVisits[0].visits.length).toEqual(1)
+
+    it 'does not group neighboring history items from the same domain when grouping is false', ->
+      visits = new BH.Collections.Visits([visit1, visit4])
+      pageVisits = grouper.run(visits.toJSON(), {interval: 15, domainGrouping: false})
+      expect(pageVisits[0].visits.length).toEqual(2)

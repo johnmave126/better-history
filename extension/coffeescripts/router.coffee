@@ -8,6 +8,8 @@ class BH.Router extends Backbone.Router
   initialize: ->
     # yuck
     window.settings = new BH.Models.Settings()
+    window.settings.fetch()
+
     window.version = new BH.Models.Version({version: '1.6.0'})
     window.appView = @app = new BH.Views.AppView(
       el: $('.app')

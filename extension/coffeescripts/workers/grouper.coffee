@@ -1,10 +1,11 @@
 importScripts('../frameworks/underscore-min.js')
 
 class @Grouper
-  run: (visits, interval) ->
-    intervals = @groupByTime(visits, interval)
-    _(intervals).each (interval) =>
-      interval.visits = @groupByDomain(interval.visits)
+  run: (visits, options) ->
+    intervals = @groupByTime(visits, options.interval)
+    if options.domainGrouping
+      _(intervals).each (interval) =>
+        interval.visits = @groupByDomain(interval.visits)
     intervals
 
   groupByDomain: (visits) ->
@@ -34,7 +35,7 @@ class @Grouper
       false
 
   _domain: (visit) ->
-    match = visit.url.match(/\w+:\/\/(.*?)\//)
+    match = visit.url.match(/\/\/(.*?)\//)
     if match == null then null else match[0]
 
   groupByTime: (visits, interval) ->
@@ -65,4 +66,7 @@ class @Grouper
 
 self.addEventListener 'message', (e) ->
   grouper = new Grouper()
-  postMessage(grouper.run(e.data.visits, e.data.interval))
+  postMessage grouper.run(e.data.visits,
+    interval: e.data.interval
+    domainGrouping: e.data.domainGrouping
+  )
