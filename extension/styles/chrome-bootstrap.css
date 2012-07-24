@@ -194,6 +194,7 @@ ul.menu li a {
 ============================================== */
 .highlightable li {
   position: relative;
+  padding: 2px 0;
 }
 .highlightable li:hover > a:not(.action) {
   background-color: #F0F6FE;
@@ -205,7 +206,6 @@ ul.menu li a {
 .highlightable li a {
   padding: 5px;
   display: block;
-  margin: 2px 0;
   position: relative;
   z-index: 0;
 }
@@ -217,7 +217,7 @@ ul.menu li a {
   color: #999;
   overflow: hidden;
   white-space: nowrap;
-  font-size: 11px;
+  font-size: 10px;
 }
 .highlightable li .action {
   -webkit-appearance: none;
@@ -232,7 +232,7 @@ ul.menu li a {
   font-size: 10px;
   padding: 1px 6px;
   position: absolute;
-  top: 11px;
+  top: 8px;
   right: 35px;
   -webkit-transition: 150ms opacity;
   cursor: pointer;
@@ -254,7 +254,7 @@ ul.menu li a {
   background-color: transparent;
   text-indent: -5000px;
   position: absolute;
-  top: 8px;
+  top: 7px;
   right: 0px;
 }
 .highlightable.editable .delete:hover {

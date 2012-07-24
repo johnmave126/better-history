@@ -70,9 +70,6 @@ body {
   z-index: 10;
 }
 
-.visit {
-  padding-top:2px;
-}
 .visit .description {
   background-repeat:no-repeat;
   background-position:__MSG_@@bidi_start_edge__ 0;
