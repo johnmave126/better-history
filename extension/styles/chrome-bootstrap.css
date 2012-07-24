@@ -211,13 +211,14 @@ ul.menu li a {
 }
 .highlightable li dt {
   font-size: 105%;
-  padding-bottom: 3px;
+  margin-bottom: 3px;
 }
 .highlightable li dd {
   color: #999;
   overflow: hidden;
   white-space: nowrap;
   font-size: 10px;
+  margin-top: 3px;
 }
 .highlightable li .action {
   -webkit-appearance: none;
@@ -233,7 +234,7 @@ ul.menu li a {
   padding: 1px 6px;
   position: absolute;
   top: 8px;
-  right: 35px;
+  right: 32px;
   -webkit-transition: 150ms opacity;
   cursor: pointer;
 }
@@ -248,14 +249,14 @@ ul.menu li a {
   background-repeat: no-repeat;
   display: block;
   opacity: 0;
-  height: 16px;
+  height: 6px;
   width: 16px;
   -webkit-transition: 150ms opacity;
   background-color: transparent;
   text-indent: -5000px;
   position: absolute;
   top: 7px;
-  right: 0px;
+  right: -6px;
 }
 .highlightable.editable .delete:hover {
   background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAQAAAC1+jfqAAAAqklEQVR4XqWRMQ6DMAxF/1Fyilyj2SmIBUG5QcTCyJA5Z8jGhlBPgRi4TmoDraVmKFJlWYrlp/g5QfwRlwEVNWVa4WzfH9jK6kCkEkBjwxOhLghheMWMELUAqqwQ4OCbnE4LJnhr5IYdqQt4DJQjhe9u4vBBmnxHHNzRFkDGjHDo0VuTAqy2vAG4NkvXXDHxbGsIGlj3e835VFNtdugma/Jk0eXq0lP//5svi4PtO01oFfYAAAAASUVORK5CYII=");

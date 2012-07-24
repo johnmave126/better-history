@@ -73,7 +73,7 @@ body {
 .visit .description {
   background-repeat:no-repeat;
   background-position:__MSG_@@bidi_start_edge__ 0;
-  padding:0 25px;
+  padding:0 0 0 25px;
 }
 .visit dl dt {
   font-size: 100%
