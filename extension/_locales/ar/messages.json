@@ -863,10 +863,14 @@
     "description": "back to week link",
     "placeholders": {
       "arrow": {
-        "content": "&larr;",
+        "content": "$1",
         "example": "an arrow"
       }
     }
+  },
+  "back_arrow": {
+    "message": "&rarr;",
+    "description": "ascii arrow"
   },
 
   "search_by_domain": {

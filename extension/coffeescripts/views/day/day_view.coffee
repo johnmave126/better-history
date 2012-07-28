@@ -61,11 +61,14 @@ class BH.Views.DayView extends BH.Views.ViewWithSearch
     @$('.content').html('')
 
   getI18nValues: ->
-    @i18nFetcher.get [
+    properties = @i18nFetcher.get [
       'collapse_button',
       'expand_button',
       'delete_all_visits_for_filter_button',
       'no_visits_found',
       'search_input_placeholder_text',
-      'back_to_week_link'
     ]
+    properties[@i18nFetcher.scopeKey('back_to_week_link')] = chrome.i18n.getMessage('back_to_week_link', [
+      chrome.i18n.getMessage('back_arrow')
+    ])
+    properties
