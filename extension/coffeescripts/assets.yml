@@ -4,6 +4,7 @@
  - frameworks/mustache
  - frameworks/spin.min
  - frameworks/moment
+ - frameworks/moment_i18n
  - namespace
  - templates
  - lib/worker
