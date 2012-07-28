@@ -745,11 +745,11 @@
   },
 
   "version_title": {
-    "message": "A brand new look with the most requested features!",
+    "message": "A Major Milestone: Visits organized by week!",
     "description": "Title of the version modal"
   },
   "version_description": {
-    "message": "",
+    "message": "View more of your past views. Jump from a 2 week look at your browsing history to a <strong>10 week</strong> look. This is a big improvement and I hope you like it!",
     "description": "Version description"
   },
   "version_important_note": {
@@ -765,7 +765,7 @@
     "description": "Heading for what's new in version"
   },
   "version_items": {
-    "message": "$open$Brand new interface to match Chrome's future design$close$ $open$Delete all search results$close$ $open$New organization of side navigation$close$ $open$Delete all visits from a time grouping$close$ $open$Big speed improvements$close$",
+    "message": "$open$Visits organized into week intervals$close$ $open$Easily view the last 10 weeks of visits$close$ $open$Week summary of browsing activity$close$ $open$Speedy startup time$close$ $open$Optimized searching and grouping of visits$close$ $open$Easily search by a past visit's domain$close$",
     "description": "Release bulletpoints",
     "placeholders": {
       "open": {
