@@ -98,8 +98,6 @@
 }
 .credits_view .translators .language {
   display: inline-block;
-  text-align: right;
-  float:right;
 }
 .credits_view .content-area h3 {
   margin-top: 30px;
@@ -134,7 +132,7 @@ header .corner {
 }
 .highlightable.editable .delete {
   __MSG_@@bidi_start_edge__: auto;
-  __MSG_@@bidi_end_edge__: 6px;
+  __MSG_@@bidi_end_edge__: 5px;
 }
 .view .description {
   background-position:__MSG_@@bidi_start_edge__ 0;
@@ -146,4 +144,8 @@ header .corner {
 .version_view .logo,
 .credits_view .logo {
   __MSG_@@bidi_end_edge__: -50px;
+}
+.credits_view .translators .language {
+  text-align: __MSG_@@bidi_end_edge__;
+  float: __MSG_@@bidi_end_edge__;
 }
