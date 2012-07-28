@@ -164,3 +164,13 @@ body {
   display: inline;
   margin-right: 10px;
 }
+.version_view .logo,
+.credits_view .logo {
+  position: absolute;
+  opacity: 0.4;
+  top: -50px;
+  right: -50px;
+}
+.version_view li {
+  padding: 5px 0;
+}
