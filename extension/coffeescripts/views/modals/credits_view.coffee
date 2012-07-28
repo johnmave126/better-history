@@ -15,7 +15,6 @@ class BH.Views.CreditsView extends BH.Views.Modal
   closeClicked: (ev) ->
     ev.preventDefault()
     @close()
-    BH.router.navigate('#settings')
 
   openClicked: (ev) ->
     ev.preventDefault()
