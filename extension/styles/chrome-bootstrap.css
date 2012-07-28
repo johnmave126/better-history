@@ -56,9 +56,9 @@ h3 {
 ============================================== */
 .frame .navigation {
   height: 100%;
-  left: 0;
+  -webkit-margin-start: 0;
   position: fixed;
-  right: 15px;
+  -webkit-margin-end: 15px;
   width: 155px;
   z-index: 3;
 }
@@ -242,7 +242,7 @@ ul.menu li a {
   opacity: 1;
 }
 .highlightable li .highlightable {
-  margin-left: 30px;
+  -webkit-margin-start: 30px;
 }
 .highlightable.editable .delete {
   background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAQAAAC1+jfqAAAAiElEQVR42r2RsQrDMAxEBRdl8SDcX8lQPGg1GBI6lvz/h7QyRRXV0qUULwfvwZ1tenw5PxToRPWMC52eA9+WDnlh3HFQ/xBQl86NFYJqeGflkiogrOvVlIFhqURFVho3x1moGAa3deMs+LS30CAhBN5nNxeT5hbJ1zwmji2k+aF6NENIPf/hs54f0sZFUVAMigAAAABJRU5ErkJggg==");
@@ -462,6 +462,7 @@ select:active:enabled {
   min-width: 400px;
   padding: 0;
   position: relative;
+  overflow: hidden;
 }
 .overlay .page h1 {
   -webkit-padding-end: 24px;
@@ -471,6 +472,9 @@ select:active:enabled {
   margin: 0;
   padding: 14px 17px 14px;
   text-shadow: white 0 1px 2px;
+}
+.overlay .page ul li {
+  padding: 5px 0;
 }
 .overlay .page .content-area {
   -webkit-box-flex: 1;
