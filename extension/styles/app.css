@@ -86,10 +86,6 @@
 .version_view .page {
   width:500px;
 }
-.prompt_view .spinner {
-  top: 74px;
-  position:absolute;
-}
 
 .credits_view .translators {
   width: 300px;
@@ -124,19 +120,22 @@
 }
 .prompt_view.loading .spinner {
   opacity: 1;
+  display: block;
 }
 .prompt_view .spinner {
+  position: absolute;
+  bottom: 15px;
+  right: 15px;
   opacity: 0;
+  display: none;
 }
 
 .prompt_view button {
-  -webkit-transition: opacity .2s ease-in-out;
+  -webkit-transition: opacity .2s ease-in;
 }
 .prompt_view .spinner {
-  -webkit-transition: opacity .2s ease-in-out .2s;
+  -webkit-transition: opacity .2s ease-in .2s;
 }
-
-
 
 body {
   direction: __MSG_@@bidi_dir__;
@@ -162,9 +161,6 @@ header .corner {
 .view .description {
   background-position:__MSG_@@bidi_start_edge__ 0;
   padding-__MSG_@@bidi_start_edge__: 25px;
-}
-.prompt_view .spinner {
-  __MSG_@@bidi_start_edge__: 349px;
 }
 .version_view .logo,
 .credits_view .logo {

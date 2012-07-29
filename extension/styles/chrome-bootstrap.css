@@ -439,7 +439,7 @@ select:active:enabled {
   -webkit-box-align: center;
   -webkit-box-orient: vertical;
   -webkit-box-pack: center;
-  -webkit-transition: 200ms opacity;
+  -webkit-transition: opacity .2s;
   background-color: rgba(255, 255, 255, 0.75);
   bottom: 0;
   display: -webkit-box;
@@ -450,6 +450,13 @@ select:active:enabled {
   right: 0;
   top: 0;
   z-index: 5;
+  opacity: 1;
+}
+.overlay.transparent {
+  opacity: 0;
+}
+.overlay.transparent .page {
+  -webkit-transform: scale(0.99) translatey(-20px);
 }
 .overlay .page {
   -webkit-border-radius: 3px;

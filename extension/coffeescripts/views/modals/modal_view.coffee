@@ -17,13 +17,19 @@ class BH.Views.Modal extends BH.Views.BaseView
     $('body').append(@render().el)
     @_globalBinds()
     $(window).trigger('resize')
+    setTimeout( ->
+      @$('.overlay').removeClass('transparent')
+    , 0)
 
   pulse: ->
     @$('.page').addClass('pulse')
 
   close: ->
     @trigger('close')
-    @remove()
+    @$('.overlay').addClass('transparent')
+    setTimeout( =>
+      @remove()
+    , 1000)
     @_globalUnbinds()
 
   _globalBinds: ->
