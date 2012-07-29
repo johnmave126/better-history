@@ -55,7 +55,7 @@ class BH.Models.Settings extends BH.Models.Base
     @set(JSON.parse(data))
 
   _timeGroupingSelectedCheck: (value) ->
-    if value == @get('timeGrouping') then true else false
+    if parseInt(value, 10) == @timeGrouping() then true else false
 
   _timeFormatSelectedCheck: (value) ->
-    if value == @get('timeFormat') then true else false
+    if parseInt(value, 10) == @timeFormat() then true else false
