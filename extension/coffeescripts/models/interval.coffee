@@ -32,7 +32,7 @@ class BH.Models.Interval extends BH.Models.Base
     hours = convertTo12Hour(hours) if format == 12
     time = hours + ':' + minute(date.getMinutes())
     if format == 12
-      @chromeAPI.i18n.getMessage('twelve_hour_time_format', [time, period(date.getHours())])
+      time = @chromeAPI.i18n.getMessage('twelve_hour_time_format', [time, period(date.getHours())])
     time
 
   findVisitById: (id) ->
