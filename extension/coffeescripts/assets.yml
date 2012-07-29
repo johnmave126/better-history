@@ -1,8 +1,7 @@
- - frameworks/jquery-1.7.1.min
  - frameworks/underscore-min
+ - frameworks/zepto.min
  - frameworks/backbone-min
  - frameworks/mustache
- - frameworks/spin.min
  - frameworks/moment
  - frameworks/moment_i18n
  - namespace

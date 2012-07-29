@@ -23,9 +23,7 @@ class BH.Views.PromptView extends BH.Views.Modal
     @model.set({action: true})
 
   spin: ->
-    @$('button').animate {opacity: 0}, 'fast', =>
-      @$('.spinner').spin()
-      @$('.close-button').fadeOut()
+    @$el.addClass('loading')
 
   getI18nValues: ->
     @i18nFetcher.get([

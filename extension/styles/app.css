@@ -1,5 +1,12 @@
-.visit .visits {
-  display: none;
+.visit.expanded .visits {
+  max-height: 5000px;
+  height: auto;
+}
+.visits .visits {
+  height: 0;
+  max-height: 0;
+  overflow: hidden;
+  -webkit-transition: all .25s ease-in-out;
 }
 .visit.expanded .hide_visits {
   display: block;
@@ -112,6 +119,24 @@
   opacity: 0.4;
   top: -50px;
 }
+.prompt_view.loading button {
+  opacity: 0;
+}
+.prompt_view.loading .spinner {
+  opacity: 1;
+}
+.prompt_view .spinner {
+  opacity: 0;
+}
+
+.prompt_view button {
+  -webkit-transition: opacity .2s ease-in-out;
+}
+.prompt_view .spinner {
+  -webkit-transition: opacity .2s ease-in-out .2s;
+}
+
+
 
 body {
   direction: __MSG_@@bidi_dir__;

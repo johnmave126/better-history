@@ -45,7 +45,6 @@ class BH.Views.DayResultsView extends BH.Views.BaseView
     ev.preventDefault()
     $(ev.currentTarget).parents('.visit')
       .toggleClass('expanded')
-      .find('.visits').slideToggle('fast')
 
   removeElement: (element)->
     element.slideUp 'fast', ->

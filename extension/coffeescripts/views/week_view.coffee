@@ -59,7 +59,7 @@ class BH.Views.WeekView extends BH.Views.ViewWithSearch
       @promptView.close()
 
   _getDayElement: (id) ->
-    @$("[data-id=#{id}]")
+    @$("[data-day-id='#{id}']")
 
   getI18nValues: ->
     @i18nFetcher.get([

@@ -40,8 +40,10 @@ class BH.Views.SearchView extends BH.Views.ViewWithSearch
       el: contentElement
     ).render()
 
-    disabled = if @collection.length == 0 then 'disabled' else null
-    @$('.delete_all').attr('disabled', disabled)
+    if @collection.length == 0
+      @$('.delete_all').attr('disabled', 'disabled')
+    else
+      @$('.delete_all').removeAttr('disabled')
 
     @tabIndex($(contentElement).find('a'))
 

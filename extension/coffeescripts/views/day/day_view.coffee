@@ -29,7 +29,7 @@ class BH.Views.DayView extends BH.Views.ViewWithSearch
       @$('button').attr('disabled', 'disabled')
     else
       @tabIndex($('.content a', @el))
-      @$('button').attr('disabled', null)
+      @$('button').removeAttr('disabled')
 
   updateUrl: ->
     router.navigate(BH.Lib.Url.week(@options.weekModel.id))

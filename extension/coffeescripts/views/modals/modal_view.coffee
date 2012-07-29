@@ -16,18 +16,15 @@ class BH.Views.Modal extends BH.Views.BaseView
   open: ->
     $('body').append(@render().el)
     @_globalBinds()
-    @$('.overlay').fadeIn 'fast', ->
-      $(@).children().fadeIn 'fast', ->
-        $(window).trigger('resize')
+    $(window).trigger('resize')
 
   pulse: ->
     @$('.page').addClass('pulse')
 
   close: ->
     @trigger('close')
-    @$('.overlay').fadeOut 'fast', =>
-      @remove()
-      @_globalUnbinds()
+    @remove()
+    @_globalUnbinds()
 
   _globalBinds: ->
     $(window).resize(@_updateHeight)
