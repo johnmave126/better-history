@@ -14,6 +14,9 @@ class BH.Views.SearchView extends BH.Views.ViewWithSearch
     @$el.append(@renderTemplate(_.extend(@getI18nValues(), @model.toTemplate())))
     @
 
+  pageTitle: ->
+    "Searching"
+
   updateQueryReferences: ->
     @$('.title').text(@model.get('title'))
     @$('.search').val(@model.get('query'))
