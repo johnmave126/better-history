@@ -26,7 +26,7 @@
     "description": "for Moment.js"
   },
   "date_week_label": {
-    "message": "Week of $week$",
+    "message": "Semana del $week$",
     "description": "short week w/ label",
     "placeholders": {
       "week": {
@@ -745,7 +745,7 @@
   },
 
   "version_title": {
-    "message": "¡Una renovada imagen con las características más solicitadas!",
+    "message": "Un gran logro: !Visitas organizadas por semana!",
     "description": "Title of the version modal"
   },
   "version_description": {
@@ -765,7 +765,7 @@
     "description": "Heading for what's new in version"
   },
   "version_items": {
-    "message": "$open$Interfaz renovada acorde con el futuro diseño de Chrome$close$ $open$Borrar todos los resultados de búsqueda$close$ $open$Nueva organización del panel de navegación$close$ $open$Borrar todas las visitas de un grupo de tiempo$close$ $open$Importantes mejores en velocidad$close$",
+    "message": "$open$Fácil vista de las 10 últimas semanas de visitas$close$ $open$Visitas organizadas por intervalos de semanas$close$ $open$Resumen semanal de la actividad de navegación$close$ $open$Velocidad en tiempo de iniciación$close$ $open$Búsqueda optimizada y grupos de visitas$close$ $open$Búsqueda por dominio visitado anteriormente con un click$close$",
     "description": "Release bulletpoints",
     "placeholders": {
       "open": {
@@ -810,7 +810,7 @@
     }
   },
   "max_number_of_search_results": {
-    "message": "Found more than $number$ results",
+    "message": "Más de $number$ resultados encontrados",
     "description": "number of search results found",
     "placeholders": {
       "number": {
@@ -859,7 +859,7 @@
   },
 
   "back_to_week_link": {
-    "message": "$arrow$ Back to Week",
+    "message": "$arrow$ Volver a semana",
     "description": "back to week link",
     "placeholders": {
       "arrow": {
@@ -874,7 +874,7 @@
   },
 
   "search_by_domain": {
-    "message": "More from site",
+    "message": "Más de este sitio",
     "description": "search by domain of visit"
   }
 }
