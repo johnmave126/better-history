@@ -26,7 +26,7 @@
     "description": "for Moment.js"
   },
   "date_week_label": {
-    "message": "Week of $week$",
+    "message": "Tydzień dla daty $week$",
     "description": "short week w/ label",
     "placeholders": {
       "week": {
@@ -745,7 +745,7 @@
   },
 
   "version_title": {
-    "message": "Nowy wygląd z najważniejszymi opcjami pod ręką!",
+    "message": "Pokonany kamień milowy: wprowadzamy organizację wyników wg tygodni!",
     "description": "Title of the version modal"
   },
   "version_description": {
@@ -765,7 +765,7 @@
     "description": "Heading for what's new in version"
   },
   "version_items": {
-    "message": "$open$Nowy interfejs pasujący do przyszłego wyglądu Google Chrome$close$ $open$Usuń wyniki wyszukiwania$close$ $open$Nowa organizacja paska bocznego$close$ $open$Usuwanie wizyt z danej godziny$close$ $open$Wielkie przyspieszenia prędkości$close$",
+    "message": "$open$Łatwy dostęp do ostatnich 10 tygodni wizyt$close$ $open$Wizyty organizowane wg okresu tygodnia$close$ $open$Podsumowanie tygodniowej aktywności w sieci$close$ $open$Szybsze uruchamianie$close$ $open$Optymalizacja wyszukiwania i grupowania wg wizyt$close$ $open$Wyszukiwanie wg wizyt na poprzedniej stronie poprzez jedno kliknięcie$close$",
     "description": "Release bulletpoints",
     "placeholders": {
       "open": {
@@ -810,7 +810,7 @@
     }
   },
   "max_number_of_search_results": {
-    "message": "Found more than $number$ results",
+    "message": "Znaleziono wyników $number$",
     "description": "number of search results found",
     "placeholders": {
       "number": {
@@ -859,7 +859,7 @@
   },
 
   "back_to_week_link": {
-    "message": "$arrow$ Back to Week",
+    "message": "$arrow$ Wróć do podglądu tygodnia",
     "description": "back to week link",
     "placeholders": {
       "arrow": {
@@ -874,7 +874,7 @@
   },
 
   "search_by_domain": {
-    "message": "More from site",
+    "message": "Więcej wejść tutaj",
     "description": "search by domain of visit"
   }
 }
