@@ -26,7 +26,7 @@
     "description": "for Moment.js"
   },
   "date_week_label": {
-    "message": "Week of $week$",
+    "message": "$week$ أسبوع",
     "description": "short week w/ label",
     "placeholders": {
       "week": {
@@ -745,7 +745,7 @@
   },
 
   "version_title": {
-    "message": "واجهة جديدة كليا مع الميزات الأكثر طلبا!",
+    "message": "تحديث جديد: الزيارات منظمة بالأسبوع",
     "description": "Title of the version modal"
   },
   "version_description": {
@@ -765,7 +765,7 @@
     "description": "Heading for what's new in version"
   },
   "version_items": {
-    "message": "$open$واجهة جديدة كليا لتتناسب مع تصميم كروم في المستقبل$close$ $open$حذف جميع نتائج البحث$close$ $open$تنظيم جديد للملاحة الجانبية$close$ $open$حذف جميع الزيارات المجموعة بالوقت$close$ $open$تحسينات كبيرة من ناحية السرعة$close$",
+    "message": "$open$قم بعرض آخر 10 أسابيع من الزيارات بسهولة$close$ $open$الزيارات منظمة إلى فترات أسبوعية$close$ $open$ملخص أسبوعي من نشاطات التصفح$close$ $open$بدء التشغيل سريع جدا$close$ $open$بحث وتجميع الزيارات مبسط ومثالي$close$ $open$بحث زيارة ماضية من نفس الموقع في نقرة واحدة$close$",
     "description": "Release bulletpoints",
     "placeholders": {
       "open": {
@@ -810,7 +810,7 @@
     }
   },
   "max_number_of_search_results": {
-    "message": "Found more than $number$ results",
+    "message": "نتيجة $number$ تم العثور على أكثر من",
     "description": "number of search results found",
     "placeholders": {
       "number": {
@@ -859,7 +859,7 @@
   },
 
   "back_to_week_link": {
-    "message": "$arrow$ Back to Week",
+    "message": "$arrow$ الرجوع إلى الأسبوع",
     "description": "back to week link",
     "placeholders": {
       "arrow": {
@@ -874,7 +874,7 @@
   },
 
   "search_by_domain": {
-    "message": "More from site",
+    "message": "المزيد من نفس الموقع",
     "description": "search by domain of visit"
   }
 }
