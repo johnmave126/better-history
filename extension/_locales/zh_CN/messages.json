@@ -26,7 +26,7 @@
     "description": "for Moment.js"
   },
   "date_week_label": {
-    "message": "Week of $week$",
+    "message": "所在星期 $week$",
     "description": "short week w/ label",
     "placeholders": {
       "week": {
@@ -745,7 +745,7 @@
   },
 
   "version_title": {
-    "message": "全新的外观和呼声最高的新功能！",
+    "message": "重要的里程碑：访问按星期组织！",
     "description": "Title of the version modal"
   },
   "version_description": {
@@ -765,7 +765,7 @@
     "description": "Heading for what's new in version"
   },
   "version_items": {
-    "message": "$open$与Chrome未来设计相配的全新界面$close$ $open$删除所有搜索结果$close$ $open$重新组织的侧边导航$close$ $open$删除某一时间组的所有浏览记录$close$ $open$巨大速度提升$close$",
+    "message": "$open$轻松查看最近10周的访问$close$ $open$访问按星期间隔组织$close$ $open$浏览行为一周汇总$close$ $open$迅速启动$close$ $open$优化访问搜索和分组$close$ $open$一键搜索访问过的域名$close$",
     "description": "Release bulletpoints",
     "placeholders": {
       "open": {
@@ -810,7 +810,7 @@
     }
   },
   "max_number_of_search_results": {
-    "message": "Found more than $number$ results",
+    "message": "找到超过 $number$ 条结果",
     "description": "number of search results found",
     "placeholders": {
       "number": {
@@ -859,7 +859,7 @@
   },
 
   "back_to_week_link": {
-    "message": "$arrow$ Back to Week",
+    "message": "$arrow$ 返回周视图",
     "description": "back to week link",
     "placeholders": {
       "arrow": {
@@ -874,7 +874,7 @@
   },
 
   "search_by_domain": {
-    "message": "More from site",
+    "message": "更多此站点的记录",
     "description": "search by domain of visit"
   }
 }
