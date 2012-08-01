@@ -26,7 +26,7 @@
     "description": "for Moment.js"
   },
   "date_week_label": {
-    "message": "Week of $week$",
+    "message": "Неделя от $week$",
     "description": "short week w/ label",
     "placeholders": {
       "week": {
@@ -745,7 +745,7 @@
   },
 
   "version_title": {
-    "message": "Совершенно новый взгляд<br/> на наиболее востребованные функции!",
+    "message": "Большое обновление: посещения организованны по неделям!",
     "description": "Title of the version modal"
   },
   "version_description": {
@@ -765,7 +765,7 @@
     "description": "Heading for what's new in version"
   },
   "version_items": {
-    "message": "$open$Стилизация под будущий дизайн Хрома$close$ $open$Удаление всех результатов поиска$close$ $open$Обновленный принцип навигации по элементам интерфейса$close$ $open$Удаление всех посещений, группированных по времени$close$ $open$Увеличение быстродействия$close$",
+    "message": "$open$Посещения организованы недельными интервалами$close$ $open$Удобный просмотр последних 10-ти недель посещений$close$ $open$Недельная сводка Вашей интернет-активности$close$ $open$Более быстрый запуск расширения$close$ $open$Оптимизированный поиск и группировка посещений$close$ $open$Упрощенный поиск по последнему посещенному домену в один клик$close$",
     "description": "Release bulletpoints",
     "placeholders": {
       "open": {
@@ -810,7 +810,7 @@
     }
   },
   "max_number_of_search_results": {
-    "message": "Found more than $number$ results",
+    "message": "Найдено более $number$ результатов",
     "description": "number of search results found",
     "placeholders": {
       "number": {
@@ -859,7 +859,7 @@
   },
 
   "back_to_week_link": {
-    "message": "$arrow$ Back to Week",
+    "message": "$arrow$ Назад к обзору недели",
     "description": "back to week link",
     "placeholders": {
       "arrow": {
@@ -874,7 +874,7 @@
   },
 
   "search_by_domain": {
-    "message": "More from site",
+    "message": "Еще с сайта",
     "description": "search by domain of visit"
   }
 }
