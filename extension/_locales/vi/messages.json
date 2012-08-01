@@ -26,7 +26,7 @@
     "description": "for Moment.js"
   },
   "date_week_label": {
-    "message": "Week of $week$",
+    "message": "Tuần bắt đầu từ $week$",
     "description": "short week w/ label",
     "placeholders": {
       "week": {
@@ -745,7 +745,7 @@
   },
 
   "version_title": {
-    "message": "Một giao diện hoàn toàn mới với những chức năng được yêu cầu nhiều nhất!",
+    "message": "Một nâng cấp vượt trội: lượt xem sắp xếp theo tuần!",
     "description": "Title of the version modal"
   },
   "version_description": {
@@ -765,7 +765,7 @@
     "description": "Heading for what's new in version"
   },
   "version_items": {
-    "message": "$open$Giao diện hoàn toàn mới phù hợp với thiết kế của Chrome trong tương lai$close$ $open$Xóa toàn bộ các kết quả tìm kiếm$close$ $open$Thanh duyệt dọc được sắp xếp lại$close$ $open$Xóa toàn bộ các lượt xem trong một nhóm theo thời gian$close$ $open$Nhiều cải thiện cho tốc độ$close$",
+    "message": "$open$Dễ dàng duyệt qua lượt xem trong 10 tuần trước $close$ $open$Lượt xem sắp xếp theo từng tuần một $close$ $open$Tóm lược các hoạt động duyệt web trong tuần $close$ $open$Khởi động nhanh chóng $close$ $open$Tối ưu hoá chức năng tìm kiếm và nhóm các lược xem $close$ $open$Dễ dàng tìm kiếm lượt xem trước đây theo tên miền chỉ với một nháy chuột $close$",
     "description": "Release bulletpoints",
     "placeholders": {
       "open": {
@@ -810,7 +810,7 @@
     }
   },
   "max_number_of_search_results": {
-    "message": "Found more than $number$ results",
+    "message": "Tìm thấy trên $number$ kết quả",
     "description": "number of search results found",
     "placeholders": {
       "number": {
@@ -859,7 +859,7 @@
   },
 
   "back_to_week_link": {
-    "message": "$arrow$ Back to Week",
+    "message": "$arrow$ Quay trở lại tuần",
     "description": "back to week link",
     "placeholders": {
       "arrow": {
@@ -874,7 +874,7 @@
   },
 
   "search_by_domain": {
-    "message": "More from site",
+    "message": "Xem thêm lược sử của trang",
     "description": "search by domain of visit"
   }
 }
