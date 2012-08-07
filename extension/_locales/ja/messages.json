@@ -26,7 +26,7 @@
     "description": "for Moment.js"
   },
   "date_week_label": {
-    "message": "Week of $week$",
+    "message": "$week$ 日を含む週",
     "description": "short week w/ label",
     "placeholders": {
       "week": {
@@ -745,7 +745,7 @@
   },
 
   "version_title": {
-    "message": "要望のほとんど全てを取り込んだ、新しいデザイン！",
+    "message": "メジャーマイルストーン：週区切りでの履歴の表示！",
     "description": "Title of the version modal"
   },
   "version_description": {
@@ -765,7 +765,7 @@
     "description": "Heading for what's new in version"
   },
   "version_items": {
-    "message": "$open$Chromeの次期デザインに合わせた、新たなインターフェイス$close$ $open$検索結果をすべて削除$close$ $open$サイドナビゲーションの新しい機構$close$ $open$この時間帯から全ての閲覧履歴を消去する$close$ $open$飛躍的な高速化$close$",
+    "message": "$open$直近十週間の履歴を簡単に見ることができます$close$ $open$週区切りでの履歴の整理$close$ $open$週ごとのブラウジングサマリー$close$ $open$起動の高速化$close$ $open$検索・グループ化の最適化$close$$open$ワンクリックで過去に訪問したドメインからの検索が可能$close$",
     "description": "Release bulletpoints",
     "placeholders": {
       "open": {
@@ -810,7 +810,7 @@
     }
   },
   "max_number_of_search_results": {
-    "message": "Found more than $number$ results",
+    "message": "$number$ 件以上の結果",
     "description": "number of search results found",
     "placeholders": {
       "number": {
@@ -859,7 +859,7 @@
   },
 
   "back_to_week_link": {
-    "message": "$arrow$ Back to Week",
+    "message": "$arrow$ 週に戻る",
     "description": "back to week link",
     "placeholders": {
       "arrow": {
@@ -874,7 +874,7 @@
   },
 
   "search_by_domain": {
-    "message": "More from site",
+    "message": "詳しくはサイトへ",
     "description": "search by domain of visit"
   }
 }
