@@ -26,7 +26,7 @@
     "description": "for Moment.js"
   },
   "date_week_label": {
-    "message": "Week of $week$",
+    "message": "Vecka per $week$",
     "description": "short week w/ label",
     "placeholders": {
       "week": {
@@ -745,7 +745,7 @@
   },
 
   "version_title": {
-    "message": "Ett nytt utseende och de mest efterfrågade funktionerna!",
+    "message": "En stor milstolpe: Besök indelade efter vecka!",
     "description": "Title of the version modal"
   },
   "version_description": {
@@ -765,7 +765,7 @@
     "description": "Heading for what's new in version"
   },
   "version_items": {
-    "message": "$open$Purfärskt användargränssnitt som matchar Chrome:s framtida design$close$ $open$Radera alla sökresultat$close$ $open$Sidomenyn har omorganiserats$close$ $open$Radera alla besök från en tidsgruppering$close$ $open$Stora hastighetsförbättringar$close$",
+    "message": "$open$Enkelt sätt att se de 10 senaste veckornas besök$close$ $open$Besök delas in i veckovisa intervaller$close$ $open$Veckosummering av besökshistorik$close$ $open$Snabbare uppstartningstid$close$ $open$Optimerad sökning och gruppering av besök $close$ $open$Sök i samma domän som ett tidigare besök med ett klick$close$",
     "description": "Release bulletpoints",
     "placeholders": {
       "open": {
@@ -810,7 +810,7 @@
     }
   },
   "max_number_of_search_results": {
-    "message": "Found more than $number$ results",
+    "message": "Fann mer än $number$ resultat",
     "description": "number of search results found",
     "placeholders": {
       "number": {
@@ -859,7 +859,7 @@
   },
 
   "back_to_week_link": {
-    "message": "$arrow$ Back to Week",
+    "message": "$arrow$ Tillbaka till vecka",
     "description": "back to week link",
     "placeholders": {
       "arrow": {
@@ -874,7 +874,7 @@
   },
 
   "search_by_domain": {
-    "message": "More from site",
+    "message": "Mer från denna sajt",
     "description": "search by domain of visit"
   }
 }
