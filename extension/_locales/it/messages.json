@@ -26,7 +26,7 @@
     "description": "for Moment.js"
   },
   "date_week_label": {
-    "message": "Week of $week$",
+    "message": "Settimana del $week$",
     "description": "short week w/ label",
     "placeholders": {
       "week": {
@@ -745,7 +745,7 @@
   },
 
   "version_title": {
-    "message": "Un look nuovo di zecca con le funzioni più richieste!",
+    "message": "Un importante aggiornamento: Visite organizzate per settimana!",
     "description": "Title of the version modal"
   },
   "version_description": {
@@ -765,7 +765,7 @@
     "description": "Heading for what's new in version"
   },
   "version_items": {
-    "message": "$open$Interfaccia rinnovata per integrarsi con il prossimo design di Chrome$close$ $open$Cancella tutti i risultati della ricerca$close$ $open$Nuova disposizione della barra laterale di navigazione$close$ $open$Cancella tutte le visite raggruppate per orario$close$ $open$Notevoli miglioramenti alla velocità$close$",
+    "message": "$open$Consulta comodamente le ultime 10 settimane di visite$close$ $open$Visite organizzate in intervalli di settimane$close$ $open$Sommario delle visite raggruppate per settimana$close$ $open$Avvio più rapido$close$ $open$Ricerca e raggruppamento delle visite ottimizzati$close$$open$Ricerca in base ad un dominio visitato con un click$close$",
     "description": "Release bulletpoints",
     "placeholders": {
       "open": {
@@ -810,7 +810,7 @@
     }
   },
   "max_number_of_search_results": {
-    "message": "Found more than $number$ results",
+    "message": "Trovati più di $number$ risultati",
     "description": "number of search results found",
     "placeholders": {
       "number": {
@@ -859,7 +859,7 @@
   },
 
   "back_to_week_link": {
-    "message": "$arrow$ Back to Week",
+    "message": "$arrow$ Torna indietro",
     "description": "back to week link",
     "placeholders": {
       "arrow": {
@@ -874,7 +874,7 @@
   },
 
   "search_by_domain": {
-    "message": "More from site",
+    "message": "Altri risultati dal sito",
     "description": "search by domain of visit"
   }
 }
