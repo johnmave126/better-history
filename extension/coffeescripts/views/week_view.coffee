@@ -40,6 +40,7 @@ class BH.Views.WeekView extends BH.Views.ViewWithSearch
     @model.get('days').each (model, i) =>
       percentage = @model.get('percentages')[i] + '%'
       $('.bar', @_getDayElement(model.id)).css({width: percentage})
+    @$el.addClass('loaded')
 
   clickedDeleteAll: (ev) ->
     if $(ev.target).parent().attr('disabled') != 'disabled'
