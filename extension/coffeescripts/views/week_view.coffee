@@ -54,8 +54,7 @@ class BH.Views.WeekView extends BH.Views.ViewWithSearch
         @promptView.spin()
         @model.clear()
         @model.fetch
-          success: () =>
-            @promptView.close()
+          success: => @promptView.close()
     else
       @promptView.close()
 

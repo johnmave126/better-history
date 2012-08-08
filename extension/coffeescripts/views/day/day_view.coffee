@@ -7,6 +7,9 @@ class BH.Views.DayView extends BH.Views.ViewWithSearch
     'keyup .search': 'filtered'
     'click .back_to_week': 'backToWeekClicked'
 
+  initialize: ->
+    @model.on('change', @renderHistory, @)
+
   render: (type) ->
     @$el.html(@renderTemplate(_.extend(@getI18nValues(), @model.toTemplate())))
     @$('button').attr('disabled', 'disabled')
@@ -46,16 +49,15 @@ class BH.Views.DayView extends BH.Views.ViewWithSearch
       if @collection
         @promptView.spin()
         @model.clear()
-        @promptView.close()
+        @model.fetch
+          success: =>
+            @promptView.close()
     else
       @promptView.close()
 
   filtered: (ev) ->
     @model.set({filter: $(ev.currentTarget).val()})
     @model.fetch()
-    url = @urlBuilder.build('search', [@model.get('filter')])
-    @$('.full_search').fadeIn('slow')
-    @$('.full_search a').attr(href: url)
 
   backToWeekClicked: (ev) ->
     @$('.content').html('')
