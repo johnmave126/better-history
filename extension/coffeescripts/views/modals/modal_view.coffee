@@ -3,7 +3,7 @@ class BH.Views.Modal extends BH.Views.BaseView
 
   generalEvents:
     'click .close-button': 'close'
-    'click .overlay': 'pulse'
+    'click .overlay': 'overlayClicked'
 
   attachGeneralEvents: ->
     _.extend(@events, @generalEvents)
@@ -21,8 +21,10 @@ class BH.Views.Modal extends BH.Views.BaseView
       @$('.overlay').removeClass('transparent')
     , 0)
 
-  pulse: ->
+  overlayClicked: ->
     @$('.page').addClass('pulse')
+    @$('.page').on 'webkitAnimationEnd', =>
+      @$('.page').removeClass('pulse')
 
   close: ->
     @trigger('close')
