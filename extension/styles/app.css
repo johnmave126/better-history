@@ -57,7 +57,7 @@
 .week_view .label {
   position: absolute;
   top: 10px;
-  z-index: 10;
+  z-index: 1;
 }
 
 .visit .description {
@@ -115,19 +115,22 @@
   opacity: 0.4;
   top: -50px;
 }
+.prompt_view .action-area {
+  z-index: 1;
+  position: relative;
+}
 .prompt_view.loading button {
   opacity: 0;
 }
 .prompt_view.loading .spinner {
   opacity: 1;
-  display: block;
 }
 .prompt_view .spinner {
   position: absolute;
   bottom: 15px;
   right: 15px;
   opacity: 0;
-  display: none;
+  z-index: 0;
 }
 
 .prompt_view button {
