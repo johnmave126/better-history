@@ -32,16 +32,13 @@ class BH.Views.SearchResultsView extends BH.Views.BaseView
     ev.preventDefault()
     model = @_getModelFromElement($(ev.target))
     model.destroy
-      success: =>
-        @_getElementFromModel(model).slideUp 'fast', ->
-          $(@).remove()
+      success: => @_getElementFromModel(model).remove()
 
   _getModelFromElement: (element) ->
     @collection.get($(element).prev().data('id'))
 
   _getElementFromModel: (model) ->
-    $("[data-id=#{model.id}]").parents('li')
+    $("[data-id='#{model.id}']").parents('li')
 
   getI18nValues: ->
-    @i18nFetcher.get([
-    ])
+    @i18nFetcher.get()

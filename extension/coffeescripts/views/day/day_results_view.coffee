@@ -4,7 +4,6 @@ class BH.Views.DayResultsView extends BH.Views.BaseView
   events:
     'click .delete_visit': 'deleteVisitClicked'
     'click .delete_grouped_visit': 'deleteGroupedVisitClicked'
-    'click .delete_interval': 'deleteIntervalClicked'
     'click .show_visits': 'toggleGroupedVisitsClicked'
     'click .hide_visits': 'toggleGroupedVisitsClicked'
     'click .visit > a': 'visitClicked'
@@ -17,38 +16,26 @@ class BH.Views.DayResultsView extends BH.Views.BaseView
       ev.preventDefault()
       router.navigate($(ev.target).attr('href'), trigger: true)
 
-  deleteIntervalClicked: (ev) ->
-    ev.preventDefault()
-    element = @_getTopElement(ev.currentTarget)
-    @collection.get($(element).data('id')).get('visits').destroyAll
-      success: =>
-        @removeElement(element)
-
   deleteVisitClicked: (ev) ->
     ev.preventDefault()
     element = @_getTopElement(ev.currentTarget)
     intervalId = $(ev.currentTarget).parents('.interval').data('id')
     interval = @collection.get(intervalId)
     interval.findVisitById($(element).data('id')).destroy
-      success: =>
-        @removeElement(element)
+      success: => element.remove()
 
   deleteGroupedVisitClicked: (ev) ->
     ev.preventDefault()
 
     $(ev.currentTarget).siblings('.visits').children().each (i, visit) ->
-      $(visit).find('.delete').click()
+      $(visit).find('.delete_visit').trigger('click')
 
-    @removeElement($(ev.currentTarget).parents('.visit'))
+    $(ev.currentTarget).parents('.visit').remove()
 
   toggleGroupedVisitsClicked: (ev) ->
     ev.preventDefault()
     $(ev.currentTarget).parents('.visit')
       .toggleClass('expanded')
-
-  removeElement: (element)->
-    element.slideUp 'fast', ->
-      element.remove()
 
   _getTopElement: (element) ->
     $(element).parents('[data-id]').first()
