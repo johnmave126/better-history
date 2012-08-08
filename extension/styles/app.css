@@ -98,6 +98,10 @@
   -webkit-margin-end: 2px;
   display: inline-block;
 }
+.visit .location {
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
 .visit .location > .search_domain:hover {
   color: #15C;
 }
@@ -191,10 +195,6 @@ header .corner {
   text-align: __MSG_@@bidi_end_edge__;
   float: __MSG_@@bidi_end_edge__;
 }
-.interval .title {
-  font-size: 1em;
-  margin-bottom: 5px;
-}
-.interval > .visits {
-  margin-left: 10px;
+.visit .location {
+  background-image: -webkit-gradient(linear, __MSG_@@bidi_start_edge__ top, __MSG_@@bidi_end_edge__ top, color-stop(82%, #777), to(white));
 }
