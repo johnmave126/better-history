@@ -21,9 +21,6 @@ class @VisitsSanitizer
           @removeScriptTags(result)
           if @terms && @terms.length != 0
             if @verifyTextMatch(result)
-              @wrapTextMatch(result)
-          if @terms && @terms.length != 0
-            if @verifyTextMatch(result)
               prunedResults.push(result)
           else
             prunedResults.push(result)

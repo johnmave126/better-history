@@ -4,10 +4,10 @@ class BH.Views.DayView extends BH.Views.ViewWithSearch
 
   events:
     'click .delete_day': 'clickedDeleteAll'
-    'keyup .search': 'filtered'
     'click .back_to_week': 'backToWeekClicked'
 
   initialize: ->
+    super()
     @model.on('change', @renderHistory, @)
 
   render: (type) ->
@@ -54,10 +54,6 @@ class BH.Views.DayView extends BH.Views.ViewWithSearch
             @promptView.close()
     else
       @promptView.close()
-
-  filtered: (ev) ->
-    @model.set({filter: $(ev.currentTarget).val()})
-    @model.fetch()
 
   backToWeekClicked: (ev) ->
     @$('.content').html('')
