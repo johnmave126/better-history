@@ -18,6 +18,7 @@ class BH.Views.SearchView extends BH.Views.ViewWithSearch
     "Searching"
 
   updateQueryReferences: ->
+    @$el.removeClass('loaded')
     @$('.title').text(@model.get('title'))
     @$('.search').val(@model.get('query'))
     @$('.content').html('')
