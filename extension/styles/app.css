@@ -60,21 +60,24 @@
   z-index: 1;
 }
 
-.week_view .spinner {
+.week_view .spinner,
+.search_view .spinner {
   opacity: 1;
   position: absolute;
   top: 8px;
   left: 4px;
   -webkit-transition: opacity .1s ease-in;
 }
-.week_view .count {
+.week_view .count,
+.search_view .count {
   opacity: 0;
   -webkit-transition: opacity .1s ease-in;
 }
-.week_view.loaded .count {
+.week_view.loaded .count,
+.search_view.loaded .count {
   opacity: 1;
 }
-.week_view.loaded .spinner {
+.loaded .spinner {
   opacity: 0;
 }
 

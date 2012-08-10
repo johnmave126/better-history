@@ -24,6 +24,7 @@ class BH.Views.SearchView extends BH.Views.ViewWithSearch
     @model.fetch()
 
   renderVisits: ->
+    @$el.addClass('loaded')
     @collection = @model.get('history')
 
     @$('.search').focus()
