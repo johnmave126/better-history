@@ -26,7 +26,7 @@
     "description": "for Moment.js"
   },
   "date_week_label": {
-    "message": "Week of $week$",
+    "message": "Semaine du $week$",
     "description": "short week w/ label",
     "placeholders": {
       "week": {
@@ -149,7 +149,7 @@
     "description": "Section heading in Settings"
   },
   "view_release_announcement_link": {
-    "message": "Voir l'autoriser de publication",
+    "message": "Voir la note de mise à jour",
     "description": "Link text to view the release announcement"
   },
   "current_version_label": {
@@ -175,7 +175,7 @@
     "description": "Section heading in Settings"
   },
   "suggestions_bugs_comments": {
-    "message": "Suggestions, bugs, commentaires? vos Tweets pour Better_History $link_open$@Better_History$link_close$",
+    "message": "Suggestions, bugs, commentaires? Adressez vos Tweets à Better_History $link_open$@Better_History$link_close$",
     "description": "Link text to give feedback",
     "placeholders": {
       "link_open": {
@@ -187,7 +187,7 @@
     }
   },
   "spread_the_word_section_title": {
-    "message": "Partager et passez le mot",
+    "message": "Partagez et Recommandez Better History",
     "description": "Section heading in Settings"
   },
   "leave_a_review": {
@@ -557,7 +557,7 @@
     "description": "The month"
   },
   "confirm_delete_all_visits": {
-    "message": "Supprimer toutes les visites à $formal_date$?",
+    "message": "Supprimer toutes les visites du $formal_date$?",
     "description": "Confirmation text to delete all visits from a specific date",
     "placeholders": {
       "formal_date": {
@@ -745,7 +745,7 @@
   },
 
   "version_title": {
-    "message": "Un look tout neuf avec les fonctionnalités les plus demandées!",
+    "message": "Une étape importante: Visites organisées par semaines!",
     "description": "Title of the version modal"
   },
   "version_description": {
@@ -765,7 +765,7 @@
     "description": "Heading for what's new in version"
   },
   "version_items": {
-    "message": "$open$Une conception d'interface neuve qui correspond au futur designs de Chrome$close$ $open$Supprimer tous les résultats de la recherche$close$ $open$Nouvelle organisation de la side-navigation$close$ $open$Supprimer tous les visites d'un groupement temps$close$ $open$Une grande  améliorations de vitesse$close$",
+    "message": "$open$Visualiser facilement les 10 dernières semaines de visites$close$ $open$Visites organisées en intervalles d'une semaine$close$ $open$Résumé de l'activité de navigation de la semaine$close$ $open$Temps de démarrage plus rapide$close$ $open$Optimisation de la recherche et du regroupement des visites$close$ $open$Recherche d'un site d'une visite passée en un seul clic$close$",
     "description": "Release bulletpoints",
     "placeholders": {
       "open": {
@@ -810,7 +810,7 @@
     }
   },
   "max_number_of_search_results": {
-    "message": "Found more than $number$ results",
+    "message": "Trouvés plus de $number$ résultats",
     "description": "number of search results found",
     "placeholders": {
       "number": {
@@ -859,7 +859,7 @@
   },
 
   "back_to_week_link": {
-    "message": "$arrow$ Back to Week",
+    "message": "$arrow$ Retour à la semaine",
     "description": "back to week link",
     "placeholders": {
       "arrow": {
@@ -874,7 +874,7 @@
   },
 
   "search_by_domain": {
-    "message": "More from site",
+    "message": "Plus d'infos sur le site",
     "description": "search by domain of visit"
   }
 }
