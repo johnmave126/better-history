@@ -8,13 +8,27 @@ rescue LoadError
   end
 end
 
+desc "Clean generated javascript"
+task :clean_generated_js do
+  system('rm -fr extension/javascripts/lib/*')
+  system('rm -fr extension/javascripts/views/*')
+  system('rm -fr extension/javascripts/collections/*')
+  system('rm -fr extension/javascripts/models/*')
+  system('rm -fr extension/javascripts/helpers/*')
+  system('rm -fr extension/javascripts/workers/*')
+  system('rm extension/javascripts/*.js')
+end
+
 desc "Package extension into .zip"
 task :package do
-  system('zip -r -x=extension/coffeescripts/* extension.zip extension')
+  Rake::Task['clean_generated_js'].execute
+  Rake::Task['coffee'].execute
+  system('zip -r -x=extension/coffeescripts/* -x=extension/templates/* -x=spec/* extension.zip extension')
 end
 
 desc "Generate coffeeScript"
 task :coffee do
+  Rake::Task['clean_generated_js'].execute
   system('coffee -c -o extension/javascripts/ extension/coffeescripts/')
   system('coffee -c -o spec/javascripts/ spec/coffeescripts/')
 end
