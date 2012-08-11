@@ -56,4 +56,4 @@ class BH.Router extends Backbone.Router
     @app.weekSelected()
     view = @app.views.search
     view.select()
-    view.model.set({query: query})
+    view.model.set({query: decodeURIComponent(query)})
