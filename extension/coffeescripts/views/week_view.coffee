@@ -31,10 +31,19 @@ class BH.Views.WeekView extends BH.Views.ViewWithSearch
     @model.get('title')
 
   updateDay: (model) ->
-    $('.number_of_visits', @_getDayElement(model.id)).text(model.get('count'))
+    html = @_buildCountHtml(model.get('count'))
+    $('.label .count', @_getDayElement(model.id)).html(html)
 
   updateWeekStats: (model) ->
-    @$('.number_of_visits_all_week').text(model.get('count'))
+    html = @_buildCountHtml(model.get('count'))
+    @$('.controls .count').html(html)
+
+  _buildCountHtml: (count) ->
+    chrome.i18n.getMessage('number_of_visits', [
+      count,
+      '<span class="number_of_visits">',
+      '</span>'
+    ])
 
   updatePercentages: (percentages) ->
     @model.get('days').each (model, i) =>
