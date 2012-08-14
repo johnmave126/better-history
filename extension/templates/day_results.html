@@ -10,9 +10,9 @@
                 <a href="{{url}}">
                   <dl class="description" style="background-image: url(chrome://favicon/{{url}})">
                     <dt>{{domain}}</dt>
-                    <dd>
-                      <button class="small show_visits">{{i18n_expand_button}}</button>
-                      <button class="small hide_visits">{{i18n_collapse_button}}</button>
+                    <dd class="toggle_grouping">
+                      <span class="show_visits"><span class="arrow collapse"></span>{{i18n_expand_button}}</span>
+                      <span class="hide_visits"><span class="arrow expand"></span>{{i18n_collapse_button}}</span>
                     </dd>
                   </dl>
                 </a>
