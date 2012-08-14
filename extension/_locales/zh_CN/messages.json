@@ -22,7 +22,7 @@
     "description": "for Moment.js"
   },
   "short_date_with_day": {
-    "message": "dddd, MMMM Do",
+    "message": "dddd, MMMM D日",
     "description": "for Moment.js"
   },
   "date_week_label": {
