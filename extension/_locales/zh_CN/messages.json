@@ -22,11 +22,11 @@
     "description": "for Moment.js"
   },
   "short_date_with_day": {
-    "message": "dddd, MMMM D日",
+    "message": "dddd, MMMMD日",
     "description": "for Moment.js"
   },
   "date_week_label": {
-    "message": "所在星期 $week$",
+    "message": "$week$ 所在星期" ,
     "description": "short week w/ label",
     "placeholders": {
       "week": {
