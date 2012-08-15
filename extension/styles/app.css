@@ -5,6 +5,15 @@
   -webkit-margin-end: 4px;
   top: 1px;
 }
+.toggle_grouping:hover .collapse {
+  border-left: 6px solid #777;
+}
+.toggle_grouping:hover .expand {
+  border-top: 7px solid #777;
+}
+.toggle_grouping:hover {
+  color: #777;
+}
 .expand {
   border-left: 5px solid transparent;
   border-right: 5px solid transparent;
