@@ -1,4 +1,6 @@
 class BH.Router extends Backbone.Router
+  animationDelay: 250
+
   routes:
     'settings': 'settings'
     'search/*query': 'search'
@@ -31,7 +33,6 @@ class BH.Router extends Backbone.Router
           route: new BH.Helpers.UrlBuilder().build('week', [@app.collection.at(0).id])
     window.state.fetch()
 
-
     @bind 'all', (route) ->
       window.scroll(0, 0)
       state.set({'route': location.hash})
@@ -40,7 +41,10 @@ class BH.Router extends Backbone.Router
     @app.weekSelected(id)
     view = @app.views.weeks[id]
     view.select()
-    view.model.fetch()
+
+    setTimeout( ->
+      view.model.fetch()
+    , @animationDelay)
 
   day: (weekId, id) ->
     @app.weekSelected(weekId)
@@ -56,4 +60,7 @@ class BH.Router extends Backbone.Router
     @app.weekSelected()
     view = @app.views.search
     view.select()
-    view.model.set({query: decodeURIComponent(query)})
+
+    setTimeout( ->
+      view.model.set({query: decodeURIComponent(query)})
+    , @animationDelay)
