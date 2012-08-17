@@ -1,9 +1,15 @@
 class BH.Models.Week extends BH.Models.Base
   initialize: ->
-    id = @_weekFormat('id')
+    id = @get('date').format('D-M-YY')
+
+    title = @chromeAPI.i18n.getMessage('date_week_label', [
+      @get('date').format(@chromeAPI.i18n.getMessage('short_date_with_day'))
+    ])
+    shortTitle = @get('date').format(@chromeAPI.i18n.getMessage('short_date'))
+
     @set
-      shortTitle: @_weekFormat('shortTitle')
-      title: @_weekFormat('title')
+      shortTitle: shortTitle
+      title: title
       id: id
       url: new BH.Helpers.UrlBuilder().build('week', [id])
       days: new BH.Collections.Days([
@@ -51,15 +57,5 @@ class BH.Models.Week extends BH.Models.Base
 
     {percentages: percentages, count: count}
 
-  _weekFormat: (type) ->
-    @get('date').format(@_getFormats()[type])
-
   _generateDate: (amount) ->
     moment(@get('date')).add('days', amount)
-
-  _getFormats: ->
-    shortTitle: @chromeAPI.i18n.getMessage('short_date')
-    title: @chromeAPI.i18n.getMessage('date_week_label', [
-      @chromeAPI.i18n.getMessage('short_date_with_day')
-    ])
-    id: 'D-M-YY'
