@@ -1,3 +1,4 @@
+ main:
  - frameworks/underscore-min
  - frameworks/zepto.min
  - frameworks/backbone-min
@@ -43,3 +44,15 @@
  - collections/intervals
  - collections/visits
  - initialize_extension
+ background:
+ - frameworks/underscore-min
+ - frameworks/backbone-min
+ - namespace
+ - lib/backbone_extensions
+ - lib/context_menus/page_context_menu
+ - lib/context_menus/selection_context_menu
+ - lib/browser_actions
+ - models/base
+ - models/settings
+ - helpers/url_builder
+ - initialize_background

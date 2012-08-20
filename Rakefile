@@ -23,7 +23,28 @@ desc "Package extension into .zip"
 task :package do
   Rake::Task['clean_generated_js'].execute
   Rake::Task['coffee'].execute
-  system('zip -r -x=extension/coffeescripts/* -x=extension/templates/* -x=spec/* extension.zip extension')
+  Rake::Task['templates'].execute
+  Rake::Task['concat_js'].execute
+  system('rm extension.zip')
+  system('mkdir tmp')
+  system('mkdir tmp/javascripts')
+  system('mkdir tmp/javascripts/frameworks')
+  system('mkdir tmp/javascripts/workers')
+  system('mkdir tmp/images')
+  system('mkdir tmp/styles')
+  system('mkdir tmp/_locales')
+  system('cp extension/index.html tmp/')
+  system('cp extension/manifest.json tmp/')
+  system('cp -r extension/images/* tmp/images/')
+  system('cp -r extension/_locales/* tmp/_locales/')
+  system('cp extension/javascripts/main.js tmp/javascripts/')
+  system('cp extension/javascripts/background.js tmp/javascripts/')
+  system('cp extension/javascripts/frameworks/underscore-min.js tmp/javascripts/frameworks/')
+  system('cp extension/javascripts/workers/* tmp/javascripts/workers/')
+  system('cp extension/styles/app.css tmp/styles/')
+  system('cp extension/styles/chrome-bootstrap.css tmp/styles/')
+  system('zip -r extension.zip tmp')
+  system('rm -fr tmp')
 end
 
 desc "Generate coffeeScript"
@@ -52,10 +73,18 @@ task :concat_js do
   require 'yaml'
   packaged = ""
   assets = YAML::load(File.open('extension/coffeescripts/assets.yml'))
-  assets.each do |asset|
+  assets['main'].each do |asset|
     packaged += "\n\n// #{asset}.js \n"
     packaged += File.read("extension/javascripts/#{asset}.js")
   end
-  system('rm extension/javascripts/package.js')
-  File.open("extension/javascripts/package.js", 'w') {|f| f.write(packaged) }
+  system('rm extension/javascripts/main.js')
+  File.open("extension/javascripts/main.js", 'w') {|f| f.write(packaged) }
+
+  packaged = ""
+  assets['background'].each do |asset|
+    packaged += "\n\n// #{asset}.js \n"
+    packaged += File.read("extension/javascripts/#{asset}.js")
+  end
+  system('rm extension/javascripts/background.js')
+  File.open("extension/javascripts/background.js", 'w') {|f| f.write(packaged) }
 end
