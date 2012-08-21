@@ -17,79 +17,36 @@
     "description": "Extension title"
   },
 
-  "extended_formal_date": {
-    "message": "$weekday$, $day$ $month$ $year$",
-    "description": "The order of a full extended date",
+  "short_date": {
+    "message": "Do MMMM",
+    "description": "for Moment.js"
+  },
+  "short_date_with_day": {
+    "message": "dddd, Do MMMM",
+    "description": "for Moment.js"
+  },
+  "date_week_label": {
+    "message": "Vecka per $week$",
+    "description": "short week w/ label",
     "placeholders": {
-      "weekday": {
+      "week": {
         "content": "$1",
-        "example": "March"
-      },
-      "month": {
-        "content": "$2",
-        "example": "March"
-      },
-      "day": {
-        "content": "$3",
-        "example": "25"
-      },
-      "year": {
-        "content": "$4",
-        "example": "2011"
+        "example": "date"
       }
     }
+  },
+  "day_date": {
+    "message": "dddd",
+    "description": "the day"
+  },
+
+  "extended_formal_date": {
+    "message": "dddd, Do MMMM YYYY",
+    "description": "The order of a full extended date"
   },
   "formal_date": {
-    "message": "$day$ $month$ $year$",
-    "description": "The order of a full date",
-    "placeholders": {
-      "month": {
-        "content": "$1",
-        "example": "March"
-      },
-      "day": {
-        "content": "$2",
-        "example": "25"
-      },
-      "year": {
-        "content": "$3",
-        "example": "2011"
-      }
-    }
-  },
-  "informal_date": {
-    "message": "$week_day$ $date_open$$day$$ordinal$$date_close$",
-    "description": "Date labels in sidebar",
-    "placeholders": {
-      "week_day": {
-        "content": "$1",
-        "example": "Monday"
-      },
-      "day": {
-        "content": "$2",
-        "example": "4"
-      },
-      "ordinal": {
-        "content": "$3",
-        "example": "st"
-      },
-      "ordinal_open": {
-        "content": "$4",
-        "example": "open tag for ordinal"
-      },
-      "ordinal_close": {
-        "content": "$5",
-        "example": "close tag for ordinal"
-      },
-      "date_open": {
-        "content": "$6",
-        "example": "open tag for date"
-      },
-      "date_close": {
-        "content": "$7",
-        "example": "close tag for date"
-      }
-    }
+    "message": "Do MMMM YYYY",
+    "description": "The order of a full date"
   },
   "twelve_hour_time_format": {
     "message": "$time$ $label$",
@@ -788,7 +745,7 @@
   },
 
   "version_title": {
-    "message": "Ett nytt utseende och de mest efterfrågade funktionerna!",
+    "message": "En stor milstolpe: Besök indelade efter vecka!",
     "description": "Title of the version modal"
   },
   "version_description": {
@@ -808,7 +765,7 @@
     "description": "Heading for what's new in version"
   },
   "version_items": {
-    "message": "$open$Purfärskt användargränssnitt som matchar Chrome:s framtida design$close$ $open$Radera alla sökresultat$close$ $open$Sidomenyn har omorganiserats$close$ $open$Radera alla besök från en tidsgruppering$close$ $open$Stora hastighetsförbättringar$close$",
+    "message": "$open$Enkelt sätt att se de 10 senaste veckornas besök$close$ $open$Besök delas in i veckovisa intervaller$close$ $open$Veckosummering av besökshistorik$close$ $open$Snabbare uppstartningstid$close$ $open$Optimerad sökning och gruppering av besök $close$ $open$Sök i samma domän som ett tidigare besök med ett klick$close$",
     "description": "Release bulletpoints",
     "placeholders": {
       "open": {
@@ -844,6 +801,16 @@
   },
   "number_of_search_results": {
     "message": "Hittade $number$ resultat",
+    "description": "number of search results found",
+    "placeholders": {
+      "number": {
+        "content": "$1",
+        "example": "10"
+      }
+    }
+  },
+  "max_number_of_search_results": {
+    "message": "Fann mer än $number$ resultat",
     "description": "number of search results found",
     "placeholders": {
       "number": {
@@ -889,5 +856,25 @@
   "google_plus_language": {
     "message": "sv",
     "description": "Google plus language abbreviation"
+  },
+
+  "back_to_week_link": {
+    "message": "$arrow$ Tillbaka till vecka",
+    "description": "back to week link",
+    "placeholders": {
+      "arrow": {
+        "content": "$1",
+        "example": "an arrow"
+      }
+    }
+  },
+  "back_arrow": {
+    "message": "&larr;",
+    "description": "ascii arrow"
+  },
+
+  "search_by_domain": {
+    "message": "Mer från denna sajt",
+    "description": "search by domain of visit"
   }
 }

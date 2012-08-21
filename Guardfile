@@ -1,18 +1,27 @@
-# A sample Guardfile
-# More info at https://github.com/guard/guard#readme
-
-# Run JS and CoffeeScript files in a typical Rails 3.1 fashion, placing Underscore templates in app/views/*.jst
-# Your spec files end with _spec.{js,coffee}.
-
-spec_location = "spec/javascripts/%s_spec"
-
-# uncomment if you use NerdCapsSpec.js
-# spec_location = "spec/javascripts/%sSpec"
-
-guard 'jasmine-headless-webkit' do
-  watch(%r{^app/views/.*\.jst$})
-  watch(%r{^public/javascripts/(.*)\.js$}) { |m| newest_js_file(spec_location % m[1]) }
-  watch(%r{^app/assets/javascripts/(.*)\.(js|coffee)$}) { |m| newest_js_file(spec_location % m[1]) }
-  watch(%r{^spec/javascripts/(.*)_spec\..*}) { |m| newest_js_file(spec_location % m[1]) }
+guard 'coffeescript', :output => 'extension/javascripts/' do
+  watch('^extension/coffeescripts/(.+\.coffee)')
 end
 
+guard 'coffeescript', :output => 'spec/javascripts' do
+  watch('^spec/coffeescripts/(.+\.coffee)')
+end
+
+watch('extension/templates/(.*)\.html') do
+  template_file = ""
+  Dir.foreach('extension/templates/') do |file|
+    if file.match(/.html$/)
+      key = file.gsub(/.html/, '')
+      template_content = IO.read("extension/templates/#{file}")
+      template_content.gsub!(/\n/, '').gsub!(/\"/, '\"')
+      template_file += "BH.Templates.#{key} = '#{template_content}';\n\n"
+    end
+  end
+  puts 'generating js'
+  system('rake concat_js')
+  File.open('extension/javascripts/templates.js', 'w') {|f| f.write(template_file) }
+end
+
+watch('^extension/coffeescripts/(.*)\.coffee') do
+  puts 'generating js'
+  system('rake concat_js')
+end

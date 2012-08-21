@@ -17,79 +17,36 @@
     "description": "Extension title"
   },
 
-  "extended_formal_date": {
-    "message": "$weekday$, $day$ $month$ $year$ r.",
-    "description": "The order of a full extended date",
+  "short_date": {
+    "message": "Do MMMM",
+    "description": "for Moment.js"
+  },
+  "short_date_with_day": {
+    "message": "dddd, Do MMMM",
+    "description": "for Moment.js"
+  },
+  "date_week_label": {
+    "message": "Tydzień dla daty $week$",
+    "description": "short week w/ label",
     "placeholders": {
-      "weekday": {
+      "week": {
         "content": "$1",
-        "example": "March"
-      },
-      "month": {
-        "content": "$2",
-        "example": "March"
-      },
-      "day": {
-        "content": "$3",
-        "example": "25"
-      },
-      "year": {
-        "content": "$4",
-        "example": "2011"
+        "example": "date"
       }
     }
+  },
+  "day_date": {
+    "message": "dddd",
+    "description": "the day"
+  },
+
+  "extended_formal_date": {
+    "message": "dddd, Do MMMM YYYY r.",
+    "description": "The order of a full extended date"
   },
   "formal_date": {
-    "message": "$day$ $month$ $year$ r.",
-    "description": "The order of a full date",
-    "placeholders": {
-      "month": {
-        "content": "$1",
-        "example": "March"
-      },
-      "day": {
-        "content": "$2",
-        "example": "25"
-      },
-      "year": {
-        "content": "$3",
-        "example": "2011"
-      }
-    }
-  },
-  "informal_date": {
-    "message": "$week_day$ $date_open$$day$$date_close$",
-    "description": "Date labels in sidebar",
-    "placeholders": {
-      "week_day": {
-        "content": "$1",
-        "example": "Monday"
-      },
-      "day": {
-        "content": "$2",
-        "example": "4"
-      },
-      "ordinal": {
-        "content": "$3",
-        "example": "st"
-      },
-      "ordinal_open": {
-        "content": "$4",
-        "example": "open tag for ordinal"
-      },
-      "ordinal_close": {
-        "content": "$5",
-        "example": "close tag for ordinal"
-      },
-      "date_open": {
-        "content": "$6",
-        "example": "open tag for date"
-      },
-      "date_close": {
-        "content": "$7",
-        "example": "close tag for date"
-      }
-    }
+    "message": "Do MMMM YYYY r.",
+    "description": "The order of a full date"
   },
   "twelve_hour_time_format": {
     "message": "$time$ $label$",
@@ -611,7 +568,7 @@
   },
 
   "number_of_visits": {
-    "message": "$number_open$$number$$number_close$ Wizyty",
+    "message": "Wizyty: $number_open$$number$$number_close$",
     "description": "Label to a number representing a number of visits",
     "placeholders": {
       "number": {
@@ -788,7 +745,7 @@
   },
 
   "version_title": {
-    "message": "Nowy wygląd z najważniejszymi opcjami pod ręką!",
+    "message": "Pokonany kamień milowy: wprowadzamy organizację wyników wg tygodni!",
     "description": "Title of the version modal"
   },
   "version_description": {
@@ -808,7 +765,7 @@
     "description": "Heading for what's new in version"
   },
   "version_items": {
-    "message": "$open$Nowy interfejs pasujący do przyszłego wyglądu Google Chrome$close$ $open$Usuń wyniki wyszukiwania$close$ $open$Nowa organizacja paska bocznego$close$ $open$Usuwanie wizyt z danej godziny$close$ $open$Wielkie przyspieszenia prędkości$close$",
+    "message": "$open$Łatwy dostęp do ostatnich 10 tygodni wizyt$close$ $open$Wizyty organizowane wg okresu tygodnia$close$ $open$Podsumowanie tygodniowej aktywności w sieci$close$ $open$Szybsze uruchamianie$close$ $open$Optymalizacja wyszukiwania i grupowania wg wizyt$close$ $open$Wyszukiwanie wg wizyt na poprzedniej stronie poprzez jedno kliknięcie$close$",
     "description": "Release bulletpoints",
     "placeholders": {
       "open": {
@@ -844,6 +801,16 @@
   },
   "number_of_search_results": {
     "message": "Znaleziono wyników: $number$",
+    "description": "number of search results found",
+    "placeholders": {
+      "number": {
+        "content": "$1",
+        "example": "10"
+      }
+    }
+  },
+  "max_number_of_search_results": {
+    "message": "Znaleziono wyników $number$",
     "description": "number of search results found",
     "placeholders": {
       "number": {
@@ -889,5 +856,25 @@
   "google_plus_language": {
     "message": "pl",
     "description": "Google plus language abbreviation"
+  },
+
+  "back_to_week_link": {
+    "message": "$arrow$ Wróć do podglądu tygodnia",
+    "description": "back to week link",
+    "placeholders": {
+      "arrow": {
+        "content": "$1",
+        "example": "an arrow"
+      }
+    }
+  },
+  "back_arrow": {
+    "message": "&larr;",
+    "description": "ascii arrow"
+  },
+
+  "search_by_domain": {
+    "message": "Więcej wejść tutaj...",
+    "description": "search by domain of visit"
   }
 }

@@ -1,4 +1,6 @@
-source :gemcutter
+source :rubygems
 
-gem 'guard-jasmine-headless-webkit'
+gem 'guard'
+gem 'guard-coffeescript'
+gem 'guard-livereload'
 gem 'jasmine'

@@ -17,79 +17,36 @@
     "description": "Extension title"
   },
 
-  "extended_formal_date": {
-    "message": "$weekday$, $day$ de $month$ de $year$",
-    "description": "The order of a full extended date",
+  "short_date": {
+    "message": "Do MMMM",
+    "description": "for Moment.js"
+  },
+  "short_date_with_day": {
+    "message": "dddd de MMMM Do",
+    "description": "for Moment.js"
+  },
+  "date_week_label": {
+    "message": "Semana del $week$",
+    "description": "short week w/ label",
     "placeholders": {
-      "weekday": {
+      "week": {
         "content": "$1",
-        "example": "Jueves"
-      },
-      "month": {
-        "content": "$2",
-        "example": "March"
-      },
-      "day": {
-        "content": "$3",
-        "example": "25"
-      },
-      "year": {
-        "content": "$4",
-        "example": "2011"
+        "example": "date"
       }
     }
+  },
+  "day_date": {
+    "message": "dddd",
+    "description": "the day"
+  },
+
+  "extended_formal_date": {
+    "message": "dddd, Do MMMM YYYY",
+    "description": "The order of a full extended date"
   },
   "formal_date": {
-    "message": "$day$ de $month$ de $year$",
-    "description": "The order of a full date",
-    "placeholders": {
-      "month": {
-        "content": "$1",
-        "example": "March"
-      },
-      "day": {
-        "content": "$2",
-        "example": "25"
-      },
-      "year": {
-        "content": "$3",
-        "example": "2011"
-      }
-    }
-  },
-  "informal_date": {
-    "message": "$week_day$ $date_open$$day$$ordinal$$date_close$",
-    "description": "Date labels in sidebar",
-    "placeholders": {
-      "week_day": {
-        "content": "$1",
-        "example": "Monday"
-      },
-      "day": {
-        "content": "$2",
-        "example": "4"
-      },
-      "ordinal": {
-        "content": "$3",
-        "example": "st"
-      },
-      "ordinal_open": {
-        "content": "$4",
-        "example": "open tag for ordinal"
-      },
-      "ordinal_close": {
-        "content": "$5",
-        "example": "close tag for ordinal"
-      },
-      "date_open": {
-        "content": "$6",
-        "example": "open tag for date"
-      },
-      "date_close": {
-        "content": "$7",
-        "example": "close tag for date"
-      }
-    }
+    "message": "Do MMMM YYYY",
+    "description": "The order of a full date"
   },
   "twelve_hour_time_format": {
     "message": "$time$ $label$",
@@ -788,7 +745,7 @@
   },
 
   "version_title": {
-    "message": "¡Una renovada imagen con las características más solicitadas!",
+    "message": "Un gran logro: !Visitas organizadas por semana!",
     "description": "Title of the version modal"
   },
   "version_description": {
@@ -808,7 +765,7 @@
     "description": "Heading for what's new in version"
   },
   "version_items": {
-    "message": "$open$Interfaz renovada acorde con el futuro diseño de Chrome$close$ $open$Borrar todos los resultados de búsqueda$close$ $open$Nueva organización del panel de navegación$close$ $open$Borrar todas las visitas de un grupo de tiempo$close$ $open$Importantes mejores en velocidad$close$",
+    "message": "$open$Fácil vista de las 10 últimas semanas de visitas$close$ $open$Visitas organizadas por intervalos de semanas$close$ $open$Resumen semanal de la actividad de navegación$close$ $open$Velocidad en tiempo de iniciación$close$ $open$Búsqueda optimizada y grupos de visitas$close$ $open$Búsqueda por dominio visitado anteriormente con un click$close$",
     "description": "Release bulletpoints",
     "placeholders": {
       "open": {
@@ -844,6 +801,16 @@
   },
   "number_of_search_results": {
     "message": "$number$ resultados encontrados",
+    "description": "number of search results found",
+    "placeholders": {
+      "number": {
+        "content": "$1",
+        "example": "10"
+      }
+    }
+  },
+  "max_number_of_search_results": {
+    "message": "Más de $number$ resultados encontrados",
     "description": "number of search results found",
     "placeholders": {
       "number": {
@@ -889,5 +856,25 @@
   "google_plus_language": {
     "message": "es",
     "description": "Google plus language abbreviation"
+  },
+
+  "back_to_week_link": {
+    "message": "$arrow$ Volver a semana",
+    "description": "back to week link",
+    "placeholders": {
+      "arrow": {
+        "content": "$1",
+        "example": "an arrow"
+      }
+    }
+  },
+  "back_arrow": {
+    "message": "&larr;",
+    "description": "ascii arrow"
+  },
+
+  "search_by_domain": {
+    "message": "Más de este sitio",
+    "description": "search by domain of visit"
   }
 }

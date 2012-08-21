@@ -17,79 +17,36 @@
     "description": "Extension title"
   },
 
-  "extended_formal_date": {
-    "message": "$weekday$, le $day$ $month$ $year$",
-    "description": "The order of a full extended date",
+  "short_date": {
+    "message": "Do MMMM",
+    "description": "for Moment.js"
+  },
+  "short_date_with_day": {
+    "message": "dddd, Do MMMM",
+    "description": "for Moment.js"
+  },
+  "date_week_label": {
+    "message": "Semaine du $week$",
+    "description": "short week w/ label",
     "placeholders": {
-      "weekday": {
+      "week": {
         "content": "$1",
-        "example": "March"
-      },
-      "month": {
-        "content": "$2",
-        "example": "March"
-      },
-      "day": {
-        "content": "$3",
-        "example": "25"
-      },
-      "year": {
-        "content": "$4",
-        "example": "2011"
+        "example": "date"
       }
     }
+  },
+  "day_date": {
+    "message": "dddd",
+    "description": "the day"
+  },
+
+  "extended_formal_date": {
+    "message": "dddd, Do MMMM YYYY",
+    "description": "The order of a full extended date"
   },
   "formal_date": {
-    "message": "le $day$ $month$ $year$",
-    "description": "The order of a full date",
-    "placeholders": {
-      "month": {
-        "content": "$1",
-        "example": "March"
-      },
-      "day": {
-        "content": "$2",
-        "example": "25"
-      },
-      "year": {
-        "content": "$3",
-        "example": "2011"
-      }
-    }
-  },
-  "informal_date": {
-    "message": "$week_day$ $date_open$$day$$ordinal_open$$ordinal$$ordinal_close$$date_close$",
-    "description": "Date labels in sidebar",
-    "placeholders": {
-      "week_day": {
-        "content": "$1",
-        "example": "Monday"
-      },
-      "day": {
-        "content": "$2",
-        "example": "4"
-      },
-      "ordinal": {
-        "content": "$3",
-        "example": "st"
-      },
-      "ordinal_open": {
-        "content": "$4",
-        "example": "open tag for ordinal"
-      },
-      "ordinal_close": {
-        "content": "$5",
-        "example": "close tag for ordinal"
-      },
-      "date_open": {
-        "content": "$6",
-        "example": "open tag for date"
-      },
-      "date_close": {
-        "content": "$7",
-        "example": "close tag for date"
-      }
-    }
+    "message": "le Do MMMM YYYY",
+    "description": "The order of a full date"
   },
   "twelve_hour_time_format": {
     "message": "$time$ $label$",
@@ -192,7 +149,7 @@
     "description": "Section heading in Settings"
   },
   "view_release_announcement_link": {
-    "message": "Voir l'autoriser de publication",
+    "message": "Voir la note de mise à jour",
     "description": "Link text to view the release announcement"
   },
   "current_version_label": {
@@ -218,7 +175,7 @@
     "description": "Section heading in Settings"
   },
   "suggestions_bugs_comments": {
-    "message": "Suggestions, bugs, commentaires? vos Tweets pour Better_History $link_open$@Better_History$link_close$",
+    "message": "Suggestions, bugs, commentaires? Adressez vos Tweets à Better_History $link_open$@Better_History$link_close$",
     "description": "Link text to give feedback",
     "placeholders": {
       "link_open": {
@@ -230,7 +187,7 @@
     }
   },
   "spread_the_word_section_title": {
-    "message": "Partager et passez le mot",
+    "message": "Partagez et Recommandez Better History",
     "description": "Section heading in Settings"
   },
   "leave_a_review": {
@@ -600,7 +557,7 @@
     "description": "The month"
   },
   "confirm_delete_all_visits": {
-    "message": "Supprimer toutes les visites à $formal_date$?",
+    "message": "Supprimer toutes les visites du $formal_date$?",
     "description": "Confirmation text to delete all visits from a specific date",
     "placeholders": {
       "formal_date": {
@@ -788,7 +745,7 @@
   },
 
   "version_title": {
-    "message": "Un look tout neuf avec les fonctionnalités les plus demandées!",
+    "message": "Une étape importante: Visites organisées par semaines!",
     "description": "Title of the version modal"
   },
   "version_description": {
@@ -808,7 +765,7 @@
     "description": "Heading for what's new in version"
   },
   "version_items": {
-    "message": "$open$Une conception d'interface neuve qui correspond au futur designs de Chrome$close$ $open$Supprimer tous les résultats de la recherche$close$ $open$Nouvelle organisation de la side-navigation$close$ $open$Supprimer tous les visites d'un groupement temps$close$ $open$Une grande  améliorations de vitesse$close$",
+    "message": "$open$Visualiser facilement les 10 dernières semaines de visites$close$ $open$Visites organisées en intervalles d'une semaine$close$ $open$Résumé de l'activité de navigation de la semaine$close$ $open$Temps de démarrage plus rapide$close$ $open$Optimisation de la recherche et du regroupement des visites$close$ $open$Recherche d'un site d'une visite passée en un seul clic$close$",
     "description": "Release bulletpoints",
     "placeholders": {
       "open": {
@@ -844,6 +801,16 @@
   },
   "number_of_search_results": {
     "message": "Résultats trouvés $number$",
+    "description": "number of search results found",
+    "placeholders": {
+      "number": {
+        "content": "$1",
+        "example": "10"
+      }
+    }
+  },
+  "max_number_of_search_results": {
+    "message": "Trouvés plus de $number$ résultats",
     "description": "number of search results found",
     "placeholders": {
       "number": {
@@ -889,5 +856,25 @@
   "google_plus_language": {
     "message": "fr",
     "description": "Google plus language abbreviation"
+  },
+
+  "back_to_week_link": {
+    "message": "$arrow$ Retour à la semaine",
+    "description": "back to week link",
+    "placeholders": {
+      "arrow": {
+        "content": "$1",
+        "example": "an arrow"
+      }
+    }
+  },
+  "back_arrow": {
+    "message": "&larr;",
+    "description": "ascii arrow"
+  },
+
+  "search_by_domain": {
+    "message": "Plus d'infos sur le site",
+    "description": "search by domain of visit"
   }
 }

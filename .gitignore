@@ -2,3 +2,10 @@
 *.swp
 *.zip
 .jhw-cache
+
+/extension/javascripts/*
+!/extension/javascripts/frameworks
+
+/spec/javascripts/*
+!/spec/javascripts/support
+!/spec/javascripts/spec_helper.js

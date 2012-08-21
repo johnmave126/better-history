@@ -2,24 +2,13 @@
 <script type="text/javascript" src="javascripts/frameworks/jquery-1.6.2.min.js"></script>
 <script type="text/javascript" src="javascripts/frameworks/underscore-min.js"></script>
 <script type="text/javascript" src="javascripts/frameworks/backbone-min.js"></script>
+<script type="text/javascript" src="javascripts/namespace.js"></script>
 <script type="text/javascript" src="javascripts/models/settings.js"></script>
 <script type="text/javascript" src="javascripts/lib/helpers.js"></script>
-<script type="text/javascript" src="javascripts/lib/context_menus.js"></script>
+<script type="text/javascript" src="javascripts/lib/context_menus/page_context_menu.js"></script>
+<script type="text/javascript" src="javascripts/lib/context_menus/selection_context_menu.js"></script>
 <script type="text/javascript" src="javascripts/lib/browser_actions.js"></script>
-<script type="text/javascript" src="javascripts/lib/url.js"></script>
+<script type="text/javascript" src="javascripts/lib/url_builder.js"></script>
 <script type="text/javascript" src="javascripts/lib/backbone_hacks.js"></script>
-<script type="text/javascript">
-  var settings = new Settings();
-  settings.fetch();
-
-  selectionContextMenu = new SelectionContextMenu();
-  if(settings.get('searchBySelection')) selectionContextMenu.create();
-
-  pageContextMenu = new PageContextMenu();
-  pageContextMenu.listenToTabs();
-  if(settings.get('searchByDomain')) pageContextMenu.create();
-
-  browserActions = new BrowserActions();
-  browserActions.listen();
-</script>
+<script type="text/javascript" src="javascripts/initialize_background.js"></script>
 
