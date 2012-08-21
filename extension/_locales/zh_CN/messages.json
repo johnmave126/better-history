@@ -18,7 +18,7 @@
   },
 
   "short_date": {
-    "message": "MMMM Do",
+    "message": "MMMM D日",
     "description": "for Moment.js"
   },
   "short_date_with_day": {
@@ -41,11 +41,11 @@
   },
 
   "extended_formal_date": {
-    "message": " YYYY年MMMMDo日，dddd",
+    "message": " YYYY年MMMMD日，dddd",
     "description": "The order of a full extended date，"
   },
   "formal_date": {
-    "message": "YYYY年MMMMDo日",
+    "message": "YYYY年MMMMD日",
     "description": "The order of a full date"
   },
   "twelve_hour_time_format": {
