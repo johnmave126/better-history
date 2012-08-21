@@ -18,7 +18,7 @@
   },
 
   "short_date": {
-    "message": "MMMM D日",
+    "message": "MMMMD日",
     "description": "for Moment.js"
   },
   "short_date_with_day": {
