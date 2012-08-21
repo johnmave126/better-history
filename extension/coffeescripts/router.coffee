@@ -12,7 +12,7 @@ class BH.Router extends Backbone.Router
     window.settings = new BH.Models.Settings()
     window.settings.fetch()
 
-    window.version = new BH.Models.Version({version: '1.6.0'})
+    window.version = new BH.Models.Version({version: '1.7.0'})
     window.appView = @app = new BH.Views.AppView(
       el: $('.app')
       model: version
