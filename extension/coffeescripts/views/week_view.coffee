@@ -37,6 +37,7 @@ class BH.Views.WeekView extends BH.Views.ViewWithSearch
   updateWeekStats: (model) ->
     html = @_buildCountHtml(model.get('count'))
     @$('.controls .count').html(html)
+    @assignTabIndices('.day a')
 
   _buildCountHtml: (count) ->
     chrome.i18n.getMessage('number_of_visits', [

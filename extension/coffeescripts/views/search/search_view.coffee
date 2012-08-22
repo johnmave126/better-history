@@ -50,7 +50,7 @@ class BH.Views.SearchView extends BH.Views.ViewWithSearch
     else
       @$('.delete_all').removeAttr('disabled')
 
-    @tabIndex($(contentElement).find('a'))
+    @assignTabIndices('.visit a:first-child')
 
   clickedDeleteAll: (ev) ->
     ev.preventDefault()

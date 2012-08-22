@@ -21,8 +21,10 @@ class BH.Views.BaseView extends Backbone.View
     element = $('<div/>')
     document.title = $(element).html(title).text() + ' - Better History'
 
-  tabIndex: (selector) ->
-    $('button').attr('tabindex', '-1')
-    $(selector).each (i) ->
-      $(this).attr('tabindex', i + 2)
+  assignTabIndices: (selector) ->
+    $('*').removeAttr 'tabindex'
+    @$('input.search').attr 'tabindex', 1
+    @$(selector).each (i) ->
+      $(@).attr 'tabindex', i + 2
+    @$('.search').focus()
 

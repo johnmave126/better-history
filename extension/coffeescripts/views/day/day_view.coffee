@@ -21,8 +21,6 @@ class BH.Views.DayView extends BH.Views.ViewWithSearch
   renderHistory: ->
     @collection = @model.get('history')
 
-    @$('.search').focus()
-
     @dayResultsView = new BH.Views.DayResultsView
       collection: @collection
       model: @model
@@ -31,7 +29,7 @@ class BH.Views.DayView extends BH.Views.ViewWithSearch
     if @collection.length == 0 || @model.get('filter')
       @$('button').attr('disabled', 'disabled')
     else
-      @tabIndex($('.content a', @el))
+      @assignTabIndices('.interval > .visits > .visit > a:first-child')
       @$('button').removeAttr('disabled')
 
   updateUrl: ->
