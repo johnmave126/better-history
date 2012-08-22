@@ -75,7 +75,8 @@
 .week_view .day.future {
   opacity: 0.6;
 }
-.week_view .day:hover .bar {
+.week_view .day:hover .bar,
+.week_view .day a:focus .bar {
   background-color:#CCC;
 }
 .week_view .day_view .page {
