@@ -8,7 +8,10 @@ class BH.Lib.HistoryQuery
 
     options = {}
     _.extend(options, @options)
-    _.extend(options, @searchOptions) if @options.searching?
+    if @options.searching?
+      _.extend(options, @searchOptions)
+    else
+      options.maxResults = 1000
     delete options.searching
 
     @chromeAPI.history.search options, (results) =>
