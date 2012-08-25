@@ -11,14 +11,11 @@ describe "BH.Lib.HistoryQuery", ->
     beforeEach ->
       options = {text: 'search term'}
 
-    it "calls to chrome history API with the options and callback", ->
-      historyQuery.run(options, callback)
-      expect(chromeAPI.history.search).toHaveBeenCalledWith(options, jasmine.any(Function))
-
     describe "when searching is not set on the options", ->
       it "calls to chrome history API with the passed options and a callback", ->
         historyQuery.run(options, callback)
-        expect(chromeAPI.history.search).toHaveBeenCalledWith(options, jasmine.any(Function))
+        expectedOptions = _.extend {}, options, maxResults: 1000
+        expect(chromeAPI.history.search).toHaveBeenCalledWith(expectedOptions, jasmine.any(Function))
 
     describe "when searching is set in the options", ->
       beforeEach ->
