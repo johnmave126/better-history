@@ -11,7 +11,6 @@ class BH.Views.AppView extends BH.Views.BaseView
   render: ->
     if !@model.get 'suppress'
       versionView = new BH.Views.VersionView model: @model
-      $('body').append versionView.render().el
       versionView.open()
 
     properties = _.extend {}, @getI18nValues(), @collection.toTemplate()
