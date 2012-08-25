@@ -5,8 +5,8 @@ class BH.Views.AppView extends BH.Views.BaseView
   events:
     'click .menu > *': 'weekClicked'
 
-  initialize: (config, @options) ->
-    @views = weeks: {}
+  views:
+    weeks: {}
 
   render: ->
     if !@model.get 'suppress'
