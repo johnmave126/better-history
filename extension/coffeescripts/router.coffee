@@ -38,25 +38,21 @@ class BH.Router extends Backbone.Router
       state.set route: location.hash
 
   week: (id) ->
-    @app.loadWeek(id)
-    view = @app.views.weeks[id]
+    view = @app.loadWeek(id)
     view.select()
     @_delay -> view.model.fetch()
 
   day: (weekId, id) ->
-    @app.loadWeek weekId
-    view = @app.views.weeks[weekId]
-    view.model.get('days').get(id).fetch
-      success: -> view.selectDay id
+    view = @app.loadDay weekId, id
+    view.model.fetch()
+    view.select()
 
   settings: ->
-    @app.loadSettings()
-    view = @app.views.settings
+    view = @app.loadSettings()
     view.select()
 
   search: (query) ->
-    @app.loadSearch()
-    view = @app.views.search
+    view = @app.loadSearch()
     view.select()
     @_delay -> view.model.set query: decodeURIComponent(query)
 

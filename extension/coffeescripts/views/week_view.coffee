@@ -14,17 +14,12 @@ class BH.Views.WeekView extends BH.Views.ViewWithSearch
     @model.get('days').each (model) =>
       model.bind('change:count', @updateDay, @)
 
-  selectDay: (id) ->
-    @dayViews[id].select().renderHistory()
-
-  render: (type) ->
+  render: ->
     @$el.html(@renderTemplate(_.extend(@getI18nValues(), @model.toTemplate())))
 
+    # If any day has been preloaded, update the day stats
     @model.get('days').each (model) =>
-      @dayViews[model.id] = view = new BH.Views.DayView
-        model: model,
-        weekModel: @model
-      $('.mainview').append(view.render().el)
+      @updateDay model if model.get('count') != 0
     @
 
   pageTitle: ->
