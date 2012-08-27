@@ -8,9 +8,27 @@ class BH.Models.Settings extends BH.Models.Base
       timeFormat: parseInt(@chromeAPI.i18n.getMessage('default_time_format'), 10)
       searchByDomain: true
       searchBySelection: true
+      openLocation: 'last_visit'
     }
 
   toTemplate: ->
+    openLocation: [
+      {
+        text: @chromeAPI.i18n.getMessage('last_visit')
+        value: 'last_visit'
+        selected: @_openLocationSelectedCheck('last_visit')
+      },
+      {
+        text: @chromeAPI.i18n.getMessage('current_day')
+        value: 'current_day'
+        selected: @_openLocationSelectedCheck('current_day')
+      },
+      {
+        text: @chromeAPI.i18n.getMessage('current_week')
+        value: 'current_week'
+        selected: @_openLocationSelectedCheck('current_week')
+      }
+    ]
     timeGrouping: [
       {
         text: @chromeAPI.i18n.getMessage('15_minutes_option')
@@ -59,3 +77,6 @@ class BH.Models.Settings extends BH.Models.Base
 
   _timeFormatSelectedCheck: (value) ->
     if parseInt(value, 10) == @timeFormat() then true else false
+
+  _openLocationSelectedCheck: (value) ->
+    if value == @get('openLocation') then true else false

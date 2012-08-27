@@ -29,13 +29,29 @@ class BH.Router extends Backbone.Router
         {date: moment().past(chrome.i18n.getMessage('monday'), 9)}
       ])
     @app.render()
+
+    urlBuilder = new BH.Helpers.UrlBuilder()
+
     window.state = new BH.Models.State
-          route: new BH.Helpers.UrlBuilder().build('week', [@app.collection.at(0).id])
+      route: urlBuilder.build('week', [@app.collection.at(0).id])
     window.state.fetch()
+
+    if settings.get('openLocation') == 'current_day'
+      route = urlBuilder.build 'day', [
+        @app.collection.at(0).id,
+        new Date().getDate()
+      ]
+    else if settings.get('openLocation') == 'current_week'
+      route = urlBuilder.build 'week', [
+        @app.collection.at(0).id
+      ]
+
+    state.set route: route if route?
 
     @bind 'all', (route) ->
       window.scroll 0, 0
-      state.set route: location.hash
+      if settings.get('openLocation') == 'last_visit'
+        state.set route: location.hash
 
   week: (id) ->
     view = @app.loadWeek(id)

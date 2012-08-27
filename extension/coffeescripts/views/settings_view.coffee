@@ -7,6 +7,7 @@ class BH.Views.SettingsView extends BH.Views.BaseView
     'click .clear_history': 'clickedClearHistory'
     'change .time_grouping': 'changedTimeGrouping'
     'change .time_format': 'changedTimeFormat'
+    'change .open_location': 'changedOpenLocation'
     'click .domain_grouping': 'clickedDomainGrouping'
     'click .search_by_domain': 'clickedSearchByDomain'
     'click .search_by_selection': 'clickedSearchBySelection'
@@ -50,6 +51,9 @@ class BH.Views.SettingsView extends BH.Views.BaseView
 
   changedTimeFormat: (ev) ->
     @model.set({timeFormat: $(ev.currentTarget).val()})
+
+  changedOpenLocation: (ev) ->
+    @model.set({openLocation: $(ev.currentTarget).val()})
 
   clickedDomainGrouping: (ev) ->
     @model.set({domainGrouping: $(ev.currentTarget).is(':checked')})
@@ -106,7 +110,9 @@ class BH.Views.SettingsView extends BH.Views.BaseView
       'spread_the_word_section_title',
       'leave_a_review',
       'twitter_template',
-      'twitter_language'
+      'twitter_language',
+      'open_location',
+      'general_section_title'
     ])
     properties[@i18nFetcher.scopeKey('credits_link')] = chrome.i18n.getMessage('credits_link', [
       '<strong>',

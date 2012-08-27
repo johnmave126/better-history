@@ -10,6 +10,19 @@
       </div>
     </section>
     <section>
+      <h3>{{i18n_general_section_title}}</h3>
+      <div class="row">
+        <label>
+          <span class="select">{{i18n_open_location}}</span>
+          <select class="open_location">
+            {{#openLocation}}
+              <option value="{{value}}" {{#selected}}selected="selected"{{/selected}}>{{text}}</options>
+            {{/openLocation}}
+          </select>
+        </label>
+      </div>
+    </section>
+    <section>
       <h3>{{i18n_visit_grouping_section_title}}</h3>
       <div class="row">
         <label>
