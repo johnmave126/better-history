@@ -61,7 +61,7 @@ class BH.Models.Settings extends BH.Models.Base
     searchBySelection: @get('searchBySelection')
     searchByDomain: @get('searchByDomain')
     domainGrouping: @get('domainGrouping')
-    version: version.get('version')
+    version: version.get('displayVersion')
 
   timeGrouping: ->
     parseInt(@get('timeGrouping'), 10)
