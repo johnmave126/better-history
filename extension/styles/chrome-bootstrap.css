@@ -47,6 +47,9 @@ h1 {
   color: #5C6166;
   font-size: 18px;
 }
+h1 a {
+  color: #5C6166;
+}
 h3 {
   color: black;
   font-size: 1.2em;
@@ -179,8 +182,6 @@ ul.menu li {
 }
 ul.menu li.selected {
   -webkit-border-start-color: #4e5764;
-  cursor: default;
-  pointer-events: none;
 }
 ul.menu li.selected a {
   color: #464E5A;
