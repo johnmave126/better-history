@@ -33,6 +33,7 @@ class BH.Views.AppView extends BH.Views.BaseView
     @views.weeks[id]
 
   loadDay: (weekId, id) ->
+    @_selectWeek @$("[data-week-id='#{weekId}']")
     if !@views.days[weekId]
       @views.days[weekId] = {}
 
@@ -46,6 +47,7 @@ class BH.Views.AppView extends BH.Views.BaseView
     @views.days[weekId][id]
 
   loadSettings: ->
+    @_clearMenuSelection()
     @$('.menu .setting').parent().addClass @cssClass.selected
     if !@views.settings
       @views.settings = new BH.Views.SettingsView
@@ -61,8 +63,11 @@ class BH.Views.AppView extends BH.Views.BaseView
     @views.search
 
   _selectWeek: (element) ->
-    @$('.menu > *').removeClass @cssClass.selected
+    @_clearMenuSelection()
     $(element).addClass @cssClass.selected
+
+  _clearMenuSelection: ->
+    @$('.menu > *').removeClass @cssClass.selected
 
   _insert: (html) ->
     @$('.mainview').append html

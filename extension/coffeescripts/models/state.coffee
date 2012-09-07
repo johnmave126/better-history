@@ -22,4 +22,5 @@ class BH.Models.State extends BH.Models.Base
         appView.collection.at(0).id
       ]
 
+
     data

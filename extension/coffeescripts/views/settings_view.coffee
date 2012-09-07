@@ -54,6 +54,7 @@ class BH.Views.SettingsView extends BH.Views.BaseView
 
   changedOpenLocation: (ev) ->
     @model.set({openLocation: $(ev.currentTarget).val()})
+    state.fetch()
 
   clickedDomainGrouping: (ev) ->
     @model.set({domainGrouping: $(ev.currentTarget).is(':checked')})
