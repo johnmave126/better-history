@@ -3,7 +3,7 @@ class BH.Models.State extends BH.Models.Base
 
   defaults: ->
     urlBuilder = new BH.Helpers.UrlBuilder()
-    route: urlBuilder.build 'week', [appView.collection.at(0).id]
+    route: urlBuilder.build('week', [appView.collection.at(0).id])
 
   initialize: ->
     @bind 'change', @save, @
