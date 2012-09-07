@@ -46,6 +46,7 @@ class BH.Views.AppView extends BH.Views.BaseView
     @views.days[weekId][id]
 
   loadSettings: ->
+    @$('.menu .setting').parent().addClass @cssClass.selected
     if !@views.settings
       @views.settings = new BH.Views.SettingsView
         model: @options.settings
