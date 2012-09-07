@@ -1,12 +1,13 @@
 class BH.Router extends Backbone.Router
   routes:
+    '': 'reset'
     'settings': 'settings'
     'search/*query': 'search'
     'weeks/:id': 'week'
     'weeks/:weekId/days/:id': 'day'
 
   initialize: ->
-    # yuck
+    # yuck, really need to do something about this...
     window.settings = new BH.Models.Settings()
     window.settings.fetch()
 
@@ -31,28 +32,18 @@ class BH.Router extends Backbone.Router
       ])
     @app.render()
 
-    urlBuilder = new BH.Helpers.UrlBuilder()
-
-    window.state = new BH.Models.State
-      route: urlBuilder.build('week', [@app.collection.at(0).id])
-    window.state.fetch()
-
-    if settings.get('openLocation') == 'current_day'
-      route = urlBuilder.build 'day', [
-        @app.collection.at(0).id,
-        new Date().getDate()
-      ]
-    else if settings.get('openLocation') == 'current_week'
-      route = urlBuilder.build 'week', [
-        @app.collection.at(0).id
-      ]
-
-    state.set route: route if route?
-
     @bind 'all', (route) ->
       window.scroll 0, 0
       if settings.get('openLocation') == 'last_visit'
         state.set route: location.hash
+
+    window.state = new BH.Models.State()
+    window.state.fetch()
+
+    @reset if location.hash == ''
+
+  reset: ->
+    @navigate state.get('route'), trigger: true
 
   week: (id) ->
     view = @app.loadWeek(id)
