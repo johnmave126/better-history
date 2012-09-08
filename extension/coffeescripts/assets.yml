@@ -18,7 +18,6 @@
  - views/modals/modal_view
  - views/modals/prompt_view
  - views/modals/credits_view
- - views/modals/version_view
  - views/search/search_view
  - views/search/search_results_view
  - views/day/day_view

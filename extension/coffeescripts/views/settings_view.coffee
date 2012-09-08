@@ -12,7 +12,6 @@ class BH.Views.SettingsView extends BH.Views.BaseView
     'click .search_by_domain': 'clickedSearchByDomain'
     'click .search_by_selection': 'clickedSearchBySelection'
     'click .credits': 'clickedCredits'
-    'click .release_announcement': 'clickedReleaseAnnouncement'
 
   initialize: ->
     @model.off('change')
@@ -43,7 +42,12 @@ class BH.Views.SettingsView extends BH.Views.BaseView
     )()
 
   render: ->
-    @$el.append(@renderTemplate(_.extend(@getI18nValues(), @model.toTemplate())))
+    properties = _.extend {},
+      @getI18nValues(),
+      @model.toTemplate(),
+      @options.version.toTemplate()
+
+    @$el.append(@renderTemplate properties)
     @
 
   changedTimeGrouping: (ev) ->
@@ -85,13 +89,6 @@ class BH.Views.SettingsView extends BH.Views.BaseView
     $('body').append(creditsView.render().el)
     creditsView.open()
 
-  clickedReleaseAnnouncement: (ev) ->
-    ev.preventDefault()
-    versionView = new BH.Views.VersionView({model: version})
-    $('body').append(versionView.render().el)
-    versionView.open()
-
-
   getI18nValues: ->
     properties = @i18nFetcher.get([
       'settings_title',
@@ -105,7 +102,6 @@ class BH.Views.SettingsView extends BH.Views.BaseView
       'search_by_text_selection_label',
       'search_by_domain_label',
       'whats_new_section_title',
-      'view_release_announcement_link',
       'current_version_label',
       'feedback_section_title',
       'spread_the_word_section_title',

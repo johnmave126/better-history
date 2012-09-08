@@ -10,11 +10,6 @@ class BH.Views.AppView extends BH.Views.BaseView
     days: {}
 
   render: ->
-    if !@model.get 'suppress'
-      versionView = new BH.Views.VersionView
-        model: @model
-      versionView.open()
-
     properties = _.extend {}, @getI18nValues(), @collection.toTemplate()
     @$el.html @renderTemplate(properties)
 
@@ -52,6 +47,7 @@ class BH.Views.AppView extends BH.Views.BaseView
     if !@views.settings
       @views.settings = new BH.Views.SettingsView
         model: @options.settings
+        version: @model
       @_insert @views.settings.render().el
     @views.settings
 
