@@ -9,9 +9,15 @@ class BH.Views.AppView extends BH.Views.BaseView
     weeks: {}
     days: {}
 
+  initialize: ->
+    @options.state.on 'change', @options.state.save, @options.state
+
   render: ->
-    properties = _.extend {}, @getI18nValues(), @collection.toTemplate()
-    @$el.html @renderTemplate(properties)
+    properties = _.extend {},
+      @getI18nValues(),
+      @collection.toTemplate()
+
+    @$el.html(@renderTemplate properties)
 
     @
 
@@ -48,6 +54,7 @@ class BH.Views.AppView extends BH.Views.BaseView
       @views.settings = new BH.Views.SettingsView
         model: @options.settings
         version: @model
+        state: @options.state
       @_insert @views.settings.render().el
     @views.settings
 

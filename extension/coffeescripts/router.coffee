@@ -11,11 +11,14 @@ class BH.Router extends Backbone.Router
     window.settings = new BH.Models.Settings()
     window.settings.fetch()
 
-    version = new BH.Models.Version version: '1.7.8'
+    @state = new BH.Models.State()
+    @state.fetch()
+
     window.appView = @app = new BH.Views.AppView
       el: $('.app')
-      model: version
+      model: new BH.Models.Version(version: '1.7.8')
       settings: settings
+      state: @state
       collection: new BH.Collections.Weeks([
         {date: moment().past(chrome.i18n.getMessage('monday'), 0)},
         {date: moment().past(chrome.i18n.getMessage('monday'), 1)},
@@ -30,18 +33,15 @@ class BH.Router extends Backbone.Router
       ])
     @app.render()
 
-    @bind 'all', (route) ->
+    @bind 'all', (route) =>
       window.scroll 0, 0
       if settings.get('openLocation') == 'last_visit'
-        state.set route: location.hash
-
-    window.state = new BH.Models.State()
-    window.state.fetch()
+        @state.set route: location.hash
 
     @reset if location.hash == ''
 
   reset: ->
-    @navigate state.get('route'), trigger: true
+    @navigate @state.get('route'), trigger: true
 
   week: (id) ->
     view = @app.loadWeek(id)

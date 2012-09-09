@@ -14,11 +14,9 @@ class BH.Views.SettingsView extends BH.Views.BaseView
     'click .credits': 'clickedCredits'
 
   initialize: ->
-    @model.off('change')
-    @model.on('change', @saveSettings, @)
-
-  saveSettings: ->
-    @model.save()
+    @model.off 'change'
+    @model.on 'change', @model.save, @model
+    @model.on 'change:openLocation', @options.state.updateRoute, @options.state
 
   pageTitle: ->
     chrome.i18n.getMessage('settings_title')
@@ -58,7 +56,6 @@ class BH.Views.SettingsView extends BH.Views.BaseView
 
   changedOpenLocation: (ev) ->
     @model.set({openLocation: $(ev.currentTarget).val()})
-    state.fetch()
 
   clickedDomainGrouping: (ev) ->
     @model.set({domainGrouping: $(ev.currentTarget).is(':checked')})

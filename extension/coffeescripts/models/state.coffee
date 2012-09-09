@@ -3,24 +3,26 @@ class BH.Models.State extends BH.Models.Base
 
   defaults: ->
     urlBuilder = new BH.Helpers.UrlBuilder()
-    route: urlBuilder.build('week', [appView.collection.at(0).id])
+    date = moment().past(chrome.i18n.getMessage('monday'), 0)
 
-  initialize: ->
-    @bind 'change', @save, @
+    route: urlBuilder.build('week', [date.format('D-M-YY')])
 
-  parse: (data) ->
-    data = JSON.parse data
+  updateRoute: (settings) ->
     urlBuilder = new BH.Helpers.UrlBuilder()
-
+    date = moment().past(chrome.i18n.getMessage('monday'), 0)
     if settings.get('openLocation') == 'current_day'
-      data.route = urlBuilder.build 'day', [
-        appView.collection.at(0).id,
+      route = urlBuilder.build 'day', [
+        date.format('D-M-YY'),
         new Date().getDate()
       ]
     else if settings.get('openLocation') == 'current_week'
-      data.route = urlBuilder.build 'week', [
-        appView.collection.at(0).id
+      route = urlBuilder.build 'week', [
+        date.format('D-M-YY')
       ]
+    else if settings.get('openLocation') == 'last_visit'
+      route = window.location.hash
 
+    @set route: route if route?
 
-    data
+  parse: (data) ->
+    JSON.parse data

@@ -69,7 +69,7 @@ class BH.Models.Settings extends BH.Models.Base
     parseInt(@get('timeFormat'), 10)
 
   parse: (data) ->
-    @set(JSON.parse(data))
+    JSON.parse data
 
   _timeGroupingSelectedCheck: (value) ->
     if parseInt(value, 10) == @timeGrouping() then true else false
