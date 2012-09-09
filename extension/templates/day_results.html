@@ -2,7 +2,9 @@
   <ol class="intervals">
     {{#intervals}}
       <li class="interval" data-id="{{id}}">
-        <h4 class="title">{{time}}</h4>
+        <header>
+          <h4 class="title">{{time}}</h4>
+        </header>
         <ol class="visits highlightable editable">
           {{#visits}}
             {{#isGrouped}}
