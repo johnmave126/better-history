@@ -4,6 +4,7 @@ class BH.Views.DayResultsView extends BH.Views.BaseView
   events:
     'click .delete_visit': 'deleteVisitClicked'
     'click .delete_grouped_visit': 'deleteGroupedVisitClicked'
+    'click .delete_interval': 'deleteIntervalClicked'
     'click .show_visits': 'toggleGroupedVisitsClicked'
     'click .hide_visits': 'toggleGroupedVisitsClicked'
     'click .visit > a': 'visitClicked'
@@ -26,11 +27,22 @@ class BH.Views.DayResultsView extends BH.Views.BaseView
 
   deleteGroupedVisitClicked: (ev) ->
     ev.preventDefault()
+    ev.stopPropagation()
 
     $(ev.currentTarget).siblings('.visits').children().each (i, visit) ->
       $(visit).find('.delete_visit').trigger('click')
 
     $(ev.currentTarget).parents('.visit').remove()
+
+  deleteIntervalClicked: (ev) ->
+    ev.preventDefault()
+
+    $(ev.currentTarget).parents('.interval').children('.visits').children().each (i, visit) ->
+      setTimeout ->
+        $(visit).children('.delete_visit').trigger('click')
+      , i * 1000
+
+    $(ev.currentTarget).parents('.interval').remove()
 
   toggleGroupedVisitsClicked: (ev) ->
     ev.preventDefault()

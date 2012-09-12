@@ -29,8 +29,8 @@ describe 'Grouper', ->
       visits = new BH.Collections.Visits([visit1, visit2])
       pageVisits = grouper.run(visits.toJSON(), {interval: 15, grouping: true})
       expect(pageVisits[0]).toEqual
-        datetime: new Date(2011, 5, 5, 3, 0, 0)
-        id: '3:00'
+        datetime: new Date(2011, 5, 5, 3, 15, 0)
+        id: '3:15'
         visits: visits.toJSON()
 
     it 'groups history items by 15 minute increments when passed 15', ->

@@ -57,12 +57,18 @@ class @Grouper
     arrangedVisits
 
   _minute: (minutes, interval) ->
-    minutes = Math.floor(minutes / interval) * interval
-    if minutes == 0 then '00' else minutes
+    minutes = Math.ceil(minutes / interval) * interval
+    if minutes == 60
+      return '00'
+    if minutes == 0
+      return '15'
+    minutes
 
   _getTime: (date, interval) ->
-    date.getHours() + ':' + @_minute(date.getMinutes(), interval)
-
+    minutes = @_minute date.getMinutes(), interval
+    hour = date.getHours()
+    hour = hour + 1 if minutes == '00'
+    "#{hour}:#{minutes}"
 
 self.addEventListener 'message', (e) ->
   grouper = new Grouper()
