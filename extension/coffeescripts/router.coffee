@@ -51,6 +51,8 @@ class BH.Router extends Backbone.Router
 
   day: (weekId, id) ->
     view = @app.loadDay weekId, id
+    # It's important that change is fired on 'history'
+    view.model.unset('history', {silent: true})
     view.model.fetch()
     view.select()
 

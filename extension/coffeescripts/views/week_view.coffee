@@ -19,7 +19,7 @@ class BH.Views.WeekView extends BH.Views.ViewWithSearch
 
     # If any day has been preloaded, update the day stats
     @model.get('days').each (model) =>
-      @updateDay model if model.get('count') != 0
+      @updateDay model
     @
 
   pageTitle: ->
@@ -58,7 +58,7 @@ class BH.Views.WeekView extends BH.Views.ViewWithSearch
     if prompt.get('action')
       if @model.get('days')
         @promptView.spin()
-        @model.clear()
+        @model.destroyHistory()
         @model.fetch
           success: => @promptView.close()
     else

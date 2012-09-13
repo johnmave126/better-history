@@ -22,30 +22,23 @@ class BH.Models.Week extends BH.Models.Base
         {date: @_generateDate(6), weekId: id}
       ])
 
-    @cached = false
-
   toTemplate: ->
     _.extend @toJSON(), @get('days').toTemplate()
 
-  clear: ->
-    @get('days').clear()
-    @cached = false
-
   sync: (method, model, options) ->
     if method == 'read'
-      if !@cached
-        callCount = 0
-        success = =>
-          if callCount == 6
-            options.success()
-            @cached = true
-          else
-            callCount++
+      callCount = 0
+      success = =>
+        if callCount == 6
+          options.success()
+        else
+          callCount++
 
-        @get('days').each (model) ->
-          model.fetch {success: success}
-      else
-        options.success()
+      @get('days').each (model) ->
+        model.fetch {success: success}
+
+  destroyHistory: ->
+      @get('days').destroyHistory()
 
   parse: ->
     percentages = []

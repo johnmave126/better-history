@@ -27,7 +27,7 @@ class BH.Models.Day extends BH.Models.Base
         worker 'grouper', workerOptions, (visits) ->
           options.success(visits)
 
-  clear: ->
+  destroyHistory: ->
     @chromeAPI.history.deleteRange
       startTime: @_getSOD()
       endTime: @_getEOD()

@@ -11,6 +11,7 @@ class BH.Views.DayResultsView extends BH.Views.BaseView
 
   render: ->
     @$el.html(@renderTemplate(_.extend(@getI18nValues(), @model.toTemplate(), @collection.toTemplate())))
+    @
 
   visitClicked: (ev) ->
     if $(ev.target).hasClass('search_domain')
@@ -36,8 +37,8 @@ class BH.Views.DayResultsView extends BH.Views.BaseView
 
   deleteIntervalClicked: (ev) ->
     ev.preventDefault()
-
-    $(ev.currentTarget).parents('.interval').children('.visits').children().each (i, visit) ->
+    visitElements = $(ev.currentTarget).parents('.interval').children('.visits').children()
+    $(visitElements).each (i, visit) ->
       setTimeout ->
         $(visit).children('.delete').trigger('click')
       , i * 10

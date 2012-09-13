@@ -20,11 +20,10 @@ class BH.Views.DayView extends BH.Views.ViewWithSearch
 
   renderHistory: ->
     @collection = @model.get('history')
-
     @dayResultsView = new BH.Views.DayResultsView
       collection: @collection
       model: @model
-    @$('.content').html(@dayResultsView.render())
+    @$('.content').html @dayResultsView.render().el
 
     if @collection.length == 0 || @model.get('filter')
       @$('button').attr('disabled', 'disabled')
@@ -46,7 +45,7 @@ class BH.Views.DayView extends BH.Views.ViewWithSearch
     if prompt.get('action')
       if @collection
         @promptView.spin()
-        @model.clear()
+        @model.destroyHistory()
         @model.fetch
           success: =>
             @promptView.close()

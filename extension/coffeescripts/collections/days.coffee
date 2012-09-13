@@ -7,6 +7,6 @@ class BH.Collections.Days extends Backbone.Collection
       days.push(model.toTemplate())
     {days: days}
 
-  clear: ->
+  destroyHistory: ->
     @each (model) ->
-      model.clear()
+      model.destroyHistory()
