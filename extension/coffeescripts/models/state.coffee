@@ -19,8 +19,6 @@ class BH.Models.State extends BH.Models.Base
       route = urlBuilder.build 'week', [
         date.format('D-M-YY')
       ]
-    else if settings.get('openLocation') == 'last_visit'
-      route = window.location.hash
 
     @set route: route if route?
 

@@ -13,6 +13,7 @@ class BH.Router extends Backbone.Router
 
     @state = new BH.Models.State()
     @state.fetch()
+    @state.updateRoute settings
 
     window.appView = @app = new BH.Views.AppView
       el: $('.app')
