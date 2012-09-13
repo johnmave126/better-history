@@ -21,6 +21,7 @@ class BH.Models.State extends BH.Models.Base
       ]
 
     @set route: route if route?
+    @save()
 
   parse: (data) ->
     JSON.parse data
