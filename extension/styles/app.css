@@ -2,8 +2,7 @@
   margin-top: 0;
 }
 .interval header {
-  position: -webkit-sticky;
-  top: 104px;
+  position: relative;
   z-index: 1;
   background: white;
   padding: 15px 0 5px;
