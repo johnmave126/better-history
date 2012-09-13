@@ -39,10 +39,10 @@ class BH.Views.DayResultsView extends BH.Views.BaseView
 
     $(ev.currentTarget).parents('.interval').children('.visits').children().each (i, visit) ->
       setTimeout ->
-        $(visit).children('.delete_visit').trigger('click')
-      , i * 1000
+        $(visit).children('.delete').trigger('click')
+      , i * 10
 
-    $(ev.currentTarget).parents('.interval').remove()
+      #$(ev.currentTarget).parents('.interval').remove()
 
   toggleGroupedVisitsClicked: (ev) ->
     ev.preventDefault()
