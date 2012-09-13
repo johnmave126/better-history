@@ -10,8 +10,10 @@ class BH.Views.BaseView extends Backbone.View
 
   select: ->
     $('.mainview > *').removeClass(@cssClass.selected)
+    $('.mainview > *').css(display: 'block')
     setTimeout =>
       @$el.addClass(@cssClass.selected)
+      $('.mainview > *:not(.selected)').css(display: 'none')
     , 0
     @setPageTitle(@pageTitle()) if @pageTitle
     @
