@@ -35,7 +35,6 @@ class BH.Router extends Backbone.Router
     @app.render()
 
     @bind 'all', (route) =>
-      console.log 'fuck'
       window.scroll 0, 0
       if settings.get('openLocation') == 'last_visit'
         @state.set route: location.hash

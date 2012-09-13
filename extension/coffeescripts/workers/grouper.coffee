@@ -67,7 +67,11 @@ class @Grouper
   _getTime: (date, interval) ->
     minutes = @_minute date.getMinutes(), interval
     hour = date.getHours()
-    hour = hour + 1 if minutes == '00'
+    if minutes == '00'
+      if hour == 23
+        hour = 0
+      else
+        hour = hour + 1
     "#{hour}:#{minutes}"
 
 self.addEventListener 'message', (e) ->
