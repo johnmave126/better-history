@@ -17,7 +17,7 @@ class BH.Router extends Backbone.Router
 
     window.appView = @app = new BH.Views.AppView
       el: $('.app')
-      model: new BH.Models.Version(version: '1.8.1')
+      model: new BH.Models.Version(version: '1.8.2')
       settings: settings
       state: @state
       collection: new BH.Collections.Weeks([
