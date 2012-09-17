@@ -25,7 +25,8 @@ class BH.Models.Visit extends BH.Models.Base
     if match == null then null else match[0]
 
   path: () ->
-    @get('url').replace(@_getDomain(@get('url'))[0], '')
+    if @_getDomain(@get('url'))?
+      @get('url').replace(@_getDomain(@get('url'))[0], '')
 
   _getDomain: (url) ->
     url.match(/\w+:\/\/(.*?)\//)
