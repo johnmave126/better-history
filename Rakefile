@@ -10,12 +10,18 @@ end
 
 desc "Clean generated javascript"
 task :clean_generated_js do
-  system('rm -fr extension/javascripts/lib/*')
-  system('rm -fr extension/javascripts/views/*')
-  system('rm -fr extension/javascripts/collections/*')
-  system('rm -fr extension/javascripts/models/*')
-  system('rm -fr extension/javascripts/helpers/*')
-  system('rm -fr extension/javascripts/workers/*')
+  folders = [
+    'lib',
+    'views',
+    'collections',
+    'models',
+    'helpers',
+    'workers'
+  ]
+  folders.each do |folder|
+    system("rm -fr extension/javascripts/#{folder}/*")
+  end
+
   system('rm extension/javascripts/*.js')
 end
 
@@ -47,7 +53,7 @@ task :package do
   system('rm -fr tmp')
 end
 
-desc "Generate coffeeScript"
+desc "Generate coffeescript"
 task :coffee do
   Rake::Task['clean_generated_js'].execute
   system('coffee -c -o extension/javascripts/ extension/coffeescripts/')
@@ -65,26 +71,28 @@ task :templates do
       template_file += "BH.Templates.#{key} = '#{template_content}';\n\n"
     end
   end
-  File.open('extension/javascripts/templates.js', 'w') {|f| f.write(template_file) }
+
+  File.open('extension/javascripts/templates.js', 'w') do |f|
+    f.write(template_file)
+  end
 end
 
 desc "Concat javascript"
 task :concat_js do
   require 'yaml'
-  packaged = ""
+  Rake::Task['templates'].execute
   assets = YAML::load(File.open('extension/coffeescripts/assets.yml'))
-  assets['main'].each do |asset|
-    packaged += "\n\n// #{asset}.js \n"
-    packaged += File.read("extension/javascripts/#{asset}.js")
-  end
-  system('rm extension/javascripts/main.js')
-  File.open("extension/javascripts/main.js", 'w') {|f| f.write(packaged) }
 
-  packaged = ""
-  assets['background'].each do |asset|
-    packaged += "\n\n// #{asset}.js \n"
-    packaged += File.read("extension/javascripts/#{asset}.js")
+  ['main', 'background'].each do |section|
+    system("rm extension/javascripts/#{section}.js")
+    packaged = ""
+    assets[section].each do |asset|
+      packaged += "\n\n// #{asset}.js \n"
+      packaged += File.read("extension/javascripts/#{asset}.js")
+    end
+
+    File.open("extension/javascripts/#{section}.js", 'w') do |f|
+      f.write(packaged)
+    end
   end
-  system('rm extension/javascripts/background.js')
-  File.open("extension/javascripts/background.js", 'w') {|f| f.write(packaged) }
 end

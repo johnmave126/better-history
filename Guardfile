@@ -1,27 +1,24 @@
+def log(message)
+  puts(">> #{message}")
+end
+
 guard 'coffeescript', :output => 'extension/javascripts/' do
+  log('Generating coffeescripts')
   watch('^extension/coffeescripts/(.+\.coffee)')
 end
 
 guard 'coffeescript', :output => 'spec/javascripts' do
+  log('Generating coffeescript specs')
   watch('^spec/coffeescripts/(.+\.coffee)')
 end
 
 watch('extension/templates/(.*)\.html') do
-  template_file = ""
-  Dir.foreach('extension/templates/') do |file|
-    if file.match(/.html$/)
-      key = file.gsub(/.html/, '')
-      template_content = IO.read("extension/templates/#{file}")
-      template_content.gsub!(/\n/, '').gsub!(/\"/, '\"')
-      template_file += "BH.Templates.#{key} = '#{template_content}';\n\n"
-    end
-  end
-  puts 'generating js'
+  log('Generating templates and concating js')
+  system('rake templates')
   system('rake concat_js')
-  File.open('extension/javascripts/templates.js', 'w') {|f| f.write(template_file) }
 end
 
-watch('^extension/coffeescripts/(.*)\.coffee') do
-  puts 'generating js'
+watch('extension/coffeescripts/(.*)\.coffee') do
+  log('Concating js')
   system('rake concat_js')
 end
