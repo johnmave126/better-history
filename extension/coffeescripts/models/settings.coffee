@@ -2,80 +2,59 @@ class BH.Models.Settings extends BH.Models.Base
   storeName: 'settings'
 
   defaults: ->
-    {
-      timeGrouping: 15
-      domainGrouping: true
-      timeFormat: parseInt(@chromeAPI.i18n.getMessage('default_time_format'), 10)
-      searchByDomain: true
-      searchBySelection: true
-      openLocation: 'last_visit'
-    }
+    timeGrouping: 15
+    domainGrouping: true
+    timeFormat: parseInt @chromeAPI.i18n.getMessage('default_time_format'), 10
+    searchByDomain: true
+    searchBySelection: true
+    openLocation: 'last_visit'
+    startingWeekDay: 'Monday'
 
   toTemplate: ->
-    openLocation: [
-      {
-        text: @chromeAPI.i18n.getMessage('last_visit')
-        value: 'last_visit'
-        selected: @_openLocationSelectedCheck('last_visit')
-      },
-      {
-        text: @chromeAPI.i18n.getMessage('current_day')
-        value: 'current_day'
-        selected: @_openLocationSelectedCheck('current_day')
-      },
-      {
-        text: @chromeAPI.i18n.getMessage('current_week')
-        value: 'current_week'
-        selected: @_openLocationSelectedCheck('current_week')
-      }
-    ]
-    timeGrouping: [
-      {
-        text: @chromeAPI.i18n.getMessage('15_minutes_option')
-        value: 15
-        selected: @_timeGroupingSelectedCheck(15)
-      },
-      {
-        text: @chromeAPI.i18n.getMessage('30_minutes_option')
-        value: 30
-        selected: @_timeGroupingSelectedCheck(30)
-      },
-      {
-        text: @chromeAPI.i18n.getMessage('60_minutes_option')
-        value: 60
-        selected: @_timeGroupingSelectedCheck(60)
-      }
-    ]
-    timeFormats: [
-      {
-        text: @chromeAPI.i18n.getMessage('12_hours_option')
-        value: 12
-        selected: @_timeFormatSelectedCheck(12)
-      },
-      {
-        text: @chromeAPI.i18n.getMessage('24_hours_option')
-        value: 24
-        selected: @_timeFormatSelectedCheck(24)
-      }
-    ]
-    searchBySelection: @get('searchBySelection')
-    searchByDomain: @get('searchByDomain')
-    domainGrouping: @get('domainGrouping')
+    properties =
+      startingWeekDays: []
+      openLocations: []
+      timeGroupings: []
+      timeFormats: []
+      searchBySelection: @get 'searchBySelection'
+      searchByDomain: @get 'searchByDomain'
+      domainGrouping: @get 'domainGrouping'
+
+    _(['monday', 'tuesday', 'wednesday',
+      'thursday', 'friday', 'saturday', 'sunday']).each (day) =>
+      properties.startingWeekDays.push
+        text: @chromeAPI.i18n.getMessage day
+        value: day
+        selected: @isSelected day, @get('startingWeekDay')
+
+    _(['last_visit', 'current_day', 'current_week']).each (location) =>
+      properties.openLocations.push
+        text: @chromeAPI.i18n.getMessage location
+        value: location
+        selected: @isSelected location, @get('openLocation')
+
+    _([15, 30, 60]).each (timeGrouping) =>
+      properties.timeGroupings.push
+        text: @chromeAPI.i18n.getMessage "#{timeGrouping}_minutes_option"
+        value: timeGrouping
+        selected: @isSelected timeGrouping, @timeGrouping()
+
+    _([12, 24]).each (timeFormat) =>
+      properties.timeFormats.push
+        text: @chromeAPI.i18n.getMessage "#{timeFormat}_hours_option"
+        value: timeFormat
+        selected: @isSelected timeFormat, @timeFormat()
+
+    properties
 
   timeGrouping: ->
-    parseInt(@get('timeGrouping'), 10)
+    parseInt @get('timeGrouping'), 10
 
   timeFormat: ->
-    parseInt(@get('timeFormat'), 10)
+    parseInt @get('timeFormat'), 10
 
   parse: (data) ->
     JSON.parse data
 
-  _timeGroupingSelectedCheck: (value) ->
-    if parseInt(value, 10) == @timeGrouping() then true else false
-
-  _timeFormatSelectedCheck: (value) ->
-    if parseInt(value, 10) == @timeFormat() then true else false
-
-  _openLocationSelectedCheck: (value) ->
-    if value == @get('openLocation') then true else false
+  isSelected: (v1, v2) ->
+    if v2 == v1 then true else false

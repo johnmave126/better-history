@@ -894,6 +894,10 @@
     "message": "Open to",
     "description": "open to <page>"
   },
+  "starting_week_day": {
+    "message": "Starting week day",
+    "description": "day that the week starts on"
+  },
   "general_section_title": {
     "message": "General",
     "description": "General section title in settings"

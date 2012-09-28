@@ -1,28 +1,31 @@
 class BH.Views.AppView extends BH.Views.BaseView
   className: 'app_view'
-  template: BH.Templates['app']
 
-  events:
-    'click .menu > *': 'weekClicked'
+  template: BH.Templates['app']
 
   views:
     weeks: {}
     days: {}
 
   initialize: ->
+    @collection.reload @options.settings.get('startingWeekDay')
     @options.state.on 'change', @options.state.save, @options.state
+    @options.settings.on 'change:startingWeekDay', @reloadWeeks, @
+    @collection.on 'reloaded', @renderMenu, @
 
   render: ->
-    properties = _.extend {},
-      @getI18nValues(),
-      @collection.toTemplate()
-
-    @$el.html(@renderTemplate properties)
-
+    @$el.html(@renderTemplate @getI18nValues())
+    @renderMenu()
     @
 
-  weekClicked: (ev) ->
-    @_selectWeek $(ev.currentTarget)
+  renderMenu: ->
+    menuView = new BH.Views.MenuView
+      el: '.menu_view'
+      collection: @collection
+    menuView.render()
+
+  reloadWeeks: (settings) ->
+    @collection.reload settings.get('startingWeekDay')
 
   loadWeek: (id) ->
     if !@views.weeks[id]
@@ -79,6 +82,4 @@ class BH.Views.AppView extends BH.Views.BaseView
     @i18nFetcher.get [
       'history_title',
       'settings_link',
-      'last_week',
-      'this_week'
     ]

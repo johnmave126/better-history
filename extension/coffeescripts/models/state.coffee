@@ -1,15 +1,14 @@
 class BH.Models.State extends BH.Models.Base
   storeName: 'state'
 
-  defaults: ->
+  initialize: ->
     urlBuilder = new BH.Helpers.UrlBuilder()
-    date = moment().past(chrome.i18n.getMessage('monday'), 0)
+    date = moment().past(chrome.i18n.getMessage(settings.get 'startingWeekDay'), 0)
+    @set route: urlBuilder.build('week', [date.format('D-M-YY')])
 
-    route: urlBuilder.build('week', [date.format('D-M-YY')])
-
-  updateRoute: (settings) ->
+  updateRoute: ->
     urlBuilder = new BH.Helpers.UrlBuilder()
-    date = moment().past(chrome.i18n.getMessage('monday'), 0)
+    date = moment().past(chrome.i18n.getMessage(settings.get 'startingWeekDay'), 0)
     if settings.get('openLocation') == 'current_day'
       route = urlBuilder.build 'day', [
         date.format('D-M-YY'),

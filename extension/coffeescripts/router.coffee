@@ -13,25 +13,16 @@ class BH.Router extends Backbone.Router
 
     @state = new BH.Models.State()
     @state.fetch()
-    @state.updateRoute settings
+    @state.updateRoute()
+
+    weeks = new BH.Collections.Weeks()
 
     window.appView = @app = new BH.Views.AppView
       el: $('.app')
       model: new BH.Models.Version(version: '1.8.2')
       settings: settings
       state: @state
-      collection: new BH.Collections.Weeks([
-        {date: moment().past(chrome.i18n.getMessage('monday'), 0)},
-        {date: moment().past(chrome.i18n.getMessage('monday'), 1)},
-        {date: moment().past(chrome.i18n.getMessage('monday'), 2)},
-        {date: moment().past(chrome.i18n.getMessage('monday'), 3)},
-        {date: moment().past(chrome.i18n.getMessage('monday'), 4)},
-        {date: moment().past(chrome.i18n.getMessage('monday'), 5)},
-        {date: moment().past(chrome.i18n.getMessage('monday'), 6)},
-        {date: moment().past(chrome.i18n.getMessage('monday'), 7)},
-        {date: moment().past(chrome.i18n.getMessage('monday'), 8)},
-        {date: moment().past(chrome.i18n.getMessage('monday'), 9)}
-      ])
+      collection: weeks
     @app.render()
 
     @bind 'all', (route) =>

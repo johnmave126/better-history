@@ -15,9 +15,19 @@
         <label>
           <span class="select">{{i18n_open_location}}</span>
           <select class="open_location">
-            {{#openLocation}}
+            {{#openLocations}}
               <option value="{{value}}" {{#selected}}selected="selected"{{/selected}}>{{text}}</options>
-            {{/openLocation}}
+            {{/openLocations}}
+          </select>
+        </label>
+      </div>
+      <div class="row">
+        <label>
+          <span class="select">{{i18n_starting_week_day}}</span>
+          <select class="starting_week_day">
+            {{#startingWeekDays}}
+              <option value="{{value}}" {{#selected}}selected="selected"{{/selected}}>{{text}}</options>
+            {{/startingWeekDays}}
           </select>
         </label>
       </div>
@@ -28,9 +38,9 @@
         <label>
           <span class="select">{{i18n_group_visits_by_label}}</span>
           <select class="time_grouping">
-            {{#timeGrouping}}
+            {{#timeGroupings}}
               <option value="{{value}}" {{#selected}}selected="selected"{{/selected}}>{{text}}</options>
-            {{/timeGrouping}}
+            {{/timeGroupings}}
           </select>
         </label>
       </div>

@@ -23,6 +23,7 @@
  - views/day/day_view
  - views/day/day_results_view
  - views/app_view
+ - views/menu_view
  - views/week_view
  - views/visit_view
  - views/settings_view

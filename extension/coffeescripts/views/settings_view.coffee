@@ -8,6 +8,7 @@ class BH.Views.SettingsView extends BH.Views.BaseView
     'change .time_grouping': 'changedTimeGrouping'
     'change .time_format': 'changedTimeFormat'
     'change .open_location': 'changedOpenLocation'
+    'change .starting_week_day': 'changedStartingWeekDay'
     'click .domain_grouping': 'clickedDomainGrouping'
     'click .search_by_domain': 'clickedSearchByDomain'
     'click .search_by_selection': 'clickedSearchBySelection'
@@ -17,6 +18,7 @@ class BH.Views.SettingsView extends BH.Views.BaseView
     @model.off 'change'
     @model.on 'change', @model.save, @model
     @model.on 'change:openLocation', @options.state.updateRoute, @options.state
+    @model.on 'change:startingWeekDay', @options.state.updateRoute, @options.state
 
   pageTitle: ->
     chrome.i18n.getMessage('settings_title')
@@ -49,19 +51,22 @@ class BH.Views.SettingsView extends BH.Views.BaseView
     @
 
   changedTimeGrouping: (ev) ->
-    @model.set({timeGrouping: $(ev.currentTarget).val()})
+    @model.set timeGrouping: $(ev.currentTarget).val()
 
   changedTimeFormat: (ev) ->
-    @model.set({timeFormat: $(ev.currentTarget).val()})
+    @model.set timeFormat: $(ev.currentTarget).val()
 
   changedOpenLocation: (ev) ->
-    @model.set({openLocation: $(ev.currentTarget).val()})
+    @model.set openLocation: $(ev.currentTarget).val()
+
+  changedStartingWeekDay: (ev) ->
+    @model.set startingWeekDay: $(ev.currentTarget).val()
 
   clickedDomainGrouping: (ev) ->
-    @model.set({domainGrouping: $(ev.currentTarget).is(':checked')})
+    @model.set domainGrouping: $(ev.currentTarget).is(':checked')
 
   clickedSearchByDomain: (ev) ->
-    @model.set({searchByDomain: $(ev.currentTarget).is(':checked')})
+    @model.set searchByDomain: $(ev.currentTarget).is(':checked')
 
     backgroundPage = chrome.extension.getBackgroundPage()
     method = if @model.get('searchByDomain') then 'create' else 'remove'
@@ -69,7 +74,7 @@ class BH.Views.SettingsView extends BH.Views.BaseView
     backgroundPage.pageContextMenu[method]()
 
   clickedSearchBySelection: (ev) ->
-    @model.set({searchBySelection: $(ev.currentTarget).is(':checked')})
+    @model.set searchBySelection: $(ev.currentTarget).is(':checked')
 
     backgroundPage = chrome.extension.getBackgroundPage()
     method = if @model.get('searchBySelection') then 'create' else 'remove'
@@ -78,7 +83,7 @@ class BH.Views.SettingsView extends BH.Views.BaseView
 
   clickedClearHistory: (ev) ->
     ev.preventDefault()
-    chrome.tabs.create({url:'chrome://settings/clearBrowserData'})
+    chrome.tabs.create url:'chrome://settings/clearBrowserData'
 
   clickedCredits: (ev) ->
     ev.preventDefault()
@@ -106,6 +111,7 @@ class BH.Views.SettingsView extends BH.Views.BaseView
       'twitter_template',
       'twitter_language',
       'open_location',
+      'starting_week_day',
       'general_section_title'
     ])
     properties[@i18nFetcher.scopeKey('credits_link')] = chrome.i18n.getMessage('credits_link', [
