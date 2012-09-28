@@ -56,7 +56,6 @@ class BH.Views.AppView extends BH.Views.BaseView
     if !@cachedViews.settings
       @cachedViews.settings = new BH.Views.SettingsView
         model: @options.settings
-        version: @model
         state: @options.state
       @_insert @cachedViews.settings.render().el
     @cachedViews.settings

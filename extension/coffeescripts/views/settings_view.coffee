@@ -44,8 +44,7 @@ class BH.Views.SettingsView extends BH.Views.BaseView
   render: ->
     properties = _.extend {},
       @getI18nValues(),
-      @model.toTemplate(),
-      @options.version.toTemplate()
+      @model.toTemplate()
 
     @$el.append(@renderTemplate properties)
     @
@@ -104,7 +103,6 @@ class BH.Views.SettingsView extends BH.Views.BaseView
       'search_by_text_selection_label',
       'search_by_domain_label',
       'whats_new_section_title',
-      'current_version_label',
       'feedback_section_title',
       'spread_the_word_section_title',
       'leave_a_review',

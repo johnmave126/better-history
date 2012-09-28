@@ -32,7 +32,6 @@
  - models/interval
  - models/week
  - models/day
- - models/version
  - models/settings
  - models/prompt
  - models/state
