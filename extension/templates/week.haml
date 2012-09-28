@@ -1,0 +1,22 @@
+%header
+  %h1 {{{title}}}
+  .corner
+    %input{:type => "text", :class => "search", :placeholder => "{{i18n_search_input_placeholder_text}}", :tabindex => "1"}
+  .controls
+    %span.text.count
+    .spinner
+    .spacer
+    %button{:class => "delete_all"}
+      {{i18n_delete_all_visits_for_filter_button}}
+.content
+  %ol.days
+    {{#days}}
+    %li{:class => "day {{#inFuture}}future{{/inFuture}}", 'data-day-id' => "{{id}}"}
+      %a{:href => "{{url}}"}
+        .label
+          %h3.title {{title}}
+          .count
+        .bar_container
+          .bar
+    {{/days}}
+.day_views

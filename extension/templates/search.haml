@@ -1,0 +1,14 @@
+%header
+  %h1
+    %span.title {{title}}
+  .corner
+    %input.search{:type => "text", :placeholder => "{{i18n_search_input_placeholder_text}}", :tabindex => "1"}
+  .controls
+    .spinner
+    %span.count.text.number_of_results
+      {{i18n_number_of_search_results}}
+    .spacer
+    %button.delete_all
+      {{i18n_delete_all_visits_for_search_button}}
+.fade
+.content

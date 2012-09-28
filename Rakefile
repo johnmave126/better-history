@@ -62,13 +62,17 @@ end
 
 desc "Generate templates"
 task :templates do
+  require 'haml'
+
   template_file = ""
   Dir.foreach('extension/templates/') do |file|
-    if file.match(/.html$/)
-      key = file.gsub(/.html/, '')
-      template_content = IO.read("extension/templates/#{file}")
-      template_content.gsub!(/\n/, '').gsub!(/\"/, '\"')
-      template_file += "BH.Templates.#{key} = '#{template_content}';\n\n"
+    puts file
+    if file.match(/.haml$/)
+      key = file.gsub(/.haml/, '')
+      haml_content = IO.read("extension/templates/#{file}")
+      html_content = Haml::Engine.new(haml_content).render
+      html_content.gsub!(/\n/, '')
+      template_file += "BH.Templates.#{key} = \"#{html_content}\";\n\n"
     end
   end
 
