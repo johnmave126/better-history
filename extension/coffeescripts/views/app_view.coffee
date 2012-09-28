@@ -3,15 +3,15 @@ class BH.Views.AppView extends BH.Views.BaseView
 
   template: BH.Templates['app']
 
-  views:
-    weeks: {}
-    days: {}
-
   initialize: ->
     @collection.reload @options.settings.get('startingWeekDay')
     @options.state.on 'change', @options.state.save, @options.state
     @options.settings.on 'change:startingWeekDay', @reloadWeeks, @
     @collection.on 'reloaded', @renderMenu, @
+
+    @cachedViews =
+      weeks: {}
+      days: {}
 
   render: ->
     @$el.html(@renderTemplate @getI18nValues())
@@ -28,45 +28,45 @@ class BH.Views.AppView extends BH.Views.BaseView
     @collection.reload settings.get('startingWeekDay')
 
   loadWeek: (id) ->
-    if !@views.weeks[id]
-      @views.weeks[id] = new BH.Views.WeekView
+    if !@cachedViews.weeks[id]
+      @cachedViews.weeks[id] = new BH.Views.WeekView
         model: @collection.get id
-      @_insert @views.weeks[id].render().el
+      @_insert @cachedViews.weeks[id].render().el
 
     @_selectWeek @$("[data-week-id='#{id}']")
-    @views.weeks[id]
+    @cachedViews.weeks[id]
 
   loadDay: (weekId, id) ->
     @_selectWeek @$("[data-week-id='#{weekId}']")
-    if !@views.days[weekId]
-      @views.days[weekId] = {}
+    if !@cachedViews.days[weekId]
+      @cachedViews.days[weekId] = {}
 
-    if !@views.days[weekId][id]
+    if !@cachedViews.days[weekId][id]
       model = @collection.get(weekId).get('days').get(id)
-      @views.days[weekId][id] = new BH.Views.DayView
+      @cachedViews.days[weekId][id] = new BH.Views.DayView
         model: model,
         weekModel: @collection.get(weekId)
 
-      @_insert @views.days[weekId][id].render().el
-    @views.days[weekId][id]
+      @_insert @cachedViews.days[weekId][id].render().el
+    @cachedViews.days[weekId][id]
 
   loadSettings: ->
     @_clearMenuSelection()
     @$('.menu .setting').parent().addClass @cssClass.selected
-    if !@views.settings
-      @views.settings = new BH.Views.SettingsView
+    if !@cachedViews.settings
+      @cachedViews.settings = new BH.Views.SettingsView
         model: @options.settings
         version: @model
         state: @options.state
-      @_insert @views.settings.render().el
-    @views.settings
+      @_insert @cachedViews.settings.render().el
+    @cachedViews.settings
 
   loadSearch: ->
-    if !@views.search
-      @views.search = new BH.Views.SearchView
+    if !@cachedViews.search
+      @cachedViews.search = new BH.Views.SearchView
         model: new BH.Models.Search()
-      @_insert @views.search.render().el
-    @views.search
+      @_insert @cachedViews.search.render().el
+    @cachedViews.search
 
   _selectWeek: (element) ->
     @_clearMenuSelection()
