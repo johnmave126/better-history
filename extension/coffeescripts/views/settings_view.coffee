@@ -5,14 +5,14 @@ class BH.Views.SettingsView extends BH.Views.BaseView
 
   events:
     'click .clear_history': 'clickedClearHistory'
-    'change .time_grouping': 'changedTimeGrouping'
-    'change .time_format': 'changedTimeFormat'
-    'change .open_location': 'changedOpenLocation'
-    'change .starting_week_day': 'changedStartingWeekDay'
-    'click .domain_grouping': 'clickedDomainGrouping'
-    'click .search_by_domain': 'clickedSearchByDomain'
-    'click .search_by_selection': 'clickedSearchBySelection'
     'click .credits': 'clickedCredits'
+    'change #time_grouping': 'changedTimeGrouping'
+    'change #time_format': 'changedTimeFormat'
+    'change #open_location': 'changedOpenLocation'
+    'change #starting_week_day': 'changedStartingWeekDay'
+    'click #domain_grouping': 'clickedDomainGrouping'
+    'click #search_by_domain': 'clickedSearchByDomain'
+    'click #search_by_selection': 'clickedSearchBySelection'
 
   initialize: ->
     @model.off 'change'
@@ -47,7 +47,17 @@ class BH.Views.SettingsView extends BH.Views.BaseView
       @model.toTemplate()
 
     @$el.append(@renderTemplate properties)
+    @populateFields()
     @
+
+  populateFields: ->
+    @$('#open_location').val @model.get('openLocation')
+    @$('#starting_week_day').val @model.get('startingWeekDay')
+    @$('#time_grouping').val @model.get('timeGrouping')
+    @$('#time_format').val @model.get('timeFormat')
+    @$('#domain_grouping').prop 'checked', @model.get('domainGrouping')
+    @$('#search_by_domain').prop 'checked', @model.get('searchByDomain')
+    @$('#search_by_selection').prop 'checked', @model.get('searchBySelection')
 
   changedTimeGrouping: (ev) ->
     @model.set timeGrouping: $(ev.currentTarget).val()
@@ -73,7 +83,7 @@ class BH.Views.SettingsView extends BH.Views.BaseView
     backgroundPage.pageContextMenu[method]()
 
   clickedSearchBySelection: (ev) ->
-    @model.set searchBySelection: $(ev.currentTarget).is(':checked')
+    @model.set searchBySelection: $(ev.currentTarget).prop('checked')
 
     backgroundPage = chrome.extension.getBackgroundPage()
     method = if @model.get('searchBySelection') then 'create' else 'remove'

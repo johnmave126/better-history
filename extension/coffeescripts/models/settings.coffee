@@ -25,25 +25,21 @@ class BH.Models.Settings extends BH.Models.Base
       properties.startingWeekDays.push
         text: @chromeAPI.i18n.getMessage day
         value: day
-        selected: @isSelected day, @get('startingWeekDay')
 
     _(['last_visit', 'current_day', 'current_week']).each (location) =>
       properties.openLocations.push
         text: @chromeAPI.i18n.getMessage location
         value: location
-        selected: @isSelected location, @get('openLocation')
 
     _([15, 30, 60]).each (timeGrouping) =>
       properties.timeGroupings.push
         text: @chromeAPI.i18n.getMessage "#{timeGrouping}_minutes_option"
         value: timeGrouping
-        selected: @isSelected timeGrouping, @timeGrouping()
 
     _([12, 24]).each (timeFormat) =>
       properties.timeFormats.push
         text: @chromeAPI.i18n.getMessage "#{timeFormat}_hours_option"
         value: timeFormat
-        selected: @isSelected timeFormat, @timeFormat()
 
     properties
 
@@ -55,6 +51,3 @@ class BH.Models.Settings extends BH.Models.Base
 
   parse: (data) ->
     JSON.parse data
-
-  isSelected: (v1, v2) ->
-    if v2 == v1 then true else false
