@@ -43,11 +43,9 @@ class BH.Models.Settings extends BH.Models.Base
 
     properties
 
-  timeGrouping: ->
-    parseInt @get('timeGrouping'), 10
-
-  timeFormat: ->
-    parseInt @get('timeFormat'), 10
-
   parse: (data) ->
-    JSON.parse data
+    attributes = JSON.parse data
+    _.each ['timeFormat', 'timeGrouping'], (attribute) ->
+      attributes[attribute] = parseInt attributes[attribute], 10
+    attributes
+

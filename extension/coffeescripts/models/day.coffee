@@ -22,7 +22,7 @@ class BH.Models.Day extends BH.Models.Base
       historyQuery.run @toChrome(), (history) ->
         workerOptions =
           visits: history
-          interval: settings.timeGrouping()
+          interval: settings.get 'timeGrouping'
           domainGrouping: settings.get('domainGrouping')
         worker 'grouper', workerOptions, (visits) ->
           options.success(visits)

@@ -6,7 +6,7 @@ class BH.Models.Interval extends BH.Models.Base
         '<span class="amount">',
         '</span>'
       ])
-      time: @formatTime(@get('datetime'), settings.timeFormat())
+      time: @formatTime(@get('datetime'), settings.get('timeFormat'))
       id: @id
 
     , @get('visits').toTemplate()
