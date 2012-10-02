@@ -5,7 +5,8 @@ class BH.Collections.Days extends Backbone.Collection
     days = []
     @each (model) ->
       days.push(model.toTemplate())
-    {days: days}
+    days.reverse() if settings.get('weekDayOrder') == 'descending'
+    days: days
 
   destroyHistory: ->
     @each (model) ->

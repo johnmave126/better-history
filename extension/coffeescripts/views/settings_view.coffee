@@ -10,6 +10,7 @@ class BH.Views.SettingsView extends BH.Views.BaseView
     'change #time_format': 'changedTimeFormat'
     'change #open_location': 'changedOpenLocation'
     'change #starting_week_day': 'changedStartingWeekDay'
+    'change #week_day_order': 'changedWeekDayOrder'
     'click #domain_grouping': 'clickedDomainGrouping'
     'click #search_by_domain': 'clickedSearchByDomain'
     'click #search_by_selection': 'clickedSearchBySelection'
@@ -53,6 +54,7 @@ class BH.Views.SettingsView extends BH.Views.BaseView
   populateFields: ->
     @$('#open_location').val @model.get('openLocation')
     @$('#starting_week_day').val @model.get('startingWeekDay')
+    @$('#week_day_order').val @model.get('weekDayOrder')
     @$('#time_grouping').val @model.get('timeGrouping')
     @$('#time_format').val @model.get('timeFormat')
     @$('#domain_grouping').prop 'checked', @model.get('domainGrouping')
@@ -70,6 +72,9 @@ class BH.Views.SettingsView extends BH.Views.BaseView
 
   changedStartingWeekDay: (ev) ->
     @model.set startingWeekDay: $(ev.currentTarget).val()
+
+  changedWeekDayOrder: (ev) ->
+    @model.set weekDayOrder: $(ev.currentTarget).val()
 
   clickedDomainGrouping: (ev) ->
     @model.set domainGrouping: $(ev.currentTarget).is(':checked')
@@ -120,6 +125,7 @@ class BH.Views.SettingsView extends BH.Views.BaseView
       'twitter_language',
       'open_location',
       'starting_week_day',
+      'week_day_order',
       'general_section_title'
     ])
     properties[@i18nFetcher.scopeKey('credits_link')] = chrome.i18n.getMessage('credits_link', [

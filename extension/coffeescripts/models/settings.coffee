@@ -9,6 +9,7 @@ class BH.Models.Settings extends BH.Models.Base
     searchBySelection: true
     openLocation: 'last_visit'
     startingWeekDay: 'Monday'
+    weekDayOrder: 'descending'
 
   toTemplate: ->
     properties =
@@ -16,6 +17,7 @@ class BH.Models.Settings extends BH.Models.Base
       openLocations: []
       timeGroupings: []
       timeFormats: []
+      weekDayOrders: []
       searchBySelection: @get 'searchBySelection'
       searchByDomain: @get 'searchByDomain'
       domainGrouping: @get 'domainGrouping'
@@ -30,6 +32,11 @@ class BH.Models.Settings extends BH.Models.Base
       properties.openLocations.push
         text: @chromeAPI.i18n.getMessage location
         value: location
+
+    _(['descending', 'ascending']).each (order) =>
+      properties.weekDayOrders.push
+        text: @chromeAPI.i18n.getMessage order
+        value: order
 
     _([15, 30, 60]).each (timeGrouping) =>
       properties.timeGroupings.push

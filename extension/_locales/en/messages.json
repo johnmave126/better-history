@@ -901,5 +901,17 @@
   "general_section_title": {
     "message": "General",
     "description": "General section title in settings"
+  },
+  "week_day_order": {
+    "message": "Week day order",
+    "description": "the week day order"
+  },
+  "ascending": {
+    "message": "Ascending",
+    "description": "ascending week day order"
+  },
+  "descending": {
+    "message": "Descending",
+    "description": "descending week day order"
   }
 }

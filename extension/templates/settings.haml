@@ -22,6 +22,13 @@
             {{#startingWeekDays}}
             %option{:value => "{{value}}"} {{text}}
             {{/startingWeekDays}}
+      .row
+        %label
+          %span.select {{i18n_week_day_order}}
+          %select#week_day_order
+            {{#weekDayOrders}}
+            %option{:value => "{{value}}"} {{text}}
+            {{/weekDayOrders}}
     %section
       %h3 {{i18n_visit_grouping_section_title}}
       .row

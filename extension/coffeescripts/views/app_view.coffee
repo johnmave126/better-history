@@ -7,11 +7,13 @@ class BH.Views.AppView extends BH.Views.BaseView
     @collection.reload @options.settings.get('startingWeekDay')
     @options.state.on 'change', @options.state.save, @options.state
     @options.settings.on 'change:startingWeekDay', @reloadWeeks, @
+    @options.settings.on 'change:weekDayOrder', =>
+      @reloadWeeks()
+      @expireViewCache()
+    , @
     @collection.on 'reloaded', @renderMenu, @
 
-    @cachedViews =
-      weeks: {}
-      days: {}
+    @expireViewCache()
 
   render: ->
     @$el.html(@renderTemplate @getI18nValues())
@@ -24,8 +26,14 @@ class BH.Views.AppView extends BH.Views.BaseView
       collection: @collection
     menuView.render()
 
-  reloadWeeks: (settings) ->
+  reloadWeeks: ->
+    @collection.reset()
     @collection.reload settings.get('startingWeekDay')
+
+  expireViewCache: ->
+    @cachedViews =
+      weeks: {}
+      days: {}
 
   loadWeek: (id) ->
     if !@cachedViews.weeks[id]
