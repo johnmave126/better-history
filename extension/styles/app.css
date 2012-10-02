@@ -1,6 +1,11 @@
 .intervals {
   margin-top: 0;
 }
+.spinner {
+  background: url(/images/spinner.gif);
+  width: 33px;
+  height: 32px;
+}
 .interval header {
   position: relative;
   z-index: 1;
