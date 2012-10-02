@@ -9,7 +9,7 @@ class BH.Models.Settings extends BH.Models.Base
     searchBySelection: true
     openLocation: 'last_visit'
     startingWeekDay: 'Monday'
-    weekDayOrder: 'descending'
+    weekDayOrder: 'ascending'
 
   toTemplate: ->
     properties =
