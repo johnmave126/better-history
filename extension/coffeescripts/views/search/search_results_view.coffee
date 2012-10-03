@@ -10,7 +10,7 @@ class BH.Views.SearchResultsView extends BH.Views.BaseView
     _(collectionToTemplate.visits).each (visit) =>
       highlightedVisits.push(@markMatches(visit))
     collectionToTemplate.visits = highlightedVisits
-    @$el.html(@renderTemplate(_.extend(@getI18nValues(), collectionToTemplate)))
+    @$el.html(@renderTemplate(collectionToTemplate))
     @
 
   markMatches: (visit) ->
@@ -39,6 +39,3 @@ class BH.Views.SearchResultsView extends BH.Views.BaseView
 
   _getElementFromModel: (model) ->
     $("[data-id='#{model.id}']").parents('li')
-
-  getI18nValues: ->
-    @i18nFetcher.get()
