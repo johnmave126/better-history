@@ -50,7 +50,7 @@ class BH.Views.AppView extends BH.Views.BaseView
       @cachedViews.days[weekId] = {}
 
     if !@cachedViews.days[weekId][id]
-      model = @collection.get(weekId).get('days').get(id)
+      model = @collection.get(weekId).days.get(id)
       @cachedViews.days[weekId][id] = new BH.Views.DayView
         model: model,
         weekModel: @collection.get(weekId)

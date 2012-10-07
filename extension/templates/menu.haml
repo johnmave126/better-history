@@ -1,6 +1,6 @@
 %ul.menu
   {{#weeks}}
   %li.week{'data-week-id' => "{{id}}"}
-    %a{:href => "{{url}}"}
+    %a{:href => "#weeks/{{id}}"}
       {{{shortTitle}}}
   {{/weeks}}

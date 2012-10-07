@@ -11,19 +11,19 @@ class BH.Views.WeekView extends BH.Views.ViewWithSearch
     @model.bind('change:percentages', @updatePercentages, @)
     @model.bind('change:count', @updateWeekStats, @)
 
-    @model.get('days').each (model) =>
+    @model.days.each (model) =>
       model.bind('change:count', @updateDay, @)
 
   render: ->
     @$el.html(@renderTemplate(_.extend(@getI18nValues(), @model.toTemplate())))
 
     # If any day has been preloaded, update the day stats
-    @model.get('days').each (model) =>
+    @model.days.each (model) =>
       @updateDay model
     @
 
   pageTitle: ->
-    @model.get('title')
+    @model.toTemplate().title
 
   updateDay: (model) ->
     html = @_buildCountHtml(model.get('count'))
@@ -42,7 +42,7 @@ class BH.Views.WeekView extends BH.Views.ViewWithSearch
     ])
 
   updatePercentages: (percentages) ->
-    @model.get('days').each (model, i) =>
+    @model.days.each (model, i) =>
       percentage = @model.get('percentages')[i] + '%'
       $('.bar', @_getDayElement(model.id)).css({width: percentage})
     @$el.addClass('loaded')
@@ -56,7 +56,7 @@ class BH.Views.WeekView extends BH.Views.ViewWithSearch
 
   deleteAction: (prompt) ->
     if prompt.get('action')
-      if @model.get('days')
+      if @model.days
         @promptView.spin()
         @model.destroyHistory()
         @model.fetch
