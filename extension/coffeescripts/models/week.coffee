@@ -1,34 +1,27 @@
 class BH.Models.Week extends BH.Models.Base
   initialize: ->
     @set id: @get('date').format('D-M-YY')
-    @days = new BH.Collections.Days(null, week: @)
+    @history = new BH.Models.WeekHistory @toHistory()
+
+  toHistory: ->
+    startDate: @get 'date'
+    endDate: moment(@get 'date').add('days', 6)
 
   toTemplate: ->
-    title = @chromeAPI.i18n.getMessage('date_week_label', [
-      @get('date').format(@chromeAPI.i18n.getMessage('short_date_with_day'))
-    ])
-    shortTitle = @get('date').format(@chromeAPI.i18n.getMessage('short_date'))
+    days = for day in @inflateDays()
+      day: day.format('dddd')
+      title: day.format(@t('day_date'))
+      inFuture: moment() < day
+      url: "#weeks/#{@get('id')}/days/#{day.format('D')}"
 
-    _.extend
-      shortTitle: shortTitle
-      title: title
-    , @toJSON(), @days.toTemplate()
+    copy =
+      shortTitle: @get('date').format(@t('short_date'))
+      title: @t('date_week_label', [
+        @get('date').format(@t('short_date_with_day'))
+      ])
 
-  sync: (method, model, options) ->
-    if method == 'read'
-      callCount = 0
-      success = =>
-        if callCount == 6
-          options.success()
-        else
-          callCount++
+    _.extend copy, @toJSON(), days: days
 
-      @days.each (model) ->
-        model.fetch {success: success}
-
-  destroyHistory: ->
-    @days.destroyHistory()
-
-  parse: ->
-    percentages: @days.totalPercentages()
-    count: @days.totalVisits()
+  inflateDays: ->
+    for i in [0..6]
+      moment(@get('date')).add('days', i)

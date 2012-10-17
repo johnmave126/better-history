@@ -37,7 +37,7 @@ class BH.Router extends Backbone.Router
   week: (id) ->
     view = @app.loadWeek(id)
     view.select()
-    @_delay -> view.model.fetch()
+    @_delay -> view.model.history.fetch()
 
   day: (weekId, id) ->
     view = @app.loadDay weekId, id

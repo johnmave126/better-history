@@ -32,3 +32,5 @@ class BH.Views.BaseView extends Backbone.View
       $(@).attr 'tabindex', i + 2
     @$('.search').focus()
 
+  t: (key, replacements = []) ->
+    chrome.i18n.getMessage key, replacements

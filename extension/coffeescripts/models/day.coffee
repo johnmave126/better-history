@@ -3,6 +3,7 @@ class BH.Models.Day extends BH.Models.Base
     id = @_dateFormat('id')
     this.set({
       title: @_dateFormat('title')
+      day: @_dateFormat('title').toLowerCase()
       inFuture: moment() < @get('date')
       formalDate: @_dateFormat('formalDate')
       id: id

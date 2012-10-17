@@ -11,7 +11,7 @@
 .content
   %ol.days
     {{#days}}
-    %li{:class => "day {{#inFuture}}future{{/inFuture}}", 'data-day-id' => "{{id}}"}
+    %li{:class => "day {{#inFuture}}future{{/inFuture}}", 'data-day' => "{{day}}"}
       %a{:href => "{{url}}"}
         .label
           %h3.title {{title}}

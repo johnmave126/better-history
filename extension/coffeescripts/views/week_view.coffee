@@ -7,69 +7,46 @@ class BH.Views.WeekView extends BH.Views.ViewWithSearch
 
   initialize: ->
     super()
-    @dayViews = {}
-    @model.bind('change:percentages', @updatePercentages, @)
-    @model.bind('change:count', @updateWeekStats, @)
-
-    @model.days.each (model) =>
-      model.bind('change:count', @updateDay, @)
+    @model.history.bind('change', @onWeekLoaded, @)
 
   render: ->
-    @$el.html(@renderTemplate(_.extend(@getI18nValues(), @model.toTemplate())))
-
-    # If any day has been preloaded, update the day stats
-    @model.days.each (model) =>
-      @updateDay model
+    properties = _.extend @getI18nValues(), @model.toTemplate()
+    @$el.html(@renderTemplate properties)
     @
 
   pageTitle: ->
     @model.toTemplate().title
 
-  updateDay: (model) ->
-    html = @_buildCountHtml(model.get('count'))
-    $('.label .count', @_getDayElement(model.id)).html(html)
+  onWeekLoaded: ->
+    history = @model.history.toTemplate()
+    for day in history.days
+      container = @$("[data-day=#{day.day}]")
+      container.find(".label .count").html @t('number_of_visits', [day.count])
+      container.find('.bar').css width: day.percentage
 
-  updateWeekStats: (model) ->
-    html = @_buildCountHtml(model.get('count'))
-    @$('.controls .count').html(html)
+    @$('.controls .count').html @t('number_of_visits', [history.total])
     @assignTabIndices('.day a')
-
-  _buildCountHtml: (count) ->
-    chrome.i18n.getMessage('number_of_visits', [
-      count,
-      '<span class="number_of_visits">',
-      '</span>'
-    ])
-
-  updatePercentages: (percentages) ->
-    @model.days.each (model, i) =>
-      percentage = @model.get('percentages')[i] + '%'
-      $('.bar', @_getDayElement(model.id)).css({width: percentage})
     @$el.addClass('loaded')
 
   clickedDeleteAll: (ev) ->
     if $(ev.target).parent().attr('disabled') != 'disabled'
       ev.preventDefault()
-      @promptView = BH.Views.CreatePrompt(chrome.i18n.getMessage('confirm_delete_all_visits', [@model.get('title')]))
+      @promptView = BH.Views.CreatePrompt(chrome.i18n.getMessage('confirm_delete_all_visits', [@model.toTemplate().title]))
       @promptView.open()
       @promptView.model.on('change', @deleteAction, @)
 
   deleteAction: (prompt) ->
     if prompt.get('action')
-      if @model.days
-        @promptView.spin()
-        @model.destroyHistory()
-        @model.fetch
-          success: => @promptView.close()
+      @promptView.spin()
+      @model.history.destroy()
+      @promptView.close()
+      @model.history.fetch()
     else
       @promptView.close()
 
-  _getDayElement: (id) ->
-    @$("[data-day-id='#{id}']")
-
   getI18nValues: ->
-    @i18nFetcher.get([
+    @i18nFetcher.get [
       'delete_all_visits_for_filter_button',
       'no_visits_found',
       'search_input_placeholder_text'
-    ])
+    ]
