@@ -5,15 +5,12 @@ class BH.Views.AppView extends BH.Views.BaseView
 
   initialize: ->
     @collection.reload @options.settings.get('startingWeekDay')
-    @options.state.on 'change', @options.state.save, @options.state
-    @options.settings.on 'change:startingWeekDay', @reloadWeeks, @
-    @options.settings.on 'change:weekDayOrder', =>
-      @reloadWeeks()
-      @expireViewCache()
-    , @
-    @collection.on 'reloaded', @renderMenu, @
+    @options.state.on 'change', @onStateChanged, @
+    @options.settings.on 'change:startingWeekDay', @onStartingWeekDayChanged, @
+    @options.settings.on 'change:weekDayOrder', @onWeekDayOrderChanged, @
+    @collection.on 'reloaded', @onWeeksReloaded, @
 
-    @expireViewCache()
+    @viewCache = new BH.Views.Cache(@options)
 
   render: ->
     @$el.html(@renderTemplate @getI18nValues())
@@ -26,60 +23,42 @@ class BH.Views.AppView extends BH.Views.BaseView
       collection: @collection
     menuView.render()
 
+  onStateChanged: ->
+    @options.state.save()
+
+  onStartingWeekDayChanged: ->
+    @reloadWeeks()
+
+  onWeeksReloaded: ->
+    @renderMenu()
+
+  onWeekDayOrderChanged: ->
+    @reloadWeeks()
+    @viewCache.expire()
+
   reloadWeeks: ->
     @collection.reset()
-    @collection.reload settings.get('startingWeekDay')
-
-  expireViewCache: ->
-    @cachedViews =
-      weeks: {}
-      days: {}
+    @collection.reload @options.settings.get('startingWeekDay')
 
   loadWeek: (id) ->
-    if !@cachedViews.weeks[id]
-      @cachedViews.weeks[id] = new BH.Views.WeekView
-        model: new BH.Models.Week(date: moment(new Date(id)))
-      @_insert @cachedViews.weeks[id].render().el
-
-    @cachedViews.weeks[id]
+    @$('.menu > *').removeClass @cssClass.selected
+    @$("[data-week-id='#{id}']").addClass @cssClass.selected
+    @viewCache.week(id)
 
   loadDay: (id) ->
-    if !@cachedViews.days[id]
-      @cachedViews.days[id] = new BH.Views.DayView
-        model: new BH.Models.Day(date: moment(new Date(id)))
-
-      @_insert @cachedViews.days[id].render().el
-    @cachedViews.days[id]
+    weekId = moment(id).past('Wednesday', 0).format('M-D-YY')
+    @$('.menu > *').removeClass @cssClass.selected
+    @$("[data-week-id='#{weekId}']").addClass @cssClass.selected
+    @viewCache.day(id)
 
   loadSettings: ->
-    @_clearMenuSelection()
+    @$('.menu > *').removeClass @cssClass.selected
     @$('.menu .setting').parent().addClass @cssClass.selected
-    if !@cachedViews.settings
-      @cachedViews.settings = new BH.Views.SettingsView
-        model: @options.settings
-        state: @options.state
-      @_insert @cachedViews.settings.render().el
-    @cachedViews.settings
+    @viewCache.settings()
 
   loadSearch: ->
-    if !@cachedViews.search
-      @cachedViews.search = new BH.Views.SearchView
-        model: new BH.Models.Search()
-      @_insert @cachedViews.search.render().el
-    @cachedViews.search
-
-  _selectWeek: (element) ->
-    @_clearMenuSelection()
-    $(element).addClass @cssClass.selected
-
-  _clearMenuSelection: ->
     @$('.menu > *').removeClass @cssClass.selected
-
-  _insert: (html) ->
-    @$('.mainview').append html
+    @viewCache.search()
 
   getI18nValues: ->
-    @i18nFetcher.get [
-      'history_title',
-      'settings_link',
-    ]
+    @i18nFetcher.get ['history_title', 'settings_link']

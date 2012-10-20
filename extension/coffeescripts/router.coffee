@@ -15,11 +15,9 @@ class BH.Router extends Backbone.Router
     @state.fetch()
     @state.updateRoute()
 
-    weeks = new BH.Collections.Weeks()
-
-    window.appView = @app = new BH.Views.AppView
+    @app = new BH.Views.AppView
       el: $('.app')
-      collection: weeks
+      collection: new BH.Collections.Weeks()
       settings: settings
       state: @state
     @app.render()

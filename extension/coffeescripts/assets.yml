@@ -27,6 +27,7 @@
  - views/week_view
  - views/visit_view
  - views/settings_view
+ - views/cache
  - models/base
  - models/visit
  - models/interval
