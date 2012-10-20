@@ -1,4 +1,3 @@
-{{#hasIntervals}}
 %ol.intervals
   {{#intervals}}
   %li.interval{'data-id' => "{{id}}"}
@@ -44,8 +43,3 @@
       {{/notGrouped}}
       {{/visits}}
   {{/intervals}}
-{{/hasIntervals}}
-{{#noIntervals}}
-%p.no_visits
-  {{i18n_no_visits_found}}
-{{/noIntervals}}

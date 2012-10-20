@@ -10,7 +10,8 @@ class BH.Views.DayResultsView extends BH.Views.BaseView
     'click .visit > a': 'visitClicked'
 
   render: ->
-    @$el.html(@renderTemplate(_.extend(@getI18nValues(), @model.toTemplate(), @collection.toTemplate())))
+    @$el.html(@renderTemplate(_.extend(@getI18nValues(), @model.toTemplate())))
+    @assignTabIndices('.interval > .visits > .visit > a:first-child')
     @
 
   visitClicked: (ev) ->

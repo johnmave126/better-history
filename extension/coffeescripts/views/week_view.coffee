@@ -7,7 +7,7 @@ class BH.Views.WeekView extends BH.Views.ViewWithSearch
 
   initialize: ->
     super()
-    @model.history.bind('change', @onWeekLoaded, @)
+    @model.history.bind('change', @onWeekHistoryLoaded, @)
 
   render: ->
     properties = _.extend @getI18nValues(), @model.toTemplate()
@@ -17,7 +17,10 @@ class BH.Views.WeekView extends BH.Views.ViewWithSearch
   pageTitle: ->
     @model.toTemplate().title
 
-  onWeekLoaded: ->
+  onWeekHistoryLoaded: ->
+    @renderHistory()
+
+  renderHistory: ->
     history = @model.history.toTemplate()
     for day in history.days
       container = @$("[data-day=#{day.day}]")

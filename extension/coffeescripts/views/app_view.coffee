@@ -38,25 +38,18 @@ class BH.Views.AppView extends BH.Views.BaseView
   loadWeek: (id) ->
     if !@cachedViews.weeks[id]
       @cachedViews.weeks[id] = new BH.Views.WeekView
-        model: @collection.get id
+        model: new BH.Models.Week(date: moment(new Date(id)))
       @_insert @cachedViews.weeks[id].render().el
 
-    @_selectWeek @$("[data-week-id='#{id}']")
     @cachedViews.weeks[id]
 
-  loadDay: (weekId, id) ->
-    @_selectWeek @$("[data-week-id='#{weekId}']")
-    if !@cachedViews.days[weekId]
-      @cachedViews.days[weekId] = {}
+  loadDay: (id) ->
+    if !@cachedViews.days[id]
+      @cachedViews.days[id] = new BH.Views.DayView
+        model: new BH.Models.Day(date: moment(new Date(id)))
 
-    if !@cachedViews.days[weekId][id]
-      model = @collection.get(weekId).days.get(id)
-      @cachedViews.days[weekId][id] = new BH.Views.DayView
-        model: model,
-        weekModel: @collection.get(weekId)
-
-      @_insert @cachedViews.days[weekId][id].render().el
-    @cachedViews.days[weekId][id]
+      @_insert @cachedViews.days[id].render().el
+    @cachedViews.days[id]
 
   loadSettings: ->
     @_clearMenuSelection()

@@ -4,7 +4,7 @@ class BH.Router extends Backbone.Router
     'settings': 'settings'
     'search/*query': 'search'
     'weeks/:id': 'week'
-    'weeks/:weekId/days/:id': 'day'
+    'days/:id': 'day'
 
   initialize: ->
     # yuck, really need to do something about this...
@@ -39,11 +39,9 @@ class BH.Router extends Backbone.Router
     view.select()
     @_delay -> view.model.history.fetch()
 
-  day: (weekId, id) ->
-    view = @app.loadDay weekId, id
-    # It's important that change is fired on 'history'
-    view.model.unset('history', {silent: true})
-    view.model.fetch()
+  day: (id) ->
+    view = @app.loadDay id
+    view.model.history.fetch()
     view.select()
 
   settings: ->

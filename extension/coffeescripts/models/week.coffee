@@ -1,6 +1,6 @@
 class BH.Models.Week extends BH.Models.Base
   initialize: ->
-    @set id: @get('date').format('D-M-YY')
+    @set id: @get('date').format('M-D-YY')
     @history = new BH.Models.WeekHistory @toHistory()
 
   toHistory: ->
@@ -12,7 +12,7 @@ class BH.Models.Week extends BH.Models.Base
       day: day.format('dddd')
       title: day.format(@t('day_date'))
       inFuture: moment() < day
-      url: "#weeks/#{@get('id')}/days/#{day.format('D')}"
+      url: "#days/#{day.format('M-D-YY')}"
 
     copy =
       shortTitle: @get('date').format(@t('short_date'))

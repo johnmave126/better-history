@@ -8,28 +8,31 @@ class BH.Views.DayView extends BH.Views.ViewWithSearch
 
   initialize: ->
     super()
-    @model.on('change', @renderHistory, @)
+    @model.history.bind('change', @onDayHistoryLoaded, @)
 
-  render: (type) ->
-    @$el.html(@renderTemplate(_.extend(@getI18nValues(), @model.toTemplate())))
-    @$('button').attr('disabled', 'disabled')
+  render: ->
+    properties = _.extend @getI18nValues(), @model.toTemplate()
+    @$el.html(@renderTemplate properties)
     @
 
   pageTitle: ->
-    @model.get('formalDate')
+    @model.toTemplate().formalDate
+
+  onDayHistoryLoaded: ->
+    @renderHistory()
+    @updateDeleteButton()
 
   renderHistory: ->
-    @collection = @model.get('history')
     @dayResultsView = new BH.Views.DayResultsView
-      collection: @collection
-      model: @model
+      model: @model.history
     @$('.content').html @dayResultsView.render().el
 
-    if @collection.length == 0 || @model.get('filter')
-      @$('button').attr('disabled', 'disabled')
+  updateDeleteButton: ->
+    deleteButton = @$('.button')
+    if @model.hasHistory()
+      deleteButton.removeAttr('disabled')
     else
-      @assignTabIndices('.interval > .visits > .visit > a:first-child')
-      @$('button').removeAttr('disabled')
+      deleteButton.attr('disabled', 'disabled')
 
   updateUrl: ->
     router.navigate(BH.Lib.Url.week(@options.weekModel.id))
