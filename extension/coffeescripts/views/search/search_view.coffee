@@ -6,8 +6,8 @@ class BH.Views.SearchView extends BH.Views.ViewWithSearch
     'click .delete_all': 'clickedDeleteAll'
 
   initialize: ->
-    @model.on('change:history', @renderVisits, @)
-    @model.on('change:query', @updateQueryReferences, @)
+    @model.history.on('change', @onSearchHistoryChanged, @)
+    @model.on('change:query', @onQueryChanged, @)
     super()
 
   render: ->
@@ -17,40 +17,45 @@ class BH.Views.SearchView extends BH.Views.ViewWithSearch
   pageTitle: ->
     "Searching"
 
+  onSearchHistoryChanged: ->
+    @renderVisits()
+    @updateDeleteButton()
+
+  onQueryChanged: ->
+    @updateQueryReferences()
+
   updateQueryReferences: ->
+    properties = @model.toTemplate()
     @$el.removeClass('loaded')
-    @$('.title').text(@model.get('title'))
-    @$('.search').val(@model.get('query'))
+    @$('.title').text properties.title
+    @$('.search').val properties.query
     @$('.content').html('')
-    @model.fetch()
 
   renderVisits: ->
     @$el.addClass('loaded')
-    @collection = @model.get('history')
 
     @$('.search').focus()
     contentElement = @$el.children('.content')
 
-    if @collection.length == 100
+    if @model.history.get('history').length == 100
       key = 'max_number_of_search_results'
     else
       key = 'number_of_search_results'
 
-    @$('.number_of_results').text(chrome.i18n.getMessage(key, [@collection.length]))
+    @$('.number_of_results').text(chrome.i18n.getMessage(key, [@model.history.get('history').length]))
 
 
     new BH.Views.SearchResultsView(
-      model: @model
-      collection: @collection
+      model: @model.history
       el: contentElement
     ).render()
 
-    if @collection.length == 0
-      @$('.delete_all').attr('disabled', 'disabled')
+  updateDeleteButton: ->
+    deleteButton = @$('.delete_all')
+    if @model.hasHistory()
+      deleteButton.attr('disabled', 'disabled')
     else
-      @$('.delete_all').removeAttr('disabled')
-
-    @assignTabIndices('.visit a:first-child')
+      deleteButton.removeAttr('disabled')
 
   clickedDeleteAll: (ev) ->
     ev.preventDefault()

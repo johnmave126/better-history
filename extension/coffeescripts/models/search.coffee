@@ -1,35 +1,28 @@
 class BH.Models.Search extends BH.Models.Base
+  defaults: ->
+    query: ''
+
   initialize: ->
-    @bind('change:query', @updateTitle, @)
+    @bind 'change:query', @onQueryChanged, @
+    @history = new BH.Models.SearchHistory @toHistory()
+
+  onQueryChanged: ->
+    @history.set {query: @get('query')}, silent: true
+
+  toHistory: ->
+    query: @get 'query'
+
+  hasHistory: ->
+    @history.get('history').length > 0
 
   toTemplate: ->
-    @toJSON()
-
-  updateTitle: ->
     @terms = @get('query').split(' ')
-    joined = @chromeAPI.i18n.getMessage('searching_title') + ' '
+    joined = @t('searching_title') + ' '
 
-    _.each @terms, (term, i) =>
+    # yuck
+    for term, i in @terms
       joined += "\"#{term}\""
       if i != @terms.length - 1
-        joined += ' ' + @chromeAPI.i18n.getMessage('and') + ' '
+        joined += " #{@t('and')} "
 
-    @set(title: joined)
-
-  toChrome: ->
-    text: @get('query')
-    searching: true
-
-  sync: (method, model, options) ->
-    if method == 'read'
-      historyQuery = new BH.Lib.HistoryQuery(@chromeAPI)
-      historyQuery.run @toChrome(), (history) ->
-        options.success(history)
-
-  parse: (data) ->
-    visits = new BH.Collections.Visits()
-
-    _.each data, (visit) ->
-      visits.add(new BH.Models.Visit(visit))
-
-    history: visits
+     _.extend @toJSON(), title: joined

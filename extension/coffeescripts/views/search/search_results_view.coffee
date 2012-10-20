@@ -5,18 +5,21 @@ class BH.Views.SearchResultsView extends BH.Views.BaseView
     'click .delete_visit': 'deleteClicked'
 
   render: ->
-    collectionToTemplate = @collection.toTemplate(grouped: false)
-    highlightedVisits = []
-    _(collectionToTemplate.visits).each (visit) =>
-      highlightedVisits.push(@markMatches(visit))
+    console.log @model
+    collectionToTemplate = @model.get('history').toTemplate(grouped: false)
+
+    highlightedVisits = for visit in collectionToTemplate.visits
+      @markMatches(visit)
+
     collectionToTemplate.visits = highlightedVisits
     @$el.html(@renderTemplate(collectionToTemplate))
+    @assignTabIndices('.visit a:first-child')
     @
 
   markMatches: (visit) ->
     regExp = titleMatch = locationMatch = timeMatch = null
 
-    _.each @model.terms, (term) =>
+    for term in @model.get('query').split(' ')
       regExp = new RegExp(term, "i")
       visit.title = @_wrapMatchInProperty(regExp, visit.title)
       visit.location = @_wrapMatchInProperty(regExp, visit.location)

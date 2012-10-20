@@ -50,8 +50,9 @@ class BH.Router extends Backbone.Router
 
   search: (query) ->
     view = @app.loadSearch()
+    view.model.set query: decodeURIComponent(query)
     view.select()
-    @_delay -> view.model.set query: decodeURIComponent(query)
+    @_delay -> view.model.history.fetch()
 
   _delay: (callback) ->
     setTimeout (-> callback()), 250
