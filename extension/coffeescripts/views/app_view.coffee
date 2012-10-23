@@ -41,24 +41,26 @@ class BH.Views.AppView extends BH.Views.BaseView
     @collection.reload @options.settings.get('startingWeekDay')
 
   loadWeek: (id) ->
-    @$('.menu > *').removeClass @cssClass.selected
-    @$("[data-week-id='#{id}']").addClass @cssClass.selected
+    @updateMenuSelection(id)
     @viewCache.week(id)
 
   loadDay: (id) ->
     weekId = moment(id).past('Wednesday', 0).format('M-D-YY')
-    @$('.menu > *').removeClass @cssClass.selected
-    @$("[data-week-id='#{weekId}']").addClass @cssClass.selected
+    @updateMenuSelection(weekId)
     @viewCache.day(id)
 
   loadSettings: ->
-    @$('.menu > *').removeClass @cssClass.selected
+    @updateMenuSelection()
     @$('.menu .setting').parent().addClass @cssClass.selected
     @viewCache.settings()
 
   loadSearch: ->
-    @$('.menu > *').removeClass @cssClass.selected
+    @updateMenuSelection()
     @viewCache.search()
+
+  updateMenuSelection: (id) ->
+    @$('.menu > *').removeClass @cssClass.selected
+    @$("[data-week-id='#{id}']").addClass(@cssClass.selected) if id?
 
   getI18nValues: ->
     @i18nFetcher.get ['history_title', 'settings_link']
