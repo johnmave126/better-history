@@ -35,11 +35,11 @@ class BH.Router extends Backbone.Router
   week: (id) ->
     view = @app.loadWeek(id)
     view.select()
-    @_delay -> view.model.history.fetch()
+    @_delay -> view.history.fetch()
 
   day: (id) ->
     view = @app.loadDay id
-    view.model.history.fetch()
+    view.history.fetch()
     view.select()
 
   settings: ->
@@ -50,7 +50,7 @@ class BH.Router extends Backbone.Router
     view = @app.loadSearch()
     view.model.set query: decodeURIComponent(query)
     view.select()
-    @_delay -> view.model.history.fetch()
+    @_delay -> view.history.fetch()
 
   _delay: (callback) ->
     setTimeout (-> callback()), 250

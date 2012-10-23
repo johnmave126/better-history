@@ -1,7 +1,6 @@
 class BH.Models.Week extends BH.Models.Base
   initialize: ->
     @set id: @get('date').format('M-D-YY')
-    @history = new BH.Models.WeekHistory @toHistory()
 
   toHistory: ->
     startDate: @get 'date'

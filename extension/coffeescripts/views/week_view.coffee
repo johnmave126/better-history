@@ -7,7 +7,8 @@ class BH.Views.WeekView extends BH.Views.ViewWithSearch
 
   initialize: ->
     super()
-    @model.history.bind('change', @onWeekHistoryLoaded, @)
+    @history = @options.history
+    @history.bind('change', @onHistoryLoaded, @)
 
   render: ->
     properties = _.extend @getI18nValues(), @model.toTemplate()
@@ -17,11 +18,11 @@ class BH.Views.WeekView extends BH.Views.ViewWithSearch
   pageTitle: ->
     @model.toTemplate().title
 
-  onWeekHistoryLoaded: ->
+  onHistoryLoaded: ->
     @renderHistory()
 
   renderHistory: ->
-    history = @model.history.toTemplate()
+    history = @history.toTemplate()
     for day in history.days
       container = @$("[data-day=#{day.day}]")
       container.find(".label .count").html @t('number_of_visits', [day.count])
@@ -41,9 +42,9 @@ class BH.Views.WeekView extends BH.Views.ViewWithSearch
   deleteAction: (prompt) ->
     if prompt.get('action')
       @promptView.spin()
-      @model.history.destroy()
+      @history.destroy()
       @promptView.close()
-      @model.history.fetch()
+      @history.fetch()
     else
       @promptView.close()
 

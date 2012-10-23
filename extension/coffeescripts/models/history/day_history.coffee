@@ -32,8 +32,8 @@ class BH.Models.DayHistory extends BH.Models.Base
   eod: ->
     new Date(@get('date').eod()).getTime()
 
-  present: ->
-    @get('intervals').length > 0
+  isEmpty: ->
+    @get('intervals').length == 0
 
   parse: (data) ->
     intervals = new BH.Collections.Intervals()

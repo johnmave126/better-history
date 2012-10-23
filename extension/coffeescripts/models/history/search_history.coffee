@@ -15,6 +15,9 @@ class BH.Models.SearchHistory extends BH.Models.Base
     text: @get('query')
     searching: true
 
+  isEmpty: ->
+    @get('history').length == 0
+
   parse: (data) ->
     visits = new BH.Collections.Visits()
 

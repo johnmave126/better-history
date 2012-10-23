@@ -6,7 +6,8 @@ class BH.Views.SearchView extends BH.Views.ViewWithSearch
     'click .delete_all': 'clickedDeleteAll'
 
   initialize: ->
-    @model.history.on('change', @onSearchHistoryChanged, @)
+    @history = @options.history
+    @history.on('change', @onSearchHistoryChanged, @)
     @model.on('change:query', @onQueryChanged, @)
     super()
 
@@ -23,6 +24,7 @@ class BH.Views.SearchView extends BH.Views.ViewWithSearch
 
   onQueryChanged: ->
     @updateQueryReferences()
+    @history.set {query: @model.get('query')}, silent: true
 
   updateQueryReferences: ->
     properties = @model.toTemplate()
@@ -37,22 +39,22 @@ class BH.Views.SearchView extends BH.Views.ViewWithSearch
     @$('.search').focus()
     contentElement = @$el.children('.content')
 
-    if @model.history.get('history').length == 100
+    if @history.get('history').length == 100
       key = 'max_number_of_search_results'
     else
       key = 'number_of_search_results'
 
-    @$('.number_of_results').text(chrome.i18n.getMessage(key, [@model.history.get('history').length]))
+    @$('.number_of_results').text(chrome.i18n.getMessage(key, [@history.get('history').length]))
 
 
     new BH.Views.SearchResultsView(
-      model: @model.history
+      model: @history
       el: contentElement
     ).render()
 
   updateDeleteButton: ->
     deleteButton = @$('.delete_all')
-    if @model.hasHistory()
+    if @history.isEmpty()
       deleteButton.attr('disabled', 'disabled')
     else
       deleteButton.removeAttr('disabled')

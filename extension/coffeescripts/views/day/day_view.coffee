@@ -8,7 +8,8 @@ class BH.Views.DayView extends BH.Views.ViewWithSearch
 
   initialize: ->
     super()
-    @model.history.bind('change', @onDayHistoryLoaded, @)
+    @history = @options.history
+    @history.bind('change', @onDayHistoryLoaded, @)
 
   render: ->
     properties = _.extend @getI18nValues(), @model.toTemplate()
@@ -24,15 +25,15 @@ class BH.Views.DayView extends BH.Views.ViewWithSearch
 
   renderHistory: ->
     @dayResultsView = new BH.Views.DayResultsView
-      model: @model.history
+      model: @history
     @$('.content').html @dayResultsView.render().el
 
   updateDeleteButton: ->
     deleteButton = @$('.button')
-    if @model.hasHistory()
-      deleteButton.removeAttr('disabled')
-    else
+    if @history.isEmpty()
       deleteButton.attr('disabled', 'disabled')
+    else
+      deleteButton.removeAttr('disabled')
 
   updateUrl: ->
     router.navigate(BH.Lib.Url.week(@options.weekModel.id))
@@ -48,8 +49,8 @@ class BH.Views.DayView extends BH.Views.ViewWithSearch
     if prompt.get('action')
       if @collection
         @promptView.spin()
-        @model.destroyHistory()
-        @model.fetch
+        @history.destroy()
+        @history.fetch
           success: =>
             @promptView.close()
     else
