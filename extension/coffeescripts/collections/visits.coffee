@@ -5,16 +5,7 @@ class BH.Collections.Visits extends Backbone.Collection
     options.success() if options?
 
   toTemplate: ->
-    visits = []
-    @each (model) ->
-      visits.push(model.toTemplate())
+    visits = for model in @models
+      model.toTemplate()
 
-    visits: visits
-    noVisits: @noVisits()
-    hasVisits: @hasVisits()
-
-  noVisits: ->
-    if @models.length == 0 then true else false
-
-  hasVisits: ->
-    !@noVisits()
+    visits: visits || []

@@ -1,4 +1,3 @@
-{{#hasVisits}}
 %ol.visits.highlightable.editable
   {{#visits}}
   %li.visit.visit_view
@@ -9,7 +8,6 @@
         %dd {{{time}}}
     %a.delete_visit.delete{:href => "#", :title => "{{i18n_prompt_delete_button}}"} {{i18n_prompt_delete_button}}
   {{/visits}}
-{{/hasVisits}}
-{{#noVisits}}
+{{^visits}}
 %p.no_visits {{i18n_no_visits_found}}
-{{/noVisits}}
+{{/visits}}

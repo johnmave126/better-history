@@ -1,6 +1,6 @@
 class BH.Models.WeekHistory extends BH.Models.Base
   defaults:
-    history: {}
+    history: []
 
   isNew: ->
     false

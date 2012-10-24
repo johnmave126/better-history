@@ -5,14 +5,14 @@ class BH.Views.SearchResultsView extends BH.Views.BaseView
     'click .delete_visit': 'deleteClicked'
 
   render: ->
-    console.log @model
-    collectionToTemplate = @model.get('history').toTemplate(grouped: false)
+    collectionToTemplate = @model.toTemplate()
 
     highlightedVisits = for visit in collectionToTemplate.visits
       @markMatches(visit)
 
     collectionToTemplate.visits = highlightedVisits
-    @$el.html(@renderTemplate(collectionToTemplate))
+    properties = _.extend @getI18nValues(), collectionToTemplate
+    @$el.html(@renderTemplate(properties))
     @assignTabIndices('.visit a:first-child')
     @
 
@@ -42,3 +42,6 @@ class BH.Views.SearchResultsView extends BH.Views.BaseView
 
   _getElementFromModel: (model) ->
     $("[data-id='#{model.id}']").parents('li')
+
+  getI18nValues: ->
+    @i18nFetcher.get ['no_visits_found']

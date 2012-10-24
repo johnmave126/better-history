@@ -1,4 +1,7 @@
 class BH.Models.DayHistory extends BH.Models.Base
+  default: ->
+    history: []
+
   isNew: ->
     false
 
@@ -23,7 +26,7 @@ class BH.Models.DayHistory extends BH.Models.Base
     properties
 
   toTemplate: ->
-    intervals: @get('intervals').map (interval) ->
+    history: @get('history').map (interval) ->
       interval.toTemplate()
 
   sod: ->
@@ -33,7 +36,7 @@ class BH.Models.DayHistory extends BH.Models.Base
     new Date(@get('date').eod()).getTime()
 
   isEmpty: ->
-    @get('intervals').length == 0
+    @get('history').length == 0
 
   parse: (data) ->
     intervals = new BH.Collections.Intervals()
@@ -51,4 +54,4 @@ class BH.Models.DayHistory extends BH.Models.Base
         datetime: interval.datetime
         visits: visits
 
-    intervals: intervals
+    history: intervals

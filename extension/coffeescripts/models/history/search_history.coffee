@@ -1,6 +1,6 @@
 class BH.Models.SearchHistory extends BH.Models.Base
   defaults: ->
-    history: {}
+    history: []
 
   isNew: ->
     false
@@ -10,6 +10,9 @@ class BH.Models.SearchHistory extends BH.Models.Base
       historyQuery = new BH.Lib.HistoryQuery(@chromeAPI)
       historyQuery.run @toChrome(), (history) ->
         options.success(history)
+
+  toTemplate: ->
+    @get('history').toTemplate grouped: false
 
   toChrome: ->
     text: @get('query')
