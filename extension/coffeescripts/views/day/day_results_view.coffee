@@ -10,7 +10,8 @@ class BH.Views.DayResultsView extends BH.Views.BaseView
     'click .visit > a': 'visitClicked'
 
   render: ->
-    @$el.html(@renderTemplate(_.extend(@getI18nValues(), @model.toTemplate())))
+    properties = _.extend @getI18nValues(), @model.toTemplate()
+    @$el.html(@renderTemplate properties)
     @assignTabIndices('.interval > .visits > .visit > a:first-child')
     @
 
@@ -21,9 +22,9 @@ class BH.Views.DayResultsView extends BH.Views.BaseView
 
   deleteVisitClicked: (ev) ->
     ev.preventDefault()
-    element = @_getTopElement(ev.currentTarget)
+    element = $(ev.currentTarget).parents('[data-id]').first()
     intervalId = $(ev.currentTarget).parents('.interval').data('id')
-    interval = @collection.get(intervalId)
+    interval = @model.get('history').get(intervalId)
     interval.findVisitById($(element).data('id')).destroy
       success: => element.remove()
 
@@ -50,9 +51,6 @@ class BH.Views.DayResultsView extends BH.Views.BaseView
     ev.preventDefault()
     $(ev.currentTarget).parents('.visit')
       .toggleClass('expanded')
-
-  _getTopElement: (element) ->
-    $(element).parents('[data-id]').first()
 
   getI18nValues: ->
     @i18nFetcher.get([
