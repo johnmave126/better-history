@@ -1,6 +1,7 @@
 class BH.Views.DayView extends BH.Views.ViewWithSearch
-  className: 'day_view with_controls'
   template: BH.Templates['day']
+
+  className: 'day_view with_controls'
 
   events:
     'click .delete_day': 'onDeleteAllClicked'

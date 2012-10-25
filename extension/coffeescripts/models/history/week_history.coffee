@@ -40,6 +40,7 @@ class BH.Models.WeekHistory extends BH.Models.Base
       visits.length
 
   totalVisits: ->
+    return 0 if @dayVisits().length == 0
     @dayVisits().reduce (sum, num) ->
       sum + num
 

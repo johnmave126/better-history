@@ -1,9 +1,10 @@
 class BH.Views.WeekView extends BH.Views.ViewWithSearch
-  className: 'week_view with_controls'
   template: BH.Templates['week']
 
+  className: 'week_view with_controls'
+
   events:
-    'click .delete_all': 'clickedDeleteAll'
+    'click .delete_all': 'onDeleteAllClicked'
 
   initialize: ->
     super()
@@ -15,11 +16,14 @@ class BH.Views.WeekView extends BH.Views.ViewWithSearch
     @$el.html(@renderTemplate properties)
     @
 
-  pageTitle: ->
-    @model.toTemplate().title
-
   onHistoryLoaded: ->
     @renderHistory()
+
+  onDeleteAllClicked: ->
+    @promptToDeleteAllVisits()
+
+  pageTitle: ->
+    @model.toTemplate().title
 
   renderHistory: ->
     history = @history.toTemplate()
@@ -32,14 +36,13 @@ class BH.Views.WeekView extends BH.Views.ViewWithSearch
     @assignTabIndices('.day a')
     @$el.addClass('loaded')
 
-  clickedDeleteAll: (ev) ->
-    if $(ev.target).parent().attr('disabled') != 'disabled'
-      ev.preventDefault()
-      @promptView = BH.Views.CreatePrompt(chrome.i18n.getMessage('confirm_delete_all_visits', [@model.toTemplate().title]))
-      @promptView.open()
-      @promptView.model.on('change', @deleteAction, @)
+  promptToDeleteAllVisits: ->
+    promptMessage = @t('confirm_delete_all_visits', [@model.toTemplate().title])
+    @promptView = BH.Views.CreatePrompt(promptMessage)
+    @promptView.open()
+    @promptView.model.on('change', @promptAction, @)
 
-  deleteAction: (prompt) ->
+  promptAction: (prompt) ->
     if prompt.get('action')
       @history.destroy()
       @promptView.close()
