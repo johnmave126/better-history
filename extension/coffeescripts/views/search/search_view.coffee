@@ -68,7 +68,6 @@ class BH.Views.SearchView extends BH.Views.ViewWithSearch
 
   deleteAction: (prompt) ->
     if prompt.get('action')
-      @promptView.spin()
       @collection.destroyAll()
       @model.fetch
         success: (model) =>

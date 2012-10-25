@@ -41,7 +41,6 @@ class BH.Views.WeekView extends BH.Views.ViewWithSearch
 
   deleteAction: (prompt) ->
     if prompt.get('action')
-      @promptView.spin()
       @history.destroy()
       @promptView.close()
       @history.fetch()

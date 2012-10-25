@@ -3,8 +3,8 @@ class BH.Views.DayView extends BH.Views.ViewWithSearch
   template: BH.Templates['day']
 
   events:
-    'click .delete_day': 'clickedDeleteAll'
-    'click .back_to_week': 'backToWeekClicked'
+    'click .delete_day': 'onDeleteAllClicked'
+    'click .back_to_week': 'onBackToWeekClicked'
 
   initialize: ->
     super()
@@ -16,12 +16,18 @@ class BH.Views.DayView extends BH.Views.ViewWithSearch
     @$el.html(@renderTemplate properties)
     @
 
-  pageTitle: ->
-    @model.toTemplate().formalDate
-
   onDayHistoryLoaded: ->
     @renderHistory()
     @updateDeleteButton()
+
+  onDeleteAllClicked: (ev) ->
+    @promptToDeleteAllVisits()
+
+  onBackToWeekClicked: ->
+    @$('.content').html('')
+
+  pageTitle: ->
+    @model.toTemplate().formalDate
 
   renderHistory: ->
     @dayResultsView = new BH.Views.DayResultsView
@@ -29,7 +35,7 @@ class BH.Views.DayView extends BH.Views.ViewWithSearch
     @$('.content').html @dayResultsView.render().el
 
   updateDeleteButton: ->
-    deleteButton = @$('.button')
+    deleteButton = @$('button')
     if @history.isEmpty()
       deleteButton.attr('disabled', 'disabled')
     else
@@ -38,26 +44,20 @@ class BH.Views.DayView extends BH.Views.ViewWithSearch
   updateUrl: ->
     router.navigate(BH.Lib.Url.week(@options.weekModel.id))
 
-  clickedDeleteAll: (ev) ->
-    if $(ev.target).parent().attr('disabled') != 'disabled'
-      ev.preventDefault()
-      @promptView = BH.Views.CreatePrompt(chrome.i18n.getMessage('confirm_delete_all_visits', [@model.toJSON().formalDate]))
-      @promptView.open()
-      @promptView.model.on('change', @deleteAction, @)
+  promptToDeleteAllVisits: ->
+    promptMessage = @t('confirm_delete_all_visits', [@model.toJSON().formalDate])
+    @promptView = BH.Views.CreatePrompt(promptMessage)
+    @promptView.open()
+    @promptView.model.on('change', @promptAction, @)
 
-  deleteAction: (prompt) ->
+  promptAction: (prompt) ->
     if prompt.get('action')
-      if @collection
-        @promptView.spin()
-        @history.destroy()
-        @history.fetch
-          success: =>
-            @promptView.close()
+      @history.destroy()
+      @history.fetch
+        success: =>
+          @promptView.close()
     else
       @promptView.close()
-
-  backToWeekClicked: (ev) ->
-    @$('.content').html('')
 
   getI18nValues: ->
     properties = @i18nFetcher.get [

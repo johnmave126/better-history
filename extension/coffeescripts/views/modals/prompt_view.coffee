@@ -20,6 +20,7 @@ class BH.Views.PromptView extends BH.Views.Modal
 
   clickedYes: (ev) ->
     ev.preventDefault()
+    @spin()
     @model.set({action: true})
 
   spin: ->
