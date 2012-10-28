@@ -13,6 +13,3 @@ class BH.Models.Day extends BH.Models.Base
       weekUrl: "#weeks/#{moment(date).past('Monday', 0).format('M-D-YY')}"
 
     _.extend properties, @toJSON()
-
-  hasHistory: ->
-    @history.get('intervals').length > 0

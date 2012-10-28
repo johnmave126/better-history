@@ -7,6 +7,8 @@
         getMessage: jasmine.createSpy("getMessage").andCallFake(function(key, substitutions) {
           var lookup, result;
           lookup = {
+            day_date: "dddd",
+            formal_date: "MMMM Do YYYY",
             yesterday_link: "Yesterday",
             today_link: "Today",
             searching_title: "Searching",
@@ -32,8 +34,10 @@
             september: "September",
             sunday: "Sunday",
             december: "December",
-            formal_date: "$month$ $day$, $year$",
             version_title: "version title",
+            short_date: 'MMMM Do',
+            short_date_with_day: 'dddd, MMMM Do',
+            date_week_label: 'Week of $week$',
             prompt_title: "prompt title",
             collapse_button: "collapse",
             expand_button: "expand",
