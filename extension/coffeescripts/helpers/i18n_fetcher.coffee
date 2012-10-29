@@ -2,6 +2,7 @@ class BH.Helpers.I18nFetcher
   constructor: (@chromeAPI) ->
 
   get: (keys) ->
+    return {} if !keys?
     lookup = {}
     _.each keys, (key) =>
       lookup[@scopeKey(key)] = @chromeAPI.i18n.getMessage(key.toString())

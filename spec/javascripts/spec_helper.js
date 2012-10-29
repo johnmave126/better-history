@@ -47,7 +47,7 @@
             extended_formal_date: "dddd, MMMM Do, YYYY"
           };
           result = lookup[key] || 'translated ' + key;
-          if (result) {
+          if (result && typeof(substitutions) != 'undefined') {
             _.each(substitutions, function(substitution) {
               return result = result.replace(/\$\w+\$/, substitution);
             });
