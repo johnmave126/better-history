@@ -1,6 +1,6 @@
 (function() {
-  window.importScripts = function() { };
-  window.loadChromeAPI = function(config) {
+  importScripts = function() { };
+  loadChromeAPI = function(config) {
     var chrome;
     return chrome = {
       i18n: {

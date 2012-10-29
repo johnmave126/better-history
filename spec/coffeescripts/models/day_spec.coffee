@@ -15,7 +15,7 @@ describe 'BH.Models.Day', ->
         date: @date
 
   describe '#toTemplate', ->
-    it 'returns the translated properties needed for a view template', ->
+    it 'returns the properties needed for a view template', ->
       expect(@day.toTemplate()).toEqual
         title: 'Thursday'
         formalDate: 'October 11th 2012'
