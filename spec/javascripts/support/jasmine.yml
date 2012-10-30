@@ -20,6 +20,8 @@ src_files:
     - extension/javascripts/namespace.js
     - extension/javascripts/models/base.js
     - extension/javascripts/models/*.js
+    - extension/javascripts/models/history/history.js
+    - extension/javascripts/models/history/*.js
     - extension/javascripts/collections/*.js
     - extension/javascripts/lib/**/*.js
     - extension/javascripts/workers/*.js

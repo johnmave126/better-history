@@ -1,6 +1,9 @@
-class BH.Models.DayHistory extends BH.Models.Base
-  default: ->
+class BH.Models.DayHistory extends BH.Models.History
+  defaults:
     history: []
+
+  initialize: ->
+    super()
 
   isNew: ->
     false
@@ -8,17 +11,12 @@ class BH.Models.DayHistory extends BH.Models.Base
   sync: (method, model, options) ->
     switch method
       when 'read'
-        historyQuery = new BH.Lib.HistoryQuery(@chromeAPI)
-        historyQuery.run @toChrome(), (history) ->
-          workerOptions =
-            visits: history
-            interval: settings.get 'timeGrouping'
-            domainGrouping: settings.get('domainGrouping')
-          worker 'grouper', workerOptions, (visits) ->
-            options.success(visits)
+        @historyQuery.run @toChrome(), (history) =>
+          @preparse(history, options.success)
+
       when 'delete'
         @chromeAPI.history.deleteRange @toChrome(false), =>
-          @set({history: new BH.Collections.Intervals()})
+          @set history: @defaults.history
 
   toChrome: (reading = true) ->
     properties = startTime: @sod(), endTime: @eod()
@@ -37,6 +35,16 @@ class BH.Models.DayHistory extends BH.Models.Base
 
   isEmpty: ->
     @get('history').length == 0
+
+  preparse: (results, callback) ->
+    # TODO: this settings dependency is awful
+    config =
+      visits: results
+      interval: settings.get 'timeGrouping'
+      domainGrouping: settings.get('domainGrouping')
+
+    worker 'grouper', config, (results) ->
+      callback(results)
 
   parse: (data) ->
     intervals = new BH.Collections.Intervals()

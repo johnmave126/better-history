@@ -56,7 +56,8 @@
         })
       },
       history: {
-        search: jasmine.createSpy("search")
+        search: jasmine.createSpy("search"),
+        deleteRange: jasmine.createSpy("deleteRange")
       },
       browserAction: {
         onClicked: {

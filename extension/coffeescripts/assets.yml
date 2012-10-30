@@ -38,6 +38,7 @@
  - models/state
  - models/search
  - models/grouped_visit
+ - models/history/history
  - models/history/week_history
  - models/history/search_history
  - models/history/day_history
