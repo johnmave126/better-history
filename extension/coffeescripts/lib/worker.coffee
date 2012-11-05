@@ -2,8 +2,8 @@
   path = switch name
     when 'sanitizer'
       'javascripts/workers/sanitizer.js'
-    when 'grouper'
-      'javascripts/workers/grouper.js'
+    when 'domainGrouper'
+      'javascripts/workers/domain_grouper.js'
     when 'timeGrouper'
       'javascripts/workers/time_grouper.js'
     when 'dayGrouper'
