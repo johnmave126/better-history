@@ -4,6 +4,8 @@
       'javascripts/workers/sanitizer.js'
     when 'grouper'
       'javascripts/workers/grouper.js'
+    when 'timeGrouper'
+      'javascripts/workers/time_grouper.js'
     when 'dayGrouper'
       'javascripts/workers/day_grouper.js'
 

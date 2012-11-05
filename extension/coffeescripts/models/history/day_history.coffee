@@ -32,9 +32,9 @@ class BH.Models.DayHistory extends BH.Models.History
     config =
       visits: results
       interval: settings.get 'timeGrouping'
-      domainGrouping: settings.get('domainGrouping')
+      #domainGrouping: settings.get('domainGrouping')
 
-    worker 'grouper', config, (history) ->
+    worker 'timeGrouper', config, (history) ->
       callback(history)
 
   parse: (data) ->
