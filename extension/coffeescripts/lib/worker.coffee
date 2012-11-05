@@ -1,13 +1,14 @@
 @worker = (name, options, callback) ->
+  basePath = 'javascripts/workers'
   path = switch name
     when 'sanitizer'
-      'javascripts/workers/sanitizer.js'
+      "#{basePath}/sanitizer.js"
     when 'domainGrouper'
-      'javascripts/workers/domain_grouper.js'
+      "#{basePath}/domain_grouper.js"
     when 'timeGrouper'
-      'javascripts/workers/time_grouper.js'
+      "#{basePath}/time_grouper.js"
     when 'dayGrouper'
-      'javascripts/workers/day_grouper.js'
+      "#{basePath}/day_grouper.js"
 
   worker = new Worker(path)
 
