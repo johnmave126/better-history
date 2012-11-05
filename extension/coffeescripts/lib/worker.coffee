@@ -10,5 +10,8 @@
   worker = new Worker(path)
 
   worker.onmessage = (e) ->
-    callback(e.data)
+    if (e.data.log)
+      console.log(e.data.log)
+    else
+      callback(e.data)
   worker.postMessage(options)

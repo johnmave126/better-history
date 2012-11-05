@@ -1,12 +1,6 @@
 class BH.Models.DayHistory extends BH.Models.History
-  defaults:
-    history: []
-
   initialize: ->
     super()
-
-  isNew: ->
-    false
 
   sync: (method, model, options) ->
     switch method
@@ -33,9 +27,6 @@ class BH.Models.DayHistory extends BH.Models.History
   eod: ->
     new Date(@get('date').eod()).getTime()
 
-  isEmpty: ->
-    @get('history').length == 0
-
   preparse: (results, callback) ->
     # TODO: this settings dependency is awful
     config =
@@ -43,8 +34,8 @@ class BH.Models.DayHistory extends BH.Models.History
       interval: settings.get 'timeGrouping'
       domainGrouping: settings.get('domainGrouping')
 
-    worker 'grouper', config, (results) ->
-      callback(results)
+    worker 'grouper', config, (history) ->
+      callback(history)
 
   parse: (data) ->
     intervals = new BH.Collections.Intervals()

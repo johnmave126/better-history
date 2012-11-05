@@ -751,6 +751,7 @@
         },
 
         past : function (input, val) {
+            input = input.charAt(0).toUpperCase() + input.slice(1);
             var back = function (date, occurrences) {
               if(date.format('dddd') != input) {
                 return back(date.subtract('days', 1), occurrences);

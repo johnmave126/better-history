@@ -1,10 +1,4 @@
-class BH.Models.SearchHistory extends BH.Models.Base
-  defaults: ->
-    history: []
-
-  isNew: ->
-    false
-
+class BH.Models.SearchHistory extends BH.Models.History
   sync: (method, model, options) ->
     if method == 'read'
       historyQuery = new BH.Lib.HistoryQuery(@chromeAPI)
@@ -17,9 +11,6 @@ class BH.Models.SearchHistory extends BH.Models.Base
   toChrome: ->
     text: @get('query')
     searching: true
-
-  isEmpty: ->
-    @get('history').length == 0
 
   parse: (data) ->
     visits = new BH.Collections.Visits()

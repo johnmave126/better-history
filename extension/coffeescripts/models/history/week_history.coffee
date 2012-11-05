@@ -1,17 +1,13 @@
-class BH.Models.WeekHistory extends BH.Models.Base
-  defaults:
-    history: []
-
-  isNew: ->
-    false
+class BH.Models.WeekHistory extends BH.Models.History
+  initialize: ->
+    super()
 
   sync: (method, model, options) ->
     switch method
       when 'read'
-        historyQuery = new BH.Lib.HistoryQuery @chromeAPI
-        historyQuery.run @toChrome(), (history) ->
-          worker 'dayGrouper', visits: history, (visits) ->
-            options.success visits
+        @historyQuery.run @toChrome(), (results) =>
+          @preparse(results, options.success)
+
       when 'delete'
         @chromeAPI.history.deleteRange @toChrome(false), =>
           @set history: {}
@@ -37,7 +33,7 @@ class BH.Models.WeekHistory extends BH.Models.Base
 
   dayVisits: ->
     for day, visits of @get('history')
-      visits.length
+      visits.length if visits?
 
   totalVisits: ->
     return 0 if @dayVisits().length == 0
@@ -48,6 +44,10 @@ class BH.Models.WeekHistory extends BH.Models.Base
     largest = Math.max.apply(Math, @dayVisits()) || 0
     return 0 if largest == 0
     @get('history')[day].length / largest * 100
+
+  preparse: (results, callback) ->
+    worker 'dayGrouper', visits: results, (history) ->
+      callback history
 
   parse: (data) ->
     history: data

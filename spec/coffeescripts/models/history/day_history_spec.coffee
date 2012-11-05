@@ -5,25 +5,17 @@ describe 'BH.Models.DayHistory', ->
       date: @date
     @dayHistory.chromeAPI = loadChromeAPI()
 
-  describe '#initialize', ->
-    it 'sets history to an empty array', ->
-      expect(@dayHistory.get('history')).toEqual []
-
-  describe '#isNew', ->
-    it 'returns false', ->
-      expect(@dayHistory.isNew()).toBeFalsy()
-
   describe '#toChrome', ->
     it 'returns the reading properties when reading is true', ->
       expect(@dayHistory.toChrome()).toEqual
-        startTime: 1349931600000
-        endTime: 1350017999999
+        startTime: new Date(@date.sod()).getTime()
+        endTime: new Date(@date.eod()).getTime()
         text: ''
 
     it 'returns the deleting properties when reading is false', ->
       expect(@dayHistory.toChrome(false)).toEqual
-        startTime: 1349931600000
-        endTime: 1350017999999
+        startTime: new Date(@date.sod()).getTime()
+        endTime: new Date(@date.eod()).getTime()
 
   describe '#toTemplate', ->
     beforeEach ->
@@ -38,14 +30,6 @@ describe 'BH.Models.DayHistory', ->
       expect(@dayHistory.toTemplate()).toEqual
         history: ['templated data', 'templated data']
 
-  describe '#isEmpty', ->
-    it 'returns true when history is empty', ->
-      expect(@dayHistory.isEmpty()).toBeTruthy()
-
-    it 'returns false when history is not empty', ->
-      @dayHistory.set history: ['visits']
-      expect(@dayHistory.isEmpty()).toBeFalsy()
-
   describe 'deleting history', ->
     beforeEach ->
       @deleteRange = @dayHistory.chromeAPI.history.deleteRange
@@ -55,8 +39,8 @@ describe 'BH.Models.DayHistory', ->
     it 'calls to the history delete method with params and callback', ->
       @dayHistory.destroy()
       expect(@deleteRange).toHaveBeenCalledWith
-        startTime: 1349931600000
-        endTime: 1350017999999
+        startTime: new Date(@date.sod()).getTime()
+        endTime: new Date(@date.eod()).getTime()
       , jasmine.any(Function)
 
     it 'resets the history', ->
@@ -70,8 +54,8 @@ describe 'BH.Models.DayHistory', ->
     it 'calls to history query with params and callback', ->
       @dayHistory.fetch()
       expect(@dayHistory.historyQuery.run).toHaveBeenCalledWith
-        startTime: 1349931600000
-        endTime: 1350017999999
+        startTime: new Date(@date.sod()).getTime()
+        endTime: new Date(@date.eod()).getTime()
         text: ''
       , jasmine.any(Function)
 
@@ -94,4 +78,3 @@ describe 'BH.Models.DayHistory', ->
 
       @dayHistory.preparse('results', callback)
       expect(worker).toHaveBeenCalledWith 'grouper', config, callback
-
