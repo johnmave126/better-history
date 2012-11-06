@@ -1,8 +1,7 @@
 class BH.Models.SearchHistory extends BH.Models.History
   sync: (method, model, options) ->
     if method == 'read'
-      historyQuery = new BH.Lib.HistoryQuery(@chromeAPI)
-      historyQuery.run @toChrome(), (history) ->
+      @historyQuery.run @toChrome(), (history) ->
         options.success(history)
 
   toTemplate: ->
