@@ -29,11 +29,11 @@ class BH.Models.DayHistory extends BH.Models.History
 
   preparse: (results, callback) ->
     # TODO: this settings dependency is awful
-    config =
+    options =
       visits: results
       interval: settings.get 'timeGrouping'
 
-    worker 'timeGrouper', config, (history) ->
+    worker 'timeGrouper', options, (history) ->
       if settings.get('domainGrouping')
         options = intervals: history
         worker 'domainGrouper', options, (history) ->

@@ -58,23 +58,3 @@ describe 'BH.Models.DayHistory', ->
         endTime: new Date(@date.eod()).getTime()
         text: ''
       , jasmine.any(Function)
-
-  describe '#preparse', ->
-    beforeEach ->
-      spyOn(window, 'worker')
-      window.settings =
-        get: jasmine.createSpy('get').andCallFake (property) ->
-          if property == 'timeGrouping'
-            15
-          else if property == 'domainGrouping'
-            true
-
-    it 'loads the grouper worker with config and callback', ->
-      config =
-        visits: 'results'
-        interval: 15
-        domainGrouping: true
-      callback = jasmine.any(Function)
-
-      @dayHistory.preparse('results', callback)
-      expect(worker).toHaveBeenCalledWith 'grouper', config, callback
