@@ -1,12 +1,10 @@
-importScripts('../frameworks/underscore-min.js')
-
-class @VisitsSanitizer
-  clean: (@options, results) ->
+class @Sanitizer
+  run: (results, @options) ->
     if @options.text
       @terms = options.text.split(' ')
 
     prunedResults = []
-    _.each results, (result) =>
+    for result in results
       if @options.searching?
         if prunedResults.length >= 100
           true
@@ -32,7 +30,7 @@ class @VisitsSanitizer
     hits = []
     regExp = null
 
-    _.each @terms, (term) ->
+    for term in @terms
       regExp = new RegExp(term, "i")
       if result.time.match(regExp) || result.url.match(regExp) || result.title.match(regExp)
         hits.push(true)
@@ -44,7 +42,7 @@ class @VisitsSanitizer
 
   removeScriptTags: (result) ->
     regex = /<(.|\n)*?>/ig
-    _.each ['title', 'url', 'location'], (property) ->
+    for property in ['title', 'url', 'location']
       result[property] = result[property].replace(regex, "")
 
   setAdditionalProperties: (result) ->
@@ -56,5 +54,5 @@ class @VisitsSanitizer
     0
 
 self.addEventListener 'message', (e) ->
-  sanitizer = new VisitsSanitizer()
-  postMessage(sanitizer.clean(e.data.options, e.data.results))
+  sanitizer = new sanitizer()
+  postMessage(sanitizer.run(e.data.results, e.data.options))

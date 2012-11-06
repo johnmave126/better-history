@@ -2,17 +2,6 @@ describe 'DayGrouper', ->
   beforeEach ->
     @dayGrouper = new DayGrouper()
 
-  describe '#constructor', ->
-    it 'prepares an object of empty arrays for the week', ->
-      expect(@dayGrouper.dayGroupedVisits).toEqual
-        Monday: []
-        Tuesday: []
-        Wednesday: []
-        Thursday: []
-        Friday: []
-        Saturday: []
-        Sunday: []
-
   describe '#run', ->
     beforeEach ->
       @visit1 =
@@ -36,6 +25,7 @@ describe 'DayGrouper', ->
         @visit1, @visit2, @visit3, @visit4
         @visit5, @visit6, @visit7, @visit8
       ]
+
     it 'returns an week object of visits grouped by day', ->
       expect(@dayGrouper.run(@visits)).toEqual
         Monday: [@visit8]
