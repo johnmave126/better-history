@@ -20,6 +20,7 @@ task :clean_generated_js do
   ]
   folders.each do |folder|
     system("rm -fr extension/javascripts/#{folder}/*")
+    system("rm -fr spec/javascripts/#{folder}/*")
   end
 
   system('rm extension/javascripts/*.js')

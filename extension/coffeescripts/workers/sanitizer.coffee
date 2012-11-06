@@ -54,5 +54,5 @@ class @Sanitizer
     0
 
 self.addEventListener 'message', (e) ->
-  sanitizer = new sanitizer()
+  sanitizer = new Sanitizer()
   postMessage(sanitizer.run(e.data.results, e.data.options))

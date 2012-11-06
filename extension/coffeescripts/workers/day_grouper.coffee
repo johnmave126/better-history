@@ -16,8 +16,9 @@ class @DayGrouper
     @weekDays
 
   indexToDay: (index) ->
-    days = for day of @weekDays
-      days[index]
+    days = for own day of @weekDays
+      day
+    days[index]
 
 self.addEventListener 'message', (e) ->
   dayGrouper = new DayGrouper()

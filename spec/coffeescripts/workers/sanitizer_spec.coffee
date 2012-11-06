@@ -1,13 +1,13 @@
 describe "Sanitizer", ->
   beforeEach ->
-    @results = []
+    @visits = []
     @sanitizer = new Sanitizer()
 
   it "returns a max of 100 results when searching", ->
     a = 0
 
     while a < 150
-      @results.push
+      @visits.push
         title: "title"
         url: "google.com"
         lastVisitTime: new Date()
@@ -18,14 +18,14 @@ describe "Sanitizer", ->
       text: 'title'
       searching: true
 
-    cleanedResults = @sanitizer.run(options, @results)
-    expect(cleanedResults.length).toEqual(100)
+    sanitizedVisits = @sanitizer.run(@visits, options)
+    expect(sanitizedVisits.length).toEqual(100)
 
   it "returns as many results as found when filtering by date", ->
     a = 0
 
     while a < 150
-      @results.push
+      @visits.push
         title: "title"
         url: "google.com"
         lastVisitTime: new Date("December 5, 2011 12:00")
@@ -36,12 +36,12 @@ describe "Sanitizer", ->
       startTime: new Date("December 5, 2011 0:00")
       endTime: new Date("December 5, 2011 23:59")
 
-    cleanedResults = @sanitizer.run(options, @results)
-    expect(cleanedResults.length).toEqual(150)
+    sanitizedVisits = @sanitizer.run(@visits, options)
+    expect(sanitizedVisits.length).toEqual(150)
 
   describe "Additional properties", ->
     it "sets a property called location to be equal to the url", ->
-      @results = [
+      @visits = [
         title: "testing"
         url: "gooogle.com"
         lastVisitTime: new Date("October 12, 2010")
@@ -51,12 +51,12 @@ describe "Sanitizer", ->
         startTime: new Date("October 1, 2010")
         endTime: new Date("October 14, 2010")
 
-      cleanedResults = @sanitizer.run(options, @results)
-      expect(cleanedResults[0].location).toEqual(results[0].url)
+      sanitizedVisits = @sanitizer.run(@visits, options)
+      expect(sanitizedVisits[0].location).toEqual(@visits[0].url)
 
   describe "Removing script tags", ->
     it "removes any script tags in the title", ->
-      @results = [
+      @visits = [
         title: "test<script>alert(\"yo\")</script>"
         url: "yahoo.com"
         lastVisitTime: new Date("September 12, 2010")
@@ -67,11 +67,11 @@ describe "Sanitizer", ->
         text: "test"
         searching: true
 
-      cleanedResults = @sanitizer.run(options, @results)
-      expect(cleanedResults[0].title).toEqual("testalert(\"yo\")")
+      sanitizedVisits = @sanitizer.run(@visits, options)
+      expect(sanitizedVisits[0].title).toEqual("testalert(\"yo\")")
 
     it "removes any script tags in the url", ->
-      @results = [
+      @visits = [
         title: "test"
         url: "yahoo.com<script>alert(\"yo\")</script>"
         lastVisitTime: new Date("September 12, 2010")
@@ -82,8 +82,8 @@ describe "Sanitizer", ->
         text: "yahoo"
         searching: true
 
-      cleanedResults = @sanitizer.run(@options, @results)
-      expect(cleanedResults[0].location).toEqual("yahoo.comalert(\"yo\")")
+      sanitizedVisits = @sanitizer.run(@visits, options)
+      expect(sanitizedVisits[0].location).toEqual("yahoo.comalert(\"yo\")")
 
   it "matches results by checking if the search term exists in the title, url, or last visit time", ->
     visit1 =
@@ -104,7 +104,7 @@ describe "Sanitizer", ->
       lastVisitTime: new Date("September 12, 2010")
       time: 'September'
 
-    @results = [
+    @visits = [
       title: "hit september"
       url: "google.com"
       time: 'the time'
@@ -123,8 +123,8 @@ describe "Sanitizer", ->
       searching: true
       text: "september something"
 
-    cleanedResults = @sanitizer.run(options, @results)
-    expect(cleanedResults).toEqual([visit1, visit3, visit2])
+    sanitizedVisits = @sanitizer.run(@visits, options)
+    expect(sanitizedVisits).toEqual([visit1, visit3, visit2])
 
   it "orders the matched results by lastVisitTime", ->
     visit1 =
@@ -151,7 +151,7 @@ describe "Sanitizer", ->
       lastVisitTime: new Date("September 12, 2010 2:00")
       time: 'the time'
 
-    @results = [
+    @visits = [
       title: "hit this"
       url: "google.com"
       time: 'the time'
@@ -170,8 +170,8 @@ describe "Sanitizer", ->
       text: "news"
       searching: true
 
-    cleanedResults = @sanitizer.run(options, @results)
-    expect(cleanedResults).toEqual([visit2, visit3, visit1, visit4])
+    sanitizedVisits = @sanitizer.run(@visits, options)
+    expect(sanitizedVisits).toEqual([visit2, visit3, visit1, visit4])
 
   it "matches results by checking if the date falls between the searched ranges", ->
     visit1 =
@@ -186,7 +186,7 @@ describe "Sanitizer", ->
       lastVisitTime: new Date("October 13, 2010")
       time: 'the time'
 
-    @results = [
+    @visits = [
       visit1,
       title: "hit"
       url: "google.com/hit"
@@ -199,5 +199,5 @@ describe "Sanitizer", ->
       startTime: new Date("October 1, 2010")
       endTime: new Date("October 14, 2010")
 
-    cleanedResults = @sanitizer.run(options, @results)
-    expect(cleanedResults).toEqual([visit2, visit1])
+    sanitizedVisits = @sanitizer.run(@visits, options)
+    expect(sanitizedVisits).toEqual([visit2, visit1])
