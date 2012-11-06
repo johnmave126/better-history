@@ -4,12 +4,15 @@ class BH.Models.Settings extends BH.Models.Base
   defaults: ->
     timeGrouping: 15
     domainGrouping: true
-    timeFormat: parseInt @chromeAPI.i18n.getMessage('default_time_format'), 10
     searchByDomain: true
     searchBySelection: true
     openLocation: 'last_visit'
     startingWeekDay: 'Monday'
     weekDayOrder: 'ascending'
+
+  initialize: (chromeAPI) ->
+    @chromeAPI = chromeAPI if chromeAPI?
+    @set timeFormat: parseInt @t('default_time_format'), 10
 
   toTemplate: ->
     properties =
@@ -25,27 +28,27 @@ class BH.Models.Settings extends BH.Models.Base
     _(['monday', 'tuesday', 'wednesday',
       'thursday', 'friday', 'saturday', 'sunday']).each (day) =>
       properties.startingWeekDays.push
-        text: @chromeAPI.i18n.getMessage day
+        text: @t day
         value: day
 
     _(['last_visit', 'current_day', 'current_week']).each (location) =>
       properties.openLocations.push
-        text: @chromeAPI.i18n.getMessage location
+        text: @t location
         value: location
 
     _(['descending', 'ascending']).each (order) =>
       properties.weekDayOrders.push
-        text: @chromeAPI.i18n.getMessage order
+        text: @t order
         value: order
 
     _([15, 30, 60]).each (timeGrouping) =>
       properties.timeGroupings.push
-        text: @chromeAPI.i18n.getMessage "#{timeGrouping}_minutes_option"
+        text: @t "#{timeGrouping}_minutes_option"
         value: timeGrouping
 
     _([12, 24]).each (timeFormat) =>
       properties.timeFormats.push
-        text: @chromeAPI.i18n.getMessage "#{timeFormat}_hours_option"
+        text: @t "#{timeFormat}_hours_option"
         value: timeFormat
 
     properties
@@ -55,4 +58,3 @@ class BH.Models.Settings extends BH.Models.Base
     _.each ['timeFormat', 'timeGrouping'], (attribute) ->
       attributes[attribute] = parseInt attributes[attribute], 10
     attributes
-
