@@ -5,6 +5,7 @@ class BH.Models.DayHistory extends BH.Models.History
   sync: (method, model, options) ->
     switch method
       when 'read'
+        @set history: [], silent: true # so change is always fired
         @historyQuery.run @toChrome(), (history) =>
           @preparse(history, options.success)
 
