@@ -67,7 +67,6 @@ task :templates do
 
   template_file = ""
   Dir.foreach('extension/templates/') do |file|
-    puts file
     if file.match(/.haml$/)
       key = file.gsub(/.haml/, '')
       haml_content = IO.read("extension/templates/#{file}")
