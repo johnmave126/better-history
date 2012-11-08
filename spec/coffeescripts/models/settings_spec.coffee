@@ -1,6 +1,6 @@
 describe 'BH.Models.Settings', ->
   beforeEach ->
-    @settings = new BH.Models.Settings(loadChromeAPI())
+    @settings = new BH.Models.Settings(null, chromeAPI: loadChromeAPI())
 
   describe '#toTemplate', ->
     it 'returns properties for the view template', ->

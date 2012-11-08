@@ -7,11 +7,10 @@ class BH.Router extends Backbone.Router
     'days/:id': 'day'
 
   initialize: ->
-    # yuck, really need to do something about this...
-    window.settings = new BH.Models.Settings()
-    window.settings.fetch()
+    settings = new BH.Models.Settings()
+    settings.fetch()
 
-    @state = new BH.Models.State()
+    @state = new BH.Models.State({}, settings: settings)
     @state.fetch()
     @state.updateRoute()
 

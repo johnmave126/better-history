@@ -1,5 +1,7 @@
 class BH.Views.Cache
   constructor: (@options) ->
+    @settings = @options.settings
+    @state = @options.state
     @expire()
 
   expire: ->
@@ -7,7 +9,7 @@ class BH.Views.Cache
       weeks: {}
       days: {}
 
-  week: (id) ->
+  weekView: (id) ->
     if !@cache.weeks[id]
       week =    new BH.Models.Week(date: moment(new Date(id)))
       history = new BH.Models.WeekHistory(week.toHistory())
@@ -20,10 +22,10 @@ class BH.Views.Cache
 
     @cache.weeks[id]
 
-  day: (id) ->
+  dayView: (id) ->
     if !@cache.days[id]
-      day =     new BH.Models.Day(date: moment(new Date(id)))
-      history = new BH.Models.DayHistory(day.toHistory())
+      day =     new BH.Models.Day {date: moment(new Date(id))}, settings: @settings
+      history = new BH.Models.DayHistory day.toHistory(), settings: @settings
 
       @cache.days[id] = new BH.Views.DayView
         model: day
@@ -33,7 +35,7 @@ class BH.Views.Cache
 
     @cache.days[id]
 
-  search: ->
+  searchView: ->
     if !@cache.search
       search =  new BH.Models.Search()
       history = new BH.Models.SearchHistory(search.toHistory())
@@ -45,11 +47,11 @@ class BH.Views.Cache
       @insert @cache.search.render().el
     @cache.search
 
-  settings: ->
+  settingsView: ->
     if !@cache.settings
       @cache.settings = new BH.Views.SettingsView
-        model: @options.settings
-        state: @options.state
+        model: @settings
+        state: @state
       @insert @cache.settings.render().el
 
     @cache.settings

@@ -1,8 +1,9 @@
 describe 'BH.Models.Day', ->
   beforeEach ->
+    settings = new BH.Models.Settings {startingWeekDay: 'Monday'}, chromeAPI: loadChromeAPI()
+
     @date = moment(new Date('October 11, 2012'))
-    @day = new BH.Models.Day
-      date: @date
+    @day = new BH.Models.Day {date: @date}, settings: settings
     @day.chromeAPI = loadChromeAPI()
 
   describe '#initialize', ->

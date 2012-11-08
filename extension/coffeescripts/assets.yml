@@ -43,7 +43,6 @@
  - models/history/search_history
  - models/history/day_history
  - collections/weeks
- - collections/days
  - collections/grouped_visits
  - collections/intervals
  - collections/visits

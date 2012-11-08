@@ -1,8 +1,8 @@
 describe 'BH.Models.DayHistory', ->
   beforeEach ->
+    settings = new BH.Models.Settings(null, chromeAPI: loadChromeAPI())
     @date = moment(new Date('October 11, 2012'))
-    @dayHistory = new BH.Models.DayHistory
-      date: @date
+    @dayHistory = new BH.Models.DayHistory {date: @date}, settings: settings
     @dayHistory.chromeAPI = loadChromeAPI()
 
   describe '#toChrome', ->

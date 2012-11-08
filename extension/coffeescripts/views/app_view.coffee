@@ -4,13 +4,15 @@ class BH.Views.AppView extends BH.Views.BaseView
   template: BH.Templates['app']
 
   initialize: ->
-    @collection.reload @options.settings.get('startingWeekDay')
+    @settings = @options.settings
+
+    @collection.reload @settings.get('startingWeekDay')
     @options.state.on 'change', @onStateChanged, @
-    @options.settings.on 'change:startingWeekDay', @onStartingWeekDayChanged, @
-    @options.settings.on 'change:weekDayOrder', @onWeekDayOrderChanged, @
+    @settings.on 'change:startingWeekDay', @onStartingWeekDayChanged, @
+    @settings.on 'change:weekDayOrder', @onWeekDayOrderChanged, @
     @collection.on 'reloaded', @onWeeksReloaded, @
 
-    @viewCache = new BH.Views.Cache(@options)
+    @cache = new BH.Views.Cache(@options)
 
   render: ->
     @$el.html(@renderTemplate @getI18nValues())
@@ -34,29 +36,29 @@ class BH.Views.AppView extends BH.Views.BaseView
 
   onWeekDayOrderChanged: ->
     @reloadWeeks()
-    @viewCache.expire()
+    @cache.expire()
 
   reloadWeeks: ->
     @collection.reset()
-    @collection.reload @options.settings.get('startingWeekDay')
+    @collection.reload @settings.get('startingWeekDay')
 
   loadWeek: (id) ->
     @updateMenuSelection(id)
-    @viewCache.week(id)
+    @cache.weekView(id)
 
   loadDay: (id) ->
     weekId = moment(id).past('Wednesday', 0).format('M-D-YY')
     @updateMenuSelection(weekId)
-    @viewCache.day(id)
+    @cache.dayView(id)
 
   loadSettings: ->
     @updateMenuSelection()
     @$('.menu .setting').parent().addClass @cssClass.selected
-    @viewCache.settings()
+    @cache.settingsView()
 
   loadSearch: ->
     @updateMenuSelection()
-    @viewCache.search()
+    @cache.searchView()
 
   updateMenuSelection: (id) ->
     @$('.menu > *').removeClass @cssClass.selected

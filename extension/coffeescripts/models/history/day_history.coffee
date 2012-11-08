@@ -1,5 +1,7 @@
 class BH.Models.DayHistory extends BH.Models.History
-  initialize: ->
+  initialize: (attrs, options) ->
+    @settings = options.settings
+
     super()
 
   sync: (method, model, options) ->
@@ -29,13 +31,12 @@ class BH.Models.DayHistory extends BH.Models.History
     new Date(@get('date').eod()).getTime()
 
   preparse: (results, callback) ->
-    # TODO: this settings dependency is awful
     options =
       visits: results
-      interval: settings.get 'timeGrouping'
+      interval: @settings.get 'timeGrouping'
 
-    worker 'timeGrouper', options, (history) ->
-      if settings.get('domainGrouping')
+    worker 'timeGrouper', options, (history) =>
+      if @settings.get('domainGrouping')
         options = intervals: history
         worker 'domainGrouper', options, (history) ->
           callback(history)
@@ -54,9 +55,10 @@ class BH.Models.DayHistory extends BH.Models.History
         else
           visits.add(new BH.Models.Visit(visit))
 
-      intervals.add
+      intervals.add {
         id: interval.id
         datetime: interval.datetime
         visits: visits
+      }, settings: @settings
 
     history: intervals
