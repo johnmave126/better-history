@@ -8,9 +8,14 @@ class BH.Models.Day extends BH.Models.Base
 
   toTemplate: ->
     date = @get('date')
+    weekId = @startingWeekDate().format('M-D-YY')
+
     properties =
       title: date.format(@t('day_date'))
       formalDate: date.format(@t('formal_date'))
-      weekUrl: "#weeks/#{moment(date).past(@settings.get('startingWeekDay'), 0).format('M-D-YY')}"
+      weekUrl: @urlBuilder.build('week', weekId)
 
     _.extend properties, @toJSON()
+
+  startingWeekDate: ->
+    @get('date').past(@settings.get('startingWeekDay'), 0)

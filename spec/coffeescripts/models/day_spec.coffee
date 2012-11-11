@@ -1,6 +1,6 @@
 describe 'BH.Models.Day', ->
   beforeEach ->
-    settings = new BH.Models.Settings {startingWeekDay: 'Monday'}, chromeAPI: loadChromeAPI()
+    settings = new BH.Models.Settings null, chromeAPI: loadChromeAPI()
 
     @date = moment(new Date('October 11, 2012'))
     @day = new BH.Models.Day {date: @date}, settings: settings
@@ -27,3 +27,7 @@ describe 'BH.Models.Day', ->
         weekUrl: '#weeks/10-8-12'
         id: '10-11-12'
         date: @date
+
+  describe '#startingWeekDay', ->
+    it 'returns the starting week date for the day based on the starting week day from the settings', ->
+      expect(@day.startingWeekDate()).toEqual moment('10/8/12')

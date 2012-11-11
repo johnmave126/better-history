@@ -11,10 +11,11 @@ class BH.Models.Week extends BH.Models.Base
       day: day.format('dddd')
       title: day.format(@t('day_date'))
       inFuture: moment() < day
-      url: "#days/#{day.format('M-D-YY')}"
+      url: @urlBuilder.build('day', day.format('M-D-YY'))
 
     copy =
       shortTitle: @get('date').format(@t('short_date'))
+      url: @urlBuilder.build('week', @id)
       title: @t('date_week_label', [
         @get('date').format(@t('short_date_with_day'))
       ])

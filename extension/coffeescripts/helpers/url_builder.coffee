@@ -1,26 +1,17 @@
-class BH.Helpers.UrlBuilder
-  base: 'chrome://history/'
-  build: (key, params, options) ->
-    if key == 'base'
-      @_base()
-    else if key == 'search'
-      @_search(params, options)
-    else if key == 'week'
-      @_week(params, options)
-    else if key == 'day'
-      @_day(params, options)
+BH.Helpers.UrlBuilder =
+  BASE: 'chrome://history/'
+  build: (key, id, options) ->
+    return @BASE unless key?
+    route =
+      switch key
+        when 'search'
+          "#search/#{id}"
+        when 'week'
+          "#weeks/#{id}"
+        when 'day'
+          "#days/#{id}"
 
-  _base: ->
-    @base
+    "#{@buildBase(options)}#{route}"
 
-  _search: (params, options) ->
-    "#{@_buildBase(options)}#search/#{params[0]}"
-
-  _week: (params, options) ->
-    "#{@_buildBase(options)}#weeks/#{params[0]}"
-
-  _day: (params, options) ->
-    "#{@_buildBase(options)}#weeks/#{params[0]}/days/#{params[1]}"
-
-  _buildBase: (options) ->
-    if options? && options.absolute then @base else ''
+  buildBase: (options) ->
+    if options?.absolute then @BASE else ''

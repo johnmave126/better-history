@@ -3,7 +3,7 @@ class BH.Views.BaseView extends Backbone.View
     selected: 'selected'
 
   i18nFetcher: new BH.Helpers.I18nFetcher(chrome)
-  urlBuilder: new BH.Helpers.UrlBuilder()
+  urlBuilder: BH.Helpers.UrlBuilder
 
   renderTemplate: (json) ->
     Mustache.to_html(@template, json)
