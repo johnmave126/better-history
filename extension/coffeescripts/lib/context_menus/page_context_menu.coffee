@@ -1,5 +1,7 @@
 class BH.Lib.ContextMenus.PageContextMenu
-  constructor: (@chromeAPI, @urlBuilder) ->
+  constructor: (@chromeAPI) ->
+
+  urlBuilder: BH.Helpers.UrlBuilder
 
   create: ->
     @menu = @chromeAPI.contextMenus.create
@@ -8,8 +10,11 @@ class BH.Lib.ContextMenus.PageContextMenu
       onclick: (data) => @onClick(data)
 
   onClick: (data) ->
+    urlOptions = absolute: true
+    url = @urlBuilder.build('search', @_getDomain(data.pageUrl)[1], urlOptions)
+
     @chromeAPI.tabs.create
-      url: @urlBuilder.build('search', [@_getDomain(data.pageUrl)[1]], {absolute: true})
+      url: url
 
   updateTitleDomain: (tab) ->
     @chromeAPI.contextMenus.update @menu,

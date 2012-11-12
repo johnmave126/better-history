@@ -18,4 +18,4 @@ class BH.Models.Day extends BH.Models.Base
     _.extend properties, @toJSON()
 
   startingWeekDate: ->
-    @get('date').past(@settings.get('startingWeekDay'), 0)
+    moment(@get('date')).past(@settings.get('startingWeekDay'), 0)

@@ -18,6 +18,7 @@ src_files:
     - extension/javascripts/frameworks/backbone-min.js
     - extension/javascripts/frameworks/moment.js
     - extension/javascripts/namespace.js
+    - extension/javascripts/helpers/*.js
     - extension/javascripts/models/base.js
     - extension/javascripts/models/*.js
     - extension/javascripts/models/history/history.js
@@ -25,7 +26,6 @@ src_files:
     - extension/javascripts/collections/*.js
     - extension/javascripts/lib/**/*.js
     - extension/javascripts/workers/*.js
-    - extension/javascripts/helpers/*.js
 
 # stylesheets
 #

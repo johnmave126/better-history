@@ -16,10 +16,6 @@ describe 'BH.Models.Day', ->
         date: @date
 
   describe '#toTemplate', ->
-    beforeEach ->
-      window.settings =
-        get: jasmine.createSpy('get').andReturn 'Monday'
-
     it 'returns the properties needed for a view template', ->
       expect(@day.toTemplate()).toEqual
         title: 'Thursday'

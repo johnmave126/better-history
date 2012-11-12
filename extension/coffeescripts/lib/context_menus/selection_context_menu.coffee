@@ -8,8 +8,11 @@ class BH.Lib.ContextMenus.SelectionContextMenu
       onclick: (data) => @onClick(data)
 
   onClick: (data) ->
+    urlOptions = absolute: true
+    url = @urlBuilder.build('search', data.selectionText, urlOptions)
+
     @chromeAPI.tabs.create
-      url: @urlBuilder.build('search', [data.selectionText], {absolute: true})
+      url: url
 
   remove: ->
     @chromeAPI.contextMenus.remove(@menu)

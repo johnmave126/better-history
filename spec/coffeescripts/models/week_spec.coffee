@@ -59,6 +59,7 @@ describe 'BH.Models.Week', ->
         shortTitle: 'October 8th'
         title: 'Week of Monday, October 8th'
         id: '10-8-12'
+        url: '#weeks/10-8-12'
         date: @date
 
   describe '#inflateDays', ->
