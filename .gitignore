@@ -8,4 +8,4 @@
 
 /spec/javascripts/*
 !/spec/javascripts/support
-!/spec/javascripts/spec_helper.js
+!/spec/javascripts/helpers

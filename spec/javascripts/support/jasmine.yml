@@ -11,8 +11,6 @@
 #   - dist/**/*.js
 #
 src_files:
-    - spec/javascripts/spec_helper.js
-    - extension/javascripts/frameworks/jquery-1.7.1.min.js
     - extension/javascripts/frameworks/underscore-min.js
     - extension/javascripts/frameworks/mustache.js
     - extension/javascripts/frameworks/backbone-min.js
@@ -51,7 +49,8 @@ stylesheets:
 #   - helpers/**/*.js
 #
 helpers:
-    - spec_helper.js
+    - helpers/timecop.js
+    - helpers/spec_helper.js
 
 # spec_files
 #
