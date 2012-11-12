@@ -10,8 +10,8 @@
  - lib/worker
  - lib/history_query
  - lib/backbone_extensions
- - helpers/i18n_fetcher
- - helpers/url_builder
+ - lib/i18n_fetcher
+ - lib/url_builder
  - router
  - views/base_view
  - views/view_with_search
@@ -51,7 +51,7 @@
  - frameworks/underscore-min
  - frameworks/backbone-min
  - namespace
- - helpers/url_builder
+ - lib/url_builder
  - lib/backbone_extensions
  - lib/context_menus/page_context_menu
  - lib/context_menus/selection_context_menu

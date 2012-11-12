@@ -1,8 +1,8 @@
 class BH.Models.Base extends Backbone.Model
   initialize: (attrs, options) ->
     # Runtime injection override
-    @settings = options?.settings
-    @chromeAPI = options?.chromeAPI
+    @settings = options.settings if options?.settings
+    @chromeAPI = options.chromeAPI if options?.chromeAPI
 
   chromeAPI: chrome
 
