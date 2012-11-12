@@ -1,6 +1,8 @@
+# From http://arcturo.github.com/library/coffeescript/03_classes.html
+
 moduleKeywords = ['extended', 'included']
 
-class Module
+class BH.Lib.Module
   @extend: (obj) ->
     for key, value of obj when key not in moduleKeywords
       @[key] = value
@@ -16,4 +18,4 @@ class Module
     obj.included?.apply(@)
     this
 
-Backbone.Model.include = Backbone.View.include = Backbone.Collection.include = Module.include
+Backbone.Model.include = Backbone.View.include = Backbone.Collection.include = BH.Lib.Module.include
