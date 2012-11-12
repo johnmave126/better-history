@@ -1,9 +1,9 @@
-describe "BH.Helpers.I18nFetcher", ->
+describe "BH.Lib.I18nFetcher", ->
   chromeAPI = i18nFetcher = null
 
   beforeEach ->
     chromeAPI = loadChromeAPI()
-    i18nFetcher = new BH.Helpers.I18nFetcher(chromeAPI)
+    i18nFetcher = new BH.Lib.I18nFetcher(chromeAPI)
 
   describe '#scopeKey', ->
     it 'returns the key pass w/ i18n_ appended', ->

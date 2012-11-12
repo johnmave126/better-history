@@ -1,6 +1,6 @@
-describe "BH.Helpers.UrlBuilder", ->
+describe "BH.Lib.UrlBuilder", ->
   beforeEach ->
-    @urlBuilder = BH.Helpers.UrlBuilder
+    @urlBuilder = BH.Lib.UrlBuilder
 
   describe ".build", ->
     describe "when called with no options", ->
