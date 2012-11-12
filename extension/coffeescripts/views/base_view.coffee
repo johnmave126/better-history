@@ -2,7 +2,6 @@ class BH.Views.BaseView extends Backbone.View
   cssClass:
     selected: 'selected'
 
-  i18nFetcher: new BH.Lib.I18nFetcher(chrome)
   urlBuilder: BH.Lib.UrlBuilder
 
   renderTemplate: (json) ->
