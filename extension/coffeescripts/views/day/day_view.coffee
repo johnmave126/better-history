@@ -1,4 +1,9 @@
-class BH.Views.DayView extends BH.Views.ViewWithSearch
+class BH.Views.DayView extends BH.Views.BaseView
+  @include BH.Modules.chromeSupport
+  @include BH.Modules.searchSupport
+  @include BH.Modules.tabIndexSupport
+  @include BH.Modules.topLevelSupport
+
   template: BH.Templates['day']
 
   className: 'day_view with_controls'
@@ -8,7 +13,6 @@ class BH.Views.DayView extends BH.Views.ViewWithSearch
     'click .back_to_week': 'onBackToWeekClicked'
 
   initialize: ->
-    super()
     @history = @options.history
     @history.bind('change', @onDayHistoryLoaded, @)
 

@@ -1,4 +1,9 @@
-class BH.Views.WeekView extends BH.Views.ViewWithSearch
+class BH.Views.WeekView extends BH.Views.BaseView
+  @include BH.Modules.chromeSupport
+  @include BH.Modules.searchSupport
+  @include BH.Modules.tabIndexSupport
+  @include BH.Modules.topLevelSupport
+
   template: BH.Templates['week']
 
   className: 'week_view with_controls'
@@ -7,7 +12,6 @@ class BH.Views.WeekView extends BH.Views.ViewWithSearch
     'click .delete_all': 'onDeleteAllClicked'
 
   initialize: ->
-    super()
     @history = @options.history
     @history.bind('change', @onHistoryLoaded, @)
 

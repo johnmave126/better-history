@@ -1,4 +1,9 @@
-class BH.Views.SearchView extends BH.Views.ViewWithSearch
+class BH.Views.SearchView extends BH.Views.BaseView
+  @include BH.Modules.chromeSupport
+  @include BH.Modules.searchSupport
+  @include BH.Modules.tabIndexSupport
+  @include BH.Modules.topLevelSupport
+
   className: 'search_view with_controls'
   template: BH.Templates['search']
 
