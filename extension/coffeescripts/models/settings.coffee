@@ -1,4 +1,6 @@
 class BH.Models.Settings extends BH.Models.Base
+  @include BH.Modules.chromeSupport
+
   storeName: 'settings'
 
   defaults: ->
@@ -10,9 +12,7 @@ class BH.Models.Settings extends BH.Models.Base
     startingWeekDay: 'Monday'
     weekDayOrder: 'ascending'
 
-  initialize: (attrs, options) ->
-    super(attrs, options)
-
+  initialize: ->
     @set timeFormat: parseInt @t('default_time_format'), 10
 
   toTemplate: ->

@@ -11,6 +11,7 @@
 #   - dist/**/*.js
 #
 src_files:
+    - spec/javascripts/helpers/chrome_api.js
     - extension/javascripts/frameworks/underscore-min.js
     - extension/javascripts/frameworks/mustache.js
     - extension/javascripts/frameworks/backbone-min.js
@@ -23,6 +24,8 @@ src_files:
     - extension/javascripts/lib/history_query.js
     - extension/javascripts/lib/browser_actions.js
     - extension/javascripts/lib/context_menus/*.js
+    - extension/javascripts/modules/chrome_support.js
+    - extension/javascripts/modules/url_support.js
     - extension/javascripts/models/base.js
     - extension/javascripts/models/*.js
     - extension/javascripts/models/history/history.js

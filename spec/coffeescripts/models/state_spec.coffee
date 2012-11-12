@@ -2,14 +2,8 @@ describe 'BH.Models.State', ->
   beforeEach ->
     Timecop.freeze(new Date('10-23-12'))
 
-    chromeAPI = loadChromeAPI()
-
-    @settings = new BH.Models.Settings null,
-      chromeAPI: chromeAPI
-
     @state = new BH.Models.State null,
-      settings: @settings
-      chromeAPI: chromeAPI
+      settings: new BH.Models.Settings()
 
   afterEach ->
     Timecop.returnToPresent()
@@ -24,7 +18,7 @@ describe 'BH.Models.State', ->
   describe '#updateRoute', ->
     describe 'when the open location is the current day', ->
       beforeEach ->
-        @settings.set openLocation: 'current_day'
+        @state.settings.set openLocation: 'current_day'
 
       it 'sets the route to the current day url', ->
         @state.updateRoute()
@@ -32,7 +26,7 @@ describe 'BH.Models.State', ->
 
     describe 'when the open location is the current week', ->
       beforeEach ->
-        @settings.set openLocation: 'current_week'
+        @state.settings.set openLocation: 'current_week'
 
       it 'sets the route to the current week url', ->
         @state.updateRoute()

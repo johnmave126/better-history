@@ -1,4 +1,6 @@
 class BH.Models.DayHistory extends BH.Models.History
+  @include BH.Modules.chromeSupport
+
   initialize: (attrs, options) ->
     @settings = options.settings
 

@@ -1,15 +1,9 @@
 describe 'BH.Models.Day', ->
   beforeEach ->
-    chromeAPI = loadChromeAPI()
-
-    settings = new BH.Models.Settings null,
-      chromeAPI: chromeAPI
-
     @date = moment(new Date('October 11, 2012'))
 
     @day = new BH.Models.Day {date: @date},
-      settings: settings
-      chromeAPI: chromeAPI
+      settings: new BH.Models.Settings()
 
   describe '#initialize', ->
     it 'sets the id', ->

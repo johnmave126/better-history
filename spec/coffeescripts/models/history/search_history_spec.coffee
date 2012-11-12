@@ -3,8 +3,6 @@ describe 'BH.Models.SearchHistory', ->
     @searchHistory = new BH.Models.SearchHistory
       query: 'search term'
 
-    @searchHistory.chromeAPI = loadChromeAPI()
-
   describe '#toChrome', ->
     it 'returns the reading properties when reading is true', ->
       expect(@searchHistory.toChrome()).toEqual

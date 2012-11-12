@@ -1,6 +1,9 @@
-class BH.Models.Day extends BH.Models.Base
+class BH.Models.Day extends Backbone.Model
+  @include BH.Modules.chromeSupport
+  @include BH.Modules.urlSupport
+
   initialize: (attrs, options) ->
-    super(attrs, options)
+    @settings = options.settings
     @set id: @get('date').format('M-D-YY')
 
   toHistory: ->
@@ -13,7 +16,7 @@ class BH.Models.Day extends BH.Models.Base
     properties =
       title: date.format(@t('day_date'))
       formalDate: date.format(@t('formal_date'))
-      weekUrl: @urlBuilder.build('week', weekId)
+      weekUrl: @urlFor('week', weekId)
 
     _.extend properties, @toJSON()
 

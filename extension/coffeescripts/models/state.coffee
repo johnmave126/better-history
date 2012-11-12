@@ -1,19 +1,22 @@
 class BH.Models.State extends BH.Models.Base
+  @include BH.Modules.chromeSupport
+  @include BH.Modules.urlSupport
+
   storeName: 'state'
 
   initialize: (attrs, options) ->
-    super(attrs, options)
+    @settings = options.settings
 
     weekId = @startingWeekDate().format('M-D-YY')
-    @set route: @urlBuilder.build('week', weekId)
+    @set route: @urlFor('week', weekId)
 
   updateRoute: ->
     if @settings.get('openLocation') == 'current_day'
-      route = @urlBuilder.build 'day', moment(new Date()).format('M-D-YY')
+      route = @urlFor 'day', moment(new Date()).format('M-D-YY')
 
     else if @settings.get('openLocation') == 'current_week'
       weekId = @startingWeekDate().format('M-D-YY')
-      route = @urlBuilder.build 'week', weekId
+      route = @urlFor 'week', weekId
 
     @set route: route if route?
     @save()

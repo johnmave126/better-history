@@ -5,5 +5,5 @@
   Lib: {
     ContextMenus: {}
   }
-  Helpers: {}
+  Modules: {}
   Templates: {}

@@ -14,8 +14,6 @@ describe 'BH.Models.WeekHistory', ->
         Saturday: []
         Sunday: [1]
 
-    @weekHistory.chromeAPI = loadChromeAPI()
-
   describe '#toChrome', ->
     it 'returns the reading properties when reading is true', ->
       expect(@weekHistory.toChrome()).toEqual
