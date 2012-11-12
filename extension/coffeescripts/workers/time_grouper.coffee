@@ -20,7 +20,7 @@ class @TimeGrouper
     @arrangedVisits
 
   createIntervalGroup: (date, time) ->
-    datetime = "#{date.toLocaleDateString()} #{time}"
+    datetime = "#{date.getMonth()+1}/#{date.getDate()}/#{date.getFullYear()} #{time}"
 
     datetime: new Date(datetime)
     id: time
