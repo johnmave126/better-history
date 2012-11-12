@@ -1,5 +1,6 @@
 class BH.Models.Week extends BH.Models.Base
-  initialize: ->
+  initialize: (attrs, options) ->
+    super(attrs, options)
     @set id: @get('date').format('M-D-YY')
 
   toHistory: ->

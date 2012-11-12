@@ -2,6 +2,9 @@ class BH.Models.Search extends BH.Models.Base
   defaults: ->
     query: ''
 
+  initialize: (attrs, options) ->
+    super(attrs, options)
+
   toHistory: ->
     query: @get 'query'
 

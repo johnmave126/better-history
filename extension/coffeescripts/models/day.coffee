@@ -1,6 +1,6 @@
 class BH.Models.Day extends BH.Models.Base
   initialize: (attrs, options) ->
-    @settings = options.settings
+    super(attrs, options)
     @set id: @get('date').format('M-D-YY')
 
   toHistory: ->

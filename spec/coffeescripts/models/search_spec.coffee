@@ -1,7 +1,7 @@
 describe 'BH.Models.Search', ->
   beforeEach ->
-    @search = new BH.Models.Search()
-    @search.chromeAPI = loadChromeAPI()
+    @search = new BH.Models.Search null,
+      chromeAPI: loadChromeAPI()
 
   describe '#initialize', ->
     it 'defaults the query to an empty string', ->

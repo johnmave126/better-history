@@ -1,9 +1,8 @@
 describe 'BH.Models.Week', ->
   beforeEach ->
     @date = moment(new Date('October 8, 2012'))
-    @week = new BH.Models.Week
-      date: @date
-    @week.chromeAPI = loadChromeAPI()
+    @week = new BH.Models.Week date: @date,
+      chromeAPI: loadChromeAPI()
 
   describe '#initialize', ->
     it 'sets the id', ->
