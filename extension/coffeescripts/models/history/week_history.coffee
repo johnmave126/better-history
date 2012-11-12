@@ -1,4 +1,6 @@
 class BH.Models.WeekHistory extends BH.Models.History
+  @include BH.Modules.chromeSupport
+
   initialize: ->
     super()
 
