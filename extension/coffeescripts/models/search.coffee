@@ -1,4 +1,6 @@
 class BH.Models.Search extends BH.Models.Base
+  @include BH.Modules.chromeSupport
+
   defaults: ->
     query: ''
 
