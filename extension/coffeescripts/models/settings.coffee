@@ -10,8 +10,9 @@ class BH.Models.Settings extends BH.Models.Base
     startingWeekDay: 'Monday'
     weekDayOrder: 'ascending'
 
-  initialize: (attr, options) ->
-    @chromeAPI = options.chromeAPI if options?.chromeAPI?
+  initialize: (attrs, options) ->
+    super(attrs, options)
+
     @set timeFormat: parseInt @t('default_time_format'), 10
 
   toTemplate: ->

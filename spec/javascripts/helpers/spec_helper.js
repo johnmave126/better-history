@@ -25,6 +25,7 @@
             visits_to_domain: "Visits to domain",
             twelve_hour_time_format: "$time$ $label$",
             monday: "Monday",
+            Monday: "Monday",
             saturday: "Saturday",
             wednesday: "Wednesday",
             thursday: "Thursday",
