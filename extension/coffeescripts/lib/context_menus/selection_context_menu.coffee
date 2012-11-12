@@ -1,5 +1,7 @@
 class BH.Lib.ContextMenus.SelectionContextMenu
-  constructor: (@chromeAPI, @urlBuilder) ->
+  constructor: (@chromeAPI) ->
+
+  urlBuilder: BH.Helpers.UrlBuilder
 
   create: ->
     @menu = @chromeAPI.contextMenus.create
@@ -17,4 +19,3 @@ class BH.Lib.ContextMenus.SelectionContextMenu
   remove: ->
     @chromeAPI.contextMenus.remove(@menu)
     delete(@menu)
-
