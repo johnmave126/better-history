@@ -1,6 +1,7 @@
 class BH.Models.State extends BH.Models.Base
   @include BH.Modules.chromeSupport
   @include BH.Modules.urlSupport
+  @include BH.Modules.localStorageSupport
 
   storeName: 'state'
 

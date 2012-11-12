@@ -24,9 +24,7 @@ src_files:
     - extension/javascripts/lib/history_query.js
     - extension/javascripts/lib/browser_actions.js
     - extension/javascripts/lib/context_menus/*.js
-    - extension/javascripts/modules/chrome_support.js
-    - extension/javascripts/modules/url_support.js
-    - extension/javascripts/models/base.js
+    - extension/javascripts/modules/*.js
     - extension/javascripts/models/*.js
     - extension/javascripts/models/history/history.js
     - extension/javascripts/models/history/*.js
