@@ -1,4 +1,6 @@
-class BH.Models.Visit extends BH.Models.Base
+class BH.Models.Visit extends Backbone.Modal
+  @include BH.Modules.chromeSupport
+
   defaults:
     title: '(No Title)'
 

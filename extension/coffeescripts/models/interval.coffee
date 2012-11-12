@@ -1,10 +1,12 @@
-class BH.Models.Interval extends BH.Models.Base
+class BH.Models.Interval extends Backbone.Model
+  @include BH.Modules.chromeSupport
+
   initialize: (attrs, options) ->
     @settings = options.settings
 
   toTemplate: ->
     _.extend
-      amount: @chromeAPI.i18n.getMessage('number_of_visits', [
+      amount: @t('number_of_visits', [
         @get('visits').length.toString(),
         '<span class="amount">',
         '</span>'
@@ -29,13 +31,13 @@ class BH.Models.Interval extends BH.Models.Base
       key = 'morning'
       if hours > 11
         key = if hours < 18 then 'afternoon' else 'evening'
-      @chromeAPI.i18n.getMessage(key)
+      @t(key)
 
     hours = date.getHours()
     hours = convertTo12Hour(hours) if format == 12
     time = hours + ':' + minute(date.getMinutes())
     if format == 12
-      time = @chromeAPI.i18n.getMessage('twelve_hour_time_format', [time, period(date.getHours())])
+      time = @t('twelve_hour_time_format', [time, period(date.getHours())])
     time
 
   findVisitById: (id) ->

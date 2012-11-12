@@ -1,4 +1,4 @@
-class BH.Models.Search extends BH.Models.Base
+class BH.Models.Search extends Backbone.Model
   @include BH.Modules.chromeSupport
 
   defaults: ->

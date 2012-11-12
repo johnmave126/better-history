@@ -1,4 +1,4 @@
-class BH.Models.Settings extends BH.Models.Base
+class BH.Models.Settings extends Backbone.Model
   @include BH.Modules.chromeSupport
 
   storeName: 'settings'
