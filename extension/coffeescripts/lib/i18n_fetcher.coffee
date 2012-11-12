@@ -1,4 +1,4 @@
-class BH.Helpers.I18nFetcher
+class BH.Lib.I18nFetcher
   constructor: (@chromeAPI) ->
 
   get: (keys) ->

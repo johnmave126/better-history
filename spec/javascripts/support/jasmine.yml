@@ -16,13 +16,18 @@ src_files:
     - extension/javascripts/frameworks/backbone-min.js
     - extension/javascripts/frameworks/moment.js
     - extension/javascripts/namespace.js
-    - extension/javascripts/helpers/*.js
+    - extension/javascripts/lib/url_builder.js
+    - extension/javascripts/lib/i18n_fetcher.js
+    - extension/javascripts/lib/backbone_extensions.js
+    - extension/javascripts/lib/worker.js
+    - extension/javascripts/lib/history_query.js
+    - extension/javascripts/lib/browser_actions.js
+    - extension/javascripts/lib/context_menus/*.js
     - extension/javascripts/models/base.js
     - extension/javascripts/models/*.js
     - extension/javascripts/models/history/history.js
     - extension/javascripts/models/history/*.js
     - extension/javascripts/collections/*.js
-    - extension/javascripts/lib/**/*.js
     - extension/javascripts/workers/*.js
 
 # stylesheets

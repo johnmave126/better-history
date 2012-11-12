@@ -1,7 +1,7 @@
 class BH.Lib.BrowserActions
   constructor: (@chromeAPI) ->
 
-  urlBuilder: BH.Helpers.UrlBuilder
+  urlBuilder: BH.Lib.UrlBuilder
 
   listen: ->
     @chromeAPI.browserAction.onClicked.addListener =>

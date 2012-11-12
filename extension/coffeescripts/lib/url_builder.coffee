@@ -1,4 +1,4 @@
-BH.Helpers.UrlBuilder =
+BH.Lib.UrlBuilder =
   BASE: 'chrome://history/'
   build: (key, id, options) ->
     return @BASE unless key?
