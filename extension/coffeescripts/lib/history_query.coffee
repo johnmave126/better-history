@@ -1,4 +1,6 @@
 class BH.Lib.HistoryQuery
+  @include BH.Modules.workerSupport
+
   constructor: (@chromeAPI) ->
 
   run: (@options, callback) ->
@@ -26,7 +28,7 @@ class BH.Lib.HistoryQuery
     options =
       options: @options
       results: results
-    worker('sanitizer', options, callback)
+    @worker('sanitizer', options, callback)
 
   _prepareResults: (results) ->
     extendedFormalDate = @chromeAPI.i18n.getMessage('extended_formal_date')

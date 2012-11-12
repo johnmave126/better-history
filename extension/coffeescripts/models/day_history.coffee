@@ -1,6 +1,7 @@
 class BH.Models.DayHistory extends Backbone.Model
   @include BH.Modules.chromeSupport
   @include BH.Modules.historySupport
+  @include BH.Modules.workerSupport
 
   initialize: (attrs, options) ->
     @settings = options.settings
@@ -36,7 +37,7 @@ class BH.Models.DayHistory extends Backbone.Model
       visits: results
       interval: @settings.get 'timeGrouping'
 
-    worker 'timeGrouper', options, (history) =>
+    @worker 'timeGrouper', options, (history) =>
       if @settings.get('domainGrouping')
         options = intervals: history
         worker 'domainGrouper', options, (history) ->
