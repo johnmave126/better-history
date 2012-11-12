@@ -1,10 +1,9 @@
-class BH.Models.DayHistory extends BH.Models.History
+class BH.Models.DayHistory extends Backbone.Model
   @include BH.Modules.chromeSupport
+  @include BH.Modules.historySupport
 
   initialize: (attrs, options) ->
     @settings = options.settings
-
-    super()
 
   sync: (method, model, options) ->
     switch method

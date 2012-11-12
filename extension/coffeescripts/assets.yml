@@ -38,10 +38,9 @@
  - models/state
  - models/search
  - models/grouped_visit
- - models/history/history
- - models/history/week_history
- - models/history/search_history
- - models/history/day_history
+ - models/week_history
+ - models/search_history
+ - models/day_history
  - collections/weeks
  - collections/grouped_visits
  - collections/intervals

@@ -1,8 +1,6 @@
-class BH.Models.WeekHistory extends BH.Models.History
+class BH.Models.WeekHistory extends Backbone.Model
   @include BH.Modules.chromeSupport
-
-  initialize: ->
-    super()
+  @include BH.Modules.historySupport
 
   sync: (method, model, options) ->
     switch method

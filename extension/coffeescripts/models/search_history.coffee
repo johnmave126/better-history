@@ -1,4 +1,7 @@
-class BH.Models.SearchHistory extends BH.Models.History
+class BH.Models.SearchHistory extends Backbone.Model
+  @include BH.Modules.chromeSupport
+  @include BH.Modules.historySupport
+
   sync: (method, model, options) ->
     if method == 'read'
       @historyQuery.run @toChrome(), (history) ->
