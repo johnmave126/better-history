@@ -15,7 +15,6 @@ task :clean_generated_js do
     'views',
     'collections',
     'models',
-    'helpers',
     'workers'
   ]
   folders.each do |folder|
