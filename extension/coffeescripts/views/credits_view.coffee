@@ -56,7 +56,7 @@ class BH.Views.CreditsView extends Backbone.View
       '</a>',
       'Roy Kolak'
     ])
-    properties['i18n_translation_instructions')] = @t('translation_instructions', [
+    properties['i18n_translation_instructions'] = @t('translation_instructions', [
       'roy.kolak@gmail.com',
       '<a href="mailto:roy.kolak@gmail.com">',
       '</a>'
