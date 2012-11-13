@@ -8,45 +8,12 @@
  - frameworks/moment_i18n
  - frameworks/mixin
  - templates
- - modules/chrome_support
- - modules/history_support
- - modules/local_storage_support
- - modules/search_support
- - modules/tab_index_support
- - modules/top_level_support
- - modules/url_support
- - modules/worker_support
- - modules/modal_support
+ - modules/*
  - lib/history_query
+ - views/*
+ - models/*
+ - collections/*
  - router
- - views/prompt_view
- - views/credits_view
- - views/search_view
- - views/search_results_view
- - views/day_view
- - views/day_results_view
- - views/app_view
- - views/menu_view
- - views/week_view
- - views/visit_view
- - views/settings_view
- - views/cache
- - models/visit
- - models/interval
- - models/week
- - models/day
- - models/settings
- - models/prompt
- - models/state
- - models/search
- - models/grouped_visit
- - models/week_history
- - models/search_history
- - models/day_history
- - collections/weeks
- - collections/grouped_visits
- - collections/intervals
- - collections/visits
  - initialize_extension
  background:
  - namespace

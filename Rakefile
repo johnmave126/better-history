@@ -90,8 +90,15 @@ task :concat_js do
     system("rm extension/javascripts/#{section}.js")
     packaged = ""
     assets[section].each do |asset|
-      packaged += "\n\n// #{asset}.js \n"
-      packaged += File.read("extension/javascripts/#{asset}.js")
+      if asset =~ /\*/
+        Dir.glob("extension/javascripts/#{asset}").each do |file|
+          packaged += "\n\n// #{file} \n"
+          packaged += File.read(file)
+        end
+      else
+        packaged += "\n\n// #{asset}.js \n"
+        packaged += File.read("extension/javascripts/#{asset}.js")
+      end
     end
 
     File.open("extension/javascripts/#{section}.js", 'w') do |f|
