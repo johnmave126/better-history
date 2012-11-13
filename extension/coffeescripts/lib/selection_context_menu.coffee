@@ -1,4 +1,4 @@
-class BH.Lib.ContextMenus.SelectionContextMenu
+class BH.Lib.SelectionContextMenu
   constructor: (@chromeAPI) ->
 
   urlBuilder: BH.Lib.UrlBuilder

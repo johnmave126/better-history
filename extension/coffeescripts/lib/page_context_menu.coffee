@@ -1,4 +1,4 @@
-class BH.Lib.ContextMenus.PageContextMenu
+class BH.Lib.PageContextMenu
   constructor: (@chromeAPI) ->
 
   urlBuilder: BH.Lib.UrlBuilder
