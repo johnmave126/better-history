@@ -1,11 +1,12 @@
  main:
+ - namespace
  - frameworks/underscore-min
  - frameworks/zepto.min
  - frameworks/backbone-min
  - frameworks/mustache
  - frameworks/moment
  - frameworks/moment_i18n
- - namespace
+ - frameworks/mixin
  - templates
  - modules/chrome_support
  - modules/history_support
@@ -16,7 +17,6 @@
  - modules/url_support
  - modules/worker_support
  - modules/modal_support
- - lib/module
  - lib/history_query
  - router
  - views/prompt_view
@@ -49,11 +49,11 @@
  - collections/visits
  - initialize_extension
  background:
+ - namespace
  - frameworks/underscore-min
  - frameworks/backbone-min
- - namespace
+ - frameworks/mixin
  - modules/url_support
- - lib/module
  - lib/page_context_menu
  - lib/selection_context_menu
  - lib/browser_actions
