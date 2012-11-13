@@ -1,4 +1,7 @@
-class BH.Views.PromptView extends BH.Views.Modal
+class BH.Views.PromptView extends Backbone.View
+  @include BH.Modules.modalSupport
+  @include BH.Modules.chromeSupport
+
   className: 'prompt_view'
 
   template: BH.Templates['prompt']
@@ -27,11 +30,11 @@ class BH.Views.PromptView extends BH.Views.Modal
     @$el.addClass('loading')
 
   getI18nValues: ->
-    @i18nFetcher.get([
+    @t [
       'prompt_delete_button',
       'prompt_cancel_button',
       'prompt_title'
-    ])
+    ]
 
 BH.Views.CreatePrompt = (content) ->
   view = new BH.Views.PromptView

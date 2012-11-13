@@ -1,4 +1,4 @@
-class BH.Models.Visit extends Backbone.Modal
+class BH.Models.Visit extends Backbone.Model
   @include BH.Modules.chromeSupport
 
   defaults:

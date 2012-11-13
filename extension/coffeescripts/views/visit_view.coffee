@@ -1,4 +1,6 @@
-class BH.Views.VisitView extends BH.Views.BaseView
+class BH.Views.VisitView extends Backbone.View
+  @include BH.Modules.chromeSupport
+
   className: 'visit_view'
   template: BH.Templates['visit']
 
@@ -6,7 +8,9 @@ class BH.Views.VisitView extends BH.Views.BaseView
     'click .delete_visit': 'deleteClicked'
 
   render: ->
-    @$el.html(@renderTemplate(_.extend(@getI18nValues(), @model.toTemplate())))
+    properties = _.extend(@getI18nValues(), @model.toTemplate())
+    html = Mustache.to_html @template, properties
+    @$el.html html
     @
 
   deleteClicked: (ev) ->
@@ -34,6 +38,6 @@ class BH.Views.VisitView extends BH.Views.BaseView
     @$el.parents('.grouped_visits_view')
 
   getI18nValues: ->
-    @i18nFetcher.get([
+    @t [
       'prompt_delete_button'
-    ])
+    ]

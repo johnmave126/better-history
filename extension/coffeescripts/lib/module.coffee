@@ -18,4 +18,4 @@ class BH.Lib.Module
     obj.included?.apply(@)
     this
 
-Backbone.Model.include = Backbone.View.include = Backbone.Collection.include = BH.Lib.Module.include
+Backbone.Model.include = Backbone.View.include = Backbone.Collection.include = BH.Base.include = BH.Lib.Module.include

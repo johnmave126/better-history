@@ -1,4 +1,7 @@
-class BH.Views.DayResultsView extends BH.Views.BaseView
+class BH.Views.DayResultsView extends Backbone.View
+  @include BH.Modules.chromeSupport
+  @include BH.Modules.tabIndexSupport
+
   template: BH.Templates['day_results']
 
   events:
@@ -11,7 +14,8 @@ class BH.Views.DayResultsView extends BH.Views.BaseView
 
   render: ->
     properties = _.extend @getI18nValues(), @model.toTemplate()
-    @$el.html(@renderTemplate properties)
+    html = Mustache.to_html @template, properties
+    @$el.html html
     @assignTabIndices('.interval > .visits > .visit > a:first-child')
     @
 
@@ -53,11 +57,11 @@ class BH.Views.DayResultsView extends BH.Views.BaseView
       .toggleClass('expanded')
 
   getI18nValues: ->
-    @i18nFetcher.get([
+    @t [
       'prompt_delete_button'
       'delete_time_interval_button'
       'no_visits_found'
       'expand_button'
       'collapse_button'
       'search_by_domain'
-    ])
+    ]

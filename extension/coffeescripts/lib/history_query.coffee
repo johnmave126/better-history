@@ -1,4 +1,4 @@
-class BH.Lib.HistoryQuery
+class BH.Lib.HistoryQuery extends BH.Base
   @include BH.Modules.workerSupport
 
   constructor: (@chromeAPI) ->

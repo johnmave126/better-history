@@ -1,4 +1,4 @@
-class BH.Views.SearchView extends BH.Views.BaseView
+class BH.Views.SearchView extends Backbone.View
   @include BH.Modules.chromeSupport
   @include BH.Modules.searchSupport
   @include BH.Modules.tabIndexSupport
@@ -17,7 +17,9 @@ class BH.Views.SearchView extends BH.Views.BaseView
     super()
 
   render: ->
-    @$el.append(@renderTemplate(_.extend(@getI18nValues(), @model.toTemplate())))
+    properties = _.extend(@getI18nValues(), @model.toTemplate())
+    html = Mustache.to_html @template, properties
+    @$el.append html
     @
 
   pageTitle: ->

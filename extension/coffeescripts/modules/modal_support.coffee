@@ -1,4 +1,4 @@
-class BH.Views.Modal extends BH.Views.BaseView
+BH.Modules.modalSupport =
   pulseClass: 'pulse'
 
   generalEvents:

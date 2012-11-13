@@ -1,4 +1,4 @@
-class BH.Views.WeekView extends BH.Views.BaseView
+class BH.Views.WeekView extends Backbone.View
   @include BH.Modules.chromeSupport
   @include BH.Modules.searchSupport
   @include BH.Modules.tabIndexSupport
@@ -17,7 +17,8 @@ class BH.Views.WeekView extends BH.Views.BaseView
 
   render: ->
     properties = _.extend @getI18nValues(), @model.toTemplate()
-    @$el.html(@renderTemplate properties)
+    html = Mustache.to_html @template, properties
+    @$el.html html
     @
 
   onHistoryLoaded: ->
@@ -55,7 +56,7 @@ class BH.Views.WeekView extends BH.Views.BaseView
       @promptView.close()
 
   getI18nValues: ->
-    @i18nFetcher.get [
+    @t [
       'delete_all_visits_for_filter_button',
       'no_visits_found',
       'search_input_placeholder_text'

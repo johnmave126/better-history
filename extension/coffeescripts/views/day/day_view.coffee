@@ -1,7 +1,6 @@
-class BH.Views.DayView extends BH.Views.BaseView
+class BH.Views.DayView extends Backbone.View
   @include BH.Modules.chromeSupport
   @include BH.Modules.searchSupport
-  @include BH.Modules.tabIndexSupport
   @include BH.Modules.topLevelSupport
 
   template: BH.Templates['day']
@@ -18,7 +17,8 @@ class BH.Views.DayView extends BH.Views.BaseView
 
   render: ->
     properties = _.extend @getI18nValues(), @model.toTemplate()
-    @$el.html(@renderTemplate properties)
+    html = Mustache.to_html(@template, properties)
+    @$el.html html
     @
 
   onDayHistoryLoaded: ->
@@ -65,14 +65,14 @@ class BH.Views.DayView extends BH.Views.BaseView
       @promptView.close()
 
   getI18nValues: ->
-    properties = @i18nFetcher.get [
+    properties = @t [
       'collapse_button',
       'expand_button',
       'delete_all_visits_for_filter_button',
       'no_visits_found',
       'search_input_placeholder_text',
     ]
-    properties[@i18nFetcher.scopeKey('back_to_week_link')] = chrome.i18n.getMessage('back_to_week_link', [
-      chrome.i18n.getMessage('back_arrow')
+    properties['i18n_back_to_week_link'] = @t('back_to_week_link', [
+      @t('back_arrow')
     ])
     properties

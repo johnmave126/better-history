@@ -1,4 +1,6 @@
-class BH.Views.AppView extends BH.Views.BaseView
+class BH.Views.AppView extends Backbone.View
+  @include BH.Modules.chromeSupport
+
   className: 'app_view'
 
   template: BH.Templates['app']
@@ -15,7 +17,8 @@ class BH.Views.AppView extends BH.Views.BaseView
     @cache = new BH.Views.Cache(@options)
 
   render: ->
-    @$el.html(@renderTemplate @getI18nValues())
+    html = Mustache.to_html @template, @getI18nValues()
+    @$el.html html
     @renderMenu()
     @
 
@@ -53,7 +56,7 @@ class BH.Views.AppView extends BH.Views.BaseView
 
   loadSettings: ->
     @updateMenuSelection()
-    @$('.menu .setting').parent().addClass @cssClass.selected
+    @$('.menu .setting').parent().addClass 'selected'
     @cache.settingsView()
 
   loadSearch: ->
@@ -61,8 +64,8 @@ class BH.Views.AppView extends BH.Views.BaseView
     @cache.searchView()
 
   updateMenuSelection: (id) ->
-    @$('.menu > *').removeClass @cssClass.selected
-    @$("[data-week-id='#{id}']").addClass(@cssClass.selected) if id?
+    @$('.menu > *').removeClass 'selected'
+    @$("[data-week-id='#{id}']").addClass('selected') if id?
 
   getI18nValues: ->
-    @i18nFetcher.get ['history_title', 'settings_link']
+    @t ['history_title', 'settings_link']

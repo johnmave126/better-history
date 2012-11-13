@@ -1,12 +1,13 @@
-class BH.Views.MenuView extends BH.Views.BaseView
+class BH.Views.MenuView extends Backbone.View
   template: BH.Templates['menu']
 
   events:
     'click .menu > *': 'weekClicked'
 
   render: ->
-    @$el.html @renderTemplate(@collection.toTemplate())
+    html = Mustache.to_html @template, @collection.toTemplate()
+    @$el.html html
 
   weekClicked: (ev) ->
-    @$('.menu > *').removeClass @cssClass.selected
-    $(ev.currentTarget).addClass @cssClass.selected
+    @$('.menu > *').removeClass 'selected'
+    $(ev.currentTarget).addClass 'selected'

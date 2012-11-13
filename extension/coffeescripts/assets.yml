@@ -7,15 +7,18 @@
  - frameworks/moment_i18n
  - namespace
  - templates
- - lib/worker
+ - modules/chrome_support
+ - modules/history_support
+ - modules/local_storage_support
+ - modules/search_support
+ - modules/tab_index_support
+ - modules/top_level_support
+ - modules/url_support
+ - modules/worker_support
+ - modules/modal_support
+ - lib/module
  - lib/history_query
- - lib/backbone_extensions
- - lib/i18n_fetcher
- - lib/url_builder
  - router
- - views/base_view
- - views/view_with_search
- - views/modals/modal_view
  - views/modals/prompt_view
  - views/modals/credits_view
  - views/search/search_view
@@ -28,7 +31,6 @@
  - views/visit_view
  - views/settings_view
  - views/cache
- - models/base
  - models/visit
  - models/interval
  - models/week
@@ -50,11 +52,10 @@
  - frameworks/underscore-min
  - frameworks/backbone-min
  - namespace
- - lib/url_builder
- - lib/backbone_extensions
+ - modules/url_support
+ - lib/module
  - lib/context_menus/page_context_menu
  - lib/context_menus/selection_context_menu
  - lib/browser_actions
- - models/base
  - models/settings
  - initialize_background

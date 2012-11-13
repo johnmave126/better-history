@@ -1,4 +1,5 @@
 class BH.Models.Settings extends Backbone.Model
+  @include BH.Modules.localStorageSupport
   @include BH.Modules.chromeSupport
 
   storeName: 'settings'

@@ -1,4 +1,7 @@
-class BH.Views.SettingsView extends BH.Views.BaseView
+class BH.Views.SettingsView extends Backbone.View
+  @include BH.Modules.chromeSupport
+  @include BH.Modules.topLevelSupport
+
   className: 'settings_view'
 
   template: BH.Templates['settings']
@@ -46,8 +49,8 @@ class BH.Views.SettingsView extends BH.Views.BaseView
     properties = _.extend {},
       @getI18nValues(),
       @model.toTemplate()
-
-    @$el.append(@renderTemplate properties)
+    html = Mustache.to_html @template, properties
+    @$el.append html
     @populateFields()
     @
 
@@ -106,7 +109,7 @@ class BH.Views.SettingsView extends BH.Views.BaseView
     creditsView.open()
 
   getI18nValues: ->
-    properties = @i18nFetcher.get([
+    properties = @t([
       'settings_title',
       'clearing_history_section_title',
       'clear_history_button',
@@ -128,11 +131,11 @@ class BH.Views.SettingsView extends BH.Views.BaseView
       'week_day_order',
       'general_section_title'
     ])
-    properties[@i18nFetcher.scopeKey('credits_link')] = chrome.i18n.getMessage('credits_link', [
+    properties['i18n_credits_link'] = chrome.i18n.getMessage('credits_link', [
       '<strong>',
       '</strong>'
     ])
-    properties[@i18nFetcher.scopeKey('suggestions_bugs_comments')] = chrome.i18n.getMessage('suggestions_bugs_comments', [
+    properties['i18n_suggestions_bugs_comments'] = chrome.i18n.getMessage('suggestions_bugs_comments', [
       '<a href="http://twitter.com/Better_History">',
       '</a>'
     ])

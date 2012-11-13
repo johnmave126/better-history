@@ -5,6 +5,8 @@ class BH.Models.DayHistory extends Backbone.Model
 
   initialize: (attrs, options) ->
     @settings = options.settings
+    @historyQuery = new BH.Lib.HistoryQuery(@chromeAPI)
+
 
   sync: (method, model, options) ->
     switch method
@@ -40,7 +42,7 @@ class BH.Models.DayHistory extends Backbone.Model
     @worker 'timeGrouper', options, (history) =>
       if @settings.get('domainGrouping')
         options = intervals: history
-        worker 'domainGrouper', options, (history) ->
+        @worker 'domainGrouper', options, (history) ->
           callback(history)
       else
         callback(history)

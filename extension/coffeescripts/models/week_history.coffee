@@ -1,6 +1,10 @@
 class BH.Models.WeekHistory extends Backbone.Model
   @include BH.Modules.chromeSupport
   @include BH.Modules.historySupport
+  @include BH.Modules.workerSupport
+
+  initialize: ->
+    @historyQuery = new BH.Lib.HistoryQuery(@chromeAPI)
 
   sync: (method, model, options) ->
     switch method
@@ -46,7 +50,7 @@ class BH.Models.WeekHistory extends Backbone.Model
     @get('history')[day].length / largest * 100
 
   preparse: (results, callback) ->
-    worker 'dayGrouper', visits: results, (history) ->
+    @worker 'dayGrouper', visits: results, (history) ->
       callback history
 
   parse: (data) ->
