@@ -5,7 +5,7 @@ var moduleKeywords,
 
 moduleKeywords = ['extended', 'included'];
 
-BH.Lib.Module = (function() {
+Module = (function() {
 
   function Module() {}
 
@@ -41,4 +41,4 @@ BH.Lib.Module = (function() {
 
 })();
 
-Backbone.Model.include = Backbone.View.include = Backbone.Collection.include = BH.Base.include = BH.Lib.Module.include;
+Backbone.Model.include = Backbone.View.include = Backbone.Collection.include = BH.Base.include = Module.include;
