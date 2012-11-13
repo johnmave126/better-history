@@ -1,17 +1,16 @@
-class BH.Lib.SelectionContextMenu
-  constructor: (@chromeAPI) ->
-
-  urlBuilder: BH.Lib.UrlBuilder
+class BH.Lib.SelectionContextMenu extends BH.Base
+  @include BH.Modules.chromeSupport
+  @include BH.Modules.urlSupport
 
   create: ->
     @menu = @chromeAPI.contextMenus.create
-      title: @chromeAPI.i18n.getMessage('search_in_history')
+      title: @t('search_in_history')
       contexts: ['selection']
       onclick: (data) => @onClick(data)
 
   onClick: (data) ->
     urlOptions = absolute: true
-    url = @urlBuilder.build('search', data.selectionText, urlOptions)
+    url = @urlFor('search', data.selectionText, urlOptions)
 
     @chromeAPI.tabs.create
       url: url
