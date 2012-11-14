@@ -10,6 +10,8 @@ class BH.Views.WeekView extends Backbone.View
 
   events:
     'click .delete_all': 'onDeleteAllClicked'
+    'keyup .search': 'onSearchTyped'
+    'blur .search': 'onSearchBlurred'
 
   initialize: ->
     @history = @options.history

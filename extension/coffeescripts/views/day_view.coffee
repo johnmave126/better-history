@@ -10,6 +10,8 @@ class BH.Views.DayView extends Backbone.View
   events:
     'click .delete_day': 'onDeleteAllClicked'
     'click .back_to_week': 'onBackToWeekClicked'
+    'keyup .search': 'onSearchTyped'
+    'blur .search': 'onSearchBlurred'
 
   initialize: ->
     @history = @options.history

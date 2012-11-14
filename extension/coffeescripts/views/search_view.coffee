@@ -84,9 +84,9 @@ class BH.Views.SearchView extends Backbone.View
       @promptView.close()
 
   getI18nValues: ->
-    @i18nFetcher.get([
+    @t [
       'search_time_frame',
       'search_input_placeholder_text',
       'delete_all_visits_for_search_button',
       'no_visits_found'
-    ])
+    ]

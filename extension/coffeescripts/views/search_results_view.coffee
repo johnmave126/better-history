@@ -1,4 +1,7 @@
 class BH.Views.SearchResultsView extends Backbone.View
+  @include BH.Modules.chromeSupport
+  @include BH.Modules.tabIndexSupport
+
   template: BH.Templates['search_results']
 
   events:
@@ -12,7 +15,8 @@ class BH.Views.SearchResultsView extends Backbone.View
 
     collectionToTemplate.visits = highlightedVisits
     properties = _.extend @getI18nValues(), collectionToTemplate
-    @$el.html(@renderTemplate(properties))
+    html = Mustache.to_html @template, properties
+    @$el.html html
     @assignTabIndices('.visit a:first-child')
     @
 
@@ -44,4 +48,4 @@ class BH.Views.SearchResultsView extends Backbone.View
     $("[data-id='#{model.id}']").parents('li')
 
   getI18nValues: ->
-    @i18nFetcher.get ['no_visits_found']
+    @t ['no_visits_found']
