@@ -1,7 +1,7 @@
 describe "BH.Lib.BrowserActions", ->
   beforeEach ->
-    @chromeAPI = loadChromeAPI()
-    @browserActions = new BH.Lib.BrowserActions(@chromeAPI)
+    @browserActions = new BH.Lib.BrowserActions()
+    @chromeAPI = @browserActions.chromeAPI
 
   describe "#listen", ->
     it "listens for onClick on the browser action", ->

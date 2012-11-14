@@ -1,7 +1,6 @@
 class BH.Lib.HistoryQuery extends BH.Base
   @include BH.Modules.workerSupport
-
-  constructor: (@chromeAPI) ->
+  @include BH.Modules.chromeSupport
 
   run: (@options, callback) ->
     if @options.text

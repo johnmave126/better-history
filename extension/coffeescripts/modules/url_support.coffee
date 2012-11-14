@@ -4,7 +4,7 @@ BH.Modules.urlSupport =
     return base unless key?
 
     buildBase = (opts) ->
-      if opts?.absolute then @BASE else ''
+      if opts?.absolute then base else ''
 
     route =
       switch key

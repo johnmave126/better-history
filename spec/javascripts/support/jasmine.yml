@@ -12,16 +12,14 @@
 #
 src_files:
     - spec/javascripts/helpers/chrome_api.js
+    - extension/javascripts/namespace.js
     - extension/javascripts/frameworks/underscore-min.js
     - extension/javascripts/frameworks/mustache.js
     - extension/javascripts/frameworks/backbone-min.js
     - extension/javascripts/frameworks/moment.js
-    - extension/javascripts/namespace.js
+    - extension/javascripts/frameworks/mixin.js
     - extension/javascripts/modules/*.js
-    - extension/javascripts/lib/backbone_extensions.js
-    - extension/javascripts/lib/history_query.js
-    - extension/javascripts/lib/browser_actions.js
-    - extension/javascripts/lib/context_menus/*.js
+    - extension/javascripts/lib/*.js
     - extension/javascripts/models/*.js
     - extension/javascripts/collections/*.js
     - extension/javascripts/workers/*.js

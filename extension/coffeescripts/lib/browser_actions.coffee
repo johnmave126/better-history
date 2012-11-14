@@ -1,7 +1,6 @@
-class BH.Lib.BrowserActions
-  constructor: (@chromeAPI) ->
-
-  urlBuilder: BH.Lib.UrlBuilder
+class BH.Lib.BrowserActions extends BH.Base
+  @include BH.Modules.chromeSupport
+  @include BH.Modules.urlSupport
 
   listen: ->
     @chromeAPI.browserAction.onClicked.addListener =>
@@ -9,4 +8,4 @@ class BH.Lib.BrowserActions
 
   openHistory: ->
     @chromeAPI.tabs.create
-      url: @urlBuilder.build()
+      url: @urlFor()

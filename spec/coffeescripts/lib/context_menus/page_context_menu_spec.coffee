@@ -1,8 +1,7 @@
-describe "BH.Lib.ContextMenus.PageContextMenu", ->
+describe "BH.Lib.PageContextMenu", ->
   beforeEach ->
-    @chromeAPI = loadChromeAPI domain: "code.google.com"
-
-    @pageContextMenu = new BH.Lib.ContextMenus.PageContextMenu(@chromeAPI)
+    @pageContextMenu = new BH.Lib.PageContextMenu()
+    @chromeAPI = @pageContextMenu.chromeAPI
 
   describe "#create", ->
     it "creates a page context menu", ->

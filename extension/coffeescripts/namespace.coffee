@@ -7,4 +7,4 @@
   }
   Modules: {}
   Templates: {}
-  Base: {}
+  Base: ->

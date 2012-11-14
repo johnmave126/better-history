@@ -70,7 +70,7 @@ window.chrome = {
     create: jasmine.createSpy("create"),
     get: jasmine.createSpy("get").andCallFake(function(id, callback) {
       return callback({
-        url: "http://" + config.domain + "/projects"
+        url: "http://code.google.com/projects"
       });
     }),
     onSelectionChanged: {
