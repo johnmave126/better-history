@@ -16,7 +16,7 @@ class BH.Models.Visit extends Backbone.Model
 
   toTemplate: ->
     _.extend
-      notGrouped: true
+      isGrouped: false
       host: @domain()
       path: @path()
 

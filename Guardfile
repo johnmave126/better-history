@@ -12,7 +12,7 @@ guard 'coffeescript', :output => 'spec/javascripts' do
   watch('^spec/coffeescripts/(.+\.coffee)')
 end
 
-watch('extension/templates/(.*)\.haml') do
+watch('extension/templates/(.*)\.html') do
   log('Generating templates and concating js')
   system('rake templates')
   system('rake concat_js')

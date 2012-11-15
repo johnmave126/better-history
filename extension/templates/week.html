@@ -1,0 +1,32 @@
+<header>
+  <h1>{{{title}}}</h1>
+  <div class='corner'>
+    <input class='search' placeholder='{{i18n_search_input_placeholder_text}}' tabindex='1' type='text' />
+  </div>
+  <div class='controls'>
+    <span class='text count'></span>
+    <div class='spinner'></div>
+    <div class='spacer'></div>
+    <button class='delete_all'>
+      {{i18n_delete_all_visits_for_filter_button}}
+    </button>
+  </div>
+</header>
+<div class='content'>
+  <ol class='days'>
+    {{#days}}
+      <li class='day {{#inFuture}}future{{/inFuture}}' data-day='{{day}}'>
+        <a href='{{url}}'>
+          <div class='label'>
+            <h3 class='title'>{{title}}</h3>
+            <div class='count'></div>
+          </div>
+          <div class='bar_container'>
+            <div class='bar'></div>
+          </div>
+        </a>
+      </li>
+    {{/days}}
+  </ol>
+</div>
+<div class='day_views'></div>

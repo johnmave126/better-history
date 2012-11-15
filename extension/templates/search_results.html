@@ -1,0 +1,17 @@
+<ol class='visits highlightable editable'>
+  {{#visits}}
+    <li class='visit visit_view'>
+      <a data-id='{{id}}' href='{{url}}'>
+        <dl class='description' style='background-image: url(chrome://favicon/{{url}})'>
+          <dt>{{{title}}}</dt>
+          <dd>{{{location}}}</dd>
+          <dd>{{{time}}}</dd>
+        </dl>
+      </a>
+      <a class='delete_visit delete' href='#' title='{{i18n_prompt_delete_button}}'>{{i18n_prompt_delete_button}}</a>
+    </li>
+  {{/visits}}
+</ol>
+{{^visits}}
+  <p class='no_visits'>{{i18n_no_visits_found}}</p>
+{{/visits}}
