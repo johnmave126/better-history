@@ -84,7 +84,7 @@ desc "Concat javascript"
 task :concat_js do
   require 'yaml'
   Rake::Task['templates'].execute
-  assets = YAML::load(File.open('extension/coffeescripts/assets.yml'))
+  assets = YAML::load(File.open('extension/assets.yml'))
 
   ['main', 'background'].each do |section|
     system("rm extension/javascripts/#{section}.js")
