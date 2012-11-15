@@ -1,20 +1,17 @@
 BH.Modules.topLevelSupport =
-  cssClass:
-    selected: 'selected'
-
   select: ->
-    $('.mainview > *').removeClass(@cssClass.selected)
+    $('.mainview > *').removeClass('selected')
     $('.mainview > *').css(display: 'block')
+
     setTimeout =>
-      @$el.addClass(@cssClass.selected)
+      @$el.addClass('selected')
       $('.mainview > *:not(.selected)').css(display: 'none')
     , 0
-    @setPageTitle(@pageTitle()) if @pageTitle
+
+    if @pageTitle
+      element = $('<div/>')
+      cleanTitle = $(element).html(@pageTitle()).text()
+      document.title = "#{cleanTitle} - Better History"
+
+    @trigger('selected')
     @
-
-  isSelected: ->
-    @$el.hasClass(@cssClass.selected)
-
-  setPageTitle: (title) ->
-    element = $('<div/>')
-    document.title = $(element).html(title).text() + ' - Better History'

@@ -23,12 +23,12 @@ class BH.Views.SettingsView extends Backbone.View
     @model.on 'change', @model.save, @model
     @model.on 'change:openLocation', @options.state.updateRoute, @options.state
     @model.on 'change:startingWeekDay', @options.state.updateRoute, @options.state
+    @on 'selected', @activateSocialLinks, @
 
   pageTitle: ->
     @t('settings_title')
 
-  select: ->
-    super()
+  activateSocialLinks: ->
     !((d,s,id) ->
       js
       fjs=d.getElementsByTagName(s)[0];
