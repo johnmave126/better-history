@@ -43,7 +43,7 @@ task :package do
   system('cp extension/manifest.json tmp/')
   system('cp -r extension/images/* tmp/images/')
   system('cp -r extension/_locales/* tmp/_locales/')
-  system('cp extension/javascripts/main.js tmp/javascripts/')
+  system('cp extension/javascripts/extension.js tmp/javascripts/')
   system('cp extension/javascripts/background.js tmp/javascripts/')
   system('cp extension/javascripts/frameworks/underscore-min.js tmp/javascripts/frameworks/')
   system('cp extension/javascripts/workers/* tmp/javascripts/workers/')
@@ -86,7 +86,7 @@ task :concat_js do
   Rake::Task['templates'].execute
   assets = YAML::load(File.open('extension/assets.yml'))
 
-  ['main', 'background'].each do |section|
+  ['extension', 'background'].each do |section|
     system("rm extension/javascripts/#{section}.js")
     packaged = ""
     assets[section].each do |asset|

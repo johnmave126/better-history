@@ -1,4 +1,4 @@
- main:
+ extension:
  - namespace
  - frameworks/underscore-min
  - frameworks/zepto.min
