@@ -25,7 +25,7 @@ class BH.Views.SettingsView extends Backbone.View
     @model.on 'change:startingWeekDay', @options.state.updateRoute, @options.state
 
   pageTitle: ->
-    chrome.i18n.getMessage('settings_title')
+    @t('settings_title')
 
   select: ->
     super()
@@ -38,7 +38,7 @@ class BH.Views.SettingsView extends Backbone.View
         js.src="https://platform.twitter.com/widgets.js";
         fjs.parentNode.insertBefore(js,fjs);
     )(document,"script","twitter-wjs");
-    window.___gcfg = {lang: chrome.i18n.getMessage('google_plus_language')}
+    window.___gcfg = {lang: @t('google_plus_language')}
     (->
       po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
       po.src = 'https://apis.google.com/js/plusone.js';
@@ -85,7 +85,7 @@ class BH.Views.SettingsView extends Backbone.View
   clickedSearchByDomain: (ev) ->
     @model.set searchByDomain: $(ev.currentTarget).is(':checked')
 
-    backgroundPage = chrome.extension.getBackgroundPage()
+    backgroundPage = @chromeAPI.extension.getBackgroundPage()
     method = if @model.get('searchByDomain') then 'create' else 'remove'
 
     backgroundPage.pageContextMenu[method]()
@@ -93,14 +93,14 @@ class BH.Views.SettingsView extends Backbone.View
   clickedSearchBySelection: (ev) ->
     @model.set searchBySelection: $(ev.currentTarget).prop('checked')
 
-    backgroundPage = chrome.extension.getBackgroundPage()
+    backgroundPage = @chromeAPI.extension.getBackgroundPage()
     method = if @model.get('searchBySelection') then 'create' else 'remove'
 
     backgroundPage.selectionContextMenu[method]()
 
   clickedClearHistory: (ev) ->
     ev.preventDefault()
-    chrome.tabs.create url:'chrome://settings/clearBrowserData'
+    @chromeAPI.tabs.create url:'chrome://settings/clearBrowserData'
 
   clickedCredits: (ev) ->
     ev.preventDefault()
@@ -131,11 +131,11 @@ class BH.Views.SettingsView extends Backbone.View
       'week_day_order',
       'general_section_title'
     ])
-    properties['i18n_credits_link'] = chrome.i18n.getMessage('credits_link', [
+    properties['i18n_credits_link'] = @t('credits_link', [
       '<strong>',
       '</strong>'
     ])
-    properties['i18n_suggestions_bugs_comments'] = chrome.i18n.getMessage('suggestions_bugs_comments', [
+    properties['i18n_suggestions_bugs_comments'] = @t('suggestions_bugs_comments', [
       '<a href="http://twitter.com/Better_History">',
       '</a>'
     ])

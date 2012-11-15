@@ -51,7 +51,7 @@ class BH.Views.SearchView extends Backbone.View
     else
       key = 'number_of_search_results'
 
-    @$('.number_of_results').text(chrome.i18n.getMessage(key, [@history.get('history').length]))
+    @$('.number_of_results').text(@t(key, [@history.get('history').length]))
 
 
     new BH.Views.SearchResultsView(
@@ -69,7 +69,7 @@ class BH.Views.SearchView extends Backbone.View
   clickedDeleteAll: (ev) ->
     ev.preventDefault()
     if $(ev.target).parent().attr('disabled') != 'disabled'
-      @promptView = BH.Views.CreatePrompt(chrome.i18n.getMessage('confirm_delete_all_search_results'))
+      @promptView = BH.Views.CreatePrompt(@t('confirm_delete_all_search_results'))
       @promptView.open()
       @promptView.model.on('change', @deleteAction, @)
 

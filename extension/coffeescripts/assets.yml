@@ -20,7 +20,7 @@
  - frameworks/underscore-min
  - frameworks/backbone-min
  - frameworks/mixin
- - modules/url_support
+ - modules/*
  - lib/page_context_menu
  - lib/selection_context_menu
  - lib/browser_actions
