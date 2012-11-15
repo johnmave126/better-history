@@ -52,7 +52,7 @@ class BH.Views.DayView extends Backbone.View
     router.navigate(BH.Lib.Url.week(@options.weekModel.id))
 
   promptToDeleteAllVisits: ->
-    promptMessage = @t('confirm_delete_all_visits', [@model.toJSON().formalDate])
+    promptMessage = @t('confirm_delete_all_visits', [@model.toTemplate().formalDate])
     @promptView = BH.Views.CreatePrompt(promptMessage)
     @promptView.open()
     @promptView.model.on('change', @promptAction, @)
