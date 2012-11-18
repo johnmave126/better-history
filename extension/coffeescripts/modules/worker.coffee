@@ -1,4 +1,4 @@
-BH.Modules.workerSupport =
+BH.Modules.Worker =
   worker: (name, options, callback) ->
     basePath = 'javascripts/workers'
     path = switch name

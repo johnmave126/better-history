@@ -1,5 +1,5 @@
 class BH.Lib.HistoryQuery extends BH.Base
-  @include BH.Modules.workerSupport
+  @include BH.Modules.Worker
   @include BH.Modules.I18n
 
   constructor: ->

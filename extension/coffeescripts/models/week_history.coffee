@@ -1,7 +1,7 @@
 class BH.Models.WeekHistory extends Backbone.Model
   @include BH.Modules.I18n
   @include BH.Modules.historySupport
-  @include BH.Modules.workerSupport
+  @include BH.Modules.Worker
 
   initialize: ->
     @historyQuery = new BH.Lib.HistoryQuery(@chromeAPI)
