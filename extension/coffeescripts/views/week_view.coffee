@@ -1,5 +1,5 @@
 class BH.Views.WeekView extends Backbone.View
-  @include BH.Modules.chromeSupport
+  @include BH.Modules.I18n
   @include BH.Modules.searchSupport
   @include BH.Modules.tabIndexSupport
   @include BH.Modules.topLevelSupport

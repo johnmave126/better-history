@@ -1,5 +1,5 @@
 class BH.Views.SettingsView extends Backbone.View
-  @include BH.Modules.chromeSupport
+  @include BH.Modules.I18n
   @include BH.Modules.topLevelSupport
 
   className: 'settings_view'

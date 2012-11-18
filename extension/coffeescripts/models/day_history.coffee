@@ -1,5 +1,5 @@
 class BH.Models.DayHistory extends Backbone.Model
-  @include BH.Modules.chromeSupport
+  @include BH.Modules.I18n
   @include BH.Modules.historySupport
   @include BH.Modules.workerSupport
 

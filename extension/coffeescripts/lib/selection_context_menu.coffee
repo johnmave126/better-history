@@ -1,19 +1,26 @@
 class BH.Lib.SelectionContextMenu extends BH.Base
-  @include BH.Modules.chromeSupport
+  @include BH.Modules.I18n
   @include BH.Modules.urlSupport
+
+  constructor: ->
+    @id = 'better_history_selection_context_menu'
 
   create: ->
     @menu = @chromeAPI.contextMenus.create
       title: @t('search_in_history')
       contexts: ['selection']
-      onclick: (data) => @onClick(data)
+      id: @id
+
+    @chromeAPI.contextMenus.onClicked.addListener (data) =>
+      @onClick(data)
 
   onClick: (data) ->
-    urlOptions = absolute: true
-    url = @urlFor('search', data.selectionText, urlOptions)
+    if data.menuItemId == @id
+      urlOptions = absolute: true
+      url = @urlFor('search', data.selectionText, urlOptions)
 
-    @chromeAPI.tabs.create
-      url: url
+      @chromeAPI.tabs.create
+        url: url
 
   remove: ->
     @chromeAPI.contextMenus.remove(@menu)

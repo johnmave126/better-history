@@ -43,8 +43,8 @@ task :package do
   system('cp extension/manifest.json tmp/')
   system('cp -r extension/images/* tmp/images/')
   system('cp -r extension/_locales/* tmp/_locales/')
-  system('cp extension/javascripts/extension.js tmp/javascripts/')
-  system('cp extension/javascripts/background.js tmp/javascripts/')
+  system('cp extension/javascripts/generated_extension.js tmp/javascripts/')
+  system('cp extension/javascripts/generated_background.js tmp/javascripts/')
   system('cp extension/javascripts/frameworks/underscore-min.js tmp/javascripts/frameworks/')
   system('cp extension/javascripts/workers/* tmp/javascripts/workers/')
   system('cp extension/styles/app.css tmp/styles/')
@@ -84,7 +84,7 @@ task :concat_js do
   assets = YAML::load(File.open('extension/assets.yml'))
 
   ['extension', 'background'].each do |section|
-    system("rm extension/javascripts/#{section}.js")
+    system("rm extension/javascripts/generated_#{section}.js")
     packaged = ""
     assets[section].each do |asset|
       if asset =~ /\*/
@@ -98,7 +98,7 @@ task :concat_js do
       end
     end
 
-    File.open("extension/javascripts/#{section}.js", 'w') do |f|
+    File.open("extension/javascripts/generated_#{section}.js", 'w') do |f|
       f.write(packaged)
     end
   end

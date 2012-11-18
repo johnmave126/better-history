@@ -1,19 +1,27 @@
 class BH.Lib.PageContextMenu extends BH.Base
-  @include BH.Modules.chromeSupport
+  @include BH.Modules.I18n
   @include BH.Modules.urlSupport
+
+  constructor: ->
+    @chromeAPI = chrome
+    @id = 'better_history_page_context_menu'
 
   create: ->
     @menu = @chromeAPI.contextMenus.create
       title: @t('visits_to_domain', ['domain'])
       contexts: ['page']
-      onclick: (data) => @onClick(data)
+      id: @id
+
+    @chromeAPI.contextMenus.onClicked.addListener (data) =>
+      @onClick(data)
 
   onClick: (data) ->
-    urlOptions = absolute: true
-    url = @urlFor('search', @_getDomain(data.pageUrl)[1], urlOptions)
+    if data.menuItemId == @id
+      urlOptions = absolute: true
+      url = @urlFor('search', @_getDomain(data.pageUrl)[1], urlOptions)
 
-    @chromeAPI.tabs.create
-      url: url
+      @chromeAPI.tabs.create
+        url: url
 
   updateTitleDomain: (tab) ->
     @chromeAPI.contextMenus.update @menu,

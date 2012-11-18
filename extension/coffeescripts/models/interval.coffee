@@ -1,5 +1,5 @@
 class BH.Models.Interval extends Backbone.Model
-  @include BH.Modules.chromeSupport
+  @include BH.Modules.I18n
 
   initialize: (attrs, options) ->
     @settings = options.settings

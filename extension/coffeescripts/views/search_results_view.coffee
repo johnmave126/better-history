@@ -1,5 +1,5 @@
 class BH.Views.SearchResultsView extends Backbone.View
-  @include BH.Modules.chromeSupport
+  @include BH.Modules.I18n
   @include BH.Modules.tabIndexSupport
 
   template: BH.Templates['search_results']

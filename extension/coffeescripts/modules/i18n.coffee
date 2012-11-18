@@ -1,6 +1,4 @@
-BH.Modules.chromeSupport =
-  chromeAPI: chrome
-
+BH.Modules.I18n =
   t: (key, replacements = []) ->
     if key instanceof Array
       keys = key

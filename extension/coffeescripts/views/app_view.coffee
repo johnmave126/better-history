@@ -1,5 +1,5 @@
 class BH.Views.AppView extends Backbone.View
-  @include BH.Modules.chromeSupport
+  @include BH.Modules.I18n
 
   className: 'app_view'
 

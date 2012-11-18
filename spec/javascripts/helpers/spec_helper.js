@@ -1,4 +1,6 @@
-(function() {
-  Timecop.install();
-  importScripts = function() { };
-}).call(this);
+Timecop.install();
+importScripts = function() { };
+
+beforeEach(function() {
+  window.chrome = mockChromeAPI();
+});

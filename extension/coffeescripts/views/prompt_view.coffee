@@ -1,6 +1,6 @@
 class BH.Views.PromptView extends Backbone.View
   @include BH.Modules.modalSupport
-  @include BH.Modules.chromeSupport
+  @include BH.Modules.I18n
 
   className: 'prompt_view'
 

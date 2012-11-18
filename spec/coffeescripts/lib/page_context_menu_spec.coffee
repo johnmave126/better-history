@@ -3,21 +3,31 @@ describe "BH.Lib.PageContextMenu", ->
     @pageContextMenu = new BH.Lib.PageContextMenu()
     @chromeAPI = @pageContextMenu.chromeAPI
 
+  it "sets the contextMenu id", ->
+    expect(@pageContextMenu.id).toEqual 'better_history_page_context_menu'
+
   describe "#create", ->
     it "creates a page context menu", ->
       @pageContextMenu.create()
       expect(@chromeAPI.contextMenus.create).toHaveBeenCalledWith
         title: "Visits to domain"
-        contexts: [ "page" ]
-        onclick: jasmine.any(Function)
+        contexts: ["page"]
+        id: 'better_history_page_context_menu'
 
     it "stores the menu", ->
       @pageContextMenu.create()
       expect(@pageContextMenu.menu).toBeDefined()
 
+    it "adds an onclick listener", ->
+      @pageContextMenu.create()
+      expect(@chromeAPI.contextMenus.onClicked.addListener).toHaveBeenCalledWith(jasmine.any(Function))
+
   describe "#onClick", ->
     it "opens a tab to search by the domain", ->
-      @pageContextMenu.onClick pageUrl: "http://code.google.com/projects"
+      @pageContextMenu.onClick
+        pageUrl: "http://code.google.com/projects"
+        menuItemId: 'better_history_page_context_menu'
+
       expect(@chromeAPI.tabs.create).toHaveBeenCalledWith url: "chrome://history/#search/code.google.com"
 
   describe "#updateTitleDomain", ->
@@ -61,7 +71,7 @@ describe "BH.Lib.PageContextMenu", ->
       expect(@chromeAPI.contextMenus.update).toHaveBeenCalled()
 
     it "does not update the title domain when the tab is not selected", ->
-      @pageContextMenu.onTabUpdated true, true,
+      @pageContextMenu.onTabUpdated
         selected: false
 
       expect(@chromeAPI.contextMenus.update).not.toHaveBeenCalled()

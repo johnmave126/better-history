@@ -1,6 +1,6 @@
 class BH.Views.CreditsView extends Backbone.View
   @include BH.Modules.modalSupport
-  @include BH.Modules.chromeSupport
+  @include BH.Modules.I18n
 
   className: 'credits_view'
   template: BH.Templates['credits']

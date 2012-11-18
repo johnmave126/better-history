@@ -1,11 +1,11 @@
 class BH.Models.Search extends Backbone.Model
-  @include BH.Modules.chromeSupport
+  @include BH.Modules.I18n
 
   defaults: ->
     query: ''
 
-  initialize: (attrs, options) ->
-    super(attrs, options)
+  initialize: ->
+    @chromeAPI = chrome
 
   toHistory: ->
     query: @get 'query'

@@ -1,11 +1,12 @@
 class BH.Models.State extends Backbone.Model
-  @include BH.Modules.chromeSupport
+  @include BH.Modules.I18n
   @include BH.Modules.urlSupport
   @include BH.Modules.localStorageSupport
 
   storeName: 'state'
 
   initialize: (attrs, options) ->
+    @chromeAPI = chrome
     @settings = options.settings
 
     weekId = @startingWeekDate().format('M-D-YY')

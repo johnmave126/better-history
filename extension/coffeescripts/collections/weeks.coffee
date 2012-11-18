@@ -1,5 +1,5 @@
 class BH.Collections.Weeks extends Backbone.Collection
-  @include BH.Modules.chromeSupport
+  @include BH.Modules.I18n
 
   model: BH.Models.Week
 

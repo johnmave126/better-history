@@ -1,5 +1,5 @@
 class BH.Views.VisitView extends Backbone.View
-  @include BH.Modules.chromeSupport
+  @include BH.Modules.I18n
 
   className: 'visit_view'
   template: BH.Templates['visit']

@@ -1,6 +1,6 @@
 class BH.Models.Settings extends Backbone.Model
   @include BH.Modules.localStorageSupport
-  @include BH.Modules.chromeSupport
+  @include BH.Modules.I18n
 
   storeName: 'settings'
 
@@ -14,6 +14,7 @@ class BH.Models.Settings extends Backbone.Model
     weekDayOrder: 'ascending'
 
   initialize: ->
+    @chromeAPI = chrome
     @set timeFormat: parseInt @t('default_time_format'), 10
 
   toTemplate: ->

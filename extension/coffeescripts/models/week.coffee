@@ -1,8 +1,9 @@
 class BH.Models.Week extends Backbone.Model
-  @include BH.Modules.chromeSupport
+  @include BH.Modules.I18n
   @include BH.Modules.urlSupport
 
   initialize: ->
+    @chromeAPI = chrome
     @set id: @get('date').format('M-D-YY')
 
   toHistory: ->

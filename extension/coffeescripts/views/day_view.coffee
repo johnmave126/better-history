@@ -1,5 +1,5 @@
 class BH.Views.DayView extends Backbone.View
-  @include BH.Modules.chromeSupport
+  @include BH.Modules.I18n
   @include BH.Modules.searchSupport
   @include BH.Modules.topLevelSupport
 
