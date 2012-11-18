@@ -1,16 +1,15 @@
-settings = new BH.Models.Settings()
-settings.fetch()
+settings = JSON.parse localStorage['settings']
 
-window.selectionContextMenu = new BH.Lib.SelectionContextMenu(chrome)
+window.selectionContextMenu = new BH.Lib.SelectionContextMenu()
 
-if settings.get('searchBySelection')
+if settings.searchBySelection
   selectionContextMenu.create()
 
-window.pageContextMenu = new BH.Lib.PageContextMenu(chrome)
+window.pageContextMenu = new BH.Lib.PageContextMenu()
 pageContextMenu.listenToTabs()
 
-if settings.get('searchByDomain')
+if settings.searchByDomain
   pageContextMenu.create()
 
-browserActions = new BH.Lib.BrowserActions(chrome)
+browserActions = new BH.Lib.BrowserActions()
 browserActions.listen()
