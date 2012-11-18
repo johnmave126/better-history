@@ -1,5 +1,4 @@
-class BH.Views.PromptView extends Backbone.View
-  @include BH.Modules.modalSupport
+class BH.Views.PromptView extends BH.Views.ModalView
   @include BH.Modules.I18n
 
   className: 'prompt_view'

@@ -1,5 +1,4 @@
-class BH.Views.CreditsView extends Backbone.View
-  @include BH.Modules.modalSupport
+class BH.Views.CreditsView extends BH.Views.ModalView
   @include BH.Modules.I18n
 
   className: 'credits_view'

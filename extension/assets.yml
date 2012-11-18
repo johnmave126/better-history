@@ -11,6 +11,7 @@
  - templates
  - modules/*
  - lib/history_query
+ - views/modal_view
  - views/*
  - models/history
  - models/*

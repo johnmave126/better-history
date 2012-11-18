@@ -1,4 +1,4 @@
-BH.Modules.modalSupport =
+class BH.Views.ModalView extends Backbone.View
   pulseClass: 'pulse'
 
   generalEvents:
