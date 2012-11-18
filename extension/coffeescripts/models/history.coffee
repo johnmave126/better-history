@@ -1,4 +1,4 @@
-BH.Modules.historySupport =
+class BH.Models.History extends Backbone.Model
   defaults:
     history: []
 
@@ -7,3 +7,4 @@ BH.Modules.historySupport =
 
   isEmpty: ->
     @get('history').length == 0
+

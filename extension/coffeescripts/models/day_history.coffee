@@ -1,12 +1,10 @@
-class BH.Models.DayHistory extends Backbone.Model
+class BH.Models.DayHistory extends BH.Models.History
   @include BH.Modules.I18n
-  @include BH.Modules.historySupport
   @include BH.Modules.Worker
 
   initialize: (attrs, options) ->
     @settings = options.settings
     @historyQuery = new BH.Lib.HistoryQuery(@chromeAPI)
-
 
   sync: (method, model, options) ->
     switch method

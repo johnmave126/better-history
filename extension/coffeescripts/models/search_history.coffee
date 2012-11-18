@@ -1,6 +1,5 @@
-class BH.Models.SearchHistory extends Backbone.Model
+class BH.Models.SearchHistory extends BH.Models.History
   @include BH.Modules.I18n
-  @include BH.Modules.historySupport
 
   initialize: ->
     @historyQuery = new BH.Lib.HistoryQuery(@chromeAPI)

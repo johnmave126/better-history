@@ -1,6 +1,5 @@
-class BH.Models.WeekHistory extends Backbone.Model
+class BH.Models.WeekHistory extends BH.Models.History
   @include BH.Modules.I18n
-  @include BH.Modules.historySupport
   @include BH.Modules.Worker
 
   initialize: ->

@@ -12,6 +12,7 @@
  - modules/*
  - lib/history_query
  - views/*
+ - models/history
  - models/*
  - collections/*
  - router
