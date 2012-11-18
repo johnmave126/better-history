@@ -1,7 +1,5 @@
-class BH.Views.DayView extends Backbone.View
+class BH.Views.DayView extends BH.Views.MainView
   @include BH.Modules.I18n
-  @include BH.Modules.searchSupport
-  @include BH.Modules.topLevelSupport
 
   template: BH.Templates['day']
 

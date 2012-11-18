@@ -1,8 +1,6 @@
-class BH.Views.SearchView extends Backbone.View
+class BH.Views.SearchView extends BH.Views.MainView
   @include BH.Modules.I18n
-  @include BH.Modules.searchSupport
   @include BH.Modules.tabIndexSupport
-  @include BH.Modules.topLevelSupport
 
   className: 'search_view with_controls'
   template: BH.Templates['search']

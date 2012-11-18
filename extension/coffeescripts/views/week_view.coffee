@@ -1,8 +1,6 @@
-class BH.Views.WeekView extends Backbone.View
+class BH.Views.WeekView extends BH.Views.MainView
   @include BH.Modules.I18n
-  @include BH.Modules.searchSupport
   @include BH.Modules.tabIndexSupport
-  @include BH.Modules.topLevelSupport
 
   template: BH.Templates['week']
 
