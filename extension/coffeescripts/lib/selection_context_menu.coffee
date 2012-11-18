@@ -1,6 +1,6 @@
 class BH.Lib.SelectionContextMenu extends BH.Base
   @include BH.Modules.I18n
-  @include BH.Modules.urlSupport
+  @include BH.Modules.Url
 
   constructor: ->
     @id = 'better_history_selection_context_menu'

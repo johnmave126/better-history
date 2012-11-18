@@ -1,6 +1,6 @@
 class BH.Lib.PageContextMenu extends BH.Base
   @include BH.Modules.I18n
-  @include BH.Modules.urlSupport
+  @include BH.Modules.Url
 
   constructor: ->
     @chromeAPI = chrome

@@ -1,4 +1,4 @@
-BH.Modules.urlSupport =
+BH.Modules.Url =
   urlFor: (key, id, opts) ->
     base = 'chrome://history/'
     return base unless key?

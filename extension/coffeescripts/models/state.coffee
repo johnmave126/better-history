@@ -1,6 +1,6 @@
 class BH.Models.State extends Backbone.Model
   @include BH.Modules.I18n
-  @include BH.Modules.urlSupport
+  @include BH.Modules.Url
   @include BH.Modules.localStorageSupport
 
   storeName: 'state'
