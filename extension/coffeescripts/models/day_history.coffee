@@ -3,6 +3,7 @@ class BH.Models.DayHistory extends BH.Models.History
   @include BH.Modules.Worker
 
   initialize: (attrs, options) ->
+    @chromeAPI = chrome
     @settings = options.settings
     @historyQuery = new BH.Lib.HistoryQuery(@chromeAPI)
 

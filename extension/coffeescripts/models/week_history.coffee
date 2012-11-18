@@ -3,6 +3,7 @@ class BH.Models.WeekHistory extends BH.Models.History
   @include BH.Modules.Worker
 
   initialize: ->
+    @chromeAPI = chrome
     @historyQuery = new BH.Lib.HistoryQuery(@chromeAPI)
 
   sync: (method, model, options) ->
