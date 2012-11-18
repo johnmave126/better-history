@@ -3,6 +3,7 @@
  - frameworks/underscore-min
  - frameworks/zepto.min
  - frameworks/backbone-min
+ - frameworks/backbone_hacks
  - frameworks/mustache
  - frameworks/moment
  - frameworks/moment_i18n
