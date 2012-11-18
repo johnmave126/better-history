@@ -3,6 +3,7 @@ class BH.Lib.SelectionContextMenu extends BH.Base
   @include BH.Modules.Url
 
   constructor: ->
+    @chromeAPI = chrome
     @id = 'better_history_selection_context_menu'
 
   create: ->

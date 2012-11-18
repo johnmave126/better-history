@@ -9,6 +9,7 @@ class BH.Views.CreditsView extends Backbone.View
     'click .close': 'closeClicked'
 
   initialize: ->
+    @chromeAPI = chrome
     @attachGeneralEvents()
 
   render: ->

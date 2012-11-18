@@ -12,6 +12,9 @@ class BH.Views.DayResultsView extends Backbone.View
     'click .hide_visits': 'toggleGroupedVisitsClicked'
     'click .visit > a': 'visitClicked'
 
+  initialize: ->
+    @chromeAPI = chrome
+
   render: ->
     properties = _.extend @getI18nValues(), @model.toTemplate()
     html = Mustache.to_html @template, properties

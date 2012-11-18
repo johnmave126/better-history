@@ -6,6 +6,7 @@ class BH.Views.AppView extends Backbone.View
   template: BH.Templates['app']
 
   initialize: ->
+    @chromeAPI = chrome
     @settings = @options.settings
 
     @collection.reload @settings.get('startingWeekDay')

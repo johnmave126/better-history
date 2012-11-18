@@ -14,6 +14,7 @@ class BH.Views.WeekView extends Backbone.View
     'blur .search': 'onSearchBlurred'
 
   initialize: ->
+    @chromeAPI = chrome
     @history = @options.history
     @history.bind('change', @onHistoryLoaded, @)
 

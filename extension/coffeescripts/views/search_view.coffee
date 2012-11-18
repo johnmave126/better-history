@@ -11,6 +11,7 @@ class BH.Views.SearchView extends Backbone.View
     'click .delete_all': 'clickedDeleteAll'
 
   initialize: ->
+    @chromeAPI = chrome
     @history = @options.history
     @history.on('change', @onSearchHistoryChanged, @)
     @model.on('change:query', @onQueryChanged, @)

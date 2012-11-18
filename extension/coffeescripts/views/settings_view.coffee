@@ -19,6 +19,7 @@ class BH.Views.SettingsView extends Backbone.View
     'click #search_by_selection': 'clickedSearchBySelection'
 
   initialize: ->
+    @chromeAPI = chrome
     @model.off 'change'
     @model.on 'change', @model.save, @model
     @model.on 'change:openLocation', @options.state.updateRoute, @options.state

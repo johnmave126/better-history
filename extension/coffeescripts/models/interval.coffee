@@ -2,6 +2,7 @@ class BH.Models.Interval extends Backbone.Model
   @include BH.Modules.I18n
 
   initialize: (attrs, options) ->
+    @chromeAPI = chrome
     @settings = options.settings
 
   toTemplate: ->

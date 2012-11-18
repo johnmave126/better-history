@@ -11,6 +11,7 @@ class BH.Views.PromptView extends Backbone.View
     'click .yes': 'clickedYes'
 
   initialize: ->
+    @chromeAPI = chrome
     @attachGeneralEvents()
 
   render: ->

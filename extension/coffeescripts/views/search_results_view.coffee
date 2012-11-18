@@ -4,6 +4,9 @@ class BH.Views.SearchResultsView extends Backbone.View
 
   template: BH.Templates['search_results']
 
+  initialize: ->
+    @chromeAPI = chrome
+
   events:
     'click .delete_visit': 'deleteClicked'
 

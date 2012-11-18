@@ -3,6 +3,9 @@ class BH.Collections.Weeks extends Backbone.Collection
 
   model: BH.Models.Week
 
+  initialize: ->
+    @chromeAPI = chrome
+
   toTemplate: ->
     weeks = for model in @models
       model.toTemplate()
