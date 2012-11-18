@@ -18,6 +18,7 @@
   },
   "background": {
     "scripts": ["javascripts/background.js"]
+    "persistent": false
   },
   "permissions": [
     "chrome://favicon/",
