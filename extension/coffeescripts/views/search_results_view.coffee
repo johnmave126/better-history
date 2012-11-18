@@ -1,6 +1,5 @@
 class BH.Views.SearchResultsView extends Backbone.View
   @include BH.Modules.I18n
-  @include BH.Modules.tabIndexSupport
 
   template: BH.Templates['search_results']
 
@@ -20,7 +19,6 @@ class BH.Views.SearchResultsView extends Backbone.View
     properties = _.extend @getI18nValues(), collectionToTemplate
     html = Mustache.to_html @template, properties
     @$el.html html
-    @assignTabIndices('.visit a:first-child')
     @
 
   markMatches: (visit) ->

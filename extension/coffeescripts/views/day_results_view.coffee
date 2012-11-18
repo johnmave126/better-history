@@ -1,6 +1,5 @@
 class BH.Views.DayResultsView extends Backbone.View
   @include BH.Modules.I18n
-  @include BH.Modules.tabIndexSupport
 
   template: BH.Templates['day_results']
 
@@ -19,7 +18,6 @@ class BH.Views.DayResultsView extends Backbone.View
     properties = _.extend @getI18nValues(), @model.toTemplate()
     html = Mustache.to_html @template, properties
     @$el.html html
-    @assignTabIndices('.interval > .visits > .visit > a:first-child')
     @
 
   visitClicked: (ev) ->

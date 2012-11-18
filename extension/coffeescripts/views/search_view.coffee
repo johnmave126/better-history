@@ -1,6 +1,5 @@
 class BH.Views.SearchView extends BH.Views.MainView
   @include BH.Modules.I18n
-  @include BH.Modules.tabIndexSupport
 
   className: 'search_view with_controls'
   template: BH.Templates['search']
@@ -26,6 +25,7 @@ class BH.Views.SearchView extends BH.Views.MainView
 
   onSearchHistoryChanged: ->
     @renderVisits()
+    @assignTabIndices('.visit a:first-child')
     @updateDeleteButton()
 
   onQueryChanged: ->

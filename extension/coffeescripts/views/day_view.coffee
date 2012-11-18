@@ -24,6 +24,7 @@ class BH.Views.DayView extends BH.Views.MainView
 
   onDayHistoryLoaded: ->
     @renderHistory()
+    @assignTabIndices('.interval > .visits > .visit > a:first-child')
     @updateDeleteButton()
 
   onDeleteAllClicked: (ev) ->

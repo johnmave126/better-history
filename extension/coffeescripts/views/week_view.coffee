@@ -1,6 +1,5 @@
 class BH.Views.WeekView extends BH.Views.MainView
   @include BH.Modules.I18n
-  @include BH.Modules.tabIndexSupport
 
   template: BH.Templates['week']
 
