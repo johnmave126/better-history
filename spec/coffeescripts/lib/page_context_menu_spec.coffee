@@ -3,9 +3,6 @@ describe "BH.Lib.PageContextMenu", ->
     @pageContextMenu = new BH.Lib.PageContextMenu()
     @chromeAPI = @pageContextMenu.chromeAPI
 
-  it "sets the contextMenu id", ->
-    expect(@pageContextMenu.id).toEqual 'better_history_page_context_menu'
-
   describe "#create", ->
     it "creates a page context menu", ->
       @pageContextMenu.create()
