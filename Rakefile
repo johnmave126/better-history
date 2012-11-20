@@ -15,7 +15,8 @@ task :clean_generated_js do
     'views',
     'collections',
     'models',
-    'workers'
+    'workers',
+    'modules'
   ]
   folders.each do |folder|
     system("rm -fr extension/javascripts/#{folder}/*")
