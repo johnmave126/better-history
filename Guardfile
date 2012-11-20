@@ -18,7 +18,16 @@ watch('extension/templates/(.*)\.html') do
   system('rake concat_js')
 end
 
+watch('extension/javascripts/frameworks/(.*)\.js') do
+  log('Concating js')
+  system('rake concat_js')
+end
+
 watch('extension/coffeescripts/(.*)\.coffee') do
   log('Concating js')
   system('rake concat_js')
 end
+
+system('rake clean_generated_js')
+system('rake coffee')
+system('rake concat_js')
