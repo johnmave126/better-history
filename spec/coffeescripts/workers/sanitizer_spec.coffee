@@ -1,7 +1,7 @@
-describe "Sanitizer", ->
+describe "BH.Workers.Sanitizer", ->
   beforeEach ->
     @visits = []
-    @sanitizer = new Sanitizer()
+    @sanitizer = new BH.Workers.Sanitizer()
 
   it "returns a max of 100 results when searching", ->
     a = 0

@@ -1,4 +1,7 @@
-class @Sanitizer
+@BH = BH ? {}
+BH.Workers = BH.Workers ? {}
+
+class BH.Workers.Sanitizer
   run: (results, @options) ->
     if @options.text
       @terms = options.text.split(' ')
@@ -54,5 +57,5 @@ class @Sanitizer
     0
 
 self.addEventListener 'message', (e) ->
-  sanitizer = new Sanitizer()
+  sanitizer = new BH.Workers.Sanitizer()
   postMessage(sanitizer.run(e.data.results, e.data.options))

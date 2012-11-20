@@ -1,6 +1,6 @@
-describe 'DomainGrouper', ->
+describe 'BH.Workers.DomainGrouper', ->
   beforeEach ->
-    @domainGrouper = new DomainGrouper()
+    @domainGrouper = new BH.Workers.DomainGrouper()
 
   describe '#run', ->
     beforeEach ->

@@ -1,4 +1,7 @@
-class @DomainGrouper
+@BH = BH ? {}
+BH.Workers = BH.Workers ? {}
+
+class BH.Workers.DomainGrouper
   run: (@intervals) ->
     for interval in @intervals
       interval.visits = @groupByDomain(interval.visits)
@@ -34,5 +37,5 @@ class @DomainGrouper
     if match == null then null else match[0]
 
 self.addEventListener 'message', (e) ->
-  grouper = new DomainGrouper()
+  grouper = new BH.Workers.DomainGrouper()
   postMessage grouper.run(e.data.intervals)

@@ -1,4 +1,7 @@
-class @TimeGrouper
+@BH = BH ? {}
+BH.Workers = BH.Workers ? {}
+
+class BH.Workers.TimeGrouper
   constructor: ->
     @arrangedVisits = []
 
@@ -49,6 +52,6 @@ class @TimeGrouper
     minutes
 
 self.addEventListener 'message', (e) ->
-  timeGrouper = new TimeGrouper()
+  timeGrouper = new BH.Workers.TimeGrouper()
   options = interval: e.data.interval
   postMessage timeGrouper.run(e.data.visits, options)

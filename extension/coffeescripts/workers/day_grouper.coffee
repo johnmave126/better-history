@@ -1,4 +1,7 @@
-class @DayGrouper
+@BH = BH ? {}
+BH.Workers = BH.Workers ? {}
+
+class BH.Workers.DayGrouper
   constructor: ->
     @weekDays =
       Sunday: []
@@ -21,5 +24,5 @@ class @DayGrouper
     days[index]
 
 self.addEventListener 'message', (e) ->
-  dayGrouper = new DayGrouper()
+  dayGrouper = new BH.Workers.DayGrouper()
   postMessage dayGrouper.run(e.data.visits)

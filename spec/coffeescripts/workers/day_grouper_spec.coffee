@@ -1,6 +1,6 @@
-describe 'DayGrouper', ->
+describe 'BH.Workers.DayGrouper', ->
   beforeEach ->
-    @dayGrouper = new DayGrouper()
+    @dayGrouper = new BH.Workers.DayGrouper()
 
   describe '#run', ->
     beforeEach ->

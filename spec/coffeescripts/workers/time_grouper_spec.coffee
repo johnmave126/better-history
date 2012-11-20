@@ -1,6 +1,6 @@
-describe 'TimeGrouper', ->
+describe 'BH.Workers.TimeGrouper', ->
   beforeEach ->
-    @timeGrouper = new TimeGrouper()
+    @timeGrouper = new BH.Workers.TimeGrouper()
 
   describe '#constructor', ->
     it 'creates an empty arranged visits array', ->
