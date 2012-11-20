@@ -11,8 +11,14 @@ class BH.Models.Week extends Backbone.Model
     endDate: moment(@get 'date').add('days', 6)
 
   toTemplate: ->
+    # TODO: use Moment.js i18n better
+    englishWeekDays = [
+      'Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'
+    ]
+
     days = for day in @inflateDays()
-      day: day.format('dddd')
+      weekDay = new Date(day.format('M-D-YY')).getDay()
+      day: englishWeekDays[weekDay]
       title: day.format(@t('day_date'))
       inFuture: moment() < day
       url: @urlFor('day', day.format('M-D-YY'))
