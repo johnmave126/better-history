@@ -85,7 +85,7 @@ task :concat_js do
 
   ['extension', 'background'].each do |section|
     system("rm extension/javascripts/generated_#{section}.js")
-    packaged = ""
+    packaged = "/* \n#{File.read("LICENSE")}*/ \n"
     assets[section].each do |asset|
       if asset =~ /\*/
         Dir.glob("extension/javascripts/#{asset}").each do |file|
