@@ -125,7 +125,7 @@
     "description": "12 hour time format, example: 3:00 PM"
   },
   "24_hours_option": {
-    "message": "24 heure",
+    "message": "24 heures",
     "description": "24 hour time format, example: 14:00"
   },
   "group_visits_by_domain_label": {
@@ -320,7 +320,7 @@
     "description": "the number"
   },
   "ordinal_10": {
-    "message": "er",
+    "message": "ème",
     "description": "the ordinal for 10"
   },
   "11": {
@@ -400,7 +400,7 @@
     "description": "the number"
   },
   "ordinal_20": {
-    "message": "er",
+    "message": "ème",
     "description": "the ordinal for 20"
   },
   "21": {
@@ -480,7 +480,7 @@
     "description": "the number"
   },
   "ordinal_30": {
-    "message": "er",
+    "message": "ème",
     "description": "the ordinal for 30"
   },
   "31": {
@@ -634,7 +634,7 @@
     "description": "Heading for translators"
   },
   "spanish": {
-    "message": "Espagnole",
+    "message": "Espagnol",
     "description": "The language"
   },
   "russian": {
@@ -646,7 +646,7 @@
     "description": "The language"
   },
   "italian": {
-    "message": "Français",
+    "message": "Italien",
     "description": "The language"
   },
   "french": {
@@ -662,15 +662,15 @@
     "description": "The language"
   },
   "german": {
-    "message": "Allemande",
+    "message": "Allemand",
     "description": "The language"
   },
   "polish": {
-    "message": "Polonaise",
+    "message": "Polonais",
     "description": "The language"
   },
   "hungarian": {
-    "message": "Hongroises",
+    "message": "Hongrois",
     "description": "The language"
   },
   "arabic": {
@@ -678,7 +678,7 @@
     "description": "The language"
   },
   "slovak": {
-    "message": "Slovaques",
+    "message": "Slovaque",
     "description": "The language"
   },
   "turkish": {
@@ -690,23 +690,23 @@
     "description": "The language"
   },
   "dutch": {
-    "message": "Dutch",
+    "message": "Danois",
     "description": "The language"
   },
   "czech": {
-    "message": "Czech",
+    "message": "Tchèque",
     "description": "The language"
   },
   "japanese": {
-    "message": "Japanese",
+    "message": "Japonais",
     "description": "The language"
   },
   "vietnamese": {
-    "message": "Vietnamese",
+    "message": "Vietnamien",
     "description": "The language"
   },
   "romanian": {
-    "message": "Romanian",
+    "message": "Roumain",
     "description": "The language"
   },
   "hindi": {
@@ -714,7 +714,7 @@
     "description": "The language"
   },
   "catalonian": {
-    "message": "Catalonian",
+    "message": "Catalan",
     "description": "The language"
   },
   "translation_help_heading": {
@@ -749,7 +749,7 @@
     "description": "Title of the version modal"
   },
   "version_description": {
-    "message": "",
+    "message": "Description de la version",
     "description": "Version description"
   },
   "version_important_note": {
@@ -757,7 +757,7 @@
     "description": "Heading for an important note"
   },
   "version_note": {
-    "message": "",
+    "message": "Infos",
     "descriotion": "Feedback and support note"
   },
   "version_whats_new": {
@@ -810,7 +810,7 @@
     }
   },
   "max_number_of_search_results": {
-    "message": "Trouvés plus de $number$ résultats",
+    "message": "Trouvé plus de $number$ résultats",
     "description": "number of search results found",
     "placeholders": {
       "number": {
