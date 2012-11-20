@@ -43,7 +43,8 @@ class BH.Views.SearchResultsView extends Backbone.View
       success: => @_getElementFromModel(model).remove()
 
   _getModelFromElement: (element) ->
-    @collection.get($(element).prev().data('id'))
+    history = @model.get('history')
+    history.get($(element).prev().data('id'))
 
   _getElementFromModel: (model) ->
     $("[data-id='#{model.id}']").parents('li')

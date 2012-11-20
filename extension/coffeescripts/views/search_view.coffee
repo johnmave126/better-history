@@ -6,11 +6,13 @@ class BH.Views.SearchView extends BH.Views.MainView
 
   events:
     'click .delete_all': 'clickedDeleteAll'
+    'keyup .search': 'onSearchTyped'
+    'blur .search': 'onSearchBlurred'
 
   initialize: ->
     @chromeAPI = chrome
     @history = @options.history
-    @history.on('change', @onSearchHistoryChanged, @)
+    @history.on('change:history', @onSearchHistoryChanged, @)
     @model.on('change:query', @onQueryChanged, @)
     super()
 
@@ -74,8 +76,8 @@ class BH.Views.SearchView extends BH.Views.MainView
 
   deleteAction: (prompt) ->
     if prompt.get('action')
-      @collection.destroyAll()
-      @model.fetch
+      @history.get('history').destroyAll()
+      @history.fetch
         success: (model) =>
           model.trigger('change:history') # make sure
           @promptView.close()
