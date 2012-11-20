@@ -41,4 +41,7 @@ Module = (function() {
 
 })();
 
-Backbone.Model.include = Backbone.View.include = Backbone.Collection.include = BH.Base.include = Module.include;
+if(typeof(Backbone) != 'undefined') {
+  Backbone.Model.include = Backbone.View.include = Backbone.Collection.include = Module.include;
+}
+BH.Base.include = Module.include;
