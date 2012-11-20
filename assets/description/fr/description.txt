@@ -8,32 +8,32 @@ changements récents
 
 --------------------------------------------------
 
-Chrome est un excellent navigateur, mais affichez votre histoire pourrait être beaucoup mieux. C'est là que l'histoire entre en jeu. Mieux Voir ci-dessous!
+Chrome est un excellent navigateur, mais afficher votre historique pourrait être beaucoup mieux. C'est là que Better History entre en jeu. Plus d'infos ci-dessous!
 
 Suppression:
 ● Supprimez toutes les visites d'un jour
 ● Supprimez les visites individuelles
-● Supprimer les visites dans le même domaine
+● Supprimer les visites d'un même domaine
 ● Supprimer tout l'historique
 
-Groupement:
-● Groupement des visites en bouquets de 60, 30 ou 15 minutes
-● Groupement des visites du même domaine
-● Format heure à 12 ou 24
-● comportement de regroupement personnalisable
+Regroupement:
+● Regroupement des visites par tranches de 60, 30 ou 15 minutes
+● Regroupement des visites pour un même domaine
+● Format de l'heure en 12 ou 24h
+● Comportement de regroupement personnalisable
 
 Organiser:
 ● Classement des visites  par jour
 
 Recherche:
-● Rechercher des derniers mois
+● Rechercher dans les derniers mois
 ● Recherche par date, url, et titre de la page
 ● Les termes de recherche en surbrillance
 ● Un clic droit vous permettra d'avoir l'option d'effectuer une recherche par nom de domaine
 ● Aussi le clic droit vous offrira l'option de recherche par le texte sélectionné
 
 Styling:
-● Stylé avec l'interface d'utilisateur Chrome 
+● Affiché avec le style de l'interface d'utilisateur Chrome 
 ● Accès à partir du bouton dans la barre d'outils
 ● Mémorisation de la session en cours de fermeture
 ● supporte le 'bouton Retour'
