@@ -1,4 +1,4 @@
-settings = JSON.parse localStorage['settings']
+settings = if localStorage['settings']? then JSON.parse(localStorage['settings']) else {}
 
 window.selectionContextMenu = new BH.Lib.SelectionContextMenu()
 
