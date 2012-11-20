@@ -121,7 +121,7 @@
     "description": "Label for select box to set the time format (12 or 24 hours)"
   },
   "12_hours_option": {
-    "message": "12 heure",
+    "message": "12 heures",
     "description": "12 hour time format, example: 3:00 PM"
   },
   "24_hours_option": {
