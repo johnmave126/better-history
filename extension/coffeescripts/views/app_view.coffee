@@ -51,7 +51,7 @@ class BH.Views.AppView extends Backbone.View
     @cache.weekView(id)
 
   loadDay: (id) ->
-    startingWeekDay = @settings.get('startingWeekDay')
+    startingWeekDay = @t(@settings.get('startingWeekDay'))
     weekId = moment(id).past(startingWeekDay, 0).format('M-D-YY')
     @updateMenuSelection(weekId)
     @cache.dayView(id)
