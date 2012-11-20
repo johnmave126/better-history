@@ -1,16 +1,17 @@
-﻿Cette extension remplacera la fenêtre d'historique de votre naviguateur par défaut.
+Cette extension remplacera la fenêtre d'historique de votre naviguateur par défaut.
 
-Suggstions, questions, commentaires? Suivez @ Better_History sur Twitter!
+Suggstions, questions, commentaires ? Suivez @Better_History sur Twitter!
 https://twitter.com/Better_History
 
 --------------------------------------------------
-changements récents
+
+Changements Récents
 
 --------------------------------------------------
 
 Chrome est un excellent navigateur, mais afficher votre historique pourrait être beaucoup mieux. C'est là que Better History entre en jeu. Plus d'infos ci-dessous!
 
-Suppression:
+Suppression :
 ● Supprimez toutes les visites d'un jour
 ● Supprimez les visites individuelles
 ● Supprimer les visites d'un même domaine
@@ -22,7 +23,7 @@ Regroupement:
 ● Format de l'heure en 12 ou 24h
 ● Comportement de regroupement personnalisable
 
-Organiser:
+Organiser :
 ● Classement des visites  par jour
 
 Recherche:
@@ -32,10 +33,12 @@ Recherche:
 ● Un clic droit vous permettra d'avoir l'option d'effectuer une recherche par nom de domaine
 ● Aussi le clic droit vous offrira l'option de recherche par le texte sélectionné
 
-Styling:
+Style :
 ● Affiché avec le style de l'interface d'utilisateur Chrome 
+
+Fonctionnalitées :
 ● Accès à partir du bouton dans la barre d'outils
 ● Mémorisation de la session en cours de fermeture
-● supporte le 'bouton Retour'
+● Supporte le 'bouton Retour'
 
 ... et beaucoup plus à venir.
