@@ -22,4 +22,4 @@ class BH.Models.Day extends Backbone.Model
     _.extend properties, @toJSON()
 
   startingWeekDate: ->
-    moment(@get('date')).past(@t(@settings.get('startingWeekDay')), 0)
+    moment(@get('date')).past(@settings.get('startingWeekDay'), 0)

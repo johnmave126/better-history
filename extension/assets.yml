@@ -6,10 +6,11 @@
  - frameworks/backbone_hacks
  - frameworks/mustache
  - frameworks/moment
- - frameworks/moment_i18n
+ - frameworks/moment_hacks
  - frameworks/mixin
  - templates
  - modules/*
+ - lib/date_i18n
  - lib/history_query
  - views/modal_view
  - views/main_view
