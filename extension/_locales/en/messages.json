@@ -1,4 +1,8 @@
 {
+  "chrome_language": {
+    "message": "en",
+    "description": "language identifier used by Chrome"
+  },
   "manifest_name": {
     "message": "Better History",
     "description": "Manifest name"
@@ -905,9 +909,5 @@
   "descending": {
     "message": "Descending",
     "description": "descending week day order"
-  },
-  "chrome_language": {
-    "message": "en",
-    "description": "language identifier used by Chrome"
   }
 }

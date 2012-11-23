@@ -1,4 +1,8 @@
 {
+  "chrome_language": {
+    "message": "en_GB",
+    "description": "language identifier used by Chrome"
+  },
   "short_date": {
     "message": "Do MMMM",
     "description": "for Moment.js"
