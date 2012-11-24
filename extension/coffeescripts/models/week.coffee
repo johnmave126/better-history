@@ -13,15 +13,15 @@ class BH.Models.Week extends Backbone.Model
   toTemplate: ->
     days = for day in @inflateDays()
       day: day.lang('en').format('dddd')
-      title: day.format(@t('day_date'))
+      title: day.format('dddd')
       inFuture: moment() < day
       url: @urlFor('day', day.id())
 
     copy =
-      shortTitle: @get('date').format(@t('short_date'))
+      shortTitle: @get('date').format('L')
       url: @urlFor('week', @id)
       title: @t('date_week_label', [
-        @get('date').format(@t('short_date_with_day'))
+        @get('date').format('LL')
       ])
 
     _.extend copy, @toJSON(), days: days

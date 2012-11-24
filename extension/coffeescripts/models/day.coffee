@@ -15,8 +15,8 @@ class BH.Models.Day extends Backbone.Model
     weekId = @startingWeekDate().id()
 
     properties =
-      title: date.format(@t('day_date'))
-      formalDate: date.format(@t('formal_date'))
+      title: date.format('dddd')
+      formalDate: date.format('LLL')
       weekUrl: @urlFor('week', weekId)
 
     _.extend properties, @toJSON()

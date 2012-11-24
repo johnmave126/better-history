@@ -21,10 +21,6 @@
       }
     }
   },
-  "day_date": {
-    "message": "dddd",
-    "description": "the day"
-  },
 
   "extended_formal_date": {
     "message": "dddd, Do MMMM YYYY",

@@ -33,15 +33,15 @@ describe 'BH.Lib.DateI18n', ->
         ],
         longDateFormat:
           LT: 'translated local_time'
-          L: "DD/MM/YYYY"
-          LL: "D MMMM YYYY"
-          LLL: "D MMMM YYYY HH:mm"
-          LLLL: "dddd, D MMMM YYYY HH:mm"
+          L: 'MMMM Do'
+          LL: 'dddd, MMMM Do'
+          LLL: 'MMMM Do YYYY'
         meridiem: jasmine.any(Function)
         ordinal: jasmine.any(Function)
       ]
 
     it 'sets the default language', ->
       @dateI18n.configure()
-      expect(window.moment.lang.argsForCall[1].toEqual
-        ['translated chrome_language']
+      expect(window.moment.lang.argsForCall[1]).toEqual [
+        'translated chrome_language'
+      ]

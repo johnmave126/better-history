@@ -34,10 +34,9 @@ class BH.Lib.DateI18n extends BH.Base
 
       longDateFormat:
         LT: @t('local_time')
-        L: "DD/MM/YYYY"
-        LL: "D MMMM YYYY"
-        LLL: "D MMMM YYYY HH:mm"
-        LLLL: "dddd, D MMMM YYYY HH:mm"
+        L: @t('short_date')
+        LL: @t('short_date_with_day')
+        LLL: @t('formal_date')
 
       meridiem: (hour, minute, isLower) =>
         if hour < 12
