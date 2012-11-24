@@ -1,4 +1,4 @@
-moment.fn.past = function (input, val) {
+moment.fn.past = function(input, val) {
   input = input.charAt(0).toUpperCase() + input.slice(1);
   var back = function (date, occurrences) {
     if(date.format('dddd') != input) {
@@ -13,4 +13,8 @@ moment.fn.past = function (input, val) {
   };
 
   return back(this.lang('en'), val);
+};
+
+moment.fn.id = function() {
+  return this.format('M-D-YY');
 };

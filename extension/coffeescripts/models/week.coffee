@@ -4,24 +4,18 @@ class BH.Models.Week extends Backbone.Model
 
   initialize: ->
     @chromeAPI = chrome
-    @set id: @get('date').format('M-D-YY')
+    @set id: @get('date').id()
 
   toHistory: ->
     startDate: @get 'date'
     endDate: moment(@get 'date').add('days', 6)
 
   toTemplate: ->
-    # TODO: use Moment.js i18n better
-    englishWeekDays = [
-      'Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'
-    ]
-
     days = for day in @inflateDays()
-      weekDay = new Date(day.format('M-D-YY')).getDay()
-      day: englishWeekDays[weekDay]
+      day: day.lang('en').format('dddd')
       title: day.format(@t('day_date'))
       inFuture: moment() < day
-      url: @urlFor('day', day.format('M-D-YY'))
+      url: @urlFor('day', day.id())
 
     copy =
       shortTitle: @get('date').format(@t('short_date'))
