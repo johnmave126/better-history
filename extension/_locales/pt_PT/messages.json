@@ -52,19 +52,9 @@
     "message": "Do de MMMM de YYYY",
     "description": "The order of a full date"
   },
-  "twelve_hour_time_format": {
-    "message": "$time$ $label$",
-    "description": "Time format for 12 hour time",
-    "placeholders": {
-      "time": {
-        "content": "$1",
-        "example": "10:00"
-      },
-      "label": {
-        "content": "$2",
-        "example": "AM/PM"
-      }
-    }
+  "local_time": {
+    "message": "h:m A",
+    "description": "local time format"
   },
   "this_week": {
     "message": "Esta semana",

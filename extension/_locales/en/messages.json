@@ -52,6 +52,10 @@
     "message": "MMMM Do YYYY",
     "description": "The order of a full date"
   },
+  "local_time": {
+    "message": "h:m A",
+    "description": "local time format"
+  },
   "twelve_hour_time_format": {
     "message": "$time$ $label$",
     "description": "Time format for 12 hour time",

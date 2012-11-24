@@ -33,16 +33,19 @@ class BH.Lib.DateI18n extends BH.Base
       ]
 
       longDateFormat:
+        LT: @t('local_time')
         L: "DD/MM/YYYY"
         LL: "D MMMM YYYY"
         LLL: "D MMMM YYYY HH:mm"
         LLLL: "dddd, D MMMM YYYY HH:mm"
 
-      meridiem:
-        AM: @t('morning')
-        am: @t('morning')
-        PM: @t('evening')
-        pm: @t('evening')
+      meridiem: (hour, minute, isLower) =>
+        if hour < 12
+          @t('morning')
+        else if hour < 12 && hour < 16
+          @t('afternoon')
+        else if hour > 16
+          @t('evening')
 
       ordinal: (number) =>
         @t("ordinal_" + number)
