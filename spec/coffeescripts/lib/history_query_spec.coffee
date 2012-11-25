@@ -46,12 +46,12 @@ describe "BH.Lib.HistoryQuery", ->
             url: 'google.com',
             lastVisitTime: 'May 5 2010',
             date: new Date('May 5 2010')
-            time: 'Wednesday, translated may 5translated ordinal_5, 2010',
+            time: 'translated wednesday, translated may 5translated ordinal_5, 2010',
           },
           {
             url: 'yahoo.com',
             lastVisitTime: 'May 6 2010',
-            time: 'Thursday, translated may 6translated ordinal_6, 2010',
+            time: 'translated thursday, translated may 6translated ordinal_6, 2010',
             date: new Date('May 6 2010')
           }
         ]

@@ -12,7 +12,7 @@ class BH.Models.Week extends Backbone.Model
 
   toTemplate: ->
     days = for day in @inflateDays()
-      day: day.lang('en').format('dddd')
+      day: moment(day.id()).lang('en').format('dddd')
       title: day.format('dddd')
       inFuture: moment() < day
       url: @urlFor('day', day.id())

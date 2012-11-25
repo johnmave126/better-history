@@ -15,21 +15,21 @@ describe 'BH.Lib.DateI18n', ->
           'translated april',
           'translated may',
           'translated june',
-          'July',
+          'translated july',
           'translated august',
-          'September',
-          'October',
+          'translated september',
+          'translated october',
           'translated november',
-          'December'
+          'translated december'
         ],
         weekdays: [
-          'Sunday',
-          'Monday',
-          'Tuesday',
-          'Wednesday',
-          'Thursday',
-          'Friday',
-          'Saturday'
+          'translated sunday',
+          'translated monday',
+          'translated tuesday',
+          'translated wednesday',
+          'translated thursday',
+          'translated friday',
+          'translated saturday'
         ],
         longDateFormat:
           LT: 'translated local_time'

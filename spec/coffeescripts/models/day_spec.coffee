@@ -17,8 +17,8 @@ describe 'BH.Models.Day', ->
   describe '#toTemplate', ->
     it 'returns the properties needed for a view template', ->
       expect(@day.toTemplate()).toEqual
-        title: 'Thursday'
-        formalDate: 'October 11translated ordinal_11 2012'
+        title: 'translated thursday'
+        formalDate: 'translated october 11translated ordinal_11 2012'
         weekUrl: '#weeks/10-8-12'
         id: '10-11-12'
         date: @date

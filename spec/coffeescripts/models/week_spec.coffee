@@ -19,43 +19,43 @@ describe 'BH.Models.Week', ->
         days: [
           {
             day: 'Monday'
-            title: 'Monday'
+            title: 'translated monday'
             inFuture: false
             url: '#days/10-8-12'
           }, {
             day: 'Tuesday'
-            title: 'Tuesday'
+            title: 'translated tuesday'
             inFuture: false
             url: '#days/10-9-12'
           }, {
             day: 'Wednesday'
-            title: 'Wednesday'
+            title: 'translated wednesday'
             inFuture: false
             url: '#days/10-10-12'
           }, {
             day: 'Thursday'
-            title: 'Thursday'
+            title: 'translated thursday'
             inFuture: false
             url: '#days/10-11-12'
           }, {
             day: 'Friday'
-            title: 'Friday'
+            title: 'translated friday'
             inFuture: false
             url: '#days/10-12-12'
           }, {
             day: 'Saturday'
-            title: 'Saturday'
+            title: 'translated saturday'
             inFuture: false
             url: '#days/10-13-12'
           }, {
             day: 'Sunday'
-            title: 'Sunday'
+            title: 'translated sunday'
             inFuture: false
             url: '#days/10-14-12'
           }
         ]
-        shortTitle: 'October 8translated ordinal_8'
-        title: 'Week of Monday, October 8translated ordinal_8'
+        shortTitle: 'translated october 8translated ordinal_8'
+        title: 'Week of translated monday, translated october 8translated ordinal_8'
         id: '10-8-12'
         url: '#weeks/10-8-12'
         date: @date

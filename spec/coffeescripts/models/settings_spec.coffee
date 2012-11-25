@@ -6,13 +6,13 @@ describe 'BH.Models.Settings', ->
     it 'returns properties for the view template', ->
       expect(@settings.toTemplate()).toEqual
         startingWeekDays: [
-          {text: 'Monday', value: 'monday'},
-          {text: 'Tuesday', value: 'tuesday'},
-          {text: 'Wednesday', value: 'wednesday'},
-          {text: 'Thursday', value: 'thursday'},
-          {text: 'Friday', value: 'friday'},
-          {text: 'Saturday', value: 'saturday'},
-          {text: 'Sunday', value: 'sunday'},
+          {text: 'translated monday', value: 'monday'},
+          {text: 'translated tuesday', value: 'tuesday'},
+          {text: 'translated wednesday', value: 'wednesday'},
+          {text: 'translated thursday', value: 'thursday'},
+          {text: 'translated friday', value: 'friday'},
+          {text: 'translated saturday', value: 'saturday'},
+          {text: 'translated sunday', value: 'sunday'},
         ]
         openLocations: [
           {text: 'translated last_visit', value: 'last_visit'},
