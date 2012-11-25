@@ -5,7 +5,7 @@ moment.fn.past = function(input, val) {
       return back(date.subtract('days', 1), occurrences);
     } else {
       if(occurrences === 0) {
-        return date;
+        return moment(date.id());
       } else {
         return back(date.subtract('days', 1), occurrences - 1);
       }
