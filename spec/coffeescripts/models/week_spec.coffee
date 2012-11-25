@@ -54,8 +54,8 @@ describe 'BH.Models.Week', ->
             url: '#days/10-14-12'
           }
         ]
-        shortTitle: 'October 8th'
-        title: 'Week of Monday, October 8th'
+        shortTitle: 'October 8translated ordinal_8'
+        title: 'Week of Monday, October 8translated ordinal_8'
         id: '10-8-12'
         url: '#weeks/10-8-12'
         date: @date

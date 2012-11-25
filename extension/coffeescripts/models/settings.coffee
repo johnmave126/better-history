@@ -20,7 +20,6 @@ class BH.Models.Settings extends Backbone.Model
       startingWeekDays: []
       openLocations: []
       timeGroupings: []
-      timeFormats: []
       weekDayOrders: []
       searchBySelection: @get 'searchBySelection'
       searchByDomain: @get 'searchByDomain'

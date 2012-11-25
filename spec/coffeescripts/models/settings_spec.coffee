@@ -29,10 +29,6 @@ describe 'BH.Models.Settings', ->
           {text: 'translated 60_minutes_option', value: 60}
 
         ]
-        timeFormats: [
-          {text: 'translated 12_hours_option', value: 12},
-          {text: 'translated 24_hours_option', value: 24}
-        ]
         searchBySelection: true
         searchByDomain: true
         domainGrouping: true

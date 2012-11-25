@@ -18,11 +18,11 @@ describe 'BH.Models.Day', ->
     it 'returns the properties needed for a view template', ->
       expect(@day.toTemplate()).toEqual
         title: 'Thursday'
-        formalDate: 'October 11th 2012'
+        formalDate: 'October 11translated ordinal_11 2012'
         weekUrl: '#weeks/10-8-12'
         id: '10-11-12'
         date: @date
 
   describe '#startingWeekDay', ->
     it 'returns the starting week date for the day based on the starting week day from the settings', ->
-      expect(@day.startingWeekDate()).toEqual moment('10/8/12')
+      expect(@day.startingWeekDate().id()).toEqual '10-8-12'
