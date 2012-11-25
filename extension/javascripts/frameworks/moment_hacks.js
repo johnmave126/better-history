@@ -11,8 +11,7 @@ moment.fn.past = function(input, val) {
       }
     }
   };
-
-  return back(this.lang('en'), val);
+  return back(moment(this).lang('en'), val);
 };
 
 moment.fn.id = function() {

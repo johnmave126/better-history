@@ -27,7 +27,8 @@ describe 'BH.Collections.Weeks', ->
     it 'reloads the weeks with the passed starting day', ->
       @weeks.reload('Monday')
       dates = for model in @weeks.models
-        model.get('date').format('M-D-YY')
+        model.id
+
       expect(dates).toEqual [
         '10-22-12', '10-15-12', '10-8-12', '10-1-12', '9-24-12',
         '9-17-12', '9-10-12', '9-3-12', '8-27-12', '8-20-12'
