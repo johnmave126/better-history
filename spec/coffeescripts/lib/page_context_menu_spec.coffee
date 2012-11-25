@@ -7,7 +7,7 @@ describe "BH.Lib.PageContextMenu", ->
     it "creates a page context menu", ->
       @pageContextMenu.create()
       expect(@chromeAPI.contextMenus.create).toHaveBeenCalledWith
-        title: "Visits to domain"
+        title: "[translated visits_to_domain]"
         contexts: ["page"]
         id: 'better_history_page_context_menu'
 
@@ -31,7 +31,7 @@ describe "BH.Lib.PageContextMenu", ->
     it "updates the title domain from the passed tab", ->
       @pageContextMenu.updateTitleDomain url: "http://code.google.com/projects"
       expect(@chromeAPI.contextMenus.update).toHaveBeenCalledWith @pageContextMenu.menu,
-        title: "Visits to domain"
+        title: "[translated visits_to_domain]"
 
   describe "#listenToTabs", ->
     it "reacts to selection change when the context menu exisits", ->
