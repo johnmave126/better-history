@@ -2,8 +2,9 @@ class BH.Models.Week extends Backbone.Model
   @include BH.Modules.I18n
   @include BH.Modules.Url
 
-  initialize: ->
+  initialize: (attrs, options) ->
     @chromeAPI = chrome
+    @settings = options.settings
     @set id: @get('date').id()
 
   toHistory: ->
@@ -27,5 +28,10 @@ class BH.Models.Week extends Backbone.Model
     _.extend copy, @toJSON(), days: days
 
   inflateDays: ->
-    for i in [0..6]
+    days = for i in [0..6]
       moment(@get('date')).add('days', i)
+
+    if @settings.get('weekDayOrder') == 'descending'
+      days.reverse()
+
+    days

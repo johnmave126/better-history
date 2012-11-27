@@ -3,8 +3,9 @@ class BH.Collections.Weeks extends Backbone.Collection
 
   model: BH.Models.Week
 
-  initialize: ->
+  initialize: (attrs, options) ->
     @chromeAPI = chrome
+    @settings = options.settings
 
   toTemplate: ->
     weeks = for model in @models
@@ -15,5 +16,8 @@ class BH.Collections.Weeks extends Backbone.Collection
   reload: (startingDay) ->
     @reset()
     for i in _.range(10)
-      @add date: moment(new Date()).past(startingDay, i)
+      @add(
+        {date: moment(new Date()).past(startingDay, i)},
+        {settings: @settings}
+      )
     @trigger 'reloaded'

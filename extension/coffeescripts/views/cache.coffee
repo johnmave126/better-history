@@ -11,7 +11,10 @@ class BH.Views.Cache
 
   weekView: (id) ->
     if !@cache.weeks[id]
-      week =    new BH.Models.Week(date: moment(new Date(id)))
+      week = new BH.Models.Week(
+        {date: moment(new Date(id))},
+        {settings: @settings}
+      )
       history = new BH.Models.WeekHistory(week.toHistory())
 
       @cache.weeks[id] = new BH.Views.WeekView

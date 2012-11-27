@@ -16,7 +16,7 @@ class BH.Router extends Backbone.Router
 
     @app = new BH.Views.AppView
       el: $('.app')
-      collection: new BH.Collections.Weeks()
+      collection: new BH.Collections.Weeks(null, {settings: settings})
       settings: settings
       state: @state
     @app.render()
