@@ -26,7 +26,7 @@
     "description": "for Moment.js"
   },
   "short_date_with_day": {
-    "message": "dddd, Do MMMM",
+    "message": "dddd D MMMM",
     "description": "for Moment.js"
   },
   "date_week_label": {
@@ -45,7 +45,7 @@
     "description": "The order of a full extended date"
   },
   "formal_date": {
-    "message": "le Do MMMM YYYY",
+    "message": "D MMMM YYYY",
     "description": "The order of a full date"
   },
   "local_time": {
