@@ -49,7 +49,7 @@
     "description": "The order of a full date"
   },
   "local_time": {
-    "message": "h:m A",
+    "message": "H:mm",
     "description": "local time format"
   },
   "this_week": {
