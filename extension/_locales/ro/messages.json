@@ -1,4 +1,8 @@
 {
+  "chrome_language": {
+    "message": "ro",
+    "description": "language identifier used by Chrome"
+  },
   "manifest_name": {
     "message": "Better History",
     "description": "Manifest name"
@@ -35,10 +39,6 @@
       }
     }
   },
-  "day_date": {
-    "message": "dddd",
-    "description": "the day"
-  },
 
   "extended_formal_date": {
     "message": "dddd, MMMM Do YYYY",
@@ -48,19 +48,9 @@
     "message": "MMMM Do YYYY",
     "description": "The order of a full date"
   },
-  "twelve_hour_time_format": {
-    "message": "$time$ $label$",
-    "description": "Time format for 12 hour time",
-    "placeholders": {
-      "time": {
-        "content": "$1",
-        "example": "10:00"
-      },
-      "label": {
-        "content": "$2",
-        "example": "AM/PM"
-      }
-    }
+  "local_time": {
+    "message": "H:mm",
+    "description": "local time format"
   },
   "this_week": {
     "message": "Saptamana asta",

@@ -7,7 +7,7 @@ describe "BH.Lib.SelectionContextMenu", ->
     it "creates a selection context menu", ->
       @selectionContextMenu.create()
       expect(@chromeAPI.contextMenus.create).toHaveBeenCalledWith
-        title: "Search in history"
+        title: "[translated search_in_history]"
         contexts: [ "selection" ]
         id: 'better_history_selection_context_menu'
 

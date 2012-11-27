@@ -20,5 +20,5 @@ describe 'BH.Models.Search', ->
 
     it 'returns the properties needed for a view template', ->
       expect(@search.toTemplate()).toEqual
-        title: 'Searching "search" and "term"'
+        title: '[translated searching_title] "search" [translated and] "term"'
         query: 'search term'

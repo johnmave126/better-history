@@ -1,4 +1,8 @@
 {
+  "chrome_language": {
+    "message": "en_GB",
+    "description": "language identifier used by Chrome"
+  },
   "short_date": {
     "message": "Do MMMM",
     "description": "for Moment.js"
@@ -16,10 +20,6 @@
         "example": "date"
       }
     }
-  },
-  "day_date": {
-    "message": "dddd",
-    "description": "the day"
   },
 
   "extended_formal_date": {

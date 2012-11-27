@@ -14,14 +14,12 @@ class BH.Models.Settings extends Backbone.Model
 
   initialize: ->
     @chromeAPI = chrome
-    @set timeFormat: parseInt @t('default_time_format'), 10
 
   toTemplate: ->
     properties =
       startingWeekDays: []
       openLocations: []
       timeGroupings: []
-      timeFormats: []
       weekDayOrders: []
       searchBySelection: @get 'searchBySelection'
       searchByDomain: @get 'searchByDomain'
@@ -48,15 +46,9 @@ class BH.Models.Settings extends Backbone.Model
         text: @t "#{timeGrouping}_minutes_option"
         value: timeGrouping
 
-    _([12, 24]).each (timeFormat) =>
-      properties.timeFormats.push
-        text: @t "#{timeFormat}_hours_option"
-        value: timeFormat
-
     properties
 
   parse: (data) ->
     attributes = JSON.parse data
-    _.each ['timeFormat', 'timeGrouping'], (attribute) ->
-      attributes[attribute] = parseInt attributes[attribute], 10
+    attributes.timeGrouping = parseInt attributes.timeGrouping, 10
     attributes
