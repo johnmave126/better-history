@@ -41,9 +41,9 @@ class BH.Lib.DateI18n extends BH.Base
       meridiem: (hour, minute, isLower) =>
         if hour < 12
           @t('morning')
-        else if hour < 12 && hour < 16
+        else if hour >= 12 && hour < 16
           @t('afternoon')
-        else if hour > 16
+        else if hour >= 16
           @t('evening')
 
       ordinal: (number) =>
