@@ -1,13 +1,17 @@
+underscore = require 'underscore'
+backbone = require 'backbone'
+moment = require 'moment'
+timeKeeper = require 'timeKeeper'
+
 global.onServer = typeof exports != 'undefined'
-global._ = require 'underscore'
-global.Backbone = require 'backbone'
-global.moment = require 'moment'
-global.BH = require '../extension/coffeescripts/namespace'
-global.timeKeeper = require 'timekeeper'
+global._ = underscore
+global.Backbone = backbone
+global.moment = moment
+global.timeKeeper = timeKeeper
 global.localStorage = {}
 global.mockChromeAPI = require './chrome_api'
 global.chrome = mockChromeAPI()
-
+global.BH = require '../extension/coffeescripts/namespace'
 
 require '../extension/javascripts/frameworks/backbone_hacks.js'
 require '../extension/javascripts/frameworks/mixin.js'
