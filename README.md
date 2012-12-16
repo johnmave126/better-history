@@ -10,14 +10,19 @@ Stack
 * [Jasmine](http://pivotal.github.com/jasmine/) for specs
 * [Mustache](http://mustache.github.com/) for templating
 * [Chrome bootstrap](https://github.com/roykolak/chrome-bootstrap) for styles
+* [Node.js](https://github.com/joyent/node) for development
 
 Setup
 -----------------
 
-Better History uses Ruby for development setup and compiling. You'll need to run the command below to install the required gems.
+Better History uses Node.js for development setup, compiling, and running specs. You'll need to run the command below to install the the dev environment.
 
-    $ bundle install
+    $ npm install
 
-Start up Guard which will generate coffeescript, templates, and package files when changed locally.
+To generate coffeescript, templates, and package files when changed locally, run the following.
 
-    $ bundle exec guard
+    $ npm start
+
+To run jasmine specs, use the following command
+
+    $ npm test
