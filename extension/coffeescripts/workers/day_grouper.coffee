@@ -23,6 +23,7 @@ class BH.Workers.DayGrouper
       day
     days[index]
 
-self.addEventListener 'message', (e) ->
-  dayGrouper = new BH.Workers.DayGrouper()
-  postMessage dayGrouper.run(e.data.visits)
+unless onServer?
+  self.addEventListener 'message', (e) ->
+    dayGrouper = new BH.Workers.DayGrouper()
+    postMessage dayGrouper.run(e.data.visits)

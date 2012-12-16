@@ -1,4 +1,4 @@
-@BH =
+BH =
   Views: {}
   Models: {}
   Collections: {}
@@ -8,3 +8,5 @@
   Modules: {}
   Templates: {}
   Base: ->
+
+module.exports = BH if onServer?

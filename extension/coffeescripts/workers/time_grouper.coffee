@@ -51,7 +51,8 @@ class BH.Workers.TimeGrouper
       return '15'
     minutes
 
-self.addEventListener 'message', (e) ->
-  timeGrouper = new BH.Workers.TimeGrouper()
-  options = interval: e.data.interval
-  postMessage timeGrouper.run(e.data.visits, options)
+unless onServer?
+  self.addEventListener 'message', (e) ->
+    timeGrouper = new BH.Workers.TimeGrouper()
+    options = interval: e.data.interval
+    postMessage timeGrouper.run(e.data.visits, options)

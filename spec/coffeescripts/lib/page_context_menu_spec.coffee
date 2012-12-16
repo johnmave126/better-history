@@ -1,5 +1,6 @@
 describe "BH.Lib.PageContextMenu", ->
   beforeEach ->
+    global.chrome = mockChromeAPI()
     @pageContextMenu = new BH.Lib.PageContextMenu()
     @chromeAPI = @pageContextMenu.chromeAPI
 

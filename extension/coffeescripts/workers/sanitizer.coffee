@@ -56,6 +56,7 @@ class BH.Workers.Sanitizer
     return 1 if a.lastVisitTime < b.lastVisitTime
     0
 
-self.addEventListener 'message', (e) ->
-  sanitizer = new BH.Workers.Sanitizer()
-  postMessage(sanitizer.run(e.data.results, e.data.options))
+unless onServer?
+  self.addEventListener 'message', (e) ->
+    sanitizer = new BH.Workers.Sanitizer()
+    postMessage(sanitizer.run(e.data.results, e.data.options))

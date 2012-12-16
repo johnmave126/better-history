@@ -36,6 +36,7 @@ class BH.Workers.DomainGrouper
     match = visit.url.match(/\/\/(.*?)\//)
     if match == null then null else match[0]
 
-self.addEventListener 'message', (e) ->
-  grouper = new BH.Workers.DomainGrouper()
-  postMessage grouper.run(e.data.intervals)
+unless onServer?
+  self.addEventListener 'message', (e) ->
+    grouper = new BH.Workers.DomainGrouper()
+    postMessage grouper.run(e.data.intervals)

@@ -1,12 +1,12 @@
 describe 'BH.Models.State', ->
   beforeEach ->
-    Timecop.freeze(new Date('10-23-12'))
+    timeKeeper.freeze(new Date('10-23-12'))
 
     @state = new BH.Models.State null,
       settings: new BH.Models.Settings()
 
   afterEach ->
-    Timecop.returnToPresent()
+    timeKeeper.reset()
 
   describe '#initialize', ->
     it 'sets the route to the current week view', ->

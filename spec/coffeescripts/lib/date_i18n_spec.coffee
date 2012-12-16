@@ -1,12 +1,12 @@
 describe 'BH.Lib.DateI18n', ->
   beforeEach ->
-    spyOn(window.moment, 'lang')
+    spyOn(moment, 'lang')
     @dateI18n = new BH.Lib.DateI18n()
 
   describe '#configure', ->
     it 'assigns the i18n date pieces', ->
       @dateI18n.configure()
-      expect(window.moment.lang.argsForCall[0]).toEqual [
+      expect(moment.lang.argsForCall[0]).toEqual [
         '[translated chrome_language]',
         months: [
           '[translated january]',
@@ -42,6 +42,6 @@ describe 'BH.Lib.DateI18n', ->
 
     it 'sets the default language', ->
       @dateI18n.configure()
-      expect(window.moment.lang.argsForCall[1]).toEqual [
+      expect(moment.lang.argsForCall[1]).toEqual [
         '[translated chrome_language]'
       ]
