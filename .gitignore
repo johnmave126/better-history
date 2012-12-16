@@ -1,14 +1,9 @@
 .DS_Store
 *.swp
 *.zip
-.jhw-cache
 build
 node_modules
 *.log
 
 /extension/javascripts/*
 !/extension/javascripts/frameworks
-
-/spec/javascripts/*
-!/spec/javascripts/support
-!/spec/javascripts/helpers
