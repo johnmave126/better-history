@@ -16,22 +16,20 @@ task 'build', ->
   util.log 'Building extension'
   exec 'make build'
 
-task 'compile', 'compile extension and spec coffee', ->
+task 'compile', 'compile extension coffee', ->
   util.log "Compiling coffee"
   folders = ['lib', 'views', 'collections', 'modules', 'models', 'workers']
   for folder in folders
-    for section in ['extension', 'spec']
-      filepath = "#{section}/javascripts/#{folder}/*"
-      fs.unlinkSync(filepath) if fs.existsSync(filepath)
+    filepath = "extension/javascripts/#{folder}/*"
+    fs.unlinkSync(filepath) if fs.existsSync(filepath)
 
-  for folder in ['extension', 'spec']
-    filepaths = glob.sync("#{folder}/**/*.coffee")
-    for filepath in filepaths
-      code = fs.readFileSync(filepath).toString()
-      jsFilepath = filepath
-        .replace('.coffee', '.js')
-        .replace('coffeescripts', 'javascripts')
-      fs.writeFileSync jsFilepath, coffee.compile(code)
+  filepaths = glob.sync("extension/**/*.coffee")
+  for filepath in filepaths
+    code = fs.readFileSync(filepath).toString()
+    jsFilepath = filepath
+      .replace('.coffee', '.js')
+      .replace('coffeescripts', 'javascripts')
+    fs.writeFileSync jsFilepath, coffee.compile(code)
 
 task 'concat', 'concat javascript and templates', ->
   (->
@@ -72,13 +70,12 @@ task 'concat', 'concat javascript and templates', ->
   )()
 
 task 'watch', 'watch coffee and template files', ->
-  for folder in ['extension', 'spec']
-    for filepath in glob.sync("#{folder}/**/*.coffee")
-      fs.watchFile filepath, {}, ->
-        util.log '== Coffee changed'
-        invoke 'compile'
-        invoke 'concat'
-        invoke 'build'
+  for filepath in glob.sync("extension/**/*.coffee")
+    fs.watchFile filepath, {}, ->
+      util.log '== Coffee changed'
+      invoke 'compile'
+      invoke 'concat'
+      invoke 'build'
 
   for filepath in glob.sync("extension/templates/*.html")
     fs.watchFile filepath, {}, ->
