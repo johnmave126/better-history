@@ -20,7 +20,7 @@ build:
 	cp extension/javascripts/workers/* build/javascripts/workers/
 	cp extension/styles/app.css build/styles/
 	cp extension/styles/chrome-bootstrap.css build/styles/
-	sed -ie 's/\$$VERSION\$$/${VERSION}/g' build/manifest.json
+	sed -i '' 's/\$$VERSION\$$/${VERSION}/g' build/manifest.json
 	zip -r extension.zip build
 
 .PHONY: build
