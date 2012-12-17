@@ -10,7 +10,10 @@ Want to help out? Awesome! Couple of things
 * Commit messages should follow [this](http://tbaggery.com/2008/04/19/a-note-about-git-commit-messages.html)
 * Before starting a new feature, open an issue and let's talk
 
+
+<pre>
   _____ _              _       _
  |_   _| |_  __ _ _ _ | |__ __| |
    | | | ' \/ _` | ' \| / /(_-<_|
    |_| |_||_\__,_|_||_|_\_\/__(_)
+</pre>
