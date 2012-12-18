@@ -23,6 +23,8 @@ To generate coffeescript, templates, and package files when changed locally, run
 
     $ npm start
 
+This will create a `build/` directory containing an installable Better History extension.
+
 To run jasmine specs, use the following command
 
     $ npm test
