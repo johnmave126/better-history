@@ -866,5 +866,42 @@
   "search_by_domain": {
     "message": "المزيد من نفس الموقع",
     "description": "search by domain of visit"
+  },
+
+  "last_visit": {
+    "message": "اخر صفحة تم زيارتها",
+    "description": "last visited page"
+  },
+  "current_day": {
+    "message": "اليوم الحالي",
+    "description": "the current day's visits"
+  },
+  "current_week": {
+    "message": "الأسبوع الحالي",
+    "description": "the current week's visits"
+  },
+  "open_location": {
+    "message": "افتح على",
+    "description": "open to <page>"
+  },
+  "starting_week_day": {
+    "message": "أول يوم في الأسبوع",
+    "description": "day that the week starts on"
+  },
+  "general_section_title": {
+    "message": "عام",
+    "description": "General section title in settings"
+  },
+  "week_day_order": {
+    "message": "ترتيب أيام الأسبوع",
+    "description": "the week day order"
+  },
+  "ascending": {
+    "message": "تصاعدي",
+    "description": "ascending week day order"
+  },
+  "descending": {
+    "message": "تنازلي",
+    "description": "descending week day order"
   }
 }
