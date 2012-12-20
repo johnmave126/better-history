@@ -866,5 +866,42 @@
   "search_by_domain": {
     "message": "Mer från denna sajt",
     "description": "search by domain of visit"
+  },
+
+  "last_visit": {
+    "message": "Senast besökt sida",
+    "description": "last visited page"
+  },
+  "current_day": {
+    "message": "Denna dag",
+    "description": "the current day's visits"
+  },
+  "current_week": {
+    "message": "Nuvarande vecka",
+    "description": "the current week's visits"
+  },
+  "open_location": {
+    "message": "öppna till",
+    "description": "open to <page>"
+  },
+  "starting_week_day": {
+    "message": "Veckans första dag",
+    "description": "day that the week starts on"
+  },
+  "general_section_title": {
+    "message": "Allmänt",
+    "description": "General section title in settings"
+  },
+  "week_day_order": {
+    "message": "Sortering av veckodagar",
+    "description": "the week day order"
+  },
+  "ascending": {
+    "message": "Stigande",
+    "description": "ascending week day order"
+  },
+  "descending": {
+    "message": "Fallande",
+    "description": "descending week day order"
   }
 }

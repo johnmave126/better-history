@@ -866,5 +866,42 @@
   "search_by_domain": {
     "message": "Més del lloc",
     "description": "search by domain of visit"
+  },
+
+  "last_visit": {
+    "message": "La darrera pàgina visitada",
+    "description": "last visited page"
+  },
+  "current_day": {
+    "message": "El dia actual",
+    "description": "the current day's visits"
+  },
+  "current_week": {
+    "message": "La setmana actual",
+    "description": "the current week's visits"
+  },
+  "open_location": {
+    "message": "Obrir en",
+    "description": "open to <page>"
+  },
+  "starting_week_day": {
+    "message": "Dia d'inici de la setmana",
+    "description": "day that the week starts on"
+  },
+  "general_section_title": {
+    "message": "General",
+    "description": "General section title in settings"
+  },
+  "week_day_order": {
+    "message": "Ordenació del dia de la setmana",
+    "description": "the week day order"
+  },
+  "ascending": {
+    "message": "Ascendent",
+    "description": "ascending week day order"
+  },
+  "descending": {
+    "message": "Descendent",
+    "description": "descending week day order"
   }
 }

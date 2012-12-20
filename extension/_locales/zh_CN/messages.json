@@ -866,5 +866,42 @@
   "search_by_domain": {
     "message": "更多此站点的记录",
     "description": "search by domain of visit"
+  },
+
+  "last_visit": {
+    "message": "上次访问页面",
+    "description": "last visited page"
+  },
+  "current_day": {
+    "message": "当日记录",
+    "description": "the current day's visits"
+  },
+  "current_week": {
+    "message": "当周记录",
+    "description": "the current week's visits"
+  },
+  "open_location": {
+    "message": "启动时显示",
+    "description": "open to <page>"
+  },
+  "starting_week_day": {
+    "message": "一周起始",
+    "description": "day that the week starts on"
+  },
+  "general_section_title": {
+    "message": "常规",
+    "description": "General section title in settings"
+  },
+  "week_day_order": {
+    "message": "一周日期排序",
+    "description": "the week day order"
+  },
+  "ascending": {
+    "message": "升序",
+    "description": "ascending week day order"
+  },
+  "descending": {
+    "message": "降序",
+    "description": "descending week day order"
   }
 }

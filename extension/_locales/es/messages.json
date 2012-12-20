@@ -866,5 +866,42 @@
   "search_by_domain": {
     "message": "Más de este sitio",
     "description": "search by domain of visit"
+  },
+
+  "last_visit": {
+    "message": "Última página visitada",
+    "description": "last visited page"
+  },
+  "current_day": {
+    "message": "Día actual",
+    "description": "the current day's visits"
+  },
+  "current_week": {
+    "message": "Semana actual",
+    "description": "the current week's visits"
+  },
+  "open_location": {
+    "message": "Abrir en",
+    "description": "open to <page>"
+  },
+  "starting_week_day": {
+    "message": "Primer día de la semana",
+    "description": "day that the week starts on"
+  },
+  "general_section_title": {
+    "message": "General",
+    "description": "General section title in settings"
+  },
+  "week_day_order": {
+    "message": "Orden de días de la semana",
+    "description": "the week day order"
+  },
+  "ascending": {
+    "message": "Ascendente",
+    "description": "ascending week day order"
+  },
+  "descending": {
+    "message": "Descendente",
+    "description": "descending week day order"
   }
 }

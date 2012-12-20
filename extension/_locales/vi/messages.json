@@ -866,5 +866,42 @@
   "search_by_domain": {
     "message": "Xem thêm lược sử của trang",
     "description": "search by domain of visit"
+  },
+
+  "last_visit": {
+    "message": "Trang mới xem",
+    "description": "last visited page"
+  },
+  "current_day": {
+    "message": "Hôm nay",
+    "description": "the current day's visits"
+  },
+  "current_week": {
+    "message": "Tuần này",
+    "description": "the current week's visits"
+  },
+  "open_location": {
+    "message": "Hiển thị",
+    "description": "open to <page>"
+  },
+  "starting_week_day": {
+    "message": "Ngày đầu tuần",
+    "description": "day that the week starts on"
+  },
+  "general_section_title": {
+    "message": "Tổng Quát",
+    "description": "General section title in settings"
+  },
+  "week_day_order": {
+    "message": "Thứ tự ngày trong tuần",
+    "description": "the week day order"
+  },
+  "ascending": {
+    "message": "Tăng dần",
+    "description": "ascending week day order"
+  },
+  "descending": {
+    "message": "Giảm dần",
+    "description": "descending week day order"
   }
 }
