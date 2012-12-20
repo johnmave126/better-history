@@ -20,10 +20,10 @@ describe 'BH.Collections.Weeks', ->
 
   describe '#reload', ->
     beforeEach ->
-      timeKeeper.freeze(new Date('10-23-12'))
+      timekeeper.freeze(new Date('10-23-12'))
 
     afterEach ->
-      timeKeeper.reset()
+      timekeeper.reset()
 
     it 'reloads the weeks with the passed starting day', ->
       @weeks.reload('Monday')

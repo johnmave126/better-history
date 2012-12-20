@@ -1,13 +1,13 @@
 underscore = require 'underscore'
 backbone = require 'backbone'
 moment = require 'moment'
-timeKeeper = require 'timeKeeper'
+timekeeper = require 'timekeeper'
 
 global.onServer = typeof exports != 'undefined'
 global._ = underscore
 global.Backbone = backbone
 global.moment = moment
-global.timeKeeper = timeKeeper
+global.timekeeper = timekeeper
 global.localStorage = {}
 global.mockChromeAPI = require './chrome_api'
 global.chrome = mockChromeAPI()
