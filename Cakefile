@@ -77,6 +77,7 @@ task 'concat:js', 'concat javascript', ->
 task 'watch', 'watch coffee and template files', ->
   invoke 'watch:coffee'
   invoke 'watch:templates'
+  invoke 'watch:locales'
 
 task 'watch:coffee', 'watch coffee for changes', ->
   for filepath in glob.sync("extension/coffeescripts/**/*.coffee")
@@ -91,4 +92,10 @@ task 'watch:templates', 'watch templates for changes', ->
     fs.watchFile filepath, {}, ->
       console.log '== Template Changed'
       invoke 'concat:templates'
+      invoke 'build'
+
+task 'watch:locales', 'watch locales for changed', ->
+  for filepath in glob.sync("extension/_locales/**/*.json")
+    fs.watchFile filepath, {}, ->
+      console.log '== Locale Changed'
       invoke 'build'
