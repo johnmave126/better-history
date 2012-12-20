@@ -1,4 +1,4 @@
-Better History
+Better History [![Build Status](https://travis-ci.org/roykolak/better-history.png)](https://travis-ci.org/roykolak/better-history)
 =================
 
 Chrome is an excellent browser. However browsing your history kinda stinks. Let's make it better friend.
