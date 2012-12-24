@@ -18,4 +18,5 @@ BH.Modules.Worker =
         console.log(e.data.log)
       else
         callback(e.data)
+        worker.terminate()
     worker.postMessage(options)
