@@ -903,5 +903,10 @@
   "descending": {
     "message": "Giảm dần",
     "description": "descending week day order"
+  },
+
+  "search_title": {
+    "message": "Tìm kiếm",
+    "description": "title for the search page"
   }
 }

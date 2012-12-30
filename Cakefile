@@ -78,6 +78,7 @@ task 'watch', 'watch coffee and template files', ->
   invoke 'watch:coffee'
   invoke 'watch:templates'
   invoke 'watch:locales'
+  invoke 'watch:styles'
 
 task 'watch:coffee', 'watch coffee for changes', ->
   for filepath in glob.sync("extension/coffeescripts/**/*.coffee")
@@ -98,4 +99,10 @@ task 'watch:locales', 'watch locales for changed', ->
   for filepath in glob.sync("extension/_locales/**/*.json")
     fs.watchFile filepath, {}, ->
       console.log '== Locale Changed'
+      invoke 'build'
+
+task 'watch:styles', 'watch styles for changed', ->
+  for filepath in glob.sync("extension/styles/**/*.css")
+    fs.watchFile filepath, {}, ->
+      console.log '== Styles Changed'
       invoke 'build'

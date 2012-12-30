@@ -866,5 +866,10 @@
   "search_by_domain": {
     "message": "詳しくはサイトへ",
     "description": "search by domain of visit"
+  },
+
+  "search_title": {
+    "message": "検索",
+    "description": "title for the search page"
   }
 }

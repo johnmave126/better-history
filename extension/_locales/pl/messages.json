@@ -903,5 +903,10 @@
   "descending": {
     "message": "Antyalfabetycznie",
     "description": "descending week day order"
+  },
+
+  "search_title": {
+    "message": "Szukaj",
+    "description": "title for the search page"
   }
 }

@@ -903,5 +903,10 @@
   "descending": {
     "message": "Descendent",
     "description": "descending week day order"
+  },
+
+  "search_title": {
+    "message": "Cercar",
+    "description": "title for the search page"
   }
 }

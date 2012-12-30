@@ -6,6 +6,7 @@ class BH.Views.SearchView extends BH.Views.MainView
 
   events:
     'click .delete_all': 'clickedDeleteAll'
+    'click .corner .delete': 'clickedCancelSearch'
     'keyup .search': 'onSearchTyped'
     'blur .search': 'onSearchBlurred'
 
@@ -14,16 +15,23 @@ class BH.Views.SearchView extends BH.Views.MainView
     @history = @options.history
     @history.on('change:history', @onSearchHistoryChanged, @)
     @model.on('change:query', @onQueryChanged, @)
-    super()
 
   render: ->
     properties = _.extend(@getI18nValues(), @model.toTemplate())
     html = Mustache.to_html @template, properties
     @$el.append html
+    if !@model.validQuery()
+      @$el.addClass('loaded')
+      @$('.title').text @t('search_title')
+      @$('.number_of_results').text ''
+      setTimeout =>
+        @assignTabIndices('.visit a:first-child')
+      , 0
+    @updateDeleteButton()
     @
 
   pageTitle: ->
-    "Searching"
+    @t 'searching_title'
 
   onSearchHistoryChanged: ->
     @renderVisits()
@@ -32,7 +40,9 @@ class BH.Views.SearchView extends BH.Views.MainView
 
   onQueryChanged: ->
     @updateQueryReferences()
-    @history.set {query: @model.get('query')}, silent: true
+    if @model.validQuery()
+      @history.set {query: @model.get('query')}, silent: true
+      @$('.corner').addClass('cancelable')
 
   updateQueryReferences: ->
     properties = @model.toTemplate()
@@ -62,10 +72,14 @@ class BH.Views.SearchView extends BH.Views.MainView
 
   updateDeleteButton: ->
     deleteButton = @$('.delete_all')
-    if @history.isEmpty()
+    if @history.isEmpty() || !@model.validQuery()
       deleteButton.attr('disabled', 'disabled')
     else
       deleteButton.removeAttr('disabled')
+
+  clickedCancelSearch: (ev) ->
+    ev.preventDefault()
+    router.navigate('search', trigger: true)
 
   clickedDeleteAll: (ev) ->
     ev.preventDefault()

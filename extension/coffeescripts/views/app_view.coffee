@@ -61,9 +61,9 @@ class BH.Views.AppView extends Backbone.View
     @$('.menu .setting').parent().addClass 'selected'
     @cache.settingsView()
 
-  loadSearch: ->
+  loadSearch: (options = {}) ->
     @updateMenuSelection()
-    @cache.searchView()
+    @cache.searchView(options)
 
   updateMenuSelection: (id) ->
     @$('.menu > *').removeClass 'selected'
