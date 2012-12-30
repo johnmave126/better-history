@@ -7,6 +7,9 @@ class BH.Models.Search extends Backbone.Model
   initialize: ->
     @chromeAPI = chrome
 
+  validQuery: ->
+    @get('query') != ''
+
   toHistory: ->
     query: @get 'query'
 

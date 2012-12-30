@@ -22,3 +22,12 @@ describe 'BH.Models.Search', ->
       expect(@search.toTemplate()).toEqual
         title: '[translated searching_title] "search" [translated and] "term"'
         query: 'search term'
+
+  describe '#validQuery', ->
+    it 'returns true when the query property is a non empty string', ->
+      @search.set 'query', 'value'
+      expect(@search.validQuery()).toBeTruthy()
+
+    it 'returns false when the query property is a empty string', ->
+      @search.set 'query', ''
+      expect(@search.validQuery()).toBeFalsy()
