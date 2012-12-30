@@ -895,5 +895,10 @@
   "descending": {
     "message": "Descending",
     "description": "descending week day order"
+  },
+
+  "search_title": {
+    "message": "Search",
+    "description": "title for the search page"
   }
 }

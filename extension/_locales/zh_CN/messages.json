@@ -903,5 +903,10 @@
   "descending": {
     "message": "降序",
     "description": "descending week day order"
+  },
+
+  "search_title": {
+    "message": "搜索",
+    "description": "title for the search page"
   }
 }

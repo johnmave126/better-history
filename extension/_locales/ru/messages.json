@@ -866,5 +866,10 @@
   "search_by_domain": {
     "message": "Еще с сайта",
     "description": "search by domain of visit"
+  },
+
+  "search_title": {
+    "message": "Поиск",
+    "description": "title for the search page"
   }
 }
