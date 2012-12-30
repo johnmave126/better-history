@@ -38,8 +38,8 @@ class BH.Views.Cache
 
     @cache.days[id]
 
-  searchView: ->
-    if !@cache.search
+  searchView: (options)->
+    if !@cache.search || options.expired
       search =  new BH.Models.Search()
       history = new BH.Models.SearchHistory(search.toHistory())
 
