@@ -253,3 +253,7 @@ header .corner {
 .search_view .spinner {
   __MSG_@@bidi_start_edge__: 4px;
 }
+.cancelable .delete {
+  __MSG_@@bidi_start_edge__: auto;
+  __MSG_@@bidi_end_edge__: 5px;
+}
