@@ -11,7 +11,7 @@ describe "BH.Lib.HistoryQuery", ->
     describe "when searching is not set on the options", ->
       it "calls to chrome history API with the passed options and a @callback", ->
         @historyQuery.run(@options, @callback)
-        expectedOptions = _.extend {}, @options, maxResults: 1000
+        expectedOptions = _.extend {}, @options, maxResults: 5000
         expect(@chromeAPI.history.search).toHaveBeenCalledWith(expectedOptions, jasmine.any(Function))
 
     describe "when searching is set in the options", ->
