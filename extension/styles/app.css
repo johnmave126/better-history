@@ -151,6 +151,7 @@
 }
 .visit dl dt {
   font-size: 100%;
+  width: 655px;
 }
 .visit .location a {
   display: inline;
