@@ -93,6 +93,7 @@ task 'watch:templates', 'watch templates for changes', ->
     fs.watchFile filepath, {}, ->
       console.log '== Template Changed'
       invoke 'concat:templates'
+      invoke 'concat:js'
       invoke 'build'
 
 task 'watch:locales', 'watch locales for changed', ->
