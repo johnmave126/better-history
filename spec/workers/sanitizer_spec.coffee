@@ -95,21 +95,21 @@ describe "BH.Workers.Sanitizer", ->
       url: "google.com"
       lastVisitTime: new Date("December 2, 2010")
       extendedDate: 'the extended date'
-      time: 'the time'
+      time: '12:30PM'
 
     visit2 =
       title: "Normal something"
       url: "google.com/september"
       lastVisitTime: new Date("July 2, 2010")
       extendedDate: 'the extended date'
-      time: 'the time'
+      time: '12:30PM'
 
     visit3 =
       title: "something"
       url: "yahoo.com"
       lastVisitTime: new Date("September 12, 2010")
       extendedDate: 'September'
-      time: 'the time'
+      time: '12:30PM'
 
     @visits = [
       title: "hit september"
@@ -131,7 +131,7 @@ describe "BH.Workers.Sanitizer", ->
 
     options =
       searching: true
-      text: "september something"
+      text: "september something 12:30PM"
 
     sanitizedVisits = @sanitizer.run(@visits, options)
     expect(sanitizedVisits).toEqual([visit1, visit3, visit2])

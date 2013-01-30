@@ -29,6 +29,7 @@ class BH.Views.SearchResultsView extends Backbone.View
       visit.title = @_wrapMatchInProperty(regExp, visit.title)
       visit.location = @_wrapMatchInProperty(regExp, visit.location)
       visit.time = @_wrapMatchInProperty(regExp, visit.time)
+      visit.extendedDate = @_wrapMatchInProperty(regExp, visit.extendedDate)
     visit
 
   _wrapMatchInProperty: (regExp, property, match) ->
