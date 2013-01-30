@@ -20,7 +20,6 @@ class BH.Models.Visit extends Backbone.Model
       isGrouped: false
       host: @domain()
       path: @path()
-
     , @toJSON()
 
   domain: ->

@@ -11,6 +11,7 @@ describe "BH.Workers.Sanitizer", ->
         title: "title"
         url: "google.com"
         lastVisitTime: new Date()
+        extendedDate: 'the extended date'
         time: 'Monday, July 4th, 2010'
       a++
 
@@ -29,6 +30,7 @@ describe "BH.Workers.Sanitizer", ->
         title: "title"
         url: "google.com"
         lastVisitTime: new Date("December 5, 2011 12:00")
+        extendedDate: 'the extended date'
         time: 'December 5, 2011 12:00'
       a++
 
@@ -60,6 +62,7 @@ describe "BH.Workers.Sanitizer", ->
         title: "test<script>alert(\"yo\")</script>"
         url: "yahoo.com"
         lastVisitTime: new Date("September 12, 2010")
+        extendedDate: 'the extended date'
         time: 'the time'
       ]
 
@@ -75,6 +78,7 @@ describe "BH.Workers.Sanitizer", ->
         title: "test"
         url: "yahoo.com<script>alert(\"yo\")</script>"
         lastVisitTime: new Date("September 12, 2010")
+        extendedDate: 'the extended date'
         time: 'the time'
       ]
 
@@ -85,36 +89,42 @@ describe "BH.Workers.Sanitizer", ->
       sanitizedVisits = @sanitizer.run(@visits, options)
       expect(sanitizedVisits[0].location).toEqual("yahoo.comalert(\"yo\")")
 
-  it "matches results by checking if the search term exists in the title, url, or last visit time", ->
+  it "matches results by checking if the search term exists in the title, url, time, or date of the visit", ->
     visit1 =
       title: "September something"
       url: "google.com"
       lastVisitTime: new Date("December 2, 2010")
+      extendedDate: 'the extended date'
       time: 'the time'
 
     visit2 =
       title: "Normal something"
       url: "google.com/september"
       lastVisitTime: new Date("July 2, 2010")
+      extendedDate: 'the extended date'
       time: 'the time'
 
     visit3 =
       title: "something"
       url: "yahoo.com"
       lastVisitTime: new Date("September 12, 2010")
-      time: 'September'
+      extendedDate: 'September'
+      time: 'the time'
 
     @visits = [
       title: "hit september"
       url: "google.com"
+      extendedDate: 'the extended date'
       time: 'the time'
       , visit1,
       title: "lame"
       url: "google.com/hit"
+      extendedDate: 'the extended date'
       time: 'the time'
       , visit2,
       title: "no match"
       url: "google.com/something"
+      extendedDate: 'the extended date'
       time: 'the time'
       , visit3
     ]
@@ -131,37 +141,44 @@ describe "BH.Workers.Sanitizer", ->
       title: "news"
       url: "google.com"
       lastVisitTime: new Date("September 12, 2010 4:00")
+      extendedDate: 'the extended date'
       time: 'the time'
 
     visit2 =
       title: "news"
       url: "google.com"
       lastVisitTime: new Date("July 2, 2011")
+      extendedDate: 'the extended date'
       time: 'the time'
 
     visit3 =
       title: "news"
       url: "yahoo.com"
       lastVisitTime: new Date("September 12, 2010 12:00")
+      extendedDate: 'the extended date'
       time: 'the time'
 
     visit4 =
       title: "news"
       url: "yahoo.com"
       lastVisitTime: new Date("September 12, 2010 2:00")
+      extendedDate: 'the extended date'
       time: 'the time'
 
     @visits = [
       title: "hit this"
       url: "google.com"
+      extendedDate: 'the extended date'
       time: 'the time'
       , visit1,
       title: "lame"
       url: "google.com/hit"
+      extendedDate: 'the extended date'
       time: 'the time'
       , visit2,
       title: "no match"
       url: "google.com"
+      extendedDate: 'the extended date'
       time: 'the time'
       , visit3, visit4
     ]
@@ -178,12 +195,14 @@ describe "BH.Workers.Sanitizer", ->
       title: "google"
       url: "google.com"
       lastVisitTime: new Date("October 12, 2010")
+      extendedDate: 'the extended date'
       time: 'the time'
 
     visit2 =
       title: "sample"
       url: "google.com/sample"
       lastVisitTime: new Date("October 13, 2010")
+      extendedDate: 'the extended date'
       time: 'the time'
 
     @visits = [
@@ -191,6 +210,7 @@ describe "BH.Workers.Sanitizer", ->
       title: "hit"
       url: "google.com/hit"
       lastVisitTime: new Date("December 5, 2010")
+      extendedDate: 'the extended date'
       time: 'the time'
       , visit2
     ]

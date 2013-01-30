@@ -35,6 +35,7 @@ class BH.Lib.HistoryQuery extends BH.Base
   _prepareResults: (results) ->
     _(results).each (result) =>
       result.date = new Date(result.lastVisitTime)
+      # Translate dates and times here for the search sanitizer
       result.extendedDate = moment(result.date).format(@t('extended_formal_date'))
       result.time = moment(result.date).format(@t('local_time'))
     results
