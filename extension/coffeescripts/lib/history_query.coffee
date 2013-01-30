@@ -33,10 +33,11 @@ class BH.Lib.HistoryQuery extends BH.Base
     @worker('sanitizer', options, callback)
 
   _prepareResults: (results) ->
-    extendedFormalDate = @t('extended_formal_date')
     _(results).each (result) =>
       result.date = new Date(result.lastVisitTime)
-      result.time = moment(result.date).format(extendedFormalDate)
+      # Translate dates and times here for the search sanitizer
+      result.extendedDate = moment(result.date).format(@t('extended_formal_date'))
+      result.time = moment(result.date).format(@t('local_time'))
     results
 
   searchOptions:
