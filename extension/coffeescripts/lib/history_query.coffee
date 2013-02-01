@@ -6,40 +6,39 @@ class BH.Lib.HistoryQuery extends BH.Base
     @chromeAPI = chrome
 
   run: (@options, callback) ->
-    if @options.text
-      @text = @options.text
-      @options.text = ''
+    searchOptions = @assembleSearchOptions(@options)
 
-    options = {}
-    _.extend(options, @options)
-    if @options.searching?
-      _.extend(options, @searchOptions)
+    @chromeAPI.history.search searchOptions, (results) =>
+      results = @prepareResults(results)
+      @sanitizeResults(results, callback)
+
+  assembleSearchOptions: (originalOptions) ->
+    options = originalOptions
+
+    if options.searching?
+      options.startTime = 0
+      options.maxResults = 0
+      delete options.searching
     else
-      options.maxResults = 5000
-    delete options.searching
+      options.maxResults = 5000 unless options.maxResults?
 
-    @chromeAPI.history.search options, (results) =>
-      @searchHandler(results, callback)
+    # Can't depend on Chrome's history search, unassign text in options
+    if options.text
+      @text = options.text
+      options.text = ''
 
-  searchHandler: (results, callback) ->
-    @options.text = @text if @text
-    results = @_prepareResults(results)
-    @_sanitizeResults(results, callback)
+    options
 
-  _sanitizeResults: (results, callback) ->
-    options =
-      options: @options
-      results: results
+  sanitizeResults: (results, callback) ->
+    options = options: @options, results: results
+    options.options.text = @text if @text
     @worker('sanitizer', options, callback)
 
-  _prepareResults: (results) ->
-    _(results).each (result) =>
+  prepareResults: (results) ->
+    for result in results
       result.date = new Date(result.lastVisitTime)
+
       # Translate dates and times here for the search sanitizer
       result.extendedDate = moment(result.date).format(@t('extended_formal_date'))
       result.time = moment(result.date).format(@t('local_time'))
     results
-
-  searchOptions:
-    startTime: 0
-    maxResults: 0
