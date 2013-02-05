@@ -6,7 +6,7 @@ describe "BH.Lib.HistoryQuery", ->
 
   describe "#run", ->
     beforeEach ->
-      @options = {text: 'search term'}
+      @options = {text: ''}
 
     it "calls to chrome history API with the passed options and a callback", ->
       @historyQuery.run(@options, @callback)
@@ -14,60 +14,48 @@ describe "BH.Lib.HistoryQuery", ->
       expect(@chromeAPI.history.search).toHaveBeenCalledWith(options, jasmine.any(Function))
 
   describe '#assembleSearchOptions', ->
-    describe 'when searching', ->
+    describe 'when the text property is not blank (when searching)', ->
       beforeEach ->
-        @options = searching: true, property: true
+        @options = text: 'search string', property: true
 
-      it 'adds startTime, maxResults, and removes searching from the options', ->
+      it 'adds startTime and maxResults to the options and blanks text', ->
         expect(@historyQuery.assembleSearchOptions(@options)).toEqual
           startTime: 0
           maxResults: 0
+          text: ''
           property: true
 
-    describe 'when not searching', ->
+    describe 'when the text property is blank (when not searching)', ->
       describe 'when maxResults is not set', ->
         beforeEach ->
-          @options = property: true
+          @options = property: true, text: ''
 
         it 'adds maxResults to the options', ->
-          expect(@historyQuery.assembleSearchOptions(@options)).toEqual
-            maxResults: 5000
-            property: true
+          options = @historyQuery.assembleSearchOptions(@options)
+          expect(options.maxResults).toEqual 5000
 
       describe 'when maxResults is set', ->
         beforeEach ->
-          @options = property: true, maxResults: 5
+          @options = property: true, maxResults: 5, text: ''
 
         it 'does not override maxResults', ->
-          expect(@historyQuery.assembleSearchOptions(@options)).toEqual
-            maxResults: 5
-            property: true
-
-
-    describe 'when a text property is set', ->
-      beforeEach ->
-        @options = text: 'search string', property: true, maxResults: 5
-
-      it 'blanks the text property', ->
-        expect(@historyQuery.assembleSearchOptions(@options)).toEqual
-          property: true
-          maxResults: 5
-          text: ''
+          options = @historyQuery.assembleSearchOptions(@options)
+          expect(options.maxResults).toEqual 5
 
   describe '#sanitizeResults', ->
     beforeEach ->
       spyOn(@historyQuery, 'worker')
       @historyQuery.options = property: true
 
-    it 'calls to the sanitie worker with the original options and a callback', ->
-      @historyQuery.sanitizeResults(['results'], @callback)
+    it 'calls to the sanitize worker with the original options and a callback', ->
+      @historyQuery.sanitizeResults(property: true, ['results'], @callback)
       options = options: {property: true}, results: ['results']
       expect(@historyQuery.worker).toHaveBeenCalledWith('sanitizer', options, @callback)
 
     describe 'when text has been saved from the original options', ->
-      it 'adding the text to the options passed to the worker', ->
+      it 'adds the text to the options passed to the worker', ->
         @historyQuery.text = 'term'
-        @historyQuery.sanitizeResults(['results'], @callback)
+        @historyQuery.sanitizeResults(property: true, ['results'], @callback)
         options = options: {property: true, text: 'term'}, results: ['results']
         expect(@historyQuery.worker).toHaveBeenCalledWith('sanitizer', options, @callback)
 

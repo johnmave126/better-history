@@ -14,7 +14,6 @@ class BH.Models.SearchHistory extends BH.Models.History
 
   toChrome: ->
     text: @get('query')
-    searching: true
 
   parse: (data) ->
     visits = new BH.Collections.Visits()
