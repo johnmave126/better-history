@@ -5,41 +5,40 @@ class BH.Lib.HistoryQuery extends BH.Base
   constructor: ->
     @chromeAPI = chrome
 
-  run: (@options, callback) ->
-    if @options.text
-      @text = @options.text
-      @options.text = ''
+  run: (options, callback) ->
+    searchOptions = @assembleSearchOptions(options)
 
-    options = {}
-    _.extend(options, @options)
-    if @options.searching?
-      _.extend(options, @searchOptions)
+    @chromeAPI.history.search searchOptions, (results) =>
+      results = @prepareResults(results)
+      @sanitizeResults(options, results, callback)
+
+  assembleSearchOptions: (options) ->
+    @halt 'No text property' unless options.text?
+
+    if options.text != ''
+      options.startTime = 0
+      options.maxResults = 0
+      # Can't depend on Chrome's history search, unassign text in options
+      @text = options.text
+      options.text = ''
     else
-      options.maxResults = 5000
-    delete options.searching
+      options.maxResults = 5000 unless options.maxResults?
 
-    @chromeAPI.history.search options, (results) =>
-      @searchHandler(results, callback)
+    options
 
-  searchHandler: (results, callback) ->
-    @options.text = @text if @text
-    results = @_prepareResults(results)
-    @_sanitizeResults(results, callback)
-
-  _sanitizeResults: (results, callback) ->
-    options =
-      options: @options
+  sanitizeResults: (options, results, callback) ->
+    options.text = @text if @text
+    @worker 'sanitizer',
+      options: options
       results: results
-    @worker('sanitizer', options, callback)
+    , callback
 
-  _prepareResults: (results) ->
-    _(results).each (result) =>
+  prepareResults: (results) ->
+    for result in results
       result.date = new Date(result.lastVisitTime)
-      # Translate dates and times here for the search sanitizer
-      result.extendedDate = moment(result.date).format(@t('extended_formal_date'))
-      result.time = moment(result.date).format(@t('local_time'))
-    results
 
-  searchOptions:
-    startTime: 0
-    maxResults: 0
+      dateMoment = moment(result.date)
+      # Translate dates and times here for the search sanitizer
+      result.extendedDate = dateMoment.format(@t('extended_formal_date'))
+      result.time = dateMoment.format(@t('local_time'))
+    results
